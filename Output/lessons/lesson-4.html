@@ -61,12 +61,27 @@
         <button class="neu-btn" data-reveal-steps="steps-ex20" data-show-label="إظهار خطوات الحل" data-hide-label="إخفاء خطوات الحل">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد معادلة المنحني المار بالنقطة $(1,3)$ وميل المماس له عند أية نقطة من نقاطه يساوي $3x^2-10x$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد معادلة المنحني $y=f(x)$ بالكامل.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> ميل المماس عند أية نقطة من المنحني يساوي $3x^2-10x$، والمنحني يمر بالنقطة $(1,3)$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> ميل المماس = المشتقة الأولى $\dfrac{dy}{dx}$، فإذا عرفنا الميل نكامله لنحصل على عائلة من المنحنيات $y=\dots+c$، ثم نستخدم النقطة المعطاة لتحديد قيمة $c$ بالضبط.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex20">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">بما أن ميل المماس = المشتقة: \( \dfrac{dy}{dx}=3x^2-10x \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل الطرفين: \( \displaystyle\int dy=\int(3x^2-10x)\,dx \;\Rightarrow\; y=x^3-5x^2+c \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">النقطة $(1,3)$ تحقق المعادلة: \( 3=(1)^3-5(1)^2+c=1-5+c=-4+c \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">إذن $c=7$، ومعادلة المنحني هي: \( y=x^3-5x^2+7 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا؟</i> بما أن ميل المماس هو المشتقة الأولى للمنحني، فإن المعطى $3x^2-10x$ هو في الحقيقة $\dfrac{dy}{dx}$: \( \dfrac{dy}{dx}=3x^2-10x \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نكامل الطرفين</i> لنرجع من الميل (المشتقة) إلى معادلة المنحني الأصلية: \( \displaystyle\int dy=\int(3x^2-10x)\,dx \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نطبّق قاعدة تكامل الأس</i> على كل حد على حدة (نزيد الأس بمقدار 1 ونقسم على الأس الجديد): تكامل $3x^2$ هو $x^3$ (لأن $\tfrac{3x^3}{3}=x^3$)، وتكامل $-10x$ هو $-5x^2$ (لأن $\tfrac{-10x^2}{2}=-5x^2$).</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نجمع الحدين ونضيف ثابت التكامل $c$</i> (لأن هناك عائلة كاملة من الدوال لها نفس المشتقة): \( y=x^3-5x^2+c \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>لماذا نحتاج النقطة $(1,3)$؟</i> لأن $c$ مجهول، ونحتاج شرطاً إضافياً لتحديده — نستخدم أن المنحني يمر بالنقطة $(1,3)$، أي أنه عندما $x=1$ تكون $y=3$.</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نعوّض $x=1,\,y=3$</i> في معادلة المنحني: \( 3=(1)^3-5(1)^2+c \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نبسّط الطرف الأيمن:</i> $(1)^3=1$ و $5(1)^2=5$، فتصبح المعادلة: \( 3=1-5+c=-4+c \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نحل من أجل $c$</i> بنقل $-4$ إلى الطرف الآخر (بتغيير إشارته إلى $+4$): \( c=3+4=7 \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نعوّض قيمة $c$</i> في معادلة المنحني للحصول على الصيغة النهائية: \( y=x^3-5x^2+7 \) ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان ثابت التكامل $c$ عند التكامل، أو نسيان استخدام النقطة المعطاة لإيجاده. بدون $c$ لا نحصل على المنحني الوحيد المطلوب، بل على عائلة كاملة من المنحنيات المتوازية.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: معادلة المنحني هي $y=x^3-5x^2+7$.</div>
     </div>
 
     <div class="example fade-up">
@@ -75,13 +90,33 @@
         <button class="neu-btn" data-reveal-steps="steps-ex21">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا كان لمنحنى $f(x)$ نهاية صغرى محلية قيمتها $6$ وميله عند أية نقطة من نقاطه هو $6x^2-12x$، جد معادلة المنحني.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد معادلة المنحني $y=f(x)$ بالكامل.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> ميل المماس (المشتقة الأولى) $=6x^2-12x$، وللمنحني نهاية صغرى محلية قيمتها $6$ (لكن لم يُحدَّد عندها $x$، فيجب إيجاده).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نكامل الميل لنحصل على عائلة المنحنيات $y=\dots+c$؛ وعند أي نهاية عظمى أو صغرى محلية تكون المشتقة الأولى صفراً $f'(x)=0$، فنستخدم هذا لإيجاد $x$، ثم نميّز بين النهايتين بفحص إشارة $f'(x)$، ثم نستخدم النقطة الناتجة لإيجاد $c$.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex21">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل الميل: \( y=\displaystyle\int(6x^2-12x)\,dx=2x^3-6x^2+c \quad\dots(1) \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">عند النهاية الصغرى $f'(x)=0$: \( 6x^2-12x=0 \Rightarrow 6x(x-2)=0 \Rightarrow x=0 \text{ أو } x=2 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">بتدقيق إشارة $f'(x)$ على خط الأعداد: الدالة تتزايد قبل $x=0$ وتتناقص بعده (نهاية عظمى عند $x=0$)، وتتناقص قبل $x=2$ وتتزايد بعده — إذن النهاية <b>الصغرى</b> عند $x=2$.</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">نقطة النهاية الصغرى إذن هي $(2,6)$ وتحقق المعادلة (1): \( 6=2(2)^3-6(2)^2+c=16-24+c \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">إذن $c=6+8=14$، ومعادلة المنحني: \( y=2x^3-6x^2+14 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نبدأ بالتكامل؟</i> لدينا الميل (المشتقة الأولى) ونريد معادلة $y$، فنكامله: \( y=\displaystyle\int(6x^2-12x)\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نطبّق قاعدة تكامل الأس</i> على كل حد: تكامل $6x^2$ هو $2x^3$ (لأن $\tfrac{6x^3}{3}=2x^3$)، وتكامل $-12x$ هو $-6x^2$ (لأن $\tfrac{-12x^2}{2}=-6x^2$).</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نجمع الحدين ونضيف ثابت التكامل $c$:</i> \( y=2x^3-6x^2+c \quad\dots(1) \) — هذه عائلة كاملة من المنحنيات، ولا نزال بحاجة إلى تحديد $c$.</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>لماذا نحتاج لإيجاد $x$ أولاً؟</i> قيل لنا أن قيمة النهاية الصغرى ($y=6$) لكن لم يُعطَ $x$ المقابل لها مباشرة. نستخدم حقيقة أن عند أي نهاية محلية تكون المشتقة الأولى صفراً: $f'(x)=0$.</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نساوي الميل المعطى بصفر:</i> \( 6x^2-12x=0 \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نحلل الطرف الأيسر</i> بإخراج العامل المشترك $6x$: \( 6x(x-2)=0 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نساوي كل عامل بصفر</i> لإيجاد قيم $x$ المرشحة: \( x=0 \text{ أو } x=2 \) — لدينا نقطتان حرجتان محتملتان.</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>لماذا نفحص الإشارة؟</i> وجود $x=0$ و $x=2$ وحده لا يخبرنا أيّهما نهاية عظمى وأيّهما نهاية صغرى؛ يجب فحص إشارة $f'(x)=6x(x-2)$ قبل وبعد كل نقطة لمعرفة هل الدالة تتزايد ($f'>0$) أم تتناقص ($f'<0$) هناك.</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نفحص الإشارة حول $x=0$:</i> عند نقطة قبله مثل $x=-1$: $f'(-1)=6(-1)(-1-2)=18>0$ (تتزايد)، وعند نقطة بعده وقبل $2$ مثل $x=1$: $f'(1)=6(1)(1-2)=-6<0$ (تتناقص). الدالة تتحول من تزايد إلى تناقص عند $x=0$، إذن هذه <b>نهاية عظمى</b> محلية، وليست صغرى.</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نفحص الإشارة حول $x=2$:</i> عند $x=1$ وجدنا $f'<0$ (تتناقص)، وعند نقطة بعد $2$ مثل $x=3$: $f'(3)=6(3)(3-2)=18>0$ (تتزايد). الدالة تتحول من تناقص إلى تزايد عند $x=2$، إذن هذه <b>نهاية صغرى</b> محلية — وهذا يطابق المعطى في السؤال.</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>النتيجة:</i> نقطة النهاية الصغرى هي $(2,6)$ (بما أن قيمتها المعطاة $6$)، وهي تحقق معادلة المنحني (1).</div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body"><i>نعوّض $x=2,\,y=6$</i> في المعادلة (1): \( 6=2(2)^3-6(2)^2+c \)</div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body"><i>نبسّط الطرف الأيمن:</i> $2(2)^3=2(8)=16$ و $6(2)^2=6(4)=24$، فتصبح: \( 6=16-24+c=-8+c \)</div></li>
+        <li class="step"><span class="step-dot">14</span><div class="step-body"><i>نحل من أجل $c$</i> بنقل $-8$ إلى الطرف الآخر (بتغيير إشارته): \( c=6+8=14 \)</div></li>
+        <li class="step"><span class="step-dot">15</span><div class="step-body"><i>نعوّض قيمة $c$</i> في المعادلة (1) لنحصل على معادلة المنحني النهائية: \( y=2x^3-6x^2+14 \) ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> افتراض أن $x=0$ هي النهاية الصغرى لمجرد أنها أصغر عددياً من $x=2$، دون فحص إشارة $f'(x)$ فعلياً. يجب دائماً التحقق بفحص الإشارة (أو بالمشتقة الثانية) قبل الجزم أي نقطة هي العظمى وأيّها الصغرى.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: معادلة المنحني هي $y=2x^3-6x^2+14$.</div>
     </div>
 
     <div class="example fade-up">
@@ -90,14 +125,34 @@
         <button class="neu-btn" data-reveal-steps="steps-ex22">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد معادلة المنحني الذي المشتقة الثانية لمعادلته تساوي $6x$ ويمر بالنقطتين $(-1,4)$ و $(1,8)$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد معادلة المنحني $y=f(x)$ بالكامل.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> المشتقة الثانية $f''(x)=6x$، والمنحني يمر بالنقطتين $(-1,4)$ و $(1,8)$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نكامل المشتقة الثانية مرة لنحصل على الأولى (بثابت $c_1$)، ثم نكامل مرة أخرى لنحصل على $y$ (بثابت إضافي $c_2$)؛ ولأن لدينا ثابتين مجهولين نحتاج معادلتين (النقطتين المعطاتين) لحلهما كنظام معادلتين بمجهولين.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex22">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل المشتقة الثانية لنحصل على الأولى: \( \dfrac{dy}{dx}=\displaystyle\int 6x\,dx=3x^2+c_1 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل مرة ثانية: \( y=\displaystyle\int(3x^2+c_1)\,dx=x^3+c_1x+c_2 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">النقطة $(-1,4)$: \( 4=(-1)^3-c_1+c_2 \Rightarrow c_1-c_2=-5 \quad\dots(1) \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">النقطة $(1,8)$: \( 8=(1)^3+c_1+c_2 \Rightarrow c_1+c_2=7 \quad\dots(2) \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">بجمع (1) و (2): \( 2c_1=2 \Rightarrow c_1=1 \)، وبالتعويض: \( 1-c_2=-5 \Rightarrow c_2=6 \)</div></li>
-        <li class="step"><span class="step-dot">6</span><div class="step-body">إذن معادلة المنحني: \( y=x^3+x+6 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نبدأ بتكامل أول؟</i> المعطى هو المشتقة الثانية $\dfrac{d^2y}{dx^2}=6x$، وللوصول إلى المشتقة الأولى نكامل مرة واحدة: \( \dfrac{dy}{dx}=\displaystyle\int 6x\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نطبّق قاعدة تكامل الأس</i> ونضيف ثابت تكامل نسمّيه $c_1$ (لتمييزه عن ثابت التكامل الثاني القادم): \( \dfrac{dy}{dx}=3x^2+c_1 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>لماذا نكامل مرة ثانية؟</i> نحتاج $y$ نفسها لا مجرد مشتقتها الأولى، فنكامل مرة أخرى: \( y=\displaystyle\int(3x^2+c_1)\,dx \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نطبّق قاعدة تكامل الأس على كل حد:</i> تكامل $3x^2$ هو $x^3$، وتكامل الثابت $c_1$ بالنسبة لـ $x$ هو $c_1x$ (لأن تكامل أي ثابت $a$ بالنسبة للمتغير هو $a\cdot x$)، ونضيف ثابت تكامل ثانٍ $c_2$: \( y=x^3+c_1x+c_2 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>لماذا نحتاج نقطتين؟</i> لدينا الآن مجهولان $c_1,c_2$، ولإيجاد مجهولين نحتاج معادلتين مستقلتين — لذلك نستخدم كلا النقطتين المعطاتين.</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نعوّض النقطة الأولى $(-1,4)$</i> أي $x=-1,\,y=4$: \( 4=(-1)^3+c_1(-1)+c_2 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نبسّط:</i> $(-1)^3=-1$، فتصبح: \( 4=-1-c_1+c_2 \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>ننقل $-1$ إلى الطرف الأيسر</i> (بتغيير إشارته) ثم نرتب الحدود: \( c_1-c_2=-5 \quad\dots(1) \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نعوّض النقطة الثانية $(1,8)$</i> أي $x=1,\,y=8$: \( 8=(1)^3+c_1(1)+c_2 \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نبسّط:</i> $(1)^3=1$، فتصبح: \( 8=1+c_1+c_2 \Rightarrow c_1+c_2=7 \quad\dots(2) \)</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>لماذا نجمع المعادلتين؟</i> لدينا نظام معادلتين بمجهولين $c_1,c_2$؛ ومعامل $c_2$ في (1) هو $-1$ ومعامله في (2) هو $+1$ (متضادان)، فجمع المعادلتين يحذف $c_2$ مباشرة.</div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body"><i>نجمع (1) و (2) طرفاً لطرف:</i> \( (c_1-c_2)+(c_1+c_2)=-5+7 \Rightarrow 2c_1=2 \)</div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body"><i>نحل من أجل $c_1$</i> بقسمة الطرفين على 2: \( c_1=1 \)</div></li>
+        <li class="step"><span class="step-dot">14</span><div class="step-body"><i>نعوّض $c_1=1$ في المعادلة (2)</i> لإيجاد $c_2$: \( 1+c_2=7 \)</div></li>
+        <li class="step"><span class="step-dot">15</span><div class="step-body"><i>نحل من أجل $c_2$</i> بنقل 1 إلى الطرف الآخر: \( c_2=7-1=6 \)</div></li>
+        <li class="step"><span class="step-dot">16</span><div class="step-body"><i>نعوّض $c_1=1,\,c_2=6$</i> في معادلة $y$ لنحصل على معادلة المنحني النهائية: \( y=x^3+x+6 \) ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الخلط بين ثابتي التكامل $c_1$ و $c_2$ ومعاملتهما كثابت واحد فقط، أو نسيان أن تكامل الثابت $c_1$ بالنسبة لـ $x$ في التكامل الثاني هو $c_1x$ (وليس صفراً أو $c_1$ وحده).</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: معادلة المنحني هي $y=x^3+x+6$.</div>
     </div>
   </section>
 
@@ -132,19 +187,67 @@
   </section>
 
   <section class="section fade-up">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة مصغّرة: التطبيقان الهندسي والفيزيائي</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l4-topic" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">قارن بين التطبيقين الأساسيين اللذين درسناهما في هذا الدرس، ولاحظ أن كليهما يعتمد على نفس فكرة التكامل كعملية عكسية.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l4-topic">
+        <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة مصغّرة تقارن التطبيق الهندسي والفيزيائي">
+          <line x1="410" y1="130" x2="180" y2="130" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="130" x2="640" y2="130" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="130" r="55" fill="#2fd18f"/>
+            <text x="410" y="126" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">تطبيقات التكامل</text>
+            <text x="410" y="144" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">غير المحدد</text></g>
+
+          <g><circle cx="180" cy="130" r="65" fill="#7c6fee"/>
+            <text x="180" y="118" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">هندسي</text>
+            <text x="180" y="136" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">ميل المماس</text>
+            <text x="180" y="152" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">→ معادلة المنحني</text></g>
+
+          <g><circle cx="640" cy="130" r="65" fill="#3fa9f5"/>
+            <text x="640" y="112" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">فيزيائي</text>
+            <text x="640" y="130" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">تعجيل → سرعة</text>
+            <text x="640" y="147" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">→ إزاحة</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
     <div class="example">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">23</span> مثال 23</div>
         <button class="neu-btn" data-reveal-steps="steps-ex23">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جسم يتحرك على خط مستقيم وكانت سرعته معطاة بالعلاقة $v=\dfrac{3}{2}\sqrt{t}+\dfrac{3}{\sqrt{t}}$ حيث $v$ السرعة بالأمتار و $t$ الزمن بالثواني، وكان بُعده بعد مرور أربع ثوانٍ يساوي $20\,m$. جد الإزاحة التي يقطعها الجسم بعد مرور $36$ ثانية من بدء الحركة.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد الإزاحة $s$ عند اللحظة $t=36$ ثانية.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> السرعة $v(t)=\dfrac{3}{2}\sqrt{t}+\dfrac{3}{\sqrt{t}}$، وشرط ابتدائي: عند $t=4$ ثوانٍ، $s=20\,m$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> الإزاحة = تكامل السرعة بالنسبة للزمن $s=\int v\,dt$؛ ثم نستخدم الشرط الابتدائي المعطى لإيجاد ثابت التكامل $c$.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex23">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل السرعة: \( s=\displaystyle\int\!\left(\tfrac{3}{2}t^{\frac12}+3t^{-\frac12}\right)dt \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( s=\dfrac{3}{2}\cdot\dfrac{t^{\frac32}}{\frac32}+3\cdot\dfrac{t^{\frac12}}{\frac12}+c=\sqrt{t^3}+6\sqrt{t}+c \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">الشرط الابتدائي: عند $t=4$ تكون $s=20$: \( 20=\sqrt{64}+6(2)+c=8+12+c \Rightarrow c=0 \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">إذن الإزاحة عند أي زمن: \( s=\sqrt{t^3}+6\sqrt{t} \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">عند $t=36$: \( s=\sqrt{36^3}+6\sqrt{36}=(6)^3+6(6)=216+36=252\,m \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نكامل؟</i> الإزاحة هي تكامل السرعة بالنسبة للزمن (بما أن $v=\dfrac{ds}{dt}$ والتكامل عكس الاشتقاق): \( s=\displaystyle\int\left(\tfrac{3}{2}\sqrt{t}+\tfrac{3}{\sqrt{t}}\right)dt \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نحوّل الجذور إلى أسس كسرية</i> لتسهيل تطبيق قاعدة تكامل الأس: $\sqrt{t}=t^{\frac12}$ و $\dfrac{1}{\sqrt{t}}=t^{-\frac12}$، فتصبح: \( s=\displaystyle\int\!\left(\tfrac{3}{2}t^{\frac12}+3t^{-\frac12}\right)dt \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نكامل الحد الأول</i> بقاعدة تكامل الأس (نزيد الأس بمقدار 1 ونقسم على الأس الجديد): \( \displaystyle\int \tfrac{3}{2}t^{\frac12}\,dt=\tfrac{3}{2}\cdot\dfrac{t^{\frac32}}{\frac32}=t^{\frac32} \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نكامل الحد الثاني</i> بنفس القاعدة: \( \displaystyle\int 3t^{-\frac12}\,dt=3\cdot\dfrac{t^{\frac12}}{\frac12}=6t^{\frac12} \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نجمع الحدين ونضيف ثابت التكامل $c$،</i> ثم نعيد كتابة الأسس الكسرية على صورة جذور: \( s=t^{\frac32}+6t^{\frac12}+c=\sqrt{t^3}+6\sqrt{t}+c \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>لماذا نحتاج الشرط الابتدائي؟</i> $c$ مجهول، ونستخدم المعطى «عند $t=4$ ثوانٍ كان البعد $20\,m$» أي $s(4)=20$ لإيجاده.</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نعوّض $t=4$</i> في المعادلة: \( 20=\sqrt{4^3}+6\sqrt{4}+c \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نبسّط:</i> $4^3=64$ و $\sqrt{64}=8$، و $\sqrt{4}=2$ فإن $6\sqrt{4}=12$، فتصبح: \( 20=8+12+c=20+c \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نحل من أجل $c$:</i> \( c=20-20=0 \) — إذن لا يوجد ثابت إضافي هنا.</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نعوّض $c=0$</i> لنحصل على معادلة الإزاحة عند أي زمن: \( s=\sqrt{t^3}+6\sqrt{t} \)</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>نعوّض $t=36$</i> لإيجاد الإزاحة عند اللحظة المطلوبة: \( s=\sqrt{36^3}+6\sqrt{36} \)</div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body"><i>نبسّط:</i> $\sqrt{36}=6$، إذن $\sqrt{36^3}=(\sqrt{36})^3=6^3=216$، و $6\sqrt{36}=6(6)=36$.</div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body"><i>نجمع الحدين للحصول على الناتج النهائي:</i> \( s=216+36=252\,m \) ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان تحويل الجذور إلى أسس كسرية قبل التكامل، مما يؤدي إلى أخطاء في تطبيق قاعدة تكامل الأس. كذلك تذكّر أن $\sqrt{t^3}=(\sqrt{t})^3$ رياضياً، وكتابتها بهذه الصورة تسهّل التعويض العددي.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: الإزاحة بعد 36 ثانية من بدء الحركة تساوي $252\,m$.</div>
     </div>
 
     <div class="example fade-up">
@@ -153,13 +256,36 @@
         <button class="neu-btn" data-reveal-steps="steps-ex24">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا علمت أن السرعة الابتدائية لطائرة عند هبوطها على المدرج تساوي $5\,km/min$ وكانت سرعتها تتناقص بتعجيل تباطؤي منتظم قدره $-2\,km/min^2$. احسب الإزاحة التي تقطعها إلى أن تتوقف تماماً عن الحركة.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد الإزاحة الكلية $s$ التي تقطعها الطائرة من بداية الهبوط حتى توقفها التام.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> التعجيل $a=-2\,km/min^2$ (سالب لأنه تباطؤ يعاكس اتجاه الحركة)، السرعة الابتدائية $v(0)=5\,km/min$، والإزاحة الابتدائية $s(0)=0$ (بداية الحركة).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> $v=\int a\,dt$ لإيجاد السرعة، ثم $s=\int v\,dt$ لإيجاد الإزاحة؛ و«التوقف التام» يعني أن السرعة تصبح صفراً $v=0$ (وليس أن الإزاحة تصبح صفراً).</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex24">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل التعجيل: \( v=\displaystyle\int -2\,dt=-2t+c_1 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">عند $t=0$، $v=5$: \( 5=-2(0)+c_1 \Rightarrow c_1=5 \)، إذن \( v=-2t+5 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نكامل السرعة: \( s=\displaystyle\int(-2t+5)\,dt=-t^2+5t+c_2 \)، وعند $t=0$، $s=0$ فيكون $c_2=0$.</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">الطائرة تتوقف عندما $v=0$: \( -2t+5=0 \Rightarrow t=\dfrac{5}{2}\,min \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">نعوّض في الإزاحة: \( s=-\left(\tfrac52\right)^2+5\left(\tfrac52\right)=\dfrac{-25}{4}+\dfrac{25}{2}=\dfrac{25}{4}=6.25\,km \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نبدأ بتكامل التعجيل؟</i> التعجيل هو مشتقة السرعة ($a=\dfrac{dv}{dt}$)، وبما أن التكامل عكس الاشتقاق، نكامل $a$ لنحصل على $v$: \( v=\displaystyle\int (-2)\,dt \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نكامل الثابت $-2$ بالنسبة لـ $t$</i> (تكامل ثابت $a$ هو $a\cdot t$)، ونضيف ثابت التكامل $c_1$: \( v=-2t+c_1 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>لماذا نحتاج الشرط الابتدائي؟</i> $c_1$ مجهول، ونستخدم أن السرعة الابتدائية (عند بداية الهبوط، أي $t=0$) تساوي $5$: $v(0)=5$.</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نعوّض $t=0$</i> في معادلة السرعة: \( 5=-2(0)+c_1 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نبسّط:</i> $-2(0)=0$، فتصبح: \( 5=c_1 \Rightarrow c_1=5 \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نعوّض قيمة $c_1$</i> لنحصل على معادلة السرعة عند أي زمن: \( v=-2t+5 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>لماذا نكامل مرة أخرى؟</i> الإزاحة $s$ هي تكامل السرعة بالنسبة للزمن ($v=\dfrac{ds}{dt}$): \( s=\displaystyle\int(-2t+5)\,dt \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نطبّق قاعدة تكامل الأس على كل حد:</i> تكامل $-2t$ هو $-t^2$ (لأن $\tfrac{-2t^2}{2}=-t^2$)، وتكامل الثابت $5$ هو $5t$، ونضيف ثابت تكامل ثانٍ $c_2$: \( s=-t^2+5t+c_2 \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>لماذا $c_2=0$؟</i> نقيس الإزاحة ابتداءً من لحظة بدء الهبوط، أي عند $t=0$ تكون $s=0$ (لم تتحرك الطائرة بعد). نعوّض: \( 0=-(0)^2+5(0)+c_2 \Rightarrow c_2=0 \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>النتيجة:</i> معادلة الإزاحة عند أي زمن هي: \( s=-t^2+5t \)</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>لماذا نساوي السرعة بصفر؟</i> «تتوقف تماماً عن الحركة» تعني أن سرعتها تصبح صفراً — وليس أن إزاحتها تصبح صفراً، فالإزاحة تستمر بالتراكم حتى تلك اللحظة بالذات. نبحث إذن عن اللحظة $t$ التي عندها $v=0$.</div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body"><i>نساوي معادلة السرعة بصفر:</i> \( -2t+5=0 \)</div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body"><i>نحل من أجل $t$:</i> ننقل $5$ إلى الطرف الآخر (بتغيير إشارته): $-2t=-5$، ثم نقسم الطرفين على $-2$: \( t=\dfrac{5}{2}\,min \)</div></li>
+        <li class="step"><span class="step-dot">14</span><div class="step-body"><i>نعوّض $t=\tfrac52$</i> في معادلة الإزاحة لإيجاد المسافة المقطوعة حتى لحظة التوقف: \( s=-\left(\tfrac52\right)^2+5\left(\tfrac52\right) \)</div></li>
+        <li class="step"><span class="step-dot">15</span><div class="step-body"><i>نبسّط الحد الأول:</i> $\left(\tfrac52\right)^2=\tfrac{25}{4}$، إذن $-\left(\tfrac52\right)^2=\dfrac{-25}{4}$</div></li>
+        <li class="step"><span class="step-dot">16</span><div class="step-body"><i>نبسّط الحد الثاني:</i> $5\left(\tfrac52\right)=\dfrac{25}{2}$</div></li>
+        <li class="step"><span class="step-dot">17</span><div class="step-body"><i>نجمع الحدين</i> بتوحيد المقام (نضرب $\tfrac{25}{2}$ في $\tfrac22$ لنحصل على مقام مشترك 4): \( s=\dfrac{-25}{4}+\dfrac{50}{4}=\dfrac{25}{4} \)</div></li>
+        <li class="step"><span class="step-dot">18</span><div class="step-body"><i>نحوّل الكسر إلى عدد عشري:</i> \( s=\dfrac{25}{4}=6.25\,km \) ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الخلط بين «التوقف التام عن الحركة» و«عودة الجسم لنقطة الانطلاق» — التوقف يعني $v=0$ وليس $s=0$. كذلك تذكّر أن التعجيل هنا سالب لأنه تباطؤ، فيجب استخدام $-2$ وليس $2$ عند التكامل.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: الإزاحة التي تقطعها الطائرة حتى تتوقف تماماً تساوي $6.25\,km$.</div>
     </div>
   </section>
 
@@ -242,8 +368,12 @@
 
   <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
     <div class="card neu">
-      <h2>🗺 خريطة الدرس الذهنية</h2>
-      <div class="mindmap-wrap">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l4" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l4">
         <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الرابع">
           <line x1="410" y1="180" x2="160" y2="80" stroke="#b3bdcc" stroke-width="2"/>
           <line x1="410" y1="180" x2="660" y2="80" stroke="#b3bdcc" stroke-width="2"/>
