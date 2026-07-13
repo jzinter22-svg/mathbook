@@ -298,6 +298,8 @@ input[type=text].neu-input,input[type=number].neu-input{
 
 /* Mind map */
 .mindmap-wrap{overflow-x:auto;padding:1rem 0}
+.mindmap-wrap.hidden-steps{display:none}
+.mindmap-wrap.hidden-steps.shown{display:block}
 .mindmap-wrap svg{display:block;margin:0 auto;max-width:100%;height:auto}
 .mm-node{transition:transform .2s ease}
 .mm-node:hover{transform:scale(1.04)}

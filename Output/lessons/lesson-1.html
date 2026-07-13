@@ -92,51 +92,92 @@
         <button class="neu-btn" data-reveal-steps="steps-ex1" data-show-label="إظهار خطوات الحل" data-hide-label="إخفاء خطوات الحل">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا كانت $f(x)=5x^4$ فأثبت أن الدالة المقابلة للدالة $f(x)$ هي $F(x)=x^5+c$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> نثبت أن الدالة المرشّحة $F(x)=x^5+c$ هي فعلاً الدالة المقابلة (نظير التكامل) للدالة المعطاة $f(x)$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=5x^4$، والدالة المطلوب اختبارها $F(x)=x^5+c$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> تعريف 4-1 — يكفي أن نثبت أن $F'(x)=f(x)$.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex1">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">حسب تعريف 4-1، يجب أن نتحقق أن $F'(x) = f(x)$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نشتق $F(x)=x^5+c$: \( F'(x) = 5x^{4} \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">بما أن $F'(x) = 5x^4 = f(x)$، إذن $F(x)=x^5+c$ هي فعلاً الدالة المقابلة لـ $f(x)$. ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا؟</i> لإثبات أن $F$ هي الدالة المقابلة لـ $f$، حسب تعريف 4-1 يجب أن نشتق $F(x)$ أولاً ثم نقارن الناتج بـ $f(x)$.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نشتق الحد $x^5$:</i> بقاعدة الأس (مشتقة $x^n$ هي $nx^{n-1}$)، نطرح 1 من الأس ونضربه في الأس الأصلي: \( \dfrac{d}{dx}(x^5)=5x^{4} \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نشتق الحد الثابت $c$:</i> مشتقة أي عدد ثابت تساوي صفراً دائماً (الثابت لا يتغيّر معدله)، فلا يُضيف شيئاً لناتج الاشتقاق.</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نجمع الناتجين:</i> \( F'(x)=5x^4+0=5x^4 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نقارن مع المعطى:</i> $F'(x)=5x^4$ و $f(x)=5x^4$ — متطابقان تماماً، إذن تحقق الشرط.</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> بعض الطلاب يظنون أن وجود $c$ يجعل $F'(x)$ يحتوي على حد إضافي. تذكّر: مشتقة الثابت صفر دائماً، مهما كانت قيمته.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: بما أن $F'(x)=f(x)$، فإن $F(x)=x^5+c$ هي فعلاً الدالة المقابلة لـ $f(x)=5x^4$. ∎</div>
     </div>
 
-    <div class="example fade-up">
+    <div class="example exercise-card fade-up">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
         <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا كانت $f:[1,2]\to\mathbb{R}$، $f(x)=3x^2$، أثبت أن $F(x)=x^3+c$ هي الدالة المقابلة لها على $[1,2]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إثبات أن $F(x)=x^3+c$ تحقق تعريف الدالة المقابلة على الفترة المحدَّدة $[1,2]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=3x^2$ معرَّفة على $[1,2]$، والمرشحة $F(x)=x^3+c$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> تعريف 4-1، مع مراعاة أن التحقق يجب أن يصح لكل $x$ في الفترة المعطاة.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex2">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نشتق $F(x)=x^3+c$: \( F'(x)=3x^2 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نقارن: $F'(x) = 3x^2 = f(x)$ لكل $x\in[1,2]$.</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">إذن $F:[1,2]\to\mathbb{R},\; F(x)=x^3+c$ هي الدالة المقابلة المطلوبة. ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نشتق الحد $x^3$:</i> بقاعدة الأس: \( \dfrac{d}{dx}(x^3)=3x^{2} \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نشتق الثابت $c$:</i> يساوي صفراً كالمعتاد، فيكون \( F'(x)=3x^2 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نقارن:</i> $F'(x)=3x^2=f(x)$ — والمساواة تصح لكل قيمة $x\in[1,2]$ لأنها مساواة جبرية عامة، لا تعتمد على قيمة $x$ محدّدة.</div></li>
       </ol>
+      <div class="exercise-final">✓ الخلاصة: إذن $F:[1,2]\to\mathbb{R},\; F(x)=x^3+c$ هي الدالة المقابلة المطلوبة على الفترة $[1,2]$. ∎</div>
     </div>
 
-    <div class="example fade-up">
+    <div class="example exercise-card fade-up">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
         <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">أثبت أن $F(x)=\sqrt{1-x^2}$ هي الدالة المقابلة للدالة $f(x)=\dfrac{-x}{\sqrt{1-x^2}}$، ثم عبّر عنها رمزياً باستخدام رمز التكامل.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إثبات أن $F(x)=\sqrt{1-x^2}$ هي الدالة المقابلة لـ $f(x)$، ثم كتابة العلاقة برمز التكامل $\int$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $F(x)=\sqrt{1-x^2}$، وهي تحتوي دالة داخل جذر — سنحتاج <b>قاعدة السلسلة</b> عند الاشتقاق.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> تعريف 4-1 لإثبات $F'(x)=f(x)$، وقاعدة السلسلة لاشتقاق الجذر.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex3">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكتب $F(x)=(1-x^2)^{\frac12}$ ونشتقها بقاعدة السلسلة: \( F'(x)=\tfrac12(1-x^2)^{-\frac12}\cdot(-2x) \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نبسّط: \( F'(x)=\dfrac{-2x}{2\sqrt{1-x^2}} = \dfrac{-x}{\sqrt{1-x^2}} = f(x) \) ✓</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">إذن $F$ هي الدالة المقابلة لـ $f$، ورمزياً: \[ \int \frac{-x}{\sqrt{1-x^2}}\,dx = \sqrt{1-x^2}+c \]</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نحوّل الجذر إلى أس كسري</i> لتسهيل تطبيق قاعدة السلسلة: $F(x)=\sqrt{1-x^2}=(1-x^2)^{\frac12}$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نطبّق قاعدة السلسلة</i> (مشتقة الخارج × مشتقة الداخل): مشتقة $u^{1/2}$ هي $\tfrac12 u^{-1/2}$، ومشتقة الداخل $1-x^2$ هي $-2x$: \( F'(x)=\tfrac12(1-x^2)^{-\frac12}\cdot(-2x) \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نبسّط:</i> نضرب $\tfrac12$ في $-2x$ فنحصل على $-x$، وتنتقل القوة السالبة إلى المقام كجذر: \( F'(x)=\dfrac{-x}{(1-x^2)^{\frac12}}=\dfrac{-x}{\sqrt{1-x^2}} \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نقارن مع المعطى:</i> الناتج $\dfrac{-x}{\sqrt{1-x^2}}$ يطابق $f(x)$ تماماً ✓</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نكتب العلاقة رمزياً</i> باستخدام رمز التكامل (كما اتفق عليه علماء الرياضيات): \[ \int \frac{-x}{\sqrt{1-x^2}}\,dx = \sqrt{1-x^2}+c \]</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان ضرب مشتقة الخارج في مشتقة الداخل (قاعدة السلسلة). تحقّق دائماً من وجود دالة "داخل" أخرى قبل تطبيق قاعدة الأس مباشرة.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $F(x)=\sqrt{1-x^2}$ هي الدالة المقابلة لـ $f(x)=\dfrac{-x}{\sqrt{1-x^2}}$. ∎</div>
     </div>
 
-    <div class="example fade-up">
+    <div class="example exercise-card fade-up">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">4</span> مثال 4</div>
         <button class="neu-btn" data-reveal-steps="steps-ex4">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا كانت $F(x)$ هي الدالة المقابلة للدالة $f(x)=ax+b$، وكان $F'(2)=7$، $F''(2)=5$، حيث $a,b\in\mathbb{R}$، جد قيمة كل من $a,b$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد قيمتي الثابتين $a$ و $b$ في الدالة $f(x)=ax+b$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $F$ الدالة المقابلة لـ $f$، وقيمتان عدديتان: $F'(2)=7$ و $F''(2)=5$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> تعريف 4-1 ($F'(x)=f(x)$)، ثم اشتقاق إضافي للوصول إلى $F''(x)$، ثم تعويض الشروط المعطاة.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex4">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">بما أن $F$ الدالة المقابلة لـ $f$، فإن $F'(x)=f(x)=ax+b$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نشتق مرة أخرى: $F''(x)=a$. وبما أن $F''(2)=5$، فإن $a=5$.</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض في $F'(x)=ax+b$ عند $x=2$: $F'(2)=a(2)+b=7 \Rightarrow 5(2)+b=7 \Rightarrow 10+b=7$</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">إذن $b=7-10=-3$. النتيجة: $a=5,\; b=-3$. ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نستخدم تعريف الدالة المقابلة:</i> بما أن $F$ الدالة المقابلة لـ $f$، فإن $F'(x)=f(x)=ax+b$.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نشتق مرة أخرى لنحصل على $F''(x)$:</i> مشتقة $ax$ هي $a$، ومشتقة $b$ (ثابت) هي صفر: $F''(x)=a$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نستخدم الشرط الأول $F''(2)=5$:</i> بما أن $F''(x)=a$ لا يعتمد على $x$ إطلاقاً، فإن $a=5$ مباشرة دون الحاجة للتعويض بـ $x=2$.</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نعوّض قيمة $a$ في $F'(x)=ax+b$ ثم نعوّض $x=2$</i> مستخدمين الشرط الثاني $F'(2)=7$: \( F'(2)=5(2)+b=7 \Rightarrow 10+b=7 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نحل المعادلة لإيجاد $b$:</i> ننقل 10 إلى الطرف الآخر (بتغيير إشارته): \( b=7-10=-3 \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> محاولة إيجاد $b$ قبل $a$. لاحظ أن $F''(2)=5$ يعطينا $a$ مباشرة لأن $F''(x)=a$ ثابتة، بينما $F'(2)=7$ يحتاج قيمة $a$ أولاً لأنه يحتوي على $x$.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $a=5,\; b=-3$. ∎</div>
     </div>
   </section>
 
@@ -234,8 +275,12 @@
 
   <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
     <div class="card neu">
-      <h2>🗺 خريطة الدرس الذهنية</h2>
-      <div class="mindmap-wrap">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l1" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l1">
         <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الأول">
           <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
           <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
