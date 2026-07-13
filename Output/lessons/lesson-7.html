@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 7: التطبيق الفيزيائي للتكامل المحدد — الفصل الرابع</title>
+<meta name="description" content="الفرق بين المسافة والإزاحة وحسابهما بالتكامل المحدد، مع أمثلة محلولة وتمارين شاملة على الفصل الرابع.">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 }
+  };
+</script>
+<script src="../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-7.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 7 من 7 · 4-7</span>
+    <h1>التطبيق الفيزيائي للتكامل المحدد</h1>
+    <p class="lead">الدرس الختامي: نفرّق بين «الإزاحة» و«المسافة» — مفهومان يبدوان متشابهين لكن التكامل يكشف الفرق الجوهري بينهما عندما يغيّر الجسم اتجاه حركته.</p>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يميّز بين المسافة (كمية غير اتجاهية) والإزاحة (كمية اتجاهية).</span></li>
+        <li><span class="obj-num">2</span><span>يحسب الإزاحة بالتكامل المحدد للسرعة: $s=\int_{t_1}^{t_2}v(t)\,dt$.</span></li>
+        <li><span class="obj-num">3</span><span>يحسب المسافة بتجزئة الفترة عند لحظات انعكاس الاتجاه ($v=0$) وجمع القيم المطلقة.</span></li>
+        <li><span class="obj-num">4</span><span>يعرف متى تتساوى المسافة مع القيمة المطلقة للإزاحة.</span></li>
+        <li><span class="obj-num">5</span><span>يحل مسائل حركة شاملة تجمع بين التعجيل والسرعة والمسافة.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>💡 4-7 المسافة والإزاحة</h2>
+      <p>من المعلوم أن <b>المسافة</b> كمية غير اتجاهية وتقترن بعدد حقيقي موجب، أما <b>الإزاحة</b> والسرعة والتعجيل فكل منها كمية اتجاهية، ولذلك فإن:</p>
+      <div class="grid grid-2" style="margin-top:1rem">
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-blue)">الإزاحة في الفترة $[t_1,t_2]$</strong>
+          <div class="mj-scroll">$$s=\int_{t_1}^{t_2}v(t)\,dt$$</div>
+          <p style="margin:0;font-size:.88rem;color:var(--text-secondary)">تكامل واحد مباشر — قد تكون سالبة أو صفراً.</p>
+        </div>
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-pink)">المسافة في الفترة $[t_1,t_2]$</strong>
+          <div class="mj-scroll">$$d=\left|\int_{t_1}^{t_2}v(t)\,dt\right|$$</div>
+          <p style="margin:0;font-size:.88rem;color:var(--text-secondary)">مع تجزئة الفترة عند كل لحظة يتغير فيها اتجاه الحركة ($v=0$) وجمع القيم المطلقة.</p>
+        </div>
+      </div>
+      <div class="callout tip" style="margin-top:1rem">
+        <span class="icon">🚶</span>
+        <span>تشبيه بسيط: مشيت 8 أمتار للأمام ثم عدت 8 أمتار للخلف. <b>المسافة</b> التي مشيتها = 16 متراً (عداد الخطوات)، لكن <b>إزاحتك</b> = صفر (أنت في نفس مكانك!). هذا بالضبط ما يحصل في مثال 38.</span>
+      </div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">📌</span>
+        <span><b>ملاحظة مهمة:</b> إذا لم يغيّر الجسم اتجاهه أثناء حركته ضمن الفترة المحددة، فإن المسافة تساوي القيمة المطلقة للإزاحة.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="example">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">38</span> مثال 38</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex38" data-show-label="إظهار خطوات الحل" data-hide-label="إخفاء خطوات الحل">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=4t-12$، جد:<br>
+        1) المسافة المقطوعة في الفترة الزمنية $[1,5]$ &nbsp;&nbsp; 2) الإزاحة في الفترة $[1,5]$<br>
+        3) المسافة المقطوعة خلال الثانية الرابعة &nbsp;&nbsp; 4) بُعد الجسم بعد مضي 10 ثوانٍ من بدء حركته.
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex38">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">أولاً نبحث عن لحظة تغيّر الاتجاه: \( 4t-12=0 \Rightarrow t=3\in[1,5] \). إذن نجزّئ إلى $[1,3]$ و $[3,5]$.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><b>1) المسافة:</b> \( d=\left|\displaystyle\int_1^3(4t-12)dt\right|+\left|\displaystyle\int_3^5(4t-12)dt\right| =\left|\big[2t^2-12t\big]_1^3\right|+\left|\big[2t^2-12t\big]_3^5\right| \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =|(18-36)-(2-12)|+|(50-60)-(18-36)|=|-8|+|8|=16\,m \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><b>2) الإزاحة:</b> تكامل واحد مباشر: \( s=\displaystyle\int_1^5(4t-12)dt=\big[2t^2-12t\big]_1^5=(-10)-(-10)=0\,m \) — الجسم عاد لنقطة انطلاقه!</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><b>3) الثانية الرابعة</b> هي الفترة $[3,4]$: \( d=\left|\big[2t^2-12t\big]_3^4\right|=|(32-48)-(18-36)|=|2|=2\,m \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><b>4) البُعد بعد 10 ثوانٍ</b> هو الإزاحة من $t=0$: \( s=\displaystyle\int_0^{10}(4t-12)dt=\big[2t^2-12t\big]_0^{10}=(200-120)-0=80\,m \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">39</span> مثال 39</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex39">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=2t+12$، جد:<br>
+        1) المسافة المقطوعة في الفترة الزمنية $[1,3]$ &nbsp;&nbsp; 2) الإزاحة التي قطعها الجسم في الفترة $[1,3]$.
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex39">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نبحث عن لحظة تغيّر الاتجاه: \( 2t+12=0 \Rightarrow t=-6 \). زمن سالب مرفوض — إذن الجسم لم يغيّر اتجاهه أبداً.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">وفق الملاحظة: المسافة = |الإزاحة|، بتكامل واحد: \( d=|s|=\left|\displaystyle\int_1^3(2t+12)dt\right|=\left|\big[t^2+12t\big]_1^3\right| \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =|(9+36)-(1+12)|=|45-13|=32\,m \) — والإزاحة كذلك $s=32\,m$. ∎</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: شاهد الجسم يعود أدراجه</h2>
+      <p>هذا جسم مثال 38 بسرعة $v(t)=4t-12$. حرّك الزمن وشاهد موقع الجسم على الخط المستقيم: يتراجع حتى اللحظة $t=3$ (حيث $v=0$) ثم ينطلق للأمام. قارن عدّادَي المسافة والإزاحة!</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="motionPlot" width="560" height="220"></svg></div>
+        <div class="io-row">
+          <label for="tSlider" style="min-width:8rem">الزمن <b>t</b> = <span id="tVal">0</span> ثانية</label>
+          <input type="range" id="tSlider" class="neu-range" min="0" max="8" step="0.1" value="0">
+        </div>
+        <div class="io-row" style="gap:1rem">
+          <span class="tag" id="dispTag">📍 الإزاحة منذ t=0: 0 m</span>
+          <span class="tag" id="distTag">🛣️ المسافة منذ t=0: 0 m</span>
+          <span class="tag" id="velTag">⚡ السرعة: −12 m/s</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>1.</span><span>الكمية التي يمكن أن تكون سالبة من بين الآتي هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>المسافة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الإزاحة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>كلاهما</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا شيء منهما</span></label>
+        </div>
+        <div class="quiz-explain">المسافة غير اتجاهية وموجبة دائماً؛ الإزاحة اتجاهية فقد تكون سالبة أو صفراً.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>قبل حساب المسافة يجب دائماً أن نجد لحظات:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$a(t)=0$ (انعدام التعجيل)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$s(t)=0$ (انعدام الإزاحة)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$v(t)=0$ (انعدام السرعة)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$t=0$ فقط</span></label>
+        </div>
+        <div class="quiz-explain">عند $v(t)=0$ قد يعكس الجسم اتجاهه، فنجزّئ الفترة عندها ونجمع القيم المطلقة.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>في مثال 38 كانت الإزاحة في $[1,5]$ صفراً بينما المسافة $16\,m$. التفسير:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>الجسم تراجع 8 أمتار ثم تقدم 8 أمتار فعاد لنقطة البداية</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الجسم لم يتحرك إطلاقاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>خطأ حسابي في الكتاب</span></label>
+          <label class="quiz-opt"><input type="radio"><span>السرعة كانت صفراً طوال الفترة</span></label>
+        </div>
+        <div class="quiz-explain">الحركة قبل $t=3$ باتجاه سالب وبعدها باتجاه موجب، بمقدارين متساويين — فتلاشت الإزاحة وبقيت المسافة.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>جسم سرعته $v(t)=6t\,m/s$. المسافة التي يقطعها في $[0,2]$ تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$6\,m$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$24\,m$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$3\,m$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$12\,m$</span></label>
+        </div>
+        <div class="quiz-explain">$v=0$ فقط عند $t=0$ (لا انعكاس داخل الفترة): $d=\big[3t^2\big]_0^2=12\,m$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>متى تتساوى المسافة مع القيمة المطلقة للإزاحة؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>دائماً وفي كل الحالات</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إذا لم يغيّر الجسم اتجاهه ضمن الفترة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إذا كان التعجيل ثابتاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا تتساويان أبداً</span></label>
+        </div>
+        <div class="quiz-explain">هذه هي الملاحظة الأساسية في الدرس (مطبّقة في مثال 39 حيث كان انعكاس الاتجاه عند زمن سالب مرفوض).</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>📝 تمارين شاملة على الفصل (تمرين 4-4)</h2>
+      <p class="lead" style="margin-top:0">جرّب حلها بنفسك مستعيناً بكل ما تعلمته في الفصل — المسائل من الكتاب المدرسي:</p>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>جد المساحة المحددة بمنحني الدالة $y=x^4-6x^2+5$ والمحور السيني على الفترة $[2,3]$.</span></li>
+        <li><span class="obj-num">2</span><span>جد المساحة المحددة بمنحني الدالة $y=x^4-x^2$ والمحور السيني على الفترة $[-1,1]$.</span></li>
+        <li><span class="obj-num">3</span><span>جد المساحة المحددة بمنحني الدالة $y=x\sqrt{x^2+9}$ والمحور السيني على الفترة $[0,4]$.</span></li>
+        <li><span class="obj-num">4</span><span>جد المساحة المحددة بمنحني الدالة $y=x^3+4x^2+3x$ والمحور السيني.</span></li>
+        <li><span class="obj-num">5</span><span>جد المساحة المحددة بين منحني الدالة $f(x)=x^2$ والمستقيم $g(x)=-x$ والمستقيمين $x=1,\;x=3$.</span></li>
+        <li><span class="obj-num">6</span><span>جد المساحة المحددة بين منحني الدالة $f(x)=x^4$ والمستقيم $g(x)=x$.</span></li>
+        <li><span class="obj-num">7</span><span>جد المساحة المحددة بين منحنيي الدالتين $f(x)=x^2$ و $g(x)=\sqrt{x}$ على الفترة $[0,2]$.</span></li>
+        <li><span class="obj-num">8</span><span>تحرك جسم على خط مستقيم بتعجيل قدره $12\,cm/sec^2$ فإذا كانت سرعته تساوي $24\,cm/sec$ بعد مرور $3\,sec$ من بدء الحركة، احسب: (a) المسافة المقطوعة في الفترة $[1,3]$ ، (b) الزمن اللازم لعودة الجسم إلى موضعه الأول.</span></li>
+        <li><span class="obj-num">9</span><span>جسم يتحرك على خط مستقيم بتعجيل قدره $(4t+2)\,cm/sec^2$ وكانت سرعته عندما $t=4$ تساوي $50\,cm/sec$، احسب: (a) سرعة الجسم عند أية لحظة ، (b) المسافة في الفترة $[3,7]$ ، (c) المسافة خلال الثانية الرابعة ، (d) بُعد الجسم بعد $10\,sec$.</span></li>
+        <li><span class="obj-num">10</span><span>جسم يتحرك على خط مستقيم وكانت سرعته $v=3t^2+6t+3$. جد المسافة المقطوعة في الفترة $[2,4]$ ثم جد تعجيل الجسم بعد مرور $3\,sec$ من بدء الحركة.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li>الإزاحة اتجاهية: $s=\int_{t_1}^{t_2}v(t)\,dt$ — قد تكون سالبة أو صفراً.</li>
+        <li>المسافة غير اتجاهية وموجبة دائماً: جزّئ عند $v(t)=0$ واجمع القيم المطلقة.</li>
+        <li>إذا لم ينعكس اتجاه الحركة في الفترة، فالمسافة = |الإزاحة| بتكامل واحد.</li>
+        <li>«الثانية الرابعة» تعني الفترة $[3,4]$ — انتبه لصياغة الأسئلة.</li>
+        <li>بُعد الجسم عن نقطة البداية بعد زمن $t$ هو إزاحته من $0$ إلى $t$.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>🗺 خريطة الدرس الذهنية</h2>
+      <div class="mindmap-wrap">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس السابع">
+          <line x1="410" y1="180" x2="160" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="660" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="160" y2="285" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="660" y2="285" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#3fa9f5"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">حركة الجسم</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">بالتكامل المحدد</text></g>
+
+          <g><circle cx="160" cy="80" r="50" fill="#7c6fee"/>
+            <text x="160" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الإزاحة</text>
+            <text x="160" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">∫v dt اتجاهية</text></g>
+
+          <g><circle cx="660" cy="80" r="50" fill="#ff6b9d"/>
+            <text x="660" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">المسافة</text>
+            <text x="660" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">موجبة دائماً</text></g>
+
+          <g><circle cx="160" cy="285" r="50" fill="#ffab5e"/>
+            <text x="160" y="281" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">v = 0</text>
+            <text x="160" y="298" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">لحظة الانعكاس</text></g>
+
+          <g><circle cx="660" cy="285" r="50" fill="#2fd18f"/>
+            <text x="660" y="281" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">بلا انعكاس؟</text>
+            <text x="660" y="298" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">d = |s|</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الرابع · التكامل — الدرس 7: التطبيق الفيزيائي للتكامل المحدد 🎓 نهاية الفصل</footer>
+
+<script src="../assets/js/plot.js"></script>
+<script src="../assets/js/quiz.js"></script>
+<script src="../assets/js/site.js"></script>
+<script>
+(function(){
+  var ns = "http://www.w3.org/2000/svg";
+  var svg = document.getElementById("motionPlot");
+  var slider = document.getElementById("tSlider");
+  var tVal = document.getElementById("tVal");
+  var dispTag = document.getElementById("dispTag");
+  var distTag = document.getElementById("distTag");
+  var velTag = document.getElementById("velTag");
+
+  function s(t){ return 2*t*t-12*t; }        /* displacement from t=0 */
+  function v(t){ return 4*t-12; }
+  function dist(t){                            /* total distance from t=0, turn at t=3 */
+    if(t<=3) return Math.abs(s(t));
+    return Math.abs(s(3)) + Math.abs(s(t)-s(3));
+  }
+
+  function render(){
+    var t = parseFloat(slider.value);
+    tVal.textContent = t.toFixed(1).replace(/\.0$/,"");
+    var W=560,H=220;
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    svg.setAttribute("viewBox","0 0 "+W+" "+H);
+    /* number line: positions from -20 to 90 */
+    var pmin=-25, pmax=90;
+    function px(p){ return 30 + (p-pmin)/(pmax-pmin)*(W-60); }
+    var axis = document.createElementNS(ns,"line");
+    axis.setAttribute("x1",px(pmin)); axis.setAttribute("y1",130);
+    axis.setAttribute("x2",px(pmax)); axis.setAttribute("y2",130);
+    axis.setAttribute("stroke","#8a97ad"); axis.setAttribute("stroke-width","2");
+    svg.appendChild(axis);
+    for(var p=-20;p<=90;p+=10){
+      var tick = document.createElementNS(ns,"line");
+      tick.setAttribute("x1",px(p)); tick.setAttribute("y1",125);
+      tick.setAttribute("x2",px(p)); tick.setAttribute("y2",135);
+      tick.setAttribute("stroke","#8a97ad"); tick.setAttribute("stroke-width","1.5");
+      svg.appendChild(tick);
+      var lb = document.createElementNS(ns,"text");
+      lb.setAttribute("x",px(p)); lb.setAttribute("y",155);
+      lb.setAttribute("text-anchor","middle"); lb.setAttribute("font-size","11");
+      lb.setAttribute("fill","#8a97ad"); lb.setAttribute("font-family","Cairo,sans-serif");
+      lb.textContent = p;
+      svg.appendChild(lb);
+    }
+    /* start marker */
+    var st = document.createElementNS(ns,"circle");
+    st.setAttribute("cx",px(0)); st.setAttribute("cy",130); st.setAttribute("r","5");
+    st.setAttribute("fill","none"); st.setAttribute("stroke","#2fd18f"); st.setAttribute("stroke-width","2.5");
+    svg.appendChild(st);
+    var stl = document.createElementNS(ns,"text");
+    stl.setAttribute("x",px(0)); stl.setAttribute("y",178);
+    stl.setAttribute("text-anchor","middle"); stl.setAttribute("font-size","12"); stl.setAttribute("font-weight","700");
+    stl.setAttribute("fill","#2fd18f"); stl.setAttribute("font-family","Cairo,sans-serif");
+    stl.textContent = "نقطة البداية";
+    svg.appendChild(stl);
+    /* turnaround marker at s(3) = -18 */
+    var tm = document.createElementNS(ns,"line");
+    tm.setAttribute("x1",px(-18)); tm.setAttribute("y1",95);
+    tm.setAttribute("x2",px(-18)); tm.setAttribute("y2",130);
+    tm.setAttribute("stroke","#ffab5e"); tm.setAttribute("stroke-width","2"); tm.setAttribute("stroke-dasharray","4 4");
+    svg.appendChild(tm);
+    var tml = document.createElementNS(ns,"text");
+    tml.setAttribute("x",px(-18)); tml.setAttribute("y",86);
+    tml.setAttribute("text-anchor","middle"); tml.setAttribute("font-size","11"); tml.setAttribute("font-weight","700");
+    tml.setAttribute("fill","#ffab5e"); tml.setAttribute("font-family","Cairo,sans-serif");
+    tml.textContent = "نقطة الانعكاس (t=3)";
+    svg.appendChild(tml);
+    /* body */
+    var pos = s(parseFloat(slider.value));
+    var body = document.createElementNS(ns,"circle");
+    body.setAttribute("cx",px(pos)); body.setAttribute("cy",130); body.setAttribute("r","11");
+    body.setAttribute("fill", v(t)<0 ? "#ff6b9d" : "#3fa9f5");
+    svg.appendChild(body);
+    var arrowChar = v(t)<0 ? "◀" : "▶";
+    var ar = document.createElementNS(ns,"text");
+    ar.setAttribute("x",px(pos)); ar.setAttribute("y",112);
+    ar.setAttribute("text-anchor","middle"); ar.setAttribute("font-size","16");
+    ar.setAttribute("fill", v(t)<0 ? "#ff6b9d" : "#3fa9f5");
+    ar.textContent = Math.abs(v(t))<0.01 ? "⏸" : arrowChar;
+    svg.appendChild(ar);
+
+    dispTag.textContent = "📍 الإزاحة منذ t=0: " + s(t).toFixed(1).replace(/\.0$/,"") + " m";
+    distTag.textContent = "🛣️ المسافة منذ t=0: " + dist(t).toFixed(1).replace(/\.0$/,"") + " m";
+    velTag.textContent = "⚡ السرعة: " + v(t).toFixed(1).replace(/\.0$/,"") + " m/s";
+  }
+  slider.addEventListener("input", render);
+  if(document.readyState !== "loading") render();
+  else document.addEventListener("DOMContentLoaded", render);
+})();
+</script>
+</body>
+</html>
