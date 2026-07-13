@@ -24,7 +24,7 @@
     <p class="lead">ثلاث مهارات عملية تحوّل تكاملاً "صعب الشكل" إلى تطبيق مباشر للقواعد: توزيع حاصل الضرب، تبسيط حاصل القسمة، وأهم أداة في هذا الدرس — <b>قاعدة التعويض المتسلسل</b>.</p>
   </section>
 
-  <section class="section fade-up">
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
     <div class="card neu">
       <h2>🎯 أهداف الدرس</h2>
       <ol class="obj-list">
@@ -36,7 +36,7 @@
     </div>
   </section>
 
-  <section class="section fade-up">
+  <section class="section fade-up" id="content" data-navlabel="💡 الشرح والتعريفات">
     <div class="card neu">
       <h2>1️⃣ توزيع حاصل الضرب</h2>
       <p>لإيجاد تكامل حاصل ضرب دالتين جبريتين أو أكثر، نضرب الدوال ببعضها بطريقة التوزيع، ثم نكامل الحدود حداً حداً.</p>
@@ -88,7 +88,7 @@
     </div>
   </section>
 
-  <section class="section fade-up">
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
     <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة على التعويض المتسلسل</h2>
     <p class="lead" style="margin-top:0">لاحظ الملاحظة الملوّنة "مشتقة القوس من الداخل" في كل مثال — هي مفتاح الحل.</p>
 
@@ -156,7 +156,7 @@
     </div>
   </section>
 
-  <section class="section fade-up">
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
     <div class="card neu">
       <h2>🕹️ اكتشف نمط التعويض</h2>
       <p>لكل تكامل أدناه، اختر الجزء الذي يمثّل $f'(x)$ (مشتقة ما بداخل القوس):</p>
@@ -168,18 +168,157 @@
     </div>
   </section>
 
-  <section class="section fade-up">
-    <div class="card neu">
-      <h2>📝 تمرين (4-1)</h2>
-      <ol class="obj-list">
-        <li><span class="obj-num">1</span><span>أثبت أن $F(x)=\left(\dfrac{x}{x-1}\right)^2$ هي الدالة المقابلة للدالة $f(x)=\dfrac{-2x}{(x-1)^3}$.</span></li>
-        <li><span class="obj-num">2</span><span>إذا كانت $F(x)$ الدالة المقابلة لـ $f(x)=ax^3+bx$، وكان $F'(-2)=12,\ F''(2)=12$، جد $a,b\in\mathbb{R}$.</span></li>
-        <li><span class="obj-num">3</span><span>جد قيمة التكاملات: $\int\frac{x^5-x^2}{x^2+x+1}dx$ ، $\int\sqrt{3x^4-10x^2}\,dx$ ، $\int(4x^2-4x+1)^{1/3}dx$ ، $\int\frac{5x-10}{\sqrt[3]{2-x}}dx$ ، $\int\frac{x^3+1}{x^2-x+1}dx$ ، $\int\frac{5x+2}{\sqrt{5x+2}}dx$</span></li>
-      </ol>
-    </div>
-  </section>
+  <section class="section fade-up" id="exercises" data-navlabel="📝 تمارين تطبيقية">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (4-1)</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك خطوة بخطوة.</p>
 
-  <section class="section fade-up">
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1 — إثبات</div>
+        <button class="neu-btn" data-reveal-steps="steps-tq1" data-show-label="إظهار الحل" data-hide-label="إخفاء الحل">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن $F(x)=\left(\dfrac{x}{x-1}\right)^2$ هي الدالة المقابلة للدالة $f(x)=\dfrac{-2x}{(x-1)^3}$.</div>
+      <ol class="steps hidden-steps" id="steps-tq1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نشتق $F(x)$ باستخدام قاعدة خارج القسمة على $u=x,\;v=x-1$: \( F(x)=\left(\dfrac{x}{x-1}\right)^2 \Rightarrow F'(x)=2\left(\dfrac{x}{x-1}\right)\cdot\dfrac{d}{dx}\left(\dfrac{x}{x-1}\right) \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة $\dfrac{x}{x-1}$ هي $\dfrac{(x-1)(1)-x(1)}{(x-1)^2}=\dfrac{-1}{(x-1)^2}$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض: \( F'(x)=2\cdot\dfrac{x}{x-1}\cdot\dfrac{-1}{(x-1)^2}=\dfrac{-2x}{(x-1)^3} \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">وهذا يساوي $f(x)$ تماماً، إذن $F(x)$ هي فعلاً الدالة المقابلة لـ $f(x)$. ∎</div></li>
+      </ol>
+      <div class="exercise-final">✓ تم الإثبات: $F'(x) = f(x)$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2 — إيجاد ثابتين</div>
+        <button class="neu-btn" data-reveal-steps="steps-tq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">إذا كانت $F(x)$ الدالة المقابلة لـ $f(x)=ax^3+bx$، وكان $F'(-2)=12,\ F''(2)=12$، جد $a,b\in\mathbb{R}$.</div>
+      <ol class="steps hidden-steps" id="steps-tq2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">بما أن $F$ الدالة المقابلة لـ $f$: \( F'(x)=f(x)=ax^3+bx \)، وباشتقاق مرة أخرى: \( F''(x)=3ax^2+b \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نستخدم $F'(-2)=12$: \( a(-2)^3+b(-2)=12 \Rightarrow -8a-2b=12 \Rightarrow -4a-b=6 \quad\dots(1) \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">نستخدم $F''(2)=12$: \( 3a(2)^2+b=12 \Rightarrow 12a+b=12 \quad\dots(2) \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">نجمع (1) و(2) لحذف $b$: \( (-4a-b)+(12a+b)=6+12 \Rightarrow 8a=18 \Rightarrow a=\dfrac{9}{4} \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">نعوّض في (2): \( 12\left(\dfrac94\right)+b=12 \Rightarrow 27+b=12 \Rightarrow b=-15 \)</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $a=\dfrac{9}{4}\;,\quad b=-15$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3-1</span> السؤال 3 — الفقرة 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-tq3a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int \frac{x^5-x^2}{x^2+x+1}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-tq3a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط: $x^5-x^2=x^2(x^3-1)=x^2(x-1)(x^2+x+1)$ (فرق مكعبين على $x^3-1$).</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نختصر مع المقام: \( \dfrac{x^2(x-1)(x^2+x+1)}{x^2+x+1}=x^2(x-1)=x^3-x^2 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">نكامل: \( \displaystyle\int (x^3-x^2)\,dx=\frac{x^4}{4}-\frac{x^3}{3}+c \)</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $\dfrac{x^4}{4}-\dfrac{x^3}{3}+c$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3-2</span> السؤال 3 — الفقرة 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-tq3b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int \sqrt{3x^4-10x^2}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-tq3b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نُخرج $x^2$ من تحت الجذر: \( \sqrt{3x^4-10x^2}=\sqrt{x^2(3x^2-10)}=x\sqrt{3x^2-10} \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نكتبها بصيغة القوس المرفوع لأس: \( x(3x^2-10)^{\frac12} \)، ومشتقة الداخل $3x^2-10$ هي $6x$.</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">نضرب ونقسم على 6: \( \displaystyle\frac16\int (6x)(3x^2-10)^{\frac12}\,dx=\frac16\cdot\frac{(3x^2-10)^{\frac32}}{\frac32}+c \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">نبسّط: \( \dfrac{1}{6}\cdot\dfrac{2}{3}(3x^2-10)^{\frac32}+c=\dfrac{1}{9}(3x^2-10)^{\frac32}+c \)</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $\dfrac{1}{9}\sqrt{(3x^2-10)^3}+c$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3-3</span> السؤال 3 — الفقرة 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-tq3c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int \frac{\sqrt{10-\sqrt[3]{x}}}{\sqrt[3]{2x^2}}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-tq3c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نكتب المقام: \( \sqrt[3]{2x^2}=\sqrt[3]{2}\cdot x^{\frac23} \)، فيكون التكامل \( \displaystyle\frac{1}{\sqrt[3]2}\int \left(10-x^{\frac13}\right)^{\frac12} x^{-\frac23}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نضع $u=10-x^{\frac13}$، فتكون $\dfrac{du}{dx}=-\dfrac13 x^{-\frac23} \Rightarrow x^{-\frac23}dx=-3\,du$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض: \( \displaystyle\frac{1}{\sqrt[3]2}\int u^{\frac12}(-3)\,du=\frac{-3}{\sqrt[3]2}\cdot\frac{u^{\frac32}}{\frac32}+c=\frac{-2}{\sqrt[3]2}u^{\frac32}+c \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">نبسّط الثابت: $\dfrac{-2}{\sqrt[3]2}=-2\cdot 2^{-\frac13}=-2^{\frac23}=-\sqrt[3]4$، ونعيد تعويض $u$: \( -\sqrt[3]{4}\left(10-\sqrt[3]{x}\right)^{\frac32}+c \)</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $-\sqrt[3]{4}\left(10-\sqrt[3]{x}\right)^{3/2}+c$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3-4</span> السؤال 3 — الفقرة 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-tq3d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int (4x^2-4x+1)^{1/3}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-tq3d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نلاحظ أن $4x^2-4x+1=(2x-1)^2$ (مربع كامل)، إذن \( (4x^2-4x+1)^{\frac13}=(2x-1)^{\frac23} \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة الداخل $2x-1$ تساوي $2$، فنضرب ونقسم على 2: \( \displaystyle\frac12\int (2)(2x-1)^{\frac23}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =\dfrac12\cdot\dfrac{(2x-1)^{\frac53}}{\frac53}+c=\dfrac12\cdot\dfrac35(2x-1)^{\frac53}+c \)</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $\dfrac{3}{10}(2x-1)^{5/3}+c$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3-5</span> السؤال 3 — الفقرة 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-tq3e">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int \frac{5x-10}{\sqrt[3]{2-x}}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-tq3e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نُخرج العامل المشترك: $5x-10=5(x-2)=-5(2-x)$، إذن التكامل \( \displaystyle-5\int \frac{2-x}{(2-x)^{1/3}}\,dx=-5\int (2-x)^{2/3}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة الداخل $2-x$ تساوي $-1$، فنضرب ونقسم على $-1$: \( -5\cdot(-1)\displaystyle\int (-1)(2-x)^{2/3}\,dx=5\int (-1)(2-x)^{2/3}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =5\cdot\dfrac{(2-x)^{5/3}}{5/3}+c=5\cdot\dfrac35(2-x)^{5/3}+c \)</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $3(2-x)^{5/3}+c$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3-6</span> السؤال 3 — الفقرة 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-tq3f">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int \frac{x^3+1}{x^2-x+1}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-tq3f">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط بقاعدة مجموع مكعبين: $x^3+1=(x+1)(x^2-x+1)$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نختصر مع المقام: \( \dfrac{(x+1)(x^2-x+1)}{x^2-x+1}=x+1 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">نكامل: \( \displaystyle\int (x+1)\,dx=\frac{x^2}{2}+x+c \)</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $\dfrac{x^2}{2}+x+c$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3-7</span> السؤال 3 — الفقرة 7</div>
+        <button class="neu-btn" data-reveal-steps="steps-tq3g">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int \frac{5x+2}{\sqrt{5x+2}}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-tq3g">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نرفع المقام إلى البسط مع تغيير إشارة الأس: \( \dfrac{5x+2}{(5x+2)^{1/2}}=(5x+2)^{1-\frac12}=(5x+2)^{\frac12} \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة الداخل $5x+2$ تساوي $5$، فنضرب ونقسم على 5: \( \displaystyle\frac15\int (5)(5x+2)^{\frac12}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =\dfrac15\cdot\dfrac{(5x+2)^{\frac32}}{\frac32}+c=\dfrac15\cdot\dfrac23(5x+2)^{\frac32}+c \)</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $\dfrac{2}{15}(5x+2)^{3/2}+c$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3-8</span> السؤال 3 — الفقرة 8</div>
+        <button class="neu-btn" data-reveal-steps="steps-tq3h">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int \frac{x-5\sqrt{x}+6}{x-3\sqrt{x}}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-tq3h">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نضع $u=\sqrt{x}$ (أي $x=u^2$) لتسهيل التحليل: البسط $u^2-5u+6=(u-2)(u-3)$، والمقام $u^2-3u=u(u-3)$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نختصر العامل المشترك $(u-3)$: \( \dfrac{(u-2)(u-3)}{u(u-3)}=\dfrac{u-2}{u}=1-\dfrac{2}{u} \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">نعيد كتابتها بدلالة $x$: \( 1-\dfrac{2}{\sqrt{x}}=1-2x^{-\frac12} \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">نكامل: \( \displaystyle\int \left(1-2x^{-\frac12}\right)dx=x-2\cdot\frac{x^{\frac12}}{\frac12}+c=x-4\sqrt{x}+c \)</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $x-4\sqrt{x}+c$</div>
+    </div>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
     <div class="neu quiz" data-quiz>
       <h2>🧠 اختبر نفسك</h2>
 
@@ -232,19 +371,19 @@
     </div>
   </section>
 
-  <section class="section fade-up">
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
     <div class="card neu">
       <h2>📋 ملخص الدرس</h2>
       <ul class="summary-list">
-        <li>حاصل الضرب: وزّع أولاً، ثم كامل حداً حداً.</li>
-        <li>حاصل القسمة: حلّل وبسّط، أو حوّل المقام إلى بسط بأس سالب.</li>
-        <li>قاعدة التعويض المتسلسل: $\int[f(x)]^n f'(x)dx = \dfrac{[f(x)]^{n+1}}{n+1}+c$.</li>
-        <li>إن كان المعامل ناقصاً أو زائداً عن مشتقة القوس، اضرب واقسم على نفس العدد لتصحيحه دون تغيير قيمة التكامل.</li>
+        <li><span>حاصل الضرب: وزّع أولاً، ثم كامل حداً حداً.</span></li>
+        <li><span>حاصل القسمة: حلّل وبسّط، أو حوّل المقام إلى بسط بأس سالب.</span></li>
+        <li><span>قاعدة التعويض المتسلسل: $\int[f(x)]^n f'(x)dx = \dfrac{[f(x)]^{n+1}}{n+1}+c$.</span></li>
+        <li><span>إن كان المعامل ناقصاً أو زائداً عن مشتقة القوس، اضرب واقسم على نفس العدد لتصحيحه دون تغيير قيمة التكامل.</span></li>
       </ul>
     </div>
   </section>
 
-  <section class="section fade-up">
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
     <div class="card neu">
       <h2>🗺 خريطة الدرس الذهنية</h2>
       <div class="mindmap-wrap">
