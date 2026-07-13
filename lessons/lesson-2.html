@@ -134,17 +134,62 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">7</span> مثال 7</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex7">إظهار خطوات الحل</button>
+        <div class="example-title"><span class="example-badge">7-1</span> مثال 7 — الفقرة 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7a">إظهار خطوات الحل</button>
       </div>
-      <div class="example-problem">جد قيمة التكاملات: (1) $\int \sqrt[3]{x^5}\,dx$  (2) $\int x^2\sqrt[5]{x^3}\,dx$  (3) $\int \sqrt{x}\,dx$  (4) $\int \sqrt[5]{x^{-3}}\,dx$  (5) $\int \sqrt{x^{-7}}\,dx$</div>
-      <ol class="steps hidden-steps" id="steps-ex7">
-        <li class="step"><span class="step-dot">💡</span><div class="step-body"><b>المفتاح:</b> نحوّل كل جذر إلى أس كسري $\sqrt[n]{x^m}=x^{m/n}$ أولاً، ثم نطبّق القاعدة الثانية مباشرة.</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt[3]{x^5}\,dx = \int x^{5/3}\,dx = \dfrac{x^{8/3}}{8/3}+c = \dfrac{3}{8}\sqrt[3]{x^8}+c \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( \int x^2\sqrt[5]{x^3}\,dx = \int x^{13/5}\,dx = \dfrac{x^{18/5}}{18/5}+c = \dfrac{5}{18}\sqrt[5]{x^{18}}+c \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( \int \sqrt{x}\,dx = \int x^{1/2}\,dx = \dfrac{x^{3/2}}{3/2}+c = \dfrac{2}{3}\sqrt{x^3}+c \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">\( \int \sqrt[5]{x^{-3}}\,dx = \int x^{-3/5}\,dx = \dfrac{x^{2/5}}{2/5}+c = \dfrac{5}{2}\sqrt[5]{x^2}+c \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">\( \int \sqrt{x^{-7}}\,dx = \int x^{-7/2}\,dx = \dfrac{x^{-5/2}}{-5/2}+c = \dfrac{-2}{5\sqrt{x^5}}+c \) ∎</div></li>
+      <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt[3]{x^5}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex7a">
+        <li class="step"><span class="step-dot">💡</span><div class="step-body"><b>المفتاح:</b> نحوّل الجذر إلى أس كسري $\sqrt[n]{x^m}=x^{m/n}$ أولاً، ثم نطبّق القاعدة الثانية مباشرة.</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt[3]{x^5}\,dx = \int x^{5/3}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{8/3}}{8/3}+c = \dfrac{3}{8}\sqrt[3]{x^8}+c \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7-2</span> مثال 7 — الفقرة 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7b">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة التكامل: $\displaystyle\int x^2\sqrt[5]{x^3}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex7b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نحوّل الجذر لأس كسري ونجمع الأسس: \( \int x^2\sqrt[5]{x^3}\,dx = \int x^{2+3/5}\,dx = \int x^{13/5}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{18/5}}{18/5}+c = \dfrac{5}{18}\sqrt[5]{x^{18}}+c \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7-3</span> مثال 7 — الفقرة 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7c">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt{x}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex7c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt{x}\,dx = \int x^{1/2}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{3/2}}{3/2}+c = \dfrac{2}{3}\sqrt{x^3}+c \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7-4</span> مثال 7 — الفقرة 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7d">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt[5]{x^{-3}}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex7d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt[5]{x^{-3}}\,dx = \int x^{-3/5}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{2/5}}{2/5}+c = \dfrac{5}{2}\sqrt[5]{x^2}+c \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7-5</span> مثال 7 — الفقرة 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7e">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt{x^{-7}}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex7e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt{x^{-7}}\,dx = \int x^{-7/2}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{-5/2}}{-5/2}+c = \dfrac{-2}{5\sqrt{x^5}}+c \) ∎</div></li>
       </ol>
     </div>
   </section>

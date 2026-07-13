@@ -67,35 +67,76 @@
   <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
     <div class="example">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">38</span> مثال 38</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex38" data-show-label="إظهار خطوات الحل" data-hide-label="إخفاء خطوات الحل">إظهار خطوات الحل</button>
+        <div class="example-title"><span class="example-badge">38-1</span> مثال 38 — الفقرة 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex38a" data-show-label="إظهار خطوات الحل" data-hide-label="إخفاء خطوات الحل">إظهار خطوات الحل</button>
       </div>
-      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=4t-12$، جد:<br>
-        1) المسافة المقطوعة في الفترة الزمنية $[1,5]$ &nbsp;&nbsp; 2) الإزاحة في الفترة $[1,5]$<br>
-        3) المسافة المقطوعة خلال الثانية الرابعة &nbsp;&nbsp; 4) بُعد الجسم بعد مضي 10 ثوانٍ من بدء حركته.
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=4t-12$. جد المسافة المقطوعة في الفترة الزمنية $[1,5]$.</div>
+      <ol class="steps hidden-steps" id="steps-ex38a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نبحث أولاً عن لحظة تغيّر الاتجاه: \( 4t-12=0 \Rightarrow t=3\in[1,5] \). إذن نجزّئ إلى $[1,3]$ و $[3,5]$.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( d=\left|\displaystyle\int_1^3(4t-12)dt\right|+\left|\displaystyle\int_3^5(4t-12)dt\right| =\left|\big[2t^2-12t\big]_1^3\right|+\left|\big[2t^2-12t\big]_3^5\right| \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =|(18-36)-(2-12)|+|(50-60)-(18-36)|=|-8|+|8|=16\,m \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">38-2</span> مثال 38 — الفقرة 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex38b">إظهار خطوات الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-ex38">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">أولاً نبحث عن لحظة تغيّر الاتجاه: \( 4t-12=0 \Rightarrow t=3\in[1,5] \). إذن نجزّئ إلى $[1,3]$ و $[3,5]$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body"><b>1) المسافة:</b> \( d=\left|\displaystyle\int_1^3(4t-12)dt\right|+\left|\displaystyle\int_3^5(4t-12)dt\right| =\left|\big[2t^2-12t\big]_1^3\right|+\left|\big[2t^2-12t\big]_3^5\right| \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =|(18-36)-(2-12)|+|(50-60)-(18-36)|=|-8|+|8|=16\,m \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body"><b>2) الإزاحة:</b> تكامل واحد مباشر: \( s=\displaystyle\int_1^5(4t-12)dt=\big[2t^2-12t\big]_1^5=(-10)-(-10)=0\,m \) — الجسم عاد لنقطة انطلاقه!</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body"><b>3) الثانية الرابعة</b> هي الفترة $[3,4]$: \( d=\left|\big[2t^2-12t\big]_3^4\right|=|(32-48)-(18-36)|=|2|=2\,m \)</div></li>
-        <li class="step"><span class="step-dot">6</span><div class="step-body"><b>4) البُعد بعد 10 ثوانٍ</b> هو الإزاحة من $t=0$: \( s=\displaystyle\int_0^{10}(4t-12)dt=\big[2t^2-12t\big]_0^{10}=(200-120)-0=80\,m \) ∎</div></li>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=4t-12$. جد الإزاحة في الفترة الزمنية $[1,5]$.</div>
+      <ol class="steps hidden-steps" id="steps-ex38b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">الإزاحة تكامل واحد مباشر (بلا تجزئة ولا قيمة مطلقة): \( s=\displaystyle\int_1^5(4t-12)\,dt=\big[2t^2-12t\big]_1^5 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( =(50-60)-(2-12)=(-10)-(-10)=0\,m \) — الجسم عاد لنقطة انطلاقه! ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">38-3</span> مثال 38 — الفقرة 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex38c">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=4t-12$. جد المسافة المقطوعة خلال الثانية الرابعة من حركته.</div>
+      <ol class="steps hidden-steps" id="steps-ex38c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">«الثانية الرابعة» تعني الفترة الزمنية $[3,4]$. ولحظة تغيّر الاتجاه $t=3$ هي حدّها الأدنى بالضبط، فلا انعكاس داخل الفترة.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( d=\left|\displaystyle\int_3^4(4t-12)\,dt\right|=\left|\big[2t^2-12t\big]_3^4\right| \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =|(32-48)-(18-36)|=|-16+18|=2\,m \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">38-4</span> مثال 38 — الفقرة 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex38d">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=4t-12$. جد بُعد الجسم بعد مضي 10 ثوانٍ من بدء حركته.</div>
+      <ol class="steps hidden-steps" id="steps-ex38d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">البُعد بعد 10 ثوانٍ هو الإزاحة من $t=0$ إلى $t=10$: \( s=\displaystyle\int_0^{10}(4t-12)\,dt=\big[2t^2-12t\big]_0^{10} \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( =(200-120)-0=80\,m \) ∎</div></li>
       </ol>
     </div>
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">39</span> مثال 39</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex39">إظهار خطوات الحل</button>
+        <div class="example-title"><span class="example-badge">39-1</span> مثال 39 — الفقرة 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex39a">إظهار خطوات الحل</button>
       </div>
-      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=2t+12$، جد:<br>
-        1) المسافة المقطوعة في الفترة الزمنية $[1,3]$ &nbsp;&nbsp; 2) الإزاحة التي قطعها الجسم في الفترة $[1,3]$.
-      </div>
-      <ol class="steps hidden-steps" id="steps-ex39">
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=2t+12$. جد المسافة المقطوعة في الفترة الزمنية $[1,3]$.</div>
+      <ol class="steps hidden-steps" id="steps-ex39a">
         <li class="step"><span class="step-dot">1</span><div class="step-body">نبحث عن لحظة تغيّر الاتجاه: \( 2t+12=0 \Rightarrow t=-6 \). زمن سالب مرفوض — إذن الجسم لم يغيّر اتجاهه أبداً.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">وفق الملاحظة: المسافة = |الإزاحة|، بتكامل واحد: \( d=|s|=\left|\displaystyle\int_1^3(2t+12)dt\right|=\left|\big[t^2+12t\big]_1^3\right| \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =|(9+36)-(1+12)|=|45-13|=32\,m \) — والإزاحة كذلك $s=32\,m$. ∎</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">وفق الملاحظة: المسافة = |الإزاحة|، بتكامل واحد: \( d=\left|\displaystyle\int_1^3(2t+12)dt\right|=\left|\big[t^2+12t\big]_1^3\right| \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =|(9+36)-(1+12)|=|45-13|=32\,m \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">39-2</span> مثال 39 — الفقرة 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex39b">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=2t+12$. جد الإزاحة التي قطعها الجسم في الفترة الزمنية $[1,3]$.</div>
+      <ol class="steps hidden-steps" id="steps-ex39b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">بما أن الجسم لا يغيّر اتجاهه أبداً (راجع الفقرة 1)، فإن الإزاحة تساوي المسافة نفسها بإشارتها.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( s=\displaystyle\int_1^3(2t+12)\,dt=\big[t^2+12t\big]_1^3=(9+36)-(1+12)=45-13=32\,m \) ∎</div></li>
       </ol>
     </div>
   </section>
@@ -293,50 +334,111 @@
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">8</span> السؤال 8 — حركة</div>
-        <button class="neu-btn" data-reveal-steps="steps-cq8">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">8-a</span> السؤال 8 — الفقرة (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq8a">إظهار الحل</button>
       </div>
-      <div class="example-problem">تحرك جسم على خط مستقيم بتعجيل قدره $12\,cm/sec^2$ فإذا كانت سرعته تساوي $24\,cm/sec$ بعد مرور $3\,sec$ من بدء الحركة، احسب: (a) المسافة المقطوعة في الفترة $[1,3]$ ، (b) الزمن اللازم لعودة الجسم إلى موضعه الأول.</div>
-      <ol class="steps hidden-steps" id="steps-cq8">
+      <div class="example-problem">تحرك جسم على خط مستقيم بتعجيل قدره $12\,cm/sec^2$ فإذا كانت سرعته تساوي $24\,cm/sec$ بعد مرور $3\,sec$ من بدء الحركة، احسب المسافة المقطوعة في الفترة $[1,3]$.</div>
+      <ol class="steps hidden-steps" id="steps-cq8a">
         <li class="step"><span class="step-dot">1</span><div class="step-body">$v(t)=\displaystyle\int 12\,dt=12t+c_1$. وبما أن $v(3)=24$: $36+c_1=24 \Rightarrow c_1=-12$. إذن $v(t)=12t-12$.</div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">نجد لحظة انعكاس الاتجاه: $12t-12=0 \Rightarrow t=1$ — وهي طرف الفترة $[1,3]$ نفسها، فلا انعكاس داخل الفترة المفتوحة.</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">(a) \( d=\left|\displaystyle\int_1^3(12t-12)dt\right|=\left|\big[6t^2-12t\big]_1^3\right|=|(54-36)-(6-12)|=|18+6|=24\,cm \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">لإيجاد الموضع نكامل السرعة: $s(t)=\displaystyle\int(12t-12)dt=6t^2-12t+c_2$، وبافتراض $s(0)=0$ (بداية الحركة): $c_2=0$، إذن $s(t)=6t^2-12t=6t(t-2)$.</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">(b) الجسم يعود للموضع الأول عندما $s(t)=0$ (لِـ $t>0$): $6t(t-2)=0 \Rightarrow t=2\,sec$.</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( d=\left|\displaystyle\int_1^3(12t-12)dt\right|=\left|\big[6t^2-12t\big]_1^3\right|=|(54-36)-(6-12)|=|18+6|=24\,cm \) ∎</div></li>
       </ol>
-      <div class="exercise-final">✓ (a) المسافة $=24\,cm$ &nbsp; (b) زمن العودة $=2\,sec$</div>
+      <div class="exercise-final">✓ الجواب: المسافة $=24\,cm$</div>
     </div>
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">9</span> السؤال 9 — حركة</div>
-        <button class="neu-btn" data-reveal-steps="steps-cq9">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">8-b</span> السؤال 8 — الفقرة (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq8b">إظهار الحل</button>
       </div>
-      <div class="example-problem">جسم يتحرك على خط مستقيم بتعجيل قدره $(4t+2)\,cm/sec^2$ وكانت سرعته عندما $t=4$ تساوي $50\,cm/sec$، احسب: (a) سرعة الجسم عند أية لحظة ، (b) المسافة في الفترة $[3,7]$ ، (c) المسافة خلال الثانية الرابعة ، (d) بُعد الجسم بعد $10\,sec$.</div>
-      <ol class="steps hidden-steps" id="steps-cq9">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">(a) $v(t)=\displaystyle\int(4t+2)dt=2t^2+2t+c$. بما أن $v(4)=50$: $32+8+c=50 \Rightarrow c=10$. إذن \( v(t)=2t^2+2t+10\ cm/sec \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">للتأكد من عدم انعكاس الاتجاه نحل $v(t)=0$: المميز $=4-80=-76<0$ — لا جذور حقيقية، والسرعة دائماً موجبة (لأن $v(0)=10>0$)، فالجسم لا يغيّر اتجاهه أبداً.</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">$s(t)=\displaystyle\int v\,dt=\frac{2t^3}{3}+t^2+10t+c_2$، ونفرض $s(0)=0 \Rightarrow c_2=0$.</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">(b) بما أنه لا يغيّر اتجاهه، المسافة = الإزاحة: \( \displaystyle\int_3^7 v\,dt=s(7)-s(3)=\left(\frac{686}{3}+49+70\right)-\left(18+9+30\right)=\frac{872}{3}\,cm \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">(c) الثانية الرابعة = الفترة $[3,4]$: \( s(4)-s(3)=\left(\frac{128}{3}+16+40\right)-(57)=\frac{125}{3}\,cm \)</div></li>
-        <li class="step"><span class="step-dot">6</span><div class="step-body">(d) بُعد الجسم بعد $10\,sec$ من البداية: \( s(10)=\frac{2(1000)}{3}+100+100=\frac{2000}{3}+200=\frac{2600}{3}\,cm \)</div></li>
+      <div class="example-problem">تحرك جسم على خط مستقيم بتعجيل قدره $12\,cm/sec^2$ فإذا كانت سرعته تساوي $24\,cm/sec$ بعد مرور $3\,sec$ من بدء الحركة، احسب الزمن اللازم لعودة الجسم إلى موضعه الأول الذي بدأ الحركة منه.</div>
+      <ol class="steps hidden-steps" id="steps-cq8b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">كما في الفقرة (a): $v(t)=12t-12$.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل السرعة لإيجاد الموضع: $s(t)=\displaystyle\int(12t-12)dt=6t^2-12t+c_2$، وبافتراض $s(0)=0$ (بداية الحركة): $c_2=0$، إذن $s(t)=6t^2-12t=6t(t-2)$.</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">الجسم يعود للموضع الأول عندما $s(t)=0$ (لِـ $t>0$): $6t(t-2)=0 \Rightarrow t=2\,sec$ ∎</div></li>
       </ol>
-      <div class="exercise-final">✓ (a) $v(t)=2t^2+2t+10$&nbsp; (b) $\dfrac{872}{3}cm$&nbsp; (c) $\dfrac{125}{3}cm$&nbsp; (d) $\dfrac{2600}{3}cm$</div>
+      <div class="exercise-final">✓ الجواب: زمن العودة $=2\,sec$</div>
     </div>
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">10</span> السؤال 10 — حركة</div>
-        <button class="neu-btn" data-reveal-steps="steps-cq10">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">9-a</span> السؤال 9 — الفقرة (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq9a">إظهار الحل</button>
       </div>
-      <div class="example-problem">جسم يتحرك على خط مستقيم وكانت سرعته $v=3t^2+6t+3$. جد المسافة المقطوعة في الفترة $[2,4]$ ثم جد تعجيل الجسم بعد مرور $3\,sec$ من بدء الحركة.</div>
-      <ol class="steps hidden-steps" id="steps-cq10">
+      <div class="example-problem">جسم يتحرك على خط مستقيم بتعجيل قدره $(4t+2)\,cm/sec^2$ وكانت سرعته عندما $t=4$ تساوي $50\,cm/sec$. جد سرعة الجسم عند أية لحظة.</div>
+      <ol class="steps hidden-steps" id="steps-cq9a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">$v(t)=\displaystyle\int(4t+2)dt=2t^2+2t+c$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">بما أن $v(4)=50$: $2(16)+2(4)+c=50 \Rightarrow 32+8+c=50 \Rightarrow c=10$ ∎</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $v(t)=2t^2+2t+10\ cm/sec$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9-b</span> السؤال 9 — الفقرة (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq9b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بتعجيل قدره $(4t+2)\,cm/sec^2$ وكانت سرعته عندما $t=4$ تساوي $50\,cm/sec$. جد المسافة التي يقطعها الجسم في الفترة الزمنية $[3,7]$.</div>
+      <ol class="steps hidden-steps" id="steps-cq9b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">من الفقرة (a): $v(t)=2t^2+2t+10$. للتأكد من عدم انعكاس الاتجاه نحل $v(t)=0$: المميز $=4-80=-76<0$ — لا جذور حقيقية، والسرعة دائماً موجبة، فالجسم لا يغيّر اتجاهه أبداً.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">$s(t)=\displaystyle\int v\,dt=\frac{2t^3}{3}+t^2+10t+c_2$، ونفرض $s(0)=0 \Rightarrow c_2=0$.</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">بما أنه لا يغيّر اتجاهه، المسافة = الإزاحة: \( \displaystyle\int_3^7 v\,dt=s(7)-s(3)=\left(\frac{686}{3}+49+70\right)-\left(18+9+30\right)=\frac{872}{3}\,cm \) ∎</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $\dfrac{872}{3}\,cm$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9-c</span> السؤال 9 — الفقرة (c)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq9c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بتعجيل قدره $(4t+2)\,cm/sec^2$ وكانت سرعته عندما $t=4$ تساوي $50\,cm/sec$. جد المسافة المقطوعة خلال الثانية الرابعة من الحركة.</div>
+      <ol class="steps hidden-steps" id="steps-cq9c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">من الفقرات السابقة: $s(t)=\frac{2t^3}{3}+t^2+10t$، والجسم لا يغيّر اتجاهه أبداً.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">«الثانية الرابعة» هي الفترة $[3,4]$: \( s(4)-s(3)=\left(\frac{128}{3}+16+40\right)-(18+9+30) \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =\left(\frac{128}{3}+56\right)-57=\frac{128}{3}-1=\frac{125}{3}\,cm \) ∎</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $\dfrac{125}{3}\,cm$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9-d</span> السؤال 9 — الفقرة (d)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq9d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بتعجيل قدره $(4t+2)\,cm/sec^2$ وكانت سرعته عندما $t=4$ تساوي $50\,cm/sec$. جد بُعد الجسم بعد مرور $10\,sec$ من بدء الحركة.</div>
+      <ol class="steps hidden-steps" id="steps-cq9d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">من الفقرات السابقة: $s(t)=\dfrac{2t^3}{3}+t^2+10t$ (مع $s(0)=0$).</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( s(10)=\dfrac{2(1000)}{3}+100+100=\dfrac{2000}{3}+200=\dfrac{2600}{3}\,cm \) ∎</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $\dfrac{2600}{3}\,cm$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">10-a</span> السؤال 10 — الفقرة 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq10a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم وكانت سرعته $v=3t^2+6t+3$. جد المسافة المقطوعة في الفترة الزمنية $[2,4]$.</div>
+      <ol class="steps hidden-steps" id="steps-cq10a">
         <li class="step"><span class="step-dot">1</span><div class="step-body">نلاحظ أن $v=3t^2+6t+3=3(t+1)^2$ — مربع كامل، فهو دائماً $\ge0$، ويساوي صفراً فقط عند $t=-1$ (خارج نطاق الزمن الموجب).</div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">إذن لا يغيّر الجسم اتجاهه على $[2,4]$، والمسافة = الإزاحة: \( d=\displaystyle\int_2^4(3t^2+6t+3)dt=\big[t^3+3t^2+3t\big]_2^4 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =(64+48+12)-(8+12+6)=124-26=98 \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">التعجيل $a(t)=v'(t)=6t+6$. عند $t=3$: \( a(3)=6(3)+6=24 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =(64+48+12)-(8+12+6)=124-26=98 \) ∎</div></li>
       </ol>
-      <div class="exercise-final">✓ المسافة $=98$ &nbsp; والتعجيل عند $t=3$ هو $24$ (بوحدات المسألة)</div>
+      <div class="exercise-final">✓ الجواب: المسافة $=98$ (بوحدات المسألة)</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">10-b</span> السؤال 10 — الفقرة 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq10b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم وكانت سرعته $v=3t^2+6t+3$. جد تعجيل الجسم بعد مرور $3\,sec$ من بدء الحركة.</div>
+      <ol class="steps hidden-steps" id="steps-cq10b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">التعجيل هو مشتقة السرعة: $a(t)=v'(t)=6t+6$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">عند $t=3$: \( a(3)=6(3)+6=24 \) ∎</div></li>
+      </ol>
+      <div class="exercise-final">✓ الجواب: $a(3)=24$ (بوحدات المسألة)</div>
     </div>
 
   <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">

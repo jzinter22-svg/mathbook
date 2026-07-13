@@ -42,15 +42,26 @@
       <p>لإيجاد تكامل حاصل ضرب دالتين جبريتين أو أكثر، نضرب الدوال ببعضها بطريقة التوزيع، ثم نكامل الحدود حداً حداً.</p>
       <div class="example fade-up">
         <div class="example-head">
-          <div class="example-title"><span class="example-badge">8</span> مثال 8</div>
-          <button class="neu-btn" data-reveal-steps="steps-ex8">إظهار خطوات الحل</button>
+          <div class="example-title"><span class="example-badge">8-1</span> مثال 8 — الفقرة 1</div>
+          <button class="neu-btn" data-reveal-steps="steps-ex8a">إظهار خطوات الحل</button>
         </div>
-        <div class="example-problem">جد قيمة التكاملات: (1) $\int (x-2)(2x+3)\,dx$   (2) $\int (x-1)(x+1)(2x-5)\,dx$</div>
-        <ol class="steps hidden-steps" id="steps-ex8">
+        <div class="example-problem">جد قيمة التكامل: $\displaystyle\int (x-2)(2x+3)\,dx$</div>
+        <ol class="steps hidden-steps" id="steps-ex8a">
           <li class="step"><span class="step-dot">1</span><div class="step-body">نوزّع: \( (x-2)(2x+3)=2x^2-x-6 \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل حداً حداً: \( \int(2x^2-x-6)dx = \dfrac{2x^3}{3}-\dfrac{x^2}{2}-6x+c \)</div></li>
-          <li class="step"><span class="step-dot">3</span><div class="step-body">للجزء الثاني: $(x-1)(x+1)=x^2-1$، إذن $(x^2-1)(2x-5)=2x^3-5x^2-2x+5$</div></li>
-          <li class="step"><span class="step-dot">4</span><div class="step-body">\( \int(2x^3-5x^2-2x+5)dx = \dfrac{x^4}{2}-\dfrac{5x^3}{3}-x^2+5x+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل حداً حداً: \( \int(2x^2-x-6)dx = \dfrac{2x^3}{3}-\dfrac{x^2}{2}-6x+c \) ∎</div></li>
+        </ol>
+      </div>
+
+      <div class="example exercise-card fade-up">
+        <div class="example-head">
+          <div class="example-title"><span class="example-badge">8-2</span> مثال 8 — الفقرة 2</div>
+          <button class="neu-btn" data-reveal-steps="steps-ex8b">إظهار خطوات الحل</button>
+        </div>
+        <div class="example-problem">جد قيمة التكامل: $\displaystyle\int (x-1)(x+1)(2x-5)\,dx$</div>
+        <ol class="steps hidden-steps" id="steps-ex8b">
+          <li class="step"><span class="step-dot">1</span><div class="step-body">نوزّع أولاً الزوج الأول: $(x-1)(x+1)=x^2-1$</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">ثم نوزّع الباقي: $(x^2-1)(2x-5)=2x^3-5x^2-2x+5$</div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body">نكامل حداً حداً: \( \int(2x^3-5x^2-2x+5)dx = \dfrac{x^4}{2}-\dfrac{5x^3}{3}-x^2+5x+c \) ∎</div></li>
         </ol>
       </div>
     </div>
@@ -62,15 +73,49 @@
       <p>نحاول تحليل الدالتين (أو إحداهما) بحثاً عن اختصارات ممكنة. وإن تعذّر ذلك، نرفع المقام إلى البسط مع تغيير إشارة الأس (من موجب إلى سالب أو العكس).</p>
       <div class="example fade-up">
         <div class="example-head">
-          <div class="example-title"><span class="example-badge">9</span> مثال 9</div>
-          <button class="neu-btn" data-reveal-steps="steps-ex9">إظهار خطوات الحل</button>
+          <div class="example-title"><span class="example-badge">9-1</span> مثال 9 — الفقرة 1</div>
+          <button class="neu-btn" data-reveal-steps="steps-ex9a">إظهار خطوات الحل</button>
         </div>
-        <div class="example-problem">جد قيمة التكاملات: (1) $\int \frac{x^2-9}{x-3}dx$  (2) $\int \frac{x^2+5x+6}{x+2}dx$  (3) $\int \frac{3}{x^4}dx$  (4) $\int \frac{-2}{\sqrt[5]{x^2}}dx$</div>
-        <ol class="steps hidden-steps" id="steps-ex9">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">\( \dfrac{x^2-9}{x-3}=\dfrac{(x-3)(x+3)}{x-3}=x+3 \Rightarrow \int(x+3)dx=\dfrac{x^2}{2}+3x+c \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">\( \dfrac{x^2+5x+6}{x+2}=\dfrac{(x+3)(x+2)}{x+2}=x+3 \Rightarrow \dfrac{x^2}{2}+3x+c \)</div></li>
-          <li class="step"><span class="step-dot">3</span><div class="step-body">\( \int\frac{3}{x^4}dx = 3\int x^{-4}dx = 3\cdot\dfrac{x^{-3}}{-3}+c = \dfrac{-1}{x^3}+c \)</div></li>
-          <li class="step"><span class="step-dot">4</span><div class="step-body">\( \int\frac{-2}{\sqrt[5]{x^2}}dx = -2\int x^{-2/5}dx = -2\cdot\dfrac{x^{3/5}}{3/5}+c = -\dfrac{10}{3}\sqrt[5]{x^3}+c \) ∎</div></li>
+        <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{x^2-9}{x-3}\,dx$</div>
+        <ol class="steps hidden-steps" id="steps-ex9a">
+          <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط (فرق مربعين): \( \dfrac{x^2-9}{x-3}=\dfrac{(x-3)(x+3)}{x-3}=x+3 \)</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">\( \displaystyle\int(x+3)\,dx=\dfrac{x^2}{2}+3x+c \) ∎</div></li>
+        </ol>
+      </div>
+
+      <div class="example exercise-card fade-up">
+        <div class="example-head">
+          <div class="example-title"><span class="example-badge">9-2</span> مثال 9 — الفقرة 2</div>
+          <button class="neu-btn" data-reveal-steps="steps-ex9b">إظهار خطوات الحل</button>
+        </div>
+        <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{x^2+5x+6}{x+2}\,dx$</div>
+        <ol class="steps hidden-steps" id="steps-ex9b">
+          <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط: \( \dfrac{x^2+5x+6}{x+2}=\dfrac{(x+3)(x+2)}{x+2}=x+3 \)</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">\( \displaystyle\int(x+3)\,dx=\dfrac{x^2}{2}+3x+c \) ∎</div></li>
+        </ol>
+      </div>
+
+      <div class="example exercise-card fade-up">
+        <div class="example-head">
+          <div class="example-title"><span class="example-badge">9-3</span> مثال 9 — الفقرة 3</div>
+          <button class="neu-btn" data-reveal-steps="steps-ex9c">إظهار خطوات الحل</button>
+        </div>
+        <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{3}{x^4}\,dx$</div>
+        <ol class="steps hidden-steps" id="steps-ex9c">
+          <li class="step"><span class="step-dot">1</span><div class="step-body">نرفع المقام للبسط بتغيير إشارة الأس: \( \int\frac{3}{x^4}dx = 3\int x^{-4}\,dx \)</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">\( = 3\cdot\dfrac{x^{-3}}{-3}+c = \dfrac{-1}{x^3}+c \) ∎</div></li>
+        </ol>
+      </div>
+
+      <div class="example exercise-card fade-up">
+        <div class="example-head">
+          <div class="example-title"><span class="example-badge">9-4</span> مثال 9 — الفقرة 4</div>
+          <button class="neu-btn" data-reveal-steps="steps-ex9d">إظهار خطوات الحل</button>
+        </div>
+        <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{-2}{\sqrt[5]{x^2}}\,dx$</div>
+        <ol class="steps hidden-steps" id="steps-ex9d">
+          <li class="step"><span class="step-dot">1</span><div class="step-body">نكتب الجذر كأس كسري ونرفعه للبسط: \( \int\frac{-2}{\sqrt[5]{x^2}}dx = -2\int x^{-2/5}\,dx \)</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">\( = -2\cdot\dfrac{x^{3/5}}{3/5}+c = -\dfrac{10}{3}\sqrt[5]{x^3}+c \) ∎</div></li>
         </ol>
       </div>
     </div>
