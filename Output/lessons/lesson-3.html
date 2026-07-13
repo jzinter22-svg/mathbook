@@ -46,10 +46,26 @@
           <button class="neu-btn" data-reveal-steps="steps-ex8a">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int (x-2)(2x+3)\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد التكامل غير المحدود لحاصل ضرب القوسين $(x-2)$ و $(2x+3)$.</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> الدالة المراد تكاملها هي حاصل ضرب دالتين خطيتين: $(x-2)(2x+3)$.</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> لا يوجد هنا قوس مرفوع لأس تطابق مشتقة داخله الحد الآخر، فلا مجال لتطبيق قاعدة التعويض المتسلسل مباشرة؛ لذلك نوزّع حاصل الضرب أولاً، ثم نكامل كل حد باستخدام قاعدة الأس $\int x^n dx=\dfrac{x^{n+1}}{n+1}+c$.</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex8a">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نوزّع: \( (x-2)(2x+3)=2x^2-x-6 \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل حداً حداً: \( \int(2x^2-x-6)dx = \dfrac{2x^3}{3}-\dfrac{x^2}{2}-6x+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نضرب الحد الأول $x$ في القوس الثاني:</i> \( x\cdot(2x+3)=2x^2+3x \)</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نضرب الحد الثاني $-2$ في القوس الثاني:</i> \( -2\cdot(2x+3)=-4x-6 \)</div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نجمع نواتج الضرب فنحصل على كثيرة الحدود بعد التوزيع:</i> \( (x-2)(2x+3)=2x^2+3x-4x-6 \)</div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نجمع الحدين المتشابهين $3x$ و $-4x$:</i> \( 2x^2+3x-4x-6=2x^2-x-6 \)</div></li>
+          <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نكامل الحد الأول $2x^2$ بقاعدة الأس (نزيد الأس واحداً ونقسم على الأس الجديد):</i> \( \int 2x^2\,dx=\dfrac{2x^3}{3} \)</div></li>
+          <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نكامل الحد الثاني $-x$ بنفس القاعدة:</i> \( \int(-x)\,dx=\dfrac{-x^2}{2} \)</div></li>
+          <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نكامل الحد الثالث $-6$ (حد ثابت، فتكامله يساوي الثابت مضروباً في $x$):</i> \( \int(-6)\,dx=-6x \)</div></li>
+          <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نجمع نواتج التكامل الثلاثة ونضيف ثابت التكامل $c$ (لأن التكامل غير محدود):</i> \( \int(2x^2-x-6)dx=\dfrac{2x^3}{3}-\dfrac{x^2}{2}-6x+c \)</div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span><b>خطأ شائع:</b> يظن بعض الطلاب أن بالإمكان تكامل كل قوس على حدة ثم ضرب الناتجين ببعضهما — وهذا خطأ فادح، فتكامل حاصل الضرب لا يساوي حاصل ضرب التكاملين. يجب دائماً توزيع الأقواس أولاً، ثم تكامل كثيرة الحدود الناتجة حداً حداً.</span>
+        </div>
+        <div class="exercise-final">✓ الخلاصة: $\displaystyle\int (x-2)(2x+3)\,dx=\dfrac{2x^3}{3}-\dfrac{x^2}{2}-6x+c$</div>
       </div>
 
       <div class="example exercise-card fade-up">
@@ -58,11 +74,28 @@
           <button class="neu-btn" data-reveal-steps="steps-ex8b">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int (x-1)(x+1)(2x-5)\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد التكامل غير المحدود لحاصل ضرب ثلاثة أقواس خطية معاً.</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> الدالة $(x-1)(x+1)(2x-5)$.</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نوزّع الأقواس تدريجياً — نبدأ بأسهل زوج (هنا $(x-1)(x+1)$ الذي يشكّل فرق مربعين)، ثم نكمل التوزيع مع القوس الثالث، ثم نكامل حداً حداً بقاعدة الأس.</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex8b">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نوزّع أولاً الزوج الأول: $(x-1)(x+1)=x^2-1$</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">ثم نوزّع الباقي: $(x^2-1)(2x-5)=2x^3-5x^2-2x+5$</div></li>
-          <li class="step"><span class="step-dot">3</span><div class="step-body">نكامل حداً حداً: \( \int(2x^3-5x^2-2x+5)dx = \dfrac{x^4}{2}-\dfrac{5x^3}{3}-x^2+5x+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نلاحظ أن القوسين الأول والثاني على صورة فرق مربعين $(a-b)(a+b)=a^2-b^2$:</i> $(x-1)(x+1)$</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نطبّق قاعدة فرق المربعين مباشرة:</i> \( (x-1)(x+1)=x^2-1^2=x^2-1 \)</div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نضرب الحد $x^2$ من الناتج في القوس الثالث $(2x-5)$:</i> \( x^2\cdot(2x-5)=2x^3-5x^2 \)</div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نضرب الحد $-1$ من الناتج في القوس الثالث $(2x-5)$:</i> \( -1\cdot(2x-5)=-2x+5 \)</div></li>
+          <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نجمع نواتج الضرب لنحصل على كثيرة الحدود الكاملة:</i> \( (x^2-1)(2x-5)=2x^3-5x^2-2x+5 \)</div></li>
+          <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نكامل الحد $2x^3$:</i> \( \int 2x^3\,dx=\dfrac{2x^4}{4}=\dfrac{x^4}{2} \)</div></li>
+          <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نكامل الحد $-5x^2$:</i> \( \int(-5x^2)\,dx=\dfrac{-5x^3}{3} \)</div></li>
+          <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نكامل الحد $-2x$:</i> \( \int(-2x)\,dx=-x^2 \)</div></li>
+          <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نكامل الحد الثابت $5$:</i> \( \int 5\,dx=5x \)</div></li>
+          <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نجمع كل النواتج ونضيف ثابت التكامل $c$:</i> \( \int(2x^3-5x^2-2x+5)dx = \dfrac{x^4}{2}-\dfrac{5x^3}{3}-x^2+5x+c \)</div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span><b>خطأ شائع:</b> البدء بتوزيع القوسين الأول والثالث أو الثاني والثالث بدل التعرف أولاً على فرق المربعين $(x-1)(x+1)$، مما يجعل التوزيع أطول وأكثر عرضة للخطأ. ابحث دائماً عن أسهل زوج يمكن تبسيطه قبل التوزيع الكامل.</span>
+        </div>
+        <div class="exercise-final">✓ الخلاصة: $\displaystyle\int (x-1)(x+1)(2x-5)\,dx=\dfrac{x^4}{2}-\dfrac{5x^3}{3}-x^2+5x+c$</div>
       </div>
     </div>
   </section>
@@ -77,10 +110,25 @@
           <button class="neu-btn" data-reveal-steps="steps-ex9a">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{x^2-9}{x-3}\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل كسر جبري بعد تبسيطه.</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $x^2-9$ (فرق مربعين)، والمقام $x-3$.</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> لا توجد قاعدة لتكامل قسمة دالتين مباشرة؛ لذلك نحلل البسط ونختصر مع المقام أولاً لتبسيط الكسر إلى كثيرة حدود بسيطة، ثم نطبّق قاعدة الأس.</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex9a">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط (فرق مربعين): \( \dfrac{x^2-9}{x-3}=\dfrac{(x-3)(x+3)}{x-3}=x+3 \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">\( \displaystyle\int(x+3)\,dx=\dfrac{x^2}{2}+3x+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نتعرف على البسط كفرق مربعين:</i> $x^2-9=x^2-3^2$</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نحلل البسط بقاعدة فرق المربعين $a^2-b^2=(a-b)(a+b)$:</i> $x^2-9=(x-3)(x+3)$</div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نكتب الكسر كاملاً بعد التحليل:</i> \( \dfrac{x^2-9}{x-3}=\dfrac{(x-3)(x+3)}{x-3} \)</div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نختصر العامل المشترك $(x-3)$ من البسط والمقام:</i> \( \dfrac{(x-3)(x+3)}{x-3}=x+3 \)</div></li>
+          <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نكامل الحد $x$:</i> \( \int x\,dx=\dfrac{x^2}{2} \)</div></li>
+          <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نكامل الحد الثابت $3$:</i> \( \int 3\,dx=3x \)</div></li>
+          <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نجمع النتيجتين ونضيف ثابت التكامل $c$:</i> \( \int(x+3)\,dx=\dfrac{x^2}{2}+3x+c \)</div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span><b>خطأ شائع:</b> محاولة تكامل البسط والمقام كلٌّ على حدة (تكامل $x^2-9$ ثم تكامل $x-3$ وقسمة الناتجين) — هذا غير صحيح إطلاقاً. يجب أولاً تبسيط الكسر جبرياً إلى دالة واحدة، ثم تكاملها.</span>
+        </div>
+        <div class="exercise-final">✓ الخلاصة: $\displaystyle\int \frac{x^2-9}{x-3}\,dx=\dfrac{x^2}{2}+3x+c$</div>
       </div>
 
       <div class="example exercise-card fade-up">
@@ -89,10 +137,25 @@
           <button class="neu-btn" data-reveal-steps="steps-ex9b">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{x^2+5x+6}{x+2}\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل كسر جبري بعد تحليل البسط.</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط ثلاثية حدود من الدرجة الثانية $x^2+5x+6$، والمقام $x+2$.</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نحلل البسط بإيجاد عددين حاصل ضربهما $6$ ومجموعهما $5$، ثم نختصر مع المقام، ثم نطبّق قاعدة الأس.</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex9b">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط: \( \dfrac{x^2+5x+6}{x+2}=\dfrac{(x+3)(x+2)}{x+2}=x+3 \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">\( \displaystyle\int(x+3)\,dx=\dfrac{x^2}{2}+3x+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نبحث عن عددين حاصل ضربهما $6$ ومجموعهما $5$:</i> العددان هما $3$ و $2$</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نحلل البسط بهذين العددين:</i> $x^2+5x+6=(x+3)(x+2)$</div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نكتب الكسر كاملاً بعد التحليل:</i> \( \dfrac{x^2+5x+6}{x+2}=\dfrac{(x+3)(x+2)}{x+2} \)</div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نختصر العامل المشترك $(x+2)$ من البسط والمقام:</i> \( \dfrac{(x+3)(x+2)}{x+2}=x+3 \)</div></li>
+          <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نكامل الحد $x$:</i> \( \int x\,dx=\dfrac{x^2}{2} \)</div></li>
+          <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نكامل الحد الثابت $3$:</i> \( \int 3\,dx=3x \)</div></li>
+          <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نجمع النتيجتين ونضيف ثابت التكامل $c$:</i> \( \int(x+3)\,dx=\dfrac{x^2}{2}+3x+c \)</div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span><b>خطأ شائع:</b> اختيار عاملين خاطئين عند تحليل ثلاثية الحدود (مثل $6$ و $1$ بدل $3$ و $2$). تحقّق دائماً من الشرطين معاً: حاصل الضرب <b>و</b> المجموع.</span>
+        </div>
+        <div class="exercise-final">✓ الخلاصة: $\displaystyle\int \frac{x^2+5x+6}{x+2}\,dx=\dfrac{x^2}{2}+3x+c$</div>
       </div>
 
       <div class="example exercise-card fade-up">
@@ -101,10 +164,24 @@
           <button class="neu-btn" data-reveal-steps="steps-ex9c">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{3}{x^4}\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل دالة كسرية مقامها أس موجب من $x$.</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\dfrac{3}{x^4}$.</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> لا يمكن تطبيق قاعدة الأس مباشرة على متغير في المقام؛ لذلك نحوّل $x^4$ من المقام إلى البسط بأس سالب ($x^{-4}$)، ثم نطبّق قاعدة الأس $\int x^n dx=\dfrac{x^{n+1}}{n+1}+c$ مع الحذر من العمليات على الأسس السالبة.</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex9c">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نرفع المقام للبسط بتغيير إشارة الأس: \( \int\frac{3}{x^4}dx = 3\int x^{-4}\,dx \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">\( = 3\cdot\dfrac{x^{-3}}{-3}+c = \dfrac{-1}{x^3}+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نكتب $\dfrac{1}{x^4}$ بصيغة الأس السالب (ننقل المتغير إلى البسط ونغيّر إشارة الأس من $+4$ إلى $-4$):</i> $\dfrac{1}{x^4}=x^{-4}$</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نخرج الثابت $3$ خارج علامة التكامل (خاصية خطية التكامل):</i> \( \int\frac{3}{x^4}dx = 3\int x^{-4}\,dx \)</div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نطبّق قاعدة الأس (نزيد الأس بمقدار 1، من $-4$ إلى $-3$، ونقسم على الأس الجديد):</i> \( \int x^{-4}\,dx=\dfrac{x^{-3}}{-3} \)</div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نضرب الناتج في الثابت $3$ الذي أخرجناه سابقاً:</i> \( 3\cdot\dfrac{x^{-3}}{-3}=-x^{-3} \)</div></li>
+          <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نعيد كتابة الأس السالب بصيغة كسر (نعيد المتغير إلى المقام):</i> $-x^{-3}=\dfrac{-1}{x^3}$</div></li>
+          <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نضيف ثابت التكامل $c$:</i> \( \dfrac{-1}{x^3}+c \)</div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span><b>خطأ شائع:</b> الخلط عند طرح 1 من الأس السالب — الأس $-4$ يصبح $-3$ (وليس $-5$)، لأن الجمع هنا هو $-4+1=-3$. راجع دائماً قاعدة جمع الأعداد السالبة عند العمل بأسس سالبة.</span>
+        </div>
+        <div class="exercise-final">✓ الخلاصة: $\displaystyle\int \frac{3}{x^4}\,dx=\dfrac{-1}{x^3}+c$</div>
       </div>
 
       <div class="example exercise-card fade-up">
@@ -113,10 +190,25 @@
           <button class="neu-btn" data-reveal-steps="steps-ex9d">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{-2}{\sqrt[5]{x^2}}\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل دالة كسرية مقامها جذر من الرتبة الخامسة.</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\dfrac{-2}{\sqrt[5]{x^2}}$.</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نكتب الجذر أولاً كأس كسري، ثم نرفعه إلى البسط بأس سالب، ثم نطبّق قاعدة الأس مع أس كسري.</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex9d">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نكتب الجذر كأس كسري ونرفعه للبسط: \( \int\frac{-2}{\sqrt[5]{x^2}}dx = -2\int x^{-2/5}\,dx \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">\( = -2\cdot\dfrac{x^{3/5}}{3/5}+c = -\dfrac{10}{3}\sqrt[5]{x^3}+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نكتب الجذر الخماسي كأس كسري:</i> $\sqrt[5]{x^2}=x^{2/5}$</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نرفع البسط $1$ إلى الأعلى بتغيير إشارة الأس (ننقل المتغير من المقام إلى البسط):</i> $\dfrac{1}{x^{2/5}}=x^{-2/5}$</div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نخرج الثابت $-2$ خارج علامة التكامل:</i> \( \int\frac{-2}{\sqrt[5]{x^2}}dx = -2\int x^{-2/5}\,dx \)</div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نطبّق قاعدة الأس (نزيد الأس بمقدار 1: من $-\tfrac25$ إلى $\tfrac35$، لأن $-\tfrac25+\tfrac55=\tfrac35$):</i> \( \int x^{-2/5}\,dx=\dfrac{x^{3/5}}{3/5} \)</div></li>
+          <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نبسّط القسمة على كسر (نضرب في مقلوبه):</i> $\dfrac{x^{3/5}}{3/5}=\dfrac{5}{3}x^{3/5}$</div></li>
+          <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نضرب الناتج في الثابت $-2$ الذي أخرجناه سابقاً:</i> $-2\cdot\dfrac{5}{3}x^{3/5}=-\dfrac{10}{3}x^{3/5}$</div></li>
+          <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نعيد الأس الكسري إلى صيغة جذر ونضيف ثابت التكامل $c$:</i> \( -\dfrac{10}{3}\sqrt[5]{x^3}+c \)</div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span><b>خطأ شائع:</b> نسيان ضرب الثابت $-2$ في الناتج النهائي، أو الخطأ في جمع الكسرين $-\tfrac25$ و $1$ (يجب كتابة $1=\tfrac55$ ليصبح الجمع على نفس المقام).</span>
+        </div>
+        <div class="exercise-final">✓ الخلاصة: $\displaystyle\int \frac{-2}{\sqrt[5]{x^2}}\,dx=-\dfrac{10}{3}\sqrt[5]{x^3}+c$</div>
       </div>
     </div>
   </section>
@@ -133,6 +225,53 @@
     </div>
   </section>
 
+  <section class="section fade-up">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة مصغّرة: المهارات الثلاث</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l3-topic" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">قبل أن ننتقل إلى الأمثلة، هذه خريطة سريعة تلخّص المهارات الثلاث التي تعلّمناها، ومتى نستخدم كل واحدة منها.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l3-topic">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية مصغّرة لمهارات التكامل الثلاث">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#ff6b9d"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">مهارات</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">التكامل</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#7c6fee"/>
+            <text x="150" y="70" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">1️⃣ توزيع</text>
+            <text x="150" y="84" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">حاصل الضرب</text>
+            <text x="150" y="98" text-anchor="middle" fill="#fff" font-weight="700" font-size="9" font-family="Cairo,sans-serif">(x-2)(2x+3)</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="670" y="70" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">2️⃣ تبسيط</text>
+            <text x="670" y="84" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">حاصل القسمة</text>
+            <text x="670" y="98" text-anchor="middle" fill="#fff" font-weight="700" font-size="9" font-family="Cairo,sans-serif">تحليل واختصار</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#2fd18f"/>
+            <text x="150" y="270" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">3️⃣ التعويض</text>
+            <text x="150" y="284" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">المتسلسل ⭐</text>
+            <text x="150" y="298" text-anchor="middle" fill="#fff" font-weight="700" font-size="9" font-family="Cairo,sans-serif">[f(x)]ⁿf'(x)</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ffab5e"/>
+            <text x="670" y="270" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">❓ متى أستخدم</text>
+            <text x="670" y="284" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">كل تقنية؟</text>
+            <text x="670" y="298" text-anchor="middle" fill="#fff" font-weight="700" font-size="8.5" font-family="Cairo,sans-serif">افحص شكل التكامل أولاً</text></g>
+        </svg>
+        <div class="neu-inset" style="padding:.9rem 1.1rem;margin-top:.8rem">
+          <p style="margin:.2rem 0"><b>① توزيع حاصل الضرب:</b> استخدمه عندما ترى أقواساً مضروبة ببعضها <u>بلا</u> أس ظاهر على أحدها (مثل $(x-2)(2x+3)$).</p>
+          <p style="margin:.2rem 0"><b>② تبسيط حاصل القسمة:</b> استخدمه عندما ترى كسراً جبرياً — حاول تحليل البسط والاختصار مع المقام، أو حوّل المقام إلى بسط بأس سالب إن تعذّر التحليل.</p>
+          <p style="margin:.2rem 0"><b>③ التعويض المتسلسل:</b> استخدمه عندما ترى قوساً (أو جذراً) مرفوعاً لأس، ومشتقة ما بداخله موجودة (أو قريبة بمعامل) في الجزء الآخر من التكامل.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
     <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة على التعويض المتسلسل</h2>
     <p class="lead" style="margin-top:0">لاحظ الملاحظة الملوّنة "مشتقة القوس من الداخل" في كل مثال — هي مفتاح الحل.</p>
@@ -141,58 +280,126 @@
       <div class="example-head"><div class="example-title"><span class="example-badge">10</span> مثال 10</div>
         <button class="neu-btn" data-reveal-steps="steps-ex10">إظهار خطوات الحل</button></div>
       <div class="example-problem">$\int (3x^2+5x-3)^3(6x+5)\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل قوس مرفوع لأس مضروب في دالة أخرى.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> القوس الداخلي $3x^2+5x-3$ مرفوع للأس $3$، مضروب في $(6x+5)$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> قاعدة التعويض المتسلسل $\int[f(x)]^n f'(x)\,dx=\dfrac{[f(x)]^{n+1}}{n+1}+c$ — نتحقق أولاً هل $(6x+5)$ هي فعلاً مشتقة القوس الداخلي.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex10">
-        <li class="step"><span class="step-dot">🔑</span><div class="step-body">$(6x+5)$ هي بالضبط مشتقة $3x^2+5x-3$ — تطابق تام، فتُهمل عند التكامل.</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نزيد أس القوس بمقدار 1 (من 3 إلى 4) ونقسم على الأس الجديد:</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{(3x^2+5x-3)^4}{4}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body"><i>نشتق ما بداخل القوس لنتحقق من التطابق — هذه هي الخطوة الأهم في كل هذا الدرس:</i> مشتقة $3x^2+5x-3$ هي $6x+5$. وبما أن هذا يطابق تماماً العامل $(6x+5)$ الموجود مضروباً في التكامل، فنحن أمام الصورة القياسية $\int[f(x)]^n f'(x)\,dx$ تماماً، ويمكننا تطبيق القاعدة مباشرة دون أي تعديل على المعاملات.</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نزيد أس القوس بمقدار واحد فقط (من 3 إلى 4)، حسب نص القاعدة:</i> يصبح القوس $(3x^2+5x-3)^4$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نقسم على الأس الجديد (4)، وهو الجزء الثاني من القاعدة:</i> \( \dfrac{(3x^2+5x-3)^4}{4} \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نضيف ثابت التكامل $c$ لأن التكامل غير محدود:</i> \( \dfrac{(3x^2+5x-3)^4}{4}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> تطبيق القاعدة على أي قوس مرفوع لأس دون التحقق أولاً من أن الجزء الآخر هو فعلاً مشتقة الداخل — قد لا يكون التطابق موجوداً، وعندها يجب ضبط المعامل (كما في الأمثلة التالية) قبل التطبيق.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $\displaystyle\int (3x^2+5x-3)^3(6x+5)\,dx=\dfrac{(3x^2+5x-3)^4}{4}+c$</div>
     </div>
 
     <div class="example fade-up">
       <div class="example-head"><div class="example-title"><span class="example-badge">12</span> مثال 12</div>
         <button class="neu-btn" data-reveal-steps="steps-ex12">إظهار خطوات الحل</button></div>
       <div class="example-problem">$\int x^2\sqrt{x^3+8}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل دالة تحت جذر تربيعي مضروبة في دالة أخرى.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> القوس الداخلي $x^3+8$ تحت جذر، مضروب في $x^2$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> قاعدة التعويض المتسلسل، بعد كتابة الجذر كأس كسري وضبط المعامل الناقص أمام $x^2$.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex12">
-        <li class="step"><span class="step-dot">🔑</span><div class="step-body">مشتقة $x^3+8$ هي $3x^2$، لكن الموجود هو $x^2$ فقط — ناقص المعامل 3.</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نضرب $x^2$ في 3 داخل التكامل، ونقسم التكامل كله على 3 (حتى لا تتغيّر قيمته):</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac13\int (3x^2)(x^3+8)^{1/2}dx = \dfrac13\cdot\dfrac{(x^3+8)^{3/2}}{3/2}+c \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( = \dfrac{2}{9}\sqrt{(x^3+8)^3}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نكتب الجذر التربيعي بصيغة الأس الكسري لتسهيل تطبيق القاعدة:</i> $\sqrt{x^3+8}=(x^3+8)^{1/2}$</div></li>
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body"><i>نشتق ما بداخل القوس لنتحقق من التطابق:</i> مشتقة $x^3+8$ هي $3x^2$، لكن الموجود في التكامل هو $x^2$ فقط (بمعامل 1) — أي أننا ناقصون المعامل 3 بالضبط. هذا لا يمنع استخدام القاعدة؛ فقط نحتاج "توليد" المعامل الناقص.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نضرب $x^2$ في الثابت 3 داخل التكامل (حتى يصبح مطابقاً تماماً لمشتقة الداخل $3x^2$):</i> يصبح التكامل يحتوي على $3x^2(x^3+8)^{1/2}$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>لتعويض هذا الضرب في 3 (حتى لا تتغيّر قيمة التكامل الأصلية)، نقسم التكامل كله على 3 من الخارج:</i> \( \int x^2(x^3+8)^{1/2}dx=\dfrac13\int (3x^2)(x^3+8)^{1/2}dx \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نطبّق القاعدة: نزيد أس القوس بمقدار 1 (من $\tfrac12$ إلى $\tfrac32$):</i> $(x^3+8)^{3/2}$</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نقسم على الأس الجديد $\tfrac32$ (أي نضرب في مقلوبه $\tfrac23$):</i> \( \dfrac{(x^3+8)^{3/2}}{3/2}=\dfrac23(x^3+8)^{3/2} \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نضرب الناتج في الثابت $\tfrac13$ الذي أخرجناه في الخطوة 3:</i> \( \dfrac13\cdot\dfrac23(x^3+8)^{3/2}=\dfrac29(x^3+8)^{3/2} \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نعيد الأس الكسري إلى صيغة جذر ونضيف ثابت التكامل $c$:</i> \( \dfrac{2}{9}\sqrt{(x^3+8)^3}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> ضرب $x^2$ في 3 داخل التكامل دون تعويض ذلك بالقسمة على 3 من الخارج — هذا يغيّر قيمة التكامل الحقيقية. تذكّر: أي عدد نضربه بالداخل يجب قسمة التكامل عليه من الخارج (والعكس صحيح).</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $\displaystyle\int x^2\sqrt{x^3+8}\,dx=\dfrac{2}{9}\sqrt{(x^3+8)^3}+c$</div>
     </div>
 
     <div class="example fade-up">
       <div class="example-head"><div class="example-title"><span class="example-badge">15</span> مثال 15</div>
         <button class="neu-btn" data-reveal-steps="steps-ex15">إظهار خطوات الحل</button></div>
       <div class="example-problem">$\int (2x^6-3x)^4\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل قوس مرفوع لأس، لكن بلا عامل ثانٍ ظاهر خارجه.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $(2x^6-3x)^4$، وهو غير مضروب ظاهرياً في أي عامل آخر.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نحلل أولاً ما بداخل القوس بحثاً عن عامل مشترك يكشف "العامل الثاني" المخفي، ثم نطبّق قاعدة التعويض المتسلسل.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex15">
-        <li class="step"><span class="step-dot">🔑</span><div class="step-body">نحلّل داخل القوس أولاً: $2x^6-3x = x(2x^5-3)$، إذن $(2x^6-3x)^4 = x^4(2x^5-3)^4$.</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">مشتقة $(2x^5-3)$ هي $10x^4$ — نحتاج معامل 10 بدل 1 الموجودة أمام $x^4$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{1}{10}\int (10x^4)(2x^5-3)^4dx = \dfrac{1}{10}\cdot\dfrac{(2x^5-3)^5}{5}+c \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( = \dfrac{(2x^5-3)^5}{50}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body"><i>نحلّل داخل القوس بحثاً عن عامل مشترك (لأنه لا يوجد عامل ثانٍ ظاهر خارج القوس، فربما يكون مختبئاً داخله):</i> $2x^6-3x = x(2x^5-3)$</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نعوّض هذا التحليل داخل الأس (نرفع كل عامل من عاملي حاصل الضرب للأس 4 على حدة):</i> \( (2x^6-3x)^4=[x(2x^5-3)]^4=x^4(2x^5-3)^4 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نشتق القوس الداخلي الجديد $2x^5-3$ لنتحقق من التطابق:</i> مشتقته $10x^4$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نقارن: الموجود أمام القوس هو $x^4$ بمعامل $1$ فقط، بينما المطلوب $10x^4$ — ناقصون المعامل $10$ بالضبط.</i></div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نضرب $x^4$ في الثابت 10 داخل التكامل:</i> يصبح $10x^4(2x^5-3)^4$</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نقسم التكامل كله على 10 من الخارج لتعويض هذا الضرب:</i> \( \int x^4(2x^5-3)^4dx=\dfrac{1}{10}\int (10x^4)(2x^5-3)^4dx \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نطبّق القاعدة: نزيد الأس بمقدار 1 (من 4 إلى 5) ونقسم على الأس الجديد:</i> \( \dfrac{(2x^5-3)^5}{5} \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نضرب الناتج في الثابت $\tfrac{1}{10}$ الذي أخرجناه في الخطوة 5، ونضيف $c$:</i> \( \dfrac{1}{10}\cdot\dfrac{(2x^5-3)^5}{5}+c=\dfrac{(2x^5-3)^5}{50}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> محاولة تطبيق قاعدة التعويض المتسلسل مباشرة على $(2x^6-3x)^4$ دون تحليل داخل القوس أولاً — فمشتقة $2x^6-3x$ هي $12x^5-3$، وهي لا تطابق أي شيء موجود، مما يوحي خطأً بعدم وجود صيغة تعويض متسلسل هنا. التحليل هو ما يكشف الصورة الصحيحة.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $\displaystyle\int (2x^6-3x)^4\,dx=\dfrac{(2x^5-3)^5}{50}+c$</div>
     </div>
 
     <div class="example fade-up">
       <div class="example-head"><div class="example-title"><span class="example-badge">16</span> مثال 16</div>
         <button class="neu-btn" data-reveal-steps="steps-ex16">إظهار خطوات الحل</button></div>
       <div class="example-problem">$\int \dfrac{(x^2-x)^{10}}{x^{10}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل كسر يحتوي قوساً مرفوعاً لأس في البسط والمقام معاً.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $(x^2-x)^{10}$، والمقام $x^{10}$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نحلل البسط لنكتشف أن المقام يختصر بالكامل، فتبقى صورة بسيطة جداً لقاعدة التعويض المتسلسل (بل قاعدة الأس العادية).</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex16">
-        <li class="step"><span class="step-dot">🔑</span><div class="step-body">$(x^2-x)^{10}=[x(x-1)]^{10}=x^{10}(x-1)^{10}$، فيُختصر $x^{10}$ مع المقام تماماً!</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">يتبقى $\int (x-1)^{10}\,dx$، ومشتقة $(x-1)$ هي $1$ (لا حاجة لتعديل أي معامل).</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{(x-1)^{11}}{11}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body"><i>نُخرج العامل المشترك $x$ من داخل القوس أولاً:</i> $x^2-x=x(x-1)$</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نرفع طرفي حاصل الضرب هذا للأس 10 (كل عامل على حدة):</i> \( (x^2-x)^{10}=[x(x-1)]^{10}=x^{10}(x-1)^{10} \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نكتب الكسر الأصلي بعد هذا التحليل:</i> \( \dfrac{(x^2-x)^{10}}{x^{10}}=\dfrac{x^{10}(x-1)^{10}}{x^{10}} \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نختصر $x^{10}$ من البسط والمقام (يختصر تماماً بلا باقٍ):</i> \( \dfrac{x^{10}(x-1)^{10}}{x^{10}}=(x-1)^{10} \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نشتق القوس الداخلي $x-1$ لنتحقق من التطابق:</i> مشتقته $1$ — أي لا حاجة لتعديل أي معامل، فالمعامل الموجود ضمنياً هو نفسه 1.</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نطبّق القاعدة مباشرة: نزيد الأس بمقدار 1 (من 10 إلى 11) ونقسم على الأس الجديد، ونضيف $c$:</i> \( \int (x-1)^{10}\,dx=\dfrac{(x-1)^{11}}{11}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> محاولة اختصار $x^{10}$ مباشرة من الكسر الأصلي قبل تحليل $(x^2-x)^{10}$ — لا يجوز الاختصار قبل التحليل، لأن $(x^2-x)^{10}$ ليست حاصل ضرب $x^{10}$ في شيء إلا بعد التحليل الصحيح.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $\displaystyle\int \dfrac{(x^2-x)^{10}}{x^{10}}\,dx=\dfrac{(x-1)^{11}}{11}+c$</div>
     </div>
 
     <div class="example fade-up">
       <div class="example-head"><div class="example-title"><span class="example-badge">18</span> مثال 18</div>
         <button class="neu-btn" data-reveal-steps="steps-ex18">إظهار خطوات الحل</button></div>
       <div class="example-problem">$\int \dfrac{dx}{\sqrt[3]{9-12x+4x^2}}$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل مقامه جذر تكعيبي لثلاثية حدود.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> المقام $\sqrt[3]{9-12x+4x^2}$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نتحقق أولاً هل الثلاثية مربّع كامل لنبسّط الجذر، ثم نحوّل المقام إلى بسط بأس سالب، ثم نطبّق قاعدة التعويض المتسلسل مع الانتباه لإشارة المعامل الناقص السالبة.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex18">
-        <li class="step"><span class="step-dot">🔑</span><div class="step-body">نلاحظ أن $9-12x+4x^2=(3-2x)^2$ (مربّع كامل)، فالمقام $=(3-2x)^{2/3}$.</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكتب التكامل بصيغة الأس السالب: \( \int (3-2x)^{-2/3}dx \)، ومشتقة $(3-2x)$ هي $-2$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نضرب ونقسم على $-2$: \( = \dfrac{-1}{2}\int(-2)(3-2x)^{-2/3}dx = \dfrac{-1}{2}\cdot\dfrac{(3-2x)^{1/3}}{1/3}+c \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( = \dfrac{-3\sqrt[3]{3-2x}}{2}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body"><i>نتحقق هل $9-12x+4x^2$ مربّع كامل، لأن هذا يبسّط الجذر التكعيبي كثيراً:</i> $(3-2x)^2=9-12x+4x^2$ ✓ — فعلاً مربّع كامل.</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نعوّض هذا التحليل داخل الجذر التكعيبي:</i> \( \sqrt[3]{9-12x+4x^2}=\sqrt[3]{(3-2x)^2}=(3-2x)^{2/3} \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نرفع المقام إلى البسط بتغيير إشارة الأس (لتصبح الصيغة قابلة لتطبيق قاعدة التعويض المتسلسل):</i> \( \dfrac{1}{(3-2x)^{2/3}}=(3-2x)^{-2/3} \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نشتق القوس الداخلي $3-2x$ لنتحقق من المعامل المطلوب:</i> مشتقته $-2$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نقارن: لا يوجد أي معامل ظاهر أمام القوس (المعامل ضمنياً 1)، بينما المطلوب $-2$ — نحتاج توليد المعامل $-2$ بالضبط (بإشارته السالبة).</i></div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نضرب داخل التكامل بالثابت $-2$:</i> يصبح $(-2)(3-2x)^{-2/3}$</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>لتعويض الضرب في $-2$، نقسم التكامل كله على $-2$ من الخارج (أي نضربه في $-\tfrac12$):</i> \( \int (3-2x)^{-2/3}dx=-\dfrac12\int(-2)(3-2x)^{-2/3}dx \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نطبّق القاعدة: نزيد الأس بمقدار 1 (من $-\tfrac23$ إلى $\tfrac13$):</i> $(3-2x)^{1/3}$</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نقسم على الأس الجديد $\tfrac13$ (أي نضرب في مقلوبه 3):</i> \( \dfrac{(3-2x)^{1/3}}{1/3}=3(3-2x)^{1/3} \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نضرب الناتج في الثابت $-\tfrac12$ من الخطوة 6، ونعيد صيغة الجذر، ونضيف $c$:</i> \( -\dfrac12\cdot3(3-2x)^{1/3}+c=\dfrac{-3\sqrt[3]{3-2x}}{2}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان الإشارة السالبة عند ضبط المعامل $-2$ (كتابة $\tfrac12$ بدل $-\tfrac12$) — عندما تكون مشتقة الداخل سالبة، يجب أن يكون الثابت الذي نضرب ونقسم عليه سالباً أيضاً حتى يطابق الإشارة تماماً.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $\displaystyle\int \dfrac{dx}{\sqrt[3]{9-12x+4x^2}}=\dfrac{-3\sqrt[3]{3-2x}}{2}+c$</div>
     </div>
 
     <div class="callout tip fade-up">
@@ -223,12 +430,25 @@
         <button class="neu-btn" data-reveal-steps="steps-tq1" data-show-label="إظهار الحل" data-hide-label="إخفاء الحل">إظهار الحل</button>
       </div>
       <div class="example-problem">أثبت أن $F(x)=\left(\dfrac{x}{x-1}\right)^2$ هي الدالة المقابلة للدالة $f(x)=\dfrac{-2x}{(x-1)^3}$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إثبات أن $F(x)$ هي فعلاً الدالة المقابلة لـ $f(x)$ بحسب تعريف الدالة المقابلة.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $F(x)=\left(\dfrac{x}{x-1}\right)^2$، و $f(x)=\dfrac{-2x}{(x-1)^3}$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> يكفي إثبات أن $F'(x)=f(x)$. ولاشتقاق $F(x)$ نحتاج قاعدة السلسلة (لأنها قوس مرفوع للأس 2) مجتمعة مع قاعدة خارج القسمة (لأن ما بداخل القوس نفسه كسر).</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq1">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نشتق $F(x)$ باستخدام قاعدة خارج القسمة على $u=x,\;v=x-1$: \( F(x)=\left(\dfrac{x}{x-1}\right)^2 \Rightarrow F'(x)=2\left(\dfrac{x}{x-1}\right)\cdot\dfrac{d}{dx}\left(\dfrac{x}{x-1}\right) \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة $\dfrac{x}{x-1}$ هي $\dfrac{(x-1)(1)-x(1)}{(x-1)^2}=\dfrac{-1}{(x-1)^2}$</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض: \( F'(x)=2\cdot\dfrac{x}{x-1}\cdot\dfrac{-1}{(x-1)^2}=\dfrac{-2x}{(x-1)^3} \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">وهذا يساوي $f(x)$ تماماً، إذن $F(x)$ هي فعلاً الدالة المقابلة لـ $f(x)$. ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نطبّق قاعدة السلسلة على القوس المرفوع للأس 2 (نضرب الأس في القوس مرفوعاً لأس أقل بواحد، مضروباً في مشتقة الداخل):</i> \( F(x)=\left(\dfrac{x}{x-1}\right)^2 \Rightarrow F'(x)=2\left(\dfrac{x}{x-1}\right)\cdot\dfrac{d}{dx}\left(\dfrac{x}{x-1}\right) \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نشتق الجزء الداخلي $\dfrac{x}{x-1}$ بقاعدة خارج القسمة (مشتقة البسط×المقام ناقص البسط×مشتقة المقام، على مربع المقام):</i> مشتقة البسط $x$ هي $1$، ومشتقة المقام $x-1$ هي $1$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نطبّق قاعدة خارج القسمة بهذه القيم:</i> \( \dfrac{d}{dx}\left(\dfrac{x}{x-1}\right)=\dfrac{(x-1)(1)-x(1)}{(x-1)^2} \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نبسّط البسط (نفتح القوس ونجمع الحدود):</i> $(x-1)(1)-x(1)=x-1-x=-1$</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>إذن مشتقة الجزء الداخلي هي:</i> \( \dfrac{d}{dx}\left(\dfrac{x}{x-1}\right)=\dfrac{-1}{(x-1)^2} \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نعوّض هذه المشتقة في تعبير $F'(x)$ من الخطوة الأولى:</i> \( F'(x)=2\cdot\dfrac{x}{x-1}\cdot\dfrac{-1}{(x-1)^2} \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نضرب الكسور ببعضها (البسط في البسط، والمقام في المقام):</i> \( F'(x)=\dfrac{2x\cdot(-1)}{(x-1)\cdot(x-1)^2}=\dfrac{-2x}{(x-1)^3} \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نقارن مع المعطى:</i> $F'(x)=\dfrac{-2x}{(x-1)^3}$ يطابق $f(x)$ تماماً، إذن $F(x)$ هي فعلاً الدالة المقابلة لـ $f(x)$. ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> اشتقاق القوس الخارجي فقط دون ضرب مشتقة الداخل (قاعدة السلسلة)، أو عكس ترتيب حدّي البسط عند تطبيق قاعدة خارج القسمة، مما يقلب إشارة الناتج.</span>
+      </div>
       <div class="exercise-final">✓ تم الإثبات: $F'(x) = f(x)$</div>
     </div>
 
@@ -238,13 +458,29 @@
         <button class="neu-btn" data-reveal-steps="steps-tq2">إظهار الحل</button>
       </div>
       <div class="example-problem">إذا كانت $F(x)$ الدالة المقابلة لـ $f(x)=ax^3+bx$، وكان $F'(-2)=12,\ F''(2)=12$، جد $a,b\in\mathbb{R}$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد قيمتي الثابتين $a$ و $b$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $F$ الدالة المقابلة لـ $f(x)=ax^3+bx$، مع شرطين عدديين: $F'(-2)=12$ و $F''(2)=12$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> تعريف الدالة المقابلة ($F'(x)=f(x)$)، ثم اشتقاق إضافي لإيجاد $F''(x)$، ثم تعويض الشرطين لتكوين معادلتين بمجهولين وحلّهما بطريقة الحذف.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq2">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">بما أن $F$ الدالة المقابلة لـ $f$: \( F'(x)=f(x)=ax^3+bx \)، وباشتقاق مرة أخرى: \( F''(x)=3ax^2+b \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نستخدم $F'(-2)=12$: \( a(-2)^3+b(-2)=12 \Rightarrow -8a-2b=12 \Rightarrow -4a-b=6 \quad\dots(1) \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نستخدم $F''(2)=12$: \( 3a(2)^2+b=12 \Rightarrow 12a+b=12 \quad\dots(2) \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">نجمع (1) و(2) لحذف $b$: \( (-4a-b)+(12a+b)=6+12 \Rightarrow 8a=18 \Rightarrow a=\dfrac{9}{4} \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">نعوّض في (2): \( 12\left(\dfrac94\right)+b=12 \Rightarrow 27+b=12 \Rightarrow b=-15 \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نستخدم تعريف الدالة المقابلة:</i> بما أن $F$ الدالة المقابلة لـ $f$، فإن \( F'(x)=f(x)=ax^3+bx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نشتق $F'(x)$ مرة أخرى للحصول على $F''(x)$ (مشتقة $ax^3$ هي $3ax^2$، ومشتقة $bx$ هي $b$):</i> \( F''(x)=3ax^2+b \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نعوّض $x=-2$ في $F'(x)$ ونساويه بالشرط الأول $12$:</i> \( a(-2)^3+b(-2)=12 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نحسب $(-2)^3=-8$:</i> \( -8a-2b=12 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نقسم طرفي المعادلة على $2$ لتبسيطها (نحصل على المعادلة (1)):</i> \( -4a-b=6 \quad\dots(1) \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نعوّض $x=2$ في $F''(x)$ ونساويه بالشرط الثاني $12$:</i> \( 3a(2)^2+b=12 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نحسب $3a(2)^2=3a\cdot4=12a$ (نحصل على المعادلة (2)):</i> \( 12a+b=12 \quad\dots(2) \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نجمع المعادلتين (1) و(2) معاً؛ لاحظ أن معامل $b$ في الأولى هو $-1$ ومعامله في الثانية $+1$، فيُحذف عند الجمع:</i> \( (-4a-b)+(12a+b)=6+12 \Rightarrow 8a=18 \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نحل من أجل $a$ بقسمة الطرفين على 8:</i> \( a=\dfrac{18}{8}=\dfrac{9}{4} \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نعوّض قيمة $a$ في المعادلة (2) لإيجاد $b$:</i> \( 12\left(\dfrac94\right)+b=12 \)</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>نحسب $12\times\dfrac94=27$:</i> \( 27+b=12 \)</div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body"><i>نحل من أجل $b$ بطرح 27 من الطرفين:</i> \( b=12-27=-15 \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> تعويض القيمة الخطأ من $x$ في المعادلة الخطأ — يجب استخدام $x=-2$ في معادلة $F'$ فقط، و $x=2$ في معادلة $F''$ فقط، كلٌّ حسب الشرط الخاص به.</span>
+      </div>
       <div class="exercise-final">✓ الجواب: $a=\dfrac{9}{4}\;,\quad b=-15$</div>
     </div>
 
@@ -254,11 +490,26 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3a">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{x^5-x^2}{x^2+x+1}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل كسر جبري معقّد بعد تبسيطه.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $x^5-x^2$ (درجة خامسة)، والمقام $x^2+x+1$ (درجة ثانية).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نُخرج عاملاً مشتركاً من البسط، ثم نحلل الباقي بقاعدة فرق المكعبين، فيظهر عامل مطابق للمقام فيُختصر، ثم نكامل كثيرة الحدود الناتجة بقاعدة الأس.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3a">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط: $x^5-x^2=x^2(x^3-1)=x^2(x-1)(x^2+x+1)$ (فرق مكعبين على $x^3-1$).</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نختصر مع المقام: \( \dfrac{x^2(x-1)(x^2+x+1)}{x^2+x+1}=x^2(x-1)=x^3-x^2 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نكامل: \( \displaystyle\int (x^3-x^2)\,dx=\frac{x^4}{4}-\frac{x^3}{3}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نُخرج العامل المشترك $x^2$ من البسط:</i> $x^5-x^2=x^2(x^3-1)$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نحلل $x^3-1$ بقاعدة فرق المكعبين ($a^3-b^3=(a-b)(a^2+ab+b^2)$ مع $a=x,\,b=1$):</i> $x^3-1=(x-1)(x^2+x+1)$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نعوّض هذا التحليل في البسط الكامل:</i> $x^5-x^2=x^2(x-1)(x^2+x+1)$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نكتب الكسر الأصلي بعد هذا التحليل:</i> \( \dfrac{x^2(x-1)(x^2+x+1)}{x^2+x+1} \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نختصر العامل المشترك $(x^2+x+1)$ من البسط والمقام:</i> \( =x^2(x-1) \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نوزّع $x^2$ على القوس:</i> $x^2(x-1)=x^3-x^2$</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نكامل الحد $x^3$:</i> \( \int x^3\,dx=\dfrac{x^4}{4} \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نكامل الحد $-x^2$:</i> \( \int(-x^2)\,dx=\dfrac{-x^3}{3} \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نجمع النتيجتين ونضيف ثابت التكامل $c$:</i> \( \displaystyle\int (x^3-x^2)\,dx=\frac{x^4}{4}-\frac{x^3}{3}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> محاولة القسمة المطولة (تقسيم كثيرات الحدود) مباشرة دون البحث عن عامل مشترك بالتحليل أولاً — الطريقة أعلاه أقصر وأقل عرضة للخطأ الحسابي.</span>
+      </div>
       <div class="exercise-final">✓ الجواب: $\dfrac{x^4}{4}-\dfrac{x^3}{3}+c$</div>
     </div>
 
@@ -268,12 +519,27 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3b">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \sqrt{3x^4-10x^2}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل تعبير تحت جذر تربيعي.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $3x^4-10x^2$ تحت الجذر.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نُخرج عاملاً مشتركاً ($x^2$) من تحت الجذر لتحويل التكامل إلى صيغة "قوس مرفوع لأس كسري × متغير"، ثم نطبّق قاعدة التعويض المتسلسل بعد ضبط المعامل الناقص.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3b">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نُخرج $x^2$ من تحت الجذر: \( \sqrt{3x^4-10x^2}=\sqrt{x^2(3x^2-10)}=x\sqrt{3x^2-10} \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نكتبها بصيغة القوس المرفوع لأس: \( x(3x^2-10)^{\frac12} \)، ومشتقة الداخل $3x^2-10$ هي $6x$.</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نضرب ونقسم على 6: \( \displaystyle\frac16\int (6x)(3x^2-10)^{\frac12}\,dx=\frac16\cdot\frac{(3x^2-10)^{\frac32}}{\frac32}+c \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">نبسّط: \( \dfrac{1}{6}\cdot\dfrac{2}{3}(3x^2-10)^{\frac32}+c=\dfrac{1}{9}(3x^2-10)^{\frac32}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نُخرج العامل المشترك $x^2$ من داخل الجذر:</i> $3x^4-10x^2=x^2(3x^2-10)$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نفكك جذر حاصل الضرب إلى حاصل ضرب جذرين:</i> \( \sqrt{x^2(3x^2-10)}=\sqrt{x^2}\cdot\sqrt{3x^2-10} \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نبسّط $\sqrt{x^2}=x$:</i> \( \sqrt{3x^4-10x^2}=x\sqrt{3x^2-10} \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نكتب الجذر المتبقي بصيغة الأس الكسري:</i> $x(3x^2-10)^{1/2}$</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نشتق القوس الداخلي $3x^2-10$ لنتحقق من التطابق:</i> مشتقته $6x$</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نقارن: الموجود أمام القوس هو $x$ بمعامل $1$ فقط، بينما المطلوب $6x$ — ناقصون المعامل $6$.</i></div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نضرب $x$ في الثابت 6 داخل التكامل، ونقسم التكامل كله على 6 من الخارج لتعويض الضرب:</i> \( \int x(3x^2-10)^{1/2}dx=\dfrac16\int (6x)(3x^2-10)^{1/2}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نطبّق القاعدة: نزيد الأس بمقدار 1 (من $\tfrac12$ إلى $\tfrac32$) ونقسم على الأس الجديد:</i> \( \dfrac{(3x^2-10)^{3/2}}{3/2} \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نبسّط القسمة على الكسر $\tfrac32$ (نضرب في مقلوبه $\tfrac23$):</i> \( \dfrac{(3x^2-10)^{3/2}}{3/2}=\dfrac23(3x^2-10)^{3/2} \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نضرب بالثابت الخارجي $\tfrac16$ ونضيف $c$:</i> \( \dfrac16\cdot\dfrac23(3x^2-10)^{3/2}+c=\dfrac19(3x^2-10)^{3/2}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان إخراج $x$ من الجذر أولاً ومحاولة اشتقاق $3x^4-10x^2$ مباشرة (وهي ليست مطابقة لأي معامل موجود) — يجب دائماً تبسيط الجذر أولاً إلى الصورة القياسية.</span>
+      </div>
       <div class="exercise-final">✓ الجواب: $\dfrac{1}{9}\sqrt{(3x^2-10)^3}+c$</div>
     </div>
 
@@ -283,12 +549,30 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3c">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{\sqrt{10-\sqrt[3]{x}}}{\sqrt[3]{2x^2}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل تعبير يحتوي جذوراً متداخلة (الأصعب في هذا التمرين).</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $\sqrt{10-\sqrt[3]{x}}$، والمقام $\sqrt[3]{2x^2}$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نكتب كل الجذور بصيغة أسس كسرية، ثم نستخدم تعويضاً مساعداً $u=$ الداخل، لأن الصورة معقّدة بما يكفي بحيث يسهل التتبع باستخدام رمز $u$ بدل تكرار التعبير الطويل.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3c">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكتب المقام: \( \sqrt[3]{2x^2}=\sqrt[3]{2}\cdot x^{\frac23} \)، فيكون التكامل \( \displaystyle\frac{1}{\sqrt[3]2}\int \left(10-x^{\frac13}\right)^{\frac12} x^{-\frac23}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نضع $u=10-x^{\frac13}$، فتكون $\dfrac{du}{dx}=-\dfrac13 x^{-\frac23} \Rightarrow x^{-\frac23}dx=-3\,du$</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض: \( \displaystyle\frac{1}{\sqrt[3]2}\int u^{\frac12}(-3)\,du=\frac{-3}{\sqrt[3]2}\cdot\frac{u^{\frac32}}{\frac32}+c=\frac{-2}{\sqrt[3]2}u^{\frac32}+c \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">نبسّط الثابت: $\dfrac{-2}{\sqrt[3]2}=-2\cdot 2^{-\frac13}=-2^{\frac23}=-\sqrt[3]4$، ونعيد تعويض $u$: \( -\sqrt[3]{4}\left(10-\sqrt[3]{x}\right)^{\frac32}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نكتب الجذر التكعيبي في المقام كأس كسري:</i> $\sqrt[3]{2x^2}=(2x^2)^{1/3}$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نفكك الأس على حاصل ضرب الثابت والمتغير:</i> $(2x^2)^{1/3}=2^{1/3}\cdot x^{2/3}$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نُخرج الثابت $2^{1/3}$ خارج التكامل (نضع البسط كله على $2^{1/3}$):</i> \( \int\dfrac{\sqrt{10-\sqrt[3]{x}}}{2^{1/3}x^{2/3}}dx=\dfrac{1}{\sqrt[3]2}\int \dfrac{\left(10-x^{1/3}\right)^{1/2}}{x^{2/3}}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نرفع $x^{2/3}$ من المقام إلى البسط بتغيير إشارة الأس:</i> \( \dfrac{1}{x^{2/3}}=x^{-2/3} \)، فيصبح التكامل \( \dfrac{1}{\sqrt[3]2}\int \left(10-x^{1/3}\right)^{1/2}x^{-2/3}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نلاحظ أن هذه صورة "قوس مرفوع لأس × دالة أخرى" حيث الداخل هو $10-x^{1/3}$؛ نُسمّي هذا الداخل $u$ تسهيلاً للاشتقاق:</i> $u=10-x^{1/3}$</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نشتق $u$ بالنسبة إلى $x$ (مشتقة الثابت 10 صفر، ومشتقة $-x^{1/3}$ بقاعدة الأس هي $-\tfrac13 x^{-2/3}$):</i> \( \dfrac{du}{dx}=-\dfrac13 x^{-2/3} \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نضرب طرفي المعادلة في $-3$ لعزل الحد $x^{-2/3}dx$ الذي يظهر في تكاملنا الأصلي:</i> \( x^{-2/3}dx=-3\,du \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نعوّض $u$ و $-3\,du$ في التكامل:</i> \( \dfrac{1}{\sqrt[3]2}\int u^{1/2}\cdot(-3)\,du \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نُخرج الثابت $-3$ خارج التكامل:</i> \( \dfrac{-3}{\sqrt[3]2}\int u^{1/2}\,du \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نطبّق قاعدة الأس على $u$ (نزيد الأس من $\tfrac12$ إلى $\tfrac32$ ونقسم على الأس الجديد):</i> \( \int u^{1/2}du=\dfrac{u^{3/2}}{3/2}=\dfrac23 u^{3/2} \)</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>نضرب بالثابت الخارجي $\dfrac{-3}{\sqrt[3]2}$:</i> \( \dfrac{-3}{\sqrt[3]2}\cdot\dfrac23 u^{3/2}=\dfrac{-2}{\sqrt[3]2}u^{3/2} \)</div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body"><i>نبسّط الثابت العددي بكتابة كل شيء كأس للعدد 2 وجمع الأسس ($2^1\cdot2^{-1/3}=2^{1-1/3}=2^{2/3}$):</i> \( \dfrac{-2}{\sqrt[3]2}=-2\cdot 2^{-1/3}=-2^{2/3}=-\sqrt[3]4 \)</div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body"><i>نعيد تعويض $u$ بقيمته الأصلية $10-\sqrt[3]{x}$ ونضيف ثابت التكامل $c$:</i> \( -\sqrt[3]{4}\left(10-\sqrt[3]{x}\right)^{3/2}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان إخراج الثابت $2^{1/3}$ بالكامل من المقام، أو الخطأ في تبسيط $-2\cdot2^{-1/3}$؛ تذكّر قاعدة جمع الأسس عند ضرب أساسين متساويين: $2^1\cdot2^{-1/3}=2^{1-1/3}=2^{2/3}$، وليس طرح الأسس أو ضربها.</span>
+      </div>
       <div class="exercise-final">✓ الجواب: $-\sqrt[3]{4}\left(10-\sqrt[3]{x}\right)^{3/2}+c$</div>
     </div>
 
@@ -298,11 +582,26 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3d">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int (4x^2-4x+1)^{1/3}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل ثلاثية حدود مرفوعة لأس كسري.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $(4x^2-4x+1)^{1/3}$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نتحقق أولاً هل الثلاثية داخل القوس مربّع كامل لتبسيط الأس، ثم نطبّق قاعدة التعويض المتسلسل بعد ضبط المعامل الناقص.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3d">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نلاحظ أن $4x^2-4x+1=(2x-1)^2$ (مربع كامل)، إذن \( (4x^2-4x+1)^{\frac13}=(2x-1)^{\frac23} \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة الداخل $2x-1$ تساوي $2$، فنضرب ونقسم على 2: \( \displaystyle\frac12\int (2)(2x-1)^{\frac23}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =\dfrac12\cdot\dfrac{(2x-1)^{\frac53}}{\frac53}+c=\dfrac12\cdot\dfrac35(2x-1)^{\frac53}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نتحقق هل $4x^2-4x+1$ مربّع كامل:</i> $(2x-1)^2=(2x)^2-2(2x)(1)+1^2=4x^2-4x+1$ ✓</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نعوّض هذا التحليل داخل القوس المرفوع للأس الكسري:</i> $(4x^2-4x+1)^{1/3}=\left[(2x-1)^2\right]^{1/3}$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نبسّط الأس المزدوج بضرب الأسين ببعضهما (قاعدة $(a^m)^n=a^{mn}$):</i> $\left[(2x-1)^2\right]^{1/3}=(2x-1)^{2/3}$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نشتق القوس الداخلي $2x-1$ لنتحقق من المعامل المطلوب:</i> مشتقته $2$</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نقارن: لا يوجد معامل ظاهر أمام القوس (المعامل ضمنياً 1)، بينما المطلوب $2$ — نحتاج توليده.</i></div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نضرب داخل التكامل بالثابت 2، ونقسم التكامل كله على 2 من الخارج:</i> \( \displaystyle\frac12\int (2)(2x-1)^{2/3}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نطبّق القاعدة: نزيد الأس بمقدار 1 (من $\tfrac23$ إلى $\tfrac53$) ونقسم على الأس الجديد:</i> \( \dfrac{(2x-1)^{5/3}}{5/3} \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نبسّط القسمة على الكسر $\tfrac53$ (نضرب في مقلوبه $\tfrac35$):</i> \( \dfrac{(2x-1)^{5/3}}{5/3}=\dfrac35(2x-1)^{5/3} \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نضرب بالثابت الخارجي $\tfrac12$ ونضيف $c$:</i> \( \dfrac12\cdot\dfrac35(2x-1)^{5/3}+c=\dfrac{3}{10}(2x-1)^{5/3}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان ضرب الأسين عند رفع قوس مرفوع لأس إلى أس آخر — الأس النهائي هنا هو حاصل ضرب $2\times\tfrac13$ وليس جمعهما.</span>
+      </div>
       <div class="exercise-final">✓ الجواب: $\dfrac{3}{10}(2x-1)^{5/3}+c$</div>
     </div>
 
@@ -312,11 +611,29 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3e">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{5x-10}{\sqrt[3]{2-x}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل كسر يحتوي جذراً تكعيبياً في المقام، مع فرق في اتجاه الإشارة بين البسط والمقام.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $5x-10$، والمقام $\sqrt[3]{2-x}$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نلاحظ أن $x-2$ هو نظير $2-x$ بالإشارة، فنعيد كتابة البسط بدلالة $(2-x)$، ثم نبسّط الكسر، ثم نطبّق قاعدة التعويض المتسلسل مع الانتباه لإشارة سالبة إضافية.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3e">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نُخرج العامل المشترك: $5x-10=5(x-2)=-5(2-x)$، إذن التكامل \( \displaystyle-5\int \frac{2-x}{(2-x)^{1/3}}\,dx=-5\int (2-x)^{2/3}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة الداخل $2-x$ تساوي $-1$، فنضرب ونقسم على $-1$: \( -5\cdot(-1)\displaystyle\int (-1)(2-x)^{2/3}\,dx=5\int (-1)(2-x)^{2/3}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =5\cdot\dfrac{(2-x)^{5/3}}{5/3}+c=5\cdot\dfrac35(2-x)^{5/3}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نُخرج العامل المشترك 5 من البسط:</i> $5x-10=5(x-2)$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نلاحظ أن $(x-2)$ هو نظير $(2-x)$ بالإشارة (فرق الطرفين):</i> $x-2=-(2-x)$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نعوّض هذا في البسط:</i> $5(x-2)=5\cdot\big(-(2-x)\big)=-5(2-x)$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نعيد كتابة التكامل بهذا البسط الجديد:</i> \( \int\dfrac{5x-10}{\sqrt[3]{2-x}}dx=-5\int \dfrac{2-x}{(2-x)^{1/3}}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نبسّط الكسر (نطرح الأسين $1-\tfrac13=\tfrac23$):</i> \( \dfrac{2-x}{(2-x)^{1/3}}=(2-x)^{2/3} \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>فيصبح التكامل:</i> \( -5\int (2-x)^{2/3}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نشتق القوس الداخلي $2-x$ لنتحقق من المعامل المطلوب:</i> مشتقته $-1$</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نقارن: المعامل الحالي $-5$ ليس مطابقاً لمشتقة الداخل $-1$؛ لتوليد $-1$ بالضبط نضرب ونقسم على $-1$ من الخارج:</i> \( -5\int (2-x)^{2/3}\,dx=-5\cdot(-1)\int (-1)(2-x)^{2/3}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نبسّط الثابت الخارجي (سالب في سالب يعطي موجب):</i> \( -5\cdot(-1)=5 \Rightarrow 5\int (-1)(2-x)^{2/3}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نطبّق القاعدة: نزيد الأس بمقدار 1 (من $\tfrac23$ إلى $\tfrac53$) ونقسم على الأس الجديد:</i> \( \dfrac{(2-x)^{5/3}}{5/3} \)</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>نبسّط القسمة على الكسر $\tfrac53$ (نضرب في مقلوبه $\tfrac35$):</i> \( \dfrac{(2-x)^{5/3}}{5/3}=\dfrac35(2-x)^{5/3} \)</div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body"><i>نضرب بالثابت الخارجي 5 ونضيف $c$:</i> \( 5\cdot\dfrac35(2-x)^{5/3}+c=3(2-x)^{5/3}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> إغفال الإشارة السالبة الناتجة عن كتابة $x-2=-(2-x)$ — نسيان هذه الإشارة يقلب إشارة الناتج النهائي بالكامل.</span>
+      </div>
       <div class="exercise-final">✓ الجواب: $3(2-x)^{5/3}+c$</div>
     </div>
 
@@ -326,11 +643,24 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3f">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{x^3+1}{x^2-x+1}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل كسر جبري بتحليل البسط بقاعدة مجموع المكعبين.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $x^3+1$، والمقام $x^2-x+1$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نحلل البسط بقاعدة مجموع المكعبين $a^3+b^3=(a+b)(a^2-ab+b^2)$، فيظهر عامل مطابق للمقام فيُختصر، ثم نكامل الناتج بقاعدة الأس.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3f">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط بقاعدة مجموع مكعبين: $x^3+1=(x+1)(x^2-x+1)$</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نختصر مع المقام: \( \dfrac{(x+1)(x^2-x+1)}{x^2-x+1}=x+1 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نكامل: \( \displaystyle\int (x+1)\,dx=\frac{x^2}{2}+x+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نتعرف على البسط كمجموع مكعبين:</i> $x^3+1=x^3+1^3$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نحلل بقاعدة مجموع المكعبين ($a=x,\,b=1$):</i> $x^3+1=(x+1)(x^2-x+1)$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نكتب الكسر كاملاً بعد التحليل:</i> \( \dfrac{(x+1)(x^2-x+1)}{x^2-x+1} \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نختصر العامل المشترك $(x^2-x+1)$:</i> \( =x+1 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نكامل الحد $x$:</i> \( \int x\,dx=\dfrac{x^2}{2} \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نكامل الحد الثابت $1$:</i> \( \int 1\,dx=x \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نجمع النتيجتين ونضيف ثابت التكامل $c$:</i> \( \displaystyle\int (x+1)\,dx=\frac{x^2}{2}+x+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الخلط بين صيغتي فرق المكعبين ومجموع المكعبين — في مجموع المكعبين تكون إشارة الحد الأوسط في العامل الثاني سالبة ($-ab$) رغم أن العملية الأصلية جمع.</span>
+      </div>
       <div class="exercise-final">✓ الجواب: $\dfrac{x^2}{2}+x+c$</div>
     </div>
 
@@ -340,11 +670,25 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3g">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{5x+2}{\sqrt{5x+2}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل كسر بسطه ومقامه من نفس القوس بأسس مختلفة.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $5x+2$، والمقام $\sqrt{5x+2}$ (وهما نفس القوس بأسين مختلفين).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نبسّط الكسر أولاً بطرح الأسين (بما أن البسط والمقام من نفس القوس)، ثم نطبّق قاعدة التعويض المتسلسل بعد ضبط المعامل.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3g">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نرفع المقام إلى البسط مع تغيير إشارة الأس: \( \dfrac{5x+2}{(5x+2)^{1/2}}=(5x+2)^{1-\frac12}=(5x+2)^{\frac12} \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة الداخل $5x+2$ تساوي $5$، فنضرب ونقسم على 5: \( \displaystyle\frac15\int (5)(5x+2)^{\frac12}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =\dfrac15\cdot\dfrac{(5x+2)^{\frac32}}{\frac32}+c=\dfrac15\cdot\dfrac23(5x+2)^{\frac32}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نكتب الجذر في المقام كأس كسري:</i> $\sqrt{5x+2}=(5x+2)^{1/2}$</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نبسّط الكسر بطرح الأسين (أس البسط 1 ناقص أس المقام $\tfrac12$):</i> \( \dfrac{5x+2}{(5x+2)^{1/2}}=(5x+2)^{1-\frac12}=(5x+2)^{\frac12} \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نشتق القوس الداخلي $5x+2$ لنتحقق من المعامل المطلوب:</i> مشتقته $5$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نقارن: لا يوجد معامل ظاهر أمام القوس (ضمنياً 1)، بينما المطلوب $5$ — نحتاج توليده.</i></div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نضرب داخل التكامل بالثابت 5، ونقسم التكامل كله على 5 من الخارج:</i> \( \displaystyle\frac15\int (5)(5x+2)^{\frac12}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نطبّق القاعدة: نزيد الأس بمقدار 1 (من $\tfrac12$ إلى $\tfrac32$) ونقسم على الأس الجديد:</i> \( \dfrac{(5x+2)^{3/2}}{3/2} \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نبسّط القسمة على الكسر $\tfrac32$ (نضرب في مقلوبه $\tfrac23$):</i> \( \dfrac{(5x+2)^{3/2}}{3/2}=\dfrac23(5x+2)^{3/2} \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نضرب بالثابت الخارجي $\tfrac15$ ونضيف $c$:</i> \( \dfrac15\cdot\dfrac23(5x+2)^{3/2}+c=\dfrac{2}{15}(5x+2)^{3/2}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان تبسيط الكسر أولاً ومحاولة تطبيق القاعدة مباشرة على الصورة الأصلية (بسط على جذر) — يجب دائماً طرح الأسين أولاً عندما يكون البسط والمقام من نفس القوس.</span>
+      </div>
       <div class="exercise-final">✓ الجواب: $\dfrac{2}{15}(5x+2)^{3/2}+c$</div>
     </div>
 
@@ -354,14 +698,33 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3h">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{x-5\sqrt{x}+6}{x-3\sqrt{x}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تكامل كسر يحتوي $x$ و $\sqrt{x}$ معاً في البسط والمقام.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $x-5\sqrt{x}+6$، والمقام $x-3\sqrt{x}$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نستخدم تعويضاً مساعداً $u=\sqrt{x}$ (فيصبح $x=u^2$) لتحويل الكسر إلى ثلاثيات حدود عادية في $u$ يمكن تحليلها واختصارها، ثم نعيد التعويض إلى $x$ ونكامل.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3h">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نضع $u=\sqrt{x}$ (أي $x=u^2$) لتسهيل التحليل: البسط $u^2-5u+6=(u-2)(u-3)$، والمقام $u^2-3u=u(u-3)$</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نختصر العامل المشترك $(u-3)$: \( \dfrac{(u-2)(u-3)}{u(u-3)}=\dfrac{u-2}{u}=1-\dfrac{2}{u} \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نعيد كتابتها بدلالة $x$: \( 1-\dfrac{2}{\sqrt{x}}=1-2x^{-\frac12} \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">نكامل: \( \displaystyle\int \left(1-2x^{-\frac12}\right)dx=x-2\cdot\frac{x^{\frac12}}{\frac12}+c=x-4\sqrt{x}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نضع $u=\sqrt{x}$ (أي $x=u^2$) لتسهيل التحليل، لأن البسط والمقام يحتويان $x$ و $\sqrt{x}$ معاً:</i></div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نعيد كتابة البسط بدلالة $u$:</i> $x-5\sqrt{x}+6=u^2-5u+6$</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نحلل البسط (نبحث عن عددين حاصل ضربهما 6 ومجموعهما $-5$، وهما $-2,-3$):</i> $u^2-5u+6=(u-2)(u-3)$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نعيد كتابة المقام بدلالة $u$:</i> $x-3\sqrt{x}=u^2-3u$</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نُخرج العامل المشترك $u$ من المقام:</i> $u^2-3u=u(u-3)$</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نكتب الكسر كاملاً بدلالة $u$ بعد التحليل:</i> \( \dfrac{(u-2)(u-3)}{u(u-3)} \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نختصر العامل المشترك $(u-3)$ من البسط والمقام:</i> \( =\dfrac{u-2}{u} \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نفصل الكسر إلى حدين (نقسم كل حد في البسط على المقام $u$ على حدة):</i> \( \dfrac{u-2}{u}=\dfrac{u}{u}-\dfrac{2}{u}=1-\dfrac{2}{u} \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نعيد التعويض من $u$ إلى $x$ الأصلية ($u=\sqrt{x}$):</i> \( 1-\dfrac{2}{\sqrt{x}} \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نكتب $\dfrac{1}{\sqrt{x}}$ بصيغة الأس السالب:</i> \( 1-2x^{-\frac12} \)</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>نكامل الحد الثابت $1$:</i> \( \int 1\,dx=x \)</div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body"><i>نكامل الحد $-2x^{-1/2}$ بقاعدة الأس (نزيد الأس من $-\tfrac12$ إلى $\tfrac12$ ونقسم على الأس الجديد):</i> \( \int(-2x^{-\frac12})dx=-2\cdot\dfrac{x^{\frac12}}{\frac12}=-4x^{\frac12}=-4\sqrt{x} \)</div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body"><i>نجمع النتيجتين ونضيف ثابت التكامل $c$:</i> \( \displaystyle\int \left(1-2x^{-\frac12}\right)dx=x-4\sqrt{x}+c \)</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان إعادة التعويض من $u$ إلى $x$ في النهاية (ترك الإجابة بدلالة $u$ بدل $x$) — تذكّر دائماً أن التعويض المساعد أداة مؤقتة، والإجابة النهائية يجب أن تكون بدلالة المتغير الأصلي.</span>
+      </div>
       <div class="exercise-final">✓ الجواب: $x-4\sqrt{x}+c$</div>
     </div>
+  </section>
 
   <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
     <div class="neu quiz" data-quiz>
@@ -430,8 +793,12 @@
 
   <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
     <div class="card neu">
-      <h2>🗺 خريطة الدرس الذهنية</h2>
-      <div class="mindmap-wrap">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l3" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين المهارات الثلاث لهذا الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l3">
         <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الثالث">
           <line x1="410" y1="150" x2="150" y2="70" stroke="#b3bdcc" stroke-width="2"/>
           <line x1="410" y1="150" x2="410" y2="250" stroke="#b3bdcc" stroke-width="2"/>
