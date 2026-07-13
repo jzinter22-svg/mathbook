@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 5: التكامل المحدد وخواصه — الفصل الرابع</title>
+<meta name="description" content="تعريف التكامل المحدد وحسابه بين حدين، وخواصه التسع مع أمثلة محلولة خطوة بخطوة واختبار ذاتي.">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 }
+  };
+</script>
+<script src="../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-5.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 5 من 7 · 4-5</span>
+    <h1>التكامل المحدد وخواصه</h1>
+    <p class="lead">حتى الآن كانت نتيجة التكامل «عائلة دوال». في هذا الدرس نضع حدّين للتكامل فنحصل على <b>رقم واحد محدد</b> — وهذا الرقم هو مفتاح حساب المساحات والمسافات في الدرسين القادمين.</p>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يتعرف على تعريف التكامل المحدد $\int_a^b f(x)\,dx=F(b)-F(a)$ وحدَّيه الأدنى والأعلى.</span></li>
+        <li><span class="obj-num">2</span><span>يفهم لماذا يختفي ثابت التكامل $c$ في التكامل المحدد.</span></li>
+        <li><span class="obj-num">3</span><span>يحسب تكاملات محددة لدوال متنوعة (كثيرات حدود، أقواس مرفوعة لأس، كسور).</span></li>
+        <li><span class="obj-num">4</span><span>يحل معادلات يكون فيها أحد حدَّي التكامل مجهولاً.</span></li>
+        <li><span class="obj-num">5</span><span>يستخدم خواص التكامل المحدد التسع (ومنها خاصيتا الدالة الفردية والزوجية) لتبسيط الحسابات.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف 4-3 — التكامل المحدد</span>
+      <p style="margin:.3rem 0">لتكن $f(x)$ دالة مستمرة على الفترة $[a,b]$ بحيث $f(x)=F'(x)$، فإن:</p>
+      <div class="mj-scroll">$$\int_{a}^{b} f(x)\,dx = \Big[F(x)\Big]_a^b = F(b)-F(a)$$</div>
+      <p style="margin:.3rem 0">حيث $x=a$ يسمى <b>الحد الأدنى</b> (الأسفل) للتكامل، و $x=b$ يسمى <b>الحد الأعلى</b> (العلوي) للتكامل.</p>
+    </div>
+    <div class="callout tip" style="margin-top:1rem">
+      <span class="icon">💬</span>
+      <span>طريقة العمل من ثلاث خطوات فقط: ① كامل الدالة كالمعتاد (بدون $c$) ② عوّض الحد الأعلى ③ اطرح منه ناتج تعويض الحد الأدنى.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="example">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">25</span> مثال 25</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex25" data-show-label="إظهار خطوات الحل" data-hide-label="إخفاء خطوات الحل">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة التكامل المحدد: $\displaystyle\int_{1}^{2} 2x\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex25">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \displaystyle\int_{1}^{2}2x\,dx=\Big[x^2\Big]_1^2=2^2-1^2=4-1=3 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">لاحظ أننا لم نكتب ثابت التكامل $c$. السبب: لو كتبناه لاختفى بالطرح: \( \Big[x^2+c\Big]_1^2=(4+c)-(1+c)=3 \) — الثابت يُلغي نفسه دائماً!</div></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">26</span> مثال 26</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex26">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة التكامل المحدد: $\displaystyle\int_{0}^{3} (3x^2+2x)\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex26">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل: \( \displaystyle\int_{0}^{3}(3x^2+2x)\,dx=\Big[x^3+x^2\Big]_0^3 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نعوّض الحدين: \( =\big[3^3+3^2\big]-\big[0^3+0^2\big]=27+9-0=36 \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">27</span> مثال 27</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex27">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة التكامل المحدد: $\displaystyle\int_{1}^{3} (2x-3)(x^2-3x-6)^2\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex27">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نلاحظ أن $(2x-3)$ هي مشتقة القوس $(x^2-3x-6)$ — نستخدم قاعدة التعويض من الدرس 3: \( \displaystyle\int_{1}^{3}(2x-3)(x^2-3x-6)^2\,dx=\left[\frac{(x^2-3x-6)^3}{3}\right]_1^3 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نعوّض $x=3$: \( \dfrac{(9-9-6)^3}{3}=\dfrac{(-6)^3}{3}=\dfrac{-216}{3} \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض $x=1$: \( \dfrac{(1-3-6)^3}{3}=\dfrac{(-8)^3}{3}=\dfrac{-512}{3} \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">النتيجة: \( \dfrac{-216}{3}-\dfrac{-512}{3}=\dfrac{-216+512}{3}=\dfrac{296}{3} \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">28</span> مثال 28</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex28">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة التكامل المحدد: $\displaystyle\int_{2}^{3} \frac{x^3-1}{x-1}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex28">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط (فرق مكعبين): \( \displaystyle\int_{2}^{3}\frac{(x-1)(x^2+x+1)}{x-1}\,dx=\int_{2}^{3}(x^2+x+1)\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل: \( =\left[\dfrac{x^3}{3}+\dfrac{x^2}{2}+x\right]_2^3 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض: \( \left(9+\dfrac92+3\right)-\left(\dfrac83+2+2\right)=\dfrac{33}{2}-\dfrac{20}{3} \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">نوحّد المقامات: \( \dfrac{99-40}{6}=\dfrac{59}{6} \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">29</span> مثال 29</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex29">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة الثابت $a$ في التكامل المحدد الآتي: $\displaystyle\int_{2}^{a}(x+4)\,dx=14$</div>
+      <ol class="steps hidden-steps" id="steps-ex29">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل: \( \left[\dfrac{x^2}{2}+4x\right]_2^a=14 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نعوّض الحدين: \( \left(\dfrac{a^2}{2}+4a\right)-\left(2+8\right)=14 \Rightarrow \dfrac{a^2}{2}+4a=24 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">نضرب في 2: \( a^2+8a-48=0 \Rightarrow (a+12)(a-4)=0 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">إذن \( a=-12 \) أو \( a=4 \). ∎</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>📐 4-5-1 خواص التكامل المحدد</h2>
+      <p>إذا كانت الدالة $f(x)$ قابلة للتكامل على $[a,b]$ فإن:</p>
+
+      <div class="grid grid-2" style="margin-top:1rem">
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-purple)">① الثابت يخرج من التكامل</strong>
+          <div class="mj-scroll">$$\int_a^b kf(x)\,dx=k\int_a^b f(x)\,dx$$</div>
+        </div>
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-purple)">② الحدّان متساويان ⇒ صفر</strong>
+          <div class="mj-scroll">$$\int_a^a f(x)\,dx=0$$</div>
+        </div>
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-purple)">③ عكس الحدين يعكس الإشارة</strong>
+          <div class="mj-scroll">$$\int_a^b f(x)\,dx=-\int_b^a f(x)\,dx$$</div>
+        </div>
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-purple)">④ تجزئة الفترة</strong>
+          <div class="mj-scroll">$$\int_a^b f=\int_a^c f+\int_c^b f\;,\;\; c\in[a,b]$$</div>
+        </div>
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-pink)">⑤ الدالة الفردية على فترة متناظرة</strong>
+          <div class="mj-scroll">$$\int_{-a}^{a} f(x)\,dx=0 \quad\text{إذا } f(-x)=-f(x)$$</div>
+        </div>
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-pink)">⑥ الدالة الزوجية على فترة متناظرة</strong>
+          <div class="mj-scroll">$$\int_{-a}^{a} f(x)\,dx=2\int_0^a f(x)\,dx \quad\text{إذا } f(-x)=f(x)$$</div>
+        </div>
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-blue)">⑦ تكامل المجموع والفرق</strong>
+          <div class="mj-scroll">$$\int_a^b [f\pm g]=\int_a^b f\pm\int_a^b g$$</div>
+        </div>
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-blue)">⑧ و ⑨ المقارنة</strong>
+          <div class="mj-scroll">$$f\ge0\Rightarrow\int_a^b f\ge0\;,\quad f\ge g\Rightarrow\int_a^b f\ge\int_a^b g$$</div>
+        </div>
+      </div>
+
+      <div class="callout tip" style="margin-top:1.2rem">
+        <span class="icon">🔍</span>
+        <span>مثال سريع على الخاصية ⑤: $\displaystyle\int_{-3}^{3}(x^5+x^3+x)\,dx=0$ مباشرة دون أي حساب، لأن كل حدودها فردية الأس! وعلى الخاصية ⑥: $\displaystyle\int_{-3}^{3}(x^4+x^2+1)\,dx=2\int_{0}^{3}(x^4+x^2+1)\,dx=2\left(\dfrac{243}{5}+9+3\right)=\dfrac{606}{5}$.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="example">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">30</span> مثال 30</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex30">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">إذا كانت $f(x)$ دالة مستمرة على الفترة $[2,6]$ أثبت أن: $\displaystyle\int_{2}^{3}f(x)\,dx+\int_{3}^{6}f(x)\,dx+\int_{6}^{2}f(x)\,dx=0$</div>
+      <ol class="steps hidden-steps" id="steps-ex30">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">بالخاصية ④ (تجزئة الفترة): \( \displaystyle\int_{2}^{3}f+\int_{3}^{6}f=\int_{2}^{6}f \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">بالخاصية ③ (عكس الحدين): \( \displaystyle\int_{6}^{2}f=-\int_{2}^{6}f \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">إذن الطرف الأيسر \( =\displaystyle\int_{2}^{6}f+\left[-\int_{2}^{6}f\right]=0 \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">31</span> مثال 31</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex31">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">إذا علمت أن $\displaystyle\int_{-1}^{7}f(x)\,dx=8$، جد قيمة التكامل: $\displaystyle\int_{-1}^{7}[4+3f(x)]\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex31">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">بالخاصيتين ⑦ و ①: \( \displaystyle\int_{-1}^{7}[4+3f(x)]\,dx=\int_{-1}^{7}4\,dx+3\int_{-1}^{7}f(x)\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( \displaystyle\int_{-1}^{7}4\,dx=\Big[4x\Big]_{-1}^{7}=28-(-4)=32 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =32+3(8)=32+24=56 \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">32</span> مثال 32</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex32">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">إذا كان $\displaystyle\int_{1}^{5}f(x)\,dx=-4$ و $\displaystyle\int_{1}^{5}[3f(x)+2g(x)]\,dx=6$، جد قيمة $\displaystyle\int_{1}^{5}g(x)\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex32">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نفكك بالخاصيتين ⑦ و ①: \( 3\displaystyle\int_{1}^{5}f(x)\,dx+2\int_{1}^{5}g(x)\,dx=6 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نعوّض القيمة المعلومة: \( 3(-4)+2\displaystyle\int_{1}^{5}g(x)\,dx=6 \Rightarrow -12+2\int_{1}^{5}g(x)\,dx=6 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( 2\displaystyle\int_{1}^{5}g(x)\,dx=18 \Rightarrow \int_{1}^{5}g(x)\,dx=9 \) ∎</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: شاهد $F(b)-F(a)$ يتحرك</h2>
+      <p>التكامل $\displaystyle\int_{1}^{b}2x\,dx=b^2-1$ (مثال 25 عندما $b=2$). حرّك الحد الأعلى $b$ ولاحظ كيف تنمو المنطقة الملونة تحت المستقيم $y=2x$ وتتغير القيمة معها.</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="defPlot" width="520" height="340"></svg></div>
+        <div class="io-row">
+          <label for="bSlider" style="min-width:9rem">الحد الأعلى <b>b</b> = <span id="bVal">2</span></label>
+          <input type="range" id="bSlider" class="neu-range" min="1" max="4" step="0.25" value="2">
+        </div>
+        <div class="rule-box" id="defFormula">$$\int_{1}^{2}2x\,dx=2^2-1^2=3$$</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>قيمة $\displaystyle\int_{0}^{2}3x^2\,dx$ تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$4$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$12$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$8$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$6$</span></label>
+        </div>
+        <div class="quiz-explain">$\big[x^3\big]_0^2=8-0=8$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>2.</span><span>لماذا لا نكتب ثابت التكامل $c$ في التكامل المحدد؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>لأنه يُلغى دائماً عند طرح $F(a)$ من $F(b)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن قيمته صفر دائماً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن الدالة مستمرة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نسيان شائع من الرياضيين</span></label>
+        </div>
+        <div class="quiz-explain">$(F(b)+c)-(F(a)+c)=F(b)-F(a)$ — الثابت يختفي بالطرح (مثال 25).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>3.</span><span>قيمة $\displaystyle\int_{-5}^{5}(x^3+2x)\,dx$ تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$250$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$50$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$-250$</span></label>
+        </div>
+        <div class="quiz-explain">الدالة فردية ($f(-x)=-f(x)$) والفترة متناظرة حول الصفر، فبالخاصية ⑤ الناتج صفر فوراً.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>إذا كان $\displaystyle\int_{2}^{4}f(x)\,dx=12$ فإن $\displaystyle\int_{4}^{2}f(x)\,dx$ يساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$12$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$24$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$-12$</span></label>
+        </div>
+        <div class="quiz-explain">الخاصية ③: عكس حدَّي التكامل يعكس إشارة الناتج.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>5.</span><span>إذا كان $\displaystyle\int_{0}^{3}f(x)\,dx=5$ و $\displaystyle\int_{3}^{7}f(x)\,dx=4$ فإن $\displaystyle\int_{0}^{7}f(x)\,dx$ يساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$1$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$20$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$9$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا يمكن معرفته</span></label>
+        </div>
+        <div class="quiz-explain">الخاصية ④ (تجزئة الفترة): $5+4=9$.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li>التكامل المحدد رقمٌ وليس عائلة دوال: $\int_a^b f(x)\,dx=F(b)-F(a)$.</li>
+        <li>ثابت التكامل $c$ يُلغى دائماً بالطرح، لذلك لا نكتبه.</li>
+        <li>كل مهارات التكامل غير المحدد (التوزيع، الاختصار، التعويض) تعمل هنا أيضاً — الفرق فقط في التعويض بالحدود في النهاية.</li>
+        <li>خواص مهمة: الثابت يخرج، تجزئة الفترة، عكس الحدين يعكس الإشارة.</li>
+        <li>على فترة متناظرة $[-a,a]$: تكامل الدالة الفردية = صفر، وتكامل الزوجية = ضعف تكاملها على $[0,a]$.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>🗺 خريطة الدرس الذهنية</h2>
+      <div class="mindmap-wrap">
+        <svg viewBox="0 0 820 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الخامس">
+          <line x1="410" y1="190" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="190" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="190" x2="150" y2="300" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="190" x2="670" y2="300" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="190" x2="410" y2="330" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="190" r="58" fill="#7c6fee"/>
+            <text x="410" y="186" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">التكامل</text>
+            <text x="410" y="205" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">المحدد</text></g>
+
+          <g><circle cx="150" cy="80" r="50" fill="#3fa9f5"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">F(b) − F(a)</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">التعريف</text></g>
+
+          <g><circle cx="670" cy="80" r="50" fill="#2fd18f"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">بلا ثابت c</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">يُلغى بالطرح</text></g>
+
+          <g><circle cx="150" cy="300" r="50" fill="#ffab5e"/>
+            <text x="150" y="296" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">9 خواص</text>
+            <text x="150" y="313" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">تبسّط الحساب</text></g>
+
+          <g><circle cx="670" cy="300" r="50" fill="#ff6b9d"/>
+            <text x="670" y="296" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">فردية = 0</text>
+            <text x="670" y="313" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">زوجية = ×2</text></g>
+
+          <g><circle cx="410" cy="330" r="44" fill="#63c7ff"/>
+            <text x="410" y="326" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">حد مجهول؟</text>
+            <text x="410" y="342" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">معادلة وحلّها</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الرابع · التكامل — الدرس 5: التكامل المحدد وخواصه</footer>
+
+<script src="../assets/js/plot.js"></script>
+<script src="../assets/js/quiz.js"></script>
+<script src="../assets/js/site.js"></script>
+<script>
+(function(){
+  var svg = document.getElementById("defPlot");
+  var slider = document.getElementById("bSlider");
+  var bVal = document.getElementById("bVal");
+  var formula = document.getElementById("defFormula");
+  function render(){
+    var b = parseFloat(slider.value);
+    bVal.textContent = b;
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-0.5,xmax:4.5,ymin:-1,ymax:9,step:1,w:520,h:340});
+    var ns = "http://www.w3.org/2000/svg";
+    var area = document.createElementNS(ns,"path");
+    area.setAttribute("d", Ch4Plot.areaD(function(x){return 2*x;}, 1, b, mapper));
+    area.setAttribute("fill","rgba(124,111,238,.30)");
+    area.setAttribute("stroke","none");
+    svg.appendChild(area);
+    var line = document.createElementNS(ns,"path");
+    line.setAttribute("d", Ch4Plot.pathD(function(x){return 2*x;}, -0.5, 4.5, mapper));
+    line.setAttribute("fill","none"); line.setAttribute("stroke","#7c6fee");
+    line.setAttribute("stroke-width","3");
+    svg.appendChild(line);
+    var val = (b*b-1).toFixed(2).replace(/\.00$/,"");
+    formula.innerHTML = "$$\\int_{1}^{"+b+"}2x\\,dx="+b+"^2-1^2="+val+"$$";
+    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([formula]);
+  }
+  slider.addEventListener("input", render);
+  if(document.readyState !== "loading") render();
+  else document.addEventListener("DOMContentLoaded", render);
+})();
+</script>
+</body>
+</html>

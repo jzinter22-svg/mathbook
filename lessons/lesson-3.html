@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 3: مهارات استخراج قيمة التكامل — الفصل الرابع</title>
+<meta name="description" content="مهارات تكامل حاصل الضرب والقسمة، وقاعدة التعويض المتسلسل [f(x)]ⁿ·f'(x)، مع عشرة أمثلة محلولة خطوة بخطوة.">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 }
+  };
+</script>
+<script src="../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-3.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 3 من 7 · 4-3-3</span>
+    <h1>مهارات استخراج قيمة التكامل</h1>
+    <p class="lead">ثلاث مهارات عملية تحوّل تكاملاً "صعب الشكل" إلى تطبيق مباشر للقواعد: توزيع حاصل الضرب، تبسيط حاصل القسمة، وأهم أداة في هذا الدرس — <b>قاعدة التعويض المتسلسل</b>.</p>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يكامل حاصل ضرب دالتين جبريتين بعد توزيعهما.</span></li>
+        <li><span class="obj-num">2</span><span>يكامل حاصل قسمة دالتين بالتحليل أو بتحويل المقام إلى بسط بأس سالب.</span></li>
+        <li><span class="obj-num">3</span><span>يتعرف على نمط "قوس مرفوع لأس × مشتقة القوس" ويطبّق قاعدة التعويض المتسلسل.</span></li>
+        <li><span class="obj-num">4</span><span>يضبط المعاملات الناقصة بالضرب والقسمة على نفس الثابت دون تغيير قيمة التكامل.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>1️⃣ توزيع حاصل الضرب</h2>
+      <p>لإيجاد تكامل حاصل ضرب دالتين جبريتين أو أكثر، نضرب الدوال ببعضها بطريقة التوزيع، ثم نكامل الحدود حداً حداً.</p>
+      <div class="example fade-up">
+        <div class="example-head">
+          <div class="example-title"><span class="example-badge">8</span> مثال 8</div>
+          <button class="neu-btn" data-reveal-steps="steps-ex8">إظهار خطوات الحل</button>
+        </div>
+        <div class="example-problem">جد قيمة التكاملات: (1) $\int (x-2)(2x+3)\,dx$   (2) $\int (x-1)(x+1)(2x-5)\,dx$</div>
+        <ol class="steps hidden-steps" id="steps-ex8">
+          <li class="step"><span class="step-dot">1</span><div class="step-body">نوزّع: \( (x-2)(2x+3)=2x^2-x-6 \)</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل حداً حداً: \( \int(2x^2-x-6)dx = \dfrac{2x^3}{3}-\dfrac{x^2}{2}-6x+c \)</div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body">للجزء الثاني: $(x-1)(x+1)=x^2-1$، إذن $(x^2-1)(2x-5)=2x^3-5x^2-2x+5$</div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body">\( \int(2x^3-5x^2-2x+5)dx = \dfrac{x^4}{2}-\dfrac{5x^3}{3}-x^2+5x+c \) ∎</div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>2️⃣ تبسيط حاصل القسمة</h2>
+      <p>نحاول تحليل الدالتين (أو إحداهما) بحثاً عن اختصارات ممكنة. وإن تعذّر ذلك، نرفع المقام إلى البسط مع تغيير إشارة الأس (من موجب إلى سالب أو العكس).</p>
+      <div class="example fade-up">
+        <div class="example-head">
+          <div class="example-title"><span class="example-badge">9</span> مثال 9</div>
+          <button class="neu-btn" data-reveal-steps="steps-ex9">إظهار خطوات الحل</button>
+        </div>
+        <div class="example-problem">جد قيمة التكاملات: (1) $\int \frac{x^2-9}{x-3}dx$  (2) $\int \frac{x^2+5x+6}{x+2}dx$  (3) $\int \frac{3}{x^4}dx$  (4) $\int \frac{-2}{\sqrt[5]{x^2}}dx$</div>
+        <ol class="steps hidden-steps" id="steps-ex9">
+          <li class="step"><span class="step-dot">1</span><div class="step-body">\( \dfrac{x^2-9}{x-3}=\dfrac{(x-3)(x+3)}{x-3}=x+3 \Rightarrow \int(x+3)dx=\dfrac{x^2}{2}+3x+c \)</div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">\( \dfrac{x^2+5x+6}{x+2}=\dfrac{(x+3)(x+2)}{x+2}=x+3 \Rightarrow \dfrac{x^2}{2}+3x+c \)</div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body">\( \int\frac{3}{x^4}dx = 3\int x^{-4}dx = 3\cdot\dfrac{x^{-3}}{-3}+c = \dfrac{-1}{x^3}+c \)</div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body">\( \int\frac{-2}{\sqrt[5]{x^2}}dx = -2\int x^{-2/5}dx = -2\cdot\dfrac{x^{3/5}}{3/5}+c = -\dfrac{10}{3}\sqrt[5]{x^3}+c \) ∎</div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>3️⃣ قاعدة التعويض المتسلسل ⭐</h2>
+      <p>لإيجاد تكامل دالتين إحداهما داخل قوس مرفوع لأس (أو تحت جذر) والأخرى <b>مشتقة</b> ذلك القوس، نستخدم القاعدة الآتية:</p>
+      <div class="rule-box">$$\int [f(x)]^n \cdot f'(x)\,dx = \frac{[f(x)]^{n+1}}{n+1} + c\,,\quad n\neq -1$$</div>
+      <div class="callout tip">
+        <span class="icon">🔍</span>
+        <span><b>كيف تتعرف عليها؟</b> ابحث عن قوس مرفوع لأس (أو تحت جذر)، ثم اشتق ما بداخل القوس — إن طابق (أو كان مضاعفاً بسيطاً لـ) الجزء الآخر من التكامل، فهذه هي القاعدة المطلوبة.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة على التعويض المتسلسل</h2>
+    <p class="lead" style="margin-top:0">لاحظ الملاحظة الملوّنة "مشتقة القوس من الداخل" في كل مثال — هي مفتاح الحل.</p>
+
+    <div class="example fade-up">
+      <div class="example-head"><div class="example-title"><span class="example-badge">10</span> مثال 10</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex10">إظهار خطوات الحل</button></div>
+      <div class="example-problem">$\int (3x^2+5x-3)^3(6x+5)\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex10">
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body">$(6x+5)$ هي بالضبط مشتقة $3x^2+5x-3$ — تطابق تام، فتُهمل عند التكامل.</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نزيد أس القوس بمقدار 1 (من 3 إلى 4) ونقسم على الأس الجديد:</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{(3x^2+5x-3)^4}{4}+c \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head"><div class="example-title"><span class="example-badge">12</span> مثال 12</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex12">إظهار خطوات الحل</button></div>
+      <div class="example-problem">$\int x^2\sqrt{x^3+8}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex12">
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body">مشتقة $x^3+8$ هي $3x^2$، لكن الموجود هو $x^2$ فقط — ناقص المعامل 3.</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نضرب $x^2$ في 3 داخل التكامل، ونقسم التكامل كله على 3 (حتى لا تتغيّر قيمته):</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac13\int (3x^2)(x^3+8)^{1/2}dx = \dfrac13\cdot\dfrac{(x^3+8)^{3/2}}{3/2}+c \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( = \dfrac{2}{9}\sqrt{(x^3+8)^3}+c \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head"><div class="example-title"><span class="example-badge">15</span> مثال 15</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex15">إظهار خطوات الحل</button></div>
+      <div class="example-problem">$\int (2x^6-3x)^4\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex15">
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body">نحلّل داخل القوس أولاً: $2x^6-3x = x(2x^5-3)$، إذن $(2x^6-3x)^4 = x^4(2x^5-3)^4$.</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">مشتقة $(2x^5-3)$ هي $10x^4$ — نحتاج معامل 10 بدل 1 الموجودة أمام $x^4$.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{1}{10}\int (10x^4)(2x^5-3)^4dx = \dfrac{1}{10}\cdot\dfrac{(2x^5-3)^5}{5}+c \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( = \dfrac{(2x^5-3)^5}{50}+c \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head"><div class="example-title"><span class="example-badge">16</span> مثال 16</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex16">إظهار خطوات الحل</button></div>
+      <div class="example-problem">$\int \dfrac{(x^2-x)^{10}}{x^{10}}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-ex16">
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body">$(x^2-x)^{10}=[x(x-1)]^{10}=x^{10}(x-1)^{10}$، فيُختصر $x^{10}$ مع المقام تماماً!</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">يتبقى $\int (x-1)^{10}\,dx$، ومشتقة $(x-1)$ هي $1$ (لا حاجة لتعديل أي معامل).</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{(x-1)^{11}}{11}+c \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head"><div class="example-title"><span class="example-badge">18</span> مثال 18</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex18">إظهار خطوات الحل</button></div>
+      <div class="example-problem">$\int \dfrac{dx}{\sqrt[3]{9-12x+4x^2}}$</div>
+      <ol class="steps hidden-steps" id="steps-ex18">
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body">نلاحظ أن $9-12x+4x^2=(3-2x)^2$ (مربّع كامل)، فالمقام $=(3-2x)^{2/3}$.</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">نكتب التكامل بصيغة الأس السالب: \( \int (3-2x)^{-2/3}dx \)، ومشتقة $(3-2x)$ هي $-2$.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">نضرب ونقسم على $-2$: \( = \dfrac{-1}{2}\int(-2)(3-2x)^{-2/3}dx = \dfrac{-1}{2}\cdot\dfrac{(3-2x)^{1/3}}{1/3}+c \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">\( = \dfrac{-3\sqrt[3]{3-2x}}{2}+c \) ∎</div></li>
+      </ol>
+    </div>
+
+    <div class="callout tip fade-up">
+      <span class="icon">📚</span>
+      <span>بنفس الأسلوب حُلّت الأمثلة 11، 13، 14، 17، 19 في الكتاب المقرر — جميعها تتّبع نفس المنطق الثلاثي: (تحقّق من المشتقة) ← (اضبط المعامل) ← (طبّق القاعدة).</span>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>🕹️ اكتشف نمط التعويض</h2>
+      <p>لكل تكامل أدناه، اختر الجزء الذي يمثّل $f'(x)$ (مشتقة ما بداخل القوس):</p>
+      <div id="patternGame" class="io-panel"></div>
+      <div class="io-row" style="justify-content:flex-end">
+        <button class="neu-btn" id="pgPrev">◀ السابق</button>
+        <button class="neu-btn" id="pgNext">التالي ▶</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>📝 تمرين (4-1)</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>أثبت أن $F(x)=\left(\dfrac{x}{x-1}\right)^2$ هي الدالة المقابلة للدالة $f(x)=\dfrac{-2x}{(x-1)^3}$.</span></li>
+        <li><span class="obj-num">2</span><span>إذا كانت $F(x)$ الدالة المقابلة لـ $f(x)=ax^3+bx$، وكان $F'(-2)=12,\ F''(2)=12$، جد $a,b\in\mathbb{R}$.</span></li>
+        <li><span class="obj-num">3</span><span>جد قيمة التكاملات: $\int\frac{x^5-x^2}{x^2+x+1}dx$ ، $\int\sqrt{3x^4-10x^2}\,dx$ ، $\int(4x^2-4x+1)^{1/3}dx$ ، $\int\frac{5x-10}{\sqrt[3]{2-x}}dx$ ، $\int\frac{x^3+1}{x^2-x+1}dx$ ، $\int\frac{5x+2}{\sqrt{5x+2}}dx$</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>1.</span><span>لتكامل $\int (x-1)(x+3)\,dx$، أول خطوة صحيحة هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نوزّع القوسين إلى $x^2+2x-3$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نطبّق قاعدة التعويض مباشرة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نشتق كل قوس على حدة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نضرب $x-1$ في نفسه</span></label>
+        </div>
+        <div class="quiz-explain">لا يوجد قوس مرفوع لأس هنا، فالأسلوب المناسب هو التوزيع ثم التكامل حداً حداً.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>في $\int (5x^4-3)^6(20x^3)\,dx$، ما الجزء الذي يمثّل $f'(x)$؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$(5x^4-3)^6$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$6$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$20x^3$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$5x^4$</span></label>
+        </div>
+        <div class="quiz-explain">مشتقة $5x^4-3$ هي $20x^3$ بالضبط.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>3.</span><span>$\int (x-1)^{10}\,dx$ تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$10(x-1)^9+c$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac{(x-1)^{11}}{11}+c$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac{(x-1)^{10}}{10}+c$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$11(x-1)^{11}+c$</span></label>
+        </div>
+        <div class="quiz-explain">مشتقة $(x-1)$ هي 1، فلا حاجة لأي تعديل، ونزيد الأس مباشرة ونقسم عليه.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>لتكامل $\int x\sqrt{x^2+1}\,dx$، ما المعامل الذي نحتاج ضربه وقسمة التكامل عليه؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$1$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$4$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\frac12$ فقط بلا ضرب</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$2$</span></label>
+        </div>
+        <div class="quiz-explain">مشتقة $x^2+1$ هي $2x$، والموجود $x$ فقط، فنضرب في 2 ونقسم التكامل على 2.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li>حاصل الضرب: وزّع أولاً، ثم كامل حداً حداً.</li>
+        <li>حاصل القسمة: حلّل وبسّط، أو حوّل المقام إلى بسط بأس سالب.</li>
+        <li>قاعدة التعويض المتسلسل: $\int[f(x)]^n f'(x)dx = \dfrac{[f(x)]^{n+1}}{n+1}+c$.</li>
+        <li>إن كان المعامل ناقصاً أو زائداً عن مشتقة القوس، اضرب واقسم على نفس العدد لتصحيحه دون تغيير قيمة التكامل.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>🗺 خريطة الدرس الذهنية</h2>
+      <div class="mindmap-wrap">
+        <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الثالث">
+          <line x1="410" y1="150" x2="150" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="410" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="670" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <g><circle cx="410" cy="150" r="56" fill="#ff6b9d"/>
+            <text x="410" y="147" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">مهارات</text>
+            <text x="410" y="163" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">التكامل</text></g>
+          <g><circle cx="150" cy="70" r="48" fill="#7c6fee"/>
+            <text x="150" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">توزيع</text>
+            <text x="150" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">حاصل الضرب</text></g>
+          <g><circle cx="670" cy="70" r="48" fill="#3fa9f5"/>
+            <text x="670" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">تبسيط</text>
+            <text x="670" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">حاصل القسمة</text></g>
+          <g><circle cx="410" cy="250" r="48" fill="#2fd18f"/>
+            <text x="410" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">[f(x)]ⁿf'(x)</text>
+            <text x="410" y="262" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">التعويض المتسلسل</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الرابع · التكامل — الدرس 3: مهارات استخراج قيمة التكامل</footer>
+
+<script src="../assets/js/plot.js"></script>
+<script src="../assets/js/quiz.js"></script>
+<script src="../assets/js/site.js"></script>
+<script>
+(function(){
+  var scenarios = [
+    { q: "\\int (4x^3-5)^7(12x^2)\\,dx", opts: ["4x^3-5","12x^2","7"], correct: 1, exp: "مشتقة $4x^3-5$ هي $12x^2$ — تطابق تام." },
+    { q: "\\int \\sqrt{2x+1}\\,dx", opts: ["2x+1","2","\\sqrt{2x+1}"], correct: 1, exp: "مشتقة $2x+1$ هي $2$، وهي غير موجودة صراحة فنحتاج توليدها بالضرب والقسمة." },
+    { q: "\\int (x^2-4)^5(2x)\\,dx", opts: ["(x^2-4)^5","2x","5"], correct: 1, exp: "مشتقة $x^2-4$ هي $2x$ — موجودة بالضبط في التكامل." }
+  ];
+  var idx = 0;
+  var el = document.getElementById("patternGame");
+  function render(){
+    var s = scenarios[idx];
+    var html = '<div class="rule-box">$$'+s.q+'$$</div><div class="quiz-options" style="margin-top:.5rem">';
+    s.opts.forEach(function(o,i){
+      html += '<label class="quiz-opt" data-i="'+i+'"><input type="radio" name="pg"><span>$'+o+'$</span></label>';
+    });
+    html += '</div><div class="quiz-explain" id="pgExplain">'+s.exp+'</div>';
+    el.innerHTML = html;
+    var opts = el.querySelectorAll(".quiz-opt");
+    opts.forEach(function(o){
+      o.addEventListener("click", function(){
+        opts.forEach(function(x){x.classList.remove("correct","wrong");});
+        var i = parseInt(o.getAttribute("data-i"),10);
+        if(i === s.correct){ o.classList.add("correct"); } else { o.classList.add("wrong"); opts[s.correct].classList.add("correct"); }
+        document.getElementById("pgExplain").classList.add("show");
+      });
+    });
+    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([el]);
+  }
+  document.getElementById("pgNext").addEventListener("click", function(){ idx=(idx+1)%scenarios.length; render(); });
+  document.getElementById("pgPrev").addEventListener("click", function(){ idx=(idx-1+scenarios.length)%scenarios.length; render(); });
+  document.addEventListener("DOMContentLoaded", render);
+  if(document.readyState !== "loading") render();
+})();
+</script>
+</body>
+</html>
