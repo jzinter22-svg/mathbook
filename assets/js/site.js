@@ -46,7 +46,7 @@
     var pct = total ? Math.round((done/total)*100) : 0;
     document.querySelectorAll(".progress-fill").forEach(function(f){ f.style.width = pct + "%"; });
     document.querySelectorAll(".progress-label").forEach(function(f){ f.textContent = pct + "٪ مكتمل"; });
-    document.querySelectorAll(".toc-list a").forEach(function(a){
+    document.querySelectorAll(".sidebar-link").forEach(function(a){
       var href = a.getAttribute("data-href");
       if(href && p[href]) a.classList.add("is-done");
     });
@@ -67,7 +67,13 @@
     var header = document.querySelector(".site-header");
     if(!header) return;
     var base = getBase();
-    var current = document.body.getAttribute("data-page") || "";
+
+    var toggleBtn = document.createElement("button");
+    toggleBtn.className = "neu-icon-btn sidebar-toggle-btn";
+    toggleBtn.id = "sidebarToggle";
+    toggleBtn.setAttribute("aria-label", "فهرس المحتويات");
+    toggleBtn.title = "فهرس المحتويات";
+    toggleBtn.textContent = "☰";
 
     var brand = document.createElement("a");
     brand.className = "brand";
@@ -76,9 +82,8 @@
 
     var actions = document.createElement("div");
     actions.className = "header-actions";
-    actions.innerHTML =
-      '<button class="neu-icon-btn" id="themeToggle" title="تبديل المظهر" aria-label="تبديل المظهر">🌓</button>' +
-      '<button class="neu-icon-btn" id="tocToggle" title="فهرس المحتويات" aria-label="فهرس المحتويات">☰</button>';
+    actions.innerHTML = '<button class="neu-icon-btn" id="themeToggle" title="تبديل المظهر" aria-label="تبديل المظهر">🌓</button>';
+    actions.insertBefore(toggleBtn, actions.firstChild);
 
     header.innerHTML = "";
     var container = document.createElement("div");
@@ -88,47 +93,95 @@
     header.appendChild(container);
 
     document.getElementById("themeToggle").addEventListener("click", toggleTheme);
-    document.getElementById("tocToggle").addEventListener("click", openTOC);
+    toggleBtn.addEventListener("click", toggleSidebar);
   }
 
-  function buildTOC(){
+  function buildSidebar(){
     var overlay = document.createElement("div");
     overlay.className = "toc-overlay";
-    overlay.id = "tocOverlay";
-    var drawer = document.createElement("div");
-    drawer.className = "toc-drawer";
-    drawer.id = "tocDrawer";
+    overlay.id = "sidebarOverlay";
+    var aside = document.createElement("aside");
+    aside.className = "sidebar";
+    aside.id = "sidebarNav";
     var base = getBase();
     var current = (document.body.getAttribute("data-page") || "");
 
-    var html = '<button class="neu-icon-btn" id="tocClose" aria-label="إغلاق">✕</button>' +
-      '<h3>فهرس الفصل الرابع</h3>' +
-      '<div class="progress-track" style="margin-bottom:1rem"><div class="progress-fill"></div></div>' +
-      '<div class="progress-label" style="text-align:center;color:var(--text-secondary);font-size:.85rem;margin-bottom:1rem"></div>' +
-      '<ul class="toc-list">';
+    var html = '<div class="sidebar-inner">' +
+      '<div class="sidebar-topbar">' +
+        '<button class="neu-icon-btn sidebar-close-btn" id="sidebarClose" aria-label="إغلاق">✕</button>' +
+      '</div>' +
+      '<a class="sidebar-brand" href="'+base+'index.html"><span class="brand-badge">∫</span><span>الفصل الرابع</span></a>' +
+      '<div class="sidebar-subtitle">التكامل · Integration</div>' +
+      '<div class="sidebar-progress">' +
+        '<div class="progress-track"><div class="progress-fill"></div></div>' +
+        '<div class="progress-label"></div>' +
+      '</div>' +
+      '<nav class="sidebar-nav"><ul class="sidebar-list">';
+
     LESSONS.forEach(function(l){
       var href = base + l.href;
       var isCur = current === l.href;
-      html += '<li><a href="'+href+'" data-href="'+l.href+'" class="'+(isCur?"current":"")+'">' +
-        '<span>'+ l.title +'</span></a></li>';
+      html += '<li class="sidebar-item'+(isCur?" active":"")+'">' +
+        '<a href="'+href+'" data-href="'+l.href+'" class="sidebar-link'+(l.root?" root":"")+(isCur?" current":"")+'">'+l.title+'</a>';
+      if(isCur){
+        var subs = document.querySelectorAll("main section[id][data-navlabel]");
+        if(subs.length){
+          html += '<ul class="sidebar-sublist">';
+          subs.forEach(function(s){
+            html += '<li><a href="#'+s.id+'" class="sidebar-sublink" data-target="'+s.id+'">'+s.getAttribute("data-navlabel")+'</a></li>';
+          });
+          html += '</ul>';
+        }
+      }
+      html += '</li>';
     });
-    html += "</ul>";
-    drawer.innerHTML = html;
+    html += '</ul></nav></div>';
+    aside.innerHTML = html;
 
     document.body.appendChild(overlay);
-    document.body.appendChild(drawer);
+    document.body.appendChild(aside);
 
-    overlay.addEventListener("click", closeTOC);
-    document.getElementById("tocClose").addEventListener("click", closeTOC);
+    overlay.addEventListener("click", closeSidebar);
+    var closeBtn = document.getElementById("sidebarClose");
+    if(closeBtn) closeBtn.addEventListener("click", closeSidebar);
+    aside.querySelectorAll(".sidebar-sublink").forEach(function(a){
+      a.addEventListener("click", function(){ if(window.innerWidth < 1180) closeSidebar(); });
+    });
+    aside.querySelectorAll(".sidebar-link").forEach(function(a){
+      a.addEventListener("click", function(){ if(window.innerWidth < 1180) closeSidebar(); });
+    });
+
+    setupScrollspy();
   }
 
-  function openTOC(){
-    document.getElementById("tocOverlay").classList.add("open");
-    document.getElementById("tocDrawer").classList.add("open");
+  function openSidebar(){
+    document.getElementById("sidebarOverlay").classList.add("open");
+    document.getElementById("sidebarNav").classList.add("open");
   }
-  function closeTOC(){
-    document.getElementById("tocOverlay").classList.remove("open");
-    document.getElementById("tocDrawer").classList.remove("open");
+  function closeSidebar(){
+    document.getElementById("sidebarOverlay").classList.remove("open");
+    document.getElementById("sidebarNav").classList.remove("open");
+  }
+  function toggleSidebar(){
+    var nav = document.getElementById("sidebarNav");
+    if(nav.classList.contains("open")) closeSidebar(); else openSidebar();
+  }
+
+  function setupScrollspy(){
+    var subs = document.querySelectorAll("main section[id][data-navlabel]");
+    var links = document.querySelectorAll(".sidebar-sublink");
+    if(!subs.length || !links.length || !("IntersectionObserver" in window)) return;
+    var linkMap = {};
+    links.forEach(function(l){ linkMap[l.getAttribute("data-target")] = l; });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var link = linkMap[e.target.id];
+        if(!link) return;
+        if(e.isIntersecting) link.classList.add("in-view");
+        else link.classList.remove("in-view");
+      });
+    }, {rootMargin:"-20% 0px -70% 0px", threshold:0});
+    subs.forEach(function(s){ io.observe(s); });
   }
 
   function buildLessonNav(){
@@ -195,6 +248,29 @@
     });
   }
 
+  var BG_SYMBOLS = ["∫","∑","√","dx","f(x)","π","∞","dy/dx","Δx","θ"];
+  function buildMathBackground(){
+    if(document.querySelector(".math-bg")) return;
+    if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var wrap = document.createElement("div");
+    wrap.className = "math-bg";
+    wrap.setAttribute("aria-hidden", "true");
+    var n = window.innerWidth < 700 ? 9 : 16;
+    for(var i=0;i<n;i++){
+      var s = document.createElement("span");
+      s.className = "math-bg-item";
+      s.textContent = BG_SYMBOLS[i % BG_SYMBOLS.length];
+      s.style.left = (3 + Math.random()*82) + "%";
+      s.style.top = (4 + Math.random()*88) + "%";
+      s.style.fontSize = (1.1 + Math.random()*1.7) + "rem";
+      s.style.animationDuration = (26 + Math.random()*28) + "s";
+      s.style.animationDelay = (-(Math.random()*30)) + "s";
+      s.style.setProperty("--drift", (Math.random()>.5?1:-1) * (20 + Math.random()*40) + "px");
+      wrap.appendChild(s);
+    }
+    document.body.insertBefore(wrap, document.body.firstChild);
+  }
+
   function forceRepaintAfterFonts(){
     /* Headless/low-power Chromium can leave stale glyph rasterization on
        shadowed elements after the Cairo web font swaps in (visible as
@@ -213,8 +289,9 @@
   function init(){
     applyTheme();
     forceRepaintAfterFonts();
+    buildMathBackground();
     buildHeader();
-    buildTOC();
+    buildSidebar();
     buildLessonNav();
     updateProgressUI();
     revealOnScroll();
