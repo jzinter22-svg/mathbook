@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 6: مساحة المنطقة المستوية — الفصل الرابع</title>
+<meta name="description" content="حساب المساحة بين منحني الدالة ومحور السينات، وبين منحنيي دالتين، باستخدام التكامل المحدد مع رسوم SVG تفاعلية.">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 }
+  };
+</script>
+<script src="../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-6.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 6 من 7 · 4-6</span>
+    <h1>إيجاد مساحة المنطقة المستوية</h1>
+    <p class="lead">هنا نصل إلى الاستخدام الأشهر للتكامل المحدد: قياس المساحات المحصورة بين المنحنيات — وهي المسألة التاريخية التي وُلد التكامل من أجلها.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يحسب المساحة المحصورة بين منحني دالة ومحور السينات.</span></li>
+        <li><span class="obj-num">2</span><span>يتعامل مع الحالتين $f(x)>0$ و $f(x)<0$ ويفهم دور القيمة المطلقة.</span></li>
+        <li><span class="obj-num">3</span><span>يجزّئ فترة التكامل عند نقاط تقاطع المنحني مع المحور.</span></li>
+        <li><span class="obj-num">4</span><span>يحسب المساحة المحصورة بين منحنيي دالتين.</span></li>
+        <li><span class="obj-num">5</span><span>يفسّر المساحات هندسياً من خلال الرسم.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 الشرح والتعريفات">
+    <div class="card neu">
+      <h2>💡 4-6-1 المساحة بين منحني الدالة والمحور السيني</h2>
+      <p>يمكننا حساب مساحة المنطقة التي يحدّها المستقيمان $x=a$ و $x=b$ مع منحني الدالة $y=f(x)$ المستمرة على $[a,b]$ كما يأتي:</p>
+      <div class="grid grid-2" style="margin-top:1rem">
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-green)">المنحني فوق المحور $f(x)>0$</strong>
+          <div class="mj-scroll">$$A=\int_a^b f(x)\,dx$$</div>
+          <p style="margin:.5rem 0 0;color:var(--text-secondary)">هنا التكامل يعطي عدداً موجباً من الأصل، لأن كل قيم $f(x)$ على الفترة موجبة.</p>
+        </div>
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-red)">المنحني تحت المحور $f(x)<0$</strong>
+          <div class="mj-scroll">$$A=-\int_a^b f(x)\,dx$$</div>
+          <p style="margin:.5rem 0 0;color:var(--text-secondary)">هنا قيم $f(x)$ سالبة، فيخرج ناتج التكامل سالباً؛ نضرب في $-1$ (أو نأخذ القيمة المطلقة) لنحوّله إلى مساحة موجبة.</p>
+        </div>
+      </div>
+      <p style="margin-top:1rem">وحيث أن المساحة كمية هندسية تمثّل مقدار سطح، فهي <b>موجبة دائماً</b> ولا معنى لمساحة سالبة. لذلك نأخذ <b>القيمة المطلقة</b> لناتج كل تكامل جزئي. أما إذا كان المنحني يقطع المحور السيني أكثر من مرة داخل الفترة $[a,b]$ (أي يتبدل بين موجب وسالب)، فلا يجوز إجراء تكامل واحد على كامل الفترة، بل يجب اتباع الخطوتين التاليتين بالترتيب:</p>
+      <ol class="obj-list" style="margin-top:.6rem">
+        <li><span class="obj-num" style="background:linear-gradient(135deg,#ff6b9d,#ffab5e)">1</span><span>نجد نقاط تقاطع الدالة مع المحور السيني بجعل $f(x)=0$ وحل المعادلة، فتتجزأ الفترة $[a,b]$ عند هذه النقاط إلى فترات جزئية أصغر، كل واحدة منها لا يغيّر فيها المنحني إشارته.</span></li>
+        <li><span class="obj-num" style="background:linear-gradient(135deg,#ff6b9d,#ffab5e)">2</span><span>نجري التكامل لكل فترة جزئية على حدة (فنحصل على عدد لكل فترة، قد يكون موجباً أو سالباً)، ثم نأخذ <b>القيمة المطلقة</b> لكل ناتج على حدة، وأخيراً <b>نجمع</b> هذه القيم المطلقة معاً للحصول على المساحة الكلية.</span></li>
+      </ol>
+      <div class="callout warn" style="margin-top:1rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: تكامل واحد على كل الفترة دون تجزئة! إذا كان المنحني فوق المحور في جزء وتحته في جزء آخر، فإن التكامل الموجب في الجزء الأول يُلغي (كلياً أو جزئياً) التكامل السالب في الجزء الثاني عند الجمع المباشر، فيُعطي ناتجاً خاطئاً (وربما صفراً رغم وجود مساحة حقيقية!). لتفادي هذا الخطأ: جزّئ الفترة أولاً عند نقاط تقاطع المنحني مع المحور، ثم خُذ القيمة المطلقة لكل جزء <b>قبل</b> الجمع، لا بعده.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة مصغّرة: طريقتا حساب المساحة</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l6-topic" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">مقارنة سريعة بين إيجاد المساحة بين منحنٍ والمحور السيني، وإيجادها بين منحنيي دالتين — كلاهما يقوم على نفس الفكرة: جزّئ عند التقاطعات، ثم كامل كل جزء، ثم اجمع القيم المطلقة.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l6-topic">
+        <svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة مصغرة توضح طريقتي حساب المساحة بالتكامل">
+          <line x1="410" y1="160" x2="180" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="160" x2="640" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="180" y1="70" x2="180" y2="250" stroke="#b3bdcc" stroke-width="1.4" stroke-dasharray="4 4"/>
+          <line x1="640" y1="70" x2="640" y2="250" stroke="#b3bdcc" stroke-width="1.4" stroke-dasharray="4 4"/>
+
+          <g><circle cx="410" cy="160" r="56" fill="#7c6fee"/>
+            <text x="410" y="156" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">حساب المساحات</text>
+            <text x="410" y="174" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">بالتكامل</text></g>
+
+          <g><circle cx="180" cy="70" r="52" fill="#ff6b9d"/>
+            <text x="180" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">4-6-1: مع المحور x</text>
+            <text x="180" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">التقاطع: f(x)=0</text></g>
+
+          <g><circle cx="640" cy="70" r="52" fill="#3fa9f5"/>
+            <text x="640" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">4-6-2: بين منحنيين</text>
+            <text x="640" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">التقاطع: f(x)=g(x)</text></g>
+
+          <g><circle cx="180" cy="250" r="46" fill="#ffab5e"/>
+            <text x="180" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">A=∫f(x)dx</text>
+            <text x="180" y="262" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">لكل فترة، مطلقة</text></g>
+
+          <g><circle cx="640" cy="250" r="46" fill="#2fd18f"/>
+            <text x="640" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">A=∫[f-g]dx</text>
+            <text x="640" y="262" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">لكل فترة، مطلقة</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="example">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">33</span> مثال 33</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex33" data-show-label="إظهار خطوات الحل" data-hide-label="إخفاء خطوات الحل">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بمنحني الدالة $f(x)=x^2-4$ والمحور السيني.</div>
+      <div class="mindmap-wrap"><svg id="fig33" width="500" height="300"></svg></div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد مساحة المنطقة المحصورة بين منحني $f(x)=x^2-4$ ومحور السينات.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=x^2-4$، ولم تُحدَّد فترة تكامل صراحة، فسنستنتجها من تقاطع المنحني مع المحور.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> خطوتا حساب المساحة بين منحنٍ والمحور: (1) نجد نقاط التقاطع مع المحور بجعل $f(x)=0$ لتحديد فترة التكامل، (2) نكامل على الفترة ثم نأخذ القيمة المطلقة إن كان الناتج سالباً.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex33">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نبدأ بالتقاطع؟</i> لأن المنحني وحده (بلا مستقيمات رأسية معطاة) هو الذي يحدّد حدود المنطقة، فنحتاج معرفة أين يلامس المحور السيني ($y=0$): نضع $f(x)=0$: \( x^2-4=0 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نحلل الطرف الأيسر إلى عاملين</i> (فرق مربعين $a^2-b^2=(a-b)(a+b)$): \( (x-2)(x+2)=0 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نساوي كل عامل بصفر لإيجاد الجذور:</i> \( x-2=0 \Rightarrow x=2 \,,\qquad x+2=0 \Rightarrow x=-2 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نحدّد فترة التكامل:</i> نقطتا التقاطع الوحيدتان هما $x=-2$ و $x=2$، وبينهما لا يعبر المنحني المحور مرة أخرى (فترة واحدة فقط، لا حاجة للتجزئة هنا)، فتكون فترة التكامل $[-2,2]$.</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نكتب تكامل $f(x)$ على هذه الفترة</i> ونوجد الدالة المقابلة لكل حد (قاعدة الأس $\int x^n dx=\frac{x^{n+1}}{n+1}$): \( \displaystyle\int_{-2}^{2}(x^2-4)\,dx=\left[\frac{x^3}{3}-4x\right]_{-2}^{2} \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نعوّض الحد الأعلى $x=2$ أولاً:</i> \( \dfrac{2^3}{3}-4(2)=\dfrac{8}{3}-8 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نعوّض الحد الأدنى $x=-2$:</i> \( \dfrac{(-2)^3}{3}-4(-2)=\dfrac{-8}{3}+8 \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نطرح (قيمة الحد الأعلى ناقص قيمة الحد الأدنى)، وننتبه لتوزيع إشارة السالب على القوسين:</i> \( \left(\dfrac83-8\right)-\left(\dfrac{-8}{3}+8\right)=\dfrac83-8+\dfrac83-8 \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نجمع الكسور المتشابهة ثم الأعداد الصحيحة:</i> \( \dfrac83+\dfrac83-8-8=\dfrac{16}{3}-16=\dfrac{16-48}{3}=\dfrac{-32}{3} \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>لماذا الناتج سالب؟</i> لأن المنحني $f(x)=x^2-4$ يقع بالكامل تحت محور السينات على الفترة $[-2,2]$ (قمة القطع المكافئ عند $(0,-4)$)، وتكامل دالة سالبة يعطي عدداً سالباً — وهذا طبيعي ولا يعني خطأ في الحل.</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>نأخذ القيمة المطلقة</i> لأن المساحة الهندسية لا يمكن أن تكون سالبة: \( A=\left|\dfrac{-32}{3}\right|=\dfrac{32}{3}\,(unit)^2 \) ∎</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> كتابة الجواب النهائي كـ $\dfrac{-32}{3}$ دون أخذ القيمة المطلقة، لأن المساحة قيمة سالبة تدل فقط على أن المنحني تحت المحور — لكن المساحة نفسها يجب أن تُذكر موجبة دائماً: $\dfrac{32}{3}\,(unit)^2$.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: المساحة = $\dfrac{32}{3}\,(unit)^2$</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">34</span> مثال 34</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex34">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بمنحني الدالة $f(x)=3x^3-12x$ والمحور السيني.</div>
+      <div class="mindmap-wrap"><svg id="fig34" width="500" height="300"></svg></div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد مساحة المنطقة المحصورة بين منحني $f(x)=3x^3-12x$ ومحور السينات.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=3x^3-12x$ (دالة تكعيبية فردية)، بلا فترة محددة، فنستنتجها من التقاطعات.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> خطوتا حساب المساحة: نجد نقاط التقاطع مع المحور، ثم — بما أن هذا المنحني يقطع المحور أكثر من مرة — نكامل كل فترة جزئية على حدة ونأخذ القيمة المطلقة قبل الجمع.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex34">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نضع $f(x)=0$ لإيجاد نقاط التقاطع مع المحور:</i> \( 3x^3-12x=0 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نخرج العامل المشترك $3x$:</i> \( 3x(x^2-4)=0 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نحلل $x^2-4$ إلى عاملين (فرق مربعين):</i> \( 3x(x-2)(x+2)=0 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نساوي كل عامل بصفر:</i> \( x=0\,,\quad x=2\,,\quad x=-2 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>لماذا يجب أن نجزّئ الفترة هنا؟</i> لدينا ثلاث نقاط تقاطع، أي أن المنحني يعبر المحور مرتين داخل الفترة الكلية $[-2,2]$، فيتغيّر موضعه (فوق/تحت المحور) بين الفترتين $[-2,0]$ و $[0,2]$. لو كاملنا مباشرة من $-2$ إلى $2$ بدون تجزئة، لتلاشى الجزء الموجب مع الجزء السالب (لأن الدالة فردية) وأعطانا صفراً خاطئاً رغم وجود مساحة حقيقية.</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نكامل على الفترة الأولى $[-2,0]$</i> ونوجد الدالة المقابلة: \( A_1=\displaystyle\int_{-2}^{0}(3x^3-12x)\,dx=\left[\frac{3x^4}{4}-6x^2\right]_{-2}^{0} \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نعوّض الحدين ونطرح:</i> عند $x=0$ الناتج $0$، وعند $x=-2$: $\frac{3(16)}{4}-6(4)=12-24=-12$، فيكون \( A_1=0-(-12)=12 \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نكامل على الفترة الثانية $[0,2]$</i> بنفس الدالة المقابلة: \( A_2=\displaystyle\int_{0}^{2}(3x^3-12x)\,dx=\left[\frac{3x^4}{4}-6x^2\right]_{0}^{2} \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نعوّض الحدين ونطرح:</i> عند $x=2$: $\frac{3(16)}{4}-6(4)=12-24=-12$، وعند $x=0$ الناتج $0$، فيكون \( A_2=-12-0=-12 \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نلاحظ إشارتي الناتجين:</i> $A_1=12$ موجب (المنحني فوق المحور على $[-2,0]$)، و$A_2=-12$ سالب (المنحني تحت المحور على $[0,2]$) — وهذا متوقع من تناظر الدالة الفردية.</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>نأخذ القيمة المطلقة لكل ناتج على حدة، ثم نجمع</i> (وليس العكس أبداً): \( A=|A_1|+|A_2|=|12|+|-12|=12+12=24\,(unit)^2 \) ∎</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> جمع $A_1+A_2$ أولاً ثم أخذ القيمة المطلقة للناتج: $|A_1+A_2|=|12+(-12)|=0$ — وهذا خطأ فادح! يجب أخذ القيمة المطلقة لكل فترة جزئية <b>قبل</b> الجمع: $|A_1|+|A_2|=24$. تذكّر: القيمة المطلقة أولاً، ثم الجمع.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: المساحة = $24\,(unit)^2$</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">35</span> مثال 35</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex35">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بمنحني الدالة $f(x)=x^3-4x$ والمحور السيني والمستقيمين $x=-2$ و $x=2$.</div>
+      <div class="mindmap-wrap"><svg id="fig35" width="500" height="300"></svg></div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد مساحة المنطقة المحصورة بين منحني $f(x)=x^3-4x$ والمحور السيني، ومحصورة أيضاً بين المستقيمين الرأسيين $x=-2$ و $x=2$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=x^3-4x$، وفترة التكامل معطاة صراحة هذه المرة: $[-2,2]$ (بخلاف المثالين السابقين اللذين استنتجنا فيهما الفترة من التقاطعات).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نتحقق أولاً هل يقطع المنحني المحور داخل الفترة المعطاة؛ فإن قطعه، نجزّئ عندها ونكامل كل جزء على حدة ثم نجمع القيم المطلقة.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex35">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نفهم المعطى:</i> عبارة «محصورة بين المستقيمين $x=-2$ و $x=2$» تعني ببساطة أن فترة التكامل هي الفترة المغلقة $[-2,2]$ — لا حاجة لحساب هذين الحدين، فهما معطيان مباشرة.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نتحقق من تقاطع المنحني مع المحور داخل هذه الفترة</i> بجعل $f(x)=0$: \( x^3-4x=0 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نخرج العامل المشترك $x$ ثم نحلل الباقي (فرق مربعين):</i> \( x(x^2-4)=0 \Rightarrow x(x-2)(x+2)=0 \Rightarrow x=0,\;x=2,\;x=-2 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>لماذا نجزّئ رغم أن حدود المسألة معطاة أصلاً؟</i> لأن نقطة التقاطع $x=0$ تقع داخل الفترة $[-2,2]$ نفسها (وليست عند طرفيها)، أي أن المنحني يغيّر إشارته عند $x=0$. لذلك يجب تقسيم $[-2,2]$ إلى فترتين فرعيتين: $[-2,0]$ و $[0,2]$.</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نكامل على الفترة الأولى $[-2,0]$</i> ونوجد الدالة المقابلة بقاعدة الأس: \( A_1=\displaystyle\int_{-2}^{0}(x^3-4x)\,dx=\left[\frac{x^4}{4}-2x^2\right]_{-2}^{0} \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نعوّض الحدين ونطرح:</i> عند $x=0$ الناتج $0$، وعند $x=-2$: $\frac{16}{4}-2(4)=4-8=-4$، فيكون \( A_1=0-(-4)=4 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نكامل على الفترة الثانية $[0,2]$</i> بنفس الدالة المقابلة: \( A_2=\displaystyle\int_{0}^{2}(x^3-4x)\,dx=\left[\frac{x^4}{4}-2x^2\right]_{0}^{2} \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نعوّض الحدين ونطرح:</i> عند $x=2$: $\frac{16}{4}-2(4)=4-8=-4$، وعند $x=0$ الناتج $0$، فيكون \( A_2=-4-0=-4 \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نأخذ القيمة المطلقة لكل ناتج على حدة، ثم نجمع النتيجتين:</i> \( A=|A_1|+|A_2|=|4|+|-4|=4+4=8\,(unit)^2 \) ∎</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الاعتقاد بأن وجود مستقيمين رأسيين معطيين ($x=-2$ و $x=2$) يعني أننا نكامل مباشرة عليهما كفترة واحدة دون فحص. يجب دائماً التحقق أولاً إن كان المنحني يقطع المحور داخل هذه الفترة؛ فإن قطعها (كما هنا عند $x=0$) وجب التجزئة رغم معرفتنا بالحدود الخارجية.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: المساحة = $8\,(unit)^2$</div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>💡 4-6-2 المساحة المحددة بمنحنيي دالتين</h2>
+      <p>لحساب المساحة المحصورة بين منحنيي الدالتين المستمرتين $f(x)$ و $g(x)$:</p>
+      <ol class="obj-list" style="margin-top:.6rem">
+        <li><span class="obj-num" style="background:linear-gradient(135deg,#3fa9f5,#2fd18f)">1</span><span>نجد نقاط التقاطع بين المنحنيين بجعل $f(x)=g(x)$ وتبسيط النتيجة للحصول على الفترات الجزئية.</span></li>
+        <li><span class="obj-num" style="background:linear-gradient(135deg,#3fa9f5,#2fd18f)">2</span><span>نجري تكامل الفرق $[f(x)-g(x)]$ لكل فترة جزئية على حدة.</span></li>
+        <li><span class="obj-num" style="background:linear-gradient(135deg,#3fa9f5,#2fd18f)">3</span><span>نجمع القيم المطلقة للتكاملات للحصول على المساحة.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <div class="example">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">36</span> مثال 36</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex36">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بين منحنيي الدالتين $f(x)=\sqrt{x}$ و $g(x)=x$.</div>
+      <div class="mindmap-wrap"><svg id="fig36" width="500" height="300"></svg></div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد مساحة المنطقة المحصورة بين منحنيي $f(x)=\sqrt{x}$ و $g(x)=x$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> دالتان: $f(x)=\sqrt{x}$ (منحني جذري) و $g(x)=x$ (مستقيم يمر بالأصل).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> خطوات مساحة بين منحنيين: نجد نقاط التقاطع بحل $f(x)=g(x)$، ثم نكامل الفرق [الأعلى ناقص الأسفل] على الفترة الناتجة، ثم نأخذ القيمة المطلقة إن لزم.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex36">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نبدأ بالتقاطع؟</i> لأن نقطتي تقاطع المنحنيين هما حدّا فترة التكامل (بداية المنطقة المغلقة ونهايتها)، فنساوي الدالتين: \( \sqrt{x}=x \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نربّع الطرفين للتخلص من الجذر</i> (وهذا مسموح هنا لأن $x\ge0$ أصلاً في مجال $\sqrt{x}$): \( x=x^2 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>ننقل كل الحدود إلى طرف واحد ونخرج العامل المشترك $x$:</i> \( x^2-x=0 \Rightarrow x(x-1)=0 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نساوي كل عامل بصفر لإيجاد نقطتي التقاطع:</i> \( x=0 \,,\qquad x=1 \) — إذن فترة التكامل هي $[0,1]$.</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نحدد أي منحنٍ يعلو الآخر على هذه الفترة</i> بتجربة نقطة داخلية، مثلاً $x=\tfrac14$: $f(\tfrac14)=\sqrt{\tfrac14}=\tfrac12$ بينما $g(\tfrac14)=\tfrac14$، وبما أن $\tfrac12>\tfrac14$ فإن $\sqrt{x}\ge x$ على كامل الفترة $[0,1]$ (ولا يتبادلان الموضع، فلا حاجة لتجزئة إضافية هنا).</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نكوّن تكامل الفرق [المنحني الأعلى ناقص الأسفل]</i> ونحوّل الجذر إلى أس كسري لتسهيل التكامل: \( A=\displaystyle\int_0^1\left[\sqrt{x}-x\right]dx=\int_0^1\left[x^{\frac12}-x\right]dx \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نوجد الدالة المقابلة لكل حد</i> بقاعدة الأس $\int x^n dx=\frac{x^{n+1}}{n+1}$: للحد $x^{1/2}$ نضيف 1 للأس فيصبح $\tfrac32$ ونقسم على $\tfrac32$؛ وللحد $x$ نضيف 1 للأس فيصبح $2$ ونقسم على $2$: \( \left[\dfrac{x^{3/2}}{3/2}-\dfrac{x^2}{2}\right]_0^1=\left[\dfrac23\sqrt{x^3}-\dfrac{x^2}{2}\right]_0^1 \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نعوّض الحد الأعلى $x=1$:</i> \( \dfrac23\sqrt{1}-\dfrac{1}{2}=\dfrac23-\dfrac12 \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نعوّض الحد الأدنى $x=0$:</i> كل حد يحوي $x$ يصبح صفراً، فالناتج $0$.</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نطرح ونوحّد مقامي الكسرين (المضاعف المشترك الأصغر هو 6):</i> \( \left(\dfrac23-\dfrac12\right)-0=\dfrac46-\dfrac36=\dfrac16 \)</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>نتحقق من الإشارة:</i> الناتج $\tfrac16$ موجب بالفعل (لأن $f\ge g$ طوال الفترة، فلا حاجة لأخذ قيمة مطلقة أو للتجزئة)، فتكون هذه هي المساحة مباشرة: \( A=\dfrac16\,(unit)^2 \) ∎</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> كتابة الفرق بالترتيب الخاطئ $g(x)-f(x)=x-\sqrt{x}$ دون التحقق أولاً من أي المنحنيين أعلى — هذا يعطي تكاملاً سالباً بالخطأ. لتفادي هذا: اختبر نقطة داخل الفترة دائماً لتحدد المنحني الأعلى قبل كتابة الفرق، وإن نسيت ذلك يمكنك تصحيح الإشارة لاحقاً بأخذ القيمة المطلقة.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: المساحة = $\dfrac16\,(unit)^2$</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">37</span> مثال 37</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex37">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بين منحنيي الدالتين $f(x)=x^3$ و $g(x)=x$.</div>
+      <div class="mindmap-wrap"><svg id="fig37" width="500" height="300"></svg></div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد مساحة المنطقة (أو المناطق) المحصورة بين منحنيي $f(x)=x^3$ و $g(x)=x$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> دالتان: $f(x)=x^3$ (منحني تكعيبي) و $g(x)=x$ (مستقيم يمر بالأصل).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> خطوات مساحة بين منحنيين، مع ملاحظة أنه إن كان هناك أكثر من نقطتي تقاطع، وجب تجزئة الفترة تماماً كما في حالة المنحني والمحور السيني، وأخذ القيمة المطلقة لكل جزء قبل الجمع.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex37">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نساوي الدالتين لإيجاد نقاط التقاطع:</i> \( x^3=x \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>ننقل كل الحدود إلى طرف واحد ونخرج العامل المشترك $x$:</i> \( x^3-x=0 \Rightarrow x(x^2-1)=0 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نحلل $x^2-1$ إلى عاملين (فرق مربعين):</i> \( x(x-1)(x+1)=0 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نساوي كل عامل بصفر لإيجاد نقاط التقاطع الثلاث:</i> \( x=0\,,\quad x=1\,,\quad x=-1 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>لماذا نجزّئ هنا؟</i> يوجد ثلاث نقاط تقاطع، أي أن المنحنيين يتبادلان الموضع (أيّهما أعلى) عند $x=0$. بنفس منطق مثال 34، إن كاملنا الفرق مباشرة من $-1$ إلى $1$ دون تجزئة، فسيلغي الجزء الموجب الجزء السالب (لأن $x^3-x$ دالة فردية) ونحصل على صفر خاطئ. لذلك نُجزّئ إلى فترتين: $[-1,0]$ و $[0,1]$.</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نحدد أي منحنٍ أعلى على $[-1,0]$</i> بتجربة نقطة داخلية مثل $x=-\tfrac12$: $f(-\tfrac12)=(-\tfrac12)^3=-\tfrac18$ و $g(-\tfrac12)=-\tfrac12$. وبما أن $-\tfrac18$ أكبر جبرياً من $-\tfrac12$ (أقرب إلى الصفر)، فإن منحني $g(x)=x$ يقع أسفل منحني $f(x)=x^3$ على هذه الفترة، أي $f(x)\ge g(x)$.</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نكوّن تكامل الفرق على $[-1,0]$:</i> لا حاجة لضبط ترتيب الطرح بدقة الآن لأننا سنأخذ القيمة المطلقة للناتج النهائي على أي حال؛ نستخدم الصيغة $g(x)-f(x)=x-x^3$ ونكوّن الدالة المقابلة لها: \( A_1=\displaystyle\int_{-1}^{0}(x-x^3)\,dx=\left[\frac{x^2}{2}-\frac{x^4}{4}\right]_{-1}^{0} \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نعوّض الحدين ونطرح:</i> عند $x=0$ الناتج $0$، وعند $x=-1$: $\frac{1}{2}-\frac{1}{4}=\frac14$، فيكون \( A_1=0-\dfrac14=-\dfrac14 \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نكامل بنفس الصيغة $g-f$ على الفترة الثانية $[0,1]$</i> (بنفس الدالة المقابلة): \( A_2=\displaystyle\int_{0}^{1}(x-x^3)\,dx=\left[\frac{x^2}{2}-\frac{x^4}{4}\right]_{0}^{1} \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نعوّض الحدين ونطرح:</i> عند $x=1$: $\frac12-\frac14=\frac14$، وعند $x=0$ الناتج $0$، فيكون \( A_2=\dfrac14-0=\dfrac14 \)</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>نأخذ القيمة المطلقة لكل ناتج على حدة (فتصبح إشارة الترتيب الذي اخترناه غير مهمة)، ثم نجمع:</i> \( A=\left|-\dfrac14\right|+\left|\dfrac14\right|=\dfrac14+\dfrac14=\dfrac12\,(unit)^2 \) ∎</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> جمع $A_1+A_2=-\tfrac14+\tfrac14=0$ ثم اعتبار هذا هو الجواب النهائي. المنطقتان بين $x^3$ و $x$ متطابقتان في الشكل لكنهما منفصلتان هندسياً (إحداهما يمين الأصل والأخرى يساره)، فمساحتاهما تُجمعان ولا تُطرحان أو تُلغيان. خذ القيمة المطلقة لكل فترة أولاً، ثم اجمع: $\left|-\tfrac14\right|+\left|\tfrac14\right|=\tfrac12$.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: المساحة = $\dfrac12\,(unit)^2$</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: جزّئ وشاهد المساحة</h2>
+      <p>هذا منحني مثال 34: $f(x)=3x^3-12x$. حرّك حدَّي الفترة وشاهد المنطقة الخضراء (فوق المحور، تكامل موجب) والحمراء (تحت المحور، تكامل سالب). المساحة الحقيقية = مجموع القيم المطلقة.</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="areaPlot" width="520" height="340"></svg></div>
+        <div class="io-row">
+          <label style="min-width:8rem">من <b>a</b> = <span id="aVal">-2</span></label>
+          <input type="range" id="aSlider" class="neu-range" min="-3" max="0" step="0.5" value="-2">
+        </div>
+        <div class="io-row">
+          <label style="min-width:8rem">إلى <b>b</b> = <span id="bVal">2</span></label>
+          <input type="range" id="bSlider" class="neu-range" min="0" max="3" step="0.5" value="2">
+        </div>
+        <div class="rule-box" id="areaFormula"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>1.</span><span>الخطوة الأولى دائماً في حساب المساحة بين منحنٍ والمحور السيني هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>التكامل مباشرة على كامل الفترة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إيجاد نقاط تقاطع المنحني مع المحور بجعل $f(x)=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إيجاد المشتقة الأولى</span></label>
+          <label class="quiz-opt"><input type="radio"><span>رسم المنحني بدقة عالية</span></label>
+        </div>
+        <div class="quiz-explain">نقاط التقاطع تحدد الفترات الجزئية التي يتغير فيها موقع المنحني (فوق/تحت المحور).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>إذا كان ناتج التكامل على فترة ما يساوي $-9$ فإن المساحة على هذه الفترة تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$-9$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$9$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$18$</span></label>
+        </div>
+        <div class="quiz-explain">المساحة كمية موجبة دائماً، فنأخذ القيمة المطلقة: $|-9|=9$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>في مثال 34، لو كاملنا $3x^3-12x$ مباشرة من $-2$ إلى $2$ دون تجزئة لحصلنا على:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>صفر — لأن الدالة فردية والفترة متناظرة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$24$ — نفس الناتج الصحيح</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$12$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$-24$</span></label>
+        </div>
+        <div class="quiz-explain">الدالة فردية، فيلغي الجزء الموجب الجزء السالب ويعطي صفراً — وهذا ليس المساحة! لذلك التجزئة ضرورية.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>لإيجاد نقاط التقاطع بين منحنيي دالتين $f$ و $g$ نجعل:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$f(x)=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$g(x)=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f(x)\cdot g(x)=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f(x)=g(x)$</span></label>
+        </div>
+        <div class="quiz-explain">عند التقاطع يكون للمنحنيين نفس قيمة $y$ عند نفس $x$، أي $f(x)=g(x)$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>المساحة المحصورة بين $f(x)=\sqrt{x}$ و $g(x)=x$ (مثال 36) تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac13\,(unit)^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac16\,(unit)^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac12\,(unit)^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$1\,(unit)^2$</span></label>
+        </div>
+        <div class="quiz-explain">$\int_0^1(\sqrt{x}-x)dx=\frac23-\frac12=\frac16$.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>المساحة بين منحنٍ والمحور السيني: جد التقاطعات ($f(x)=0$)، كامل كل فترة جزئية، اجمع القيم المطلقة.</span></li>
+        <li><span>إذا كان المنحني تحت المحور يخرج التكامل سالباً — القيمة المطلقة تصحح الإشارة.</span></li>
+        <li><span>التكامل المباشر دون تجزئة قد يعطي صفراً خادعاً (الأجزاء الموجبة والسالبة تتلاشى).</span></li>
+        <li><span>المساحة بين منحنيين: التقاطعات من $f(x)=g(x)$، ثم تكامل الفرق على كل فترة جزئية.</span></li>
+        <li><span>المساحة تُقاس دوماً بوحدات مربعة $(unit)^2$.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l6" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l6">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس السادس">
+          <line x1="410" y1="180" x2="160" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="660" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="160" y2="285" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="660" y2="285" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#ff6b9d"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">مساحة</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">المنطقة</text></g>
+
+          <g><circle cx="160" cy="80" r="50" fill="#7c6fee"/>
+            <text x="160" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">مع المحور x</text>
+            <text x="160" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">f(x)=0 أولاً</text></g>
+
+          <g><circle cx="660" cy="80" r="50" fill="#3fa9f5"/>
+            <text x="660" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">بين منحنيين</text>
+            <text x="660" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">f(x)=g(x)</text></g>
+
+          <g><circle cx="160" cy="285" r="50" fill="#ffab5e"/>
+            <text x="160" y="281" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">جزّئ الفترة</text>
+            <text x="160" y="298" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">عند التقاطعات</text></g>
+
+          <g><circle cx="660" cy="285" r="50" fill="#2fd18f"/>
+            <text x="660" y="281" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">اجمع</text>
+            <text x="660" y="298" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">القيم المطلقة</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الرابع · التكامل — الدرس 6: مساحة المنطقة المستوية</footer>
+
+<script src="../assets/js/plot.js"></script>
+<script src="../assets/js/quiz.js"></script>
+<script src="../assets/js/site.js"></script>
+<script>
+(function(){
+  var ns = "http://www.w3.org/2000/svg";
+
+  function addPath(svg, d, stroke, width, fill){
+    var p = document.createElementNS(ns,"path");
+    p.setAttribute("d",d);
+    p.setAttribute("fill",fill||"none");
+    if(stroke){ p.setAttribute("stroke",stroke); p.setAttribute("stroke-width",width||3); p.setAttribute("stroke-linecap","round"); }
+    svg.appendChild(p);
+    return p;
+  }
+  function addDot(svg, mapper, x, y, color, label){
+    var pt = mapper.toPx(x,y);
+    var c = document.createElementNS(ns,"circle");
+    c.setAttribute("cx",pt[0]); c.setAttribute("cy",pt[1]); c.setAttribute("r","5"); c.setAttribute("fill",color);
+    svg.appendChild(c);
+    if(label){
+      var t = document.createElementNS(ns,"text");
+      t.setAttribute("x",pt[0]+8); t.setAttribute("y",pt[1]-8);
+      t.setAttribute("font-size","12"); t.setAttribute("font-weight","700"); t.setAttribute("fill",color);
+      t.setAttribute("font-family","Cairo,sans-serif");
+      t.textContent = label;
+      svg.appendChild(t);
+    }
+  }
+
+  /* Figure 33: y = x^2 - 4, shaded [-2,2] below axis */
+  (function(){
+    var svg = document.getElementById("fig33");
+    var m = Ch4Plot.drawAxes(svg,{xmin:-4,xmax:4,ymin:-5,ymax:5,step:1,w:500,h:300});
+    var f = function(x){return x*x-4;};
+    addPath(svg, Ch4Plot.areaD(f,-2,2,m), null, 0, "rgba(255,107,157,.35)");
+    addPath(svg, Ch4Plot.pathD(f,-4,4,m), "#7c6fee", 3);
+    addDot(svg,m,-2,0,"#ff6b6b","(-2,0)"); addDot(svg,m,2,0,"#ff6b6b","(2,0)");
+  })();
+
+  /* Figure 34: y = 3x^3 - 12x, two lobes */
+  (function(){
+    var svg = document.getElementById("fig34");
+    var m = Ch4Plot.drawAxes(svg,{xmin:-3.2,xmax:3.2,ymin:-16,ymax:16,step:2,w:500,h:300});
+    var f = function(x){return 3*x*x*x-12*x;};
+    addPath(svg, Ch4Plot.areaD(f,-2,0,m), null, 0, "rgba(47,209,143,.35)");
+    addPath(svg, Ch4Plot.areaD(f,0,2,m), null, 0, "rgba(255,107,107,.35)");
+    addPath(svg, Ch4Plot.pathD(f,-2.55,2.55,m), "#3fa9f5", 3);
+    addDot(svg,m,-2,0,"#ff6b6b","(-2,0)"); addDot(svg,m,0,0,"#ff6b6b","(0,0)"); addDot(svg,m,2,0,"#ff6b6b","(2,0)");
+  })();
+
+  /* Figure 35: y = x^3 - 4x with vertical bounds x=±2 */
+  (function(){
+    var svg = document.getElementById("fig35");
+    var m = Ch4Plot.drawAxes(svg,{xmin:-3.5,xmax:3.5,ymin:-6,ymax:6,step:1,w:500,h:300});
+    var f = function(x){return x*x*x-4*x;};
+    addPath(svg, Ch4Plot.areaD(f,-2,0,m), null, 0, "rgba(47,209,143,.35)");
+    addPath(svg, Ch4Plot.areaD(f,0,2,m), null, 0, "rgba(255,107,107,.35)");
+    addPath(svg, Ch4Plot.pathD(f,-2.7,2.7,m), "#ff6b9d", 3);
+    var p1 = m.toPx(-2,-6), p2 = m.toPx(-2,6);
+    var l1 = addPath(svg, "M "+p1[0]+" "+p1[1]+" L "+p2[0]+" "+p2[1], "#63708a", 1.6);
+    l1.setAttribute("stroke-dasharray","6 5");
+    var q1 = m.toPx(2,-6), q2 = m.toPx(2,6);
+    var l2 = addPath(svg, "M "+q1[0]+" "+q1[1]+" L "+q2[0]+" "+q2[1], "#63708a", 1.6);
+    l2.setAttribute("stroke-dasharray","6 5");
+  })();
+
+  /* Figure 36: sqrt(x) vs x, lens region [0,1] */
+  (function(){
+    var svg = document.getElementById("fig36");
+    var m = Ch4Plot.drawAxes(svg,{xmin:-0.5,xmax:2.5,ymin:-0.5,ymax:2,step:0.5,w:500,h:300});
+    var f = function(x){return Math.sqrt(Math.max(x,0));};
+    var g = function(x){return x;};
+    /* lens area between curves */
+    var steps=100, d="";
+    for(var i=0;i<=steps;i++){ var x=i/steps; var p=m.toPx(x,f(x)); d+=(i===0?"M ":"L ")+p[0].toFixed(2)+" "+p[1].toFixed(2)+" "; }
+    for(var j=steps;j>=0;j--){ var x2=j/steps; var p2=m.toPx(x2,g(x2)); d+="L "+p2[0].toFixed(2)+" "+p2[1].toFixed(2)+" "; }
+    addPath(svg, d+"Z", null, 0, "rgba(255,171,94,.45)");
+    addPath(svg, Ch4Plot.pathD(f,0,2.5,m), "#ff6b9d", 3);
+    addPath(svg, Ch4Plot.pathD(g,-0.5,2,m), "#3fa9f5", 3);
+    addDot(svg,m,0,0,"#ff6b6b","(0,0)"); addDot(svg,m,1,1,"#ff6b6b","(1,1)");
+  })();
+
+  /* Figure 37: x^3 vs x, double lens [-1,1] */
+  (function(){
+    var svg = document.getElementById("fig37");
+    var m = Ch4Plot.drawAxes(svg,{xmin:-1.8,xmax:1.8,ymin:-1.6,ymax:1.6,step:0.5,w:500,h:300});
+    var f = function(x){return x*x*x;};
+    var g = function(x){return x;};
+    function lens(x1,x2,color){
+      var steps=80, d="";
+      for(var i=0;i<=steps;i++){ var x=x1+(x2-x1)*i/steps; var p=m.toPx(x,f(x)); d+=(i===0?"M ":"L ")+p[0].toFixed(2)+" "+p[1].toFixed(2)+" "; }
+      for(var j=steps;j>=0;j--){ var x2b=x1+(x2-x1)*j/steps; var p2=m.toPx(x2b,g(x2b)); d+="L "+p2[0].toFixed(2)+" "+p2[1].toFixed(2)+" "; }
+      addPath(svg, d+"Z", null, 0, color);
+    }
+    lens(-1,0,"rgba(47,209,143,.4)");
+    lens(0,1,"rgba(255,107,107,.4)");
+    addPath(svg, Ch4Plot.pathD(f,-1.3,1.3,m), "#ff6b9d", 3);
+    addPath(svg, Ch4Plot.pathD(g,-1.6,1.6,m), "#3fa9f5", 3);
+    addDot(svg,m,-1,-1,"#ff6b6b","(-1,-1)"); addDot(svg,m,0,0,"#ff6b6b",""); addDot(svg,m,1,1,"#ff6b6b","(1,1)");
+  })();
+
+  /* Interactive: f(x)=3x^3-12x with movable bounds */
+  (function(){
+    var svg = document.getElementById("areaPlot");
+    var aS = document.getElementById("aSlider"), bS = document.getElementById("bSlider");
+    var aV = document.getElementById("aVal"), bV = document.getElementById("bVal");
+    var out = document.getElementById("areaFormula");
+    var f = function(x){return 3*x*x*x-12*x;};
+    var F = function(x){return 3*Math.pow(x,4)/4-6*x*x;};
+    function seg(a,b){ return F(b)-F(a); }
+    function render(){
+      var a = parseFloat(aS.value), b = parseFloat(bS.value);
+      aV.textContent = a; bV.textContent = b;
+      var m = Ch4Plot.drawAxes(svg,{xmin:-3.4,xmax:3.4,ymin:-18,ymax:18,step:2,w:520,h:340});
+      /* pieces: [a, min(0,b)] positive lobe if a<0 ; [max(0,a), b] negative lobe */
+      var pieces = [];
+      if(a<0) pieces.push([a, Math.min(0,b)]);
+      if(b>0) pieces.push([Math.max(0,a), b]);
+      var totalArea = 0, parts = [];
+      pieces.forEach(function(pr){
+        if(pr[1]<=pr[0]) return;
+        var v = seg(pr[0],pr[1]);
+        totalArea += Math.abs(v);
+        parts.push(v);
+        addPath(svg, Ch4Plot.areaD(f,pr[0],pr[1],m), null, 0, v>=0? "rgba(47,209,143,.4)":"rgba(255,107,107,.4)");
+      });
+      addPath(svg, Ch4Plot.pathD(f,-2.7,2.7,m), "#3fa9f5", 3);
+      var partsTxt = parts.map(function(v){ return "|"+v.toFixed(1).replace(/\.0$/,"")+"|"; }).join(" + ");
+      out.textContent = "المساحة = " + (partsTxt||"0") + " = " + totalArea.toFixed(1).replace(/\.0$/,"") + " (unit)²";
+    }
+    aS.addEventListener("input", render);
+    bS.addEventListener("input", render);
+    render();
+  })();
+})();
+</script>
+</body>
+</html>

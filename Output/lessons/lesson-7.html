@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 7: التطبيق الفيزيائي للتكامل المحدد — الفصل الرابع</title>
+<meta name="description" content="الفرق بين المسافة والإزاحة وحسابهما بالتكامل المحدد، مع أمثلة محلولة وتمارين شاملة على الفصل الرابع.">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 }
+  };
+</script>
+<script src="../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-7.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 7 من 7 · 4-7</span>
+    <h1>التطبيق الفيزيائي للتكامل المحدد</h1>
+    <p class="lead">الدرس الختامي: نفرّق بين «الإزاحة» و«المسافة» — مفهومان يبدوان متشابهين لكن التكامل يكشف الفرق الجوهري بينهما عندما يغيّر الجسم اتجاه حركته.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يميّز بين المسافة (كمية غير اتجاهية) والإزاحة (كمية اتجاهية).</span></li>
+        <li><span class="obj-num">2</span><span>يحسب الإزاحة بالتكامل المحدد للسرعة: $s=\int_{t_1}^{t_2}v(t)\,dt$.</span></li>
+        <li><span class="obj-num">3</span><span>يحسب المسافة بتجزئة الفترة عند لحظات انعكاس الاتجاه ($v=0$) وجمع القيم المطلقة.</span></li>
+        <li><span class="obj-num">4</span><span>يعرف متى تتساوى المسافة مع القيمة المطلقة للإزاحة.</span></li>
+        <li><span class="obj-num">5</span><span>يحل مسائل حركة شاملة تجمع بين التعجيل والسرعة والمسافة.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 الشرح والتعريفات">
+    <div class="card neu">
+      <h2>💡 4-7 المسافة والإزاحة</h2>
+      <p>من المعلوم أن <b>المسافة</b> كمية غير اتجاهية وتقترن بعدد حقيقي موجب، أما <b>الإزاحة</b> والسرعة والتعجيل فكل منها كمية اتجاهية، ولذلك فإن:</p>
+      <div class="grid grid-2" style="margin-top:1rem">
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-blue)">الإزاحة في الفترة $[t_1,t_2]$</strong>
+          <div class="mj-scroll">$$s=\int_{t_1}^{t_2}v(t)\,dt$$</div>
+          <p style="margin:0;font-size:.88rem;color:var(--text-secondary)">تكامل واحد مباشر — قد تكون سالبة أو صفراً.</p>
+        </div>
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong style="color:var(--accent-pink)">المسافة في الفترة $[t_1,t_2]$</strong>
+          <div class="mj-scroll">$$d=\left|\int_{t_1}^{t_2}v(t)\,dt\right|$$</div>
+          <p style="margin:0;font-size:.88rem;color:var(--text-secondary)">مع تجزئة الفترة عند كل لحظة يتغير فيها اتجاه الحركة ($v=0$) وجمع القيم المطلقة.</p>
+        </div>
+      </div>
+      <div class="callout tip" style="margin-top:1rem">
+        <span class="icon">🚶</span>
+        <span>تشبيه بسيط: مشيت 8 أمتار للأمام ثم عدت 8 أمتار للخلف. <b>المسافة</b> التي مشيتها = 16 متراً (عداد الخطوات)، لكن <b>إزاحتك</b> = صفر (أنت في نفس مكانك!). هذا بالضبط ما يحصل في مثال 38.</span>
+      </div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">📌</span>
+        <span><b>ملاحظة مهمة:</b> إذا لم يغيّر الجسم اتجاهه أثناء حركته ضمن الفترة المحددة، فإن المسافة تساوي القيمة المطلقة للإزاحة.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة مصغّرة: المسافة والإزاحة</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l7-topic" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">هذا هو التمييز الجوهري الذي يقوم عليه الدرس كله — راجعه جيداً قبل الانتقال إلى الأمثلة.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l7-topic">
+        <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة مصغرة توضح الفرق بين المسافة والإزاحة">
+          <line x1="350" y1="130" x2="150" y2="130" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="350" y1="130" x2="550" y2="130" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="350" cy="130" r="62" fill="#3fa9f5"/>
+            <text x="350" y="122" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">الحركة على</text>
+            <text x="350" y="141" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">خط مستقيم</text></g>
+
+          <g><circle cx="150" cy="130" r="76" fill="#7c6fee"/>
+            <text x="150" y="112" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">الإزاحة</text>
+            <text x="150" y="130" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">s=∫v dt</text>
+            <text x="150" y="147" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">(اتجاهية)</text></g>
+
+          <g><circle cx="550" cy="130" r="76" fill="#ff6b9d"/>
+            <text x="550" y="105" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">المسافة</text>
+            <text x="550" y="123" text-anchor="middle" fill="#fff" font-weight="700" font-size="10.5" font-family="Cairo,sans-serif">d=|∫v dt|</text>
+            <text x="550" y="139" text-anchor="middle" fill="#fff" font-weight="700" font-size="10.5" font-family="Cairo,sans-serif">مع التجزئة عند v=0</text>
+            <text x="550" y="155" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">(غير اتجاهية)</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار خطوات الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً — وحاول أن تحل المسألة بنفسك أولاً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">38-1</span> مثال 38 — الفقرة 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex38a" data-show-label="إظهار خطوات الحل" data-hide-label="إخفاء خطوات الحل">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=4t-12$. جد المسافة المقطوعة في الفترة الزمنية $[1,5]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المسافة الكلية (وليس الإزاحة) التي يقطعها الجسم خلال الفترة الزمنية $[1,5]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> دالة السرعة $v(t)=4t-12$، والفترة الزمنية $[1,5]$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> لحساب المسافة نبحث أولاً عن لحظات تغيّر اتجاه الحركة (حيث $v(t)=0$) لتجزئة الفترة عندها، ثم نحسب $|\int v\,dt|$ على كل فترة جزئية ونجمع النتائج، لأن الجسم قد يتحرك في اتجاهين متعاكسين فتتلاشى الإشارات لو جمعنا التكاملات مباشرة بدون قيمة مطلقة.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex38a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نبحث عن $v(t)=0$ أولاً؟</i> لأن المسافة كمية غير اتجاهية، فإذا غيّر الجسم اتجاهه أثناء الفترة (تغيّرت إشارة السرعة)، فلا يصح جمع الإزاحات مباشرة لأنها ستتقاصّ؛ لذلك يجب تجزئة الفترة عند كل لحظة ينعكس فيها اتجاه الحركة.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نساوي دالة السرعة بالصفر:</i> \( 4t-12=0 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نحل المعادلة الخطية</i> (نضيف 12 للطرفين ثم نقسم الطرفين على 4): \( 4t=12 \Rightarrow t=3 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نتحقق أن هذه اللحظة تقع داخل الفترة المطلوبة:</i> بما أن $1<3<5$، فإن $t=3$ لحظة انعكاس حقيقية داخل $[1,5]$، فنجزّئ الفترة إلى $[1,3]$ و $[3,5]$ ونحسب المسافة على كل منهما على حدة.</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نوجد الدالة الأصلية (المقابلة) للسرعة:</i> بقاعدة الأس، تكامل $4t$ يعطي $2t^2$، وتكامل $-12$ يعطي $-12t$، فالدالة الأصلية هي $2t^2-12t$ (لا حاجة لثابت التكامل لأن الحساب محدد).</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نحسب قيمة الدالة الأصلية عند طرفي الفترة الأولى $[1,3]$:</i> \( \big[2t^2-12t\big]_1^3=(2(3)^2-12(3))-(2(1)^2-12(1))=(18-36)-(2-12) \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نبسط الأقواس ونطرح، ثم نأخذ القيمة المطلقة:</i> \( =(-18)-(-10)=-8 \;\Rightarrow\; |-8|=8\,m \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نكرر نفس الخطوات على الفترة الثانية $[3,5]$:</i> \( \big[2t^2-12t\big]_3^5=(50-60)-(18-36)=(-10)-(-18)=8 \;\Rightarrow\; |8|=8\,m \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نجمع المسافتين الجزئيتين</i> (وليس التكاملين قبل أخذ القيمة المطلقة): \( d=8+8=16\,m \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> كثير من الطلاب يجمعون التكاملين أولاً ثم يأخذون القيمة المطلقة مرة واحدة، مثل $|-8+8|=0$، وهذا خطأ فادح لأنه يحسب الإزاحة لا المسافة! يجب أخذ القيمة المطلقة لكل تكامل جزئي على حدة ثم جمع النتيجتين.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: المسافة المقطوعة خلال الفترة $[1,5]$ تساوي $16\,m$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">38-2</span> مثال 38 — الفقرة 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex38b">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=4t-12$. جد الإزاحة في الفترة الزمنية $[1,5]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد الإزاحة (وليس المسافة) للجسم خلال نفس الفترة الزمنية $[1,5]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> نفس دالة السرعة $v(t)=4t-12$ ونفس الفترة $[1,5]$ المستخدمة في الفقرة السابقة.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> الإزاحة تُحسب بتكامل محدد واحد مباشر $s=\int_{t_1}^{t_2}v(t)\,dt$ بدون أي تجزئة عند $v=0$ وبدون قيمة مطلقة، لأنها كمية اتجاهية يُسمح لها أن تكون سالبة أو صفراً.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex38b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا لا نجزّئ الفترة هنا كما فعلنا في الفقرة السابقة؟</i> لأن الإزاحة كمية اتجاهية تسمح للحركة في الاتجاهين المتعاكسين أن تُلغي بعضها تلقائياً ضمن تكامل واحد، فهي تعكس صافي التغيّر في الموضع لا مجموع المسافات المقطوعة.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نكتب التكامل المحدد مباشرة على الفترة الكاملة:</i> \( s=\displaystyle\int_1^5(4t-12)\,dt \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نوجد الدالة الأصلية للسرعة</i> (كما في الفقرة السابقة): \( s=\big[2t^2-12t\big]_1^5 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نعوض الطرف الأعلى $t=5$:</i> \( 2(5)^2-12(5)=50-60=-10 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نعوض الطرف الأدنى $t=1$:</i> \( 2(1)^2-12(1)=2-12=-10 \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نطرح قيمة الطرف الأدنى من قيمة الطرف الأعلى:</i> \( s=(-10)-(-10)=0\,m \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نفسّر النتيجة فيزيائياً:</i> الإزاحة صفر تعني أن الجسم انتهى عند نفس النقطة التي بدأ منها، رغم أنه قطع مسافة فعلية قدرها 16 متراً (قارن بالفقرة السابقة) — لأنه تحرك 8 أمتار في اتجاه ثم عاد 8 أمتار بالاتجاه المعاكس.</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الخلط بين الناتج صفر هنا وبين المسافة $16\,m$ في الفقرة السابقة وافتراض أن أحدهما خطأ لأنهما مختلفان! كلاهما صحيح، فقط يقيسان كميتين مختلفتين تماماً — الإزاحة (صافي التغيّر في الموضع) والمسافة (المجموع الكلي للحركة).</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: الإزاحة خلال الفترة $[1,5]$ تساوي صفراً — الجسم عاد إلى نقطة انطلاقه. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">38-3</span> مثال 38 — الفقرة 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex38c">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=4t-12$. جد المسافة المقطوعة خلال الثانية الرابعة من حركته.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المسافة المقطوعة خلال «الثانية الرابعة» من حركة الجسم.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $v(t)=4t-12$، ومن الفقرة 38-1 نعلم أن لحظة انعكاس الاتجاه هي $t=3$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> «الثانية الرابعة» تعني الفترة الزمنية من نهاية الثانية الثالثة إلى نهاية الثانية الرابعة، أي الفترة $[3,4]$ — وليست $[4,5]$ كما قد يُظن. نتحقق أولاً هل تقع لحظة الانعكاس $t=3$ داخل هذه الفترة الجديدة.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex38c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نحدد المقصود بـ«الثانية الرابعة»:</i> هي الفترة الزمنية الواقعة بين نهاية الثانية الثالثة وبداية الثانية الخامسة، أي الفترة $[3,4]$ — خطأ شائع أن تُفهم على أنها $[4,5]$.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نتحقق هل تقع لحظة الانعكاس ($t=3$، من الفقرة 38-1) داخل هذه الفترة الجديدة أم على حدّها فقط:</i> بما أن $t=3$ هي الحد الأدنى بالضبط للفترة $[3,4]$ وليست نقطة داخلية، فإن السرعة لا تُغيّر إشارتها داخل الفترة المفتوحة $(3,4)$، ولا حاجة لتجزئة إضافية.</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نكتب صيغة المسافة بتكامل واحد</i> (بما أنه لا يوجد انعكاس داخلي): \( d=\left|\displaystyle\int_3^4(4t-12)\,dt\right| \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نوجد الدالة الأصلية للسرعة ونعوض الطرفين:</i> \( =\left|\big[2t^2-12t\big]_3^4\right|=\left|(32-48)-(18-36)\right| \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نبسط داخل كل قوس:</i> \( =\left|(-16)-(-18)\right| \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نكمل الطرح داخل القيمة المطلقة ثم نأخذها:</i> \( =|-16+18|=|2|=2\,m \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الظن بأن «الثانية الرابعة» تعني الفترة $[4,5]$. في مسائل الحركة، الثانية الرابعة هي الفترة الزمنية الممتدة من نهاية الثانية الثالثة ($t=3$) إلى نهاية الثانية الرابعة ($t=4$)، أي $[3,4]$.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: المسافة المقطوعة خلال الثانية الرابعة تساوي $2\,m$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">38-4</span> مثال 38 — الفقرة 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex38d">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=4t-12$. جد بُعد الجسم بعد مضي 10 ثوانٍ من بدء حركته.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد «بُعد» الجسم عن نقطة بداية حركته بعد مرور 10 ثوانٍ.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $v(t)=4t-12$، والزمن المطلوب $t=10$ ثانية منذ لحظة بدء الحركة ($t=0$).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> «بُعد الجسم» عن نقطة الانطلاق هو ببساطة إزاحته المحسوبة من لحظة البداية $t=0$ إلى اللحظة المطلوبة، أي $s=\int_0^{10}v(t)\,dt$ — تكامل مباشر بلا قيمة مطلقة ولا تجزئة، لأن السؤال عن موضع الجسم النهائي لا عن مجموع حركته.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex38d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نبدأ التكامل من $t=0$ وليس من أي زمن آخر؟</i> لأن «بُعد الجسم» يُقصد به دوماً بُعده عن نقطة انطلاقه الأصلية (حيث بدأت الحركة عند $t=0$)، وليس عن بداية أي فترة زمنية ورد ذكرها في فقرات سابقة — وهذا من أكثر الأخطاء شيوعاً.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نكتب التكامل المحدد من 0 إلى 10:</i> \( s=\displaystyle\int_0^{10}(4t-12)\,dt \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نوجد الدالة الأصلية للسرعة:</i> \( s=\big[2t^2-12t\big]_0^{10} \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نعوض الطرف الأعلى $t=10$:</i> \( 2(10)^2-12(10)=200-120=80 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نعوض الطرف الأدنى $t=0$:</i> \( 2(0)^2-12(0)=0 \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نطرح:</i> \( s=80-0=80\,m \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> بعض الطلاب يحسبون بُعد الجسم بعد 10 ثوانٍ بأخذ التكامل من نهاية آخر فترة ورد ذكرها في فقرة سابقة (مثل $t=5$) بدلاً من $t=0$. تذكّر: «بُعد الجسم» يُقاس دائماً من نقطة الانطلاق الأصلية $t=0$، إلا إذا نصّ السؤال صراحة على غير ذلك.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: بُعد الجسم عن نقطة انطلاقه بعد 10 ثوانٍ يساوي $80\,m$ (أي أنه يقع على بعد 80 متراً في الاتجاه الموجب). ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">39-1</span> مثال 39 — الفقرة 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex39a">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=2t+12$. جد المسافة المقطوعة في الفترة الزمنية $[1,3]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المسافة المقطوعة في الفترة الزمنية $[1,3]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $v(t)=2t+12$، والفترة $[1,3]$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> كالعادة، نبحث أولاً عن لحظة $v=0$ لنتأكد هل يوجد انعكاس اتجاه داخل الفترة قبل تطبيق صيغة المسافة.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex39a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نبحث عن لحظة انعكاس الاتجاه بمساواة السرعة بالصفر:</i> \( 2t+12=0 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نحل المعادلة</i> (نطرح 12 من الطرفين ثم نقسم على 2): \( t=-6 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نتحقق هل هذه اللحظة واردة فيزيائياً:</i> الزمن $t=-6$ سالب، والزمن الفيزيائي لا يكون سالباً (الحركة تبدأ عند $t\ge0$)، فهذه اللحظة غير واردة إطلاقاً، أي أن السرعة لا تساوي صفراً في أي وقت لاحق لبدء الحركة — فلا يوجد انعكاس اتجاه على الإطلاق.</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>بما أنه لا يوجد انعكاس، نطبّق الملاحظة الأساسية في الدرس (المسافة = |الإزاحة|) بتكامل واحد مباشر:</i> \( d=\left|\displaystyle\int_1^3(2t+12)\,dt\right| \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نوجد الدالة الأصلية للسرعة:</i> \( d=\left|\big[t^2+12t\big]_1^3\right| \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نعوض الطرف الأعلى $t=3$:</i> \( (3)^2+12(3)=9+36=45 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نعوض الطرف الأدنى $t=1$:</i> \( (1)^2+12(1)=1+12=13 \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نطرح ثم نأخذ القيمة المطلقة:</i> \( d=|45-13|=|32|=32\,m \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> تجاهل التحقق من إشارة الزمن الناتج عن حل $v(t)=0$. إذا كانت اللحظة الناتجة سالبة، فهي غير واردة فيزيائياً ويجب استبعادها فوراً، لا فقط عند وقوعها خارج الفترة المطلوبة.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: المسافة المقطوعة في الفترة $[1,3]$ تساوي $32\,m$، وهي تساوي الإزاحة تماماً لأن الجسم لم يغيّر اتجاهه إطلاقاً. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">39-2</span> مثال 39 — الفقرة 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex39b">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بسرعة $v(t)=2t+12$. جد الإزاحة التي قطعها الجسم في الفترة الزمنية $[1,3]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد الإزاحة التي قطعها الجسم في الفترة الزمنية $[1,3]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> نفس دالة السرعة $v(t)=2t+12$، ونتيجة الفقرة السابقة بأن الجسم لا يغيّر اتجاهه أبداً.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> الإزاحة دائماً تكامل واحد مباشر $s=\int_{t_1}^{t_2}v\,dt$؛ ولأن هذا الجسم تحديداً لا يعكس اتجاهه (كما أثبتنا في الفقرة 39-1)، ستتساوى قيمة الإزاحة هنا مع قيمة المسافة المحسوبة هناك بالضبط.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex39b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نتوقع أن تساوي الإزاحة هنا نفس رقم المسافة في الفقرة السابقة؟</i> لأن السرعة لم تُغيّر إشارتها إطلاقاً ضمن الفترة (أثبتنا ذلك في 39-1)، والإزاحة والمسافة تتطابقان قيمةً عندما لا يوجد انعكاس اتجاه.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نكتب التكامل المحدد للإزاحة:</i> \( s=\displaystyle\int_1^3(2t+12)\,dt \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نوجد الدالة الأصلية ونعوض الطرفين:</i> \( s=\big[t^2+12t\big]_1^3=(9+36)-(1+12) \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نطرح:</i> \( s=45-13=32\,m \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نلاحظ أن الإشارة موجبة</i> (لا نحتاج قيمة مطلقة هنا لأن الإزاحة تُقبل موجبة أو سالبة أو صفراً على حد سواء): الإزاحة الموجبة تعني أن الجسم تحرك بالكامل في الاتجاه الموجب طوال الفترة.</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> إضافة إشارة القيمة المطلقة حول تكامل الإزاحة من باب العادة (لأننا اعتدنا ذلك في حساب المسافة). الإزاحة لا تحتاج قيمة مطلقة أبداً، حتى لو صادف أن ناتجها موجب كما هنا.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: الإزاحة في الفترة $[1,3]$ تساوي $32\,m$، وهي مطابقة للمسافة لأن الحركة كانت باتجاه واحد فقط طوال الفترة. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: شاهد الجسم يعود أدراجه</h2>
+      <p>هذا جسم مثال 38 بسرعة $v(t)=4t-12$. حرّك الزمن وشاهد موقع الجسم على الخط المستقيم: يتراجع حتى اللحظة $t=3$ (حيث $v=0$) ثم ينطلق للأمام. قارن عدّادَي المسافة والإزاحة!</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="motionPlot" width="560" height="220"></svg></div>
+        <div class="io-row">
+          <label for="tSlider" style="min-width:8rem">الزمن <b>t</b> = <span id="tVal">0</span> ثانية</label>
+          <input type="range" id="tSlider" class="neu-range" min="0" max="8" step="0.1" value="0">
+        </div>
+        <div class="io-row" style="gap:1rem">
+          <span class="tag" id="dispTag">📍 الإزاحة منذ t=0: 0 m</span>
+          <span class="tag" id="distTag">🛣️ المسافة منذ t=0: 0 m</span>
+          <span class="tag" id="velTag">⚡ السرعة: −12 m/s</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>1.</span><span>الكمية التي يمكن أن تكون سالبة من بين الآتي هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>المسافة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الإزاحة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>كلاهما</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا شيء منهما</span></label>
+        </div>
+        <div class="quiz-explain">المسافة غير اتجاهية وموجبة دائماً؛ الإزاحة اتجاهية فقد تكون سالبة أو صفراً.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>قبل حساب المسافة يجب دائماً أن نجد لحظات:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$a(t)=0$ (انعدام التعجيل)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$s(t)=0$ (انعدام الإزاحة)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$v(t)=0$ (انعدام السرعة)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$t=0$ فقط</span></label>
+        </div>
+        <div class="quiz-explain">عند $v(t)=0$ قد يعكس الجسم اتجاهه، فنجزّئ الفترة عندها ونجمع القيم المطلقة.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>في مثال 38 كانت الإزاحة في $[1,5]$ صفراً بينما المسافة $16\,m$. التفسير:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>الجسم تراجع 8 أمتار ثم تقدم 8 أمتار فعاد لنقطة البداية</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الجسم لم يتحرك إطلاقاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>خطأ حسابي في الكتاب</span></label>
+          <label class="quiz-opt"><input type="radio"><span>السرعة كانت صفراً طوال الفترة</span></label>
+        </div>
+        <div class="quiz-explain">الحركة قبل $t=3$ باتجاه سالب وبعدها باتجاه موجب، بمقدارين متساويين — فتلاشت الإزاحة وبقيت المسافة.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>جسم سرعته $v(t)=6t\,m/s$. المسافة التي يقطعها في $[0,2]$ تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$6\,m$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$24\,m$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$3\,m$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$12\,m$</span></label>
+        </div>
+        <div class="quiz-explain">$v=0$ فقط عند $t=0$ (لا انعكاس داخل الفترة): $d=\big[3t^2\big]_0^2=12\,m$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>متى تتساوى المسافة مع القيمة المطلقة للإزاحة؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>دائماً وفي كل الحالات</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إذا لم يغيّر الجسم اتجاهه ضمن الفترة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إذا كان التعجيل ثابتاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا تتساويان أبداً</span></label>
+        </div>
+        <div class="quiz-explain">هذه هي الملاحظة الأساسية في الدرس (مطبّقة في مثال 39 حيث كان انعكاس الاتجاه عند زمن سالب مرفوض).</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="exercises" data-navlabel="📝 تمارين تطبيقية">
+    <h2 style="margin-bottom:.25rem">📝 تمارين شاملة على الفصل (تمرين 4-4)</h2>
+    <p class="lead" style="margin-top:0">جرّب حل كل سؤال بنفسك أولاً مستعيناً بكل ما تعلمته في الفصل، ثم اضغط «إظهار الحل» للتحقق.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq1" data-show-label="إظهار الحل" data-hide-label="إخفاء الحل">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بمنحني الدالة $y=x^4-6x^2+5$ والمحور السيني على الفترة $[2,3]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المساحة المحصورة بين منحني $y=x^4-6x^2+5$ ومحور السينات على الفترة $[2,3]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> الدالة $y=x^4-6x^2+5$، والفترة $[2,3]$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> حساب المساحة بين منحنٍ ومحور السينات يتطلب أولاً التحقق مما إذا كان المنحني يقطع المحور داخل الفترة (يُغيّر إشارته)؛ فإن حدث ذلك، نجزّئ الفترة عند نقطة التقاطع ونأخذ القيمة المطلقة لتكامل كل جزء على حدة قبل الجمع — تماماً كما نفعل مع المسافة في حركة الجسم، لأن المساحة أيضاً كمية موجبة دائماً.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نتحقق من إشارة الدالة عند طرفي الفترة أولاً؟</i> لأن المساحة الهندسية بين المنحني والمحور موجبة دائماً؛ فإذا قطع المنحني المحور، تصبح إحدى القطعتين فوق المحور والأخرى تحته، وحساب التكامل المباشر بينهما سيُلغي جزءاً منهما بالخطأ.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نحسب قيمة الدالة عند الطرف الأدنى $x=2$:</i> \( f(2)=2^4-6(2)^2+5=16-24+5=-3 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نحسب قيمة الدالة عند الطرف الأعلى $x=3$:</i> \( f(3)=3^4-6(3)^2+5=81-54+5=32 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نقارن الإشارتين:</i> $f(2)=-3$ سالبة و $f(3)=32$ موجبة — تغيّرت الإشارة، إذن لا بد أن المنحني يقطع المحور عند نقطة بين 2 و 3 يجب إيجادها قبل التكامل.</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نساوي الدالة بالصفر لإيجاد نقطة (نقاط) التقاطع:</i> \( x^4-6x^2+5=0 \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نستخدم التعويض $u=x^2$ لتحويلها إلى معادلة تربيعية ثم نحللها:</i> \( u^2-6u+5=0 \Rightarrow (u-1)(u-5)=0 \Rightarrow u=1 \text{ أو } u=5 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نعيد التعويض $x^2=u$ لإيجاد $x$:</i> $x^2=1 \Rightarrow x=\pm1$، و $x^2=5 \Rightarrow x=\pm\sqrt5$</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نختار الجذر الواقع فعلاً داخل الفترة $[2,3]$:</i> بما أن $\sqrt5\approx2.24$ يقع بين 2 و 3، فهو نقطة التقاطع المطلوبة (أما $\pm1$ و $-\sqrt5$ فخارج الفترة تماماً).</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نجزّئ الفترة عند نقطة التقاطع، ونوجد الدالة الأصلية لنحسب التكامل الأول على $[2,\sqrt5]$:</i> \( \displaystyle\int_2^{\sqrt5}(x^4-6x^2+5)dx=\left[\frac{x^5}{5}-2x^3+5x\right]_2^{\sqrt5}=\frac{-2}{5} \) (سالب لأن هذا الجزء يقع تحت المحور)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نحسب التكامل الثاني على $[\sqrt5,3]$ بنفس الطريقة:</i> \( \displaystyle\int_{\sqrt5}^{3}(x^4-6x^2+5)dx=\left[\frac{x^5}{5}-2x^3+5x\right]_{\sqrt5}^{3}=\frac{48}{5} \) (موجب لأن هذا الجزء فوق المحور)</div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body"><i>نأخذ القيمة المطلقة لكل تكامل جزئي على حدة، ثم نجمعهما:</i> المساحة $=\left|\dfrac{-2}{5}\right|+\left|\dfrac{48}{5}\right|=\dfrac{2}{5}+\dfrac{48}{5}=\dfrac{50}{5}=10$</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> حساب المساحة بتكامل واحد مباشر $\int_2^3(x^4-6x^2+5)dx$ دون التحقق من تغيّر الإشارة، فتُلغي القطعة السالبة جزءاً من القطعة الموجبة بدلاً من جمع القيمتين المطلقتين الصحيحتين.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: المساحة $=10\ (unit)^2$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بمنحني الدالة $y=x^4-x^2$ والمحور السيني على الفترة $[-1,1]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المساحة المحصورة بين منحني $y=x^4-x^2$ ومحور السينات على الفترة $[-1,1]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $y=x^4-x^2$، الفترة $[-1,1]$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نوجد نقاط تقاطع المنحني مع محور السينات داخل الفترة، نجزّئ عندها، ونجمع القيم المطلقة للتكاملات الجزئية.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نساوي الدالة بالصفر لإيجاد نقاط التقاطع مع المحور:</i> \( x^4-x^2=0 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نُخرج العامل المشترك $x^2$:</i> \( x^2(x^2-1)=0 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نحلل الفرق بين مربعين $(x^2-1)$، ونساوي كل عامل بالصفر:</i> $x^2=0$ أو $x^2-1=0 \Rightarrow x=0,\pm1$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نتحقق أن جميع هذه الجذور تقع داخل الفترة $[-1,1]$:</i> نعم، $x=-1,0,1$ كلها داخل حدود الفترة أو على أطرافها، فنجزّئ إلى فترتين: $[-1,0]$ و $[0,1]$.</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نوجد الدالة الأصلية لـ $x^4-x^2$:</i> \( \dfrac{x^5}{5}-\dfrac{x^3}{3} \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نحسب التكامل على الفترة الأولى $[-1,0]$:</i> \( \left[\dfrac{x^5}{5}-\dfrac{x^3}{3}\right]_{-1}^{0}=0-\left(\dfrac{-1}{5}+\dfrac13\right)=\dfrac{-2}{15} \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نحسب التكامل على الفترة الثانية $[0,1]$ بنفس الطريقة:</i> \( \left[\dfrac{x^5}{5}-\dfrac{x^3}{3}\right]_{0}^{1}=\dfrac15-\dfrac13=\dfrac{-2}{15} \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نلاحظ أن كلا الناتجين سالب:</i> لأن منحني $x^4-x^2$ يقع تحت محور السينات على كامل الفترة $[-1,1]$ (تحقق بتعويض $x=0.5$ مثلاً)، وهذا منطقي ولا يعني وجود خطأ في الحساب.</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نأخذ القيمة المطلقة لكل تكامل ونجمع:</i> المساحة $=\left|\dfrac{-2}{15}\right|+\left|\dfrac{-2}{15}\right|=\dfrac{4}{15}$</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> جمع التكاملين السالبين مباشرة دون أخذ القيمة المطلقة (فيصبح الناتج $\frac{-2}{15}+\frac{-2}{15}=\frac{-4}{15}$) وكتابة المساحة سالبة! المساحة الهندسية لا يمكن أن تكون سالبة أبداً.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: المساحة $=\dfrac{4}{15}\ (unit)^2$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بمنحني الدالة $y=x\sqrt{x^2+9}$ والمحور السيني على الفترة $[0,4]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المساحة بين منحني $y=x\sqrt{x^2+9}$ ومحور السينات على $[0,4]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> الدالة $y=x\sqrt{x^2+9}$، الفترة $[0,4]$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نتحقق أولاً من إشارة الدالة على الفترة (لتحديد الحاجة للتجزئة)، ثم نستخدم التكامل بطريقة التعويض (لأن مشتقة الجزء الداخلي $x^2+9$ موجودة تقريباً في الدالة) لإيجاد الدالة الأصلية.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نتحقق من إشارة الدالة على كامل الفترة $[0,4]$:</i> بما أن $x\ge0$ على هذه الفترة، وكذلك $\sqrt{x^2+9}>0$ دائماً (لأن ما تحت الجذر موجب)، فإن حاصل ضربهما $y\ge0$ طوال الفترة — إذن لا حاجة لتجزئة أو قيمة مطلقة.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نعيد كتابة الجذر كأس كسري لتسهيل التكامل:</i> \( y=x(x^2+9)^{1/2} \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نلاحظ أن مشتقة الجزء الداخلي $(x^2+9)$ قريبة من العامل $x$ الموجود خارج القوس — إشارة على استخدام طريقة التعويض:</i> مشتقة $x^2+9$ هي $2x$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نضرب ونقسم على 2 لنحصل على $2x$ كاملة أمام القوس</i> (دون تغيير قيمة التكامل، لأن الضرب والقسمة على نفس العدد لا يغيّران قيمته): \( \displaystyle\int x(x^2+9)^{1/2}dx=\frac12\int(2x)(x^2+9)^{1/2}dx \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نطبّق قاعدة الأس على القوس ككتلة واحدة</i> (تكامل $u^{1/2}$ هو $\dfrac{u^{3/2}}{3/2}$): \( \frac12\cdot\dfrac{(x^2+9)^{3/2}}{3/2}=\dfrac13(x^2+9)^{3/2} \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نكتب التكامل المحدد بالدالة الأصلية التي وجدناها:</i> \( \displaystyle\int_0^4 x\sqrt{x^2+9}\,dx=\left[\frac13(x^2+9)^{3/2}\right]_0^4 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نعوض الطرف الأعلى $x=4$:</i> $x^2+9=16+9=25$، و $25^{3/2}=(\sqrt{25})^3=5^3=125$، فالحد $=\dfrac{125}{3}$</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نعوض الطرف الأدنى $x=0$:</i> $x^2+9=9$، و $9^{3/2}=(\sqrt9)^3=3^3=27$، فالحد $=\dfrac{27}{3}$</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نطرح:</i> المساحة $=\dfrac{125}{3}-\dfrac{27}{3}=\dfrac{98}{3}$</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان الضرب والقسمة على 2 عند تجهيز التكامل لطريقة التعويض، أو الخطأ في رفع الجذر للأس $3/2$ — تذكّر أن $a^{3/2}=(\sqrt a)^3$.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: المساحة $=\dfrac{98}{3}\ (unit)^2$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> السؤال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بمنحني الدالة $y=x^3+4x^2+3x$ والمحور السيني.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المساحة المحصورة بين منحني $y=x^3+4x^2+3x$ ومحور السينات (بدون فترة محددة صراحة، فيجب تحديدها بأنفسنا).</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> الدالة $y=x^3+4x^2+3x$ فقط، دون فترة معطاة.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> عندما لا تُعطى فترة صراحة، تكون الفترة الضمنية المقصودة هي الفترة المحصورة بين أول وآخر نقطتي تقاطع للمنحني مع محور السينات.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نساوي الدالة بالصفر لإيجاد نقاط التقاطع مع المحور (وبالتالي حدود الفترة الضمنية):</i> \( x^3+4x^2+3x=0 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نُخرج العامل المشترك $x$:</i> \( x(x^2+4x+3)=0 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نحلل الحدّ التربيعي المتبقي إلى عاملين:</i> $x^2+4x+3=(x+1)(x+3)$، فتصبح المعادلة $x(x+1)(x+3)=0$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نساوي كل عامل بالصفر لإيجاد جميع الجذور:</i> $x=0,\ x=-1,\ x=-3$</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نرتب الجذور تصاعدياً لتحديد الفترتين الجزئيتين:</i> الجذور مرتبة هي $-3,-1,0$، فالفترتان هما $[-3,-1]$ و $[-1,0]$.</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نوجد الدالة الأصلية (تكامل غير محدد):</i> \( \dfrac{x^4}{4}+\dfrac{4x^3}{3}+\dfrac{3x^2}{2} \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نحسب التكامل على الفترة الأولى $[-3,-1]$:</i> \( \left[\dfrac{x^4}{4}+\dfrac{4x^3}{3}+\dfrac{3x^2}{2}\right]_{-3}^{-1}=\dfrac83 \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نحسب التكامل على الفترة الثانية $[-1,0]$:</i> \( \left[\dfrac{x^4}{4}+\dfrac{4x^3}{3}+\dfrac{3x^2}{2}\right]_{-1}^{0}=\dfrac{-5}{12} \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نأخذ القيمة المطلقة لكل تكامل جزئي ونجمع:</i> المساحة $=\left|\dfrac83\right|+\left|\dfrac{-5}{12}\right|=\dfrac{32}{12}+\dfrac{5}{12}=\dfrac{37}{12}$</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الظن بأن غياب فترة صريحة في السؤال يعني التكامل من سالب ما لا نهاية إلى ما لا نهاية! المقصود دائماً هو الفترة المحصورة بين نقاط التقاطع مع المحور فقط.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: المساحة $=\dfrac{37}{12}\ (unit)^2$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> السؤال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بين منحني الدالة $f(x)=x^2$ والمستقيم $g(x)=-x$ والمستقيمين $x=1,\;x=3$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المساحة المحصورة بين منحني $f(x)=x^2$ والمستقيم $g(x)=-x$ بين المستقيمين $x=1$ و $x=3$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=x^2$، $g(x)=-x$، الفترة $[1,3]$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> المساحة بين منحنيين على فترة معينة هي $\int_a^b|f(x)-g(x)|\,dx$؛ فإذا لم تتقاطع الدالتان داخل الفترة (أي أن إحداهما أكبر من الأخرى طوال الفترة)، نستغني عن القيمة المطلقة ونكتفي بمعرفة أيهما الأكبر لطرحها بالترتيب الصحيح.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نتحقق هل تتقاطع الدالتان داخل الفترة $[1,3]$:</i> نساوي $x^2=-x \Rightarrow x^2+x=0 \Rightarrow x(x+1)=0 \Rightarrow x=0$ أو $x=-1$ — وكلاهما خارج الفترة $[1,3]$، فلا يوجد تقاطع داخلها.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>بما أنه لا تقاطع، نحدد أي الدالتين أكبر بتجربة قيمة داخل الفترة (مثلاً $x=1$):</i> $f(1)=1^2=1$ بينما $g(1)=-1$؛ إذن $f(x)>g(x)$ طوال الفترة $[1,3]$ (لأن $x^2\ge0$ دائماً بينما $-x\le0$ طوال هذه الفترة الموجبة).</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نكتب صيغة المساحة بترتيب الطرح الصحيح</i> (الأكبر ناقص الأصغر، مع الانتباه إلى أن طرح سالب يعني جمعاً): المساحة $=\displaystyle\int_1^3[f(x)-g(x)]\,dx=\int_1^3[x^2-(-x)]\,dx=\int_1^3(x^2+x)\,dx$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نوجد الدالة الأصلية:</i> \( \left[\dfrac{x^3}{3}+\dfrac{x^2}{2}\right]_1^3 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نعوض الطرف الأعلى $x=3$:</i> \( \dfrac{27}{3}+\dfrac{9}{2}=9+\dfrac92 \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نعوض الطرف الأدنى $x=1$:</i> \( \dfrac13+\dfrac12 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نطرح بعد توحيد المقامات</i> (المقام المشترك 6): \( \left(9+\dfrac92\right)-\left(\dfrac13+\dfrac12\right)=\dfrac{54}{6}+\dfrac{27}{6}-\dfrac{2}{6}-\dfrac{3}{6}=\dfrac{76}{6}=\dfrac{38}{3} \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان تغيير إشارة $g(x)=-x$ عند طرحها، فيصبح $f(x)-g(x)=x^2-x$ بدلاً من $x^2+x$ الصحيحة — تذكّر أن طرح سالب يعني جمعاً.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: المساحة $=\dfrac{38}{3}\ (unit)^2$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> السؤال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بين منحني الدالة $f(x)=x^4$ والمستقيم $g(x)=x$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المساحة المحصورة بين منحني $f(x)=x^4$ والمستقيم $g(x)=x$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=x^4$، $g(x)=x$، دون فترة محددة (فنستنتجها من نقاط التقاطع).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نوجد نقاط تقاطع المنحنيين أولاً (وهي حدود التكامل الضمنية)، ثم نحدد أيهما أعلى داخل تلك الفترة، ثم نكامل الفرق (الأعلى ناقص الأدنى).</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نساوي الدالتين لإيجاد نقاط التقاطع:</i> \( x^4=x \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>ننقل كل الحدود لطرف واحد ونُخرج العامل المشترك $x$:</i> \( x^4-x=0 \Rightarrow x(x^3-1)=0 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نحل كل عامل على حدة:</i> $x=0$، أو $x^3-1=0 \Rightarrow x^3=1 \Rightarrow x=1$ (وهو الجذر الحقيقي الوحيد للمعادلة التكعيبية؛ الجذران الآخران عددان مركبان لا يدخلان في حساباتنا الهندسية).</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نحدد الفترة المحصورة بين نقطتي التقاطع:</i> الفترة هي $[0,1]$.</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نحدد أي الدالتين أعلى داخل هذه الفترة بتجربة قيمة (مثلاً $x=0.5$):</i> $g(0.5)=0.5$ بينما $f(0.5)=(0.5)^4=0.0625$؛ إذن $g(x)>f(x)$، أي $x>x^4$، طوال الفترة المفتوحة $(0,1)$.</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نكتب صيغة المساحة (الأعلى ناقص الأدنى):</i> المساحة $=\displaystyle\int_0^1(x-x^4)\,dx$</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نوجد الدالة الأصلية ونعوض الطرفين:</i> \( \left[\dfrac{x^2}{2}-\dfrac{x^5}{5}\right]_0^1=\left(\dfrac12-\dfrac15\right)-0 \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نطرح الكسرين بعد توحيد المقام</i> (المقام المشترك 10): \( \dfrac12-\dfrac15=\dfrac{5}{10}-\dfrac{2}{10}=\dfrac{3}{10} \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الاعتقاد بأن للمعادلة التكعيبية $x^3=1$ ثلاثة جذور حقيقية. في الواقع لها جذر حقيقي واحد فقط هو $x=1$، والجذران الباقيان عددان مركبان لا يدخلان في المسائل الهندسية.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: المساحة $=\dfrac{3}{10}\ (unit)^2$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7</span> السؤال 7</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq7">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المساحة المحددة بين منحنيي الدالتين $f(x)=x^2$ و $g(x)=\sqrt{x}$ على الفترة $[0,2]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المساحة المحصورة بين منحنيي $f(x)=x^2$ و $g(x)=\sqrt x$ على الفترة $[0,2]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=x^2$، $g(x)=\sqrt x$، الفترة $[0,2]$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نبحث عن نقاط تقاطع المنحنيين داخل الفترة المعطاة؛ إذا وُجدت، نجزّئ الفترة عندها لأن ترتيب «أيهما أعلى» قد ينعكس بعد كل تقاطع، ونجمع القيم المطلقة لمساحة كل جزء.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq7">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نساوي الدالتين لإيجاد نقاط التقاطع:</i> \( x^2=\sqrt x \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نربّع الطرفين لإزالة الجذر التربيعي</i> (تذكّر أن $(\sqrt x)^2=x$): \( (x^2)^2=(\sqrt x)^2 \Rightarrow x^4=x \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>ننقل الحدود لطرف واحد ونُخرج العامل المشترك $x$:</i> \( x^4-x=0 \Rightarrow x(x^3-1)=0 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نحل كل عامل:</i> $x=0$ أو $x^3=1 \Rightarrow x=1$</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نتحقق أن كلا الجذرين يقعان داخل الفترة المعطاة $[0,2]$:</i> نعم، $0$ و $1$ كلاهما داخل $[0,2]$، فنجزّئ الفترة إلى $[0,1]$ و $[1,2]$.</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نحدد أيهما أعلى في الفترة الأولى $[0,1]$ بتجربة قيمة (مثلاً $x=0.25$):</i> $\sqrt{0.25}=0.5$ بينما $(0.25)^2=0.0625$؛ إذن $\sqrt x\ge x^2$ على $[0,1]$.</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نكامل الفرق الصحيح على $[0,1]$:</i> \( \displaystyle\int_0^1(\sqrt x-x^2)dx=\left[\frac23x^{3/2}-\frac{x^3}{3}\right]_0^1=\frac23-\frac13=\frac13 \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نحدد أيهما أعلى في الفترة الثانية $[1,2]$ بتجربة قيمة (مثلاً $x=2$):</i> $2^2=4$ بينما $\sqrt2\approx1.41$؛ إذن الترتيب انعكس والآن $x^2\ge\sqrt x$ على $[1,2]$ — وهذا هو سبب حاجتنا للتجزئة عند نقطة التقاطع.</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نكامل الفرق الصحيح على $[1,2]$:</i> \( \displaystyle\int_1^2(x^2-\sqrt x)dx=\left[\frac{x^3}{3}-\frac23x^{3/2}\right]_1^2=\left(\frac83-\frac{4\sqrt2}{3}\right)-\left(\frac13-\frac23\right)=3-\frac{4\sqrt2}{3} \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نجمع مساحتي الفترتين:</i> المساحة الكلية $=\dfrac13+3-\dfrac{4\sqrt2}{3}=\dfrac{10-4\sqrt2}{3}$</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> التكامل مباشرة على الفترة الكاملة $[0,2]$ بفرق ثابت (مثلاً $x^2-\sqrt x$ طوال الفترة) دون التحقق من انعكاس الترتيب بعد نقطة التقاطع $x=1$، مما يعطي نتيجة خاطئة لأن إحدى القطعتين ستُطرح بالإشارة المعكوسة.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: المساحة $=\dfrac{10-4\sqrt2}{3}\approx1.45\ (unit)^2$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8-a</span> السؤال 8 — الفقرة (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq8a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">تحرك جسم على خط مستقيم بتعجيل قدره $12\,cm/sec^2$ فإذا كانت سرعته تساوي $24\,cm/sec$ بعد مرور $3\,sec$ من بدء الحركة، احسب المسافة المقطوعة في الفترة $[1,3]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المسافة المقطوعة في الفترة الزمنية $[1,3]$، لكن يجب أولاً إيجاد دالة السرعة نفسها من معطيات التعجيل.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> التعجيل ثابت $a=12\,cm/sec^2$، والسرعة عند $t=3$ تساوي $24\,cm/sec$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> السرعة هي الدالة المقابلة (تكامل) للتعجيل، فنكامل $a(t)$ للحصول على $v(t)$ بثابت تكامل مجهول، ثم نستخدم الشرط المعطى $v(3)=24$ لإيجاد قيمة هذا الثابت. بعدها نطبّق طريقة المسافة المعتادة (البحث عن $v=0$).</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq8a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نكامل التعجيل؟</i> لأن السرعة هي الدالة المقابلة للتعجيل (بما أن $a(t)=v'(t)$)، فلإيجاد $v(t)$ من $a(t)$ نعكس عملية الاشتقاق بالتكامل.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نكامل التعجيل الثابت:</i> \( v(t)=\displaystyle\int 12\,dt=12t+c_1 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نستخدم الشرط المعطى $v(3)=24$ بالتعويض:</i> \( 12(3)+c_1=24 \Rightarrow 36+c_1=24 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نحل من أجل $c_1$</i> (ننقل 36 للطرف الآخر بتغيير إشارتها): \( c_1=24-36=-12 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نكتب دالة السرعة الكاملة:</i> \( v(t)=12t-12 \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>الآن نبحث عن لحظة انعكاس الاتجاه كالمعتاد قبل حساب المسافة:</i> نساوي \( 12t-12=0 \Rightarrow t=1 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نتحقق من موقع هذه اللحظة بالنسبة للفترة المطلوبة $[1,3]$:</i> بما أن $t=1$ هي الحد الأدنى للفترة بالضبط (وليست نقطة داخلية بين 1 و3)، فلا يوجد انعكاس اتجاه داخل الفترة المفتوحة $(1,3)$، ويمكننا حساب المسافة بتكامل واحد فقط.</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نكتب صيغة المسافة ونوجد الدالة الأصلية للسرعة:</i> \( d=\left|\displaystyle\int_1^3(12t-12)\,dt\right|=\left|\big[6t^2-12t\big]_1^3\right| \)</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نعوض الطرفين ونطرح:</i> \( =|(6(9)-36)-(6(1)-12)|=|(54-36)-(6-12)|=|18-(-6)| \)</div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body"><i>نكمل الطرح ونأخذ القيمة المطلقة النهائية:</i> \( =|18+6|=24\,cm \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان إيجاد دالة السرعة أولاً من التعجيل، والانتقال مباشرة لحساب المسافة بدالة التعجيل بدلاً من دالة السرعة — تذكّر أن المسافة والإزاحة تُحسبان دائماً من دالة السرعة $v(t)$، لا من التعجيل.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: المسافة $=24\,cm$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8-b</span> السؤال 8 — الفقرة (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq8b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">تحرك جسم على خط مستقيم بتعجيل قدره $12\,cm/sec^2$ فإذا كانت سرعته تساوي $24\,cm/sec$ بعد مرور $3\,sec$ من بدء الحركة، احسب الزمن اللازم لعودة الجسم إلى موضعه الأول الذي بدأ الحركة منه.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد الزمن اللازم لعودة الجسم إلى موضعه الأول (نقطة الانطلاق).</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> دالة السرعة $v(t)=12t-12$ (من الفقرة (a))، ونفترض أن الجسم يبدأ حركته من نقطة نعتبرها $s(0)=0$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> «العودة إلى الموضع الأول» تعني أن الإزاحة الكلية منذ بداية الحركة تساوي صفراً، أي $s(t)=0$؛ فنكامل السرعة لإيجاد دالة الموضع $s(t)$، ثم نحل المعادلة $s(t)=0$ مستبعدين الحل التافه $t=0$ (لحظة الانطلاق نفسها، وليست عودة حقيقية).</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq8b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نستدعي دالة السرعة من الفقرة السابقة:</i> \( v(t)=12t-12 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نكامل السرعة لإيجاد دالة الموضع (الإزاحة كدالة في الزمن):</i> \( s(t)=\displaystyle\int(12t-12)\,dt=6t^2-12t+c_2 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نفرض أن الجسم عند بداية حركته ($t=0$) يقع عند نقطة الصفر (موضعه الأول)، فنعوض هذا الشرط لإيجاد $c_2$:</i> \( s(0)=6(0)^2-12(0)+c_2=0 \Rightarrow c_2=0 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نكتب دالة الموضع الكاملة:</i> \( s(t)=6t^2-12t \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نُخرج العامل المشترك $6t$ لتسهيل الحل:</i> \( s(t)=6t(t-2) \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نساوي دالة الموضع بالصفر (شرط العودة للموضع الأول):</i> \( 6t(t-2)=0 \Rightarrow t=0 \) أو $t=2$</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نستبعد الحل $t=0$</i> لأنه يمثل لحظة الانطلاق نفسها وليس عودة حقيقية، فنختار الحل الموجب الآخر: \( t=2\,sec \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> قبول $t=0$ كإجابة نهائية دون التفكير في معناه الفيزيائي — فهذا الحل يمثل نقطة البداية نفسها لا لحظة عودة حقيقية بعد تحرك الجسم.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: زمن العودة $=2\,sec$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9-a</span> السؤال 9 — الفقرة (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq9a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بتعجيل قدره $(4t+2)\,cm/sec^2$ وكانت سرعته عندما $t=4$ تساوي $50\,cm/sec$. جد سرعة الجسم عند أية لحظة.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد دالة السرعة $v(t)$ عند أية لحظة زمنية.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> التعجيل $a(t)=4t+2$، والسرعة عند $t=4$ تساوي $50\,cm/sec$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> نكامل دالة التعجيل (وهي هنا غير ثابتة) لنحصل على السرعة بثابت تكامل مجهول، ثم نستخدم الشرط المعطى لإيجاد قيمته.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq9a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نكامل دالة التعجيل حداً حداً بقاعدة الأس:</i> \( v(t)=\displaystyle\int(4t+2)\,dt=2t^2+2t+c \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نستخدم الشرط $v(4)=50$ بالتعويض:</i> \( 2(4)^2+2(4)+c=50 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نبسط الأعداد:</i> \( 2(16)+8+c=50 \Rightarrow 32+8+c=50 \Rightarrow 40+c=50 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نحل من أجل $c$</i> (ننقل 40 للطرف الآخر بتغيير إشارتها): \( c=50-40=10 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نكتب دالة السرعة الكاملة بتعويض قيمة $c$:</i> \( v(t)=2t^2+2t+10 \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان إضافة ثابت التكامل $c$ عند تكامل دالة غير ثابتة، أو الخلط بين قيمة السرعة عند $t=4$ وبين معدل تغيّرها — الشرط المعطى قيمة عددية للسرعة تُستخدم للتعويض المباشر لا للاشتقاق.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: $v(t)=2t^2+2t+10\ cm/sec$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9-b</span> السؤال 9 — الفقرة (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq9b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بتعجيل قدره $(4t+2)\,cm/sec^2$ وكانت سرعته عندما $t=4$ تساوي $50\,cm/sec$. جد المسافة التي يقطعها الجسم في الفترة الزمنية $[3,7]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المسافة التي يقطعها الجسم في الفترة الزمنية $[3,7]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> دالة السرعة $v(t)=2t^2+2t+10$ (من الفقرة (a)).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> كالعادة، نتحقق أولاً هل تنعدم السرعة (انعكاس الاتجاه) داخل الفترة عبر حل $v(t)=0$؛ إذا لم توجد جذور حقيقية، فالمسافة = الإزاحة بتكامل واحد مباشر.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq9b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نحاول حل $v(t)=0$ للتحقق من وجود انعكاس اتجاه:</i> \( 2t^2+2t+10=0 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نحسب المميز ($\Delta=b^2-4ac$) لمعرفة هل للمعادلة جذور حقيقية:</i> \( \Delta=(2)^2-4(2)(10)=4-80=-76 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نفسّر نتيجة المميز:</i> بما أن $\Delta<0$، فلا توجد جذور حقيقية للمعادلة، أي أن $v(t)$ لا تساوي صفراً عند أي زمن حقيقي، وبما أن معامل $t^2$ موجب فإن السرعة موجبة دائماً — فالجسم لا يغيّر اتجاهه إطلاقاً.</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>بما أنه لا يوجد انعكاس، نطبّق: المسافة = الإزاحة بتكامل واحد مباشر:</i> \( d=\displaystyle\int_3^7(2t^2+2t+10)\,dt \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نوجد الدالة الأصلية للسرعة:</i> \( \left[\dfrac{2t^3}{3}+t^2+10t\right]_3^7 \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نعوض الطرف الأعلى $t=7$:</i> \( \dfrac{2(343)}{3}+49+70=\dfrac{686}{3}+119 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نعوض الطرف الأدنى $t=3$:</i> \( \dfrac{2(27)}{3}+9+30=18+39=57 \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نطرح (بعد توحيد المقامات):</i> \( d=\left(\dfrac{686}{3}+119\right)-57=\dfrac{686}{3}+62=\dfrac{686+186}{3}=\dfrac{872}{3}\,cm \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الاكتفاء بالنظر إلى قيمة السرعة عند طرفي الفترة فقط لمعرفة إن كانت تنعدم، بدل حل المعادلة $v(t)=0$ كاملة والتحقق من المميز — قد تنعدم السرعة عند نقطة داخلية دون أن يظهر ذلك عند الأطراف.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: $\dfrac{872}{3}\,cm$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9-c</span> السؤال 9 — الفقرة (c)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq9c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بتعجيل قدره $(4t+2)\,cm/sec^2$ وكانت سرعته عندما $t=4$ تساوي $50\,cm/sec$. جد المسافة المقطوعة خلال الثانية الرابعة من الحركة.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المسافة المقطوعة خلال «الثانية الرابعة» من الحركة، أي الفترة $[3,4]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> دالة الموضع $s(t)=\dfrac{2t^3}{3}+t^2+10t$، وأن الجسم لا يغيّر اتجاهه أبداً (من الفقرة (b)).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> بما أنه لا يوجد انعكاس اتجاه إطلاقاً (أثبتنا ذلك بالمميز السالب في الفقرة (b))، فإن المسافة في أي فترة جزئية تساوي ببساطة $s(t_2)-s(t_1)$ دون الحاجة لأي قيمة مطلقة أو تجزئة إضافية.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq9c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نحدد الفترة المقصودة بـ«الثانية الرابعة»:</i> هي الفترة $[3,4]$ (من نهاية الثانية الثالثة إلى نهاية الرابعة).</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نستدعي دالة الموضع (من تكامل السرعة في الفقرة (b)):</i> \( s(t)=\dfrac{2t^3}{3}+t^2+10t \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>بما أن الجسم لا يغيّر اتجاهه، نحسب المسافة كفرق مباشر:</i> \( d=s(4)-s(3) \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نعوض $t=4$:</i> \( s(4)=\dfrac{2(64)}{3}+16+40=\dfrac{128}{3}+56 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نعوض $t=3$:</i> \( s(3)=\dfrac{2(27)}{3}+9+30=18+39=57 \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نطرح (بعد توحيد المقامات؛ 56 و57 أعداد صحيحة تُكتب كأثلاث):</i> \( d=\left(\dfrac{128}{3}+56\right)-57=\dfrac{128}{3}+(56-57)=\dfrac{128}{3}-1 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نحوّل العدد الصحيح 1 إلى ثلث ونطرح:</i> \( =\dfrac{128}{3}-\dfrac33=\dfrac{125}{3}\,cm \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الظن بأن حساب المسافة خلال فترة جزئية يتطلب دائماً تكاملاً جديداً من الصفر، متناسين أنه بما أن دالة الموضع $s(t)$ معروفة مسبقاً وأن الحركة باتجاه واحد، يكفي طرح $s(4)-s(3)$ مباشرة.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: $\dfrac{125}{3}\,cm$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9-d</span> السؤال 9 — الفقرة (d)</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq9d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بتعجيل قدره $(4t+2)\,cm/sec^2$ وكانت سرعته عندما $t=4$ تساوي $50\,cm/sec$. جد بُعد الجسم بعد مرور $10\,sec$ من بدء الحركة.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد بُعد الجسم عن نقطة انطلاقه الأصلية بعد مرور $10\,sec$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> دالة الموضع $s(t)=\dfrac{2t^3}{3}+t^2+10t$ مع $s(0)=0$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> «بُعد الجسم» بعد زمن معين يعني إزاحته من لحظة الانطلاق $t=0$ وحتى تلك اللحظة، أي ببساطة قيمة $s(t)$ عند ذلك الزمن (لأننا افترضنا $s(0)=0$).</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq9d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نستدعي دالة الموضع مع تذكّر أن $s(0)=0$ (نقطة الانطلاق هي مرجع القياس):</i> \( s(t)=\dfrac{2t^3}{3}+t^2+10t \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نعوض $t=10$ مباشرة</i> (بلا حاجة لطرح أي قيمة أخرى لأن المرجع هو الصفر أصلاً): \( s(10)=\dfrac{2(1000)}{3}+(10)^2+10(10) \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نحسب كل حد على حدة:</i> \( \dfrac{2000}{3}+100+100 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نجمع الحدود الصحيحة أولاً:</i> \( 100+100=200 \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نجمع مع الكسر</i> (نحوّل 200 إلى أثلاث): \( \dfrac{2000}{3}+200=\dfrac{2000}{3}+\dfrac{600}{3}=\dfrac{2600}{3}\,cm \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> حساب بُعد الجسم بعد 10 ثوانٍ بطرح $s(10)-s(7)$ أو أي زمن آخر ورد في فقرة سابقة، بدلاً من قياسه دوماً من نقطة الانطلاق الأصلية $t=0$.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: $\dfrac{2600}{3}\,cm$</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">10-a</span> السؤال 10 — الفقرة 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq10a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم وكانت سرعته $v=3t^2+6t+3$. جد المسافة المقطوعة في الفترة الزمنية $[2,4]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد المسافة المقطوعة في الفترة الزمنية $[2,4]$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> دالة السرعة $v=3t^2+6t+3$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> قبل التكامل، نتحقق من إمكانية انعدام السرعة (انعكاس الاتجاه) داخل الفترة، وأحياناً يمكن ملاحظة ذلك مباشرة من شكل الدالة نفسها إن كانت صيغة مربع كامل.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq10a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نلاحظ أن معاملات الدالة (3، 6، 3) قد تشكّل مربعاً كاملاً بعد إخراج عامل مشترك — نُخرج العامل المشترك 3:</i> \( v=3(t^2+2t+1) \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نتعرف على أن الحدّ داخل القوس مربع كامل</i> (لأن $t^2+2t+1=(t+1)^2$): \( v=3(t+1)^2 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نستنتج من صيغة المربع الكامل خصائص إشارة الدالة:</i> بما أن أي مقدار مرفوع للقوة الثانية $\ge0$ دائماً، ومضروب في 3 (موجب)، فإن $v(t)\ge0$ لكل قيم $t$، وتساوي صفراً فقط عند $t=-1$.</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نتحقق أن نقطة الانعدام ($t=-1$) خارج نطاق الفترة المطلوبة، بل وخارج نطاق الزمن الموجب أصلاً:</i> بما أن $t=-1$ زمن سالب غير مقبول فيزيائياً، فلا يوجد انعكاس اتجاه على الإطلاق ضمن $[2,4]$ ولا في أي فترة موجبة.</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>بما أنه لا يوجد انعكاس، نطبّق: المسافة = الإزاحة بتكامل واحد مباشر:</i> \( d=\displaystyle\int_2^4(3t^2+6t+3)\,dt=\big[t^3+3t^2+3t\big]_2^4 \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نعوض الطرف الأعلى $t=4$:</i> \( (4)^3+3(4)^2+3(4)=64+48+12=124 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نعوض الطرف الأدنى $t=2$:</i> \( (2)^3+3(2)^2+3(2)=8+12+6=26 \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نطرح:</i> \( d=124-26=98 \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> عدم التعرف على صيغة المربع الكامل $3(t+1)^2$ ومحاولة حل المعادلة $3t^2+6t+3=0$ بالقانون العام دون داعٍ — التعرف على المربع الكامل يوفّر وقتاً ويكشف الإشارة مباشرة.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: المسافة $=98$ (بوحدات المسألة)</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">10-b</span> السؤال 10 — الفقرة 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-cq10b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم وكانت سرعته $v=3t^2+6t+3$. جد تعجيل الجسم بعد مرور $3\,sec$ من بدء الحركة.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد تعجيل الجسم عند اللحظة $t=3\,sec$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> دالة السرعة $v=3t^2+6t+3$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> التعجيل هو مشتقة السرعة بالنسبة للزمن، أي $a(t)=v'(t)$ — عكس ما فعلناه في الأسئلة السابقة تماماً حيث كنا نكامل التعجيل لإيجاد السرعة.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-cq10b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا نشتق هنا بدلاً من أن نكامل كما في الأسئلة السابقة؟</i> لأن السؤال يعطينا السرعة ويطلب التعجيل، والعلاقة بينهما هي $a(t)=v'(t)$ (اشتقاق، لا تكامل) — على عكس الأسئلة (9) و(10-a) حيث كان يُعطى التعجيل ونكامل لإيجاد السرعة.</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نشتق دالة السرعة حداً حداً بقاعدة الأس:</i> \( a(t)=v'(t)=6t+6 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نعوض $t=3$:</i> \( a(3)=6(3)+6 \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نبسط:</i> \( a(3)=18+6=24 \)</div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الخلط بين اتجاه العلاقة، ومحاولة تكامل السرعة بدلاً من اشتقاقها لإيجاد التعجيل. تذكّر الترتيب الصحيح: الموضع ← (اشتقاق) ← السرعة ← (اشتقاق) ← التعجيل، والعكس بالتكامل.</span>
+      </div>
+      <div class="exercise-final">✓ الجواب: $a(3)=24$ (بوحدات المسألة)</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>الإزاحة اتجاهية: $s=\int_{t_1}^{t_2}v(t)\,dt$ — قد تكون سالبة أو صفراً.</span></li>
+        <li><span>المسافة غير اتجاهية وموجبة دائماً: جزّئ عند $v(t)=0$ واجمع القيم المطلقة.</span></li>
+        <li><span>إذا لم ينعكس اتجاه الحركة في الفترة، فالمسافة = |الإزاحة| بتكامل واحد.</span></li>
+        <li><span>«الثانية الرابعة» تعني الفترة $[3,4]$ — انتبه لصياغة الأسئلة.</span></li>
+        <li><span>بُعد الجسم عن نقطة البداية بعد زمن $t$ هو إزاحته من $0$ إلى $t$.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l7" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري شامل يربط بين كل مفاهيم الدرس السابع — مثالي للمراجعة قبل اختبار نهاية الفصل الرابع.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l7">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس السابع">
+          <line x1="410" y1="180" x2="160" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="660" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="160" y2="285" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="660" y2="285" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#3fa9f5"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">حركة الجسم</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">بالتكامل المحدد</text></g>
+
+          <g><circle cx="160" cy="80" r="50" fill="#7c6fee"/>
+            <text x="160" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الإزاحة</text>
+            <text x="160" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">∫v dt اتجاهية</text></g>
+
+          <g><circle cx="660" cy="80" r="50" fill="#ff6b9d"/>
+            <text x="660" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">المسافة</text>
+            <text x="660" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">موجبة دائماً</text></g>
+
+          <g><circle cx="160" cy="285" r="50" fill="#ffab5e"/>
+            <text x="160" y="281" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">v = 0</text>
+            <text x="160" y="298" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">لحظة الانعكاس</text></g>
+
+          <g><circle cx="660" cy="285" r="50" fill="#2fd18f"/>
+            <text x="660" y="281" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">بلا انعكاس؟</text>
+            <text x="660" y="298" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">d = |s|</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الرابع · التكامل — الدرس 7: التطبيق الفيزيائي للتكامل المحدد 🎓 نهاية الفصل</footer>
+
+<script src="../assets/js/plot.js"></script>
+<script src="../assets/js/quiz.js"></script>
+<script src="../assets/js/site.js"></script>
+<script>
+(function(){
+  var ns = "http://www.w3.org/2000/svg";
+  var svg = document.getElementById("motionPlot");
+  var slider = document.getElementById("tSlider");
+  var tVal = document.getElementById("tVal");
+  var dispTag = document.getElementById("dispTag");
+  var distTag = document.getElementById("distTag");
+  var velTag = document.getElementById("velTag");
+
+  function s(t){ return 2*t*t-12*t; }        /* displacement from t=0 */
+  function v(t){ return 4*t-12; }
+  function dist(t){                            /* total distance from t=0, turn at t=3 */
+    if(t<=3) return Math.abs(s(t));
+    return Math.abs(s(3)) + Math.abs(s(t)-s(3));
+  }
+
+  function render(){
+    var t = parseFloat(slider.value);
+    tVal.textContent = t.toFixed(1).replace(/\.0$/,"");
+    var W=560,H=220;
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    svg.setAttribute("viewBox","0 0 "+W+" "+H);
+    /* number line: positions from -20 to 90 */
+    var pmin=-25, pmax=90;
+    function px(p){ return 30 + (p-pmin)/(pmax-pmin)*(W-60); }
+    var axis = document.createElementNS(ns,"line");
+    axis.setAttribute("x1",px(pmin)); axis.setAttribute("y1",130);
+    axis.setAttribute("x2",px(pmax)); axis.setAttribute("y2",130);
+    axis.setAttribute("stroke","#8a97ad"); axis.setAttribute("stroke-width","2");
+    svg.appendChild(axis);
+    for(var p=-20;p<=90;p+=10){
+      var tick = document.createElementNS(ns,"line");
+      tick.setAttribute("x1",px(p)); tick.setAttribute("y1",125);
+      tick.setAttribute("x2",px(p)); tick.setAttribute("y2",135);
+      tick.setAttribute("stroke","#8a97ad"); tick.setAttribute("stroke-width","1.5");
+      svg.appendChild(tick);
+      var lb = document.createElementNS(ns,"text");
+      lb.setAttribute("x",px(p)); lb.setAttribute("y",155);
+      lb.setAttribute("text-anchor","middle"); lb.setAttribute("font-size","11");
+      lb.setAttribute("fill","#8a97ad"); lb.setAttribute("font-family","Cairo,sans-serif");
+      lb.textContent = p;
+      svg.appendChild(lb);
+    }
+    /* start marker */
+    var st = document.createElementNS(ns,"circle");
+    st.setAttribute("cx",px(0)); st.setAttribute("cy",130); st.setAttribute("r","5");
+    st.setAttribute("fill","none"); st.setAttribute("stroke","#2fd18f"); st.setAttribute("stroke-width","2.5");
+    svg.appendChild(st);
+    var stl = document.createElementNS(ns,"text");
+    stl.setAttribute("x",px(0)); stl.setAttribute("y",178);
+    stl.setAttribute("text-anchor","middle"); stl.setAttribute("font-size","12"); stl.setAttribute("font-weight","700");
+    stl.setAttribute("fill","#2fd18f"); stl.setAttribute("font-family","Cairo,sans-serif");
+    stl.textContent = "نقطة البداية";
+    svg.appendChild(stl);
+    /* turnaround marker at s(3) = -18 */
+    var tm = document.createElementNS(ns,"line");
+    tm.setAttribute("x1",px(-18)); tm.setAttribute("y1",95);
+    tm.setAttribute("x2",px(-18)); tm.setAttribute("y2",130);
+    tm.setAttribute("stroke","#ffab5e"); tm.setAttribute("stroke-width","2"); tm.setAttribute("stroke-dasharray","4 4");
+    svg.appendChild(tm);
+    var tml = document.createElementNS(ns,"text");
+    tml.setAttribute("x",px(-18)); tml.setAttribute("y",86);
+    tml.setAttribute("text-anchor","middle"); tml.setAttribute("font-size","11"); tml.setAttribute("font-weight","700");
+    tml.setAttribute("fill","#ffab5e"); tml.setAttribute("font-family","Cairo,sans-serif");
+    tml.textContent = "نقطة الانعكاس (t=3)";
+    svg.appendChild(tml);
+    /* body */
+    var pos = s(parseFloat(slider.value));
+    var body = document.createElementNS(ns,"circle");
+    body.setAttribute("cx",px(pos)); body.setAttribute("cy",130); body.setAttribute("r","11");
+    body.setAttribute("fill", v(t)<0 ? "#ff6b9d" : "#3fa9f5");
+    svg.appendChild(body);
+    var arrowChar = v(t)<0 ? "◀" : "▶";
+    var ar = document.createElementNS(ns,"text");
+    ar.setAttribute("x",px(pos)); ar.setAttribute("y",112);
+    ar.setAttribute("text-anchor","middle"); ar.setAttribute("font-size","16");
+    ar.setAttribute("fill", v(t)<0 ? "#ff6b9d" : "#3fa9f5");
+    ar.textContent = Math.abs(v(t))<0.01 ? "⏸" : arrowChar;
+    svg.appendChild(ar);
+
+    dispTag.textContent = "📍 الإزاحة منذ t=0: " + s(t).toFixed(1).replace(/\.0$/,"") + " m";
+    distTag.textContent = "🛣️ المسافة منذ t=0: " + dist(t).toFixed(1).replace(/\.0$/,"") + " m";
+    velTag.textContent = "⚡ السرعة: " + v(t).toFixed(1).replace(/\.0$/,"") + " m/s";
+  }
+  slider.addEventListener("input", render);
+  if(document.readyState !== "loading") render();
+  else document.addEventListener("DOMContentLoaded", render);
+})();
+</script>
+</body>
+</html>
