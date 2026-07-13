@@ -97,7 +97,40 @@
     </div>
     <div class="callout tip fade-up" style="margin-top:1rem">
       <span class="icon">✍️</span>
-      <span>من الآن فصاعداً سنختصر الخطوات ولن نوزّع إشارة التكامل على كل حد — سنكامل مباشرة.</span>
+      <span>من الآن فصاعداً سنكامل حداً حداً مباشرة دون كتابة إشارة التكامل بشكل منفصل لكل حد — لكننا سنستمر في توضيح كل خطوة من خطوات الحل بالتفصيل في الأمثلة القادمة.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة مصغّرة: القواعد والخواص</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l2-topic" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">قبل الانتقال إلى الأمثلة، هذه خريطة سريعة تربط القاعدتين الأساسيتين بالخاصيتين اللتين تُستخدمان معهما.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l2-topic">
+        <svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة مصغّرة لقواعد وخواص التكامل">
+          <line x1="410" y1="160" x2="150" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="160" x2="670" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="160" x2="150" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="160" x2="670" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <g><circle cx="410" cy="160" r="56" fill="#7c6fee"/>
+            <text x="410" y="156" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">قواعد وخواص</text>
+            <text x="410" y="172" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">التكامل</text></g>
+          <g><circle cx="150" cy="70" r="46" fill="#3fa9f5"/>
+            <text x="150" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">∫a dx=ax+c</text>
+            <text x="150" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">القاعدة 1</text></g>
+          <g><circle cx="670" cy="70" r="46" fill="#2fd18f"/>
+            <text x="670" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">xⁿ⁺¹/(n+1)</text>
+            <text x="670" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">القاعدة 2</text></g>
+          <g><circle cx="150" cy="250" r="46" fill="#ffab5e"/>
+            <text x="150" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">جمع/فرق</text>
+            <text x="150" y="262" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">خاصية 1</text></g>
+          <g><circle cx="670" cy="250" r="46" fill="#ff6b9d"/>
+            <text x="670" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">ثابت خارج ∫</text>
+            <text x="670" y="262" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">خاصية 2</text></g>
+        </svg>
+      </div>
     </div>
   </section>
 
@@ -110,13 +143,27 @@
         <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">باستخدام قواعد وخواص التكامل، جد ثلاث دوال مقابلة للدالة $f(x)=3x^2+5$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد ثلاث دوال مقابلة مختلفة (من عائلة الدوال المقابلة) للدالة المعطاة $f(x)$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=3x^2+5$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> القاعدتان الأساسيتان للتكامل (تكامل $x^n$ وتكامل الثابت) مع خاصية جمع التكاملات، ثم اختيار ثلاث قيم مختلفة لثابت التكامل $c$.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex5">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل حداً حداً: \( F(x)=\int(3x^2+5)\,dx = \dfrac{3x^3}{3}+5x+c = x^3+5x+c \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">لإيجاد ثلاث دوال محددة، نختار ثلاث قيم عشوائية بدلاً من $c$.</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">$c=1 \Rightarrow F_1(x)=x^3+5x+1$</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">$c=-\tfrac12 \Rightarrow F_2(x)=x^3+5x-\tfrac12$</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">$c=\sqrt5 \Rightarrow F_3(x)=x^3+5x+\sqrt5$ ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>لماذا؟</i> لإيجاد دالة مقابلة نطبّق التكامل غير المحدد على $f(x)$، ونستخدم خاصية الجمع لنكامل كل حد على حدة: \( \int(3x^2+5)\,dx = \int 3x^2\,dx + \int 5\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نكامل الحد الأول بالقاعدة الثانية (نزيد الأس 1 ونقسم على الأس الجديد):</i> \( \int 3x^2\,dx = 3\cdot\dfrac{x^3}{3} \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نبسّط:</i> العدد 3 في البسط يُختصر مع العدد 3 في المقام، فيتبقى: $x^3$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نكامل الحد الثاني بالقاعدة الأولى (تكامل الثابت):</i> \( \int 5\,dx = 5x \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نجمع الناتجين ونضيف ثابت التكامل $c$</i> (لأن التكامل غير المحدد ناتجه عائلة دوال، لا دالة واحدة): $F(x)=x^3+5x+c$</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نلاحظ:</i> هذه الصيغة تمثّل عائلة كاملة من الدوال المقابلة، وكل قيمة نختارها لـ $c$ تعطينا دالة مقابلة صحيحة مختلفة.</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نختار القيمة الأولى $c=1$:</i> $F_1(x)=x^3+5x+1$</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نختار القيمة الثانية $c=-\tfrac12$:</i> $F_2(x)=x^3+5x-\tfrac12$</div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body"><i>نختار القيمة الثالثة $c=\sqrt5$:</i> $F_3(x)=x^3+5x+\sqrt5$ ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان ثابت التكامل $+c$ عند كتابة الصيغة العامة، أو اختيار نفس القيمة للثابت في الدوال الثلاث بدل ثلاث قيم مختلفة (والمطلوب هنا ثلاث دوال مختلفة فعلاً).</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: ثلاث دوال مقابلة ممكنة هي $F_1(x)=x^3+5x+1$، و$F_2(x)=x^3+5x-\tfrac12$، و$F_3(x)=x^3+5x+\sqrt5$ (وأي قيمة أخرى لـ $c$ تعطي دالة مقابلة صحيحة أيضاً). ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -125,11 +172,26 @@
         <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">باستخدام قواعد وخواص التكامل، جد الدالة المقابلة للدالة $f(x)=3x^2-5$ إذا عُلم أن $F(1)=2$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد الدالة المقابلة <b>المحددة</b> (دالة واحدة فقط، وليست عائلة كاملة) التي تحقق الشرط الابتدائي المعطى.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=3x^2-5$، والشرط الابتدائي $F(1)=2$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> القاعدتان الأساسيتان للتكامل لإيجاد الصيغة العامة $F(x)+c$، ثم تعويض الشرط الابتدائي لإيجاد قيمة $c$ بدقة.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex6">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( F(x)=\int(3x^2-5)\,dx = x^3-5x+c \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نستخدم الشرط $F(1)=2$: \( (1)^3-5(1)+c = 2 \Rightarrow -4+c=2 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">إذن $c=6$، وبالتالي: $F(x)=x^3-5x+6$ ∎ (هذه المرة دالة واحدة محددة تماماً، وليست عائلة).</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نكامل الحد الأول بالقاعدة الثانية:</i> \( \int 3x^2\,dx = x^3 \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نكامل الحد الثاني بالقاعدة الأولى</i> (تكامل ثابت سالب يعطي نفس الثابت مضروباً في $x$، مع بقاء الإشارة السالبة): \( \int (-5)\,dx = -5x \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نجمع الناتجين ونضيف ثابت التكامل $c$:</i> $F(x)=x^3-5x+c$</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نعوّض الشرط $F(1)=2$ بوضع $x=1$ في طرف $F(x)$:</i> \( F(1) = (1)^3-5(1)+c \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نبسّط الطرف الأيمن</i> (نحسب $(1)^3=1$ و $5(1)=5$): \( F(1) = 1-5+c = -4+c \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نساوي الناتج بقيمة الشرط $F(1)=2$:</i> \( -4+c = 2 \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نحل المعادلة لإيجاد $c$</i> (ننقل $-4$ إلى الطرف الآخر بتغيير إشارته إلى $+4$): \( c = 2+4 = 6 \)</div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body"><i>نعوّض قيمة $c$ في الصيغة العامة للحصول على الدالة النهائية المحددة:</i> $F(x)=x^3-5x+6$ ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الخلط بين هذا السؤال (يوجد شرط ابتدائي، فقيمة $c$ محددة واحدة فقط) وسؤال المثال 5 (لا يوجد شرط، فـ $c$ يمكن أن يأخذ أي قيمة). تحقّق دائماً: هل أُعطي شرط مثل $F(1)=2$ أم لا؟</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: الدالة المقابلة المحددة هي $F(x)=x^3-5x+6$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -138,11 +200,23 @@
         <button class="neu-btn" data-reveal-steps="steps-ex7a">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt[3]{x^5}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> حساب قيمة التكامل غير المحدد لدالة تحتوي على جذر تكعيبي.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\displaystyle\int \sqrt[3]{x^5}\,dx$ (الجذر التكعيبي لـ $x^5$).</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> تحويل الجذر إلى أس كسري $\sqrt[n]{x^m}=x^{m/n}$ أولاً (لأن القاعدة الثانية تنطبق فقط على الصورة $x^n$)، ثم تطبيق القاعدة الثانية للتكامل.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex7a">
-        <li class="step"><span class="step-dot">💡</span><div class="step-body"><b>المفتاح:</b> نحوّل الجذر إلى أس كسري $\sqrt[n]{x^m}=x^{m/n}$ أولاً، ثم نطبّق القاعدة الثانية مباشرة.</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt[3]{x^5}\,dx = \int x^{5/3}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{8/3}}{8/3}+c = \dfrac{3}{8}\sqrt[3]{x^8}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نحوّل الجذر التكعيبي إلى أس كسري</i> باستخدام $\sqrt[n]{x^m}=x^{m/n}$: \( \int \sqrt[3]{x^5}\,dx = \int x^{5/3}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نزيد الأس بمقدار 1</i> (نوحّد المقام أولاً: $1=\tfrac33$): \( \dfrac53+1 = \dfrac53+\dfrac33 = \dfrac83 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نقسم على الأس الجديد حسب القاعدة الثانية:</i> \( \int x^{5/3}\,dx = \dfrac{x^{8/3}}{8/3}+c \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نبسّط القسمة على الكسر</i> (القسمة على كسر = الضرب في مقلوبه): \( \dfrac{x^{8/3}}{8/3} = \dfrac{3}{8}x^{8/3} \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نعيد كتابة الأس الكسري بصورة جذر</i> لنحصل على صيغة نهائية مألوفة: \( \dfrac38 x^{8/3}+c = \dfrac{3}{8}\sqrt[3]{x^8}+c \) ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> محاولة تطبيق قاعدة التكامل مباشرة على صورة الجذر دون تحويلها إلى أس أولاً، أو الخطأ في إيجاد المقام المشترك عند جمع $\tfrac53$ مع $1$.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $\displaystyle\int \sqrt[3]{x^5}\,dx = \dfrac{3}{8}\sqrt[3]{x^8}+c$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -151,10 +225,25 @@
         <button class="neu-btn" data-reveal-steps="steps-ex7b">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل: $\displaystyle\int x^2\sqrt[5]{x^3}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> حساب قيمة التكامل غير المحدد لحاصل ضرب حد بأس صحيح في جذر من الدرجة الخامسة.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\displaystyle\int x^2\sqrt[5]{x^3}\,dx$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> تحويل الجذر إلى أس كسري، ثم قاعدة ضرب الأسس المتماثلة الأساس $x^a\cdot x^b=x^{a+b}$، ثم القاعدة الثانية للتكامل.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex7b">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نحوّل الجذر لأس كسري ونجمع الأسس: \( \int x^2\sqrt[5]{x^3}\,dx = \int x^{2+3/5}\,dx = \int x^{13/5}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{18/5}}{18/5}+c = \dfrac{5}{18}\sqrt[5]{x^{18}}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نحوّل الجذر الخامس إلى أس كسري:</i> \( \sqrt[5]{x^3}=x^{3/5} \)، فيصبح التكامل \( \int x^2\cdot x^{3/5}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نجمع الأسس</i> لأن الأساس نفسه ($x^a\cdot x^b=x^{a+b}$): \( x^{2+3/5} \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نجمع الكسرين بتوحيد المقام</i> ($2=\tfrac{10}{5}$): \( \dfrac{10}{5}+\dfrac35 = \dfrac{13}{5} \)، إذن \( \int x^2\sqrt[5]{x^3}\,dx = \int x^{13/5}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نزيد الأس بمقدار 1</i> ($1=\tfrac55$): \( \dfrac{13}{5}+\dfrac55=\dfrac{18}{5} \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نقسم على الأس الجديد حسب القاعدة الثانية:</i> \( \int x^{13/5}\,dx = \dfrac{x^{18/5}}{18/5}+c \)</div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body"><i>نبسّط القسمة على الكسر</i> (نضرب في المقلوب): \( \dfrac{x^{18/5}}{18/5} = \dfrac{5}{18}x^{18/5} \)</div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body"><i>نعيد كتابة الأس الكسري بصورة جذر:</i> \( \dfrac{5}{18}x^{18/5}+c = \dfrac{5}{18}\sqrt[5]{x^{18}}+c \) ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> نسيان جمع الأس $2$ مع $\tfrac35$ (يظن بعض الطلاب أن $x^2$ يبقى منفصلاً بلا تأثير)، أو الخطأ في إيجاد المقام المشترك عند جمع الكسور.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $\displaystyle\int x^2\sqrt[5]{x^3}\,dx = \dfrac{5}{18}\sqrt[5]{x^{18}}+c$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -163,10 +252,23 @@
         <button class="neu-btn" data-reveal-steps="steps-ex7c">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt{x}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> حساب قيمة التكامل غير المحدد للجذر التربيعي لـ $x$.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\displaystyle\int \sqrt{x}\,dx$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> تحويل الجذر التربيعي إلى أس كسري ($\sqrt{x}=x^{1/2}$)، ثم القاعدة الثانية للتكامل.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex7c">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt{x}\,dx = \int x^{1/2}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{3/2}}{3/2}+c = \dfrac{2}{3}\sqrt{x^3}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نحوّل الجذر التربيعي إلى أس كسري</i> (الجذر بلا رقم يعني جذراً من الدرجة الثانية، أي أس $\tfrac12$): \( \int \sqrt{x}\,dx = \int x^{1/2}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نزيد الأس بمقدار 1</i> ($1=\tfrac22$): \( \dfrac12+\dfrac22=\dfrac32 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نقسم على الأس الجديد حسب القاعدة الثانية:</i> \( \int x^{1/2}\,dx = \dfrac{x^{3/2}}{3/2}+c \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نبسّط القسمة على الكسر</i> (نضرب في المقلوب $\tfrac23$): \( \dfrac{x^{3/2}}{3/2} = \dfrac{2}{3}x^{3/2} \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نعيد كتابة الأس الكسري بصورة جذر:</i> \( \dfrac23 x^{3/2}+c = \dfrac{2}{3}\sqrt{x^3}+c \) ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الظن بأن $\sqrt{x}$ تعني $x^2$ بدل $x^{1/2}$. تذكّر: الجذر التربيعي (بلا رقم فوقه) دائماً يقابل الأس $\tfrac12$.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $\displaystyle\int \sqrt{x}\,dx = \dfrac{2}{3}\sqrt{x^3}+c$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -175,10 +277,23 @@
         <button class="neu-btn" data-reveal-steps="steps-ex7d">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt[5]{x^{-3}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> حساب قيمة التكامل غير المحدد لجذر خامس لأس سالب.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\displaystyle\int \sqrt[5]{x^{-3}}\,dx$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> تحويل الجذر إلى أس كسري سالب، ثم القاعدة الثانية للتكامل مع الانتباه لجمع الأعداد السالبة.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex7d">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt[5]{x^{-3}}\,dx = \int x^{-3/5}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{2/5}}{2/5}+c = \dfrac{5}{2}\sqrt[5]{x^2}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نحوّل الجذر الخامس إلى أس كسري</i> (الأس السالب يبقى سالباً داخل الكسر): \( \int \sqrt[5]{x^{-3}}\,dx = \int x^{-3/5}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نزيد الأس بمقدار 1</i> ($1=\tfrac55$؛ ننتبه أننا نجمع عدداً سالباً مع عدد موجب): \( -\dfrac35+\dfrac55=\dfrac25 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نقسم على الأس الجديد حسب القاعدة الثانية:</i> \( \int x^{-3/5}\,dx = \dfrac{x^{2/5}}{2/5}+c \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نبسّط القسمة على الكسر</i> (نضرب في المقلوب $\tfrac52$): \( \dfrac{x^{2/5}}{2/5} = \dfrac{5}{2}x^{2/5} \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نعيد كتابة الأس الكسري بصورة جذر:</i> \( \dfrac52 x^{2/5}+c = \dfrac{5}{2}\sqrt[5]{x^2}+c \) ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> الخطأ في جمع الأس السالب مع 1؛ يظن بعض الطلاب أن الناتج $-\tfrac35-1$ بدل $-\tfrac35+1$. تذكّر أن زيادة الأس تعني إضافة 1 دائماً، بغض النظر عن إشارة الأس الأصلي.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $\displaystyle\int \sqrt[5]{x^{-3}}\,dx = \dfrac{5}{2}\sqrt[5]{x^2}+c$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -187,10 +302,23 @@
         <button class="neu-btn" data-reveal-steps="steps-ex7e">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt{x^{-7}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> حساب قيمة التكامل غير المحدد لجذر تربيعي لأس سالب.</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\displaystyle\int \sqrt{x^{-7}}\,dx$.</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة المستخدمة:</b> تحويل الجذر إلى أس كسري سالب، ثم القاعدة الثانية للتكامل مع الانتباه إلى القسمة على عدد سالب.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex7e">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt{x^{-7}}\,dx = \int x^{-7/2}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{-5/2}}{-5/2}+c = \dfrac{-2}{5\sqrt{x^5}}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body"><i>نحوّل الجذر التربيعي إلى أس كسري:</i> \( \int \sqrt{x^{-7}}\,dx = \int x^{-7/2}\,dx \)</div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><i>نزيد الأس بمقدار 1</i> ($1=\tfrac22$): \( -\dfrac72+\dfrac22=-\dfrac52 \)</div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body"><i>نقسم على الأس الجديد حسب القاعدة الثانية</i> (الأس الجديد نفسه سالب): \( \int x^{-7/2}\,dx = \dfrac{x^{-5/2}}{-5/2}+c \)</div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body"><i>نبسّط القسمة على الكسر السالب</i> (القسمة على عدد سالب تعطي ناتجاً سالباً؛ نضرب في المقلوب $-\tfrac25$): \( \dfrac{x^{-5/2}}{-5/2} = -\dfrac{2}{5}x^{-5/2} \)</div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body"><i>نحوّل الأس السالب إلى كسر</i> (الأس السالب يعني القلب إلى المقام: $x^{-5/2}=\tfrac{1}{x^{5/2}}$) <i>ونعيد كتابة الجذر:</i> \( -\dfrac25 x^{-5/2}+c = \dfrac{-2}{5\sqrt{x^5}}+c \) ∎</div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span><b>خطأ شائع:</b> إهمال الإشارة السالبة الناتجة عن القسمة على $-\tfrac52$، فيظن الطالب أن الناتج موجب. تحقّق دائماً من إشارة الأس بعد كل عملية جمع أو قسمة.</span>
+      </div>
+      <div class="exercise-final">✓ الخلاصة: $\displaystyle\int \sqrt{x^{-7}}\,dx = \dfrac{-2}{5\sqrt{x^5}}+c$. ∎</div>
     </div>
   </section>
 
@@ -288,8 +416,12 @@
 
   <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
     <div class="card neu">
-      <h2>🗺 خريطة الدرس الذهنية</h2>
-      <div class="mindmap-wrap">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l2" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري شامل يربط بين تعريف التكامل غير المحدد، قاعدتيه، وخاصيتيه — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l2">
         <svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الثاني">
           <line x1="410" y1="160" x2="150" y2="70" stroke="#b3bdcc" stroke-width="2"/>
           <line x1="410" y1="160" x2="670" y2="70" stroke="#b3bdcc" stroke-width="2"/>
