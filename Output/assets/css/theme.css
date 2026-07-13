@@ -118,6 +118,7 @@ body{
   background:var(--surface);
   border-radius:var(--radius-md);
   box-shadow:inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+  overflow-x:auto;
 }
 .neu-btn{
   background:var(--surface);
@@ -411,6 +412,7 @@ input[type=text].neu-input,input[type=number].neu-input{
 .exercise-final{
   margin-top:.85rem;padding:.85rem 1.1rem;border-radius:var(--radius-sm);font-weight:800;text-align:center;
   background:rgba(47,209,143,.12);color:#1b8f66;
+  overflow-x:auto;
 }
 :root[data-theme="dark"] .exercise-final{color:#5fe3ae}
 
