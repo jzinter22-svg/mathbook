@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 1: الحاجة إلى الأعداد المركبة وتعريفها — الفصل الأول</title>
+<meta name="description" content="لماذا نحتاج أعداداً أكبر من الأعداد الحقيقية، والوحدة التخيلية i، وتعريف العدد المركب a+bi، مع أمثلة محلولة وتمرين تفاعلي واختبار ذاتي.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-1.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 1 من 7 · 1-1 و 1-2</span>
+    <h1>الحاجة إلى الأعداد المركبة وتعريفها</h1>
+    <p class="lead">في هذا الدرس نكتشف كيف توسّعت مجموعات الأعداد عبر التاريخ لحل معادلات كانت مستحيلة الحل، ونتعرف على آخر حلقة في هذه السلسلة: <b>مجموعة الأعداد المركبة</b> $\mathbb{C}$ والوحدة التخيلية $i$.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يدرك الحاجة إلى التوسع في مفهوم الأعداد بسبب وجود معادلات يقتضي إيجاد جذورها استحداث مجموعة عددية جديدة أكبر من مجموعة الأعداد الحقيقية.</span></li>
+        <li><span class="obj-num">2</span><span>يتعرف على الوحدة التخيلية $i=\sqrt{-1}$ والجزء التخيلي، ويعبّر عنه بصيغة $ai$ حيث $a\in\mathbb{R}$.</span></li>
+        <li><span class="obj-num">3</span><span>يتعرف على تعريف العدد المركب $a+bi$ ويحدد جزأيه الحقيقي والتخيلي.</span></li>
+        <li><span class="obj-num">4</span><span>يدرك العلاقة الشمولية بين مجموعات الأعداد: $\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}$.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 الشرح والتعريفات">
+    <div class="card neu">
+      <h2>💡 1-1 إظهار الحاجة إلى مزيد من الأعداد</h2>
+      <p>عبر مختلف العصور، كلما واجه علماء الرياضيات معادلة مستحيلة الحل ضمن مجموعة عددية معينة، استحدثوا مجموعة عددية أوسع تجعل الحل ممكناً. لاحظ التسلسل التالي:</p>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="grid grid-2" style="margin:0 0 1rem">
+      <div class="neu-inset" style="padding:1.1rem 1.2rem">
+        <strong>① من $\mathbb{N}$ إلى $\mathbb{Z}$</strong>
+        <p style="margin:.5rem 0 0;color:var(--text-secondary)">المعادلة $x+a=b$ حيث $a>b$ (مثل $x+7=3$) مستحيلة الحل في $(\mathbb{N},+)$. بإضافة الأعداد السالبة نحصل على $\mathbb{Z}$، وحلّها هو $x=-4$.</p>
+      </div>
+      <div class="neu-inset" style="padding:1.1rem 1.2rem">
+        <strong>② من $\mathbb{Z}$ إلى $\mathbb{Q}$</strong>
+        <p style="margin:.5rem 0 0;color:var(--text-secondary)">المعادلة $ax=b$ (مثل $3x=5$) مستحيلة الحل في $(\mathbb{Z},+)$. بإضافة الكسور نحصل على $\mathbb{Q}$، وحلّها هو $x=\dfrac{5}{3}$.</p>
+      </div>
+      <div class="neu-inset" style="padding:1.1rem 1.2rem">
+        <strong>③ من $\mathbb{Q}$ إلى $\mathbb{R}$</strong>
+        <p style="margin:.5rem 0 0;color:var(--text-secondary)">المعادلة $x^2=3$ مستحيلة الحل في $(\mathbb{Q},\times)$. بإضافة الأعداد غير النسبية نحصل على $\mathbb{R}$، ومجموعة حلّها هي $\{-\sqrt3,+\sqrt3\}$.</p>
+      </div>
+      <div class="neu-inset" style="padding:1.1rem 1.2rem;border-inline-start:4px solid var(--accent-purple)">
+        <strong>④ من $\mathbb{R}$ إلى $\mathbb{C}$</strong>
+        <p style="margin:.5rem 0 0;color:var(--text-secondary)">المعادلة $x^2=-1$ تبقى بلا حل حتى في $\mathbb{R}$! هنا قدّم العالم السويسري <b>أويلر</b> الوحدة التخيلية $i$، ممهّداً لظهور $\mathbb{C}$ على يد العالم الألماني <b>كاوس</b>.</p>
+      </div>
+    </div>
+
+    <div class="callout tip fade-up">
+      <span class="icon">💬</span>
+      <span>الفكرة الأساسية: كل معادلة "مستحيلة" ضمن مجموعة عددية معينة هي في الحقيقة دعوة لاستحداث مجموعة أوسع. الأعداد المركبة هي الحلقة الأخيرة (حتى الآن) في هذه السلسلة التاريخية.</span>
+    </div>
+
+    <div class="rule-box" style="margin-top:1.2rem">$$\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} \subseteq \mathbb{C}$$</div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 الوحدة التخيلية $i$</span>
+      <p style="margin:.3rem 0">للدلالة على الجذرين التربيعيين للعدد الحقيقي السالب $(-1)$، عرّف أويلر الرمز:</p>
+      <div class="mj-scroll">$$i = \sqrt{-1} \qquad\Longleftrightarrow\qquad i^2 = -1$$</div>
+      <p style="margin:.3rem 0">وبذلك تصبح مجموعة حل المعادلة $x^2=-1$ هي $\{+i,\,-i\}$.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف 1-1 — العدد المركب</span>
+      <p style="margin:.3rem 0">يُطلق على العدد بالصيغة $(a+bi)$ حيث $a,b\in\mathbb{R},\; i=\sqrt{-1}$ اسم <b>العدد المركب</b>. يسمى الجزء $a$ بـ<b>الجزء الحقيقي</b> ويسمى الجزء $b$ بـ<b>الجزء التخيلي</b>، وتسمى الصيغة $(a+bi)$ بالصيغة الجبرية (الاعتيادية) للعدد المركب.</p>
+      <div class="mj-scroll">$$\mathbb{C} = \{\,a+bi \;:\; a,b\in\mathbb{R},\; i=\sqrt{-1}\,\}$$</div>
+      <p style="margin:.3rem 0">وتكون $\mathbb{R}$ مجموعة جزئية من $\mathbb{C}$، إذ يمكن كتابة أي عدد حقيقي $a$ على الصورة $a+0i$.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
+      </div>
+      <div class="example-problem">حدّد الجزء الحقيقي $a$ والجزء التخيلي $b$ لكل من الأعداد المركبة الآتية.</div>
+      <div class="neu-inset" style="padding:0;overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;text-align:center;min-width:420px">
+          <thead>
+            <tr style="color:var(--accent-purple)">
+              <th style="padding:.7rem">العدد المركب $z$</th><th style="padding:.7rem">$a$</th><th style="padding:.7rem">$b$</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:.6rem">$z=3+2i$</td><td>$3$</td><td>$2$</td></tr>
+            <tr><td style="padding:.6rem">$z=-2+5i$</td><td>$-2$</td><td>$5$</td></tr>
+            <tr><td style="padding:.6rem">$z=-1-4i$</td><td>$-1$</td><td>$-4$</td></tr>
+            <tr><td style="padding:.6rem">$z=5=5+0i$</td><td>$5$</td><td>$0$</td></tr>
+            <tr><td style="padding:.6rem">$z=-2i=0-2i$</td><td>$0$</td><td>$-2$</td></tr>
+            <tr><td style="padding:.6rem">$z=0=0+0i$</td><td>$0$</td><td>$0$</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: كتابة $z=-2i$ والظن أن جزأه الحقيقي غير معرّف. تذكّر: أي عدد مركب "ينقصه" حد يُفهم ضمنياً أن معامل ذلك الحد يساوي صفراً — أي $-2i = 0+(-2)i$.</span>
+      </div>
+      <div class="exercise-final">✓ كل عدد مركب $a+bi$ له جزء حقيقي $a$ وجزء تخيلي $b$، حتى عندما يكون أحدهما صفراً. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن كلاً من $i$ و $-i$ يحقق المعادلة $x^2+1=0$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إثبات أن $\{i,-i\}$ هي مجموعة حل $x^2+1=0$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $i=\sqrt{-1} \Rightarrow i^2=-1$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تعويض مباشر ثم استخدام $i^2=-1$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=i$ في المعادلة $x^2+1$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( i^2+1 = (-1)+1 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =0 \quad ✓ \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=-i$ في المعادلة $x^2+1$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (-i)^2+1 = i^2+1 = (-1)+1 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =0 \quad ✓ \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">النتيجة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( S.s = \{\,i,\,-i\,\} \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ كلا العددين $i,-i$ يحقق $x^2+1=0$، إذن مجموعة الحل هي $\{i,-i\}$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">اكتب كلاً من الأعداد $7$، $-3i$، $0$، $4-i$ بالصيغة الاعتيادية للعدد المركب $a+bi$، محدداً نوع كل عدد (حقيقي بحت، تخيلي بحت، أو عدد مركب عام).</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> كتابة كل عدد بالصيغة $a+bi$ وتصنيفه</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $a+bi$ حقيقي بحت اذا $b=0$، وتخيلي بحت اذا $a=0,\,b\neq0$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$7 = 7+0i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=7,\; b=0 \Rightarrow \text{حقيقي بحت} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$-3i = 0+(-3)i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=0,\; b=-3 \Rightarrow \text{تخيلي بحت} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">$0 = 0+0i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=0,\; b=0 \Rightarrow \text{العنصر المحايد للجمع، حقيقي وتخيلي بحت معاً} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">$4-i = 4+(-1)i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=4,\; b=-1 \Rightarrow \text{عدد مركب عام} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $7\to$ حقيقي بحت، $-3i\to$ تخيلي بحت، $0\to$ محايد الجمع، $4-i\to$ عدد مركب عام. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: بناء العدد المركب $z=a+bi$</h2>
+      <p>حرّك المزلاجين لتغيير $a$ (الجزء الحقيقي) و $b$ (الجزء التخيلي)، وشاهد كيف تتغيّر صيغة العدد المركب والنقطة الممثّلة له على المستوي — تمهيداً للتمثيل الهندسي الذي سندرسه لاحقاً في الدرس 6.</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="zPlot" width="480" height="360"></svg></div>
+        <div class="io-row">
+          <label for="aSlider" style="min-width:9rem">الجزء الحقيقي <b>a</b> = <span id="aVal">3</span></label>
+          <input type="range" id="aSlider" class="neu-range" min="-5" max="5" step="1" value="3">
+        </div>
+        <div class="io-row">
+          <label for="bSlider" style="min-width:9rem">الجزء التخيلي <b>b</b> = <span id="bVal">2</span></label>
+          <input type="range" id="bSlider" class="neu-range" min="-5" max="5" step="1" value="2">
+        </div>
+        <div class="rule-box" id="zFormula">$$z = 3 + 2i$$</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين تطبيقي">
+    <h2 style="margin-bottom:.25rem">📝 تمرين تطبيقي</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">حدّد الجزء الحقيقي والجزء التخيلي للعدد المركب $z=\sqrt2-\dfrac{1}{2}i$، ثم بيّن هل هو حقيقي بحت أم تخيلي بحت أم عام.</div>
+      <ol class="steps hidden-steps" id="steps-pq1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقارن مع الصيغة $a+bi$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=\sqrt2,\quad b=-\tfrac12 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما ان $a\neq0$ و $b\neq0$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z \text{ عدد مركب عام} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $a=\sqrt2,\; b=-\tfrac12$، وهو عدد مركب عام. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن المعادلة $x^2+9=0$ ليس لها حل في $\mathbb{R}$، ثم جد مجموعة حلها في $\mathbb{C}$.</div>
+      <ol class="steps hidden-steps" id="steps-pq2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نعزل $x^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2=-9 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">لا يوجد عدد حقيقي مربعه سالب (مربع أي عدد حقيقي $\ge0$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \nexists x\in\mathbb{R} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نستخدم $\sqrt{-a}=\sqrt{a}\,i$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x=\pm\sqrt{-9}=\pm\sqrt{9}\,i \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x=\pm3i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $S.s_{\mathbb{R}}=\varnothing$، بينما $S.s_{\mathbb{C}}=\{3i,-3i\}$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>الوحدة التخيلية $i$ تعرّف بأنها:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$\sqrt{1}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$-1$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\sqrt{-1}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$1$</span></label>
+        </div>
+        <div class="quiz-explain">عرّف أويلر الوحدة التخيلية $i=\sqrt{-1}$ للدلالة على جذري المعادلة $x^2=-1$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>في العدد المركب $z=-2i$، ما الجزء الحقيقي؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$-2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>غير معرّف</span></label>
+        </div>
+        <div class="quiz-explain">$z=-2i=0+(-2)i$، إذن الجزء الحقيقي $a=0$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>أي مما يأتي يمثل العلاقة الصحيحة بين مجموعات الأعداد؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\mathbb{C}\subseteq\mathbb{R}\subseteq\mathbb{Q}\subseteq\mathbb{Z}\subseteq\mathbb{N}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\mathbb{R}\subseteq\mathbb{C}\subseteq\mathbb{Q}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا توجد علاقة شمول بينها</span></label>
+        </div>
+        <div class="quiz-explain">كل مجموعة عددية جاءت لتوسّع سابقتها وتحتويها: $\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>ما مجموعة حل المعادلة $x^2=-1$ في $\mathbb{C}$؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$\varnothing$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\{1,-1\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\{0\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\{i,-i\}$</span></label>
+        </div>
+        <div class="quiz-explain">$i^2=-1$ و $(-i)^2=i^2=-1$ أيضاً، إذن الحل هو $\{i,-i\}$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>العدد المركب $z=5$ (بدون جزء تخيلي ظاهر) يُكتب بالصيغة الاعتيادية:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$0+5i$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$5+0i$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$5+5i$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>ليس عدداً مركباً</span></label>
+        </div>
+        <div class="quiz-explain">كل عدد حقيقي هو عدد مركب جزؤه التخيلي صفر: $5=5+0i$.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>مجموعات الأعداد توسّعت تاريخياً لحل معادلات مستحيلة: $\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}$.</span></li>
+        <li><span>الوحدة التخيلية $i=\sqrt{-1}$ حيث $i^2=-1$، وهي تحل المعادلة $x^2=-1$.</span></li>
+        <li><span>العدد المركب $z=a+bi$ حيث $a,b\in\mathbb{R}$: $a$ الجزء الحقيقي، $b$ الجزء التخيلي.</span></li>
+        <li><span>كل عدد حقيقي هو عدد مركب خاص ($b=0$)، وكل عدد تخيلي بحت هو عدد مركب خاص ($a=0$).</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l1" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l1">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الأول">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#7c6fee"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="15" font-family="Cairo,sans-serif">العدد</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="15" font-family="Cairo,sans-serif">المركب</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">N⊆Z⊆Q⊆R⊆C</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">توسّع الأعداد</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#2fd18f"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">i²=-1</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الوحدة التخيلية</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#ffab5e"/>
+            <text x="150" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">a+bi</text>
+            <text x="150" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الصيغة الجبرية</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ff6b9d"/>
+            <text x="670" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">a,b الجزءان</text>
+            <text x="670" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">حقيقي/تخيلي</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الأول · الأعداد المركبة — الدرس 1: الحاجة إلى الأعداد المركبة وتعريفها</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch1.js"></script>
+<script>
+(function(){
+  var svg = document.getElementById("zPlot");
+  var aSlider = document.getElementById("aSlider");
+  var bSlider = document.getElementById("bSlider");
+  var aVal = document.getElementById("aVal");
+  var bVal = document.getElementById("bVal");
+  var formula = document.getElementById("zFormula");
+  function render(){
+    var a = parseFloat(aSlider.value);
+    var b = parseFloat(bSlider.value);
+    aVal.textContent = a;
+    bVal.textContent = b;
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-6,xmax:6,ymin:-6,ymax:6,step:1,w:480,h:360});
+    var ns = "http://www.w3.org/2000/svg";
+    var p0 = mapper.toPx(0,0);
+    var p1 = mapper.toPx(a,b);
+    var vec = document.createElementNS(ns,"line");
+    vec.setAttribute("x1",p0[0]); vec.setAttribute("y1",p0[1]);
+    vec.setAttribute("x2",p1[0]); vec.setAttribute("y2",p1[1]);
+    vec.setAttribute("stroke","#7c6fee"); vec.setAttribute("stroke-width","3.5");
+    vec.setAttribute("stroke-linecap","round");
+    svg.appendChild(vec);
+    var dot = document.createElementNS(ns,"circle");
+    dot.setAttribute("cx",p1[0]); dot.setAttribute("cy",p1[1]); dot.setAttribute("r","6");
+    dot.setAttribute("fill","#ff6b9d");
+    svg.appendChild(dot);
+    var label = document.createElementNS(ns,"text");
+    label.setAttribute("x", p1[0]+10); label.setAttribute("y", p1[1]-10);
+    label.setAttribute("font-size","14"); label.setAttribute("font-weight","800");
+    label.setAttribute("font-family","Cairo,sans-serif"); label.setAttribute("fill","var(--text-primary)");
+    label.textContent = "P("+a+","+b+")";
+    svg.appendChild(label);
+    var sign = b>=0 ? "+ "+b : "- "+Math.abs(b);
+    formula.innerHTML = "$$z = "+a+" "+sign+"i$$";
+    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([formula]);
+  }
+  aSlider.addEventListener("input", render);
+  bSlider.addEventListener("input", render);
+  document.addEventListener("DOMContentLoaded", render);
+  if(document.readyState !== "loading") render();
+})();
+</script>
+</body>
+</html>
