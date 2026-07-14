@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 6: التمثيل الهندسي للأعداد المركبة — الفصل الأول</title>
+<meta name="description" content="مستوي كاوس وأشكال أرجاند، تمثيل العدد المركب بنقطة، وتمثيل الجمع والطرح هندسياً بقاعدة متوازي الأضلاع، مع أمثلة تفاعلية وتمرين واختبار ذاتي.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-6.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 6 من 7 · 1-6</span>
+    <h1>التمثيل الهندسي للأعداد المركبة</h1>
+    <p class="lead">حان الوقت لنرى الأعداد المركبة بأعيننا! نتعرف على <b>مستوي كاوس</b> الذي يمثّل فيه كل عدد مركب بنقطة، وعلى <b>أشكال أرجاند</b> التي تجسّد عمليتي الجمع والطرح كمتّجهات.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يتعرف على مستوي كاوس (المستوي المركب) ويمثّل عليه أي عدد مركب بنقطة.</span></li>
+        <li><span class="obj-num">2</span><span>يمثّل جمع عددين مركبين هندسياً بقاعدة متوازي الأضلاع (جمع المتجهات).</span></li>
+        <li><span class="obj-num">3</span><span>يمثّل طرح عددين مركبين هندسياً باستخدام النظير الجمعي ودورانه بزاوية $180°$.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 الشرح والتعريفات">
+    <div class="card neu">
+      <h2>💡 مستوي كاوس (المستوي المركب)</h2>
+      <p>تُمثَّل الأعداد المركبة هندسياً في مستوٍ متعامد يسمى <b>مستوي كاوس</b> نسبةً إلى العالم الألماني فريدريك كاوس، ونسمّيه اختصاراً <b>المستوي المركب</b> (Complex Plane). تسمى الأشكال الممثَّلة فيه بـ<b>أشكال أرجاند</b> نسبة إلى العالم أرجاند.</p>
+      <ul class="summary-list">
+        <li><span>المحور الأفقي يسمى <b>المحور الحقيقي</b>، ويمثَّل عليه الجزء الحقيقي $x$.</span></li>
+        <li><span>المحور العمودي يسمى <b>المحور التخيلي</b>، ويمثَّل عليه الجزء التخيلي $y$.</span></li>
+        <li><span>العدد المركب $x+yi$ يُمثَّل هندسياً بالنقطة $P(x,y)$.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h3 style="margin-top:0">📐 الشكل 1: تمثيل نقطة على المستوي المركب</h3>
+      <div class="mindmap-wrap"><svg id="figPoint" width="420" height="320" viewBox="0 0 420 320"></svg></div>
+      <p style="color:var(--text-secondary);text-align:center;margin-top:.3rem">العدد $z=x+yi$ يقابل النقطة $P(x,y)$ والمتجه $\overrightarrow{OP}$.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 التمثيل الهندسي للجمع (قاعدة متوازي الأضلاع)</span>
+      <p style="margin:.3rem 0">إذا كان $z_1=a_1+b_1i,\; z_2=a_2+b_2i$ ممثَّلين بالنقطتين $P_1(a_1,b_1),\,P_2(a_2,b_2)$، فإن ناتج الجمع $z_1+z_2$ يُمثَّل بالنقطة $P_3(a_1+a_2,\,b_1+b_2)$، حيث:</p>
+      <div class="mj-scroll">$$\overrightarrow{OP_1}+\overrightarrow{OP_2}=\overrightarrow{OP_3}$$</div>
+      <p style="margin:.3rem 0">وهذا يعني هندسياً: إذا أكملنا متوازي أضلاع ضلعاه $\overrightarrow{OP_1}$ و $\overrightarrow{OP_2}$، فإن قطره الخارج من $O$ يمثّل $z_1+z_2$.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 التمثيل الهندسي للطرح</span>
+      <p style="margin:.3rem 0">بما أن $z_1-z_2=z_1+(-z_2)$، فإن المتجه $-z_2$ يُحصل عليه بيانياً بتدوير $\overrightarrow{OP_2}$ حول نقطة الأصل بزاوية مقدارها $180°$، ثم نطبّق قاعدة متوازي الأضلاع على $\overrightarrow{OP_1}$ و $\overrightarrow{OP_2}(-)$ كما في الجمع.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ مثال محلول">
+    <h2 style="margin-bottom:.25rem">✍️ مثال محلول</h2>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
+      </div>
+      <div class="example-problem">مثّل العمليتين الآتيتين هندسياً بشكل أرجاند: $a)\; (1+2i)+(3-4i) \qquad b)\; (5-2i)-(2-3i)$</div>
+      <div class="grid grid-2" style="margin-top:1rem">
+        <div class="neu-inset" style="padding:1rem">
+          <p style="text-align:center;font-weight:800;color:var(--accent-purple)">(a) $(1+2i)+(3-4i)=4-2i$</p>
+          <div class="mindmap-wrap"><svg id="figEx1a" width="360" height="300" viewBox="0 0 360 300"></svg></div>
+        </div>
+        <div class="neu-inset" style="padding:1rem">
+          <p style="text-align:center;font-weight:800;color:var(--accent-green)">(b) $(5-2i)-(2-3i)=3+i$</p>
+          <div class="mindmap-wrap"><svg id="figEx1b" width="360" height="300" viewBox="0 0 360 300"></svg></div>
+        </div>
+      </div>
+      <div class="exercise-final">✓ (a) القطر $\overrightarrow{OP_3}$ يصل إلى $(4,-2)$&nbsp; (b) الفرق يصل إلى $(3,1)$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ حاسبة أرجاند">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: حاسبة أرجاند</h2>
+      <p>أدخل قيم $z_1=a_1+b_1i$ و $z_2=a_2+b_2i$، واختر الجمع أو الطرح، وشاهد بناء متوازي الأضلاع ينتج المتجه الثالث تلقائياً.</p>
+      <div class="io-panel">
+        <div class="io-row">
+          <label>$z_1=$</label>
+          <input type="number" id="gA1" class="neu-input" value="1" style="max-width:5.5rem">
+          <span>+</span>
+          <input type="number" id="gB1" class="neu-input" value="2" style="max-width:5.5rem">
+          <span>i</span>
+          <label style="margin-inline-start:1rem">$z_2=$</label>
+          <input type="number" id="gA2" class="neu-input" value="3" style="max-width:5.5rem">
+          <span>+</span>
+          <input type="number" id="gB2" class="neu-input" value="-4" style="max-width:5.5rem">
+          <span>i</span>
+        </div>
+        <div class="io-row">
+          <button class="neu-btn active" id="opAdd" data-op="add">z₁ + z₂</button>
+          <button class="neu-btn" id="opSub" data-op="sub">z₁ − z₂</button>
+        </div>
+        <div class="mindmap-wrap"><svg id="argandCalc" width="480" height="380" viewBox="0 0 480 380"></svg></div>
+        <div class="rule-box" id="argandFormula"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (3-1)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (3-1)</h2>
+    <p class="lead" style="margin-top:0">تمرين الكتاب المدرسي كاملاً بحلوله ورسومه — حاول أولاً بنفسك ثم اضغط «إظهار الحل».</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">اكتب النظير الجمعي لكل من الأعداد المركبة الآتية، ثم مثّل كل عدد ونظيره الجمعي في شكل أرجاند: $z_1=1+4i,\; z_2=-2+2i,\; z_3=-3i$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">النظائر الجمعية (نغيّر إشارة الجزءين معاً)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( -z_1=-1-4i\,,\quad -z_2=2-2i\,,\quad -z_3=3i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap"><svg id="figPQ1" width="420" height="360" viewBox="0 0 420 360"></svg></div>
+      <div class="exercise-final">✓ كل عدد ونظيره الجمعي متماثلان بالانعكاس حول نقطة الأصل $O$ (دوران $180°$). ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">اكتب العدد المرافق لكل من الأعداد المركبة الآتية، ثم مثّل كل عدد ومرافقه في شكل أرجاند: $z_1=3+5i,\; z_2=-4+3i,\; z_3=i$.</div>
+      <ol class="steps hidden-steps" id="steps-pq2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">المرافقات (نغيّر إشارة الجزء التخيلي فقط)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \bar z_1=3-5i\,,\quad \bar z_2=-4-3i\,,\quad \bar z_3=-i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap"><svg id="figPQ2" width="420" height="360" viewBox="0 0 420 360"></svg></div>
+      <div class="exercise-final">✓ كل عدد ومرافقه متماثلان بالانعكاس حول المحور الحقيقي (محور $x$). ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">إذا كان $z=6-2i$، فمثّل على المستوي المركب بشكل أرجاند: $z,\; \bar z,\; (-z)$.</div>
+      <ol class="steps hidden-steps" id="steps-pq3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحسب المرافق والنظير الجمعي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \bar z=6+2i\,,\qquad -z=-6+2i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap"><svg id="figPQ3" width="420" height="360" viewBox="0 0 420 360"></svg></div>
+      <div class="callout tip" style="margin-top:.8rem">
+        <span class="icon">💡</span>
+        <span>لاحظ أن $\bar z$ هو انعكاس $z$ حول المحور الحقيقي، بينما $-z$ هو انعكاس $z$ حول نقطة الأصل (دوران $180°$) — و $-\bar z$ (غير مطلوب هنا) سيكون انعكاساً حول المحور التخيلي.</span>
+      </div>
+      <div class="exercise-final">✓ $\bar z=6+2i$، $-z=-6+2i$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>العدد المركب $z=-3+4i$ يُمثَّل على المستوي المركب بالنقطة:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$(4,-3)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$(3,4)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$(-3,4)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$(-3,-4)$</span></label>
+        </div>
+        <div class="quiz-explain">الجزء الحقيقي يمثَّل على المحور الأفقي والتخيلي على العمودي: $(-3,4)$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>هندسياً، يُمثَّل جمع عددين مركبين $z_1+z_2$ باستخدام:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>دوران $90°$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>قاعدة متوازي الأضلاع (جمع المتجهات)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الانعكاس حول المحور الحقيقي</span></label>
+          <label class="quiz-opt"><input type="radio"><span>تكبير المتجه فقط</span></label>
+        </div>
+        <div class="quiz-explain">$\overrightarrow{OP_1}+\overrightarrow{OP_2}=\overrightarrow{OP_3}$ بقاعدة متوازي الأضلاع.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>لتمثيل $-z_2$ هندسياً انطلاقاً من $z_2$، ندوّر المتجه $\overrightarrow{OP_2}$ بزاوية:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$180°$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$90°$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$360°$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$45°$</span></label>
+        </div>
+        <div class="quiz-explain">دوران $180°$ حول نقطة الأصل يعكس إشارتي الجزءين الحقيقي والتخيلي معاً، وهذا بالضبط أثر النظير الجمعي.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>مرافق العدد المركب $z=a+bi$ هو انعكاس النقطة $(a,b)$ حول:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نقطة الأصل</span></label>
+          <label class="quiz-opt"><input type="radio"><span>المحور التخيلي</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الخط $y=x$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>المحور الحقيقي</span></label>
+        </div>
+        <div class="quiz-explain">المرافق $a-bi$ يغيّر إشارة $y$ فقط، وهذا هو الانعكاس حول المحور الحقيقي (محور $x$).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>الاسم الآخر للأشكال الممثَّلة في المستوي المركب هو:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>أشكال كاوس</span></label>
+          <label class="quiz-opt"><input type="radio"><span>أشكال أرجاند</span></label>
+          <label class="quiz-opt"><input type="radio"><span>أشكال أويلر</span></label>
+          <label class="quiz-opt"><input type="radio"><span>أشكال ديكارت</span></label>
+        </div>
+        <div class="quiz-explain">تسمى نسبة إلى العالم أرجاند.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>مستوي كاوس (المستوي المركب): محور أفقي حقيقي، ومحور عمودي تخيلي؛ $z=x+yi \leftrightarrow P(x,y)$.</span></li>
+        <li><span>جمع عددين مركبين هندسياً = قاعدة متوازي الأضلاع (جمع المتجهات): $\overrightarrow{OP_1}+\overrightarrow{OP_2}=\overrightarrow{OP_3}$.</span></li>
+        <li><span>طرح عددين مركبين = جمع الأول مع نظير الثاني الجمعي، والذي يُمثَّل بدوران $180°$.</span></li>
+        <li><span>المرافق $\bar z$ = انعكاس حول المحور الحقيقي. النظير الجمعي $-z$ = انعكاس حول نقطة الأصل.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l6" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l6">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس السادس">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#7c6fee"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">التمثيل</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">الهندسي</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">z=x+yi↔P(x,y)</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">مستوي كاوس</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#2fd18f"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">متوازي الأضلاع</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الجمع</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#ffab5e"/>
+            <text x="150" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">دوران 180°</text>
+            <text x="150" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الطرح</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ff6b9d"/>
+            <text x="670" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">انعكاس محور x</text>
+            <text x="670" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">المرافق</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الأول · الأعداد المركبة — الدرس 6: التمثيل الهندسي للأعداد المركبة</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch1.js"></script>
+<script>
+(function(){
+  var ns = "http://www.w3.org/2000/svg";
+  var PALETTE = ["#7c6fee","#3fa9f5","#ff6b9d","#2fd18f","#ffab5e"];
+
+  function vec(svg, mapper, x, y, color, label, opts){
+    opts = opts || {};
+    var p0 = mapper.toPx(0,0);
+    var p1 = mapper.toPx(x,y);
+    var line = document.createElementNS(ns,"line");
+    line.setAttribute("x1",p0[0]); line.setAttribute("y1",p0[1]);
+    line.setAttribute("x2",p1[0]); line.setAttribute("y2",p1[1]);
+    line.setAttribute("stroke",color); line.setAttribute("stroke-width", opts.width||3);
+    line.setAttribute("stroke-linecap","round");
+    if(opts.dashed) line.setAttribute("stroke-dasharray","5 4");
+    svg.appendChild(line);
+    var dot = document.createElementNS(ns,"circle");
+    dot.setAttribute("cx",p1[0]); dot.setAttribute("cy",p1[1]); dot.setAttribute("r","5");
+    dot.setAttribute("fill",color);
+    svg.appendChild(dot);
+    if(label){
+      var t = document.createElementNS(ns,"text");
+      t.setAttribute("x", p1[0] + (x>=0?8:-8));
+      t.setAttribute("y", p1[1] - 8);
+      if(x<0) t.setAttribute("text-anchor","end");
+      t.setAttribute("font-size","13"); t.setAttribute("font-weight","800");
+      t.setAttribute("font-family","Cairo,sans-serif"); t.setAttribute("fill",color);
+      t.setAttribute("direction","ltr");
+      t.setAttribute("style","unicode-bidi:bidi-override;direction:ltr");
+      if(label.indexOf("̄") !== -1){
+        // combining macron (used for the conjugate bar, e.g. "z̄₁") doesn't
+        // shape reliably in SVG <text>; render the barred letter as an overlined tspan instead.
+        label.split("").forEach(function(ch, i){
+          var nextIsMacron = label[i+1] === "̄";
+          if(ch === "̄") return;
+          var span = document.createElementNS(ns, "tspan");
+          if(nextIsMacron) span.setAttribute("style", "text-decoration:overline");
+          span.textContent = ch;
+          t.appendChild(span);
+        });
+      } else {
+        t.textContent = label;
+      }
+      svg.appendChild(t);
+    }
+  }
+  function dashedFrom(svg, mapper, x1, y1, x2, y2, color){
+    var p1 = mapper.toPx(x1,y1), p2 = mapper.toPx(x2,y2);
+    var l = document.createElementNS(ns,"line");
+    l.setAttribute("x1",p1[0]); l.setAttribute("y1",p1[1]);
+    l.setAttribute("x2",p2[0]); l.setAttribute("y2",p2[1]);
+    l.setAttribute("stroke",color); l.setAttribute("stroke-width","1.6");
+    l.setAttribute("stroke-dasharray","4 4"); l.setAttribute("opacity",".6");
+    svg.appendChild(l);
+  }
+
+  // Figure: single point representation
+  (function(){
+    var svg = document.getElementById("figPoint");
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-5,xmax:5,ymin:-4,ymax:5,step:1,w:420,h:320});
+    vec(svg, mapper, 3, 3, "#7c6fee", "P(3,3) = 3+3i");
+    dashedFrom(svg, mapper, 3,0,3,3,"#7c6fee");
+    dashedFrom(svg, mapper, 0,3,3,3,"#7c6fee");
+  })();
+
+  // Example 1a: (1+2i)+(3-4i)=4-2i
+  (function(){
+    var svg = document.getElementById("figEx1a");
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-2,xmax:6,ymin:-6,ymax:4,step:1,w:360,h:300});
+    vec(svg, mapper, 1, 2, "#3fa9f5", "P₁(1,2)");
+    vec(svg, mapper, 3, -4, "#ff6b9d", "P₂(3,-4)");
+    vec(svg, mapper, 4, -2, "#7c6fee", "P₃(4,-2)", {width:3.5});
+    dashedFrom(svg, mapper, 1,2,4,-2,"#3fa9f5");
+    dashedFrom(svg, mapper, 3,-4,4,-2,"#ff6b9d");
+  })();
+
+  // Example 1b: (5-2i)-(2-3i)=3+i
+  (function(){
+    var svg = document.getElementById("figEx1b");
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-3,xmax:6,ymin:-4,ymax:4,step:1,w:360,h:300});
+    vec(svg, mapper, 5, -2, "#3fa9f5", "P₁(5,-2)");
+    vec(svg, mapper, 2, -3, "#ff6b9d", "P₂(2,-3)");
+    vec(svg, mapper, -2, 3, "#ff6b9d", "-P₂(-2,3)", {dashed:true});
+    vec(svg, mapper, 3, 1, "#2fd18f", "P₃(3,1)", {width:3.5});
+    dashedFrom(svg, mapper, 5,-2,3,1,"#3fa9f5");
+    dashedFrom(svg, mapper, -2,3,3,1,"#ff6b9d");
+  })();
+
+  // Practice Q1: additive inverses
+  (function(){
+    var svg = document.getElementById("figPQ1");
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-5,xmax:5,ymin:-5,ymax:5,step:1,w:420,h:360});
+    var data = [
+      {x:1,y:4,label:"z₁"}, {x:-1,y:-4,label:"-z₁"},
+      {x:-2,y:2,label:"z₂"}, {x:2,y:-2,label:"-z₂"},
+      {x:0,y:-3,label:"z₃"}, {x:0,y:3,label:"-z₃"}
+    ];
+    var colors = ["#7c6fee","#7c6fee","#3fa9f5","#3fa9f5","#ff6b9d","#ff6b9d"];
+    data.forEach(function(d,i){ vec(svg, mapper, d.x, d.y, colors[i], d.label, {dashed:i%2===1}); });
+  })();
+
+  // Practice Q2: conjugates
+  (function(){
+    var svg = document.getElementById("figPQ2");
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-6,xmax:6,ymin:-6,ymax:6,step:1,w:420,h:360});
+    var data = [
+      {x:3,y:5,label:"z₁"}, {x:3,y:-5,label:"z̄₁"},
+      {x:-4,y:3,label:"z₂"}, {x:-4,y:-3,label:"z̄₂"},
+      {x:0,y:1,label:"z₃"}, {x:0,y:-1,label:"z̄₃"}
+    ];
+    var colors = ["#7c6fee","#7c6fee","#3fa9f5","#3fa9f5","#ff6b9d","#ff6b9d"];
+    data.forEach(function(d,i){ vec(svg, mapper, d.x, d.y, colors[i], d.label, {dashed:i%2===1}); });
+  })();
+
+  // Practice Q3: z, zbar, -z for z=6-2i
+  (function(){
+    var svg = document.getElementById("figPQ3");
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-8,xmax:8,ymin:-4,ymax:4,step:1,w:420,h:360});
+    vec(svg, mapper, 6, -2, "#7c6fee", "z=6-2i");
+    vec(svg, mapper, 6, 2, "#3fa9f5", "z̄=6+2i", {dashed:true});
+    vec(svg, mapper, -6, 2, "#ff6b9d", "-z=-6+2i", {dashed:true});
+  })();
+
+  // Interactive Argand calculator
+  var currentOp = "add";
+  function renderCalc(){
+    var a1 = parseFloat(document.getElementById("gA1").value)||0;
+    var b1 = parseFloat(document.getElementById("gB1").value)||0;
+    var a2 = parseFloat(document.getElementById("gA2").value)||0;
+    var b2 = parseFloat(document.getElementById("gB2").value)||0;
+    var svg = document.getElementById("argandCalc");
+    var maxAbs = Math.max(4, Math.abs(a1),Math.abs(b1),Math.abs(a2),Math.abs(b2),Math.abs(a1+a2),Math.abs(b1+b2),Math.abs(a1-a2),Math.abs(b1-b2)) * 1.25;
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-maxAbs,xmax:maxAbs,ymin:-maxAbs,ymax:maxAbs,step:Math.ceil(maxAbs/5)||1,w:480,h:380});
+    vec(svg, mapper, a1, b1, "#3fa9f5", "P₁");
+    var rx, ry, opSign;
+    if(currentOp === "add"){
+      rx = a1+a2; ry = b1+b2; opSign = "+";
+      vec(svg, mapper, a2, b2, "#ff6b9d", "P₂");
+      dashedFrom(svg, mapper, a1,b1,rx,ry,"#3fa9f5");
+      dashedFrom(svg, mapper, a2,b2,rx,ry,"#ff6b9d");
+    } else {
+      rx = a1-a2; ry = b1-b2; opSign = "-";
+      vec(svg, mapper, a2, b2, "#ff6b9d", "P₂", {dashed:true, width:2});
+      vec(svg, mapper, -a2, -b2, "#ff6b9d", "-P₂");
+      dashedFrom(svg, mapper, a1,b1,rx,ry,"#3fa9f5");
+      dashedFrom(svg, mapper, -a2,-b2,rx,ry,"#ff6b9d");
+    }
+    vec(svg, mapper, rx, ry, "#7c6fee", "P₃", {width:4});
+    var s1 = b1>=0? "+"+b1+"i" : b1+"i";
+    var s2 = b2>=0? "+"+b2+"i" : b2+"i";
+    var sr = ry>=0? "+"+ry+"i" : ry+"i";
+    document.getElementById("argandFormula").innerHTML =
+      "$$("+a1+s1+") "+opSign+" ("+a2+s2+") = "+rx+sr+"$$";
+    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([document.getElementById("argandFormula")]);
+  }
+  ["gA1","gB1","gA2","gB2"].forEach(function(id){
+    document.getElementById(id).addEventListener("input", renderCalc);
+  });
+  document.getElementById("opAdd").addEventListener("click", function(){
+    currentOp = "add";
+    this.classList.add("active"); document.getElementById("opSub").classList.remove("active");
+    renderCalc();
+  });
+  document.getElementById("opSub").addEventListener("click", function(){
+    currentOp = "sub";
+    this.classList.add("active"); document.getElementById("opAdd").classList.remove("active");
+    renderCalc();
+  });
+  document.addEventListener("DOMContentLoaded", renderCalc);
+  if(document.readyState !== "loading") renderCalc();
+})();
+</script>
+</body>
+</html>

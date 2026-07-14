@@ -551,6 +551,8 @@
       t.setAttribute("text-anchor","middle"); t.setAttribute("font-size","18");
       t.setAttribute("font-weight","800"); t.setAttribute("font-family","Cairo,sans-serif");
       t.setAttribute("fill", n.color);
+      t.setAttribute("direction","ltr");
+      t.setAttribute("style","unicode-bidi:bidi-override;direction:ltr");
       t.textContent = n.label;
       svg.appendChild(t);
     });
