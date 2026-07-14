@@ -118,6 +118,7 @@ body{
   background:var(--surface);
   border-radius:var(--radius-md);
   box-shadow:inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+  overflow-x:auto;
 }
 .neu-btn{
   background:var(--surface);
@@ -253,8 +254,18 @@ body{
   content:"";position:absolute;top:38px;right:50%;transform:translateX(50%);width:2px;height:calc(100% + .4rem);
   background:linear-gradient(var(--accent-purple),transparent);opacity:.35;
 }
-.step-body{padding:.35rem 0 1rem}
+.step-body{padding:.35rem 0 1rem;min-width:0;overflow-x:auto}
+.step-body p{overflow-x:auto}
 @keyframes stepIn{to{opacity:1;transform:translateY(0)}}
+
+/* Mathematics-first calculation flow */
+.calc-note{font-size:.82rem;color:var(--text-secondary);font-weight:700;margin:.1rem 0 .3rem}
+.calc-flow{display:grid;justify-items:center;gap:.3rem;margin:.1rem 0 .55rem;min-width:0}
+.calc-line{font-size:1.08rem;max-width:100%;overflow-x:auto}
+.calc-arrow{color:var(--accent-purple);font-size:1.35rem;line-height:1;opacity:.5}
+.calc-box{display:inline-block;padding:.5rem 1.1rem;border-radius:var(--radius-sm);
+  background:var(--surface);box-shadow:4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+  max-width:100%;overflow-x:auto}
 
 .reveal-btn{margin-top:.5rem}
 .hidden-steps .step{display:none}
@@ -298,6 +309,8 @@ input[type=text].neu-input,input[type=number].neu-input{
 
 /* Mind map */
 .mindmap-wrap{overflow-x:auto;padding:1rem 0}
+.mindmap-wrap.hidden-steps{display:none}
+.mindmap-wrap.hidden-steps.shown{display:block}
 .mindmap-wrap svg{display:block;margin:0 auto;max-width:100%;height:auto}
 .mm-node{transition:transform .2s ease}
 .mm-node:hover{transform:scale(1.04)}
@@ -409,6 +422,7 @@ input[type=text].neu-input,input[type=number].neu-input{
 .exercise-final{
   margin-top:.85rem;padding:.85rem 1.1rem;border-radius:var(--radius-sm);font-weight:800;text-align:center;
   background:rgba(47,209,143,.12);color:#1b8f66;
+  overflow-x:auto;
 }
 :root[data-theme="dark"] .exercise-final{color:#5fe3ae}
 

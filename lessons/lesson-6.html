@@ -45,20 +45,60 @@
         <div class="neu-inset" style="padding:1.1rem 1.2rem">
           <strong style="color:var(--accent-green)">المنحني فوق المحور $f(x)>0$</strong>
           <div class="mj-scroll">$$A=\int_a^b f(x)\,dx$$</div>
+          <p style="margin:.5rem 0 0;color:var(--text-secondary)">هنا التكامل يعطي عدداً موجباً من الأصل، لأن كل قيم $f(x)$ على الفترة موجبة.</p>
         </div>
         <div class="neu-inset" style="padding:1.1rem 1.2rem">
           <strong style="color:var(--accent-red)">المنحني تحت المحور $f(x)<0$</strong>
           <div class="mj-scroll">$$A=-\int_a^b f(x)\,dx$$</div>
+          <p style="margin:.5rem 0 0;color:var(--text-secondary)">هنا قيم $f(x)$ سالبة، فيخرج ناتج التكامل سالباً؛ نضرب في $-1$ (أو نأخذ القيمة المطلقة) لنحوّله إلى مساحة موجبة.</p>
         </div>
       </div>
-      <p style="margin-top:1rem">وحيث أن المساحة كمية موجبة دائماً، نأخذ <b>القيمة المطلقة</b> لناتج التكامل. وخطوات العمل:</p>
+      <p style="margin-top:1rem">وحيث أن المساحة كمية هندسية تمثّل مقدار سطح، فهي <b>موجبة دائماً</b> ولا معنى لمساحة سالبة. لذلك نأخذ <b>القيمة المطلقة</b> لناتج كل تكامل جزئي. أما إذا كان المنحني يقطع المحور السيني أكثر من مرة داخل الفترة $[a,b]$ (أي يتبدل بين موجب وسالب)، فلا يجوز إجراء تكامل واحد على كامل الفترة، بل يجب اتباع الخطوتين التاليتين بالترتيب:</p>
       <ol class="obj-list" style="margin-top:.6rem">
-        <li><span class="obj-num" style="background:linear-gradient(135deg,#ff6b9d,#ffab5e)">1</span><span>نجد نقاط تقاطع الدالة مع المحور السيني بجعل $f(x)=0$، فتتجزأ $[a,b]$ إلى فترات جزئية.</span></li>
-        <li><span class="obj-num" style="background:linear-gradient(135deg,#ff6b9d,#ffab5e)">2</span><span>نجري التكامل لكل فترة جزئية على حدة، ثم نجمع <b>القيم المطلقة</b> للنواتج.</span></li>
+        <li><span class="obj-num" style="background:linear-gradient(135deg,#ff6b9d,#ffab5e)">1</span><span>نجد نقاط تقاطع الدالة مع المحور السيني بجعل $f(x)=0$ وحل المعادلة، فتتجزأ الفترة $[a,b]$ عند هذه النقاط إلى فترات جزئية أصغر، كل واحدة منها لا يغيّر فيها المنحني إشارته.</span></li>
+        <li><span class="obj-num" style="background:linear-gradient(135deg,#ff6b9d,#ffab5e)">2</span><span>نجري التكامل لكل فترة جزئية على حدة (فنحصل على عدد لكل فترة، قد يكون موجباً أو سالباً)، ثم نأخذ <b>القيمة المطلقة</b> لكل ناتج على حدة، وأخيراً <b>نجمع</b> هذه القيم المطلقة معاً للحصول على المساحة الكلية.</span></li>
       </ol>
       <div class="callout warn" style="margin-top:1rem">
         <span class="icon">⚠️</span>
-        <span>خطأ شائع: تكامل واحد على كل الفترة! إذا كان المنحني فوق المحور في جزء وتحته في جزء آخر، فسيطرح الجزءان بعضهما ويعطيان ناتجاً خاطئاً (وربما صفراً). جزّئ أولاً!</span>
+        <span>خطأ شائع: تكامل واحد على كل الفترة دون تجزئة! إذا كان المنحني فوق المحور في جزء وتحته في جزء آخر، فإن التكامل الموجب في الجزء الأول يُلغي (كلياً أو جزئياً) التكامل السالب في الجزء الثاني عند الجمع المباشر، فيُعطي ناتجاً خاطئاً (وربما صفراً رغم وجود مساحة حقيقية!). لتفادي هذا الخطأ: جزّئ الفترة أولاً عند نقاط تقاطع المنحني مع المحور، ثم خُذ القيمة المطلقة لكل جزء <b>قبل</b> الجمع، لا بعده.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة مصغّرة: طريقتا حساب المساحة</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l6-topic" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">مقارنة سريعة بين إيجاد المساحة بين منحنٍ والمحور السيني، وإيجادها بين منحنيي دالتين — كلاهما يقوم على نفس الفكرة: جزّئ عند التقاطعات، ثم كامل كل جزء، ثم اجمع القيم المطلقة.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l6-topic">
+        <svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة مصغرة توضح طريقتي حساب المساحة بالتكامل">
+          <line x1="410" y1="160" x2="180" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="160" x2="640" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="180" y1="70" x2="180" y2="250" stroke="#b3bdcc" stroke-width="1.4" stroke-dasharray="4 4"/>
+          <line x1="640" y1="70" x2="640" y2="250" stroke="#b3bdcc" stroke-width="1.4" stroke-dasharray="4 4"/>
+
+          <g><circle cx="410" cy="160" r="56" fill="#7c6fee"/>
+            <text x="410" y="156" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">حساب المساحات</text>
+            <text x="410" y="174" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">بالتكامل</text></g>
+
+          <g><circle cx="180" cy="70" r="52" fill="#ff6b9d"/>
+            <text x="180" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">4-6-1: مع المحور x</text>
+            <text x="180" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">التقاطع: f(x)=0</text></g>
+
+          <g><circle cx="640" cy="70" r="52" fill="#3fa9f5"/>
+            <text x="640" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">4-6-2: بين منحنيين</text>
+            <text x="640" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">التقاطع: f(x)=g(x)</text></g>
+
+          <g><circle cx="180" cy="250" r="46" fill="#ffab5e"/>
+            <text x="180" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">A=∫f(x)dx</text>
+            <text x="180" y="262" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">لكل فترة، مطلقة</text></g>
+
+          <g><circle cx="640" cy="250" r="46" fill="#2fd18f"/>
+            <text x="640" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">A=∫[f-g]dx</text>
+            <text x="640" y="262" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">لكل فترة، مطلقة</text></g>
+        </svg>
       </div>
     </div>
   </section>
@@ -71,12 +111,91 @@
       </div>
       <div class="example-problem">جد المساحة المحددة بمنحني الدالة $f(x)=x^2-4$ والمحور السيني.</div>
       <div class="mindmap-wrap"><svg id="fig33" width="500" height="300"></svg></div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> مساحة المنطقة بين $f(x)=x^2-4$ والمحور السيني</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=x^2-4$، لا فترة محددة</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $f(x)=0$ لإيجاد الحدود → تكامل → قيمة مطلقة</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex33">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نجد نقاط التقاطع: \( x^2-4=0 \Rightarrow (x-2)(x+2)=0 \Rightarrow x=\pm2 \). فترة التكامل $[-2,2]$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( \displaystyle\int_{-2}^{2}(x^2-4)\,dx=\left[\frac{x^3}{3}-4x\right]_{-2}^{2} \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =\left(\dfrac83-8\right)-\left(\dfrac{-8}{3}+8\right)=\dfrac{-16}{3}-\dfrac{16}{3}=\dfrac{-32}{3} \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">الناتج سالب لأن المنحني تحت المحور، فنأخذ القيمة المطلقة: \( A=\left|\dfrac{-32}{3}\right|=\dfrac{32}{3}\,(unit)^2 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجعل $f(x)=0$ لإيجاد نقاط التقاطع مع المحور</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2-4=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحلل بفرق مربعين: $a^2-b^2=(a-b)(a+b)$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2-4=0 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( (x-2)(x+2)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">خاصية حاصل الضرب الصفري: نحل كل عامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x-2=0\Rightarrow x=2 \,,\qquad x+2=0\Rightarrow x=-2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">دالة تربيعية، جذران فقط — فترة واحدة متصلة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( [-2,\,2] \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نكامل حداً حداً بقاعدة الأس $\int x^n dx=\tfrac{x^{n+1}}{n+1}$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int x^2\,dx=\dfrac{x^{3}}{3} \)</div>
+            <div class="calc-line">\( \displaystyle\int (-4)\,dx=-4x \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نجمع، ونكتب التكامل المحدد بالمبرهنة الأساسية</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{-2}^{2}(x^2-4)\,dx=\left[\frac{x^3}{3}-4x\right]_{-2}^{2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نعوّض الحد الأعلى $x=2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(2)=\dfrac{2^3}{3}-4(2)=\dfrac83-8 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نعوّض الحد الأدنى $x=-2$ (احذر إشارة $(-2)^3$)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(-2)=\dfrac{(-2)^3}{3}-4(-2)=\dfrac{-8}{3}+8 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نطرح $F(2)-F(-2)$ ونوزّع إشارة السالب</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \left(\dfrac83-8\right)-\left(\dfrac{-8}{3}+8\right) \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =\dfrac83-8+\dfrac83-8 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نجمع الكسور، ثم الأعداد الصحيحة، ثم نوحّد المقام</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( =\dfrac{16}{3}-16=\dfrac{16}{3}-\dfrac{48}{3} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \displaystyle\int_{-2}^{2}(x^2-4)\,dx=\dfrac{-32}{3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">التكامل سالب — نأخذ القيمة المطلقة لنحصل على المساحة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( A=\left|\dfrac{-32}{3}\right|=\dfrac{32}{3}\,(unit)^2 \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>لا تكتب $\dfrac{-32}{3}$ كجواب نهائي — خذ القيمة المطلقة دائماً قبل إعلان المساحة.</span>
+      </div>
+      <div class="exercise-final">✓ $A=\dfrac{32}{3}\,(unit)^2$</div>
     </div>
 
     <div class="example fade-up">
@@ -86,12 +205,84 @@
       </div>
       <div class="example-problem">جد المساحة المحددة بمنحني الدالة $f(x)=3x^3-12x$ والمحور السيني.</div>
       <div class="mindmap-wrap"><svg id="fig34" width="500" height="300"></svg></div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> مساحة المنطقة بين $f(x)=3x^3-12x$ والمحور السيني</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=3x^3-12x$ (تكعيبية فردية)، لا فترة محددة</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تقاطعات $f(x)=0$ → تجزئة إن لزم → تكامل كل جزء → قيم مطلقة</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex34">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نقاط التقاطع: \( 3x(x-2)(x+2)=0 \Rightarrow x=0,\;x=\pm2 \). الفترتان: $[-2,0]$ و $[0,2]$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">الفترة الأولى: \( A_1=\displaystyle\int_{-2}^{0}(3x^3-12x)\,dx=\left[\frac{3x^4}{4}-6x^2\right]_{-2}^{0}=0-(12-24)=12 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">الفترة الثانية: \( A_2=\displaystyle\int_{0}^{2}(3x^3-12x)\,dx=\left[\frac{3x^4}{4}-6x^2\right]_{0}^{2}=(12-24)-0=-12 \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">\( A=|A_1|+|A_2|=12+12=24\,(unit)^2 \) ∎ — لاحظ: لو كاملنا مباشرة من $-2$ إلى $2$ لحصلنا على صفر خاطئ!</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجعل $f(x)=0$ لإيجاد نقاط التقاطع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 3x^3-12x=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نخرج العامل المشترك $3x$، ثم نحلل فرق المربعين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 3x(x^2-4)=0 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( 3x(x-2)(x+2)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">خاصية حاصل الضرب الصفري على العوامل الثلاثة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x=0\,,\quad x=2\,,\quad x=-2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">$x=0$ تقع داخل $[-2,2]$ — نجزّئ الفترة هناك</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( [-2,\,0] \quad \text{و} \quad [0,\,2] \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نكامل حداً حداً لإيجاد الدالة المقابلة</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int 3x^3\,dx=\dfrac{3x^4}{4}\,,\qquad \int (-12x)\,dx=-6x^2 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(x)=\dfrac{3x^4}{4}-6x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">التكامل الأول على $[-2,0]$: نعوّض الحدين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(0)=0 \)</div>
+            <div class="calc-line">\( F(-2)=\dfrac{3(16)}{4}-6(4)=12-24=-12 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نطرح لنحصل على $A_1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( A_1=F(0)-F(-2)=0-(-12)=12 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">التكامل الثاني على $[0,2]$ بنفس $F(x)$: نعوّض الحدين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(2)=\dfrac{3(16)}{4}-6(4)=-12 \)</div>
+            <div class="calc-line">\( F(0)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نطرح لنحصل على $A_2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( A_2=F(2)-F(0)=-12-0=-12 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نأخذ القيمة المطلقة لكل جزء ثم نجمع</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( A=|A_1|+|A_2|=|12|+|-12|=24\,(unit)^2 \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>لا تجمع $A_1+A_2$ جبرياً أولاً — يعطي صفراً خاطئاً؛ خذ القيمة المطلقة لكل جزء قبل الجمع.</span>
+      </div>
+      <div class="exercise-final">✓ $A=|12|+|-12|=24\,(unit)^2$</div>
     </div>
 
     <div class="example fade-up">
@@ -101,12 +292,90 @@
       </div>
       <div class="example-problem">جد المساحة المحددة بمنحني الدالة $f(x)=x^3-4x$ والمحور السيني والمستقيمين $x=-2$ و $x=2$.</div>
       <div class="mindmap-wrap"><svg id="fig35" width="500" height="300"></svg></div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> مساحة المنطقة بين $f(x)=x^3-4x$ والمحور، بين $x=-2$ و $x=2$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=x^3-4x$، فترة معطاة صراحة: $[-2,2]$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> نتحقق من تقاطع داخل الفترة → تجزئة إن وُجد → تكامل → قيم مطلقة</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex35">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">عبارة (المستقيمان $x=\pm2$) تكافئ (الفترة المغلقة $[-2,2]$). نجد التقاطعات: \( x(x-2)(x+2)=0 \Rightarrow x=0,\pm2 \) وكلها داخل الفترة.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( A_1=\displaystyle\int_{-2}^{0}(x^3-4x)\,dx=\left[\frac{x^4}{4}-2x^2\right]_{-2}^{0}=0-(4-8)=4 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( A_2=\displaystyle\int_{0}^{2}(x^3-4x)\,dx=\left[\frac{x^4}{4}-2x^2\right]_{0}^{2}=(4-8)-0=-4 \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">\( A=|4|+|-4|=8\,(unit)^2 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الفترة الخارجية معطاة صراحة في السؤال</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( [-2,\,2] \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نتحقق من تقاطع داخلي: نجعل $f(x)=0$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^3-4x=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نخرج العامل المشترك $x$، ثم نحلل فرق المربعين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x(x^2-4)=0 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x(x-2)(x+2)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">خاصية حاصل الضرب الصفري</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x=0\,,\quad x=2\,,\quad x=-2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">$x=2,-2$ عند الحدود، لكن $x=0$ داخل الفترة — نجزّئ</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( [-2,\,0] \quad \text{و} \quad [0,\,2] \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نكامل حداً حداً لإيجاد الدالة المقابلة</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int x^3\,dx=\dfrac{x^4}{4}\,,\qquad \int(-4x)\,dx=-2x^2 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(x)=\dfrac{x^4}{4}-2x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">التكامل الأول على $[-2,0]$: نعوّض الحدين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(0)=0 \)</div>
+            <div class="calc-line">\( F(-2)=\dfrac{16}{4}-2(4)=4-8=-4 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نطرح لنحصل على $A_1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( A_1=F(0)-F(-2)=0-(-4)=4 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">التكامل الثاني على $[0,2]$ بنفس $F(x)$: نعوّض الحدين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(2)=\dfrac{16}{4}-2(4)=-4 \)</div>
+            <div class="calc-line">\( F(0)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نطرح لنحصل على $A_2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( A_2=F(2)-F(0)=-4-0=-4 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نأخذ القيمة المطلقة لكل جزء ثم نجمع</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( A=|A_1|+|A_2|=|4|+|-4|=8\,(unit)^2 \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>لا تكامل مباشرة من $-2$ إلى $2$ رغم أن الحدود معطاة — الدالة فردية فيعطي التكامل المباشر صفراً خاطئاً.</span>
+      </div>
+      <div class="exercise-final">✓ $A=|4|+|-4|=8\,(unit)^2$</div>
     </div>
   </section>
 
@@ -130,11 +399,96 @@
       </div>
       <div class="example-problem">جد المساحة المحددة بين منحنيي الدالتين $f(x)=\sqrt{x}$ و $g(x)=x$.</div>
       <div class="mindmap-wrap"><svg id="fig36" width="500" height="300"></svg></div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> مساحة المنطقة بين $f(x)=\sqrt{x}$ و $g(x)=x$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=\sqrt{x}$ (منحني جذري)، $g(x)=x$ (مستقيم)</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $f(x)=g(x)$ للتقاطع → تحديد الأعلى → تكامل الفرق</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex36">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نقاط التقاطع: \( \sqrt{x}=x \Rightarrow x=x^2 \Rightarrow x(x-1)=0 \Rightarrow x=0,\;x=1 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">على $[0,1]$ يكون $\sqrt{x}\ge x$، فنكامل الفرق: \( A=\displaystyle\int_0^1\left[x^{\frac12}-x\right]dx=\left[\frac23\sqrt{x^3}-\frac{x^2}{2}\right]_0^1 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =\left(\dfrac23-\dfrac12\right)-0=\dfrac16\,(unit)^2 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نساوي الدالتين لإيجاد نقاط التقاطع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \sqrt{x}=x \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نربّع الطرفين للتخلص من الجذر (نتحقق لاحقاً من حلول زائفة)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (\sqrt{x})^2=x^2 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x=x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">ننقل الحدود ونخرج العامل المشترك $x$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2-x=0 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x(x-1)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">خاصية حاصل الضرب الصفري</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x=0 \,,\qquad x-1=0 \Rightarrow x=1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نتحقق من الحلين في المعادلة الأصلية (لا حلول زائفة)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( f(0)=0=g(0)\ ✓ \,,\qquad f(1)=1=g(1)\ ✓ \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( [0,\,1] \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نختبر نقطة داخلية $x=\tfrac14$ لتحديد المنحني الأعلى</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( f(\tfrac14)=\sqrt{\tfrac14}=\tfrac12\,,\qquad g(\tfrac14)=\tfrac14 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \tfrac12>\tfrac14 \;\Rightarrow\; f(x)\ge g(x)\ \text{على}\ [0,1] \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نكوّن تكامل الفرق [الأعلى − الأدنى]، ونحوّل الجذر لأس كسري</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( A=\displaystyle\int_0^1\left[x^{\frac12}-x\right]dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نكامل حداً حداً بقاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int x^{\frac12}\,dx=\dfrac{x^{3/2}}{3/2}=\dfrac23\,x^{3/2} \)</div>
+            <div class="calc-line">\( \displaystyle\int x\,dx=\dfrac{x^2}{2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نجمع، ونكتب صيغة التكامل المحدد</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( A=\left[\dfrac23\,x^{3/2}-\dfrac{x^2}{2}\right]_0^1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \text{عند }x=1:\ \dfrac23(1)-\dfrac{1}{2}=\dfrac23-\dfrac12 \)</div>
+            <div class="calc-line">\( \text{عند }x=0:\ 0-0=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نطرح، ونوحّد المقام (م.م.أ = 6)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( A=\left(\dfrac23-\dfrac12\right)-0=\dfrac46-\dfrac36 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( A=\dfrac16\,(unit)^2 \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>لا تكتب الفرق بالترتيب المعكوس $g(x)-f(x)$ دون اختبار نقطة داخلية — يعطي إشارة سالبة خاطئة.</span>
+      </div>
+      <div class="exercise-final">✓ $A=\dfrac16\,(unit)^2$</div>
     </div>
 
     <div class="example fade-up">
@@ -144,12 +498,126 @@
       </div>
       <div class="example-problem">جد المساحة المحددة بين منحنيي الدالتين $f(x)=x^3$ و $g(x)=x$.</div>
       <div class="mindmap-wrap"><svg id="fig37" width="500" height="300"></svg></div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> مساحة المنطقة بين $f(x)=x^3$ و $g(x)=x$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=x^3$ (منحني تكعيبي)، $g(x)=x$ (مستقيم)</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تقاطع → تجزئة عند تعدد النقاط → تكامل الفرق لكل جزء</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex37">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نقاط التقاطع: \( x^3=x \Rightarrow x(1-x)(1+x)=0 \Rightarrow x=0,\;x=\pm1 \). الفترتان: $[-1,0]$ و $[0,1]$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( A_1=\displaystyle\int_{-1}^{0}(x-x^3)\,dx=\left[\frac{x^2}{2}-\frac{x^4}{4}\right]_{-1}^{0}=0-\left(\frac12-\frac14\right)=-\frac14 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( A_2=\displaystyle\int_{0}^{1}(x-x^3)\,dx=\left[\frac{x^2}{2}-\frac{x^4}{4}\right]_{0}^{1}=\left(\frac12-\frac14\right)-0=\frac14 \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">\( A=\left|-\dfrac14\right|+\left|\dfrac14\right|=\dfrac12\,(unit)^2 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نساوي الدالتين لإيجاد نقاط التقاطع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^3=x \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">ننقل الحدود ونخرج العامل المشترك $x$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^3-x=0 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x(x^2-1)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نحلل $x^2-1$ بفرق مربعين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2-1=(x-1)(x+1) \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x(x-1)(x+1)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">خاصية حاصل الضرب الصفري</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x=0\,,\quad x=1\,,\quad x=-1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">ثلاث نقاط تقاطع فنجزّئ الفترة عند $x=0$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( [-1,\,0] \quad \text{و} \quad [0,\,1] \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نختبر $x=-\tfrac12$ على $[-1,0]$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( f(-\tfrac12)=-\tfrac18\,,\qquad g(-\tfrac12)=-\tfrac12 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( -\tfrac18>-\tfrac12 \;\Rightarrow\; f(x)\ge g(x)\ \text{على}\ [-1,0] \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نختبر $x=\tfrac12$ على $[0,1]$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( f(\tfrac12)=\tfrac18\,,\qquad g(\tfrac12)=\tfrac12 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \tfrac18<\tfrac12 \;\Rightarrow\; g(x)\ge f(x)\ \text{على}\ [0,1] \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نختار صيغة ثابتة $g(x)-f(x)$ للفترتين (نأخذ القيمة المطلقة لاحقاً)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( g(x)-f(x)=x-x^3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نوجد الدالة المقابلة حداً بحد</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int x\,dx=\dfrac{x^2}{2}\,,\qquad \int (-x^3)\,dx=-\dfrac{x^4}{4} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(x)=\dfrac{x^2}{2}-\dfrac{x^4}{4} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نكامل على $[-1,0]$ ونعوّض $x=0$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( A_1=\displaystyle\int_{-1}^{0}(x-x^3)\,dx=\left[\dfrac{x^2}{2}-\dfrac{x^4}{4}\right]_{-1}^{0} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(0)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=-1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(-1)=\dfrac12-\dfrac14=\dfrac14 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body">
+          <p class="calc-note">نطرح لنحصل على $A_1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( A_1=F(0)-F(-1)=0-\dfrac14=-\dfrac14 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body">
+          <p class="calc-note">نكامل على $[0,1]$ ونعوّض $x=1$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( A_2=\displaystyle\int_{0}^{1}(x-x^3)\,dx=\left[\dfrac{x^2}{2}-\dfrac{x^4}{4}\right]_{0}^{1} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(1)=\dfrac12-\dfrac14=\dfrac14 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">14</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=0$ ونطرح لنحصل على $A_2$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(0)=0 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( A_2=F(1)-F(0)=\dfrac14-0=\dfrac14 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">15</span><div class="step-body">
+          <p class="calc-note">نأخذ القيمة المطلقة لكل جزء ثم نجمع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( A=|A_1|+|A_2|=\left|-\dfrac14\right|+\left|\dfrac14\right| \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( A=\dfrac14+\dfrac14=\dfrac12\,(unit)^2 \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>لا تجمع $A_1+A_2$ جبرياً مباشرة — خذ القيمة المطلقة لكل فترة أولاً.</span>
+      </div>
+      <div class="exercise-final">✓ $A=\dfrac12\,(unit)^2$</div>
     </div>
   </section>
 
@@ -251,8 +719,12 @@
 
   <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
     <div class="card neu">
-      <h2>🗺 خريطة الدرس الذهنية</h2>
-      <div class="mindmap-wrap">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l6" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l6">
         <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس السادس">
           <line x1="410" y1="180" x2="160" y2="80" stroke="#b3bdcc" stroke-width="2"/>
           <line x1="410" y1="180" x2="660" y2="80" stroke="#b3bdcc" stroke-width="2"/>

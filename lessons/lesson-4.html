@@ -61,12 +61,90 @@
         <button class="neu-btn" data-reveal-steps="steps-ex20" data-show-label="إظهار خطوات الحل" data-hide-label="إخفاء خطوات الحل">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد معادلة المنحني المار بالنقطة $(1,3)$ وميل المماس له عند أية نقطة من نقاطه يساوي $3x^2-10x$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> معادلة المنحني $y=f(x)$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\dfrac{dy}{dx}=3x^2-10x$، يمر بـ $(1,3)$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> نكامل الميل، ثم نعوض بالنقطة لإيجاد $c$</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex20">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">بما أن ميل المماس = المشتقة: \( \dfrac{dy}{dx}=3x^2-10x \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل الطرفين: \( \displaystyle\int dy=\int(3x^2-10x)\,dx \;\Rightarrow\; y=x^3-5x^2+c \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">النقطة $(1,3)$ تحقق المعادلة: \( 3=(1)^3-5(1)^2+c=1-5+c=-4+c \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">إذن $c=7$، ومعادلة المنحني هي: \( y=x^3-5x^2+7 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الميل = المشتقة الأولى</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{dy}{dx}=3x^2-10x \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نكامل الطرفين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int dy=\int(3x^2-10x)\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">تكامل الطرف الأيسر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int dy = y \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نكامل $3x^2$ بقاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int 3x^2\,dx = 3\cdot\dfrac{x^{2+1}}{2+1} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =x^3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نكامل $-10x$ بقاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int -10x\,dx = -10\cdot\dfrac{x^{1+1}}{1+1} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-5x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نجمع الحدين ونضيف $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( y=x^3-5x^2+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نعوض بالنقطة $(1,3)$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 3=(1)^3-5(1)^2+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نحسب القوى: $(1)^3=1,\; 5(1)^2=5$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 3=1-5+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نبسّط $1-5=-4$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 3=-4+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">ننقل $-4$ ونحسب $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( c=3+4 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( c=7 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نعوض $c=7$ في معادلة المنحني</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\[ y=x^3-5x^2+7 \]</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: ترك الإجابة $y=x^3-5x^2+c$ دون استخدام النقطة $(1,3)$ لإيجاد $c$.</span>
+      </div>
+      <div class="exercise-final">✓ معادلة المنحني: $y=x^3-5x^2+7$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -75,13 +153,126 @@
         <button class="neu-btn" data-reveal-steps="steps-ex21">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا كان لمنحنى $f(x)$ نهاية صغرى محلية قيمتها $6$ وميله عند أية نقطة من نقاطه هو $6x^2-12x$، جد معادلة المنحني.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> معادلة المنحني $y=f(x)$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f'(x)=6x^2-12x$، نهاية صغرى محلية قيمتها $6$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> نكامل الميل، ثم $f'(x)=0$ عند النهايات، نفحص الإشارة، ثم نوجد $c$</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex21">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل الميل: \( y=\displaystyle\int(6x^2-12x)\,dx=2x^3-6x^2+c \quad\dots(1) \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">عند النهاية الصغرى $f'(x)=0$: \( 6x^2-12x=0 \Rightarrow 6x(x-2)=0 \Rightarrow x=0 \text{ أو } x=2 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">بتدقيق إشارة $f'(x)$ على خط الأعداد: الدالة تتزايد قبل $x=0$ وتتناقص بعده (نهاية عظمى عند $x=0$)، وتتناقص قبل $x=2$ وتتزايد بعده — إذن النهاية <b>الصغرى</b> عند $x=2$.</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">نقطة النهاية الصغرى إذن هي $(2,6)$ وتحقق المعادلة (1): \( 6=2(2)^3-6(2)^2+c=16-24+c \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">إذن $c=6+8=14$، ومعادلة المنحني: \( y=2x^3-6x^2+14 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الميل، ونكامل الطرفين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{dy}{dx}=6x^2-12x \;\Longrightarrow\; y=\displaystyle\int(6x^2-12x)\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نكامل $6x^2$ بقاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int 6x^2\,dx = 6\cdot\dfrac{x^{2+1}}{2+1}=6\cdot\dfrac{x^3}{3} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =2x^3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نكامل $-12x$ بقاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int -12x\,dx = -12\cdot\dfrac{x^{1+1}}{1+1}=-12\cdot\dfrac{x^2}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-6x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نجمع الحدين ونضيف $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( y=2x^3-6x^2+c \quad\dots(1) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">عند أي نهاية محلية $f'(x)=0$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 6x^2-12x=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نخرج العامل المشترك $6x$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 6x(x-2)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">خاصية حاصل الضرب الصفري</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 6x=0 \;\Longrightarrow\; x=0 \qquad\text{أو}\qquad x-2=0 \;\Longrightarrow\; x=2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نختبر عند $x=-1$ (قبل $0$)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( f'(-1)=6(-1)(-1-2)=6(-1)(-3)=18>0 \;\text{(تتزايد)} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نختبر عند $x=1$ (بين $0$ و $2$)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( f'(1)=6(1)(1-2)=6(1)(-1)=-6<0 \;\text{(تتناقص)} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نختبر عند $x=3$ (بعد $2$)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( f'(3)=6(3)(3-2)=6(3)(1)=18>0 \;\text{(تتزايد)} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">تزايد→تناقص عند $0$ (عظمى)، تناقص→تزايد عند $2$ (صغرى)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x=0 \;\text{نهاية عظمى}\,,\quad x=2 \;\text{نهاية صغرى} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body">
+          <p class="calc-note">النقطة المطابقة للمعطى (النهاية الصغرى)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( (2,6) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body">
+          <p class="calc-note">نعوض في المعادلة (1)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 6=2(2)^3-6(2)^2+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">14</span><div class="step-body">
+          <p class="calc-note">نحسب القوى: $2(2)^3=16,\; 6(2)^2=24$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 6=16-24+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">15</span><div class="step-body">
+          <p class="calc-note">نبسّط $16-24=-8$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 6=-8+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">16</span><div class="step-body">
+          <p class="calc-note">ننقل $-8$ ونحسب $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( c=6+8 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( c=14 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">17</span><div class="step-body">
+          <p class="calc-note">نعوض $c=14$ في المعادلة (1)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\[ y=2x^3-6x^2+14 \]</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: افتراض أن $x=0$ هي النهاية الصغرى لكونها أصغر عددياً، دون فحص إشارة $f'(x)$.</span>
+      </div>
+      <div class="exercise-final">✓ معادلة المنحني: $y=2x^3-6x^2+14$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -90,14 +281,134 @@
         <button class="neu-btn" data-reveal-steps="steps-ex22">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد معادلة المنحني الذي المشتقة الثانية لمعادلته تساوي $6x$ ويمر بالنقطتين $(-1,4)$ و $(1,8)$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> معادلة المنحني $y=f(x)$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f''(x)=6x$، يمر بـ $(-1,4)$ و $(1,8)$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تكامل مزدوج يولّد $c_1,c_2$ — نحلهما كنظام معادلتين</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex22">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل المشتقة الثانية لنحصل على الأولى: \( \dfrac{dy}{dx}=\displaystyle\int 6x\,dx=3x^2+c_1 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل مرة ثانية: \( y=\displaystyle\int(3x^2+c_1)\,dx=x^3+c_1x+c_2 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">النقطة $(-1,4)$: \( 4=(-1)^3-c_1+c_2 \Rightarrow c_1-c_2=-5 \quad\dots(1) \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">النقطة $(1,8)$: \( 8=(1)^3+c_1+c_2 \Rightarrow c_1+c_2=7 \quad\dots(2) \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">بجمع (1) و (2): \( 2c_1=2 \Rightarrow c_1=1 \)، وبالتعويض: \( 1-c_2=-5 \Rightarrow c_2=6 \)</div></li>
-        <li class="step"><span class="step-dot">6</span><div class="step-body">إذن معادلة المنحني: \( y=x^3+x+6 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكامل المشتقة الثانية مرة أولى</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{dy}{dx}=\displaystyle\int 6x\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">قاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int 6x\,dx = 6\cdot\dfrac{x^{1+1}}{1+1}=6\cdot\dfrac{x^2}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =3x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نضيف $c_1$ (ثابت التكامل الأول)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{dy}{dx}=3x^2+c_1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نكامل مرة ثانية للوصول إلى $y$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( y=\displaystyle\int(3x^2+c_1)\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نكامل $3x^2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int 3x^2\,dx=3\cdot\dfrac{x^3}{3}=x^3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">تكامل الثابت $c_1$: يساوي $c_1x$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int c_1\,dx = c_1x \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نجمع ونضيف $c_2$ (ثابت ثانٍ مستقل)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( y=x^3+c_1x+c_2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نعوض بالنقطة $(-1,4)$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 4=(-1)^3+c_1(-1)+c_2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نحسب: $(-1)^3=-1,\; c_1(-1)=-c_1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 4=-1-c_1+c_2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نرتب المعادلة الأولى</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( c_1-c_2=-5 \quad\dots(1) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نعوض بالنقطة $(1,8)$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 8=(1)^3+c_1(1)+c_2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body">
+          <p class="calc-note">نحسب: $(1)^3=1,\; c_1(1)=c_1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 8=1+c_1+c_2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body">
+          <p class="calc-note">نرتب المعادلة الثانية</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( c_1+c_2=7 \quad\dots(2) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">14</span><div class="step-body">
+          <p class="calc-note">نجمع (1) و(2) لحذف $c_2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( (c_1-c_2)+(c_1+c_2)=-5+7 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">15</span><div class="step-body">
+          <p class="calc-note">نبسّط الطرفين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 2c_1=2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">16</span><div class="step-body">
+          <p class="calc-note">نقسم على $2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( c_1=\dfrac{2}{2}=1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">17</span><div class="step-body">
+          <p class="calc-note">نعوض $c_1=1$ في المعادلة (2)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 1+c_2=7 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">18</span><div class="step-body">
+          <p class="calc-note">نحل من أجل $c_2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( c_2=7-1=6 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">19</span><div class="step-body">
+          <p class="calc-note">نعوض $c_1=1,\,c_2=6$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\[ y=x^3+x+6 \]</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: معاملة $c_1$ و $c_2$ كثابت واحد بدلاً من حلهما كنظام مستقل.</span>
+      </div>
+      <div class="exercise-final">✓ معادلة المنحني: $y=x^3+x+6$. ∎</div>
     </div>
   </section>
 
@@ -132,19 +443,154 @@
   </section>
 
   <section class="section fade-up">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة مصغّرة: التطبيقان الهندسي والفيزيائي</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l4-topic" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">قارن بين التطبيقين الأساسيين اللذين درسناهما في هذا الدرس، ولاحظ أن كليهما يعتمد على نفس فكرة التكامل كعملية عكسية.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l4-topic">
+        <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة مصغّرة تقارن التطبيق الهندسي والفيزيائي">
+          <line x1="410" y1="130" x2="180" y2="130" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="130" x2="640" y2="130" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="130" r="55" fill="#2fd18f"/>
+            <text x="410" y="126" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">تطبيقات التكامل</text>
+            <text x="410" y="144" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">غير المحدد</text></g>
+
+          <g><circle cx="180" cy="130" r="65" fill="#7c6fee"/>
+            <text x="180" y="118" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">هندسي</text>
+            <text x="180" y="136" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">ميل المماس</text>
+            <text x="180" y="152" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">→ معادلة المنحني</text></g>
+
+          <g><circle cx="640" cy="130" r="65" fill="#3fa9f5"/>
+            <text x="640" y="112" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">فيزيائي</text>
+            <text x="640" y="130" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">تعجيل → سرعة</text>
+            <text x="640" y="147" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">→ إزاحة</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
     <div class="example">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">23</span> مثال 23</div>
         <button class="neu-btn" data-reveal-steps="steps-ex23">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جسم يتحرك على خط مستقيم وكانت سرعته معطاة بالعلاقة $v=\dfrac{3}{2}\sqrt{t}+\dfrac{3}{\sqrt{t}}$ حيث $v$ السرعة بالأمتار و $t$ الزمن بالثواني، وكان بُعده بعد مرور أربع ثوانٍ يساوي $20\,m$. جد الإزاحة التي يقطعها الجسم بعد مرور $36$ ثانية من بدء الحركة.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> الإزاحة $s$ عند $t=36$ ثانية</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $v(t)=\tfrac32\sqrt{t}+\tfrac{3}{\sqrt{t}}$، وعند $t=4$: $s=20\,m$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $s=\int v\,dt$، ثم نستخدم الشرط الابتدائي لإيجاد $c$</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex23">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل السرعة: \( s=\displaystyle\int\!\left(\tfrac{3}{2}t^{\frac12}+3t^{-\frac12}\right)dt \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( s=\dfrac{3}{2}\cdot\dfrac{t^{\frac32}}{\frac32}+3\cdot\dfrac{t^{\frac12}}{\frac12}+c=\sqrt{t^3}+6\sqrt{t}+c \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">الشرط الابتدائي: عند $t=4$ تكون $s=20$: \( 20=\sqrt{64}+6(2)+c=8+12+c \Rightarrow c=0 \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">إذن الإزاحة عند أي زمن: \( s=\sqrt{t^3}+6\sqrt{t} \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">عند $t=36$: \( s=\sqrt{36^3}+6\sqrt{36}=(6)^3+6(6)=216+36=252\,m \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الإزاحة = تكامل السرعة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( s=\displaystyle\int\left(\tfrac{3}{2}\sqrt{t}+\tfrac{3}{\sqrt{t}}\right)dt \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحوّل الجذور إلى أسس كسرية</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( s=\displaystyle\int\!\left(\tfrac{3}{2}t^{\frac12}+3t^{-\frac12}\right)dt \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نكامل الحد الأول بقاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int \tfrac{3}{2}t^{\frac12}\,dt=\tfrac{3}{2}\cdot\dfrac{t^{\frac32}}{\frac32} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =t^{\frac32} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نكامل الحد الثاني</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int 3t^{-\frac12}\,dt=3\cdot\dfrac{t^{\frac12}}{\frac12}=3\times2\times t^{\frac12} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =6t^{\frac12} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نجمع، نضيف $c$، نعيد للصيغة الجذرية</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( s=t^{\frac32}+6t^{\frac12}+c=\sqrt{t^3}+6\sqrt{t}+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نعوض بالشرط الابتدائي $t=4,\,s=20$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 20=\sqrt{4^3}+6\sqrt{4}+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نبسّط $\sqrt{4^3}=\sqrt{64}$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \sqrt{4^3}=\sqrt{64}=8 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نبسّط $6\sqrt{4}=6(2)$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 6\sqrt{4}=6(2)=12 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نعوض ونجمع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 20=8+12+c \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( 20=20+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نحل من أجل $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( c=20-20=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">معادلة الإزاحة النهائية</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( s=\sqrt{t^3}+6\sqrt{t} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body">
+          <p class="calc-note">نعوض $t=36$ (وليس $t=4$)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( s=\sqrt{36^3}+6\sqrt{36} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body">
+          <p class="calc-note">نبسّط $\sqrt{36^3}=(\sqrt{36})^3=6^3$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \sqrt{36^3}=(\sqrt{36})^3=6^3 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =216 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">14</span><div class="step-body">
+          <p class="calc-note">نبسّط $6\sqrt{36}=6(6)$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 6\sqrt{36}=6(6)=36 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">15</span><div class="step-body">
+          <p class="calc-note">نجمع مع وحدة المتر</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( s=216+36 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\[ s=252\,m \]</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: الخلط بين الشرط الابتدائي $t=4$ والمطلوب $t=36$.</span>
+      </div>
+      <div class="exercise-final">✓ الإزاحة عند $t=36$: $s=252\,m$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -153,13 +599,164 @@
         <button class="neu-btn" data-reveal-steps="steps-ex24">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا علمت أن السرعة الابتدائية لطائرة عند هبوطها على المدرج تساوي $5\,km/min$ وكانت سرعتها تتناقص بتعجيل تباطؤي منتظم قدره $-2\,km/min^2$. احسب الإزاحة التي تقطعها إلى أن تتوقف تماماً عن الحركة.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> الإزاحة الكلية $s$ حتى التوقف التام</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $a=-2\,km/min^2$، $v(0)=5\,km/min$، $s(0)=0$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $v=\int a\,dt$ ثم $s=\int v\,dt$؛ التوقف يعني $v=0$</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex24">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل التعجيل: \( v=\displaystyle\int -2\,dt=-2t+c_1 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">عند $t=0$، $v=5$: \( 5=-2(0)+c_1 \Rightarrow c_1=5 \)، إذن \( v=-2t+5 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نكامل السرعة: \( s=\displaystyle\int(-2t+5)\,dt=-t^2+5t+c_2 \)، وعند $t=0$، $s=0$ فيكون $c_2=0$.</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">الطائرة تتوقف عندما $v=0$: \( -2t+5=0 \Rightarrow t=\dfrac{5}{2}\,min \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">نعوّض في الإزاحة: \( s=-\left(\tfrac52\right)^2+5\left(\tfrac52\right)=\dfrac{-25}{4}+\dfrac{25}{2}=\dfrac{25}{4}=6.25\,km \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">التعجيل تباطؤي: $a=-2$، نكتب معادلة السرعة كتكامل له</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( v=\displaystyle\int (-2)\,dt \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">تكامل الثابت $-2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int(-2)\,dt=-2t \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نضيف ثابت التكامل $c_1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( v=-2t+c_1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">الشرط الابتدائي: السرعة عند $t=0$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( v(0)=5 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نعوّض $t=0,\,v=5$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 5=-2(0)+c_1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نبسّط: $-2(0)=0$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 5=0+c_1 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( c_1=5 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نعوّض $c_1=5$ في معادلة السرعة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( v=-2t+5 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نكتب معادلة الإزاحة كتكامل للسرعة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( s=\displaystyle\int(-2t+5)\,dt \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نكامل $-2t$ بقاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int -2t\,dt=-2\cdot\dfrac{t^2}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-t^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نكامل الثابت $5$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int 5\,dt=5t \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نجمع الحدين ونضيف $c_2$ (ثابت ثانٍ مستقل)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( s=-t^2+5t+c_2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body">
+          <p class="calc-note">نعوّض $t=0,\,s=0$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 0=-(0)^2+5(0)+c_2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body">
+          <p class="calc-note">كل الحدود صفر</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 0=0+0+c_2 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( c_2=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">14</span><div class="step-body">
+          <p class="calc-note">نعوّض $c_2=0$ في معادلة الإزاحة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( s=-t^2+5t \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">15</span><div class="step-body">
+          <p class="calc-note">التوقف التام يعني $v=0$ (وليس $s=0$)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( v=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">16</span><div class="step-body">
+          <p class="calc-note">نساوي معادلة السرعة (الخطوة 7) بصفر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( -2t+5=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">17</span><div class="step-body">
+          <p class="calc-note">ننقل $5$ للطرف الآخر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( -2t=-5 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">18</span><div class="step-body">
+          <p class="calc-note">نقسم على $-2$ (سالب÷سالب = موجب)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( t=\dfrac{-5}{-2}=\dfrac{5}{2}\,min \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">19</span><div class="step-body">
+          <p class="calc-note">نعوّض $t=\tfrac52$ في معادلة $s$ (الخطوة 14)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( s=-\left(\tfrac52\right)^2+5\left(\tfrac52\right) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">20</span><div class="step-body">
+          <p class="calc-note">نحسب $\left(\tfrac52\right)^2=\tfrac{25}{4}$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( -\left(\tfrac52\right)^2=\dfrac{-25}{4} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">21</span><div class="step-body">
+          <p class="calc-note">نحسب $5\left(\tfrac52\right)$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 5\left(\tfrac52\right)=\dfrac{25}{2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">22</span><div class="step-body">
+          <p class="calc-note">نوحّد المقامين ($4$ مضاعف $2$) ونجمع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( s=\dfrac{-25}{4}+\dfrac{50}{4} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( s=\dfrac{25}{4} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">23</span><div class="step-body">
+          <p class="calc-note">نحوّل للصيغة العشرية بوحدة $km$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\[ s=\dfrac{25}{4}=6.25\,km \]</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: نسيان إشارة التعجيل السالبة، أو الخلط بين $v=0$ (التوقف) و $s=0$.</span>
+      </div>
+      <div class="exercise-final">✓ الإزاحة عند التوقف: $s=\dfrac{25}{4}=6.25\,km$. ∎</div>
     </div>
   </section>
 
@@ -242,8 +839,12 @@
 
   <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
     <div class="card neu">
-      <h2>🗺 خريطة الدرس الذهنية</h2>
-      <div class="mindmap-wrap">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l4" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l4">
         <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الرابع">
           <line x1="410" y1="180" x2="160" y2="80" stroke="#b3bdcc" stroke-width="2"/>
           <line x1="410" y1="180" x2="660" y2="80" stroke="#b3bdcc" stroke-width="2"/>

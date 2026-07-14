@@ -57,10 +57,72 @@
         <button class="neu-btn" data-reveal-steps="steps-ex25" data-show-label="إظهار خطوات الحل" data-hide-label="إخفاء خطوات الحل">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل المحدد: $\displaystyle\int_{1}^{2} 2x\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> قيمة $\displaystyle\int_{1}^{2}2x\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=2x,\; [1,2]$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تعريف 4-3 · قاعدة الأس</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex25">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \displaystyle\int_{1}^{2}2x\,dx=\Big[x^2\Big]_1^2=2^2-1^2=4-1=3 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">لاحظ أننا لم نكتب ثابت التكامل $c$. السبب: لو كتبناه لاختفى بالطرح: \( \Big[x^2+c\Big]_1^2=(4+c)-(1+c)=3 \) — الثابت يُلغي نفسه دائماً!</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نُخرج المعامل الثابت خارج التكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int 2x\,dx = 2\int x\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">قاعدة الأس على $x$ ($n=1$)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int x\,dx = \dfrac{x^{1+1}}{1+1} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =\dfrac{x^2}{2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نضرب في المعامل 2 (يُلغي المقام)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 2\times\dfrac{x^2}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(x)=x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نكتب صيغة القوس المربع بالحدّين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{1}^{2}2x\,dx=\Big[x^2\Big]_1^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدّ الأعلى $x=2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(2)=2^2=4 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدّ الأدنى $x=1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(1)=1^2=1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نطرح: $F(2)-F(1)$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(2)-F(1)=4-1 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">تحقّق: $c$ يُلغى دائماً بالطرح</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \Big[x^2+c\Big]_1^2=(4+c)-(1+c)=3 \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: كتابة $F(1)-F(2)=-3$ بعكس ترتيب الطرح بدلاً من $F(2)-F(1)=3$.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int_{1}^{2}2x\,dx=F(2)-F(1)=4-1=3$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -69,10 +131,66 @@
         <button class="neu-btn" data-reveal-steps="steps-ex26">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل المحدد: $\displaystyle\int_{0}^{3} (3x^2+2x)\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> قيمة $\displaystyle\int_{0}^{3}(3x^2+2x)\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=3x^2+2x,\; [0,3]$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تعريف 4-3 · قاعدة الأس حداً حداً</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex26">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل: \( \displaystyle\int_{0}^{3}(3x^2+2x)\,dx=\Big[x^3+x^2\Big]_0^3 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نعوّض الحدين: \( =\big[3^3+3^2\big]-\big[0^3+0^2\big]=27+9-0=36 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكامل الحدّ الأول $3x^2$ ($n=2$)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int 3x^2\,dx = 3\times\dfrac{x^{2+1}}{2+1} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =x^3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نكامل الحدّ الثاني $2x$ ($n=1$)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int 2x\,dx = 2\times\dfrac{x^{1+1}}{1+1} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نجمع تكاملي الحدّين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(x)=x^3+x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">صيغة القوس المربع بالحدّين $0,3$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{0}^{3}(3x^2+2x)\,dx=\Big[x^3+x^2\Big]_0^3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدّ الأعلى $x=3$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(3)=3^3+3^2 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =27+9=36 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدّ الأدنى $x=0$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(0)=0^3+0^2=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نطرح: $F(3)-F(0)$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(3)-F(0)=36-0=36 \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: تخطّي تعويض الحدّ الأدنى الصفري وعدم توثيقه رغم أنه لا يبقى صفراً دائماً في مسائل أخرى.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int_{0}^{3}(3x^2+2x)\,dx=F(3)-F(0)=36-0=36$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -81,12 +199,74 @@
         <button class="neu-btn" data-reveal-steps="steps-ex27">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل المحدد: $\displaystyle\int_{1}^{3} (2x-3)(x^2-3x-6)^2\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> قيمة $\displaystyle\int_{1}^{3}(2x-3)(x^2-3x-6)^2\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $(2x-3)(x^2-3x-6)^2,\; [1,3]$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تكامل بالتعويض ثم تعريف 4-3</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex27">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نلاحظ أن $(2x-3)$ هي مشتقة القوس $(x^2-3x-6)$ — نستخدم قاعدة التعويض من الدرس 3: \( \displaystyle\int_{1}^{3}(2x-3)(x^2-3x-6)^2\,dx=\left[\frac{(x^2-3x-6)^3}{3}\right]_1^3 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نعوّض $x=3$: \( \dfrac{(9-9-6)^3}{3}=\dfrac{(-6)^3}{3}=\dfrac{-216}{3} \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض $x=1$: \( \dfrac{(1-3-6)^3}{3}=\dfrac{(-8)^3}{3}=\dfrac{-512}{3} \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">النتيجة: \( \dfrac{-216}{3}-\dfrac{-512}{3}=\dfrac{-216+512}{3}=\dfrac{296}{3} \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نشتق الداخل $u=x^2-3x-6$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( u'=2x-3+0=2x-3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$u'$ يطابق المعامل الخارجي ⇒ تعويض</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int u^2\,du=\dfrac{u^{2+1}}{2+1} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(x)=\dfrac{(x^2-3x-6)^3}{3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">صيغة القوس المربع بالحدّين $1,3$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \left[\dfrac{(x^2-3x-6)^3}{3}\right]_1^3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=3$ داخل القوس أولاً</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 3^2-3(3)-6=9-9-6=-6 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نرفع للأس 3 ونقسم على 3</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (-6)^3=-216 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(3)=\dfrac{-216}{3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=1$ داخل القوس</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 1^2-3(1)-6=1-3-6=-8 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نرفع للأس 3 ونقسم على 3</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (-8)^3=-512 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(1)=\dfrac{-512}{3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نطرح: طرح السالب = جمع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{-216}{3}-\dfrac{-512}{3}=\dfrac{-216}{3}+\dfrac{512}{3} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \dfrac{-216+512}{3}=\dfrac{296}{3} \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: كتابة $\dfrac{-216}{3}-\dfrac{-512}{3}=\dfrac{-216-512}{3}$ بدلاً من تحويلها إلى جمع $\dfrac{-216+512}{3}$.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int_{1}^{3}(2x-3)(x^2-3x-6)^2\,dx=\dfrac{296}{3}$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -95,12 +275,94 @@
         <button class="neu-btn" data-reveal-steps="steps-ex28">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل المحدد: $\displaystyle\int_{2}^{3} \frac{x^3-1}{x-1}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> قيمة $\displaystyle\int_{2}^{3}\dfrac{x^3-1}{x-1}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\dfrac{x^3-1}{x-1},\; [2,3]$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> فرق مكعبين $a^3-b^3=(a-b)(a^2+ab+b^2)$ ثم تعريف 4-3</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex28">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط (فرق مكعبين): \( \displaystyle\int_{2}^{3}\frac{(x-1)(x^2+x+1)}{x-1}\,dx=\int_{2}^{3}(x^2+x+1)\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل: \( =\left[\dfrac{x^3}{3}+\dfrac{x^2}{2}+x\right]_2^3 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض: \( \left(9+\dfrac92+3\right)-\left(\dfrac83+2+2\right)=\dfrac{33}{2}-\dfrac{20}{3} \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">نوحّد المقامات: \( \dfrac{99-40}{6}=\dfrac{59}{6} \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحلّل البسط بفرق مكعبين ($a=x,b=1$)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x^3-1=(x-1)(x^2+x+1) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعيد كتابة الكسر بعد التحليل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{x^3-1}{x-1}=\dfrac{(x-1)(x^2+x+1)}{x-1} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نختصر $(x-1)$ (آمن: $x=1\notin[2,3]$)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(x-1)(x^2+x+1)}{x-1}=x^2+x+1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نستبدل الدالة داخل التكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{2}^{3}\frac{x^3-1}{x-1}\,dx=\int_{2}^{3}(x^2+x+1)\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نكامل حداً حداً بقاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{2}^{3}(x^2+x+1)\,dx=\left[\dfrac{x^3}{3}+\dfrac{x^2}{2}+x\right]_2^3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدّ الأعلى $x=3$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(3)=\dfrac{3^3}{3}+\dfrac{3^2}{2}+3 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =9+\dfrac92+3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نوحّد المقامات (مقام 2) ونجمع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(3)=\dfrac{18}{2}+\dfrac92+\dfrac62 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(3)=\dfrac{33}{2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدّ الأدنى $x=2$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(2)=\dfrac{2^3}{3}+\dfrac{2^2}{2}+2 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =\dfrac83+2+2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نوحّد المقامات (مقام 3) ونجمع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(2)=\dfrac83+\dfrac{12}{3} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(2)=\dfrac{20}{3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نطرح: $F(3)-F(2)$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(3)-F(2)=\dfrac{33}{2}-\dfrac{20}{3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نوحّد المقامات (م.م.أ$=6$) ونطرح</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{33}{2}-\dfrac{20}{3}=\dfrac{99}{6}-\dfrac{40}{6} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \dfrac{99-40}{6}=\dfrac{59}{6} \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: اختصار $(x-1)$ دون التأكد أن $x=1$ خارج فترة التكامل $[2,3]$.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int_{2}^{3}\dfrac{x^3-1}{x-1}\,dx=\dfrac{33}{2}-\dfrac{20}{3}=\dfrac{59}{6}$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -109,12 +371,80 @@
         <button class="neu-btn" data-reveal-steps="steps-ex29">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة الثابت $a$ في التكامل المحدد الآتي: $\displaystyle\int_{2}^{a}(x+4)\,dx=14$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> قيمة $a$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=x+4,\; [2,a],\;$ والتكامل$=14$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تعريف 4-3 ثم حل معادلة تربيعية بالتحليل</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex29">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل: \( \left[\dfrac{x^2}{2}+4x\right]_2^a=14 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نعوّض الحدين: \( \left(\dfrac{a^2}{2}+4a\right)-\left(2+8\right)=14 \Rightarrow \dfrac{a^2}{2}+4a=24 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نضرب في 2: \( a^2+8a-48=0 \Rightarrow (a+12)(a-4)=0 \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">إذن \( a=-12 \) أو \( a=4 \). ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكامل $f(x)=x+4$ ونساوي التكامل بـ14</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \left[\dfrac{x^2}{2}+4x\right]_2^a=14 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدّ الأعلى $x=a$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(a)=\dfrac{a^2}{2}+4a \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدّ الأدنى $x=2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(2)=\dfrac{2^2}{2}+4(2)=2+8=10 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نطرح ونساوي بـ14: $F(a)-F(2)=14$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \left(\dfrac{a^2}{2}+4a\right)-10=14 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">ننقل $-10$ ونجمع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{a^2}{2}+4a=14+10 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \dfrac{a^2}{2}+4a=24 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نضرب الطرفين في 2 (لإزالة المقام)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( a^2+8a=48 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">ننقل 48 ونرتب المعادلة $=0$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( a^2+8a-48=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نحلل: ضرب$=-48$، جمع$=8$ ⇒ $12,-4$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( (a+12)(a-4)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">خاصية الضرب الصفري</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( a+12=0 \quad\text{أو}\quad a-4=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نحل كل معادلة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( a=-12 \quad\text{أو}\quad a=4 \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: الاكتفاء بحلّ واحد ($a=4$) ونسيان الحلّ الثاني $a=-12$.</span>
+      </div>
+      <div class="exercise-final">✓ $a^2+8a-48=0 \Rightarrow (a+12)(a-4)=0 \Rightarrow a=4$ أو $a=-12$. ∎</div>
     </div>
   </section>
 
@@ -165,6 +495,44 @@
     </div>
   </section>
 
+  <section class="section fade-up">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة مصغّرة: خواص التكامل المحدد التسع</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l5-topic" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">تجميع الخواص التسع في أربع مجموعات مترابطة تسهّل الحفظ والمراجعة السريعة قبل حل الأمثلة التالية.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l5-topic">
+        <svg viewBox="0 0 820 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية لخواص التكامل المحدد التسع">
+          <line x1="410" y1="190" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="190" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="190" x2="150" y2="300" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="190" x2="670" y2="300" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="190" r="58" fill="#7c6fee"/>
+            <text x="410" y="186" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">خواص التكامل</text>
+            <text x="410" y="205" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">المحدد (9)</text></g>
+
+          <g><circle cx="150" cy="80" r="52" fill="#3fa9f5"/>
+            <text x="150" y="72" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">① الثابت يخرج</text>
+            <text x="150" y="88" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">⑦ تكامل المجموع</text></g>
+
+          <g><circle cx="670" cy="80" r="52" fill="#2fd18f"/>
+            <text x="670" y="72" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">② حدّان متساويان=0</text>
+            <text x="670" y="88" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">③④ عكس/تجزئة</text></g>
+
+          <g><circle cx="150" cy="300" r="52" fill="#ffab5e"/>
+            <text x="150" y="292" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">⑤ فردية = صفر</text>
+            <text x="150" y="308" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">⑥ زوجية = ×2</text></g>
+
+          <g><circle cx="670" cy="300" r="52" fill="#ff6b9d"/>
+            <text x="670" y="292" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">⑧⑨ المقارنة</text>
+            <text x="670" y="308" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">f≥g ⇒ ∫f≥∫g</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
   <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
     <div class="example">
       <div class="example-head">
@@ -172,11 +540,42 @@
         <button class="neu-btn" data-reveal-steps="steps-ex30">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا كانت $f(x)$ دالة مستمرة على الفترة $[2,6]$ أثبت أن: $\displaystyle\int_{2}^{3}f(x)\,dx+\int_{3}^{6}f(x)\,dx+\int_{6}^{2}f(x)\,dx=0$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إثبات أن المجموع $=0$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f$ مستمرة على $[2,6]$؛ فترات $[2,3],[3,6],[6,2]$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> الخاصية ④ (تجزئة) + الخاصية ③ (عكس الحدّين)</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex30">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">بالخاصية ④ (تجزئة الفترة): \( \displaystyle\int_{2}^{3}f+\int_{3}^{6}f=\int_{2}^{6}f \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">بالخاصية ③ (عكس الحدين): \( \displaystyle\int_{6}^{2}f=-\int_{2}^{6}f \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">إذن الطرف الأيسر \( =\displaystyle\int_{2}^{6}f+\left[-\int_{2}^{6}f\right]=0 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجمع أول تكاملين بخاصية ④</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{2}^{3}f(x)\,dx+\int_{3}^{6}f(x)\,dx=\int_{2}^{6}f(x)\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نطبّق خاصية ③ على التكامل الثالث</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{6}^{2}f(x)\,dx=-\int_{2}^{6}f(x)\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نستبدل في المجموع الأصلي</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{2}^{3}f+\int_{3}^{6}f+\int_{6}^{2}f=\int_{2}^{6}f+\left[-\int_{2}^{6}f\right] \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">مقدار مطروح من نفسه = صفر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{2}^{6}f-\int_{2}^{6}f=0 \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: تطبيق خاصية ④ مباشرة على $\int_6^2 f\,dx$ دون ملاحظة أن حدّيه معكوسان.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int_{2}^{3}f(x)\,dx+\int_{3}^{6}f(x)\,dx+\int_{6}^{2}f(x)\,dx=0$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -185,11 +584,66 @@
         <button class="neu-btn" data-reveal-steps="steps-ex31">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا علمت أن $\displaystyle\int_{-1}^{7}f(x)\,dx=8$، جد قيمة التكامل: $\displaystyle\int_{-1}^{7}[4+3f(x)]\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> قيمة $\displaystyle\int_{-1}^{7}[4+3f(x)]\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\displaystyle\int_{-1}^{7}f(x)\,dx=8$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> الخاصية ⑦ (مجموع) + الخاصية ① (ثابت خارج التكامل)</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex31">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">بالخاصيتين ⑦ و ①: \( \displaystyle\int_{-1}^{7}[4+3f(x)]\,dx=\int_{-1}^{7}4\,dx+3\int_{-1}^{7}f(x)\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( \displaystyle\int_{-1}^{7}4\,dx=\Big[4x\Big]_{-1}^{7}=28-(-4)=32 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =32+3(8)=32+24=56 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نفصل التكامل بالخاصية ⑦</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int_{-1}^{7}[4+3f(x)]\,dx \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =\displaystyle\int_{-1}^{7}4\,dx+\int_{-1}^{7}3f(x)\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نُخرج المعامل الثابت 3 (الخاصية ①)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{-1}^{7}3f(x)\,dx=3\int_{-1}^{7}f(x)\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نكتب صيغة القوس المربع للتكامل الأول</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{-1}^{7}4\,dx=\Big[4x\Big]_{-1}^{7} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نعوّض بالحدّين $x=7$ ثم $x=-1$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 4(7)-4(-1) \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =28-(-4) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">طرح السالب = جمع الموجب المقابل</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 28-(-4)=28+4 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =32 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نعوّض بالقيمة المعطاة $\int_{-1}^{7}f(x)\,dx=8$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 3\displaystyle\int_{-1}^{7}f(x)\,dx=3\times8=24 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نجمع نتيجتي التكاملين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 32+24=56 \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: نسيان ضرب المعامل $3$ في القيمة المعطاة، أو الخطأ في تبسيط $28-(-4)=32$.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int_{-1}^{7}[4+3f(x)]\,dx=32+24=56$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -198,11 +652,60 @@
         <button class="neu-btn" data-reveal-steps="steps-ex32">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا كان $\displaystyle\int_{1}^{5}f(x)\,dx=-4$ و $\displaystyle\int_{1}^{5}[3f(x)+2g(x)]\,dx=6$، جد قيمة $\displaystyle\int_{1}^{5}g(x)\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> قيمة $\displaystyle\int_{1}^{5}g(x)\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\displaystyle\int_{1}^{5}f(x)\,dx=-4$، $\int_{1}^{5}[3f(x)+2g(x)]\,dx=6$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> الخاصيتان ⑦ و① ثم حل معادلة خطية</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex32">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نفكك بالخاصيتين ⑦ و ①: \( 3\displaystyle\int_{1}^{5}f(x)\,dx+2\int_{1}^{5}g(x)\,dx=6 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نعوّض القيمة المعلومة: \( 3(-4)+2\displaystyle\int_{1}^{5}g(x)\,dx=6 \Rightarrow -12+2\int_{1}^{5}g(x)\,dx=6 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( 2\displaystyle\int_{1}^{5}g(x)\,dx=18 \Rightarrow \int_{1}^{5}g(x)\,dx=9 \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نفصل التكامل بالخاصيتين ⑦ و①</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle\int_{1}^{5}[3f(x)+2g(x)]\,dx \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =3\displaystyle\int_{1}^{5}f(x)\,dx+2\int_{1}^{5}g(x)\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نساوي بالقيمة المعطاة $6$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 3\displaystyle\int_{1}^{5}f(x)\,dx+2\int_{1}^{5}g(x)\,dx=6 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض بالقيمة المعلومة $\int_{1}^{5}f(x)\,dx=-4$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 3(-4)+2\displaystyle\int_{1}^{5}g(x)\,dx=6 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نحسب $3\times(-4)$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 3\times(-4)=-12 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( -12+2\displaystyle\int_{1}^{5}g(x)\,dx=6 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">ننقل $-12$ ونجمع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 2\displaystyle\int_{1}^{5}g(x)\,dx=6+12 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =18 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نقسم الطرفين على 2</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int_{1}^{5}g(x)\,dx=\dfrac{18}{2}=9 \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: نسيان القسمة على $2$ في الخطوة الأخيرة، أو الخطأ في نقل $-12$.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int_{1}^{5}g(x)\,dx=9$. ∎</div>
     </div>
   </section>
 
@@ -300,8 +803,12 @@
 
   <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
     <div class="card neu">
-      <h2>🗺 خريطة الدرس الذهنية</h2>
-      <div class="mindmap-wrap">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l5" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l5">
         <svg viewBox="0 0 820 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الخامس">
           <line x1="410" y1="190" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
           <line x1="410" y1="190" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>

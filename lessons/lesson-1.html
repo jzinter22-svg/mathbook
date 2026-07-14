@@ -92,51 +92,206 @@
         <button class="neu-btn" data-reveal-steps="steps-ex1" data-show-label="إظهار خطوات الحل" data-hide-label="إخفاء خطوات الحل">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا كانت $f(x)=5x^4$ فأثبت أن الدالة المقابلة للدالة $f(x)$ هي $F(x)=x^5+c$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إثبات $F'(x)=f(x)$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=5x^4,\; F(x)=x^5+c$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تعريف 4-1 · قاعدة الأس $\dfrac{d}{dx}x^n=nx^{n-1}$</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex1">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">حسب تعريف 4-1، يجب أن نتحقق أن $F'(x) = f(x)$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نشتق $F(x)=x^5+c$: \( F'(x) = 5x^{4} \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">بما أن $F'(x) = 5x^4 = f(x)$، إذن $F(x)=x^5+c$ هي فعلاً الدالة المقابلة لـ $f(x)$. ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نشتق $F(x)$ حداً حداً</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F'(x)=\dfrac{d}{dx}(x^5)+\dfrac{d}{dx}(c) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">قاعدة الأس على $x^5$ ($n=5$)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{d}{dx}(x^5)=5x^{5-1} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =5x^{4} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">مشتقة أي ثابت = صفر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{d}{dx}(c)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نجمع الناتجين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F'(x)=5x^4+0 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F'(x)=5x^4 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نقارن بالمعطى $f(x)=5x^4$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F'(x)=5x^4=f(x)\quad ✓ \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: كتابة $F'(x)=5x^4+c$. تذكّر: مشتقة أي ثابت $=0$، فـ $c$ يختفي بعد الاشتقاق.</span>
+      </div>
+      <div class="exercise-final">✓ $F'(x)=f(x)=5x^4 \;\Rightarrow\; F(x)=x^5+c$ هي الدالة المقابلة لـ $f(x)$. ∎</div>
     </div>
 
-    <div class="example fade-up">
+    <div class="example exercise-card fade-up">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
         <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا كانت $f:[1,2]\to\mathbb{R}$، $f(x)=3x^2$، أثبت أن $F(x)=x^3+c$ هي الدالة المقابلة لها على $[1,2]$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إثبات $F'(x)=f(x)$ على $[1,2]$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=3x^2,\; F(x)=x^3+c$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تعريف 4-1</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex2">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نشتق $F(x)=x^3+c$: \( F'(x)=3x^2 \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نقارن: $F'(x) = 3x^2 = f(x)$ لكل $x\in[1,2]$.</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">إذن $F:[1,2]\to\mathbb{R},\; F(x)=x^3+c$ هي الدالة المقابلة المطلوبة. ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نشتق الحد $x^3$ ($n=3$)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{d}{dx}(x^3)=3x^{3-1} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =3x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نشتق الثابت $c$ ونجمع</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F'(x)=3x^2+\underbrace{0}_{\frac{d}{dx}(c)} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F'(x)=3x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نقارن — العلاقة جبرية عامة فتصح لكل $x\in[1,2]$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F'(x)=3x^2=f(x)\quad ✓ \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="exercise-final">✓ $F'(x)=3x^2=f(x)$ لكل $x\in[1,2] \;\Rightarrow\; F(x)=x^3+c$ هي الدالة المقابلة على $[1,2]$. ∎</div>
     </div>
 
-    <div class="example fade-up">
+    <div class="example exercise-card fade-up">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
         <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">أثبت أن $F(x)=\sqrt{1-x^2}$ هي الدالة المقابلة للدالة $f(x)=\dfrac{-x}{\sqrt{1-x^2}}$، ثم عبّر عنها رمزياً باستخدام رمز التكامل.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إثبات $F'(x)=f(x)$، ثم صيغة $\int$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $F(x)=\sqrt{1-x^2},\; f(x)=\dfrac{-x}{\sqrt{1-x^2}}$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تعريف 4-1 + قاعدة السلسلة</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex3">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكتب $F(x)=(1-x^2)^{\frac12}$ ونشتقها بقاعدة السلسلة: \( F'(x)=\tfrac12(1-x^2)^{-\frac12}\cdot(-2x) \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نبسّط: \( F'(x)=\dfrac{-2x}{2\sqrt{1-x^2}} = \dfrac{-x}{\sqrt{1-x^2}} = f(x) \) ✓</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">إذن $F$ هي الدالة المقابلة لـ $f$، ورمزياً: \[ \int \frac{-x}{\sqrt{1-x^2}}\,dx = \sqrt{1-x^2}+c \]</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكتب الجذر كأس كسري: $u=1-x^2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(x)=(1-x^2)^{\frac12} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">قاعدة السلسلة: $(u^n)'=n\,u^{n-1}\cdot u'$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( u'=\dfrac{d}{dx}(1-x^2)=0-2x=-2x \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">\( F'(x)=\tfrac12(1-x^2)^{-\frac12}\cdot(-2x) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نضرب المعاملات: $\tfrac12\times(-2x)=-x$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F'(x)=-x\,(1-x^2)^{-\frac12} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F'(x)=\dfrac{-x}{\sqrt{1-x^2}} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نقارن بالمعطى</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F'(x)=\dfrac{-x}{\sqrt{1-x^2}}=f(x)\quad ✓ \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نكتب العلاقة برمز التكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\[ \int \frac{-x}{\sqrt{1-x^2}}\,dx = \sqrt{1-x^2}+c \]</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: نسيان ضرب $u'=-2x$ (قاعدة السلسلة). كل جذر أو قوس يحتوي تعبيراً بـ $x$ يحتاج ضرباً في مشتقة الداخل.</span>
+      </div>
+      <div class="exercise-final">✓ $F'(x)=f(x)=\dfrac{-x}{\sqrt{1-x^2}} \;\Rightarrow\; \displaystyle\int \frac{-x}{\sqrt{1-x^2}}\,dx = \sqrt{1-x^2}+c$. ∎</div>
     </div>
 
-    <div class="example fade-up">
+    <div class="example exercise-card fade-up">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">4</span> مثال 4</div>
         <button class="neu-btn" data-reveal-steps="steps-ex4">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">إذا كانت $F(x)$ هي الدالة المقابلة للدالة $f(x)=ax+b$، وكان $F'(2)=7$، $F''(2)=5$، حيث $a,b\in\mathbb{R}$، جد قيمة كل من $a,b$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد $a,b$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=ax+b,\; F'(2)=7,\; F''(2)=5$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $F'(x)=f(x)$ ثم اشتقاق ثانٍ</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex4">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">بما أن $F$ الدالة المقابلة لـ $f$، فإن $F'(x)=f(x)=ax+b$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نشتق مرة أخرى: $F''(x)=a$. وبما أن $F''(2)=5$، فإن $a=5$.</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض في $F'(x)=ax+b$ عند $x=2$: $F'(2)=a(2)+b=7 \Rightarrow 5(2)+b=7 \Rightarrow 10+b=7$</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">إذن $b=7-10=-3$. النتيجة: $a=5,\; b=-3$. ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">حسب تعريف 4-1</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F'(x)=f(x)=ax+b \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نشتق مرة ثانية</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F''(x)=\underbrace{a}_{(ax)'}+\underbrace{0}_{(b)'} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F''(x)=a \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوض بالشرط $F''(2)=5$ ($F''$ ثابتة، لا تعتمد على $x$)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( a=5 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نعوض $a=5$ في $F'(x)=ax+b$ ثم $x=2$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F'(2)=5(2)+b=7 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( 10+b=7 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">ننقل $10$ (تتغيّر الإشارة)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( b=7-10 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( b=-3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">تحقّق: $f(x)=5x-3 \Rightarrow F'(2)=10-3=7$ ✓، $F''(2)=5$ ✓</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( a=5\, ,\; b=-3 \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: محاولة إيجاد $b$ قبل $a$. ابدأ دائماً بالشرط الذي يحتوي مجهولاً واحداً ($F''(x)=a$).</span>
+      </div>
+      <div class="exercise-final">✓ $a=5,\; b=-3$. ∎</div>
     </div>
   </section>
 
@@ -234,8 +389,12 @@
 
   <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
     <div class="card neu">
-      <h2>🗺 خريطة الدرس الذهنية</h2>
-      <div class="mindmap-wrap">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l1" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l1">
         <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الأول">
           <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
           <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>

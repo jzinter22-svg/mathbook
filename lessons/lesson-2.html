@@ -97,7 +97,40 @@
     </div>
     <div class="callout tip fade-up" style="margin-top:1rem">
       <span class="icon">✍️</span>
-      <span>من الآن فصاعداً سنختصر الخطوات ولن نوزّع إشارة التكامل على كل حد — سنكامل مباشرة.</span>
+      <span>من الآن فصاعداً سنكامل حداً حداً مباشرة دون كتابة إشارة التكامل بشكل منفصل لكل حد — لكننا سنستمر في توضيح كل خطوة من خطوات الحل بالتفصيل في الأمثلة القادمة.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة مصغّرة: القواعد والخواص</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l2-topic" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">قبل الانتقال إلى الأمثلة، هذه خريطة سريعة تربط القاعدتين الأساسيتين بالخاصيتين اللتين تُستخدمان معهما.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l2-topic">
+        <svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة مصغّرة لقواعد وخواص التكامل">
+          <line x1="410" y1="160" x2="150" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="160" x2="670" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="160" x2="150" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="160" x2="670" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <g><circle cx="410" cy="160" r="56" fill="#7c6fee"/>
+            <text x="410" y="156" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">قواعد وخواص</text>
+            <text x="410" y="172" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">التكامل</text></g>
+          <g><circle cx="150" cy="70" r="46" fill="#3fa9f5"/>
+            <text x="150" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">∫a dx=ax+c</text>
+            <text x="150" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">القاعدة 1</text></g>
+          <g><circle cx="670" cy="70" r="46" fill="#2fd18f"/>
+            <text x="670" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">xⁿ⁺¹/(n+1)</text>
+            <text x="670" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">القاعدة 2</text></g>
+          <g><circle cx="150" cy="250" r="46" fill="#ffab5e"/>
+            <text x="150" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">جمع/فرق</text>
+            <text x="150" y="262" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">خاصية 1</text></g>
+          <g><circle cx="670" cy="250" r="46" fill="#ff6b9d"/>
+            <text x="670" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">ثابت خارج ∫</text>
+            <text x="670" y="262" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">خاصية 2</text></g>
+        </svg>
+      </div>
     </div>
   </section>
 
@@ -110,13 +143,74 @@
         <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">باستخدام قواعد وخواص التكامل، جد ثلاث دوال مقابلة للدالة $f(x)=3x^2+5$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> ثلاث دوال مقابلة مختلفة</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=3x^2+5$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> القاعدتان 1، 2 + خاصية الجمع</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex5">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكامل حداً حداً: \( F(x)=\int(3x^2+5)\,dx = \dfrac{3x^3}{3}+5x+c = x^3+5x+c \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">لإيجاد ثلاث دوال محددة، نختار ثلاث قيم عشوائية بدلاً من $c$.</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">$c=1 \Rightarrow F_1(x)=x^3+5x+1$</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">$c=-\tfrac12 \Rightarrow F_2(x)=x^3+5x-\tfrac12$</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">$c=\sqrt5 \Rightarrow F_3(x)=x^3+5x+\sqrt5$ ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نفصل التكامل بخاصية الجمع</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int(3x^2+5)\,dx = \int 3x^2\,dx + \int 5\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نخرج الثابت 3 (خاصية الضرب بثابت)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int 3x^2\,dx = 3\int x^2\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">قاعدة رفع القوة على $x^2$: $n+1=3$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int x^2\,dx = \frac{x^{3}}{3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نضرب في 3 ونختصر</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \displaystyle 3\cdot \frac{x^{3}}{3} = \frac{3x^{3}}{3} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \displaystyle \frac{3x^{3}}{3} = x^{3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">تكامل الحد الثابت 5 (القاعدة 1)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int 5\,dx = 5x \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نجمع الحدين ونضيف $c$ مرة واحدة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int(3x^2+5)\,dx = x^3+5x+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نختار $c=1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F_1(x)=x^3+5x+1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نختار $c=-\tfrac12$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F_2(x)=x^3+5x-\tfrac12 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نختار $c=\sqrt5$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F_3(x)=x^3+5x+\sqrt5 \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>لا تختر نفس قيمة $c$ في الدوال الثلاث، ولا تنسَ $+c$ في الصيغة العامة أصلاً.</span>
+      </div>
+      <div class="exercise-final">✓ $F(x)=x^3+5x+c \;\Rightarrow\; F_1=x^3+5x+1,\ F_2=x^3+5x-\tfrac12,\ F_3=x^3+5x+\sqrt5$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -125,11 +219,90 @@
         <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">باستخدام قواعد وخواص التكامل، جد الدالة المقابلة للدالة $f(x)=3x^2-5$ إذا عُلم أن $F(1)=2$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> الدالة المقابلة المحددة (شرط ابتدائي)</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $f(x)=3x^2-5,\; F(1)=2$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> القاعدتان 1، 2 ثم تعويض الشرط الابتدائي</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex6">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( F(x)=\int(3x^2-5)\,dx = x^3-5x+c \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نستخدم الشرط $F(1)=2$: \( (1)^3-5(1)+c = 2 \Rightarrow -4+c=2 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">إذن $c=6$، وبالتالي: $F(x)=x^3-5x+6$ ∎ (هذه المرة دالة واحدة محددة تماماً، وليست عائلة).</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نفصل التكامل بخاصية الفرق</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int(3x^2-5)\,dx = \int 3x^2\,dx - \int 5\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نخرج الثابت 3</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int 3x^2\,dx = 3\int x^2\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">قاعدة رفع القوة: $n+1=3$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int x^2\,dx=\frac{x^3}{3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نضرب في 3 ونختصر</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 3\cdot\dfrac{x^3}{3}=\dfrac{3x^3}{3} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \dfrac{3x^3}{3}=x^3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">تكامل الحد الثابت $-5$ (القاعدة 1)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int(-5)\,dx=-5x \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نجمع ونضيف $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(x)=x^3-5x+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=1$ (الشرط $F(1)=2$)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(1)=(1)^3-5(1)+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نحسب $(1)^3=1$ و $5(1)=5$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F(1)=1-5+c \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( F(1)=-4+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نساوي بالشرط المعطى $F(1)=2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( -4+c=2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">ننقل $-4$ للطرف الآخر (تتغيّر الإشارة)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( c=2+4 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( c=6 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نعوّض $c=6$ في الصيغة العامة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F(x)=x^3-5x+6 \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>عوّض $x=1$ في جميع حدود $F(x)$، وانتبه لإشارة $1-5=-4$.</span>
+      </div>
+      <div class="exercise-final">✓ $F(x)=x^3-5x+c,\ F(1)=2 \Rightarrow c=6 \Rightarrow F(x)=x^3-5x+6$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -138,11 +311,52 @@
         <button class="neu-btn" data-reveal-steps="steps-ex7a">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt[3]{x^5}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> حساب $\int \sqrt[3]{x^5}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\sqrt[3]{x^5}$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $\sqrt[n]{x^m}=x^{m/n}$ ثم القاعدة 2</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex7a">
-        <li class="step"><span class="step-dot">💡</span><div class="step-body"><b>المفتاح:</b> نحوّل الجذر إلى أس كسري $\sqrt[n]{x^m}=x^{m/n}$ أولاً، ثم نطبّق القاعدة الثانية مباشرة.</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt[3]{x^5}\,dx = \int x^{5/3}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{8/3}}{8/3}+c = \dfrac{3}{8}\sqrt[3]{x^8}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحوّل الجذر إلى أس كسري: $\sqrt[n]{x^m}=x^{m/n}$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \sqrt[3]{x^5}=x^{5/3} \;\Rightarrow\; \displaystyle\int x^{5/3}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نزيد الأس بمقدار 1: نوحّد المقام $1=\tfrac33$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 1=\dfrac{3}{3} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \dfrac53+\dfrac33=\dfrac83 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة بالأس الجديد</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int x^{5/3}\,dx=\dfrac{x^{8/3}}{8/3}+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نحوّل القسمة إلى ضرب بالمقلوب $\tfrac38$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{x^{8/3}}{8/3}=x^{8/3}\times\dfrac38 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \dfrac38 x^{8/3}+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نعيد الأس الكسري إلى صيغة جذر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac38 x^{8/3}+c=\dfrac{3}{8}\sqrt[3]{x^8}+c \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>القاعدة الثانية لا تنطبق على صيغة الجذر مباشرة — حوّل أولاً.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \sqrt[3]{x^5}\,dx = \dfrac{3}{8}\sqrt[3]{x^8}+c$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -151,10 +365,68 @@
         <button class="neu-btn" data-reveal-steps="steps-ex7b">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل: $\displaystyle\int x^2\sqrt[5]{x^3}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> حساب $\int x^2\sqrt[5]{x^3}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $x^2\sqrt[5]{x^3}$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تحويل الجذر لأس، $x^a\cdot x^b=x^{a+b}$، ثم القاعدة 2</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex7b">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نحوّل الجذر لأس كسري ونجمع الأسس: \( \int x^2\sqrt[5]{x^3}\,dx = \int x^{2+3/5}\,dx = \int x^{13/5}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{18/5}}{18/5}+c = \dfrac{5}{18}\sqrt[5]{x^{18}}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحوّل الجذر: $\sqrt[5]{x^3}=x^{3/5}$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int x^2\cdot x^{3/5}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">ندمج الأسس المتماثلة الأساس: $x^a\cdot x^b=x^{a+b}$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2\cdot x^{3/5}=x^{2+3/5} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نوحّد المقام: $2=\tfrac{10}{5}$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 2=\dfrac{10}{5} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نجمع الكسرين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{10}{5}+\dfrac35=\dfrac{13}{5} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \displaystyle\int x^2\sqrt[5]{x^3}\,dx=\int x^{13/5}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نزيد الأس بمقدار 1: $\tfrac{13}{5}+\tfrac55$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{13}{5}+\dfrac55=\dfrac{18}{5} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int x^{13/5}\,dx=\dfrac{x^{18/5}}{18/5}+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نحوّل القسمة إلى ضرب بالمقلوب $\tfrac{5}{18}$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{x^{18/5}}{18/5}=\dfrac{5}{18}x^{18/5} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نعيد الأس الكسري إلى جذر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{5}{18}x^{18/5}+c=\dfrac{5}{18}\sqrt[5]{x^{18}}+c \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>لا تنسَ دمج $x^2$ مع $x^{3/5}$ بجمع الأسين قبل التكامل.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int x^2\sqrt[5]{x^3}\,dx = \dfrac{5}{18}\sqrt[5]{x^{18}}+c$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -163,10 +435,48 @@
         <button class="neu-btn" data-reveal-steps="steps-ex7c">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt{x}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> حساب $\int \sqrt{x}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\sqrt{x}$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $\sqrt{x}=x^{1/2}$ ثم القاعدة 2</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex7c">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt{x}\,dx = \int x^{1/2}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{3/2}}{3/2}+c = \dfrac{2}{3}\sqrt{x^3}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحوّل: $\sqrt{x}=x^{1/2}$ (جذر بلا رقم = جذر تربيعي)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int \sqrt{x}\,dx = \int x^{1/2}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نزيد الأس بمقدار 1: $\tfrac12+\tfrac22$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac12+\dfrac22=\dfrac32 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int x^{1/2}\,dx=\dfrac{x^{3/2}}{3/2}+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نحوّل القسمة إلى ضرب بالمقلوب $\tfrac23$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{x^{3/2}}{3/2}=\dfrac23 x^{3/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نعيد الصيغة إلى جذر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac23 x^{3/2}+c=\dfrac{2}{3}\sqrt{x^3}+c \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>الجذر بلا رقم فوقه هو جذر تربيعي أي أس $\tfrac12$، وليس $x^2$.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \sqrt{x}\,dx = \dfrac{2}{3}\sqrt{x^3}+c$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -175,10 +485,48 @@
         <button class="neu-btn" data-reveal-steps="steps-ex7d">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt[5]{x^{-3}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> حساب $\int \sqrt[5]{x^{-3}}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\sqrt[5]{x^{-3}}$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تحويل الجذر لأس سالب ثم القاعدة 2</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex7d">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt[5]{x^{-3}}\,dx = \int x^{-3/5}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{2/5}}{2/5}+c = \dfrac{5}{2}\sqrt[5]{x^2}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحوّل: $\sqrt[5]{x^{-3}}=x^{-3/5}$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int \sqrt[5]{x^{-3}}\,dx = \int x^{-3/5}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نزيد الأس بمقدار 1 (نجمع دوماً حتى مع أس سالب): $-\tfrac35+\tfrac55$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( -\dfrac35+\dfrac55=\dfrac25 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int x^{-3/5}\,dx=\dfrac{x^{2/5}}{2/5}+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نحوّل القسمة إلى ضرب بالمقلوب $\tfrac52$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{x^{2/5}}{2/5}=\dfrac52 x^{2/5} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نعيد الصيغة إلى جذر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac52 x^{2/5}+c=\dfrac{5}{2}\sqrt[5]{x^2}+c \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>نزيد 1 دائماً (لا نطرح) حتى مع أس سالب: $-\tfrac35+1=\tfrac25$.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \sqrt[5]{x^{-3}}\,dx = \dfrac{5}{2}\sqrt[5]{x^2}+c$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -187,10 +535,56 @@
         <button class="neu-btn" data-reveal-steps="steps-ex7e">إظهار خطوات الحل</button>
       </div>
       <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \sqrt{x^{-7}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> حساب $\int \sqrt{x^{-7}}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $\sqrt{x^{-7}}$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تحويل الجذر لأس سالب، القاعدة 2، ثم نقل الأس السالب للمقام</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex7e">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">\( \int \sqrt{x^{-7}}\,dx = \int x^{-7/2}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{x^{-5/2}}{-5/2}+c = \dfrac{-2}{5\sqrt{x^5}}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحوّل: $\sqrt{x^{-7}}=x^{-7/2}$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int \sqrt{x^{-7}}\,dx = \int x^{-7/2}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نزيد الأس بمقدار 1: $-\tfrac72+\tfrac22$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( -\dfrac72+\dfrac22=-\dfrac52 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة (الأس الناتج لا يزال سالباً)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int x^{-7/2}\,dx=\dfrac{x^{-5/2}}{-5/2}+c \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نحوّل القسمة إلى ضرب بمقلوب $-\tfrac52$ (الإشارة تبقى سالبة)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{x^{-5/2}}{-5/2}=-\dfrac25 x^{-5/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">الأس سالب: ننقله للمقام $x^{-n}=\tfrac{1}{x^n}$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( -\dfrac25 x^{-5/2}=-\dfrac25\cdot\dfrac{1}{x^{5/2}} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =\dfrac{-2}{5x^{5/2}} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نحوّل $x^{5/2}$ في المقام إلى جذر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{-2}{5x^{5/2}}=\dfrac{-2}{5\sqrt{x^5}} \) ∎</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>انتبه لإشارة القسمة على $-\tfrac52$، والأس السالب لا يتحوّل مباشرة لجذر في البسط.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \sqrt{x^{-7}}\,dx = \dfrac{-2}{5\sqrt{x^5}}+c$. ∎</div>
     </div>
   </section>
 
@@ -288,8 +682,12 @@
 
   <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
     <div class="card neu">
-      <h2>🗺 خريطة الدرس الذهنية</h2>
-      <div class="mindmap-wrap">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l2" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري شامل يربط بين تعريف التكامل غير المحدد، قاعدتيه، وخاصيتيه — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l2">
         <svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الثاني">
           <line x1="410" y1="160" x2="150" y2="70" stroke="#b3bdcc" stroke-width="2"/>
           <line x1="410" y1="160" x2="670" y2="70" stroke="#b3bdcc" stroke-width="2"/>

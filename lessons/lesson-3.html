@@ -46,10 +46,47 @@
           <button class="neu-btn" data-reveal-steps="steps-ex8a">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int (x-2)(2x+3)\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\int(x-2)(2x+3)\,dx$</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> حاصل ضرب قوسين خطيين</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> وزّع أولاً، ثم قاعدة الأس $\int x^n dx=\dfrac{x^{n+1}}{n+1}+c$</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex8a">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نوزّع: \( (x-2)(2x+3)=2x^2-x-6 \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">نكامل حداً حداً: \( \int(2x^2-x-6)dx = \dfrac{2x^3}{3}-\dfrac{x^2}{2}-6x+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body">
+            <p class="calc-note">نوزّع القوسين حداً حداً</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( x\cdot(2x+3)=2x^2+3x \)</div>
+              <div class="calc-line">\( -2\cdot(2x+3)=-4x-6 \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">
+            <p class="calc-note">نجمع النواتج ونختصر الحدود المتشابهة ($3x-4x$)</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( (x-2)(2x+3)=2x^2+3x-4x-6 \)</div>
+              <div class="calc-arrow">↓</div>
+              <div class="calc-line calc-box">\( =2x^2-x-6 \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body">
+            <p class="calc-note">نكامل كل حد بقاعدة الأس</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( \int 2x^2\,dx=\dfrac{2x^3}{3} \)</div>
+              <div class="calc-line">\( \int(-x)\,dx=\dfrac{-x^2}{2} \)</div>
+              <div class="calc-line">\( \int(-6)\,dx=-6x \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body">
+            <p class="calc-note">نجمع النواتج ونضيف ثابت التكامل</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( \int(2x^2-x-6)dx=\dfrac{2x^3}{3}-\dfrac{x^2}{2}-6x+c \)</div>
+            </div>
+          </div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span>التكامل لا يتوزع على الضرب — لا تكامل كل قوس على حدة ثم تضرب الناتجين.</span>
+        </div>
+        <div class="exercise-final">✓ $\displaystyle\int (x-2)(2x+3)\,dx=\dfrac{2x^3}{3}-\dfrac{x^2}{2}-6x+c$</div>
       </div>
 
       <div class="example exercise-card fade-up">
@@ -58,11 +95,54 @@
           <button class="neu-btn" data-reveal-steps="steps-ex8b">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int (x-1)(x+1)(2x-5)\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\int(x-1)(x+1)(2x-5)\,dx$</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> حاصل ضرب ثلاثة أقواس خطية</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> فرق مربعين لأسهل زوج، ثم توزيع، ثم قاعدة الأس</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex8b">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نوزّع أولاً الزوج الأول: $(x-1)(x+1)=x^2-1$</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">ثم نوزّع الباقي: $(x^2-1)(2x-5)=2x^3-5x^2-2x+5$</div></li>
-          <li class="step"><span class="step-dot">3</span><div class="step-body">نكامل حداً حداً: \( \int(2x^3-5x^2-2x+5)dx = \dfrac{x^4}{2}-\dfrac{5x^3}{3}-x^2+5x+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body">
+            <p class="calc-note">نطبّق فرق المربعين على $(x-1)(x+1)$</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( (x-1)(x+1)=x^2-1^2 \)</div>
+              <div class="calc-arrow">↓</div>
+              <div class="calc-line calc-box">\( =x^2-1 \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">
+            <p class="calc-note">نوزّع $(x^2-1)$ على القوس الثالث</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( x^2\cdot(2x-5)=2x^3-5x^2 \)</div>
+              <div class="calc-line">\( -1\cdot(2x-5)=-2x+5 \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body">
+            <p class="calc-note">نجمع النواتج (لا حدود متشابهة)</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( (x^2-1)(2x-5)=2x^3-5x^2-2x+5 \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body">
+            <p class="calc-note">نكامل كل حد بقاعدة الأس</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( \int 2x^3\,dx=\dfrac{2x^4}{4}=\dfrac{x^4}{2} \)</div>
+              <div class="calc-line">\( \int(-5x^2)\,dx=\dfrac{-5x^3}{3} \)</div>
+              <div class="calc-line">\( \int(-2x)\,dx=-x^2 \)</div>
+              <div class="calc-line">\( \int 5\,dx=5x \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">5</span><div class="step-body">
+            <p class="calc-note">نجمع النواتج ونضيف ثابت التكامل</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( \int(2x^3-5x^2-2x+5)dx = \dfrac{x^4}{2}-\dfrac{5x^3}{3}-x^2+5x+c \)</div>
+            </div>
+          </div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span>افحص كل زوج من الأقواس بحثاً عن نمط جاهز (فرق مربعين) قبل التوزيع العشوائي.</span>
+        </div>
+        <div class="exercise-final">✓ $\displaystyle\int (x-1)(x+1)(2x-5)\,dx=\dfrac{x^4}{2}-\dfrac{5x^3}{3}-x^2+5x+c$</div>
       </div>
     </div>
   </section>
@@ -77,10 +157,47 @@
           <button class="neu-btn" data-reveal-steps="steps-ex9a">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{x^2-9}{x-3}\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int \frac{x^2-9}{x-3}\,dx$</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $x^2-9$ فرق مربعين، المقام $x-3$</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> حلّل واختصر أولاً، ثم قاعدة الأس</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex9a">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط (فرق مربعين): \( \dfrac{x^2-9}{x-3}=\dfrac{(x-3)(x+3)}{x-3}=x+3 \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">\( \displaystyle\int(x+3)\,dx=\dfrac{x^2}{2}+3x+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body">
+            <p class="calc-note">نحلل البسط بقاعدة فرق المربعين</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( x^2-9=x^2-3^2 \)</div>
+              <div class="calc-arrow">↓</div>
+              <div class="calc-line calc-box">\( =(x-3)(x+3) \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">
+            <p class="calc-note">نختصر العامل المشترك $(x-3)$</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( \dfrac{x^2-9}{x-3}=\dfrac{(x-3)(x+3)}{x-3} \)</div>
+              <div class="calc-arrow">↓</div>
+              <div class="calc-line calc-box">\( =x+3 \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body">
+            <p class="calc-note">نكامل حداً حداً بقاعدة الأس وقاعدة الثابت</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( \int x\,dx=\dfrac{x^2}{2} \)</div>
+              <div class="calc-line">\( \int 3\,dx=3x \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body">
+            <p class="calc-note">نجمع النتيجتين ونضيف ثابت التكامل</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( \int(x+3)\,dx=\dfrac{x^2}{2}+3x+c \)</div>
+            </div>
+          </div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span>التكامل لا يتوزع على القسمة — بسّط الكسر جبرياً أولاً، لا تكامل البسط والمقام منفصلين.</span>
+        </div>
+        <div class="exercise-final">✓ $\displaystyle\int \frac{x^2-9}{x-3}\,dx=\dfrac{x^2}{2}+3x+c$</div>
       </div>
 
       <div class="example exercise-card fade-up">
@@ -89,10 +206,45 @@
           <button class="neu-btn" data-reveal-steps="steps-ex9b">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{x^2+5x+6}{x+2}\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int \frac{x^2+5x+6}{x+2}\,dx$</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $x^2+5x+6$، المقام $x+2$</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> حلّل بإيجاد عددين ضربهما $6$ ومجموعهما $5$، اختصر، ثم كامل</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex9b">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط: \( \dfrac{x^2+5x+6}{x+2}=\dfrac{(x+3)(x+2)}{x+2}=x+3 \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">\( \displaystyle\int(x+3)\,dx=\dfrac{x^2}{2}+3x+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body">
+            <p class="calc-note">نبحث عن عددين ضربهما $6$ ومجموعهما $5$</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( 3\times2=6\, ,\; 3+2=5 \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">
+            <p class="calc-note">نحلل البسط ونختصر مع المقام $(x+2)$</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( \dfrac{x^2+5x+6}{x+2}=\dfrac{(x+3)(x+2)}{x+2} \)</div>
+              <div class="calc-arrow">↓</div>
+              <div class="calc-line calc-box">\( =x+3 \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body">
+            <p class="calc-note">نكامل حداً حداً</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( \int x\,dx=\dfrac{x^2}{2} \)</div>
+              <div class="calc-line">\( \int 3\,dx=3x \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body">
+            <p class="calc-note">نجمع النتيجتين ونضيف ثابت التكامل</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( \int(x+3)\,dx=\dfrac{x^2}{2}+3x+c \)</div>
+            </div>
+          </div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span>تحقّق من شرطي الضرب والمجموع معاً — لا يكفي تحقق أحدهما فقط.</span>
+        </div>
+        <div class="exercise-final">✓ $\displaystyle\int \frac{x^2+5x+6}{x+2}\,dx=\dfrac{x^2}{2}+3x+c$</div>
       </div>
 
       <div class="example exercise-card fade-up">
@@ -101,10 +253,50 @@
           <button class="neu-btn" data-reveal-steps="steps-ex9c">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{3}{x^4}\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int \frac{3}{x^4}\,dx$</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> $x^4$ في المقام</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> ارفع المقام بأس سالب، ثم قاعدة الأس $\int x^n dx=\dfrac{x^{n+1}}{n+1}+c$</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex9c">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نرفع المقام للبسط بتغيير إشارة الأس: \( \int\frac{3}{x^4}dx = 3\int x^{-4}\,dx \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">\( = 3\cdot\dfrac{x^{-3}}{-3}+c = \dfrac{-1}{x^3}+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body">
+            <p class="calc-note">نرفع المقام إلى البسط بأس سالب</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( \dfrac{1}{x^4}=x^{-4} \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">
+            <p class="calc-note">نخرج الثابت $3$ خارج التكامل</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( \int\frac{3}{x^4}dx = 3\int x^{-4}\,dx \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body">
+            <p class="calc-note">قاعدة الأس: $-4+1=-3$</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( \int x^{-4}\,dx=\dfrac{x^{-3}}{-3} \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body">
+            <p class="calc-note">نضرب في الثابت $3$ ونختصر</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( 3\cdot\dfrac{x^{-3}}{-3}=-x^{-3} \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">5</span><div class="step-body">
+            <p class="calc-note">نعيد كتابة الأس السالب بصيغة كسر ونضيف $c$</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( -x^{-3}=\dfrac{-1}{x^3} \)</div>
+              <div class="calc-arrow">↓</div>
+              <div class="calc-line calc-box">\( \dfrac{-1}{x^3}+c \)</div>
+            </div>
+          </div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span>احذر جمع الأس السالب: $-4+1=-3$ (اقتراب من الصفر)، وليس $-5$.</span>
+        </div>
+        <div class="exercise-final">✓ $\displaystyle\int \frac{3}{x^4}\,dx=\dfrac{-1}{x^3}+c$</div>
       </div>
 
       <div class="example exercise-card fade-up">
@@ -113,10 +305,52 @@
           <button class="neu-btn" data-reveal-steps="steps-ex9d">إظهار خطوات الحل</button>
         </div>
         <div class="example-problem">جد قيمة التكامل: $\displaystyle\int \frac{-2}{\sqrt[5]{x^2}}\,dx$</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+          <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int \frac{-2}{\sqrt[5]{x^2}}\,dx$</p>
+          <p style="margin:.2rem 0"><b>📋 المعطى:</b> جذر خماسي في المقام</p>
+          <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> جذر ← أس كسري ← أس سالب في البسط ← قاعدة الأس</p>
+        </div>
         <ol class="steps hidden-steps" id="steps-ex9d">
-          <li class="step"><span class="step-dot">1</span><div class="step-body">نكتب الجذر كأس كسري ونرفعه للبسط: \( \int\frac{-2}{\sqrt[5]{x^2}}dx = -2\int x^{-2/5}\,dx \)</div></li>
-          <li class="step"><span class="step-dot">2</span><div class="step-body">\( = -2\cdot\dfrac{x^{3/5}}{3/5}+c = -\dfrac{10}{3}\sqrt[5]{x^3}+c \) ∎</div></li>
+          <li class="step"><span class="step-dot">1</span><div class="step-body">
+            <p class="calc-note">نكتب الجذر الخماسي كأس كسري</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( \sqrt[5]{x^2}=x^{2/5} \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">2</span><div class="step-body">
+            <p class="calc-note">نرفع البسط بتغيير إشارة الأس، ونخرج الثابت $-2$</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( \dfrac{1}{x^{2/5}}=x^{-2/5} \)</div>
+              <div class="calc-arrow">↓</div>
+              <div class="calc-line calc-box">\( \int\frac{-2}{\sqrt[5]{x^2}}dx = -2\int x^{-2/5}\,dx \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">3</span><div class="step-body">
+            <p class="calc-note">قاعدة الأس: $-\tfrac25+1=\tfrac35$</p>
+            <div class="calc-flow">
+              <div class="calc-line">\( \int x^{-2/5}\,dx=\dfrac{x^{3/5}}{3/5} \)</div>
+              <div class="calc-arrow">↓</div>
+              <div class="calc-line calc-box">\( =\dfrac{5}{3}x^{3/5} \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">4</span><div class="step-body">
+            <p class="calc-note">نضرب في الثابت $-2$ الذي أخرجناه</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( -2\cdot\dfrac{5}{3}x^{3/5}=-\dfrac{10}{3}x^{3/5} \)</div>
+            </div>
+          </div></li>
+          <li class="step"><span class="step-dot">5</span><div class="step-body">
+            <p class="calc-note">نعيد صيغة الجذر ونضيف ثابت التكامل</p>
+            <div class="calc-flow">
+              <div class="calc-line calc-box">\( -\dfrac{10}{3}\sqrt[5]{x^3}+c \)</div>
+            </div>
+          </div></li>
         </ol>
+        <div class="callout warn" style="margin-top:.8rem">
+          <span class="icon">⚠️</span>
+          <span>لا تنسَ ضرب الثابت $-2$ الذي أخرجته في بداية الحل بالناتج النهائي.</span>
+        </div>
+        <div class="exercise-final">✓ $\displaystyle\int \frac{-2}{\sqrt[5]{x^2}}\,dx=-\dfrac{10}{3}\sqrt[5]{x^3}+c$</div>
       </div>
     </div>
   </section>
@@ -133,6 +367,53 @@
     </div>
   </section>
 
+  <section class="section fade-up">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة مصغّرة: المهارات الثلاث</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l3-topic" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">قبل أن ننتقل إلى الأمثلة، هذه خريطة سريعة تلخّص المهارات الثلاث التي تعلّمناها، ومتى نستخدم كل واحدة منها.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l3-topic">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية مصغّرة لمهارات التكامل الثلاث">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#ff6b9d"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">مهارات</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">التكامل</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#7c6fee"/>
+            <text x="150" y="70" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">1️⃣ توزيع</text>
+            <text x="150" y="84" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">حاصل الضرب</text>
+            <text x="150" y="98" text-anchor="middle" fill="#fff" font-weight="700" font-size="9" font-family="Cairo,sans-serif">(x-2)(2x+3)</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="670" y="70" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">2️⃣ تبسيط</text>
+            <text x="670" y="84" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">حاصل القسمة</text>
+            <text x="670" y="98" text-anchor="middle" fill="#fff" font-weight="700" font-size="9" font-family="Cairo,sans-serif">تحليل واختصار</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#2fd18f"/>
+            <text x="150" y="270" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">3️⃣ التعويض</text>
+            <text x="150" y="284" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">المتسلسل ⭐</text>
+            <text x="150" y="298" text-anchor="middle" fill="#fff" font-weight="700" font-size="9" font-family="Cairo,sans-serif">[f(x)]ⁿf'(x)</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ffab5e"/>
+            <text x="670" y="270" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">❓ متى أستخدم</text>
+            <text x="670" y="284" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">كل تقنية؟</text>
+            <text x="670" y="298" text-anchor="middle" fill="#fff" font-weight="700" font-size="8.5" font-family="Cairo,sans-serif">افحص شكل التكامل أولاً</text></g>
+        </svg>
+        <div class="neu-inset" style="padding:.9rem 1.1rem;margin-top:.8rem">
+          <p style="margin:.2rem 0"><b>① توزيع حاصل الضرب:</b> استخدمه عندما ترى أقواساً مضروبة ببعضها <u>بلا</u> أس ظاهر على أحدها (مثل $(x-2)(2x+3)$).</p>
+          <p style="margin:.2rem 0"><b>② تبسيط حاصل القسمة:</b> استخدمه عندما ترى كسراً جبرياً — حاول تحليل البسط والاختصار مع المقام، أو حوّل المقام إلى بسط بأس سالب إن تعذّر التحليل.</p>
+          <p style="margin:.2rem 0"><b>③ التعويض المتسلسل:</b> استخدمه عندما ترى قوساً (أو جذراً) مرفوعاً لأس، ومشتقة ما بداخله موجودة (أو قريبة بمعامل) في الجزء الآخر من التكامل.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
     <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة على التعويض المتسلسل</h2>
     <p class="lead" style="margin-top:0">لاحظ الملاحظة الملوّنة "مشتقة القوس من الداخل" في كل مثال — هي مفتاح الحل.</p>
@@ -141,58 +422,308 @@
       <div class="example-head"><div class="example-title"><span class="example-badge">10</span> مثال 10</div>
         <button class="neu-btn" data-reveal-steps="steps-ex10">إظهار خطوات الحل</button></div>
       <div class="example-problem">$\int (3x^2+5x-3)^3(6x+5)\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\int (3x^2+5x-3)^3(6x+5)\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> قوس للأس $3$ مضروب في $(6x+5)$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $\int[f(x)]^n f'(x)\,dx=\dfrac{[f(x)]^{n+1}}{n+1}+c$ — تحقّق من التطابق أولاً</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex10">
-        <li class="step"><span class="step-dot">🔑</span><div class="step-body">$(6x+5)$ هي بالضبط مشتقة $3x^2+5x-3$ — تطابق تام، فتُهمل عند التكامل.</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نزيد أس القوس بمقدار 1 (من 3 إلى 4) ونقسم على الأس الجديد:</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{(3x^2+5x-3)^4}{4}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body">
+          <p class="calc-note">نشتق داخل القوس للتحقق من التطابق</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{d}{dx}(3x^2+5x-3)=6x+5 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( 6x+5=6x+5\quad ✓\text{ تطابق تام} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة: نزيد الأس ونقسم عليه</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 3+1=4 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \dfrac{(3x^2+5x-3)^4}{4} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نضيف ثابت التكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(3x^2+5x-3)^4}{4}+c \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>لا تطبّق القاعدة قبل التحقق أن العامل الآخر هو فعلاً مشتقة الداخل.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int (3x^2+5x-3)^3(6x+5)\,dx=\dfrac{(3x^2+5x-3)^4}{4}+c$</div>
     </div>
 
     <div class="example fade-up">
       <div class="example-head"><div class="example-title"><span class="example-badge">12</span> مثال 12</div>
         <button class="neu-btn" data-reveal-steps="steps-ex12">إظهار خطوات الحل</button></div>
       <div class="example-problem">$\int x^2\sqrt{x^3+8}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\int x^2\sqrt{x^3+8}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> جذر $x^3+8$ مضروب في $x^2$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> جذر ← أس كسري، ثم اضبط المعامل الناقص</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex12">
-        <li class="step"><span class="step-dot">🔑</span><div class="step-body">مشتقة $x^3+8$ هي $3x^2$، لكن الموجود هو $x^2$ فقط — ناقص المعامل 3.</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نضرب $x^2$ في 3 داخل التكامل، ونقسم التكامل كله على 3 (حتى لا تتغيّر قيمته):</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac13\int (3x^2)(x^3+8)^{1/2}dx = \dfrac13\cdot\dfrac{(x^3+8)^{3/2}}{3/2}+c \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( = \dfrac{2}{9}\sqrt{(x^3+8)^3}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكتب الجذر بصيغة أس كسري</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \sqrt{x^3+8}=(x^3+8)^{1/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body">
+          <p class="calc-note">نشتق الداخل ونقارن بالعامل الموجود</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{d}{dx}(x^3+8)=3x^2 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \text{الموجود }x^2\text{، المطلوب }3x^2\text{ — ناقصون }3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نضرب داخلاً بـ$3$ ونقسم التكامل على $3$ خارجاً</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int x^2(x^3+8)^{1/2}dx=\dfrac13\int (3x^2)(x^3+8)^{1/2}dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة: $\tfrac12+1=\tfrac32$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{(x^3+8)^{3/2}}{3/2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =\dfrac23(x^3+8)^{3/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نضرب في $\tfrac13$، نعيد صيغة الجذر، ونضيف $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac13\cdot\dfrac23(x^3+8)^{3/2}=\dfrac29(x^3+8)^{3/2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \dfrac{2}{9}\sqrt{(x^3+8)^3}+c \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>ضربت داخل التكامل بـ$3$؟ يجب أن تقسم التكامل كله على $3$ من الخارج فوراً.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int x^2\sqrt{x^3+8}\,dx=\dfrac{2}{9}\sqrt{(x^3+8)^3}+c$</div>
     </div>
 
     <div class="example fade-up">
       <div class="example-head"><div class="example-title"><span class="example-badge">15</span> مثال 15</div>
         <button class="neu-btn" data-reveal-steps="steps-ex15">إظهار خطوات الحل</button></div>
       <div class="example-problem">$\int (2x^6-3x)^4\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\int (2x^6-3x)^4\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> قوس للأس $4$ بلا عامل ثانٍ ظاهر خارجه</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> حلّل داخل القوس لكشف العامل الثاني، ثم طبّق التعويض المتسلسل</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex15">
-        <li class="step"><span class="step-dot">🔑</span><div class="step-body">نحلّل داخل القوس أولاً: $2x^6-3x = x(2x^5-3)$، إذن $(2x^6-3x)^4 = x^4(2x^5-3)^4$.</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">مشتقة $(2x^5-3)$ هي $10x^4$ — نحتاج معامل 10 بدل 1 الموجودة أمام $x^4$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{1}{10}\int (10x^4)(2x^5-3)^4dx = \dfrac{1}{10}\cdot\dfrac{(2x^5-3)^5}{5}+c \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( = \dfrac{(2x^5-3)^5}{50}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body">
+          <p class="calc-note">نحلل داخل القوس بحثاً عن عامل مشترك</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 2x^6-3x \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =x(2x^5-3) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نرفع كل عامل للأس 4 بتوزيع الأس $(ab)^n=a^nb^n$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (2x^6-3x)^4=[x(2x^5-3)]^4 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =x^4(2x^5-3)^4 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نشتق القوس الداخلي الجديد $2x^5-3$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{d}{dx}(2x^5-3)=10x^4 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نقارن الموجود بمشتقة الداخل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \text{الموجود }x^4\text{، المطلوب }10x^4\text{ — ناقصون }10 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نضرب داخل التكامل بالثابت $10$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 10x^4(2x^5-3)^4 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نقسم التكامل كله على $10$ من الخارج</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int x^4(2x^5-3)^4dx=\dfrac{1}{10}\int (10x^4)(2x^5-3)^4dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة: نزيد الأس ونقسم عليه</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(2x^5-3)^5}{5} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نضرب في $\tfrac{1}{10}$ ونبسّط، ونضيف $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{1}{10}\cdot\dfrac{(2x^5-3)^5}{5} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =\dfrac{(2x^5-3)^5}{50}+c \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>قوس بلا عامل ثانٍ ظاهر؟ حلّل داخله أولاً بحثاً عن عامل مشترك.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int (2x^6-3x)^4\,dx=\dfrac{(2x^5-3)^5}{50}+c$</div>
     </div>
 
     <div class="example fade-up">
       <div class="example-head"><div class="example-title"><span class="example-badge">16</span> مثال 16</div>
         <button class="neu-btn" data-reveal-steps="steps-ex16">إظهار خطوات الحل</button></div>
       <div class="example-problem">$\int \dfrac{(x^2-x)^{10}}{x^{10}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\int \dfrac{(x^2-x)^{10}}{x^{10}}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> قوس للأس $10$ في البسط، و $x^{10}$ في المقام</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> حلّل البسط ليختصر المقام بالكامل، ثم قاعدة الأس</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex16">
-        <li class="step"><span class="step-dot">🔑</span><div class="step-body">$(x^2-x)^{10}=[x(x-1)]^{10}=x^{10}(x-1)^{10}$، فيُختصر $x^{10}$ مع المقام تماماً!</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">يتبقى $\int (x-1)^{10}\,dx$، ومشتقة $(x-1)$ هي $1$ (لا حاجة لتعديل أي معامل).</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">\( = \dfrac{(x-1)^{11}}{11}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body">
+          <p class="calc-note">نُخرج العامل المشترك $x$ من داخل القوس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2-x \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =x(x-1) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نرفع طرفي حاصل الضرب للأس 10 بتوزيع الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (x^2-x)^{10}=[x(x-1)]^{10} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =x^{10}(x-1)^{10} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نكتب الكسر الأصلي بعد هذا التحليل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(x^2-x)^{10}}{x^{10}}=\dfrac{x^{10}(x-1)^{10}}{x^{10}} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نختصر $x^{10}$ من البسط والمقام</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{x^{10}(x-1)^{10}}{x^{10}}=(x-1)^{10} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نشتق القوس الداخلي للتحقق</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{d}{dx}(x-1)=1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">التطابق تام ($1=1$)، نطبّق القاعدة مباشرة ونضيف $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int (x-1)^{10}\,dx=\dfrac{(x-1)^{11}}{11}+c \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>لا تختصر $x^{10}$ قبل تحليل القوس — حلّل أولاً، وزّع الأس، ثم اختصر.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \dfrac{(x^2-x)^{10}}{x^{10}}\,dx=\dfrac{(x-1)^{11}}{11}+c$</div>
     </div>
 
     <div class="example fade-up">
       <div class="example-head"><div class="example-title"><span class="example-badge">18</span> مثال 18</div>
         <button class="neu-btn" data-reveal-steps="steps-ex18">إظهار خطوات الحل</button></div>
       <div class="example-problem">$\int \dfrac{dx}{\sqrt[3]{9-12x+4x^2}}$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\int \dfrac{dx}{\sqrt[3]{9-12x+4x^2}}$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> جذر تكعيبي لثلاثية حدود في المقام</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تحقّق من مربّع كامل ← أس كسري ← أس سالب في البسط ← تعويض متسلسل</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex18">
-        <li class="step"><span class="step-dot">🔑</span><div class="step-body">نلاحظ أن $9-12x+4x^2=(3-2x)^2$ (مربّع كامل)، فالمقام $=(3-2x)^{2/3}$.</div></li>
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكتب التكامل بصيغة الأس السالب: \( \int (3-2x)^{-2/3}dx \)، ومشتقة $(3-2x)$ هي $-2$.</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نضرب ونقسم على $-2$: \( = \dfrac{-1}{2}\int(-2)(3-2x)^{-2/3}dx = \dfrac{-1}{2}\cdot\dfrac{(3-2x)^{1/3}}{1/3}+c \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( = \dfrac{-3\sqrt[3]{3-2x}}{2}+c \) ∎</div></li>
+        <li class="step"><span class="step-dot">🔑</span><div class="step-body">
+          <p class="calc-note">نتحقق هل $9-12x+4x^2$ مربّع كامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( (3-2x)^2=9-12x+4x^2 \;✓ \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نعوّض هذا التحليل ونحوّل الجذر التكعيبي لأس كسري</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \sqrt[3]{9-12x+4x^2}=\sqrt[3]{(3-2x)^2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =(3-2x)^{2/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نرفع المقام إلى البسط بتغيير إشارة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{1}{(3-2x)^{2/3}}=(3-2x)^{-2/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نشتق القوس الداخلي للتحقق</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{d}{dx}(3-2x)=-2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نقارن: لا معامل ظاهر ($1$)، والمطلوب $-2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \text{الموجود }1\text{، المطلوب }-2\text{ — ناقصون }-2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نضرب داخل التكامل بالثابت $-2$ (بإشارته)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( (-2)(3-2x)^{-2/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نقسم التكامل كله على $-2$ من الخارج</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int (3-2x)^{-2/3}dx=-\dfrac12\int(-2)(3-2x)^{-2/3}dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة: نزيد الأس بمقدار واحد</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( -\tfrac23+1=\dfrac13 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( (3-2x)^{1/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نقسم على الأس الجديد $\tfrac13$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(3-2x)^{1/3}}{1/3}=3(3-2x)^{1/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نضرب في $-\tfrac12$، نعيد صيغة الجذر، ونضيف $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( -\dfrac12\cdot3(3-2x)^{1/3} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =\dfrac{-3\sqrt[3]{3-2x}}{2}+c \)</div>
+          </div>
+        </div></li>
       </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>مشتقة الداخل سالبة؟ يجب أن يكون الثابت الذي تضربه وتقسم عليه سالباً أيضاً.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \dfrac{dx}{\sqrt[3]{9-12x+4x^2}}=\dfrac{-3\sqrt[3]{3-2x}}{2}+c$</div>
     </div>
 
     <div class="callout tip fade-up">
@@ -223,13 +754,70 @@
         <button class="neu-btn" data-reveal-steps="steps-tq1" data-show-label="إظهار الحل" data-hide-label="إخفاء الحل">إظهار الحل</button>
       </div>
       <div class="example-problem">أثبت أن $F(x)=\left(\dfrac{x}{x-1}\right)^2$ هي الدالة المقابلة للدالة $f(x)=\dfrac{-2x}{(x-1)^3}$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إثبات أن $F'(x)=f(x)$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $F(x)=\left(\dfrac{x}{x-1}\right)^2$، $f(x)=\dfrac{-2x}{(x-1)^3}$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> قاعدة السلسلة (للأس $2$) مع قاعدة خارج القسمة (للكسر الداخلي)</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq1">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نشتق $F(x)$ باستخدام قاعدة خارج القسمة على $u=x,\;v=x-1$: \( F(x)=\left(\dfrac{x}{x-1}\right)^2 \Rightarrow F'(x)=2\left(\dfrac{x}{x-1}\right)\cdot\dfrac{d}{dx}\left(\dfrac{x}{x-1}\right) \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة $\dfrac{x}{x-1}$ هي $\dfrac{(x-1)(1)-x(1)}{(x-1)^2}=\dfrac{-1}{(x-1)^2}$</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض: \( F'(x)=2\cdot\dfrac{x}{x-1}\cdot\dfrac{-1}{(x-1)^2}=\dfrac{-2x}{(x-1)^3} \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">وهذا يساوي $f(x)$ تماماً، إذن $F(x)$ هي فعلاً الدالة المقابلة لـ $f(x)$. ∎</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نطبّق قاعدة السلسلة على القوس المرفوع للأس 2</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F'(x)=2\left(\dfrac{x}{x-1}\right)\cdot\dfrac{d}{dx}\left(\dfrac{x}{x-1}\right) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نشتق البسط والمقام كلاً على حدة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( (x)'=1\, ,\quad (x-1)'=1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نطبّق قاعدة خارج القسمة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{d}{dx}\left(\dfrac{x}{x-1}\right)=\dfrac{(x-1)(1)-x(1)}{(x-1)^2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نبسّط البسط</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (x-1)(1)-x(1)=x-1-x \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">مشتقة الجزء الداخلي كاملة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{d}{dx}\left(\dfrac{x}{x-1}\right)=\dfrac{-1}{(x-1)^2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نعوّض هذه المشتقة في تعبير $F'(x)$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F'(x)=2\cdot\dfrac{x}{x-1}\cdot\dfrac{-1}{(x-1)^2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نضرب الكسور ببعضها</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( F'(x)=\dfrac{2x\cdot(-1)}{(x-1)\cdot(x-1)^2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =\dfrac{-2x}{(x-1)^3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نقارن مع المعطى: تطابق تام</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F'(x)=\dfrac{-2x}{(x-1)^3}=f(x)\quad ✓ \)</div>
+          </div>
+        </div></li>
       </ol>
-      <div class="exercise-final">✓ تم الإثبات: $F'(x) = f(x)$</div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>لا تنسَ مشتقة الداخل في قاعدة السلسلة، واحفظ ترتيب حدّي خارج القسمة.</span>
+      </div>
+      <div class="exercise-final">✓ $F'(x)=\dfrac{-2x}{(x-1)^3}=f(x)$، إذن $F(x)$ الدالة المقابلة لـ $f(x)$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -238,14 +826,90 @@
         <button class="neu-btn" data-reveal-steps="steps-tq2">إظهار الحل</button>
       </div>
       <div class="example-problem">إذا كانت $F(x)$ الدالة المقابلة لـ $f(x)=ax^3+bx$، وكان $F'(-2)=12,\ F''(2)=12$، جد $a,b\in\mathbb{R}$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إيجاد $a,b$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $F$ الدالة المقابلة لـ $f(x)=ax^3+bx$، مع $F'(-2)=12$ و $F''(2)=12$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $F'(x)=f(x)$، اشتقاق إضافي لـ $F''(x)$، ثم حل نظام معادلتين بالحذف</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq2">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">بما أن $F$ الدالة المقابلة لـ $f$: \( F'(x)=f(x)=ax^3+bx \)، وباشتقاق مرة أخرى: \( F''(x)=3ax^2+b \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نستخدم $F'(-2)=12$: \( a(-2)^3+b(-2)=12 \Rightarrow -8a-2b=12 \Rightarrow -4a-b=6 \quad\dots(1) \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نستخدم $F''(2)=12$: \( 3a(2)^2+b=12 \Rightarrow 12a+b=12 \quad\dots(2) \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">نجمع (1) و(2) لحذف $b$: \( (-4a-b)+(12a+b)=6+12 \Rightarrow 8a=18 \Rightarrow a=\dfrac{9}{4} \)</div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">نعوّض في (2): \( 12\left(\dfrac94\right)+b=12 \Rightarrow 27+b=12 \Rightarrow b=-15 \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نستخدم تعريف الدالة المقابلة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F'(x)=f(x)=ax^3+bx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نشتق $F'(x)$ مرة أخرى للحصول على $F''(x)$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( F''(x)=3ax^2+b \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=-2$ في $F'(x)$ ونساويه بـ $12$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( a(-2)^3+b(-2)=12 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نحسب $(-2)^3=-8$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( -8a-2b=12 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نقسم طرفي المعادلة على $2$ (المعادلة 1)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( -4a-b=6 \quad\dots(1) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=2$ في $F''(x)$ ونساويه بـ $12$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 3a(2)^2+b=12 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نحسب $3a(2)^2=12a$ (المعادلة 2)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 12a+b=12 \quad\dots(2) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نجمع المعادلتين (1) و(2) لحذف $b$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( (-4a-b)+(12a+b)=6+12 \Rightarrow 8a=18 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نحل من أجل $a$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( a=\dfrac{18}{8}=\dfrac{9}{4} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نعوّض قيمة $a$ في المعادلة (2)</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 12\left(\dfrac94\right)+b=12 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نحسب $12\times\dfrac94=27$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 27+b=12 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body">
+          <p class="calc-note">نحل من أجل $b$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( b=12-27=-15 \)</div>
+          </div>
+        </div></li>
       </ol>
-      <div class="exercise-final">✓ الجواب: $a=\dfrac{9}{4}\;,\quad b=-15$</div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>استخدم $x=-2$ في معادلة $F'$ فقط، و $x=2$ في معادلة $F''$ فقط.</span>
+      </div>
+      <div class="exercise-final">✓ $a=\dfrac{9}{4}\;,\quad b=-15$</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -254,12 +918,72 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3a">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{x^5-x^2}{x^2+x+1}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int \frac{x^5-x^2}{x^2+x+1}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $x^5-x^2$، المقام $x^2+x+1$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> أخرج عاملاً مشتركاً، حلّل بفرق المكعبين، اختصر، ثم كامل</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3a">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط: $x^5-x^2=x^2(x^3-1)=x^2(x-1)(x^2+x+1)$ (فرق مكعبين على $x^3-1$).</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نختصر مع المقام: \( \dfrac{x^2(x-1)(x^2+x+1)}{x^2+x+1}=x^2(x-1)=x^3-x^2 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نكامل: \( \displaystyle\int (x^3-x^2)\,dx=\frac{x^4}{4}-\frac{x^3}{3}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نُخرج العامل المشترك $x^2$ من البسط</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x^5-x^2=x^2(x^3-1) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحلل $x^3-1$ بقاعدة فرق المكعبين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x^3-1=(x-1)(x^2+x+1) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض هذا التحليل في البسط الكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x^5-x^2=x^2(x-1)(x^2+x+1) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نكتب الكسر الأصلي بعد هذا التحليل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{x^2(x-1)(x^2+x+1)}{x^2+x+1} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نختصر العامل المشترك $(x^2+x+1)$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{x^2(x-1)(x^2+x+1)}{x^2+x+1}=x^2(x-1) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نوزّع $x^2$ على القوس</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x^2(x-1)=x^3-x^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نكامل الحد الأول بقاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int x^3\,dx=\dfrac{x^4}{4} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نكامل الحد الثاني</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int(-x^2)\,dx=\dfrac{-x^3}{3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نجمع النتيجتين ونضيف ثابت التكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int (x^3-x^2)\,dx=\frac{x^4}{4}-\frac{x^3}{3}+c \)</div>
+          </div>
+        </div></li>
       </ol>
-      <div class="exercise-final">✓ الجواب: $\dfrac{x^4}{4}-\dfrac{x^3}{3}+c$</div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>ابحث عن عامل مشترك وحلّل بقاعدة جاهزة قبل اللجوء للقسمة المطولة.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \frac{x^5-x^2}{x^2+x+1}\,dx=\dfrac{x^4}{4}-\dfrac{x^3}{3}+c$</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -268,13 +992,78 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3b">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \sqrt{3x^4-10x^2}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int \sqrt{3x^4-10x^2}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> $3x^4-10x^2$ تحت الجذر</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> أخرج $x^2$ من تحت الجذر، ثم طبّق التعويض المتسلسل</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3b">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نُخرج $x^2$ من تحت الجذر: \( \sqrt{3x^4-10x^2}=\sqrt{x^2(3x^2-10)}=x\sqrt{3x^2-10} \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نكتبها بصيغة القوس المرفوع لأس: \( x(3x^2-10)^{\frac12} \)، ومشتقة الداخل $3x^2-10$ هي $6x$.</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نضرب ونقسم على 6: \( \displaystyle\frac16\int (6x)(3x^2-10)^{\frac12}\,dx=\frac16\cdot\frac{(3x^2-10)^{\frac32}}{\frac32}+c \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">نبسّط: \( \dfrac{1}{6}\cdot\dfrac{2}{3}(3x^2-10)^{\frac32}+c=\dfrac{1}{9}(3x^2-10)^{\frac32}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نُخرج العامل المشترك $x^2$ من داخل الجذر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 3x^4-10x^2=x^2(3x^2-10) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نفكك جذر حاصل الضرب إلى جذرين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \sqrt{x^2(3x^2-10)}=\sqrt{x^2}\cdot\sqrt{3x^2-10} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نبسّط $\sqrt{x^2}=x$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \sqrt{3x^4-10x^2}=x\sqrt{3x^2-10} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نكتب الجذر المتبقي بصيغة أس كسري</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x(3x^2-10)^{1/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نشتق القوس الداخلي للتحقق</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{d}{dx}(3x^2-10)=6x \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نقارن: الموجود $x$، والمطلوب $6x$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \text{الموجود }x\text{، المطلوب }6x\text{ — ناقصون }6 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نضرب بـ$6$ داخلاً ونقسم على $6$ خارجاً</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int x(3x^2-10)^{1/2}dx=\dfrac16\int (6x)(3x^2-10)^{1/2}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة ونزيد الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(3x^2-10)^{3/2}}{3/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نبسّط القسمة على الكسر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(3x^2-10)^{3/2}}{3/2}=\dfrac23(3x^2-10)^{3/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نضرب بالثابت الخارجي ونضيف $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac16\cdot\dfrac23(3x^2-10)^{3/2}+c=\dfrac19(3x^2-10)^{3/2}+c \)</div>
+          </div>
+        </div></li>
       </ol>
-      <div class="exercise-final">✓ الجواب: $\dfrac{1}{9}\sqrt{(3x^2-10)^3}+c$</div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>أخرج العامل المشترك من تحت الجذر قبل الاشتقاق، لا بعده.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \sqrt{3x^4-10x^2}\,dx=\dfrac{1}{9}\sqrt{(3x^2-10)^3}+c$</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -283,13 +1072,96 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3c">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{\sqrt{10-\sqrt[3]{x}}}{\sqrt[3]{2x^2}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int \frac{\sqrt{10-\sqrt[3]{x}}}{\sqrt[3]{2x^2}}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> جذور متداخلة في البسط والمقام</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> حوّل الجذور لأسس، ثم استخدم تعويضاً مساعداً $u=10-\sqrt[3]{x}$</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3c">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نكتب المقام: \( \sqrt[3]{2x^2}=\sqrt[3]{2}\cdot x^{\frac23} \)، فيكون التكامل \( \displaystyle\frac{1}{\sqrt[3]2}\int \left(10-x^{\frac13}\right)^{\frac12} x^{-\frac23}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نضع $u=10-x^{\frac13}$، فتكون $\dfrac{du}{dx}=-\dfrac13 x^{-\frac23} \Rightarrow x^{-\frac23}dx=-3\,du$</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نعوّض: \( \displaystyle\frac{1}{\sqrt[3]2}\int u^{\frac12}(-3)\,du=\frac{-3}{\sqrt[3]2}\cdot\frac{u^{\frac32}}{\frac32}+c=\frac{-2}{\sqrt[3]2}u^{\frac32}+c \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">نبسّط الثابت: $\dfrac{-2}{\sqrt[3]2}=-2\cdot 2^{-\frac13}=-2^{\frac23}=-\sqrt[3]4$، ونعيد تعويض $u$: \( -\sqrt[3]{4}\left(10-\sqrt[3]{x}\right)^{\frac32}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكتب الجذر التكعيبي في المقام كأس كسري</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \sqrt[3]{2x^2}=(2x^2)^{1/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نفكك الأس على حاصل ضرب الثابت والمتغير</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( (2x^2)^{1/3}=2^{1/3}\cdot x^{2/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نُخرج الثابت $2^{1/3}$ خارج التكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int\dfrac{\sqrt{10-\sqrt[3]{x}}}{2^{1/3}x^{2/3}}dx=\dfrac{1}{\sqrt[3]2}\int \dfrac{\left(10-x^{1/3}\right)^{1/2}}{x^{2/3}}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نرفع $x^{2/3}$ من المقام إلى البسط</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{1}{\sqrt[3]2}\int \left(10-x^{1/3}\right)^{1/2}x^{-2/3}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نسمّي الداخل $u$ تسهيلاً للاشتقاق</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( u=10-x^{1/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نشتق $u$ بالنسبة إلى $x$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{du}{dx}=-\dfrac13 x^{-2/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نعزل $x^{-2/3}dx$ بالضرب في $-3$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x^{-2/3}dx=-3\,du \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نعوّض $u$ و $-3\,du$ في التكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{1}{\sqrt[3]2}\int u^{1/2}\cdot(-3)\,du \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نُخرج الثابت $-3$ خارج التكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{-3}{\sqrt[3]2}\int u^{1/2}\,du \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نطبّق قاعدة الأس العادية على $u$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int u^{1/2}du=\dfrac{u^{3/2}}{3/2}=\dfrac23 u^{3/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نضرب بالثابت الخارجي</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{-3}{\sqrt[3]2}\cdot\dfrac23 u^{3/2}=\dfrac{-2}{\sqrt[3]2}u^{3/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body">
+          <p class="calc-note">نبسّط الثابت العددي بجمع الأسس</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{-2}{\sqrt[3]2}=-2\cdot 2^{-1/3}=-2^{2/3}=-\sqrt[3]4 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body">
+          <p class="calc-note">نعيد التعويض إلى $x$ ونضيف ثابت التكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( -\sqrt[3]{4}\left(10-\sqrt[3]{x}\right)^{3/2}+c \)</div>
+          </div>
+        </div></li>
       </ol>
-      <div class="exercise-final">✓ الجواب: $-\sqrt[3]{4}\left(10-\sqrt[3]{x}\right)^{3/2}+c$</div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>عند ضرب أساسين متساويين اجمع الأسس ($2^1\cdot2^{-1/3}=2^{2/3}$)، ولا تضربهما.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \frac{\sqrt{10-\sqrt[3]{x}}}{\sqrt[3]{2x^2}}\,dx=-\sqrt[3]{4}\left(10-\sqrt[3]{x}\right)^{3/2}+c$</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -298,12 +1170,72 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3d">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int (4x^2-4x+1)^{1/3}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int (4x^2-4x+1)^{1/3}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> ثلاثية حدود مرفوعة لأس كسري</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تحقّق من مربّع كامل، بسّط الأس المزدوج، ثم طبّق التعويض المتسلسل</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3d">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نلاحظ أن $4x^2-4x+1=(2x-1)^2$ (مربع كامل)، إذن \( (4x^2-4x+1)^{\frac13}=(2x-1)^{\frac23} \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة الداخل $2x-1$ تساوي $2$، فنضرب ونقسم على 2: \( \displaystyle\frac12\int (2)(2x-1)^{\frac23}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =\dfrac12\cdot\dfrac{(2x-1)^{\frac53}}{\frac53}+c=\dfrac12\cdot\dfrac35(2x-1)^{\frac53}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نتحقق هل $4x^2-4x+1$ مربّع كامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( (2x-1)^2=(2x)^2-2(2x)(1)+1^2=4x^2-4x+1 \;✓ \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض هذا التحليل داخل القوس المرفوع للأس الكسري</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( (4x^2-4x+1)^{1/3}=\left[(2x-1)^2\right]^{1/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نبسّط الأس المزدوج بضرب الأسين $(a^m)^n=a^{mn}$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \left[(2x-1)^2\right]^{1/3}=(2x-1)^{2/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نشتق القوس الداخلي للتحقق</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{d}{dx}(2x-1)=2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نقارن: المعامل الضمني $1$، والمطلوب $2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \text{الموجود }1\text{، المطلوب }2\text{ — ناقصون }2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نضرب داخل التكامل بـ$2$، ونقسم خارجاً على $2$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\frac12\int (2)(2x-1)^{2/3}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة ونزيد الأس، ونقسم على الأس الجديد</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(2x-1)^{5/3}}{5/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نبسّط القسمة على الكسر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(2x-1)^{5/3}}{5/3}=\dfrac35(2x-1)^{5/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نضرب بالثابت الخارجي ونضيف $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac12\cdot\dfrac35(2x-1)^{5/3}+c=\dfrac{3}{10}(2x-1)^{5/3}+c \)</div>
+          </div>
+        </div></li>
       </ol>
-      <div class="exercise-final">✓ الجواب: $\dfrac{3}{10}(2x-1)^{5/3}+c$</div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>"أس فوق أس" $(a^m)^n$ يُضرب ($a^{mn}$)، ولا يُجمع أبداً.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int (4x^2-4x+1)^{1/3}\,dx=\dfrac{3}{10}(2x-1)^{5/3}+c$</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -312,12 +1244,96 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3e">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{5x-10}{\sqrt[3]{2-x}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int \frac{5x-10}{\sqrt[3]{2-x}}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $5x-10$، والمقام $\sqrt[3]{2-x}$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> وحّد إشارة القوسين، بسّط الكسر بطرح الأسين، ثم طبّق التعويض المتسلسل</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3e">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نُخرج العامل المشترك: $5x-10=5(x-2)=-5(2-x)$، إذن التكامل \( \displaystyle-5\int \frac{2-x}{(2-x)^{1/3}}\,dx=-5\int (2-x)^{2/3}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة الداخل $2-x$ تساوي $-1$، فنضرب ونقسم على $-1$: \( -5\cdot(-1)\displaystyle\int (-1)(2-x)^{2/3}\,dx=5\int (-1)(2-x)^{2/3}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =5\cdot\dfrac{(2-x)^{5/3}}{5/3}+c=5\cdot\dfrac35(2-x)^{5/3}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نُخرج العامل المشترك $5$ من البسط</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 5x-10=5(x-2) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نكتب $(x-2)$ بدلالة $(2-x)$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x-2=-(2-x) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض في البسط</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 5(x-2)=5\cdot\big(-(2-x)\big)=-5(2-x) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نعيد كتابة التكامل بالبسط الجديد</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int\dfrac{5x-10}{\sqrt[3]{2-x}}dx=-5\int \dfrac{2-x}{(2-x)^{1/3}}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نبسّط الكسر الداخلي بطرح الأسين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{2-x}{(2-x)^{1/3}}=(2-x)^{2/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">يصبح التكامل بهذه الصورة المبسّطة</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( -5\int (2-x)^{2/3}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نشتق القوس الداخلي للتحقق</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{d}{dx}(2-x)=-1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نقارن: المعامل الحالي $-5$، والمطلوب $-1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \text{الموجود }-5\text{، المطلوب }-1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نضرب داخل التكامل بـ$-1$، ونقسم خارجاً على $-1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( -5\int (2-x)^{2/3}\,dx=\dfrac{-5}{-1}\int (-1)(2-x)^{2/3}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نبسّط الثابت الخارجي</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{-5}{-1}=5 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة ونزيد الأس، ونقسم على الأس الجديد</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 5\displaystyle\int (-1)(2-x)^{2/3}\,dx=5\cdot\dfrac{(2-x)^{5/3}}{5/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body">
+          <p class="calc-note">نبسّط القسمة على الكسر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(2-x)^{5/3}}{5/3}=\dfrac35(2-x)^{5/3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body">
+          <p class="calc-note">نضرب بالثابت الخارجي ونضيف $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 5\cdot\dfrac35(2-x)^{5/3}+c=3(2-x)^{5/3}+c \)</div>
+          </div>
+        </div></li>
       </ol>
-      <div class="exercise-final">✓ الجواب: $3(2-x)^{5/3}+c$</div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>$(x-2)\neq(2-x)$ بل $(x-2)=-(2-x)$ — لا تهمل الإشارة السالبة.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \frac{5x-10}{\sqrt[3]{2-x}}\,dx=3(2-x)^{5/3}+c$</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -326,12 +1342,60 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3f">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{x^3+1}{x^2-x+1}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int \frac{x^3+1}{x^2-x+1}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط $x^3+1$، والمقام $x^2-x+1$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> حلّل البسط بمجموع المكعبين $a^3+b^3=(a+b)(a^2-ab+b^2)$، اختصر، ثم كامل</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3f">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نحلل البسط بقاعدة مجموع مكعبين: $x^3+1=(x+1)(x^2-x+1)$</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نختصر مع المقام: \( \dfrac{(x+1)(x^2-x+1)}{x^2-x+1}=x+1 \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نكامل: \( \displaystyle\int (x+1)\,dx=\frac{x^2}{2}+x+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نتعرف على البسط كمجموع مكعبين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x^3+1=x^3+1^3 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحلل البسط بقاعدة مجموع المكعبين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x^3+1=(x+1)(x^2-x+1) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نكتب الكسر كاملاً بعد التحليل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(x+1)(x^2-x+1)}{x^2-x+1} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نختصر العامل المشترك $(x^2-x+1)$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(x+1)(x^2-x+1)}{x^2-x+1}=x+1 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نكامل الحد الأول $x$ بقاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int x\,dx=\dfrac{x^2}{2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نكامل الحد الثابت $1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int 1\,dx=x \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نجمع النتيجتين ونضيف ثابت التكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int (x+1)\,dx=\frac{x^2}{2}+x+c \)</div>
+          </div>
+        </div></li>
       </ol>
-      <div class="exercise-final">✓ الجواب: $\dfrac{x^2}{2}+x+c$</div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>مجموع المكعبين إشارته الوسطى سالبة دوماً: $a^2-ab+b^2$، وليس $+ab$.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \frac{x^3+1}{x^2-x+1}\,dx=\frac{x^2}{2}+x+c$</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -340,12 +1404,66 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3g">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{5x+2}{\sqrt{5x+2}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int \frac{5x+2}{\sqrt{5x+2}}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط والمقام من نفس القوس $5x+2$ بأسين مختلفين</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> بسّط بطرح الأسين، ثم طبّق التعويض المتسلسل</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3g">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نرفع المقام إلى البسط مع تغيير إشارة الأس: \( \dfrac{5x+2}{(5x+2)^{1/2}}=(5x+2)^{1-\frac12}=(5x+2)^{\frac12} \)</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">مشتقة الداخل $5x+2$ تساوي $5$، فنضرب ونقسم على 5: \( \displaystyle\frac15\int (5)(5x+2)^{\frac12}\,dx \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">\( =\dfrac15\cdot\dfrac{(5x+2)^{\frac32}}{\frac32}+c=\dfrac15\cdot\dfrac23(5x+2)^{\frac32}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكتب الجذر في المقام كأس كسري</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \sqrt{5x+2}=(5x+2)^{1/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نبسّط الكسر بطرح الأسين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{5x+2}{(5x+2)^{1/2}}=(5x+2)^{1/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نشتق القوس الداخلي للتحقق</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{d}{dx}(5x+2)=5 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نقارن: المعامل الضمني $1$، والمطلوب $5$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \text{الموجود }1\text{، المطلوب }5\text{ — ناقصون }5 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نضرب داخل التكامل بـ$5$، ونقسم خارجاً على $5$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\frac15\int (5)(5x+2)^{1/2}\,dx \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نطبّق القاعدة ونزيد الأس، ونقسم على الأس الجديد</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(5x+2)^{3/2}}{3/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نبسّط القسمة على الكسر</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(5x+2)^{3/2}}{3/2}=\dfrac23(5x+2)^{3/2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نضرب بالثابت الخارجي ونضيف $c$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac15\cdot\dfrac23(5x+2)^{3/2}+c=\dfrac{2}{15}(5x+2)^{3/2}+c \)</div>
+          </div>
+        </div></li>
       </ol>
-      <div class="exercise-final">✓ الجواب: $\dfrac{2}{15}(5x+2)^{3/2}+c$</div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>بسط ومقام من نفس القوس؟ اطرح الأسين أولاً قبل أي قاعدة تكامل.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \frac{5x+2}{\sqrt{5x+2}}\,dx=\dfrac{2}{15}(5x+2)^{3/2}+c$</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -354,14 +1472,98 @@
         <button class="neu-btn" data-reveal-steps="steps-tq3h">إظهار الحل</button>
       </div>
       <div class="example-problem">$\displaystyle\int \frac{x-5\sqrt{x}+6}{x-3\sqrt{x}}\,dx$</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> $\displaystyle\int \frac{x-5\sqrt{x}+6}{x-3\sqrt{x}}\,dx$</p>
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> البسط والمقام يحتويان $x$ و $\sqrt{x}$ معاً</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> تعويض مساعد $u=\sqrt{x}$ ($x=u^2$)، حلّل واختصر، أعد التعويض، ثم كامل</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-tq3h">
-        <li class="step"><span class="step-dot">1</span><div class="step-body">نضع $u=\sqrt{x}$ (أي $x=u^2$) لتسهيل التحليل: البسط $u^2-5u+6=(u-2)(u-3)$، والمقام $u^2-3u=u(u-3)$</div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">نختصر العامل المشترك $(u-3)$: \( \dfrac{(u-2)(u-3)}{u(u-3)}=\dfrac{u-2}{u}=1-\dfrac{2}{u} \)</div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">نعيد كتابتها بدلالة $x$: \( 1-\dfrac{2}{\sqrt{x}}=1-2x^{-\frac12} \)</div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">نكامل: \( \displaystyle\int \left(1-2x^{-\frac12}\right)dx=x-2\cdot\frac{x^{\frac12}}{\frac12}+c=x-4\sqrt{x}+c \)</div></li>
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نضع التعويض المساعد</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( u=\sqrt{x}\ \Rightarrow\ x=u^2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعيد كتابة البسط بدلالة $u$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x-5\sqrt{x}+6=u^2-5u+6 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نحلل البسط بإيجاد عددين ضربهما $6$ ومجموعهما $-5$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( u^2-5u+6=(u-2)(u-3) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نعيد كتابة المقام بدلالة $u$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( x-3\sqrt{x}=u^2-3u \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نُخرج العامل المشترك $u$ من المقام</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( u^2-3u=u(u-3) \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نكتب الكسر كاملاً بدلالة $u$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(u-2)(u-3)}{u(u-3)} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نختصر العامل المشترك $(u-3)$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{(u-2)(u-3)}{u(u-3)}=\dfrac{u-2}{u} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نفصل الكسر إلى حدين</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \dfrac{u-2}{u}=\dfrac{u}{u}-\dfrac{2}{u}=1-\dfrac{2}{u} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نعيد التعويض من $u$ إلى $x$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 1-\dfrac{2}{u}=1-\dfrac{2}{\sqrt{x}} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">10</span><div class="step-body">
+          <p class="calc-note">نكتب $\dfrac{1}{\sqrt{x}}$ بصيغة الأس السالب</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( 1-\dfrac{2}{\sqrt{x}}=1-2x^{-\frac12} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">11</span><div class="step-body">
+          <p class="calc-note">نكامل الحد الثابت $1$</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int 1\,dx=x \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">12</span><div class="step-body">
+          <p class="calc-note">نكامل الحد $-2x^{-1/2}$ بقاعدة الأس</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \int(-2x^{-\frac12})dx=-2\cdot\dfrac{x^{\frac12}}{\frac12}=-4\sqrt{x} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">13</span><div class="step-body">
+          <p class="calc-note">نجمع النتيجتين ونضيف ثابت التكامل</p>
+          <div class="calc-flow">
+            <div class="calc-line calc-box">\( \displaystyle\int \left(1-2x^{-\frac12}\right)dx=x-4\sqrt{x}+c \)</div>
+          </div>
+        </div></li>
       </ol>
-      <div class="exercise-final">✓ الجواب: $x-4\sqrt{x}+c$</div>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>لا تكامل بدلالة $u$ — أعد التعويض إلى $x$ أولاً دائماً.</span>
+      </div>
+      <div class="exercise-final">✓ $\displaystyle\int \frac{x-5\sqrt{x}+6}{x-3\sqrt{x}}\,dx=x-4\sqrt{x}+c$</div>
     </div>
+  </section>
 
   <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
     <div class="neu quiz" data-quiz>
@@ -430,8 +1632,12 @@
 
   <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
     <div class="card neu">
-      <h2>🗺 خريطة الدرس الذهنية</h2>
-      <div class="mindmap-wrap">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l3" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين المهارات الثلاث لهذا الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l3">
         <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الثالث">
           <line x1="410" y1="150" x2="150" y2="70" stroke="#b3bdcc" stroke-width="2"/>
           <line x1="410" y1="150" x2="410" y2="250" stroke="#b3bdcc" stroke-width="2"/>
