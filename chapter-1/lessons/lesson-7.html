@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 7: الصيغة القطبية وصيغة أويلر — الفصل الأول</title>
+<meta name="description" content="مقياس العدد المركب وسعته، والصيغة القطبية (صيغة أويلر) للعدد المركب، مع أمثلة محلولة وتمارين شاملة على الفصل واختبار ذاتي.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-7.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 7 من 7 · 1-7-1 و 1-7-2</span>
+    <h1>الصيغة القطبية وصيغة أويلر</h1>
+    <p class="lead">درسنا الأخير في هذا الفصل! نكتشف أن لكل عدد مركب "عنواناً" آخر غير $a+bi$: طول المتجه (<b>المقياس</b>) وزاويته (<b>السعة</b>) — وهو ما يقودنا إلى <b>الصيغة القطبية</b> الأنيقة.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يتعرف على مفهوم مقياس العدد المركب $r=|z|$ وكيفية إيجاده.</span></li>
+        <li><span class="obj-num">2</span><span>يتعرف على مفهوم سعة العدد المركب $\theta=\arg(z)$ وقيمتها الأساسية، ويحدد ربعها الصحيح بالاستعانة بإشارتي $\sin\theta,\cos\theta$.</span></li>
+        <li><span class="obj-num">3</span><span>يعبّر عن العدد المركب بالصيغة القطبية (صيغة أويلر) $z=r(\cos\theta+i\sin\theta)$.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 الشرح والتعريفات">
+    <div class="card neu">
+      <h2>💡 1-7-1 المقياس والسعة للعدد المركب</h2>
+      <p>ليكن $x+yi$ عدداً مركباً ممثَّلاً على المستوي المركب بالنقطة $P(x,y)$. نسمي الزوج المرتب $(r,\theta)$ الإحداثيين القطبيين للنقطة $P$، حيث نقطة الأصل $O$ هي القطب والضلع $\overrightarrow{OP}$ الضلع الابتدائي.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h3 style="margin-top:0">📐 الشكل: المقياس $r$ والسعة $\theta$</h3>
+      <div class="mindmap-wrap"><svg id="figPolar" width="420" height="320" viewBox="0 0 420 320"></svg></div>
+      <div class="mj-scroll" style="text-align:center">$$r=\|\overrightarrow{OP}\|\,,\qquad \theta=m\angle XOP$$</div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف 1-8 — المقياس والسعة</span>
+      <p style="margin:.3rem 0">بما أن $\sin\theta=\dfrac{y}{r},\; \cos\theta=\dfrac{x}{r}$، فإن:</p>
+      <div class="mj-scroll">$$R(z)=x=r\cos\theta\,,\qquad I(z)=y=r\sin\theta$$</div>
+      <p style="margin:.3rem 0">يسمى $r$ <b>مقياس العدد المركب</b> (عدد حقيقي غير سالب)، ويُرمز له بـ $Mod(z)$ أو $\|z\|$:</p>
+      <div class="mj-scroll">$$r=\|z\|=\sqrt{x^2+y^2}$$</div>
+      <p style="margin:.3rem 0">وتسمى الزاوية $\theta$ <b>سعة العدد المركب</b>، ويُرمز لها بـ $\arg(z)$. إذا كانت $\theta\in[0,2\pi]$ فهي <b>القيمة الأساسية</b> للسعة، وعموماً تكون السعة $(\theta+2n\pi),\; n\in\mathbb{Z}$.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المقياس والسعة للعدد المركب $z=3+\sqrt3\,i$.</div>
+      <ol class="steps hidden-steps" id="steps-ex1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحسب المقياس $r$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=\sqrt{3^2+(\sqrt3)^2}=\sqrt{9+3}=\sqrt{12}=2\sqrt3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحسب $\sin\theta,\cos\theta$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sin\theta=\dfrac{\sqrt3}{2\sqrt3}=\dfrac12\,,\qquad \cos\theta=\dfrac{3}{2\sqrt3}=\dfrac{\sqrt3}{2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">كلا الإشارتين موجبة → الربع الأول</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \theta=\dfrac{\pi}{6} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $r=2\sqrt3$، والقيمة الأساسية للسعة $\theta=\dfrac{\pi}{6}$ (والسعة عموماً $\frac{\pi}{6}+2n\pi$). ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المقياس والسعة للعدد المركب $z=-2+2i$.</div>
+      <ol class="steps hidden-steps" id="steps-ex2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">المقياس</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=\sqrt{(-2)^2+2^2}=\sqrt8=2\sqrt2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$\sin\theta,\cos\theta$: نلاحظ $\sin\theta>0,\cos\theta<0$ ← الربع الثاني</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sin\theta=\dfrac{1}{\sqrt2}\,,\quad \cos\theta=\dfrac{-1}{\sqrt2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">زاوية الإسناد هنا $\dfrac{\pi}{4}$؛ في الربع الثاني: $\theta=\pi-\text{(زاوية الإسناد)}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \theta=\pi-\dfrac{\pi}{4}=\dfrac{3\pi}{4} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="callout tip" style="margin-top:.8rem">
+        <span class="icon">💡</span>
+        <span>لتحديد الربع بسرعة: (+,+) الربع الأول، (+,−) الثاني [(cos,sin)]... الأسهل: انظر إشارتي $x,y$ الأصليتين مباشرة على المستوي المركب.</span>
+      </div>
+      <div class="exercise-final">✓ $r=2\sqrt2$، $\theta=\dfrac{3\pi}{4}$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المقياس والسعة للعدد المركب $z=\dfrac{4}{1+\sqrt3\,i}$.</div>
+      <ol class="steps hidden-steps" id="steps-ex3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نضع $z$ بالصيغة الاعتيادية أولاً (نضرب بمرافق المقام)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( z=\dfrac{4}{1+\sqrt3i}\times\dfrac{1-\sqrt3i}{1-\sqrt3i}=\dfrac{4-4\sqrt3i}{4} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( z=1-\sqrt3\,i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">المقياس</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=\sqrt{1^2+(-\sqrt3)^2}=\sqrt4=2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">$\sin\theta<0,\cos\theta>0$ ← الربع الرابع؛ زاوية الإسناد $\dfrac{\pi}{3}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \theta=2\pi-\dfrac{\pi}{3}=\dfrac{5\pi}{3} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $r=2$، $\theta=\dfrac{5\pi}{3}$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> مثال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">عدد مركب مقياسه $6$ والقيمة الأساسية لسعته $\dfrac{7\pi}{6}$، جد شكليه الجبري والديكارتي.</div>
+      <ol class="steps hidden-steps" id="steps-ex4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$\dfrac{7\pi}{6}=210°$ (الربع الثالث، زاوية إسناد $30°$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sin\dfrac{7\pi}{6}=-\dfrac12\,,\qquad \cos\dfrac{7\pi}{6}=-\dfrac{\sqrt3}{2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$x=r\cos\theta,\; y=r\sin\theta$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x=6\left(-\tfrac{\sqrt3}{2}\right)=-3\sqrt3\,,\qquad y=6\left(-\tfrac12\right)=-3 \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ الشكل الجبري $z=-3\sqrt3-3i$، والديكارتي $(-3\sqrt3,\,-3)$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>💡 1-7-2 التعبير عن العدد المركب بالصيغة القطبية (صيغة أويلر)</h2>
+      <p>يُعبَّر عن العدد المركب الذي شكله الجبري $z=x+yi$ وشكله الديكارتي $(x,y)$ بالصيغة القطبية:</p>
+      <div class="rule-box">$$\boxed{z=r(\cos\theta+i\sin\theta)}$$</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مستكشف الصيغة القطبية">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: مستكشف الصيغة القطبية</h2>
+      <p>حرّك مزلاجي المقياس $r$ والسعة $\theta$ وشاهد النقطة $z=r(\cos\theta+i\sin\theta)$ تتحرك على المستوي المركب مباشرة.</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="polarPlot" width="420" height="420" viewBox="0 0 420 420"></svg></div>
+        <div class="io-row">
+          <label for="rSlider" style="min-width:8rem">المقياس <b>r</b> = <span id="rVal">3</span></label>
+          <input type="range" id="rSlider" class="neu-range" min="0.5" max="5" step="0.1" value="3">
+        </div>
+        <div class="io-row">
+          <label for="thetaSlider" style="min-width:8rem">السعة <b>θ</b> = <span id="thetaVal">45°</span></label>
+          <input type="range" id="thetaSlider" class="neu-range" min="0" max="360" step="1" value="45">
+        </div>
+        <div class="rule-box" id="polarFormula"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> مثال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">عبّر عن العدد المركب $z=-2\sqrt3-2i$ بالصيغة القطبية.</div>
+      <ol class="steps hidden-steps" id="steps-ex5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">المقياس</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=\sqrt{(-2\sqrt3)^2+(-2)^2}=\sqrt{12+4}=\sqrt{16}=4 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$\sin\theta<0,\cos\theta<0$ ← الربع الثالث؛ زاوية الإسناد $\dfrac{\pi}{6}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \theta=\pi+\dfrac{\pi}{6}=\dfrac{7\pi}{6} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $z=4\left(\cos\dfrac{7\pi}{6}+i\sin\dfrac{7\pi}{6}\right)$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> مثال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">عبّر عن الأعداد المركبة الآتية بالصيغة القطبية: $a)\;1+0i \quad b)\;0+i \quad c)\;-1+0i \quad d)\;0-i$.</div>
+      <ol class="steps hidden-steps" id="steps-ex6">
+        <li class="step"><span class="step-dot">أ</span><div class="step-body">
+          <p class="calc-note">$1+0i$: على المحور الحقيقي الموجب، $r=1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=1(\cos0°+i\sin0°) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">ب</span><div class="step-body">
+          <p class="calc-note">$0+i$: على المحور التخيلي الموجب، $r=1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=1\left(\cos\tfrac{\pi}{2}+i\sin\tfrac{\pi}{2}\right) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">ج</span><div class="step-body">
+          <p class="calc-note">$-1+0i$: على المحور الحقيقي السالب، $r=1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=1(\cos\pi+i\sin\pi) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">د</span><div class="step-body">
+          <p class="calc-note">$0-i$: على المحور التخيلي السالب، $r=1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=1\left(\cos\tfrac{3\pi}{2}+i\sin\tfrac{3\pi}{2}\right) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="callout tip" style="margin-top:.8rem">
+        <span class="icon">💡</span>
+        <span>هذه الأعداد الأربعة "المرجعية" (على المحاور تماماً) تسهّل إيجاد الصيغة القطبية لأي عدد من الصورة $\pm a+0i$ أو $0\pm bi$ — فقط اضرب مقياسه الجديد.</span>
+      </div>
+      <div class="exercise-final">✓ زوايا المحاور الأربعة: $0°,\,90°,\,180°,\,270°$ على الترتيب. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7</span> مثال 7</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7">إظهار الحل</button>
+      </div>
+      <div class="example-problem">عبّر عن الأعداد المركبة الآتية بالصيغة القطبية ومثّلها بالرسم: $a)\;5+0i \quad b)\;-4+0i \quad c)\;0+3i \quad d)\;0-2i$.</div>
+      <ol class="steps hidden-steps" id="steps-ex7">
+        <li class="step"><span class="step-dot">أ</span><div class="step-body">
+          <p class="calc-note">$5+0i=5(1+0i)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=5(\cos0°+i\sin0°) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">ب</span><div class="step-body">
+          <p class="calc-note">$-4+0i=4(-1+0i)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=4(\cos180°+i\sin180°) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">ج</span><div class="step-body">
+          <p class="calc-note">$0+3i=3(0+i)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=3(\cos90°+i\sin90°) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">د</span><div class="step-body">
+          <p class="calc-note">$0-2i=2(0-i)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=2(\cos270°+i\sin270°) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap"><svg id="figEx7" width="420" height="320" viewBox="0 0 420 320"></svg></div>
+      <div class="exercise-final">✓ أربعة أشعة على محاور المستوي المركب، أطوالها $5,4,3,2$ على الترتيب. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (4-1)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (4-1) — تمارين شاملة على الفصل</h2>
+    <p class="lead" style="margin-top:0">تمرين الكتاب المدرسي كاملاً بحلوله — حاول أولاً بنفسك ثم اضغط «إظهار الحل».</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المقياس والسعة لكل من: $a)\;z=3-3\sqrt3i \quad b)\;z=\dfrac{2}{i} \quad c)\;z=\left(\dfrac{1-i}{1+i}\right)^5 \quad d)\;z=\dfrac{1}{\sqrt2}-\dfrac{1}{\sqrt2}i$</div>
+      <ol class="steps hidden-steps" id="steps-pq1">
+        <li class="step"><span class="step-dot">أ</span><div class="step-body">
+          <p class="calc-note">$r=\sqrt{9+27}=6$؛ الربع الرابع، زاوية الإسناد $\pi/3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=6,\quad \theta=\dfrac{5\pi}{3} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">ب</span><div class="step-body">
+          <p class="calc-note">$\dfrac2i=\dfrac{2}{i}\times\dfrac{-i}{-i}=-2i$؛ على المحور التخيلي السالب</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=2,\quad \theta=\dfrac{3\pi}{2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">ج</span><div class="step-body">
+          <p class="calc-note">$\dfrac{1-i}{1+i}=-i$ (كما في المثال 17 سابقاً)، إذن $z=(-i)^5=-i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=1,\quad \theta=\dfrac{3\pi}{2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">د</span><div class="step-body">
+          <p class="calc-note">$r=\sqrt{\tfrac12+\tfrac12}=1$؛ الربع الرابع، زاوية الإسناد $\pi/4$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=1,\quad \theta=\dfrac{7\pi}{4} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ a) $r=6,\theta=\frac{5\pi}{3}$&nbsp; b) $r=2,\theta=\frac{3\pi}{2}$&nbsp; c) $r=1,\theta=\frac{3\pi}{2}$&nbsp; d) $r=1,\theta=\frac{7\pi}{4}$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">اكتب الأعداد المركبة الآتية بالشكلين الجبري والديكارتي: $a)\;Mod(z)=\sqrt2,\theta=\tfrac{\pi}{4} \quad b)\;Mod(z)=1,\theta=\tfrac{5\pi}{6} \quad c)\;Mod(z)=2,\theta=\tfrac{\pi}{3} \quad d)\;Mod(z)=2\sqrt2,\theta=\tfrac{5\pi}{4}$</div>
+      <ol class="steps hidden-steps" id="steps-pq2">
+        <li class="step"><span class="step-dot">أ</span><div class="step-body">
+          <p class="calc-note">$x=\sqrt2\cos45°=1,\; y=\sqrt2\sin45°=1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=1+i\,,\quad (1,1) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">ب</span><div class="step-body">
+          <p class="calc-note">$x=\cos150°=-\tfrac{\sqrt3}2,\; y=\sin150°=\tfrac12$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=-\tfrac{\sqrt3}2+\tfrac12i\,,\quad \left(-\tfrac{\sqrt3}2,\tfrac12\right) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">ج</span><div class="step-body">
+          <p class="calc-note">$x=2\cos60°=1,\; y=2\sin60°=\sqrt3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=1+\sqrt3i\,,\quad (1,\sqrt3) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">د</span><div class="step-body">
+          <p class="calc-note">$x=2\sqrt2\cos225°=-2,\; y=2\sqrt2\sin225°=-2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=-2-2i\,,\quad (-2,-2) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ a) $1+i$&nbsp; b) $-\frac{\sqrt3}2+\frac12i$&nbsp; c) $1+\sqrt3i$&nbsp; d) $-2-2i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ضع الأعداد المركبة الآتية بصيغة أويلر (الصيغة القطبية):
+        <br>a) $(1,1)$ &nbsp; b) $1+\sqrt3i$ &nbsp; c) $(2\sqrt3,0)$ &nbsp; d) $3\sqrt3-3i$ &nbsp; e) $(0,-8)$ &nbsp; f) $(-11,0)$
+        <br>g) $-\tfrac12-\tfrac{\sqrt3}2i$ &nbsp; h) $\dfrac{1+\sqrt3i}{1-\sqrt3i}$ &nbsp; i) $\dfrac{4}{1+\sqrt3i}$ &nbsp; j) $\dfrac{-10\sqrt3}{\sqrt3-i}$ &nbsp; k) $\dfrac{-8}{1+\sqrt3i}$ &nbsp; l) $\left(\dfrac{1+i}{1-i}\right)^5$</div>
+      <div class="neu-inset" style="padding:0;overflow-x:auto;margin-top:1rem">
+        <table style="width:100%;border-collapse:collapse;text-align:center;min-width:520px">
+          <thead><tr style="color:var(--accent-purple)"><th style="padding:.6rem">الجزء</th><th style="padding:.6rem">$r$</th><th style="padding:.6rem">$\theta$</th><th style="padding:.6rem">الصيغة القطبية</th></tr></thead>
+          <tbody id="polarTableBody" style="font-size:.92rem"></tbody>
+        </table>
+      </div>
+      <div class="callout tip" style="margin-top:.8rem">
+        <span class="icon">💡</span>
+        <span>الخطوات ثابتة في كل جزء: (1) بسّط $z$ إلى الصيغة الاعتيادية إن لزم (بضرب مرافق المقام)، (2) احسب $r=\sqrt{x^2+y^2}$، (3) حدّد الربع من إشارتي $x,y$ وأوجد $\theta$.</span>
+      </div>
+      <div class="exercise-final">✓ جميع النواتج الاثنا عشر موضحة في الجدول أعلاه — تحقّق من كل جزء بنفسك باتّباع الخطوات الثلاث. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>1.</span><span>مقياس العدد المركب $z=x+yi$ يُحسب بالقانون:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$x^2+y^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\sqrt{x^2+y^2}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$x+y$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac{y}{x}$</span></label>
+        </div>
+        <div class="quiz-explain">$r=\|z\|=\sqrt{x^2+y^2}$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>إذا كان $\sin\theta>0$ و $\cos\theta<0$، فإن $\theta$ تقع في الربع:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>الأول</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الرابع</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الثاني</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الثالث</span></label>
+        </div>
+        <div class="quiz-explain">$\sin$ موجبة و $\cos$ سالبة معاً في الربع الثاني فقط.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>الصيغة القطبية للعدد المركب $z$ هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$z=r(\cos\theta+i\sin\theta)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$z=r\theta$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$z=r+i\theta$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$z=\theta(\cos r+i\sin r)$</span></label>
+        </div>
+        <div class="quiz-explain">صيغة أويلر (الصيغة القطبية): $z=r(\cos\theta+i\sin\theta)$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>سعة العدد المركب $z=-5+0i$ هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac{\pi}{2}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac{3\pi}{2}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\pi$</span></label>
+        </div>
+        <div class="quiz-explain">النقطة $(-5,0)$ تقع على المحور الحقيقي السالب، أي $\theta=\pi$ (180°).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>القيمة الأساسية لسعة العدد المركب تنتمي دائماً إلى المجال:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$(-\infty,\infty)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$[0,2\pi]$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$[-\pi,\pi]$ فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$[0,\pi]$</span></label>
+        </div>
+        <div class="quiz-explain">القيمة الأساسية للسعة $\theta\in[0,2\pi]$؛ أي قيمة أخرى تكتب $\theta+2n\pi$.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>المقياس $r=\|z\|=\sqrt{x^2+y^2}$ (عدد حقيقي غير سالب).</span></li>
+        <li><span>السعة $\theta=\arg(z)$: نحدد الربع من إشارتي $\sin\theta=\frac yr$ و $\cos\theta=\frac xr$، ثم نستخدم زاوية الإسناد.</span></li>
+        <li><span>الصيغة القطبية (أويلر): $z=r(\cos\theta+i\sin\theta)$.</span></li>
+        <li><span>الأعداد على المحاور ($\pm a+0i$ أو $0\pm bi$) لها سعات مباشرة: $0°,90°,180°,270°$.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الفصل الأول الذهنية الكاملة</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l7" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">مراجعة شاملة لكل مفاهيم الفصل الأول — من الحاجة إلى الأعداد المركبة، إلى صيغتها القطبية.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l7">
+        <svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية شاملة للفصل الأول">
+          <defs>
+            <linearGradient id="gC7" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7c6fee"/><stop offset="1" stop-color="#3fa9f5"/>
+            </linearGradient>
+          </defs>
+          <line x1="450" y1="230" x2="180" y2="90" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="720" y2="90" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="150" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="750" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="230" y2="400" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="670" y2="400" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g class="mm-node"><circle cx="450" cy="230" r="62" fill="url(#gC7)"/>
+            <text x="450" y="225" text-anchor="middle" fill="#fff" font-weight="800" font-size="18" font-family="Cairo,sans-serif">الأعداد</text>
+            <text x="450" y="248" text-anchor="middle" fill="#fff" font-size="12" font-family="Cairo,sans-serif">المركبة ℂ</text></g>
+
+          <g class="mm-node"><circle cx="180" cy="90" r="52" fill="#ffab5e"/>
+            <text x="180" y="86" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">i²=-1</text>
+            <text x="180" y="103" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">الحاجة والتعريف</text></g>
+
+          <g class="mm-node"><circle cx="720" cy="90" r="52" fill="#ff6b9d"/>
+            <text x="720" y="86" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">+,-,×,÷</text>
+            <text x="720" y="103" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">الجبر</text></g>
+
+          <g class="mm-node"><circle cx="150" cy="250" r="52" fill="#2fd18f"/>
+            <text x="150" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">z̄, 1/z</text>
+            <text x="150" y="263" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">المرافق والقسمة</text></g>
+
+          <g class="mm-node"><circle cx="750" cy="250" r="52" fill="#3fa9f5"/>
+            <text x="750" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">-b±√Δ / 2a</text>
+            <text x="750" y="263" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">حل المعادلات</text></g>
+
+          <g class="mm-node"><circle cx="230" cy="400" r="52" fill="#7c6fee"/>
+            <text x="230" y="396" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">مستوي كاوس</text>
+            <text x="230" y="413" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">التمثيل الهندسي</text></g>
+
+          <g class="mm-node"><circle cx="670" cy="400" r="52" fill="#ff9f5e"/>
+            <text x="670" y="396" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">r(cosθ+isinθ)</text>
+            <text x="670" y="413" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">الصيغة القطبية</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الأول · الأعداد المركبة — الدرس 7: الصيغة القطبية وصيغة أويلر</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch1.js"></script>
+<script>
+(function(){
+  var ns = "http://www.w3.org/2000/svg";
+
+  function vec(svg, mapper, x, y, color, label){
+    var p0 = mapper.toPx(0,0);
+    var p1 = mapper.toPx(x,y);
+    var line = document.createElementNS(ns,"line");
+    line.setAttribute("x1",p0[0]); line.setAttribute("y1",p0[1]);
+    line.setAttribute("x2",p1[0]); line.setAttribute("y2",p1[1]);
+    line.setAttribute("stroke",color); line.setAttribute("stroke-width","3.5");
+    line.setAttribute("stroke-linecap","round");
+    svg.appendChild(line);
+    var dot = document.createElementNS(ns,"circle");
+    dot.setAttribute("cx",p1[0]); dot.setAttribute("cy",p1[1]); dot.setAttribute("r","5.5");
+    dot.setAttribute("fill",color);
+    svg.appendChild(dot);
+    if(label){
+      var t = document.createElementNS(ns,"text");
+      t.setAttribute("x", p1[0] + (x>=0?9:-9));
+      t.setAttribute("y", p1[1] - 9);
+      if(x<0) t.setAttribute("text-anchor","end");
+      t.setAttribute("font-size","13"); t.setAttribute("font-weight","800");
+      t.setAttribute("font-family","Cairo,sans-serif"); t.setAttribute("fill",color);
+      t.setAttribute("direction","ltr");
+      t.setAttribute("style","unicode-bidi:bidi-override;direction:ltr");
+      t.textContent = label;
+      svg.appendChild(t);
+    }
+  }
+
+  // Figure: r and theta
+  (function(){
+    var svg = document.getElementById("figPolar");
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-5,xmax:5,ymin:-4,ymax:5,step:1,w:420,h:320});
+    vec(svg, mapper, 3, 4, "#7c6fee", "P(x,y)");
+    var p0 = mapper.toPx(0,0), p1 = mapper.toPx(3,4), px = mapper.toPx(3,0);
+    var dash1 = document.createElementNS(ns,"line");
+    dash1.setAttribute("x1",p1[0]); dash1.setAttribute("y1",p1[1]);
+    dash1.setAttribute("x2",px[0]); dash1.setAttribute("y2",px[1]);
+    dash1.setAttribute("stroke","#7c6fee"); dash1.setAttribute("stroke-width","1.4");
+    dash1.setAttribute("stroke-dasharray","4 4"); dash1.setAttribute("opacity",".6");
+    svg.appendChild(dash1);
+    var arc = document.createElementNS(ns,"path");
+    var r0 = 34;
+    arc.setAttribute("d", "M "+(p0[0]+r0)+" "+p0[1]+" A "+r0+" "+r0+" 0 0 0 "+(p0[0]+r0*Math.cos(Math.atan2(4,3)))+" "+(p0[1]-r0*Math.sin(Math.atan2(4,3))));
+    arc.setAttribute("fill","none"); arc.setAttribute("stroke","#ff6b9d"); arc.setAttribute("stroke-width","1.6");
+    svg.appendChild(arc);
+    var thetaLabel = document.createElementNS(ns,"text");
+    thetaLabel.setAttribute("x", p0[0]+46); thetaLabel.setAttribute("y", p0[1]-16);
+    thetaLabel.setAttribute("font-size","14"); thetaLabel.setAttribute("font-weight","800");
+    thetaLabel.setAttribute("fill","#ff6b9d"); thetaLabel.setAttribute("font-family","Cairo,sans-serif");
+    thetaLabel.textContent = "θ";
+    svg.appendChild(thetaLabel);
+    var rLabel = document.createElementNS(ns,"text");
+    rLabel.setAttribute("x",(p0[0]+p1[0])/2-14); rLabel.setAttribute("y",(p0[1]+p1[1])/2-4);
+    rLabel.setAttribute("font-size","14"); rLabel.setAttribute("font-weight","800");
+    rLabel.setAttribute("fill","#7c6fee"); rLabel.setAttribute("font-family","Cairo,sans-serif");
+    rLabel.textContent = "r";
+    svg.appendChild(rLabel);
+  })();
+
+  // Example 7 figure: four axis vectors
+  (function(){
+    var svg = document.getElementById("figEx7");
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-6,xmax:6,ymin:-4,ymax:4,step:1,w:420,h:320});
+    vec(svg, mapper, 5, 0, "#2fd18f", "5+0i");
+    vec(svg, mapper, -4, 0, "#ff6b6b", "-4+0i");
+    vec(svg, mapper, 0, 3, "#3fa9f5", "0+3i");
+    vec(svg, mapper, 0, -2, "#7c6fee", "0-2i");
+  })();
+
+  // Polar explorer
+  var rSlider = document.getElementById("rSlider");
+  var thetaSlider = document.getElementById("thetaSlider");
+  var rVal = document.getElementById("rVal");
+  var thetaVal = document.getElementById("thetaVal");
+  var formula = document.getElementById("polarFormula");
+  function renderPolar(){
+    var r = parseFloat(rSlider.value);
+    var thetaDeg = parseFloat(thetaSlider.value);
+    var thetaRad = thetaDeg * Math.PI / 180;
+    rVal.textContent = r;
+    thetaVal.textContent = thetaDeg + "°";
+    var svg = document.getElementById("polarPlot");
+    var mapper = Ch4Plot.drawAxes(svg, {xmin:-5.5,xmax:5.5,ymin:-5.5,ymax:5.5,step:1,w:420,h:420});
+    var circle = document.createElementNS(ns,"circle");
+    var origin = mapper.toPx(0,0);
+    var edge = mapper.toPx(r,0);
+    circle.setAttribute("cx",origin[0]); circle.setAttribute("cy",origin[1]);
+    circle.setAttribute("r", Math.abs(edge[0]-origin[0]));
+    circle.setAttribute("fill","none"); circle.setAttribute("stroke","#c3cbd8"); circle.setAttribute("stroke-width","1.2"); circle.setAttribute("stroke-dasharray","3 3");
+    svg.appendChild(circle);
+    var x = r*Math.cos(thetaRad), y = r*Math.sin(thetaRad);
+    vec(svg, mapper, x, y, "#7c6fee", "z");
+    var xs = x.toFixed(2), ys = y.toFixed(2);
+    formula.innerHTML = "$$z = "+r+"(\\cos"+thetaDeg+"° + i\\sin"+thetaDeg+"°) \\approx "+xs+(y>=0?"+":"")+ys+"i$$";
+    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([formula]);
+  }
+  rSlider.addEventListener("input", renderPolar);
+  thetaSlider.addEventListener("input", renderPolar);
+
+  // Exercise 3 polar-form summary table (12 parts)
+  var rows = [
+    ["a","\\sqrt2","45°","\\sqrt2(\\cos45°+i\\sin45°)"],
+    ["b","2","60°","2(\\cos60°+i\\sin60°)"],
+    ["c","2\\sqrt3","0°","2\\sqrt3(\\cos0°+i\\sin0°)"],
+    ["d","6","330°","6(\\cos330°+i\\sin330°)"],
+    ["e","8","270°","8(\\cos270°+i\\sin270°)"],
+    ["f","11","180°","11(\\cos180°+i\\sin180°)"],
+    ["g","1","240°","1(\\cos240°+i\\sin240°)"],
+    ["h","1","120°","1(\\cos120°+i\\sin120°)"],
+    ["i","2","300°","2(\\cos300°+i\\sin300°)"],
+    ["j","5\\sqrt3","210°","5\\sqrt3(\\cos210°+i\\sin210°)"],
+    ["k","4","120°","4(\\cos120°+i\\sin120°)"],
+    ["l","1","90°","1(\\cos90°+i\\sin90°)"]
+  ];
+  var tbody = document.getElementById("polarTableBody");
+  rows.forEach(function(row){
+    var tr = document.createElement("tr");
+    tr.innerHTML = "<td style='padding:.5rem'>("+row[0]+")</td>"+
+      "<td style='padding:.5rem'>\\("+row[1]+"\\)</td>"+
+      "<td style='padding:.5rem'>\\("+row[2]+"\\)</td>"+
+      "<td style='padding:.5rem'>\\("+row[3]+"\\)</td>";
+    tbody.appendChild(tr);
+  });
+
+  document.addEventListener("DOMContentLoaded", function(){
+    renderPolar();
+    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([tbody]);
+  });
+  if(document.readyState !== "loading"){
+    renderPolar();
+    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([tbody]);
+  }
+})();
+</script>
+</body>
+</html>
