@@ -9,7 +9,8 @@
 <script>
   MathJax = {
     tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
-    chtml: { scale: 1.02 }
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
   };
 </script>
 <script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
@@ -686,11 +687,10 @@
       var dSign = D>=0 ? "+" : "-";
       out.innerHTML = "$$\\dfrac{"+A+(B>=0?"+":"")+B+"i}{"+C+dSign+Math.abs(D)+"i}\\times\\dfrac{"+C+(-D>=0?"+":"")+(-D)+"i}{"+C+(-D>=0?"+":"")+(-D)+"i} = "+reStr+" "+sign+" "+imStr+"i$$";
     }
-    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([out]);
+    Ch4.typeset([out]);
   }
   [a,b,c,d].forEach(function(inp){ inp.addEventListener("input", render); });
-  document.addEventListener("DOMContentLoaded", render);
-  if(document.readyState !== "loading") render();
+  render();
 })();
 </script>
 </body>

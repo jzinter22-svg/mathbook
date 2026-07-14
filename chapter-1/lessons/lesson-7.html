@@ -9,7 +9,8 @@
 <script>
   MathJax = {
     tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
-    chtml: { scale: 1.02 }
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
   };
 </script>
 <script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
@@ -45,7 +46,7 @@
   <section class="section fade-up">
     <div class="card neu">
       <h3 style="margin-top:0">📐 الشكل: المقياس $r$ والسعة $\theta$</h3>
-      <div class="mindmap-wrap"><svg id="figPolar" width="420" height="320" viewBox="0 0 420 320"></svg></div>
+      <div class="mindmap-wrap"><svg id="figPolar" width="420" height="320" viewBox="0 0 420 320" role="img" aria-label="رسم يوضح المقياس r والسعة θ لنقطة على المستوي المركب"></svg></div>
       <div class="mj-scroll" style="text-align:center">$$r=\|\overrightarrow{OP}\|\,,\qquad \theta=m\angle XOP$$</div>
     </div>
   </section>
@@ -177,7 +178,7 @@
       <h2>🕹️ مثال تفاعلي: مستكشف الصيغة القطبية</h2>
       <p>حرّك مزلاجي المقياس $r$ والسعة $\theta$ وشاهد النقطة $z=r(\cos\theta+i\sin\theta)$ تتحرك على المستوي المركب مباشرة.</p>
       <div class="io-panel">
-        <div class="mindmap-wrap"><svg id="polarPlot" width="420" height="420" viewBox="0 0 420 420"></svg></div>
+        <div class="mindmap-wrap"><svg id="polarPlot" width="420" height="420" viewBox="0 0 420 420" role="img" aria-label="مستكشف تفاعلي يعرض نقطة العدد المركب بدلالة المقياس والسعة"></svg></div>
         <div class="io-row">
           <label for="rSlider" style="min-width:8rem">المقياس <b>r</b> = <span id="rVal">3</span></label>
           <input type="range" id="rSlider" class="neu-range" min="0.5" max="5" step="0.1" value="3">
@@ -266,7 +267,7 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( z=2(\cos270°+i\sin270°) \)</div></div>
         </div></li>
       </ol>
-      <div class="mindmap-wrap"><svg id="figEx7" width="420" height="320" viewBox="0 0 420 320"></svg></div>
+      <div class="mindmap-wrap"><svg id="figEx7" width="420" height="320" viewBox="0 0 420 320" role="img" aria-label="رسم يمثل أربعة أعداد مركبة تقع على محاور المستوي المركب"></svg></div>
       <div class="exercise-final">✓ أربعة أشعة على محاور المستوي المركب، أطوالها $5,4,3,2$ على الترتيب. ∎</div>
     </div>
   </section>
@@ -585,7 +586,7 @@
     vec(svg, mapper, x, y, "#7c6fee", "z");
     var xs = x.toFixed(2), ys = y.toFixed(2);
     formula.innerHTML = "$$z = "+r+"(\\cos"+thetaDeg+"° + i\\sin"+thetaDeg+"°) \\approx "+xs+(y>=0?"+":"")+ys+"i$$";
-    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([formula]);
+    Ch4.typeset([formula]);
   }
   rSlider.addEventListener("input", renderPolar);
   thetaSlider.addEventListener("input", renderPolar);
@@ -615,14 +616,8 @@
     tbody.appendChild(tr);
   });
 
-  document.addEventListener("DOMContentLoaded", function(){
-    renderPolar();
-    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([tbody]);
-  });
-  if(document.readyState !== "loading"){
-    renderPolar();
-    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([tbody]);
-  }
+  Ch4.typeset([tbody]);
+  renderPolar();
 })();
 </script>
 </body>

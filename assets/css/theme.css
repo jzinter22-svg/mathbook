@@ -317,7 +317,7 @@ input[type=text].neu-input,input[type=number].neu-input{
 
 /* Summary */
 .summary-list{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
-.summary-list li{display:flex;gap:.6rem;align-items:flex-start;padding:.5rem 0}
+.summary-list li{display:flex;gap:.6rem;align-items:flex-start;padding:.5rem 0;min-width:0}
 .summary-list li>span{min-width:0;overflow-x:auto}
 .summary-list li::before{content:"✓";flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent-green);
   color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900}

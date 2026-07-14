@@ -9,7 +9,8 @@
 <script>
   MathJax = {
     tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
-    chtml: { scale: 1.02 }
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
   };
 </script>
 <script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
@@ -197,7 +198,7 @@
       <h2>🕹️ مثال تفاعلي: بناء العدد المركب $z=a+bi$</h2>
       <p>حرّك المزلاجين لتغيير $a$ (الجزء الحقيقي) و $b$ (الجزء التخيلي)، وشاهد كيف تتغيّر صيغة العدد المركب والنقطة الممثّلة له على المستوي — تمهيداً للتمثيل الهندسي الذي سندرسه لاحقاً في الدرس 6.</p>
       <div class="io-panel">
-        <div class="mindmap-wrap"><svg id="zPlot" width="480" height="360"></svg></div>
+        <div class="mindmap-wrap"><svg id="zPlot" width="480" height="360" role="img" aria-label="رسم بياني يمثل العدد المركب z=a+bi كنقطة ومتجه على المستوي"></svg></div>
         <div class="io-row">
           <label for="aSlider" style="min-width:9rem">الجزء الحقيقي <b>a</b> = <span id="aVal">3</span></label>
           <input type="range" id="aSlider" class="neu-range" min="-5" max="5" step="1" value="3">
@@ -419,12 +420,11 @@
     svg.appendChild(label);
     var sign = b>=0 ? "+ "+b : "- "+Math.abs(b);
     formula.innerHTML = "$$z = "+a+" "+sign+"i$$";
-    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([formula]);
+    Ch4.typeset([formula]);
   }
   aSlider.addEventListener("input", render);
   bSlider.addEventListener("input", render);
-  document.addEventListener("DOMContentLoaded", render);
-  if(document.readyState !== "loading") render();
+  render();
 })();
 </script>
 </body>

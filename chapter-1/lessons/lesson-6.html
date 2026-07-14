@@ -9,7 +9,8 @@
 <script>
   MathJax = {
     tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
-    chtml: { scale: 1.02 }
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
   };
 </script>
 <script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
@@ -50,7 +51,7 @@
   <section class="section fade-up">
     <div class="card neu">
       <h3 style="margin-top:0">📐 الشكل 1: تمثيل نقطة على المستوي المركب</h3>
-      <div class="mindmap-wrap"><svg id="figPoint" width="420" height="320" viewBox="0 0 420 320"></svg></div>
+      <div class="mindmap-wrap"><svg id="figPoint" width="420" height="320" viewBox="0 0 420 320" role="img" aria-label="تمثيل نقطة P على المستوي المركب"></svg></div>
       <p style="color:var(--text-secondary);text-align:center;margin-top:.3rem">العدد $z=x+yi$ يقابل النقطة $P(x,y)$ والمتجه $\overrightarrow{OP}$.</p>
     </div>
   </section>
@@ -82,11 +83,11 @@
       <div class="grid grid-2" style="margin-top:1rem">
         <div class="neu-inset" style="padding:1rem">
           <p style="text-align:center;font-weight:800;color:var(--accent-purple)">(a) $(1+2i)+(3-4i)=4-2i$</p>
-          <div class="mindmap-wrap"><svg id="figEx1a" width="360" height="300" viewBox="0 0 360 300"></svg></div>
+          <div class="mindmap-wrap"><svg id="figEx1a" width="360" height="300" viewBox="0 0 360 300" role="img" aria-label="شكل أرجاند يمثل جمع العددين المركبين بقاعدة متوازي الأضلاع"></svg></div>
         </div>
         <div class="neu-inset" style="padding:1rem">
           <p style="text-align:center;font-weight:800;color:var(--accent-green)">(b) $(5-2i)-(2-3i)=3+i$</p>
-          <div class="mindmap-wrap"><svg id="figEx1b" width="360" height="300" viewBox="0 0 360 300"></svg></div>
+          <div class="mindmap-wrap"><svg id="figEx1b" width="360" height="300" viewBox="0 0 360 300" role="img" aria-label="شكل أرجاند يمثل طرح العددين المركبين بقاعدة متوازي الأضلاع"></svg></div>
         </div>
       </div>
       <div class="exercise-final">✓ (a) القطر $\overrightarrow{OP_3}$ يصل إلى $(4,-2)$&nbsp; (b) الفرق يصل إلى $(3,1)$. ∎</div>
@@ -114,7 +115,7 @@
           <button class="neu-btn active" id="opAdd" data-op="add">z₁ + z₂</button>
           <button class="neu-btn" id="opSub" data-op="sub">z₁ − z₂</button>
         </div>
-        <div class="mindmap-wrap"><svg id="argandCalc" width="480" height="380" viewBox="0 0 480 380"></svg></div>
+        <div class="mindmap-wrap"><svg id="argandCalc" width="480" height="380" viewBox="0 0 480 380" role="img" aria-label="حاسبة أرجاند تفاعلية تعرض جمع أو طرح عددين مركبين بيانياً"></svg></div>
         <div class="rule-box" id="argandFormula"></div>
       </div>
     </div>
@@ -136,7 +137,7 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( -z_1=-1-4i\,,\quad -z_2=2-2i\,,\quad -z_3=3i \)</div></div>
         </div></li>
       </ol>
-      <div class="mindmap-wrap"><svg id="figPQ1" width="420" height="360" viewBox="0 0 420 360"></svg></div>
+      <div class="mindmap-wrap"><svg id="figPQ1" width="420" height="360" viewBox="0 0 420 360" role="img" aria-label="شكل أرجاند يمثل ثلاثة أعداد مركبة ونظائرها الجمعية"></svg></div>
       <div class="exercise-final">✓ كل عدد ونظيره الجمعي متماثلان بالانعكاس حول نقطة الأصل $O$ (دوران $180°$). ∎</div>
     </div>
 
@@ -152,7 +153,7 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( \bar z_1=3-5i\,,\quad \bar z_2=-4-3i\,,\quad \bar z_3=-i \)</div></div>
         </div></li>
       </ol>
-      <div class="mindmap-wrap"><svg id="figPQ2" width="420" height="360" viewBox="0 0 420 360"></svg></div>
+      <div class="mindmap-wrap"><svg id="figPQ2" width="420" height="360" viewBox="0 0 420 360" role="img" aria-label="شكل أرجاند يمثل ثلاثة أعداد مركبة ومرافقاتها"></svg></div>
       <div class="exercise-final">✓ كل عدد ومرافقه متماثلان بالانعكاس حول المحور الحقيقي (محور $x$). ∎</div>
     </div>
 
@@ -168,7 +169,7 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( \bar z=6+2i\,,\qquad -z=-6+2i \)</div></div>
         </div></li>
       </ol>
-      <div class="mindmap-wrap"><svg id="figPQ3" width="420" height="360" viewBox="0 0 420 360"></svg></div>
+      <div class="mindmap-wrap"><svg id="figPQ3" width="420" height="360" viewBox="0 0 420 360" role="img" aria-label="شكل أرجاند يمثل العدد z ومرافقه ونظيره الجمعي معاً"></svg></div>
       <div class="callout tip" style="margin-top:.8rem">
         <span class="icon">💡</span>
         <span>لاحظ أن $\bar z$ هو انعكاس $z$ حول المحور الحقيقي، بينما $-z$ هو انعكاس $z$ حول نقطة الأصل (دوران $180°$) — و $-\bar z$ (غير مطلوب هنا) سيكون انعكاساً حول المحور التخيلي.</span>
@@ -452,7 +453,7 @@
     var sr = ry>=0? "+"+ry+"i" : ry+"i";
     document.getElementById("argandFormula").innerHTML =
       "$$("+a1+s1+") "+opSign+" ("+a2+s2+") = "+rx+sr+"$$";
-    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([document.getElementById("argandFormula")]);
+    Ch4.typeset([document.getElementById("argandFormula")]);
   }
   ["gA1","gB1","gA2","gB2"].forEach(function(id){
     document.getElementById(id).addEventListener("input", renderCalc);
@@ -467,8 +468,7 @@
     this.classList.add("active"); document.getElementById("opAdd").classList.remove("active");
     renderCalc();
   });
-  document.addEventListener("DOMContentLoaded", renderCalc);
-  if(document.readyState !== "loading") renderCalc();
+  renderCalc();
 })();
 </script>
 </body>

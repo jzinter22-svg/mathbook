@@ -30,6 +30,21 @@
     try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(p)); }catch(e){}
   }
   window.Ch4 = window.Ch4 || {};
+  window.Ch4.typeset = function(elements){
+    /* Safe, retrying wrapper around MathJax.typesetPromise for widgets that
+       render a formula in response to user input (sliders, calculators...).
+       window.MathJax is only the plain config object until MathJax's async
+       script finishes loading, so a plain "if it exists, call it" check can
+       silently no-op on a slow-loading page. Retry until it's really ready. */
+    function attempt(){
+      if(window.MathJax && window.MathJax.typesetPromise){
+        window.MathJax.typesetPromise(elements);
+      } else {
+        setTimeout(attempt, 30);
+      }
+    }
+    attempt();
+  };
   window.Ch4.markComplete = function(id){
     var p = loadProgress();
     p[id] = true;
@@ -291,7 +306,29 @@
     setupStepReveals();
     if(window.Ch4Quiz) window.Ch4Quiz.init();
     if(window.Ch4Interactive) window.Ch4Interactive.init();
-    if(window.MathJax && window.MathJax.typesetPromise){ window.MathJax.typesetPromise(); }
+    typesetOnceReady();
+  }
+
+  function typesetOnceReady(){
+    /* MathJax's own automatic startup typeset raced this page's explicit
+       call on lessons with heavier inline scripts: sometimes only part of
+       the page rendered, sometimes every formula rendered twice. Startup
+       auto-typeset is disabled (see each lesson's MathJax config,
+       startup:{typeset:false}) so there is exactly one typeset pass, ever.
+       Polling for window.MathJax.typesetPromise alone isn't enough: that
+       method reference can exist before MathJax's component graph (tex
+       input, chtml output, font data) has actually finished loading, and
+       calling it that early silently typesets only part of the page.
+       MathJax.startup.promise is the documented full-readiness signal —
+       it resolves once startup truly completes, whether or not an
+       automatic pass ran. */
+    if(window.MathJax && window.MathJax.startup && window.MathJax.startup.promise){
+      window.MathJax.startup.promise.then(function(){
+        window.MathJax.typesetPromise();
+      });
+    } else {
+      setTimeout(typesetOnceReady, 30);
+    }
   }
 
   if(document.readyState === "loading"){

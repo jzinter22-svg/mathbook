@@ -9,7 +9,8 @@
 <script>
   MathJax = {
     tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
-    chtml: { scale: 1.02 }
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
   };
 </script>
 <script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
@@ -645,11 +646,10 @@
       var sign = im>=0 ? "+" : "-";
       rootsEl.innerHTML = "$$\\Delta<0 \\Rightarrow x = "+fmt(re)+" "+sign+" "+fmt(Math.abs(im))+"i \\;\\;(\\text{جذران مركبان مترافقان})$$";
     }
-    if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([discEl, rootsEl]);
+    Ch4.typeset([discEl, rootsEl]);
   }
   [a,b,c].forEach(function(inp){ inp.addEventListener("input", render); });
-  document.addEventListener("DOMContentLoaded", render);
-  if(document.readyState !== "loading") render();
+  render();
 })();
 </script>
 </body>
