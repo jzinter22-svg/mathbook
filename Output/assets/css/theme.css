@@ -258,6 +258,15 @@ body{
 .step-body p{overflow-x:auto}
 @keyframes stepIn{to{opacity:1;transform:translateY(0)}}
 
+/* Mathematics-first calculation flow */
+.calc-note{font-size:.82rem;color:var(--text-secondary);font-weight:700;margin:.1rem 0 .3rem}
+.calc-flow{display:grid;justify-items:center;gap:.3rem;margin:.1rem 0 .55rem;min-width:0}
+.calc-line{font-size:1.08rem;max-width:100%;overflow-x:auto}
+.calc-arrow{color:var(--accent-purple);font-size:1.35rem;line-height:1;opacity:.5}
+.calc-box{display:inline-block;padding:.5rem 1.1rem;border-radius:var(--radius-sm);
+  background:var(--surface);box-shadow:4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+  max-width:100%;overflow-x:auto}
+
 .reveal-btn{margin-top:.5rem}
 .hidden-steps .step{display:none}
 .hidden-steps.shown .step{display:grid}
