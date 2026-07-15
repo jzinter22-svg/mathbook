@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 4: القطع الناقص — تعريفه ومعادلته ورسمه — الفصل الثاني</title>
+<meta name="description" content="تعريف القطع الناقص بوصفه مجموع بعدين ثابتاً، اشتقاق معادلتيه القياسيتين، أهم العلاقات (الاختلاف المركزي، المساحة، المحيط)، طريقة رسمه، مع أمثلة وتمرين (2-2).">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-4.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 4 من 5 · 2-3-1 إلى 2-3-3</span>
+    <h1>القطع الناقص: تعريفه ومعادلته ورسمه</h1>
+    <p class="lead">نتعرف على <b>القطع الناقص</b> بوصفه مجموعة النقاط التي يكون مجموع بعديها عن نقطتين ثابتتين (البؤرتين) عدداً ثابتاً $2a$، ونشتق معادلتيه القياسيتين، ونتعرف على عناصره (الاختلاف المركزي، المساحة، المحيط)، ثم نتعلم رسمه.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يتعرف على تعريف القطع الناقص: مجموعة نقاط مجموع بعدي كل منها عن بؤرتين ثابتتين يساوي عدداً ثابتاً $2a$.</span></li>
+        <li><span class="obj-num">2</span><span>يحدد عناصر القطع الناقص: المركز $C$، البؤرتان $F_1,F_2$، الرأسان $V_1,V_2$، القطبان $B_1,B_2$، المحوران الكبير والصغير.</span></li>
+        <li><span class="obj-num">3</span><span>يشتق المعادلتين القياسيتين للقطع الناقص الذي مركزه نقطة الأصل: $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ (بؤرتاه على $X$) و $\dfrac{x^2}{b^2}+\dfrac{y^2}{a^2}=1$ (بؤرتاه على $Y$).</span></li>
+        <li><span class="obj-num">4</span><span>يستخدم العلاقات $c^2=a^2-b^2$ والاختلاف المركزي $e=\dfrac{c}{a}<1$ ومساحة القطع ومحيطه لاستخراج عناصر القطع أو معادلته.</span></li>
+        <li><span class="obj-num">5</span><span>يتعرف على طريقة رسم القطع الناقص على الورق البياني وعملياً باستخدام الخيط والدبوسين.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 التعريف">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف — القطع الناقص (Ellipse)</span>
+      <p style="margin:.3rem 0">هو مجموعة كل النقاط في المستوي التي يكون مجموع بعدي كل منها عن نقطتين معلومتين ثابتتين عدداً ثابتاً. كل من النقطتين المعلومتين تسمى <b>بؤرة</b> (Focus)، والنقطة المنصّفة للمسافة بينهما تسمى <b>مركز القطع الناقص</b> (Center).</p>
+      <p style="margin:.3rem 0">إذا كانت $F_1,F_2$ بؤرتي القطع الناقص، فالتعريف ينصّ على أن لأي نقطة $P(x,y)$ على المنحني:</p>
+      <div class="mj-scroll">$$\overline{PF_1}+\overline{PF_2} = 2a \qquad \text{أي} \qquad d_1+d_2=2a$$</div>
+      <p style="margin:.3rem 0">حيث $2a$ عدد ثابت يمثّل <b>طول المحور الكبير</b> $\overline{V_1V_2}$. والنقطة $C$ منتصف المسافة بين البؤرتين هي المركز، والنقطتان $V_1,V_2$ رأسا القطع الناقص، والنقطتان $B_1,B_2$ قطبا القطع الناقص وتقع عليهما القطعة $\overline{B_1B_2}$ الممثّلة <b>للمحور الصغير</b>.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: $\overline{PF_1}+\overline{PF_2}=2a$ عند كل نقطة</h2>
+      <p>حرّك المزلاج لتحريك النقطة $P$ حول القطع الناقص $\dfrac{x^2}{25}+\dfrac{y^2}{16}=1$ (حيث $a=5,\,b=4,\,c=3$)، وشاهد كيف يبقى مجموع المسافتين $d_1,d_2$ من $P$ إلى البؤرتين ثابتاً ومساوياً لـ $2a=10$.</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="defFigEllipse" width="460" height="360" viewBox="0 0 460 360" role="img" aria-label="رسم يوضح تساوي مجموع بعدي نقطة على القطع الناقص عن البؤرتين مع 2a"></svg></div>
+        <div class="io-row">
+          <label for="thetaSlider" style="min-width:9rem">الزاوية $\theta$ = <span id="thetaVal">40</span>°</label>
+          <input type="range" id="thetaSlider" class="neu-range" min="0" max="360" step="2" value="40">
+        </div>
+        <div class="rule-box" id="ellipseSumFormula" style="font-size:1.05rem">$$d_1+d_2 = 10.00 = 2a$$</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>💡 أولاً: معادلة القطع الناقص الذي مركزه نقطة الأصل وبؤرتاه تنتميان إلى المحور $X$</h2>
+      <p>لنفرض أن إحداثيي البؤرتين هما $F_1(c,0),\,F_2(-c,0)$، وأن البعد الثابت $2a$. لتكن $P(x,y)$ أية نقطة على القطع الناقص، وبموجب التعريف $\overline{PF_1}+\overline{PF_2}=2a$.</p>
+      <button class="neu-btn" data-reveal-steps="deriv-ellipse-x">إظهار الاشتقاق خطوة بخطوة</button>
+    </div>
+
+    <ol class="steps hidden-steps" id="deriv-ellipse-x" style="margin-top:1rem">
+      <li class="step"><span class="step-dot">1</span><div class="step-body">
+        <p class="calc-note">نطبّق قانون المسافة ونعزل أحد الجذرين قبل التربيع</p>
+        <div class="calc-flow">
+          <div class="calc-line">\( \sqrt{(x-c)^2+y^2}+\sqrt{(x+c)^2+y^2} = 2a \)</div>
+          <div class="calc-arrow">↓ نعزل الجذر الأول وننقل الآخر</div>
+          <div class="calc-line calc-box">\( \sqrt{(x-c)^2+y^2} = 2a-\sqrt{(x+c)^2+y^2} \)</div>
+        </div>
+      </div></li>
+      <li class="step"><span class="step-dot">2</span><div class="step-body">
+        <p class="calc-note">نربّع الطرفين ونحذف $y^2$ المشتركة من الطرفين</p>
+        <div class="calc-flow">
+          <div class="calc-line">\( (x-c)^2+y^2 = 4a^2-4a\sqrt{(x+c)^2+y^2}+(x+c)^2+y^2 \)</div>
+          <div class="calc-arrow">↓ نفتح الأقواس ونحذف $x^2,c^2$ المشتركة</div>
+          <div class="calc-line calc-box">\( -4xc-4a^2 = -4a\sqrt{(x+c)^2+y^2} \)</div>
+        </div>
+      </div></li>
+      <li class="step"><span class="step-dot">3</span><div class="step-body">
+        <p class="calc-note">نقسم الطرفين على $-4$ ثم نربّع مرة ثانية</p>
+        <div class="calc-flow">
+          <div class="calc-line">\( a\sqrt{(x+c)^2+y^2} = xc+a^2 \)</div>
+          <div class="calc-arrow">↓ نربّع الطرفين</div>
+          <div class="calc-line">\( a^2x^2+2a^2xc+a^2c^2+a^2y^2 = x^2c^2+2a^2xc+a^4 \)</div>
+        </div>
+      </div></li>
+      <li class="step"><span class="step-dot">4</span><div class="step-body">
+        <p class="calc-note">نحذف $2a^2xc$ المشتركة ونجمع حدود $x^2$</p>
+        <div class="calc-flow">
+          <div class="calc-line">\( a^2x^2-x^2c^2+a^2y^2 = a^4-a^2c^2 \)</div>
+          <div class="calc-arrow">↓</div>
+          <div class="calc-line calc-box">\( x^2(a^2-c^2)+a^2y^2 = a^2(a^2-c^2) \quad \cdots(1) \)</div>
+        </div>
+      </div></li>
+      <li class="step"><span class="step-dot">5</span><div class="step-body">
+        <p class="calc-note">بما أن $a>c>0$ دائماً فإن $a^2-c^2>0$؛ نفرض $b^2=a^2-c^2$ ونعوّض في (1)، ثم نقسم الطرفين على $a^2b^2$</p>
+        <div class="calc-flow">
+          <div class="calc-line">\( x^2b^2+a^2y^2 = a^2b^2 \)</div>
+          <div class="calc-arrow">↓ نقسم على $a^2b^2$</div>
+          <div class="calc-line calc-box">\( \dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1 \quad \cdots (5\text{-}2) \)</div>
+        </div>
+      </div></li>
+    </ol>
+
+    <div class="callout tip fade-up" style="margin-top:1rem">
+      <span class="icon">💬</span>
+      <span>وهي المعادلة القياسية للقطع الناقص الذي بؤرتاه تنتميان إلى المحور $X$ ومركزه نقطة الأصل، حيث $b^2=a^2-c^2$.</span>
+    </div>
+    <div class="callout warn fade-up" style="margin-top:.8rem">
+      <span class="icon">⚠️</span>
+      <span>وبطريقة مماثلة، إذا كانت البؤرتان $F_1(0,c),\,F_2(0,-c)$ تنتميان إلى المحور $Y$ ومركزه نقطة الأصل، نحصل على المعادلة: <b>$\dfrac{x^2}{b^2}+\dfrac{y^2}{a^2}=1$ … (6-2)</b> — الملاحظة أن المقام الأكبر ($a^2$) يكون دائماً تحت متغيّر المحور الذي تقع عليه البؤرتان.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="relations" data-navlabel="📐 علاقات مهمة">
+    <div class="card neu">
+      <h2>📐 علاقات مهمة في القطع الناقص الذي مركزه نقطة الأصل</h2>
+      <p class="lead" style="margin-top:0">في القطع الناقص، محوراه منطبقان على المحورين الإحداثيين:</p>
+      <div class="grid grid-2">
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>①</b> طول المحور الكبير: <span class="mj-scroll">$2a$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>②</b> طول المحور الصغير: <span class="mj-scroll">$2b$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>③</b> المسافة بين البؤرتين: <span class="mj-scroll">$2c$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>④</b> العلاقة الأساسية: <span class="mj-scroll">$c^2=a^2-b^2$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>⑤</b> ترتيب الأطوال دائماً: <span class="mj-scroll">$a>c,\quad a>b$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>⑥</b> الاختلاف المركزي: <span class="mj-scroll">$e=\dfrac{c}{a}<1$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>⑦</b> مساحة القطع الناقص: <span class="mj-scroll">$A=ab\pi$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;border-inline-start:4px solid var(--accent-purple)"><b>⑧</b> محيط القطع الناقص (تقريبي): <span class="mj-scroll">$P=2\pi\sqrt{\dfrac{a^2+b^2}{2}}$</span></div>
+      </div>
+      <div class="callout tip fade-up" style="margin-top:1rem">
+        <span class="icon">💬</span>
+        <span>خاصية مفيدة: البؤرتان والرأسان دائماً على نفس المحور، بينما القطبان يقعان على المحور المخالف للبؤرتين والرأسين. كما أن بعد أي بؤرة عن أي قطب يساوي دائماً $a$ (لأن $b^2+c^2=a^2$).</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">قطع ناقص معادلته $\dfrac{x^2}{25}+\dfrac{y^2}{16}=1$. جد إحداثيي رأسيه وبؤرتيه وقطبيه، وطول كل من محوريه والمسافة بين بؤرتيه، ومقدار اختلافه المركزي، ثم استخرج مساحته ومحيطه.</div>
+      <ol class="steps hidden-steps" id="steps-ex1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بالمقارنة مع $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ (البؤرتان على $X$ لأن $25>16$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a^2=25\Rightarrow a=5,\qquad b^2=16\Rightarrow b=4 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$c^2=a^2-b^2=25-16=9 \Rightarrow c=3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(5,0),V_2(-5,0);\quad B_1(0,4),B_2(0,-4);\quad F_1(3,0),F_2(-3,0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">الأطوال: المحور الكبير $2a$، الصغير $2b$، والمسافة بين البؤرتين $2c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=10,\quad 2b=8,\quad 2c=6 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">الاختلاف المركزي والمساحة والمحيط</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( e=\dfrac{c}{a}=\dfrac35=0.6<1,\qquad A=ab\pi=20\pi,\qquad P=2\pi\sqrt{\dfrac{25+16}{2}}=2\sqrt{\dfrac{41}{2}}\,\pi \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ جميع عناصر القطع الناقص أعلاه — لاحظ أن $25>16$ هو ما حدد أن البؤرتين على المحور $X$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">اكتب معادلة القطع الناقص الذي مركزه نقطة الأصل وبؤرتاه يقعان على المحور $X$، إذا علمت أن أحد رأسيه يبعد عن بؤرتيه بمقدار $2,\,8$ وحدة على الترتيب وينطبق محوره على المحورين الإحداثيين.</div>
+      <ol class="steps hidden-steps" id="steps-ex2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بعدا أي رأس عن البؤرتين مجموعهما دائماً $2a$ (بُعد كامل المحور الكبير)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=2+8=10 \Rightarrow a=5 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">أقرب بؤرة للرأس تبعد عنه $a-c$، والأبعد تبعد $a+c$؛ نستخدم الأقرب</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a-c=2 \Rightarrow c=5-2=3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نستخرج $b^2$ من $c^2=a^2-b^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 9=25-b^2 \Rightarrow b^2=16 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">البؤرتان على $X$ فنستخدم $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{25}+\dfrac{y^2}{16}=1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $\dfrac{x^2}{25}+\dfrac{y^2}{16}=1$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">قطع ناقص معادلته $\dfrac{x^2}{45}+\dfrac{y^2}{20}=1$. أثبت أن النقطة $P(3,4)$ تنتمي له، ثم جد طولي نصفي القطرين البؤريين للنقطة $P$ (أي المسافتين من $P$ إلى كل بؤرة).</div>
+      <ol class="steps hidden-steps" id="steps-ex3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=3,y=4$ في المعادلة للتحقق</p>
+          <div class="calc-flow"><div class="calc-line">\( \dfrac{3^2}{45}+\dfrac{4^2}{20} = \dfrac{9}{45}+\dfrac{16}{20} = \dfrac15+\dfrac45 \)</div>
+          <div class="calc-arrow">↓</div>
+          <div class="calc-line calc-box">\( =\dfrac55=1 \quad ✓ \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نستخرج بؤرتي القطع: $a^2=45,\,b^2=20 \Rightarrow c^2=45-20=25 \Rightarrow c=5$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( F_1(5,0),\quad F_2(-5,0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نحسب $\overline{PF_1}$ و $\overline{PF_2}$ بقانون المسافة</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \overline{PF_1}=\sqrt{(3-5)^2+4^2}=\sqrt{4+16}=\sqrt{20}=2\sqrt5 \)</div>
+            <div class="calc-line">\( \overline{PF_2}=\sqrt{(3+5)^2+4^2}=\sqrt{64+16}=\sqrt{80}=4\sqrt5 \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P(3,4)$ تنتمي للقطع، ونصفا قطريه البؤريين $2\sqrt5$ و $4\sqrt5$ (ومجموعهما $6\sqrt5=2a$ كما يجب). ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="drawing" data-navlabel="🖊️ رسم القطع الناقص">
+    <div class="card neu">
+      <h2>🖊️ 2-3-3 رسم القطع الناقص</h2>
+      <p>لرسم القطع الناقص على الورق البياني لا بد من اتباع الخطوات الآتية:</p>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>نعيّن على المستوي الإحداثي موقع الرأسين $V_1(a,0),V_2(-a,0)$ أو $V_1(0,a),V_2(0,-a)$ حسب الحالة.</span></li>
+        <li><span class="obj-num">2</span><span>نعيّن على المستوي الإحداثي موقع القطبين $B_1(0,b),B_2(0,-b)$ أو $B_1(b,0),B_2(-b,0)$ حسب الحالة.</span></li>
+        <li><span class="obj-num">3</span><span>نصل بين النقاط الأربع $V_1,B_1,V_2,B_2$ على الترتيب بمنحنٍ متصل.</span></li>
+        <li><span class="obj-num">4</span><span>نعيّن على المستوي الإحداثي موقع البؤرتين $F_1(c,0),F_2(-c,0)$ أو $F_1(0,c),F_2(0,-c)$ حسب الحالة.</span></li>
+      </ol>
+      <div class="callout tip fade-up" style="margin-top:1rem">
+        <span class="icon">📌</span>
+        <span>كما يمكن رسم القطع الناقص عملياً بأخذ خيط طوله أكبر من $\overline{F_1F_2}$، نثبّت طرفيه على بؤرتي القطع $F_1,F_2$ بدبوسين، ثم نشدّ الخيط برأس قلم ونحرّكه على الورقة بحيث يكون الخيط مشدوداً دوماً فينتج شكل القطع الناقص — لأن مجموع بعدي القلم عن الدبوسين (طول الخيط) يبقى ثابتاً في كل موضع.</span>
+      </div>
+      <div class="neu" style="padding:1.25rem 1.5rem;margin-top:1rem">
+        <div class="mindmap-wrap"><svg id="pinStringFig" width="460" height="260" viewBox="0 0 460 260" role="img" aria-label="توضيح طريقة رسم القطع الناقص بالخيط والدبوسين"></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (2-2)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (2-2)</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد إحداثيات الرأسين والبؤرتين والقطبين وطول كل من المحورين والمسافة بين البؤرتين ومقدار الاختلاف المركزي للقطع الناقص $x^2+4y^2=16$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقسم الطرفين على $16$ لنحصل على الصورة القياسية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{16}+\dfrac{y^2}{4}=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$16>4$ فالبؤرتان على $X$: $a^2=16\Rightarrow a=4$، $b^2=4\Rightarrow b=2$، $c^2=16-4=12\Rightarrow c=2\sqrt3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(4,0),V_2(-4,0);\;\; B_1(0,2),B_2(0,-2);\;\; F_1(2\sqrt3,0),F_2(-2\sqrt3,0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">الأطوال والاختلاف المركزي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=8,\quad 2b=4,\quad 2c=4\sqrt3,\quad e=\dfrac{2\sqrt3}{4}=\dfrac{\sqrt3}{2}\approx0.87 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ راجع القيم أعلاه — القطع مستطيل الشكل قليلاً (اختلاف مركزي قريب من 1). ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع الناقص الذي مركزه نقطة الأصل ويمر بنقطتي تقاطع المستقيم الذي معادلته $8x+4y=16$ مع المحورين الإحداثيين.</div>
+      <ol class="steps hidden-steps" id="steps-pq2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">تقاطع المستقيم مع المحور $X$ (عند $y=0$) ومع المحور $Y$ (عند $x=0$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=0 \Rightarrow x=2 \;\; (2,0);\qquad x=0 \Rightarrow y=4 \;\; (0,4) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">هاتان النقطتان تقعان على المحورين مباشرة، فهما رأس وقطب القطع؛ بما أن $4>2$ فالمحور الكبير على $Y$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=4,\quad b=2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نستخدم الصورة $\dfrac{x^2}{b^2}+\dfrac{y^2}{a^2}=1$ (بؤرتان على $Y$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{4}+\dfrac{y^2}{16}=1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $\dfrac{x^2}{4}+\dfrac{y^2}{16}=1$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع الناقص الذي مركزه نقطة الأصل وبؤرتاه تنتميان إلى المحور $X$، والمسافة بين بؤرتيه تساوي $6$ وحدات ومجموع طولي محوريه يساوي $18$ وحدة.</div>
+      <ol class="steps hidden-steps" id="steps-pq3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$2c=6 \Rightarrow c=3$، و $2a+2b=18 \Rightarrow a+b=9$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( c=3,\qquad a+b=9 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">من $c^2=a^2-b^2=(a-b)(a+b)$ نجد $a-b$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 9=(a-b)(9) \Rightarrow a-b=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نحل النظام $a+b=9,\;a-b=1$ آنياً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=5,\quad b=4 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $\dfrac{x^2}{25}+\dfrac{y^2}{16}=1$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> السؤال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع الناقص الذي مركزه نقطة الأصل وطول محوره الكبير $20$ وحدة، ومحيط المثلث المحدد ببؤرتيه ونقطة $h(x,y)$ تنتمي للقطع يساوي $32$ وحدة، إذا علمت أن بؤرتيه تنتميان إلى المحور $X$.</div>
+      <ol class="steps hidden-steps" id="steps-pq4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$2a=20 \Rightarrow a=10$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=10 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">محيط المثلث $= \overline{hF_1}+\overline{hF_2}+\overline{F_1F_2} = 2a+2c$ (لأن مجموع البعدين لأي نقطة على القطع يساوي $2a$ دوماً)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 20+2c=32 \Rightarrow c=6 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">$b^2=a^2-c^2=100-36=64$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{100}+\dfrac{y^2}{64}=1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $\dfrac{x^2}{100}+\dfrac{y^2}{64}=1$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> السؤال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع الناقص الذي مركزه نقطة الأصل وإحدى بؤرتيه هي بؤرة القطع المكافئ الذي معادلته $x^2=8y$، وطول محوره الكبير يساوي $16$ وحدة.</div>
+      <ol class="steps hidden-steps" id="steps-pq5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بؤرة القطع المكافئ $x^2=8y$: نقارن مع $x^2=4ay$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4a=8 \Rightarrow a=2 \Rightarrow \text{بؤرة المكافئ}=F(0,2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">إذن بؤرة القطع الناقص $(0,2)$ تقع على المحور $Y$، فـ $c=2$ لهذا القطع؛ وطول محوره الكبير $2a=16 \Rightarrow a=8$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( c=2,\quad a=8 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">$b^2=a^2-c^2=64-4=60$؛ بؤرتا القطع الناقص على $Y$ فنستخدم $\dfrac{x^2}{b^2}+\dfrac{y^2}{a^2}=1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{60}+\dfrac{y^2}{64}=1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $\dfrac{x^2}{60}+\dfrac{y^2}{64}=1$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>القطع الناقص هو مجموعة النقاط التي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>الفرق بين بعديها عن بؤرتين ثابت</span></label>
+          <label class="quiz-opt"><input type="radio"><span>بعدها عن نقطة ثابتة يساوي بعدها عن مستقيم</span></label>
+          <label class="quiz-opt"><input type="radio"><span>مجموع بعديها عن بؤرتين ثابتتين عدد ثابت $2a$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>بعدها عن نقطة ثابتة عدد ثابت</span></label>
+        </div>
+        <div class="quiz-explain">تعريف القطع الناقص: $\overline{PF_1}+\overline{PF_2}=2a$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>في القطع الناقص $\dfrac{x^2}{9}+\dfrac{y^2}{25}=1$، تقع بؤرتاه على:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>المحور $X$، لأن $9<25$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>المحور $Y$، لأن $25>9$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>كلا المحورين معاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا يمكن تحديد ذلك</span></label>
+        </div>
+        <div class="quiz-explain">البؤرتان تقعان دوماً على محور المقام الأكبر؛ هنا $25>9$ فالبؤرتان على $Y$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>العلاقة الصحيحة بين $a,b,c$ في القطع الناقص هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$c^2=a^2-b^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$c^2=a^2+b^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$a^2=b^2-c^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$b^2=a^2+c^2$</span></label>
+        </div>
+        <div class="quiz-explain">دائماً $c^2=a^2-b^2$ حيث $a$ نصف المحور الكبير و$b$ نصف المحور الصغير.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>الاختلاف المركزي $e=\dfrac{c}{a}$ للقطع الناقص دائماً:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$e=1$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$e>1$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$e=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$e<1$</span></label>
+        </div>
+        <div class="quiz-explain">بما أن $a>c$ دائماً في القطع الناقص، فإن $e=c/a<1$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>مساحة القطع الناقص الذي $a=6,\,b=2$ تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$8\pi$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$12\pi$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$6\pi$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$36\pi$</span></label>
+        </div>
+        <div class="quiz-explain">$A=ab\pi=6\times2\times\pi=12\pi$.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>القطع الناقص: مجموعة نقاط مجموع بعديها عن بؤرتين ثابتتين $=2a$.</span></li>
+        <li><span>بؤرتان على $X$: $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$؛ بؤرتان على $Y$: $\dfrac{x^2}{b^2}+\dfrac{y^2}{a^2}=1$؛ المقام الأكبر تحت محور البؤرتين دوماً.</span></li>
+        <li><span>$c^2=a^2-b^2$، $a>c$، $a>b$، $e=\dfrac{c}{a}<1$، $A=ab\pi$، $P=2\pi\sqrt{\dfrac{a^2+b^2}{2}}$.</span></li>
+        <li><span>بعد أي بؤرة عن أي قطب يساوي $a$ دوماً؛ ومحيط مثلث البؤرتين ونقطة على القطع يساوي $2a+2c$.</span></li>
+        <li><span>يُرسم بتحديد الرأسين والقطبين ووصلهما بمنحنٍ، ثم تحديد موقع البؤرتين؛ أو عملياً بخيط ودبوسين.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l4" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l4">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الرابع">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#7c6fee"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="15" font-family="Cairo,sans-serif">القطع</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="15" font-family="Cairo,sans-serif">الناقص</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">d1+d2=2a</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">التعريف</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#2fd18f"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">x²/a²+y²/b²=1</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">المعادلة</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#ffab5e"/>
+            <text x="150" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">c²=a²-b², e=c/a</text>
+            <text x="150" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">علاقات</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ff6b9d"/>
+            <text x="670" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">خيط ودبوسان</text>
+            <text x="670" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الرسم</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الثاني · القطوع المخروطية — الدرس 4: القطع الناقص</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch2.js"></script>
+<script>
+(function(){
+  var ns = "http://www.w3.org/2000/svg";
+  function el(svg, tag, attrs){
+    var e = document.createElementNS(ns, tag);
+    for(var k in attrs) e.setAttribute(k, attrs[k]);
+    svg.appendChild(e);
+    return e;
+  }
+
+  /* ---- interactive: PF1+PF2=2a demo on x^2/25+y^2/16=1 ---- */
+  (function(){
+    var svg = document.getElementById("defFigEllipse");
+    var slider = document.getElementById("thetaSlider");
+    var thetaVal = document.getElementById("thetaVal");
+    var formula = document.getElementById("ellipseSumFormula");
+    var a = 5, b = 4, c = 3;
+    var W = 460, H = 360, ox = W/2, oy = H/2, scale = 34;
+
+    function toPx(x,y){ return [ox + x*scale, oy - y*scale]; }
+
+    function render(){
+      while(svg.firstChild) svg.removeChild(svg.firstChild);
+      var theta = parseFloat(slider.value);
+      thetaVal.textContent = theta;
+      var rad = theta*Math.PI/180;
+      var x = a*Math.cos(rad), y = b*Math.sin(rad);
+
+      el(svg,"line",{x1:10,y1:oy,x2:W-10,y2:oy,stroke:"var(--text-faint)","stroke-width":1.2});
+      el(svg,"line",{x1:ox,y1:10,x2:ox,y2:H-10,stroke:"var(--text-faint)","stroke-width":1.2});
+
+      var d = "";
+      for(var t=0;t<=360;t+=4){
+        var r = t*Math.PI/180;
+        var p = toPx(a*Math.cos(r), b*Math.sin(r));
+        d += (t===0 ? "M " : "L ") + p[0].toFixed(1) + " " + p[1].toFixed(1) + " ";
+      }
+      d += "Z";
+      var path = document.createElementNS(ns,"path");
+      path.setAttribute("d", d); path.setAttribute("fill","none");
+      path.setAttribute("stroke","#7c6fee"); path.setAttribute("stroke-width","3");
+      svg.appendChild(path);
+
+      var f1P = toPx(c,0), f2P = toPx(-c,0), pP = toPx(x,y);
+      el(svg,"circle",{cx:f1P[0],cy:f1P[1],r:5,fill:"#ff6b9d"});
+      el(svg,"circle",{cx:f2P[0],cy:f2P[1],r:5,fill:"#ffab5e"});
+      el(svg,"text",{x:f1P[0]-6,y:f1P[1]+22,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "F1(3,0)";
+      el(svg,"text",{x:f2P[0]-30,y:f2P[1]+22,"font-size":12,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "F2(-3,0)";
+
+      el(svg,"line",{x1:pP[0],y1:pP[1],x2:f1P[0],y2:f1P[1],stroke:"#ff6b9d","stroke-width":2,"stroke-dasharray":"4 3"});
+      el(svg,"line",{x1:pP[0],y1:pP[1],x2:f2P[0],y2:f2P[1],stroke:"#ffab5e","stroke-width":2,"stroke-dasharray":"4 3"});
+      el(svg,"circle",{cx:pP[0],cy:pP[1],r:5,fill:"#3fa9f5"});
+      el(svg,"text",{x:pP[0]+8,y:pP[1]-8,"font-size":13,"font-weight":700,fill:"var(--text-primary)","font-family":"Cairo,sans-serif"}).textContent = "P";
+
+      var d1 = Math.sqrt((x-c)*(x-c)+y*y);
+      var d2 = Math.sqrt((x+c)*(x+c)+y*y);
+      formula.innerHTML = "$$d_1+d_2 = " + (d1+d2).toFixed(2) + " = 2a$$";
+      window.Ch4.typeset([formula]);
+    }
+    slider.addEventListener("input", render);
+    render();
+  })();
+
+  /* ---- static figure: pin-and-string drawing method ---- */
+  (function(){
+    var svg = document.getElementById("pinStringFig");
+    var W = 460, H = 260, cx = 230, cy = 140, a = 190, b = 90;
+
+    var ellipse = el(svg,"ellipse",{cx:cx,cy:cy,rx:a,ry:b,fill:"none",stroke:"#7c6fee","stroke-width":3});
+    var c = Math.sqrt(a*a-b*b);
+    var f1x = cx+c, f2x = cx-c;
+    el(svg,"circle",{cx:f1x,cy:cy,r:5,fill:"#ff6b9d"});
+    el(svg,"circle",{cx:f2x,cy:cy,r:5,fill:"#ffab5e"});
+    el(svg,"text",{x:f1x-10,y:cy+24,"font-size":13,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "F1";
+    el(svg,"text",{x:f2x-10,y:cy+24,"font-size":13,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "F2";
+
+    var penX = cx + 40, penY = cy - b - 4;
+    el(svg,"line",{x1:f1x,y1:cy,x2:penX,y2:penY,stroke:"#3fa9f5","stroke-width":2});
+    el(svg,"line",{x1:f2x,y1:cy,x2:penX,y2:penY,stroke:"#3fa9f5","stroke-width":2});
+    el(svg,"circle",{cx:penX,cy:penY,r:5,fill:"#2fd18f"});
+    el(svg,"text",{x:penX+8,y:penY,"font-size":13,"font-weight":700,fill:"#2fd18f","font-family":"Cairo,sans-serif"}).textContent = "القلم";
+  })();
+})();
+</script>
+</body>
+</html>
