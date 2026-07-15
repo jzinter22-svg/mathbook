@@ -153,55 +153,269 @@
     <div class="example fade-up">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">18</span> مثال 18</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex18">إظهار الحل</button>
       </div>
-      <div class="example-problem">قطع ناقص معادلته $\dfrac{x^2}{25}+\dfrac{y^2}{16}=1$. جد إحداثيي رأسيه وبؤرتيه وقطبيه، وطول كل من محوريه والمسافة بين بؤرتيه، ومقدار اختلافه المركزي، ثم استخرج مساحته ومحيطه.</div>
-      <ol class="steps hidden-steps" id="steps-ex18">
+      <div class="example-problem">قطع ناقص معادلته $\dfrac{x^2}{25}+\dfrac{y^2}{16}=1$. جد إحداثيي رأسيه وبؤرتيه وقطبيه، وطول كل من محوريه والمسافة بين بؤرتيه، ومقدار اختلافه المركزي، ثم استخرج مساحته ومحيطه، وارسمه.</div>
+      <p class="lead" style="margin:.3rem 0 0;font-size:.9rem">بالمقارنة مع $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ (البؤرتان على $X$ لأن $25>16$): $a^2=25\Rightarrow a=5$، $b^2=16\Rightarrow b=4$، $c^2=a^2-b^2=9\Rightarrow c=3$.</p>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">18‑1</span> المركز</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex18-c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد مركز القطع الناقص.</div>
+      <ol class="steps hidden-steps" id="steps-ex18-c">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">بالمقارنة مع $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ (البؤرتان على $X$ لأن $25>16$)</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( a^2=25\Rightarrow a=5,\qquad b^2=16\Rightarrow b=4 \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">$c^2=a^2-b^2=25-16=9 \Rightarrow c=3$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(5,0),V_2(-5,0);\quad B_1(0,4),B_2(0,-4);\quad F_1(3,0),F_2(-3,0) \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">الأطوال: المحور الكبير $2a$، الصغير $2b$، والمسافة بين البؤرتين $2c$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=10,\quad 2b=8,\quad 2c=6 \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">
-          <p class="calc-note">الاختلاف المركزي والمساحة والمحيط</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( e=\dfrac{c}{a}=\dfrac35=0.6<1,\qquad A=ab\pi=20\pi,\qquad P=2\pi\sqrt{\dfrac{25+16}{2}}=2\sqrt{\dfrac{41}{2}}\,\pi \)</div></div>
+          <p class="calc-note">لا توجد حدود من الدرجة الأولى في $x,y$ في المعادلة، إذن المركز نقطة الأصل</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C(0,0) \)</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ جميع عناصر القطع الناقص أعلاه — لاحظ أن $25>16$ هو ما حدد أن البؤرتين على المحور $X$. ∎</div>
+      <div class="exercise-final">✓ المركز $C(0,0)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">18‑2</span> الرأسان</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex18-v">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد إحداثيي رأسي القطع الناقص.</div>
+      <ol class="steps hidden-steps" id="steps-ex18-v">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الرأسان على المحور الكبير ($X$) عند $(\pm a,0)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(5,0),\quad V_2(-5,0) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $V_1(5,0),\,V_2(-5,0)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">18‑3</span> القطبان</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex18-b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد إحداثيي قطبي القطع الناقص.</div>
+      <ol class="steps hidden-steps" id="steps-ex18-b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">القطبان على المحور الصغير ($Y$) عند $(0,\pm b)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( B_1(0,4),\quad B_2(0,-4) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $B_1(0,4),\,B_2(0,-4)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">18‑4</span> البؤرتان</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex18-f">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد إحداثيي بؤرتي القطع الناقص.</div>
+      <ol class="steps hidden-steps" id="steps-ex18-f">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$c^2=a^2-b^2=25-16=9 \Rightarrow c=3$؛ البؤرتان على المحور الكبير عند $(\pm c,0)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( F_1(3,0),\quad F_2(-3,0) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $F_1(3,0),\,F_2(-3,0)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">18‑5</span> أطوال المحاور</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex18-l">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد طول كل من المحورين والمسافة بين البؤرتين.</div>
+      <ol class="steps hidden-steps" id="steps-ex18-l">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">المحور الكبير $2a$، الصغير $2b$، والمسافة بين البؤرتين $2c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=10,\quad 2b=8,\quad 2c=6 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $2a=10,\;2b=8,\;2c=6$ (وحدات طول). ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">18‑6</span> الاختلاف المركزي</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex18-e">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد مقدار الاختلاف المركزي.</div>
+      <ol class="steps hidden-steps" id="steps-ex18-e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$e=\dfrac{c}{a}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( e=\dfrac35=0.6<1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $e=0.6$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">18‑7</span> المساحة والمحيط</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex18-ap">إظهار الحل</button>
+      </div>
+      <div class="example-problem">استخرج مساحة القطع الناقص ومحيطه.</div>
+      <ol class="steps hidden-steps" id="steps-ex18-ap">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$A=ab\pi$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( A=5\times4\times\pi=20\pi \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$P=2\pi\sqrt{\dfrac{a^2+b^2}{2}}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P=2\pi\sqrt{\dfrac{25+16}{2}}=2\sqrt{\dfrac{41}{2}}\,\pi \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $A=20\pi$، $P=2\sqrt{\tfrac{41}{2}}\,\pi$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">18‑8</span> الرسم</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex18-draw">إظهار الرسم</button>
+      </div>
+      <div class="example-problem">ارسم القطع الناقص.</div>
+      <ol class="steps hidden-steps" id="steps-ex18-draw">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نعيّن $C,V_1,V_2,B_1,B_2,F_1,F_2$ ونصل بمنحنٍ</p>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-ex18" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="الرسم البياني للقطع الناقص x^2/25+y^2/16=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ راجع الرسم أعلاه. ∎</div>
     </div>
 
     <div class="example fade-up">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">19</span> مثال 19</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex19">إظهار الحل</button>
       </div>
-      <div class="example-problem">قطع ناقص معادلته $25x^2+9y^2=225$. جد إحداثيي رأسيه وبؤرتيه وقطبيه، وطول كل من محوريه والمسافة بين بؤرتيه، ومقدار اختلافه المركزي، ثم استخرج مساحته ومحيطه.</div>
-      <ol class="steps hidden-steps" id="steps-ex19">
+      <div class="example-problem">قطع ناقص معادلته $25x^2+9y^2=225$. جد إحداثيي رأسيه وبؤرتيه وقطبيه، وطول كل من محوريه والمسافة بين بؤرتيه، ومقدار اختلافه المركزي، ثم استخرج مساحته ومحيطه، وارسمه.</div>
+      <p class="lead" style="margin:.3rem 0 0;font-size:.9rem">نقسم الطرفين على $225$: $\dfrac{x^2}{9}+\dfrac{y^2}{25}=1$. بالمقارنة مع $\dfrac{x^2}{b^2}+\dfrac{y^2}{a^2}=1$ (البؤرتان على $Y$ لأن $25>9$): $a^2=25\Rightarrow a=5$، $b^2=9\Rightarrow b=3$، $c^2=a^2-b^2=16\Rightarrow c=4$.</p>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">19‑1</span> المركز</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex19-c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد مركز القطع الناقص.</div>
+      <ol class="steps hidden-steps" id="steps-ex19-c">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">نقسم الطرفين على $225$ لنحصل على الصورة القياسية</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{9}+\dfrac{y^2}{25}=1 \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">بالمقارنة مع $\dfrac{x^2}{b^2}+\dfrac{y^2}{a^2}=1$ (البؤرتان على $Y$ لأن $25>9$)</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( a^2=25\Rightarrow a=5,\qquad b^2=9\Rightarrow b=3 \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">$c^2=a^2-b^2=25-9=16 \Rightarrow c=4$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(0,5),V_2(0,-5);\quad B_1(3,0),B_2(-3,0);\quad F_1(0,4),F_2(0,-4) \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">
-          <p class="calc-note">الأطوال والاختلاف المركزي والمساحة والمحيط</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=10,\;2b=6,\;2c=8,\qquad e=\dfrac{c}{a}=\dfrac45=0.8<1,\qquad A=ab\pi=15\pi,\qquad P=2\pi\sqrt{\dfrac{25+9}{2}}=2\sqrt{17}\,\pi \)</div></div>
+          <p class="calc-note">لا توجد حدود من الدرجة الأولى، إذن المركز نقطة الأصل</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C(0,0) \)</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ جميع عناصر القطع الناقص أعلاه — لاحظ أن $25>9$ هو ما حدد أن البؤرتين على المحور $Y$. ∎</div>
+      <div class="exercise-final">✓ المركز $C(0,0)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">19‑2</span> الرأسان</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex19-v">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد إحداثيي رأسي القطع الناقص.</div>
+      <ol class="steps hidden-steps" id="steps-ex19-v">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الرأسان على المحور الكبير ($Y$ هنا) عند $(0,\pm a)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(0,5),\quad V_2(0,-5) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $V_1(0,5),\,V_2(0,-5)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">19‑3</span> القطبان</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex19-b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد إحداثيي قطبي القطع الناقص.</div>
+      <ol class="steps hidden-steps" id="steps-ex19-b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">القطبان على المحور الصغير ($X$ هنا) عند $(\pm b,0)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( B_1(3,0),\quad B_2(-3,0) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $B_1(3,0),\,B_2(-3,0)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">19‑4</span> البؤرتان</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex19-f">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد إحداثيي بؤرتي القطع الناقص.</div>
+      <ol class="steps hidden-steps" id="steps-ex19-f">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$c^2=a^2-b^2=25-9=16 \Rightarrow c=4$؛ البؤرتان على المحور الكبير عند $(0,\pm c)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( F_1(0,4),\quad F_2(0,-4) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $F_1(0,4),\,F_2(0,-4)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">19‑5</span> أطوال المحاور</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex19-l">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد طول كل من المحورين والمسافة بين البؤرتين.</div>
+      <ol class="steps hidden-steps" id="steps-ex19-l">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">المحور الكبير $2a$، الصغير $2b$، والمسافة بين البؤرتين $2c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=10,\quad 2b=6,\quad 2c=8 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $2a=10,\;2b=6,\;2c=8$ (وحدات طول). ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">19‑6</span> الاختلاف المركزي</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex19-e">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد مقدار الاختلاف المركزي.</div>
+      <ol class="steps hidden-steps" id="steps-ex19-e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$e=\dfrac{c}{a}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( e=\dfrac45=0.8<1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $e=0.8$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">19‑7</span> المساحة والمحيط</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex19-ap">إظهار الحل</button>
+      </div>
+      <div class="example-problem">استخرج مساحة القطع الناقص ومحيطه.</div>
+      <ol class="steps hidden-steps" id="steps-ex19-ap">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$A=ab\pi$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( A=5\times3\times\pi=15\pi \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$P=2\pi\sqrt{\dfrac{a^2+b^2}{2}}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P=2\pi\sqrt{\dfrac{25+9}{2}}=2\sqrt{17}\,\pi \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $A=15\pi$، $P=2\sqrt{17}\,\pi$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">19‑8</span> الرسم</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex19-draw">إظهار الرسم</button>
+      </div>
+      <div class="example-problem">ارسم القطع الناقص.</div>
+      <ol class="steps hidden-steps" id="steps-ex19-draw">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نعيّن $C,V_1,V_2,B_1,B_2,F_1,F_2$ ونصل بمنحنٍ</p>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-ex19" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="الرسم البياني للقطع الناقص x^2/9+y^2/25=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ راجع الرسم أعلاه. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -493,6 +707,23 @@
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
+        <div class="example-title"><span class="example-badge">2 رسم</span> السؤال 2 — الرسم</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2-draw">إظهار الرسم</button>
+      </div>
+      <div class="example-problem">ارسم القطع الناقص الذي معادلته $\dfrac{x^2}{4}+\dfrac{y^2}{16}=1$.</div>
+      <ol class="steps hidden-steps" id="steps-pq2-draw">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$a=4,\,b=2$، بؤرتان على $Y$؛ نعيّن $C,V_1,V_2,B_1,B_2,F_1,F_2$ ونصل بمنحنٍ</p>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-pq2" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="الرسم البياني للقطع الناقص x^2/4+y^2/16=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ راجع الرسم أعلاه. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
         <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
         <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
       </div>
@@ -558,6 +789,23 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ المعادلة $\dfrac{x^2}{25}+\dfrac{y^2}{9}=1$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5 رسم</span> السؤال 5 — الرسم</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq5-draw">إظهار الرسم</button>
+      </div>
+      <div class="example-problem">ارسم القطع الناقص الذي معادلته $\dfrac{x^2}{25}+\dfrac{y^2}{9}=1$.</div>
+      <ol class="steps hidden-steps" id="steps-pq5-draw">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$a=5,\,b=3$، بؤرتان على $X$؛ نعيّن $C,V_1,V_2,B_1,B_2,F_1,F_2$ ونصل بمنحنٍ</p>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-pq5" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="الرسم البياني للقطع الناقص x^2/25+y^2/9=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ راجع الرسم أعلاه. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -816,6 +1064,60 @@
     el(svg,"circle",{cx:penX,cy:penY,r:5,fill:"#2fd18f"});
     el(svg,"text",{x:penX+8,y:penY,"font-size":13,"font-weight":700,fill:"#2fd18f","font-family":"Cairo,sans-serif"}).textContent = "القلم";
   })();
+
+  /* ---- reusable full ellipse figure: center, axes, vertices, co-vertices, foci, equation label ----
+     A = semi-major axis, B = semi-minor axis, majorOnY = true if major axis lies on Y */
+  function drawEllipseFull(svgId, A, B, majorOnY, eqLabel){
+    var svg = document.getElementById(svgId);
+    if(!svg) return;
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    var W = 420, H = 340, ox = W/2, oy = H/2;
+    var big = Math.max(A,B);
+    var scale = Math.min((W/2-45)/big, (H/2-45)/big);
+    function toPx(x,y){ return [ox + x*scale, oy - y*scale]; }
+    var c = Math.sqrt(Math.abs(A*A - B*B));
+
+    el(svg,"line",{x1:8,y1:oy,x2:W-8,y2:oy,stroke:"var(--text-faint)","stroke-width":1.2});
+    el(svg,"line",{x1:ox,y1:8,x2:ox,y2:H-8,stroke:"var(--text-faint)","stroke-width":1.2});
+    el(svg,"text",{x:W-22,y:oy-8,"font-size":13,fill:"var(--text-faint)","font-family":"Cairo,sans-serif"}).textContent = "X";
+    el(svg,"text",{x:ox+8,y:20,"font-size":13,fill:"var(--text-faint)","font-family":"Cairo,sans-serif"}).textContent = "Y";
+
+    var rx = (majorOnY ? B : A) * scale, ry = (majorOnY ? A : B) * scale;
+    el(svg,"ellipse",{cx:ox,cy:oy,rx:rx,ry:ry,fill:"none",stroke:"#7c6fee","stroke-width":3});
+
+    el(svg,"circle",{cx:ox,cy:oy,r:4,fill:"#2fd18f"});
+    el(svg,"text",{x:ox+8,y:oy+18,"font-size":12,"font-weight":700,fill:"#2fd18f","font-family":"Cairo,sans-serif"}).textContent = "C";
+
+    var vx = majorOnY?0:A, vy = majorOnY?A:0;
+    var v1 = toPx(vx,vy), v2 = toPx(-vx,-vy);
+    el(svg,"circle",{cx:v1[0],cy:v1[1],r:5,fill:"#ff6b9d"});
+    el(svg,"circle",{cx:v2[0],cy:v2[1],r:5,fill:"#ff6b9d"});
+    el(svg,"text",{x:v1[0]+8,y:v1[1]-8,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "V1";
+    el(svg,"text",{x:v2[0]-26,y:v2[1]-8,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "V2";
+
+    var bx = majorOnY?B:0, by = majorOnY?0:B;
+    var b1 = toPx(bx,by), b2 = toPx(-bx,-by);
+    el(svg,"circle",{cx:b1[0],cy:b1[1],r:5,fill:"#3fa9f5"});
+    el(svg,"circle",{cx:b2[0],cy:b2[1],r:5,fill:"#3fa9f5"});
+    el(svg,"text",{x:b1[0]+8,y:b1[1]+16,"font-size":12,"font-weight":700,fill:"#3fa9f5","font-family":"Cairo,sans-serif"}).textContent = "B1";
+    el(svg,"text",{x:b2[0]-26,y:b2[1]+16,"font-size":12,"font-weight":700,fill:"#3fa9f5","font-family":"Cairo,sans-serif"}).textContent = "B2";
+
+    var fx = majorOnY?0:c, fy = majorOnY?c:0;
+    var f1 = toPx(fx,fy), f2 = toPx(-fx,-fy);
+    el(svg,"circle",{cx:f1[0],cy:f1[1],r:4.5,fill:"#ffab5e"});
+    el(svg,"circle",{cx:f2[0],cy:f2[1],r:4.5,fill:"#ffab5e"});
+    el(svg,"text",{x:f1[0]+6,y:f1[1]-16,"font-size":11,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "F1";
+    el(svg,"text",{x:f2[0]-20,y:f2[1]-16,"font-size":11,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "F2";
+
+    if(eqLabel){
+      el(svg,"text",{x:14,y:H-14,"font-size":13,"font-weight":800,fill:"var(--accent-purple)","font-family":"Cairo,sans-serif"}).textContent = eqLabel;
+    }
+  }
+
+  drawEllipseFull("fig-ex18", 5, 4, false, "x²/25 + y²/16 = 1");
+  drawEllipseFull("fig-ex19", 5, 3, true,  "x²/9 + y²/25 = 1");
+  drawEllipseFull("fig-pq2",  4, 2, true,  "x²/4 + y²/16 = 1");
+  drawEllipseFull("fig-pq5",  5, 3, false, "x²/25 + y²/9 = 1");
 })();
 </script>
 </body>
