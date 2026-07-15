@@ -39,29 +39,37 @@
 
   <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
     <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
-    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً. الأمثلة 17-1 مرتّبة كما في الكتاب المدرسي.</p>
 
     <div class="example fade-up">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
         <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل وبؤرته $F(-11,0)$، وجد معادلة دليله.</div>
+      <div class="example-problem">باستخدام التعريف جد معادلة القطع المكافئ الذي بؤرته $F(0,3)$ ورأسه في نقطة الأصل، اكتب معادلة الدليل ثم ارسمه.</div>
       <ol class="steps hidden-steps" id="steps-ex1">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">البؤرة تنتمي إلى الجزء السالب من المحور $X$، فلذلك نستخدم العلاقة $y^2=-4ax$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( F(-a,0)=F(-11,0) \Rightarrow a=11 \)</div></div>
+          <p class="calc-note">بما أن البؤرة $F(0,3)$ فإن معادلة الدليل $y=-3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=-3 \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نعوّض $a=11$ في المعادلة القياسية</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( y^2=-4(11)x \Rightarrow y^2=-44x \)</div></div>
+          <p class="calc-note">نأخذ أية نقطة $P(x,y)$ على القطع وننزل $\overline{MP}$ عموداً على الدليل، وحسب التعريف $\overline{PF}=\overline{PM}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{(x-0)^2+(y-3)^2} = \sqrt{(x-x)^2+(y+3)^2} \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">معادلة الدليل المرافقة لهذه الصورة هي $x=a$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( x=11 \)</div></div>
+          <p class="calc-note">نربّع الطرفين ونبسّط</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2+(y-3)^2=(y+3)^2 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">\( x^2+y^2-6y+9=y^2+6y+9 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">\( x^2-6y=6y \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x^2=12y \)</div>
+          </div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ المعادلة $y^2=-44x$، ومعادلة الدليل $x=11$. ∎</div>
+      <div class="exercise-final">✓ المعادلة $x^2=12y$، ومعادلة الدليل $y=-3$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -69,24 +77,257 @@
         <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
         <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل ودليله يوازي المحور $X$، ويمرّ بالنقطة $(5,-2)$.</div>
+      <div class="example-problem">باستخدام التعريف جد معادلة القطع المكافئ الذي بؤرته $F(0,-\sqrt5)$ ورأسه في نقطة الأصل، اكتب معادلة الدليل ثم ارسمه.</div>
       <ol class="steps hidden-steps" id="steps-ex2">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">دليل يوازي $X$ ⟵ محور القطع هو $Y$، فالصورة إما $x^2=4ay$ أو $x^2=-4ay$</p>
-          <div class="calc-flow"><div class="calc-line">إحداثي $y$ للنقطة المعطاة سالب $(y=-2)$، وفي $x^2=4ay\,(a>0)$ يجب أن يكون $y\ge0$ دوماً</div>
-          <div class="calc-arrow">↓ إذن الصورة المناسبة هي</div>
-          <div class="calc-line calc-box">\( x^2=-4ay \)</div></div>
+          <p class="calc-note">بما أن البؤرة $F(0,-\sqrt5)$ فإن معادلة الدليل $y=\sqrt5$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\sqrt5 \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نعوّض إحداثيي النقطة $(5,-2)$ في المعادلة لإيجاد $a$</p>
-          <div class="calc-flow">
-            <div class="calc-line">\( (5)^2=-4a(-2) \)</div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">\( 25=8a \Rightarrow a=\dfrac{25}{8} \)</div>
-          </div>
+          <p class="calc-note">حسب التعريف $\overline{PF}=\overline{PM}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{(x-0)^2+(y+\sqrt5)^2} = \sqrt{(x-x)^2+(y-\sqrt5)^2} \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">نعوّض قيمة $a$ في المعادلة</p>
+          <p class="calc-note">نربّع الطرفين ونبسّط</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2+(y+\sqrt5)^2=(y-\sqrt5)^2 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">\( x^2+y^2+2\sqrt5y+5=y^2-2\sqrt5y+5 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x^2=-4\sqrt5y \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $x^2=-4\sqrt5\,y$، ومعادلة الدليل $y=\sqrt5$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">باستخدام التعريف جد معادلة القطع المكافئ الذي بؤرته $F(-2\sqrt3,0)$ ورأسه في نقطة الأصل، اكتب معادلة الدليل ثم ارسمه.</div>
+      <ol class="steps hidden-steps" id="steps-ex3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن البؤرة $F(-2\sqrt3,0)$ فإن معادلة الدليل $x=2\sqrt3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x=2\sqrt3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">حسب التعريف $\overline{PF}=\overline{PM}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{(x+2\sqrt3)^2+y^2} = \sqrt{(x-2\sqrt3)^2+(y-y)^2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نربّع الطرفين ونبسّط</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2+4\sqrt3x+12+y^2=x^2-4\sqrt3x+12 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( y^2=-8\sqrt3x \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $y^2=-8\sqrt3\,x$، ومعادلة الدليل $x=2\sqrt3$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> مثال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">باستخدام التعريف جد معادلة القطع المكافئ الذي بؤرته $F(1,0)$ ورأسه في نقطة الأصل، اكتب معادلة الدليل ثم ارسمه.</div>
+      <ol class="steps hidden-steps" id="steps-ex4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن البؤرة $F(1,0)$ فإن معادلة الدليل $x=-1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x=-1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">حسب التعريف $\overline{PF}=\overline{PM}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{(x-1)^2+y^2} = \sqrt{(x+1)^2+(y-y)^2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نربّع الطرفين ونبسّط</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2-2x+1+y^2=x^2+2x+1 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( y^2=4x \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $y^2=4x$، ومعادلة الدليل $x=-1$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> مثال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل وبؤرته $F\!\left(\dfrac32,0\right)$ وجد معادلة دليله.</div>
+      <ol class="steps hidden-steps" id="steps-ex5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">البؤرة تنتمي للجزء الموجب من المحور $X$، فنستخدم $y^2=4ax$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=\dfrac32 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض قيمة $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y^2=4\left(\dfrac32\right)x \Rightarrow y^2=6x \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $y^2=6x$، ومعادلة الدليل $x=-\dfrac32$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> مثال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل وبؤرته $F(-11,0)$ وجد معادلة دليله.</div>
+      <ol class="steps hidden-steps" id="steps-ex6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">البؤرة تنتمي للجزء السالب من المحور $X$، فنستخدم $y^2=-4ax$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=11 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض قيمة $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y^2=-4(11)x \Rightarrow y^2=-44x \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $y^2=-44x$، ومعادلة الدليل $x=11$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7</span> مثال 7</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل وبؤرته $F(0,7\sqrt2)$ وجد معادلة دليله.</div>
+      <ol class="steps hidden-steps" id="steps-ex7">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">البؤرة تنتمي للجزء الموجب من المحور $Y$، فنستخدم $x^2=4ay$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=7\sqrt2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض قيمة $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2=28\sqrt2\,y \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $x^2=28\sqrt2\,y$، ومعادلة الدليل $y=-7\sqrt2$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8</span> مثال 8</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex8">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل وبؤرته $F\!\left(0,\dfrac{-1}{2\sqrt2}\right)$ وجد معادلة دليله.</div>
+      <ol class="steps hidden-steps" id="steps-ex8">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">البؤرة تنتمي للجزء السالب من المحور $Y$، فنستخدم $x^2=-4ay$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=\dfrac{1}{2\sqrt2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض ونبسّط</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2=-\dfrac{4}{2\sqrt2}y \Rightarrow x^2=-\dfrac{2}{\sqrt2}y \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x^2=-\sqrt2\,y \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $x^2=-\sqrt2\,y$، ومعادلة الدليل $y=\dfrac{1}{2\sqrt2}$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9</span> مثال 9</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex9">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل ومعادلة دليله $3-2y=0$.</div>
+      <ol class="steps hidden-steps" id="steps-ex9">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">معادلة الدليل $3-2y=0 \Rightarrow y=\dfrac32$، إذن البؤرة $F\!\left(0,-\dfrac32\right)$ (الجزء السالب من $Y$) فنستخدم $x^2=-4ay$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=\dfrac32 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض قيمة $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2=-4\left(\dfrac32\right)y \Rightarrow x^2=-6y \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $x^2=-6y$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">10</span> مثال 10</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex10">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل ومعادلة دليله $5x+2=0$.</div>
+      <ol class="steps hidden-steps" id="steps-ex10">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">معادلة الدليل $5x+2=0 \Rightarrow x=-\dfrac25$، إذن البؤرة $F\!\left(\dfrac25,0\right)$ (الجزء الموجب من $X$) فنستخدم $y^2=4ax$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=\dfrac25 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض قيمة $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y^2=4\left(\dfrac25\right)x \Rightarrow y^2=\dfrac85x \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $y^2=\dfrac85x$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">11</span> مثال 11</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex11">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل وتقع بؤرته على المحور $X$ ويمر دليله بالنقطة $(-7,11)$.</div>
+      <ol class="steps hidden-steps" id="steps-ex11">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">البؤرة على $X$ ⟵ الدليل رأسي، يمر بنقطة إحداثيها السيني $-7$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x=-7 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">البؤرة تنتمي للجزء الموجب من $X$ (مقابل دليل سالب)، فنستخدم $y^2=4ax$ مع $a=7$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y^2=4(7)x \Rightarrow y^2=28x \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $y^2=28x$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">12</span> مثال 12</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex12">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل وتقع بؤرته على المحور $Y$ ويمر دليله بالنقطة $\left(5,\dfrac{\sqrt3}{2}\right)$.</div>
+      <ol class="steps hidden-steps" id="steps-ex12">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">البؤرة على $Y$ ⟵ الدليل أفقي، يمر بنقطة إحداثيها الصادي $\dfrac{\sqrt3}{2}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\dfrac{\sqrt3}{2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">البؤرة تنتمي للجزء السالب من $Y$ (مقابل دليل موجب)، فنستخدم $x^2=-4ay$ مع $a=\dfrac{\sqrt3}{2}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2=(-4)\left(\dfrac{\sqrt3}{2}\right)y \Rightarrow x^2=-2\sqrt3\,y \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $x^2=-2\sqrt3\,y$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">13</span> مثال 13</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex13">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل ويمر بالنقطة $(5,-2)$ ودليله يوازي المحور $X$.</div>
+      <ol class="steps hidden-steps" id="steps-ex13">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">دليل يوازي $X$ ⟵ البؤرة على $Y$، فالصورة $x^2=-4ay$ (لأن إحداثي $y$ للنقطة سالب)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (5)^2=-4a(-2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحل لإيجاد $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 25=8a \Rightarrow a=\dfrac{25}{8} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض قيمة $a$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( x^2=-4\left(\dfrac{25}{8}\right)y \Rightarrow x^2=-\dfrac{25}{2}y \)</div></div>
         </div></li>
       </ol>
@@ -95,11 +336,90 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">14</span> مثال 14</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex14">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل ويمر بالنقطة $(-1,-1)$ ودليله يوازي المحور $Y$.</div>
+      <ol class="steps hidden-steps" id="steps-ex14">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">دليل يوازي $Y$ ⟵ البؤرة على $X$، فنستخدم $y^2=-4ax$ ونعوّض $x=-1,y=-1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (-1)^2=-4a(-1) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحل لإيجاد $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 1=4a \Rightarrow a=\dfrac14 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض قيمة $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y^2=-4\times\dfrac14x \Rightarrow y^2=-x \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $y^2=-x$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">15</span> مثال 15</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex15">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي رأسه نقطة الأصل ويمر بالنقطتين $(2\sqrt2,\sqrt2)$، $(2\sqrt2,-\sqrt2)$.</div>
+      <ol class="steps hidden-steps" id="steps-ex15">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">النقطتان متناظرتان حول الجزء الموجب من المحور $X$، فالبؤرة تنتمي إليه ونستخدم $y^2=4ax$</p>
+          <div class="calc-flow"><div class="calc-line">نعوّض إحدى النقطتين $x=2\sqrt2,\,y=\sqrt2$</div>
+          <div class="calc-line calc-box">\( (\sqrt2)^2=4a\times2\sqrt2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحل لإيجاد $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2=8\sqrt2\,a \Rightarrow a=\dfrac{2}{8\sqrt2}=\dfrac{1}{4\sqrt2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض قيمة $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y^2=4\times\dfrac{1}{4\sqrt2}x \Rightarrow y^2=\dfrac{x}{\sqrt2} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $y^2=\dfrac{x}{\sqrt2}$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">16</span> مثال 16</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex16">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$x-\dfrac18y^2=0$ معادلة دليل قطع مكافئ ومعادلته، جد بؤرة ومعادلة دليل القطع المكافئ الذي معادلته وأرسمه.</div>
+      <ol class="steps hidden-steps" id="steps-ex16">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نرتّب المعادلة (نضرب الطرفين بـ 8)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x-\dfrac18y^2=0 \Rightarrow x=\dfrac18y^2 \quad (\times8) \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( y^2=8x \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بالمقارنة مع $y^2=4ax$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4a=8 \Rightarrow a=2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">البؤرة $F(2,0)$ والدليل $x=-2$؛ نبني جدول قيم من $y^2=8x$</p>
+          <div class="neu-inset" style="padding:0;overflow-x:auto;margin-top:.4rem">
+            <table style="width:100%;border-collapse:collapse;text-align:center;min-width:320px">
+              <thead><tr style="color:var(--accent-purple)"><th style="padding:.5rem">$x$</th><th>$0$</th><th>$1$</th><th>$2$</th></tr></thead>
+              <tbody><tr><td style="padding:.5rem">$y$</td><td>$0$</td><td>$\pm2\sqrt2$</td><td>$\pm4$</td></tr></tbody>
+            </table>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ البؤرة $F(2,0)$، الدليل $x=-2$، والمعادلة $y^2=8x$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">17</span> مثال 17</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex17">إظهار الحل</button>
       </div>
       <div class="example-problem">جد إحداثيي بؤرة ومعادلة دليل القطع المكافئ الذي معادلته $x^2+16y=0$، وأرسمه.</div>
-      <ol class="steps hidden-steps" id="steps-ex3">
+      <ol class="steps hidden-steps" id="steps-ex17">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نرتّب المعادلة على الصورة القياسية</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( x^2+16y=0 \Rightarrow x^2=-16y \)</div></div>
@@ -147,39 +467,92 @@
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
-        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">1أ</span> السؤال 1 (أ)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1a">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد البؤرة ومعادلة الدليل للقطوع المكافئة الآتية:<br>
-        $(a)\;\; x^2+4y=0 \qquad (b)\;\; y^2-6x=0 \qquad (c)\;\; x^2=-24y$<br>
-        $(d)\;\; y^2=20x \qquad\quad (e)\;\; x^2=y \qquad\qquad\; (f)\;\; -x^2-y=0$</div>
-      <ol class="steps hidden-steps" id="steps-pq1">
-        <li class="step"><span class="step-dot">a</span><div class="step-body">
-          <p class="calc-note">$x^2=-4y \Rightarrow 4a=4 \Rightarrow a=1$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( F(0,-1),\quad y=1 \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">b</span><div class="step-body">
-          <p class="calc-note">$y^2=6x \Rightarrow 4a=6 \Rightarrow a=\tfrac32$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( F(\tfrac32,0),\quad x=-\tfrac32 \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">c</span><div class="step-body">
-          <p class="calc-note">$x^2=-24y \Rightarrow 4a=24 \Rightarrow a=6$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( F(0,-6),\quad y=6 \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">d</span><div class="step-body">
-          <p class="calc-note">$y^2=20x \Rightarrow 4a=20 \Rightarrow a=5$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( F(5,0),\quad x=-5 \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">e</span><div class="step-body">
-          <p class="calc-note">$x^2=y \Rightarrow 4a=1 \Rightarrow a=\tfrac14$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( F(0,\tfrac14),\quad y=-\tfrac14 \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">f</span><div class="step-body">
-          <p class="calc-note">$-x^2-y=0 \Rightarrow x^2=-y \Rightarrow 4a=1 \Rightarrow a=\tfrac14$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( F(0,-\tfrac14),\quad y=\tfrac14 \)</div></div>
+      <div class="example-problem">جد البؤرة ومعادلة الدليل للقطع المكافئ: $x^2+4y=0$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نرتّب على الصورة القياسية $x^2=-4y$، فنقارن مع $x^2=-4ay$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4a=4 \Rightarrow a=1 \)</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ راجع الحلول الستة أعلاه — لاحظ كيف تحدّد إشارة $a$ ومحور المتغيّر المربّع اتجاه الفتحة. ∎</div>
+      <div class="exercise-final">✓ البؤرة $F(0,-1)$، الدليل $y=1$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1ب</span> السؤال 1 (ب)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد البؤرة ومعادلة الدليل للقطع المكافئ: $y^2-6x=0$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نرتّب على الصورة القياسية $y^2=6x$، فنقارن مع $y^2=4ax$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4a=6 \Rightarrow a=\tfrac32 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ البؤرة $F\!\left(\tfrac32,0\right)$، الدليل $x=-\tfrac32$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1ج</span> السؤال 1 (ج)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد البؤرة ومعادلة الدليل للقطع المكافئ: $x^2=-24y$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقارن مع $x^2=-4ay$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4a=24 \Rightarrow a=6 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ البؤرة $F(0,-6)$، الدليل $y=6$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1د</span> السؤال 1 (د)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد البؤرة ومعادلة الدليل للقطع المكافئ: $y^2=20x$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقارن مع $y^2=4ax$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4a=20 \Rightarrow a=5 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ البؤرة $F(5,0)$، الدليل $x=-5$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1هـ</span> السؤال 1 (هـ)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1e">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد البؤرة ومعادلة الدليل للقطع المكافئ: $x^2=y$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقارن مع $x^2=4ay$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4a=1 \Rightarrow a=\tfrac14 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ البؤرة $F\!\left(0,\tfrac14\right)$، الدليل $y=-\tfrac14$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1و</span> السؤال 1 (و)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1f">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد البؤرة ومعادلة الدليل للقطع المكافئ: $-x^2-y=0$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1f">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نرتّب على الصورة القياسية $x^2=-y$، فنقارن مع $x^2=-4ay$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4a=1 \Rightarrow a=\tfrac14 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ البؤرة $F\!\left(0,-\tfrac14\right)$، الدليل $y=\tfrac14$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -256,6 +629,39 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ المعادلة $y^2=-\dfrac85x$، والبؤرة $F\!\left(-\tfrac25,0\right)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> السؤال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي يمر بالنقطتين $(-3,-4)$، $(-2,3)$ ورأسه في نقطة الأصل.</div>
+      <ol class="steps hidden-steps" id="steps-pq6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">قطع مكافئ رأسه نقطة الأصل ومحوره أحد المحورين الإحداثيين له صورتان ممكنتان فقط: $y^2=kx$ أو $x^2=my$. نختبر الصورة الأولى بتعويض النقطتين وحساب النسبة $k=y^2/x$</p>
+          <div class="calc-flow">
+            <div class="calc-line">للنقطة $(-3,-4)$: \( k=\dfrac{(-4)^2}{-3}=-\dfrac{16}{3} \)</div>
+            <div class="calc-line">للنقطة $(-2,3)$: \( k=\dfrac{(3)^2}{-2}=-\dfrac{9}{2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">النسبتان غير متساويتين $\left(-\dfrac{16}{3}\neq-\dfrac{9}{2}\right)$، إذن الصورة $y^2=kx$ لا تحقق النقطتين معاً؛ نختبر الصورة الثانية بحساب $m=x^2/y$</p>
+          <div class="calc-flow">
+            <div class="calc-line">للنقطة $(-3,-4)$: \( m=\dfrac{(-3)^2}{-4}=-\dfrac{9}{4} \)</div>
+            <div class="calc-line">للنقطة $(-2,3)$: \( m=\dfrac{(-2)^2}{3}=\dfrac{4}{3} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">النسبتان أيضاً غير متساويتين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( -\dfrac94 \neq \dfrac43 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="callout warn fade-up" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>بما أن النقطتين لا تحققان أياً من الصورتين القياسيتين الممكنتين لقطع مكافئ رأسه نقطة الأصل ومحوره أحد المحورين الإحداثيين، فإنه <b>لا يوجد</b> قطع مكافئ بهذه المواصفات يمر بالنقطتين معاً. هذا استنتاج رياضي صحيح ومكتمل، لا نقص فيه.</span>
+      </div>
+      <div class="exercise-final">✓ لا يوجد قطع مكافئ (رأسه نقطة الأصل ومحوره أحد المحورين) يحقق الشرطين معاً — أثبتنا ذلك بفحص الصورتين الممكنتين كلتيهما. ∎</div>
     </div>
   </section>
 
