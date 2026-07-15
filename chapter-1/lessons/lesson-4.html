@@ -6,7 +6,6 @@
 <title>الدرس 4: المرافق والقسمة والتحليل وتساوي عددين مركبين — الفصل الأول</title>
 <meta name="description" content="مرافق العدد المركب وخواصه، قسمة الأعداد المركبة، تحليل العدد الحقيقي إلى عاملين مركبين، وتساوي عددين مركبين، مع أمثلة محلولة وتمارين تطبيقية واختبار ذاتي.">
 <link rel="stylesheet" href="../../assets/css/theme.css">
-<style>mjx-mtext, mjx-utext{font-family:'Cairo',sans-serif !important}</style>
 <script>
   MathJax = {
     tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
@@ -320,7 +319,7 @@
       <div class="def-box" style="margin:.5rem 0">
         <span class="def-label">📌 تعريف 1-7 — تساوي عددين مركبين</span>
         <p style="margin:.3rem 0">ليكن $z_1=a+bi,\; z_2=c+di$، حيث $a,b,c,d\in\mathbb{R}$، فإن:</p>
-        <div class="mj-scroll">$$a+bi = c+di \iff a=c \;\text{و}\; b=d$$</div>
+        <div class="mj-scroll" style="text-align:center">$a+bi = c+di \iff a=c$ و $b=d$</div>
         <p style="margin:.3rem 0">أي: إذا تساوى عددان مركبان، تساوى جزءاهما الحقيقيان معاً وجزءاهما التخيليان معاً، والعكس صحيح.</p>
       </div>
     </div>
@@ -664,7 +663,7 @@
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
           <p class="calc-note">من $xy=0$ إما $x=0$ أو $y=0$؛ مع $x+y=6$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( (x,y)=(0,6)\;\text{أو}\;(6,0) \)</div></div>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (x,y)=(0,6) \) أو \( (6,0) \)</div></div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $(x,y)=(0,6)$ أو $(6,0)$. ∎</div>
@@ -977,7 +976,7 @@
     var C = parseFloat(c.value)||0, D = parseFloat(d.value)||0;
     var denom = C*C + D*D;
     if(denom === 0){
-      out.innerHTML = "$$\\text{غير معرّف: } z_2=0$$";
+      out.innerHTML = "غير معرّف: $z_2=0$";
     } else {
       var reNum = A*C + B*D;
       var imNum = B*C - A*D;
