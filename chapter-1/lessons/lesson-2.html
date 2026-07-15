@@ -67,29 +67,17 @@
         <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
         <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار الحل</button>
       </div>
-      <div class="example-problem">بسّط ما يأتي إلى أبسط صورة: $i^{28},\; i^{62},\; i^{37},\; i^{23}$.</div>
+      <div class="example-problem">بسّط $i^{28}$ إلى أبسط صورة.</div>
       <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
         <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> نقسم الأس على $4$ ونعتبر الباقي هو الأس الجديد.</p>
       </div>
       <ol class="steps hidden-steps" id="steps-ex1">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">$28\div4$ باقٍ $=0$ (يقبل القسمة تماماً)</p>
+          <p class="calc-note">$28\div4=7$ باقٍ $=0$ (يقبل القسمة تماماً)</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( i^{28}=i^0=1 \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">$62\div4=15$ والباقي $2$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( i^{62}=i^2=-1 \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">$37\div4=9$ والباقي $1$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( i^{37}=i^1=i \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">
-          <p class="calc-note">$23\div4=5$ والباقي $3$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( i^{23}=i^3=-i \)</div></div>
-        </div></li>
       </ol>
-      <div class="exercise-final">✓ $i^{28}=1,\;\; i^{62}=-1,\;\; i^{37}=i,\;\; i^{23}=-i$. ∎</div>
+      <div class="exercise-final">✓ $i^{28}=1$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -97,8 +85,53 @@
         <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
         <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار الحل</button>
       </div>
-      <div class="example-problem">بسّط العدد $i^{12n+3}$ إلى أبسط صورة، حيث $n\in\mathbb{N}$.</div>
+      <div class="example-problem">بسّط $i^{62}$ إلى أبسط صورة.</div>
       <ol class="steps hidden-steps" id="steps-ex2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$62\div4=15$ والباقي $2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( i^{62}=i^2=-1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $i^{62}=-1$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">بسّط $i^{37}$ إلى أبسط صورة.</div>
+      <ol class="steps hidden-steps" id="steps-ex3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$37\div4=9$ والباقي $1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( i^{37}=i^1=i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $i^{37}=i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> مثال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">بسّط $i^{23}$ إلى أبسط صورة.</div>
+      <ol class="steps hidden-steps" id="steps-ex4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$23\div4=5$ والباقي $3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( i^{23}=i^3=-i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $i^{23}=-i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> مثال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">بسّط العدد $i^{12n+3}$ إلى أبسط صورة، حيث $n\in\mathbb{N}$.</div>
+      <ol class="steps hidden-steps" id="steps-ex5">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نفصل الأس إلى جزء يقبل القسمة على 4 وجزء باقٍ</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( i^{12n+3}=i^{12n}\times i^3=(i^4)^{3n}\times i^3 \)</div></div>
@@ -125,32 +158,65 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">6</span> مثال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار الحل</button>
       </div>
-      <div class="example-problem">عبّر عن الجذور السالبة الآتية بدلالة $i$: $\sqrt{-9},\; \sqrt{-100},\; \sqrt{-7},\; \sqrt{-20}$.</div>
+      <div class="example-problem">عبّر عن $\sqrt{-9}$ بدلالة $i$.</div>
       <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
         <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $\sqrt{-a}=\sqrt{a}\,i$</p>
       </div>
-      <ol class="steps hidden-steps" id="steps-ex3">
+      <ol class="steps hidden-steps" id="steps-ex6">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">$\sqrt{-9}=\sqrt{9}\,i$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{-9}=3i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">
+      </ol>
+      <div class="exercise-final">✓ $\sqrt{-9}=3i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7</span> مثال 7</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7">إظهار الحل</button>
+      </div>
+      <div class="example-problem">عبّر عن $\sqrt{-100}$ بدلالة $i$.</div>
+      <ol class="steps hidden-steps" id="steps-ex7">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">$\sqrt{-100}=\sqrt{100}\,i$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{-100}=10i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
+      </ol>
+      <div class="exercise-final">✓ $\sqrt{-100}=10i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8</span> مثال 8</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex8">إظهار الحل</button>
+      </div>
+      <div class="example-problem">عبّر عن $\sqrt{-7}$ بدلالة $i$.</div>
+      <ol class="steps hidden-steps" id="steps-ex8">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">$\sqrt{-7}=\sqrt{7}\,i$ ($7$ ليس مربعاً كاملاً فيبقى تحت الجذر)</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{-7}=\sqrt7\,i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">
+      </ol>
+      <div class="exercise-final">✓ $\sqrt{-7}=\sqrt7\,i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9</span> مثال 9</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex9">إظهار الحل</button>
+      </div>
+      <div class="example-problem">عبّر عن $\sqrt{-20}$ بدلالة $i$.</div>
+      <ol class="steps hidden-steps" id="steps-ex9">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">$\sqrt{-20}=\sqrt{20}\,i=\sqrt{4\times5}\,i$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{-20}=2\sqrt5\,i \)</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ $\sqrt{-9}=3i,\;\sqrt{-100}=10i,\;\sqrt{-7}=\sqrt7\,i,\;\sqrt{-20}=2\sqrt5\,i$. ∎</div>
+      <div class="exercise-final">✓ $\sqrt{-20}=2\sqrt5\,i$. ∎</div>
     </div>
   </section>
 
@@ -184,11 +250,11 @@
   <section class="section fade-up">
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">4</span> مثال 4</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex4">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">10</span> مثال 10</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex10">إظهار الحل</button>
       </div>
       <div class="example-problem">جد مجموع العددين المركبين $(5+2i),\; (3+4i)$.</div>
-      <ol class="steps hidden-steps" id="steps-ex4">
+      <ol class="steps hidden-steps" id="steps-ex10">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نجمع الأجزاء الحقيقية معاً والتخيلية معاً</p>
           <div class="calc-flow">
@@ -203,11 +269,11 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">5</span> مثال 5</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">11</span> مثال 11</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex11">إظهار الحل</button>
       </div>
       <div class="example-problem">جد مجموع العددين المركبين $(2-5\sqrt3\,i),\; (-7-\sqrt3\,i)$.</div>
-      <ol class="steps hidden-steps" id="steps-ex5">
+      <ol class="steps hidden-steps" id="steps-ex11">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نجمع الأجزاء الحقيقية: $2+(-7)$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( -5 \)</div></div>
@@ -226,11 +292,11 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">6</span> مثال 6</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">12</span> مثال 12</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex12">إظهار الحل</button>
       </div>
       <div class="example-problem">جد مجموع العددين المركبين $(4-2i),\; (i)$.</div>
-      <ol class="steps hidden-steps" id="steps-ex6">
+      <ol class="steps hidden-steps" id="steps-ex12">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نكتب $i$ بالصيغة الاعتيادية $0+i$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( i = 0+i \)</div></div>
@@ -300,11 +366,11 @@
   <section class="section fade-up">
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">7</span> مثال 7</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex7">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">13</span> مثال 13</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex13">إظهار الحل</button>
       </div>
       <div class="example-problem">جد حاصل الطرح: $(5+6i)-(2+3i)$.</div>
-      <ol class="steps hidden-steps" id="steps-ex7">
+      <ol class="steps hidden-steps" id="steps-ex13">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نأخذ النظير الجمعي للمطروح $(2+3i)$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( -(2+3i) = -2-3i \)</div></div>
@@ -323,11 +389,11 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">8</span> مثال 8</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex8">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">14</span> مثال 14</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex14">إظهار الحل</button>
       </div>
       <div class="example-problem">جد حاصل الطرح: $(-3+9i)-(3+i)$.</div>
-      <ol class="steps hidden-steps" id="steps-ex8">
+      <ol class="steps hidden-steps" id="steps-ex14">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نأخذ النظير الجمعي للمطروح $(3+i)$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( -(3+i) = -3-i \)</div></div>
@@ -377,22 +443,33 @@
         <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
         <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
       </div>
-      <div class="example-problem">إذا كان $z_1=-4+7i,\; z_2=6-2i$، جد $z_1+z_2$ و $z_1-z_2$، وتحقّق أن $(z_1-z_2)$ هو نفسه $z_1+(-z_2)$.</div>
+      <div class="example-problem">إذا كان $z_1=-4+7i,\; z_2=6-2i$، جد $z_1+z_2$.</div>
       <ol class="steps hidden-steps" id="steps-pq2">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">الجمع</p>
+          <p class="calc-note">نجمع الأجزاء الحقيقية معاً والتخيلية معاً</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( z_1+z_2=(-4+6)+(7-2)i=2+5i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">الطرح: $-z_2=-6+2i$</p>
+      </ol>
+      <div class="exercise-final">✓ $z_1+z_2=2+5i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">إذا كان $z_1=-4+7i,\; z_2=6-2i$، جد $z_1-z_2$، وتحقّق أن الناتج هو نفسه $z_1+(-z_2)$.</div>
+      <ol class="steps hidden-steps" id="steps-pq3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الطرح المباشر: $-z_2=-6+2i$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( z_1-z_2=(-4-6)+(7+2)i=-10+9i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">تحقّق: $z_1+(-z_2)=(-4+7i)+(-6+2i)=-10+9i$ ✓</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( z_1-z_2 = z_1+(-z_2) \)</div></div>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">تحقّق باستخدام النظير الجمعي: $z_1+(-z_2)=(-4+7i)+(-6+2i)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z_1+(-z_2)=-10+9i \quad ✓ \)</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ $z_1+z_2=2+5i$، $z_1-z_2=-10+9i$. ∎</div>
+      <div class="exercise-final">✓ $z_1-z_2=z_1+(-z_2)=-10+9i$. ∎</div>
     </div>
   </section>
 

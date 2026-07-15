@@ -66,10 +66,10 @@
         <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
         <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار الحل</button>
       </div>
-      <div class="example-problem">إذا كان $z_1=2+3i,\; z_2=3-5i$، فتحقق من صحة الخاصية $\overline{z_1\pm z_2}=\bar z_1\pm\bar z_2$.</div>
+      <div class="example-problem">إذا كان $z_1=2+3i,\; z_2=3-5i$، فتحقق من صحة الخاصية $\overline{z_1+z_2}=\bar z_1+\bar z_2$.</div>
       <ol class="steps hidden-steps" id="steps-ex1">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">الطرف الأيسر للجمع: $\overline{z_1+z_2}$</p>
+          <p class="calc-note">الطرف الأيسر: $\overline{z_1+z_2}$</p>
           <div class="calc-flow">
             <div class="calc-line">\( \overline{(2+3i)+(3-5i)}=\overline{5-2i} \)</div>
             <div class="calc-arrow">↓</div>
@@ -77,31 +77,15 @@
           </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">الطرف الأيمن للجمع: $\bar z_1+\bar z_2$</p>
+          <p class="calc-note">الطرف الأيمن: $\bar z_1+\bar z_2$</p>
           <div class="calc-flow">
             <div class="calc-line">\( (2-3i)+(3+5i) \)</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">\( =5+2i \quad ✓ \)</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">الطرف الأيسر للطرح: $\overline{z_1-z_2}$</p>
-          <div class="calc-flow">
-            <div class="calc-line">\( \overline{(2+3i)-(3-5i)}=\overline{-1+8i} \)</div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">\( =-1-8i \)</div>
-          </div>
-        </div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">
-          <p class="calc-note">الطرف الأيمن للطرح: $\bar z_1-\bar z_2$</p>
-          <div class="calc-flow">
-            <div class="calc-line">\( (2-3i)-(3+5i) \)</div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">\( =-1-8i \quad ✓ \)</div>
-          </div>
-        </div></li>
       </ol>
-      <div class="exercise-final">✓ تحققت الخاصية في الجمع والطرح معاً. ∎</div>
+      <div class="exercise-final">✓ $\overline{z_1+z_2}=\bar z_1+\bar z_2=5+2i$. ∎</div>
     </div>
 
     <div class="example fade-up">
@@ -109,8 +93,35 @@
         <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
         <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار الحل</button>
       </div>
-      <div class="example-problem">أثبت أن $(1-i)(1-i^2)(1-i^3)=4$.</div>
+      <div class="example-problem">إذا كان $z_1=2+3i,\; z_2=3-5i$، فتحقق من صحة الخاصية $\overline{z_1-z_2}=\bar z_1-\bar z_2$.</div>
       <ol class="steps hidden-steps" id="steps-ex2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الطرف الأيسر: $\overline{z_1-z_2}$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \overline{(2+3i)-(3-5i)}=\overline{-1+8i} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-1-8i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">الطرف الأيمن: $\bar z_1-\bar z_2$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (2-3i)-(3+5i) \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-1-8i \quad ✓ \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\overline{z_1-z_2}=\bar z_1-\bar z_2=-1-8i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن $(1-i)(1-i^2)(1-i^3)=4$.</div>
+      <ol class="steps hidden-steps" id="steps-ex3">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نستبدل $i^2=-1,\; i^3=-i$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( (1-i)\big(1-(-1)\big)\big(1-(-i)\big)=(1-i)(2)(1+i) \)</div></div>
@@ -129,14 +140,14 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">4</span> مثال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex4-inv">إظهار الحل</button>
       </div>
       <div class="example-problem">جد النظير الضربي للعدد المركب $z=1+2i$ بالصيغة الاعتيادية، ثم تحقق من صحة الحل.</div>
       <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
         <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> نضرب البسط والمقام في مرافق المقام لإزالة $i$ من المقام</p>
       </div>
-      <ol class="steps hidden-steps" id="steps-ex3">
+      <ol class="steps hidden-steps" id="steps-ex4-inv">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نكتب $\dfrac1z$ ونضرب في مرافق المقام $\dfrac{1-2i}{1-2i}$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac1z=\dfrac{1}{1+2i}\times\dfrac{1-2i}{1-2i} \)</div></div>
@@ -177,33 +188,17 @@
   <section class="section fade-up">
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">4</span> مثال 4</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex4">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">5</span> مثال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار الحل</button>
       </div>
-      <div class="example-problem">ضع كلاً مما يأتي بالصيغة الجبرية الاعتيادية: $a)\; \dfrac{5}{2-i} \qquad b)\; \dfrac{2i}{1+i} \qquad c)\; \dfrac{2-4i}{3+5i}$</div>
-      <ol class="steps hidden-steps" id="steps-ex4">
+      <div class="example-problem">ضع $\dfrac{5}{2-i}$ بالصيغة الجبرية الاعتيادية.</div>
+      <ol class="steps hidden-steps" id="steps-ex5">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">(a) نضرب في مرافق المقام $\dfrac{2+i}{2+i}$</p>
+          <p class="calc-note">نضرب في مرافق المقام $\dfrac{2+i}{2+i}$</p>
           <div class="calc-flow">
             <div class="calc-line">\( \dfrac{5}{2-i}\times\dfrac{2+i}{2+i}=\dfrac{10+5i}{4+1} \)</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">\( =\dfrac{10+5i}{5}=2+i \)</div>
-          </div>
-        </div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">(b) نضرب في مرافق المقام $\dfrac{1-i}{1-i}$</p>
-          <div class="calc-flow">
-            <div class="calc-line">\( \dfrac{2i}{1+i}\times\dfrac{1-i}{1-i}=\dfrac{2i-2i^2}{1+1}=\dfrac{2i+2}{2} \)</div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">\( =1+i \)</div>
-          </div>
-        </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">(c) نضرب في مرافق المقام $\dfrac{3-5i}{3-5i}$</p>
-          <div class="calc-flow">
-            <div class="calc-line">\( \dfrac{2-4i}{3+5i}\times\dfrac{3-5i}{3-5i}=\dfrac{(6-20)+(-12-10)i}{9+25} \)</div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">\( =\dfrac{-14-22i}{34}=-\dfrac{7}{17}-\dfrac{11}{17}i \)</div>
           </div>
         </div></li>
       </ol>
@@ -211,7 +206,45 @@
         <span class="icon">⚠️</span>
         <span>خطأ شائع: ضرب البسط فقط في المرافق ونسيان ضرب المقام أيضاً. تذكّر: نضرب في $\frac{\bar z_2}{\bar z_2}$ (كسر يساوي 1) حتى لا يتغيّر العدد الأصلي.</span>
       </div>
-      <div class="exercise-final">✓ (a) $2+i$&nbsp; (b) $1+i$&nbsp; (c) $-\frac{7}{17}-\frac{11}{17}i$. ∎</div>
+      <div class="exercise-final">✓ $\dfrac{5}{2-i}=2+i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> مثال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ضع $\dfrac{2i}{1+i}$ بالصيغة الجبرية الاعتيادية.</div>
+      <ol class="steps hidden-steps" id="steps-ex6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نضرب في مرافق المقام $\dfrac{1-i}{1-i}$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{2i}{1+i}\times\dfrac{1-i}{1-i}=\dfrac{2i-2i^2}{1+1}=\dfrac{2i+2}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =1+i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\dfrac{2i}{1+i}=1+i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7</span> مثال 7</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ضع $\dfrac{2-4i}{3+5i}$ بالصيغة الجبرية الاعتيادية.</div>
+      <ol class="steps hidden-steps" id="steps-ex7">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نضرب في مرافق المقام $\dfrac{3-5i}{3-5i}$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{2-4i}{3+5i}\times\dfrac{3-5i}{3-5i}=\dfrac{(6-20)+(-12-10)i}{9+25} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =\dfrac{-14-22i}{34}=-\dfrac{7}{17}-\dfrac{11}{17}i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\dfrac{2-4i}{3+5i}=-\dfrac{7}{17}-\dfrac{11}{17}i$. ∎</div>
     </div>
   </section>
 
@@ -250,11 +283,11 @@
   <section class="section fade-up">
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">5</span> مثال 5</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">8</span> مثال 8</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex8">إظهار الحل</button>
       </div>
       <div class="example-problem">حلل العدد الحقيقي $50$ إلى عاملين بالصورة $(a+bi)$ حيث $a,b\in\mathbb{R}$.</div>
-      <ol class="steps hidden-steps" id="steps-ex5">
+      <ol class="steps hidden-steps" id="steps-ex8">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نبحث عن مربعين كاملين مجموعهما 50 — الحل الأول: $50=49+1$</p>
           <div class="calc-flow">
@@ -295,11 +328,11 @@
   <section class="section fade-up">
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">6</span> مثال 6</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">9</span> مثال 9</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex9">إظهار الحل</button>
       </div>
       <div class="example-problem">جد قيمة كل من $x,y$ الحقيقيتين اللتين تحققان: $(3x+2)+6i = 8+(y-1)i$.</div>
-      <ol class="steps hidden-steps" id="steps-ex6">
+      <ol class="steps hidden-steps" id="steps-ex9">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نساوي الجزءين الحقيقيين</p>
           <div class="calc-flow">
@@ -322,11 +355,11 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">7</span> مثال 7</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex7">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">10</span> مثال 10</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex10">إظهار الحل</button>
       </div>
       <div class="example-problem">جد قيمة كل من $x,y$ الحقيقيتين اللتين تحققان: $y+20i = (3x+i)(x+3i)$.</div>
-      <ol class="steps hidden-steps" id="steps-ex7">
+      <ol class="steps hidden-steps" id="steps-ex10">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نوسّع الطرف الأيمن (FOIL)</p>
           <div class="calc-flow">
@@ -366,181 +399,448 @@
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1 — أ</div>
         <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
       </div>
-      <div class="example-problem">ضع كلاً مما يأتي بالصيغة الاعتيادية للعدد المركب: $i^8,\; i^{11},\; i^{65},\; i^{105},\; i^{16n-1},\; i^{8n+2}\;\; (n\in\mathbb{N})$.</div>
+      <div class="example-problem">ضع $i^8$ بالصيغة الاعتيادية للعدد المركب.</div>
       <ol class="steps hidden-steps" id="steps-pq1">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">$8\div4$ باقٍ $0$؛ &nbsp; $11\div4$ باقٍ $3$؛ &nbsp; $65\div4$ باقٍ $1$؛ &nbsp; $105\div4$ باقٍ $1$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( i^8=1,\quad i^{11}=-i,\quad i^{65}=i,\quad i^{105}=i \)</div></div>
+          <p class="calc-note">$8\div4=2$ باقٍ $0$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( i^8=i^0=1 \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">$16n$ من مضاعفات $4$ لأي $n$، إذن $16n-1$ باقي قسمته على $4$ هو $3$ دائماً</p>
+      </ol>
+      <div class="exercise-final">✓ $i^8=1$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 1 — ب</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ضع $i^{11}$ بالصيغة الاعتيادية للعدد المركب.</div>
+      <ol class="steps hidden-steps" id="steps-pq1b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$11\div4=2$ باقٍ $3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( i^{11}=i^3=-i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $i^{11}=-i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 1 — ج</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ضع $i^{65}$ بالصيغة الاعتيادية للعدد المركب.</div>
+      <ol class="steps hidden-steps" id="steps-pq1c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$65\div4=16$ باقٍ $1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( i^{65}=i^1=i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $i^{65}=i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> السؤال 1 — د</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ضع $i^{105}$ بالصيغة الاعتيادية للعدد المركب.</div>
+      <ol class="steps hidden-steps" id="steps-pq1d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$105\div4=26$ باقٍ $1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( i^{105}=i^1=i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $i^{105}=i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> السؤال 1 — هـ</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1e">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ضع $i^{16n-1}$ بالصيغة الاعتيادية للعدد المركب، حيث $n\in\mathbb{N}$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$16n$ من مضاعفات $4$ لأي $n$، إذن باقي قسمة $16n-1$ على $4$ هو $3$ دائماً</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( i^{16n-1}=i^3=-i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">$8n$ من مضاعفات $4$ لأي $n$، إذن $8n+2$ باقي قسمته على $4$ هو $2$ دائماً</p>
+      </ol>
+      <div class="exercise-final">✓ $i^{16n-1}=-i$ لكل $n\in\mathbb{N}$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> السؤال 1 — و</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1f">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ضع $i^{8n+2}$ بالصيغة الاعتيادية للعدد المركب، حيث $n\in\mathbb{N}$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1f">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$8n$ من مضاعفات $4$ لأي $n$، إذن باقي قسمة $8n+2$ على $4$ هو $2$ دائماً</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( i^{8n+2}=i^2=-1 \)</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ $i^8=1,\; i^{11}=-i,\; i^{65}=i,\; i^{105}=i,\; i^{16n-1}=-i,\; i^{8n+2}=-1$. ∎</div>
+      <div class="exercise-final">✓ $i^{8n+2}=-1$ لكل $n\in\mathbb{N}$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
-        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">7</span> السؤال 2 — أ</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2a">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد ناتج كل مما يأتي بالصيغة الاعتيادية للعدد المركب:
-        <br>a) $(1+i)^3+(1+i)^4$ &nbsp; b) $(2-3i)+(-6-7i)$ &nbsp; c) $(5+i)-(1-4i)$ &nbsp; d) $(3-2i)^3$
-        <br>e) $(-3+i)+(3+i)$ &nbsp; f) $\left(\dfrac{1+3i}{4-i}\right)^2$ &nbsp; g) $\dfrac{3-5i}{(2-2i)^2}$ &nbsp; h) $\dfrac{(1-2i)^2}{3-5i}$</div>
-      <ol class="steps hidden-steps" id="steps-pq2">
-        <li class="step"><span class="step-dot">أ</span><div class="step-body">
-          <p class="calc-note">$(1+i)^2=2i \Rightarrow (1+i)^3=2i(1+i)=-2+2i,\;\; (1+i)^4=(2i)^2=-4$</p>
+      <div class="example-problem">جد ناتج $(1+i)^3+(1+i)^4$ بالصيغة الاعتيادية للعدد المركب.</div>
+      <ol class="steps hidden-steps" id="steps-pq2a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحسب $(1+i)^2=2i$ أولاً (تربيع متكرر)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (1+i)^2=1+2i+i^2=2i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$(1+i)^3=(1+i)^2(1+i)=2i(1+i)$؛ &nbsp; $(1+i)^4=[(1+i)^2]^2=(2i)^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (1+i)^3=-2+2i\,,\qquad (1+i)^4=-4 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نجمع الناتجين</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( (1+i)^3+(1+i)^4=(-2+2i)+(-4)=-6+2i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">ب</span><div class="step-body">
-          <p class="calc-note">نجمع الأجزاء المتناظرة</p>
+      </ol>
+      <div class="exercise-final">✓ $(1+i)^3+(1+i)^4=-6+2i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8</span> السؤال 2 — ب</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد ناتج $(2-3i)+(-6-7i)$ بالصيغة الاعتيادية للعدد المركب.</div>
+      <ol class="steps hidden-steps" id="steps-pq2b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجمع الأجزاء الحقيقية معاً والتخيلية معاً</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( (2-3i)+(-6-7i)=-4-10i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">ج</span><div class="step-body">
-          <p class="calc-note">نطرح باستخدام النظير الجمعي</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( (5+i)-(1-4i)=4+5i \)</div></div>
+      </ol>
+      <div class="exercise-final">✓ $(2-3i)+(-6-7i)=-4-10i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9</span> السؤال 2 — ج</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد ناتج $(5+i)-(1-4i)$ بالصيغة الاعتيادية للعدد المركب.</div>
+      <ol class="steps hidden-steps" id="steps-pq2c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نطرح باستخدام النظير الجمعي: $-(1-4i)=-1+4i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (5+i)+(-1+4i)=4+5i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">د</span><div class="step-body">
-          <p class="calc-note">$(3-2i)^2=9-12i+4i^2=5-12i$، ثم نضرب في $(3-2i)$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( (3-2i)^3=(5-12i)(3-2i)=15-46i+24i^2=-9-46i \)</div></div>
+      </ol>
+      <div class="exercise-final">✓ $(5+i)-(1-4i)=4+5i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">10</span> السؤال 2 — د</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد ناتج $(3-2i)^3$ بالصيغة الاعتيادية للعدد المركب.</div>
+      <ol class="steps hidden-steps" id="steps-pq2d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحسب $(3-2i)^2$ أولاً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (3-2i)^2=9-12i+4i^2=5-12i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">هـ</span><div class="step-body">
-          <p class="calc-note">الجزء الحقيقي يُلغى تماماً</p>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نضرب الناتج في $(3-2i)$ المتبقية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (5-12i)(3-2i)=15-46i+24i^2=-9-46i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $(3-2i)^3=-9-46i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">11</span> السؤال 2 — هـ</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2e">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد ناتج $(-3+i)+(3+i)$ بالصيغة الاعتيادية للعدد المركب.</div>
+      <ol class="steps hidden-steps" id="steps-pq2e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الجزء الحقيقي يُلغى تماماً ($-3+3=0$)</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( (-3+i)+(3+i)=0+2i=2i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">و</span><div class="step-body">
-          <p class="calc-note">نبسّط الكسر الداخلي أولاً بضرب مرافق المقام $\dfrac{4+i}{4+i}$: $\dfrac{(1+3i)(4+i)}{17}=\dfrac{1+13i}{17}$، ثم نربّع</p>
+      </ol>
+      <div class="exercise-final">✓ $(-3+i)+(3+i)=2i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">12</span> السؤال 2 — و</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2f">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد ناتج $\left(\dfrac{1+3i}{4-i}\right)^2$ بالصيغة الاعتيادية للعدد المركب.</div>
+      <ol class="steps hidden-steps" id="steps-pq2f">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبسّط الكسر الداخلي أولاً بضرب مرافق المقام $\dfrac{4+i}{4+i}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{(1+3i)(4+i)}{17}=\dfrac{1+13i}{17} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نربّع الناتج</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \left(\dfrac{1+13i}{17}\right)^2=\dfrac{1+26i-169}{289}=\dfrac{-168+26i}{289} \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">ز</span><div class="step-body">
-          <p class="calc-note">$(2-2i)^2=4-8i+4i^2=-8i$، ثم نقسم $\dfrac{3-5i}{-8i}$ بضرب $\dfrac{i}{i}$</p>
+      </ol>
+      <div class="exercise-final">✓ $\left(\dfrac{1+3i}{4-i}\right)^2=\dfrac{-168+26i}{289}$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">13</span> السؤال 2 — ز</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2g">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد ناتج $\dfrac{3-5i}{(2-2i)^2}$ بالصيغة الاعتيادية للعدد المركب.</div>
+      <ol class="steps hidden-steps" id="steps-pq2g">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبسّط المقام أولاً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (2-2i)^2=4-8i+4i^2=-8i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نقسم $\dfrac{3-5i}{-8i}$ بضرب $\dfrac{i}{i}$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{(3-5i)i}{-8i^2}=\dfrac{3i-5i^2}{8}=\dfrac{5+3i}{8}=\tfrac58+\tfrac38 i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">ح</span><div class="step-body">
-          <p class="calc-note">$(1-2i)^2=1-4i+4i^2=-3-4i$، نقسم على $3-5i$ بضرب مرافقه $\dfrac{3+5i}{3+5i}$</p>
+      </ol>
+      <div class="exercise-final">✓ $\dfrac{3-5i}{(2-2i)^2}=\tfrac58+\tfrac38i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">14</span> السؤال 2 — ح</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2h">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد ناتج $\dfrac{(1-2i)^2}{3-5i}$ بالصيغة الاعتيادية للعدد المركب.</div>
+      <ol class="steps hidden-steps" id="steps-pq2h">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبسّط البسط أولاً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (1-2i)^2=1-4i+4i^2=-3-4i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نقسم على $3-5i$ بضرب مرافقه $\dfrac{3+5i}{3+5i}$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{(-3-4i)(3+5i)}{34}=\dfrac{11-27i}{34}=\tfrac{11}{34}-\tfrac{27}{34}i \)</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ a) $-6+2i$&nbsp; b) $-4-10i$&nbsp; c) $4+5i$&nbsp; d) $-9-46i$&nbsp; e) $2i$&nbsp; f) $\frac{-168+26i}{289}$&nbsp; g) $\frac58+\frac38i$&nbsp; h) $\frac{11}{34}-\frac{27}{34}i$. ∎</div>
+      <div class="exercise-final">✓ $\dfrac{(1-2i)^2}{3-5i}=\tfrac{11}{34}-\tfrac{27}{34}i$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
-        <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">15</span> السؤال 3 — أ</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3a">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد قيمة كل من $x,y$ الحقيقيتين إذا علمت أن:
-        <br>a) $(2x+3yi)(1+i)^2=\dfrac{3-i}{1-i}$ &nbsp; b) $6i=(x+i)(y+i)+1$
-        <br>c) $\left(\dfrac{1+i}{1-i}\right)^3+(2x-yi)=(1+2i)^2$ &nbsp; d) $(2x+i)(x-i)=\dfrac{16y^2+9}{4y+3i}$</div>
-      <ol class="steps hidden-steps" id="steps-pq3">
-        <li class="step"><span class="step-dot">أ</span><div class="step-body">
+      <div class="example-problem">جد قيمة كل من $x,y$ الحقيقيتين إذا علمت أن: $(2x+3yi)(1+i)^2=\dfrac{3-i}{1-i}$.</div>
+      <ol class="steps hidden-steps" id="steps-pq3a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">$(1+i)^2=2i$، والطرف الأيمن $\dfrac{3-i}{1-i}\times\dfrac{1+i}{1+i}=\dfrac{4+2i}{2}=2+i$</p>
-          <div class="calc-flow">
-            <div class="calc-line">\( (2x+3yi)(2i)=-6y+4xi=2+i \)</div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">\( -6y=2,\; 4x=1 \Rightarrow x=\tfrac14,\; y=-\tfrac13 \)</div>
-          </div>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (2x+3yi)(2i)=-6y+4xi=2+i \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">ب</span><div class="step-body">
-          <p class="calc-note">نوسّع: $(x+i)(y+i)+1 = (xy-1)+(x+y)i+1 = xy+(x+y)i$</p>
-          <div class="calc-flow">
-            <div class="calc-line">\( xy=0,\quad x+y=6 \)</div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">\( (x,y)=(0,6)\;\text{أو}\;(6,0) \)</div>
-          </div>
-        </div></li>
-        <li class="step"><span class="step-dot">ج</span><div class="step-body">
-          <p class="calc-note">$\dfrac{1+i}{1-i}=i \Rightarrow i^3=-i$، والطرف الأيمن $(1+2i)^2=-3+4i$</p>
-          <div class="calc-flow">
-            <div class="calc-line">\( -i+2x-yi=-3+4i \)</div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">\( 2x=-3\Rightarrow x=-\tfrac32,\quad -1-y=4\Rightarrow y=-5 \)</div>
-          </div>
-        </div></li>
-        <li class="step"><span class="step-dot">د</span><div class="step-body">
-          <p class="calc-note">اللافتة الأساسية: $16y^2+9=(4y+3i)(4y-3i)$، فيصبح الطرف الأيمن $=4y-3i$. والطرف الأيسر $(2x+i)(x-i)=(2x^2+1)-xi$</p>
-          <div class="calc-flow">
-            <div class="calc-line">\( (2x^2+1)-xi = 4y-3i \)</div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">\( -x=-3\Rightarrow x=3,\quad 2(3)^2+1=19=4y\Rightarrow y=\tfrac{19}{4} \)</div>
-          </div>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نساوي الجزءين الحقيقي والتخيلي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( -6y=2,\; 4x=1 \Rightarrow x=\tfrac14,\; y=-\tfrac13 \)</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ a) $x=\frac14,y=-\frac13$&nbsp; b) $(0,6)$ أو $(6,0)$&nbsp; c) $x=-\frac32,y=-5$&nbsp; d) $x=3,y=\frac{19}{4}$. ∎</div>
+      <div class="exercise-final">✓ $x=\frac14,\; y=-\frac13$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">4</span> السؤال 4</div>
-        <button class="neu-btn" data-reveal-steps="steps-pq4">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">16</span> السؤال 3 — ب</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3b">إظهار الحل</button>
       </div>
-      <div class="example-problem">أثبت أن: a) $\dfrac{1+i^2+i^4+i^5+i^7}{i+i^8-i^9}=1$ &nbsp; b) $\dfrac{1}{(1+2i)^2}+\dfrac{1}{(1-2i)^2}=\dfrac{-6}{25}$ &nbsp; c) $\dfrac{(1-i)^2}{1+i}-\dfrac{(1+i)^2}{1-i}=-2i$</div>
-      <ol class="steps hidden-steps" id="steps-pq4">
-        <li class="step"><span class="step-dot">أ</span><div class="step-body">
+      <div class="example-problem">جد قيمة كل من $x,y$ الحقيقيتين إذا علمت أن: $6i=(x+i)(y+i)+1$.</div>
+      <ol class="steps hidden-steps" id="steps-pq3b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نوسّع: $(x+i)(y+i)+1 = (xy-1)+(x+y)i+1 = xy+(x+y)i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( xy=0,\quad x+y=6 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">من $xy=0$ إما $x=0$ أو $y=0$؛ مع $x+y=6$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (x,y)=(0,6)\;\text{أو}\;(6,0) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $(x,y)=(0,6)$ أو $(6,0)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">17</span> السؤال 3 — ج</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة كل من $x,y$ الحقيقيتين إذا علمت أن: $\left(\dfrac{1+i}{1-i}\right)^3+(2x-yi)=(1+2i)^2$.</div>
+      <ol class="steps hidden-steps" id="steps-pq3c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$\dfrac{1+i}{1-i}=i \Rightarrow i^3=-i$، والطرف الأيمن $(1+2i)^2=-3+4i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( -i+2x-yi=-3+4i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نساوي الجزءين الحقيقي والتخيلي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2x=-3\Rightarrow x=-\tfrac32,\quad -1-y=4\Rightarrow y=-5 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $x=-\frac32,\; y=-5$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">18</span> السؤال 3 — د</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة كل من $x,y$ الحقيقيتين إذا علمت أن: $(2x+i)(x-i)=\dfrac{16y^2+9}{4y+3i}$.</div>
+      <ol class="steps hidden-steps" id="steps-pq3d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">لاحظ $16y^2+9=(4y+3i)(4y-3i)$، فيصبح الطرف الأيمن $=4y-3i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (2x+i)(x-i)=2x^2+1-xi \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نساوي الطرفين ونقارن الجزءين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( -x=-3\Rightarrow x=3,\quad 2(3)^2+1=19=4y\Rightarrow y=\tfrac{19}{4} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $x=3,\; y=\frac{19}{4}$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">19</span> السؤال 4 — أ</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq4a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن: $\dfrac{1+i^2+i^4+i^5+i^7}{i+i^8-i^9}=1$.</div>
+      <ol class="steps hidden-steps" id="steps-pq4a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">البسط: $1+(-1)+1+i+(-i)=1$. المقام: $i+1-i=1$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{1}{1}=1 \quad ✓ \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">ب</span><div class="step-body">
-          <p class="calc-note">$(1+2i)^2=-3+4i,\;\; (1-2i)^2=-3-4i$. نجمع الكسرين على مقام مشترك</p>
+      </ol>
+      <div class="exercise-final">✓ $\dfrac{1+i^2+i^4+i^5+i^7}{i+i^8-i^9}=1$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">20</span> السؤال 4 — ب</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq4b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن: $\dfrac{1}{(1+2i)^2}+\dfrac{1}{(1-2i)^2}=\dfrac{-6}{25}$.</div>
+      <ol class="steps hidden-steps" id="steps-pq4b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$(1+2i)^2=-3+4i,\;\; (1-2i)^2=-3-4i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{1}{-3+4i}+\dfrac{1}{-3-4i} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نجمع الكسرين على مقام مشترك</p>
           <div class="calc-flow">
-            <div class="calc-line">\( \dfrac{1}{-3+4i}+\dfrac{1}{-3-4i}=\dfrac{(-3-4i)+(-3+4i)}{(-3+4i)(-3-4i)} \)</div>
+            <div class="calc-line">\( =\dfrac{(-3-4i)+(-3+4i)}{(-3+4i)(-3-4i)} \)</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">\( =\dfrac{-6}{9+16}=\dfrac{-6}{25} \quad ✓ \)</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">ج</span><div class="step-body">
-          <p class="calc-note">$(1-i)^2=-2i,\;\;(1+i)^2=2i$. نقسّم كلاً على حدة بضرب مرافق المقام</p>
-          <div class="calc-flow">
-            <div class="calc-line">\( \dfrac{-2i}{1+i}=\dfrac{-2i(1-i)}{2}=-1-i\,,\qquad \dfrac{2i}{1-i}=\dfrac{2i(1+i)}{2}=-1+i \)</div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">\( (-1-i)-(-1+i)=-2i \quad ✓ \)</div>
-          </div>
-        </div></li>
       </ol>
-      <div class="exercise-final">✓ الهويات الثلاث محقّقة. ∎</div>
+      <div class="exercise-final">✓ $\dfrac{1}{(1+2i)^2}+\dfrac{1}{(1-2i)^2}=\dfrac{-6}{25}$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">5</span> السؤال 5</div>
-        <button class="neu-btn" data-reveal-steps="steps-pq5">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">21</span> السؤال 4 — ج</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq4c">إظهار الحل</button>
       </div>
-      <div class="example-problem">حلل كلاً من الأعداد الآتية إلى حاصل ضرب عاملين مركبين بالصورة $a+bi$: $25,\; 40,\; 65,\; 125,\; 170$.</div>
-      <ol class="steps hidden-steps" id="steps-pq5">
+      <div class="example-problem">أثبت أن: $\dfrac{(1-i)^2}{1+i}-\dfrac{(1+i)^2}{1-i}=-2i$.</div>
+      <ol class="steps hidden-steps" id="steps-pq4c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$(1-i)^2=-2i,\;\;(1+i)^2=2i$. نقسّم كلاً على حدة بضرب مرافق المقام</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{-2i}{1+i}=\dfrac{-2i(1-i)}{2}=-1-i\,,\qquad \dfrac{2i}{1-i}=\dfrac{2i(1+i)}{2}=-1+i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نطرح الناتجين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (-1-i)-(-1+i)=-2i \quad ✓ \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\dfrac{(1-i)^2}{1+i}-\dfrac{(1+i)^2}{1-i}=-2i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">22</span> السؤال 5 — أ</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq5a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">حلل العدد $25$ إلى حاصل ضرب عاملين مركبين بالصورة $a+bi$.</div>
+      <ol class="steps hidden-steps" id="steps-pq5a">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">$25=3^2+4^2$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( 25=(3+4i)(3-4i) \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">
+      </ol>
+      <div class="exercise-final">✓ $25=(3+4i)(3-4i)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">23</span> السؤال 5 — ب</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq5b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">حلل العدد $40$ إلى حاصل ضرب عاملين مركبين بالصورة $a+bi$.</div>
+      <ol class="steps hidden-steps" id="steps-pq5b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">$40=6^2+2^2$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( 40=(6+2i)(6-2i) \)</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
+      </ol>
+      <div class="exercise-final">✓ $40=(6+2i)(6-2i)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">24</span> السؤال 5 — ج</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq5c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">حلل العدد $65$ إلى حاصل ضرب عاملين مركبين بالصورة $a+bi$.</div>
+      <ol class="steps hidden-steps" id="steps-pq5c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">$65=8^2+1^2$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( 65=(8+i)(8-i) \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">
-          <p class="calc-note">$125=10^2+5^2$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( 125=(10+5i)(10-5i) \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">
-          <p class="calc-note">$170=13^2+1^2$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( 170=(13+i)(13-i) \)</div></div>
         </div></li>
       </ol>
       <div class="callout tip" style="margin-top:.8rem">
         <span class="icon">💡</span>
-        <span>هذه ليست التحليلات الوحيدة الممكنة أحياناً (مثل $65=7^2+4^2$ أيضاً) — يكفي إيجاد مربعين كاملين صحيحين مجموعهما يساوي العدد المطلوب.</span>
+        <span>هذا التحليل ليس وحيداً؛ يوجد أيضاً $65=7^2+4^2=(7+4i)(7-4i)$ — يكفي إيجاد مربعين كاملين صحيحين مجموعهما يساوي العدد المطلوب.</span>
       </div>
-      <div class="exercise-final">✓ جميع التحليلات أعلاه صحيحة (تحقّق: اضرب كل زوج وتأكد من الناتج). ∎</div>
+      <div class="exercise-final">✓ $65=(8+i)(8-i)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">25</span> السؤال 5 — د</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq5d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">حلل العدد $125$ إلى حاصل ضرب عاملين مركبين بالصورة $a+bi$.</div>
+      <ol class="steps hidden-steps" id="steps-pq5d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$125=10^2+5^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 125=(10+5i)(10-5i) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $125=(10+5i)(10-5i)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">26</span> السؤال 5 — هـ</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq5e">إظهار الحل</button>
+      </div>
+      <div class="example-problem">حلل العدد $170$ إلى حاصل ضرب عاملين مركبين بالصورة $a+bi$.</div>
+      <ol class="steps hidden-steps" id="steps-pq5e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$170=13^2+1^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 170=(13+i)(13-i) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $170=(13+i)(13-i)$. ∎</div>
     </div>
   </section>
 

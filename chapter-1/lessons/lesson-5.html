@@ -441,30 +441,60 @@
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">6</span> السؤال 6</div>
-        <button class="neu-btn" data-reveal-steps="steps-pq6">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">6</span> السؤال 6 — أ</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq6a">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد الجذرين التربيعيين للأعداد المركبة الآتية: $a)\; 1+\sqrt3\,i \quad b)\; \dfrac{14+2i}{1+i} \quad c)\; \dfrac{82+11i}{2+i}$</div>
-      <ol class="steps hidden-steps" id="steps-pq6">
-        <li class="step"><span class="step-dot">أ</span><div class="step-body">
-          <p class="calc-note">$x^2-y^2=1,\; 2xy=\sqrt3$؛ الحل يعطي $x^2=\tfrac32,\,y^2=\tfrac12$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( \pm\left(\dfrac{\sqrt6}{2}+\dfrac{\sqrt2}{2}i\right) \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">ب</span><div class="step-body">
-          <p class="calc-note">نبسّط الكسر أولاً: $\dfrac{14+2i}{1+i}\times\dfrac{1-i}{1-i}=8-6i$، ثم نجد جذريها</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{8-6i}=\pm(3-i) \)</div></div>
-        </div></li>
-        <li class="step"><span class="step-dot">ج</span><div class="step-body">
-          <p class="calc-note">نبسّط: $\dfrac{82+11i}{2+i}\times\dfrac{2-i}{2-i}=35-12i$، ثم نجد جذريها</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{35-12i}=\pm(6-i) \)</div></div>
+      <div class="example-problem">جد الجذرين التربيعيين للعدد المركب $1+\sqrt3\,i$.</div>
+      <ol class="steps hidden-steps" id="steps-pq6a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نفرض $x+yi=\sqrt{1+\sqrt3i}$، فنحصل على $x^2-y^2=1,\; 2xy=\sqrt3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \text{الحل يعطي } x^2=\tfrac32,\,y^2=\tfrac12 \)</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ a) $\pm\left(\frac{\sqrt6}{2}+\frac{\sqrt2}{2}i\right)$&nbsp; b) $\pm(3-i)$&nbsp; c) $\pm(6-i)$. ∎</div>
+      <div class="exercise-final">✓ $\sqrt{1+\sqrt3i}=\pm\left(\dfrac{\sqrt6}{2}+\dfrac{\sqrt2}{2}i\right)$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">7</span> السؤال 7</div>
+        <div class="example-title"><span class="example-badge">7</span> السؤال 6 — ب</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq6b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الجذرين التربيعيين للعدد المركب $\dfrac{14+2i}{1+i}$.</div>
+      <ol class="steps hidden-steps" id="steps-pq6b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبسّط الكسر أولاً بضرب مرافق المقام</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{14+2i}{1+i}\times\dfrac{1-i}{1-i}=8-6i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نجد جذري $8-6i$ (بنفس أسلوب المثال 1)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{8-6i}=\pm(3-i) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\sqrt{\dfrac{14+2i}{1+i}}=\pm(3-i)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8</span> السؤال 6 — ج</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq6c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الجذرين التربيعيين للعدد المركب $\dfrac{82+11i}{2+i}$.</div>
+      <ol class="steps hidden-steps" id="steps-pq6c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبسّط الكسر أولاً بضرب مرافق المقام</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{82+11i}{2+i}\times\dfrac{2-i}{2-i}=35-12i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نجد جذري $35-12i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{35-12i}=\pm(6-i) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\sqrt{\dfrac{82+11i}{2+i}}=\pm(6-i)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9</span> السؤال 7</div>
         <button class="neu-btn" data-reveal-steps="steps-pq7">إظهار الحل</button>
       </div>
       <div class="example-problem">ما قيمة المقدار $\sqrt{2x-yi}$ إذا علمت أن: $x+yi=\dfrac{7-4i}{2+i}$؟</div>
@@ -483,7 +513,7 @@
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">8</span> السؤال 8</div>
+        <div class="example-title"><span class="example-badge">10</span> السؤال 8</div>
         <button class="neu-btn" data-reveal-steps="steps-pq8">إظهار الحل</button>
       </div>
       <div class="example-problem">جد الجذور التكعيبية للعدد $-64i$ في $\mathbb{C}$.</div>
