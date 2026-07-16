@@ -60,6 +60,11 @@
   }
 }
 
+/* Cairo's Arabic glyphs for a lone "و"/"أو" break (render as stray Latin-looking
+   marks) when that word sits directly between two MathJax spans with nothing
+   else beside it. Fall back to the system Arabic sans for just that word. */
+.ar-safe{font-family:sans-serif}
+
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{

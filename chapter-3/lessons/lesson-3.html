@@ -89,8 +89,8 @@
 
     <div class="card neu" style="margin-top:1rem;border-inline-start:5px solid var(--accent-purple)">
       <p><b>تعريف:</b> لتكن $f(x)$ دالة مستمرة في الفترة المغلقة $[a,b]$ وقابلة للاشتقاق في الفترة المفتوحة $(a,b)$؛ فإنّ:</p>
-      <div class="rule-box">$$f'(x)>0 \Rightarrow f(x) \text{ متزايدة} \quad \forall x\in(a,b)$$</div>
-      <div class="rule-box">$$f'(x)<0 \Rightarrow f(x) \text{ متناقصة} \quad \forall x\in(a,b)$$</div>
+      <div class="rule-box">$f'(x)>0 \Rightarrow f(x)$ متزايدة &nbsp;&nbsp; $\forall x\in(a,b)$</div>
+      <div class="rule-box">$f'(x)<0 \Rightarrow f(x)$ متناقصة &nbsp;&nbsp; $\forall x\in(a,b)$</div>
     </div>
   </section>
 
@@ -100,14 +100,14 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">7</span> مثال 7</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex7">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">7a</span> مثال 7 (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7a">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد مناطق التزايد والتناقص للدوال التالية: &nbsp; (a) $f(x)=x^2-4x+6$ &nbsp;&nbsp; (b) $f(x)=2x^3-3x^2-12x+2$</div>
-      <div class="hidden-steps" id="steps-ex7">
+      <div class="example-problem">جد مناطق التزايد والتناقص للدالة $f(x)=x^2-4x+6$</div>
+      <div class="hidden-steps" id="steps-ex7a">
       <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">(a) بإيجاد مشتقة الدالة، ثم نجعل المشتقة تساوي صفر</p>
+          <p class="calc-note">بإيجاد مشتقة الدالة، ثم نجعل المشتقة تساوي صفر</p>
           <div class="calc-flow">
             <div class="calc-line">$f'(x)=2x-4$</div>
             <div class="calc-arrow">↓</div>
@@ -118,22 +118,35 @@
           <p class="calc-note">$f'(x)>0 \;\forall x>2 \Rightarrow \{x:x>2,x\in\mathbb{R}\}$ مناطق التزايد؛ &nbsp; $f'(x)<0 \;\forall x<2 \Rightarrow \{x:x<2,x\in\mathbb{R}\}$ مناطق التناقص</p>
           <div class="calc-flow"><div class="calc-line calc-box">مناطق التزايد: $\{x:x>2\}$ &nbsp;،&nbsp; مناطق التناقص: $\{x:x<2\}$</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">(b) بإيجاد مشتقة الدالة، ثم نجعل المشتقة تساوي صفر</p>
+      </ol>
+      <div class="exercise-final">✓ مناطق التزايد $\{x:x>2\}$، ومناطق التناقص $\{x:x<2\}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7b</span> مثال 7 (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد مناطق التزايد والتناقص للدالة $f(x)=2x^3-3x^2-12x+2$</div>
+      <div class="hidden-steps" id="steps-ex7b">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بإيجاد مشتقة الدالة، ثم نجعل المشتقة تساوي صفر</p>
           <div class="calc-flow">
             <div class="calc-line">$f'(x)=6x^2-6x-12$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line">$[6x^2-6x-12=0]\div6 \Rightarrow x^2-x-2=0$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$(x-2)(x+1)=0 \Rightarrow x=2 \;\text{أو}\; x=-1$</div>
+            <div class="calc-line calc-box">$(x-2)(x+1)=0 \Rightarrow x=2$ <span class="ar-safe">أو</span> $x=-1$</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">
-          <p class="calc-note">نختبر على خط الأعداد إشارة المشتقة الأولى بالتعويض بقيم مجاورة للعددين $x=-1$ و $x=2$</p>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نختبر على خط الأعداد إشارة المشتقة الأولى بالتعويض بقيم مجاورة للعددين $x=-1$ <span class="ar-safe">و</span> $x=2$</p>
           <div class="calc-flow"><div class="calc-line">إشارة $f'(x)$: &nbsp; $+\;+\;+\;(-1)\;-\;-\;-\;(2)\;+\;+\;+$</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ (b) مناطق التزايد $\{x:x<-1\}\cup\{x:x>2\}$، ومناطق التناقص الفترة المفتوحة $(-1,2)$. ∎</div>
+      <div class="exercise-final">✓ مناطق التزايد $\{x:x<-1\}\cup\{x:x>2\}$، ومناطق التناقص الفترة المفتوحة $(-1,2)$. ∎</div>
       </div>
     </div>
 
@@ -195,7 +208,7 @@
             <div class="calc-arrow">↓</div>
             <div class="calc-line">$(x-1)(x+1)=0$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$x=1 \;\text{أو}\; x=-1$</div>
+            <div class="calc-line calc-box">$x=1$ <span class="ar-safe">أو</span> $x=-1$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
@@ -285,7 +298,7 @@
           <label class="quiz-opt"><input type="radio"><span>$(-1,2)$</span></label>
           <label class="quiz-opt"><input type="radio"><span>كل $\mathbb{R}$</span></label>
         </div>
-        <div class="quiz-explain">إشارة $f'(x)$ سالبة بين الجذرين $x=-1$ و $x=2$، فالدالة متناقصة على الفترة المفتوحة $(-1,2)$.</div>
+        <div class="quiz-explain">إشارة $f'(x)$ سالبة بين الجذرين $x=-1$ <span class="ar-safe">و</span> $x=2$، فالدالة متناقصة على الفترة المفتوحة $(-1,2)$.</div>
       </div>
 
       <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
