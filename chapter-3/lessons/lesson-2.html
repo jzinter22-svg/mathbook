@@ -70,7 +70,8 @@
         <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار الحل</button>
       </div>
       <div class="example-problem">جد باستخدام التفاضلات وبصورة تقريبية ما يلي: &nbsp; (a) $\sqrt{51}$ &nbsp;&nbsp; (b) $(8.35)^{\frac23}$</div>
-      <ol class="steps hidden-steps" id="steps-ex1">
+      <div class="hidden-steps" id="steps-ex1">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">(a) نفرض $y=\sqrt{x}$ ونختار قيمة قريبة من 51 يسهل استخراج جذرها: $x=49$</p>
           <div class="calc-flow">
@@ -84,7 +85,9 @@
           <div class="calc-flow">
             <div class="calc-line">$y=\sqrt{x}\Rightarrow y'=\dfrac{1}{2\sqrt{x}}$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$y'=\dfrac{1}{2\sqrt{49}}=\dfrac{1}{2\times7}=\dfrac{1}{14}=0.071$</div>
+            <div class="calc-line">$y'=\dfrac{1}{2\sqrt{49}}=\dfrac{1}{2\times7}$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$y'=\dfrac{1}{14}=0.071$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
@@ -92,7 +95,7 @@
           <div class="calc-flow">
             <div class="calc-line">$\Delta y = 0.071\times2 = 0.142$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$\sqrt{51}=f(x+\Delta x)=y+\Delta y=7+0.142=7.142$</div>
+            <div class="calc-line calc-box">$\sqrt{51}=7+0.142=7.142$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">4</span><div class="step-body">
@@ -106,21 +109,28 @@
         <li class="step"><span class="step-dot">5</span><div class="step-body">
           <p class="calc-note">نجد المشتقة ونعوّض $x=8$</p>
           <div class="calc-flow">
-            <div class="calc-line">$f'(x)=\dfrac23x^{\frac23-1}=\dfrac23x^{-\frac13}=\dfrac{2}{3\sqrt[3]{x}}$</div>
+            <div class="calc-line">$f'(x)=\dfrac23x^{\frac23-1}=\dfrac23x^{-\frac13}$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$f'(8)=\dfrac{2}{3\sqrt[3]{8}}=\dfrac{2}{3\times2}=\dfrac13=0.333$</div>
+            <div class="calc-line">$f'(x)=\dfrac{2}{3\sqrt[3]{x}} \Rightarrow f'(8)=\dfrac{2}{3\sqrt[3]{8}}$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$f'(8)=\dfrac{2}{3\times2}=\dfrac13=0.333$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">6</span><div class="step-body">
           <p class="calc-note">نجد $\Delta y$ ثم القيمة التقريبية</p>
           <div class="calc-flow">
-            <div class="calc-line">$\Delta y = f'(x)\cdot\Delta x = 0.333\times0.35=0.11655$</div>
+            <div class="calc-line">$\Delta y = 0.333\times0.35$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$(8.35)^{\frac23}=f(x+\Delta x)=4+0.11655=4.116$</div>
+            <div class="calc-line">$\Delta y=0.11655$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$(8.35)^{\frac23}=4+0.11655$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$(8.35)^{\frac23}=4.116$</div>
           </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $\sqrt{51}\approx7.142$ &nbsp;،&nbsp; $(8.35)^{\frac23}\approx4.116$. ∎</div>
+      </div>
     </div>
 
     <div class="example fade-up">
@@ -129,7 +139,8 @@
         <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار الحل</button>
       </div>
       <div class="example-problem">مكعب طول ضلعه $3.98\,cm$، جد حجمه بصورة تقريبية.</div>
-      <ol class="steps hidden-steps" id="steps-ex2">
+      <div class="hidden-steps" id="steps-ex2">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نفرض حجم المكعب $y$، وطول الضلع $x\,cm$؛ فحجم المكعب = مكعب طول الضلع</p>
           <div class="calc-flow"><div class="calc-line calc-box">$y=x^3$</div></div>
@@ -151,11 +162,12 @@
           <div class="calc-flow">
             <div class="calc-line">$\Delta y=y'\cdot\Delta x=48\times(-0.02)=-0.96$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$f(x+\Delta x)=y+\Delta y=64+(-0.96)=63.04\,cm^3$</div>
+            <div class="calc-line calc-box">$y+\Delta y=64+(-0.96)=63.04\,cm^3$</div>
           </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ حجم المكعب بصورة تقريبية $\approx63.04\,cm^3$. ∎</div>
+      </div>
     </div>
 
     <div class="example fade-up">
@@ -164,7 +176,8 @@
         <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
       </div>
       <div class="example-problem">حديقة دائرية مساحتها $(35\pi)\,m^2$، فما طول نصف قطرها بصورة تقريبية؟</div>
-      <ol class="steps hidden-steps" id="steps-ex3">
+      <div class="hidden-steps" id="steps-ex3">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نفرض مساحة الدائرة $A$ ونصف قطرها $r$؛ مساحة الدائرة = النسبة الثابتة $\times$ مربّع نصف القطر</p>
           <div class="calc-flow">
@@ -185,14 +198,18 @@
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">نجد المشتقة $y'=\dfrac{1}{2\sqrt{x}}$ ونعوّض $x=36$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">$y'(36)=\dfrac{1}{2\sqrt{36}}=\dfrac{1}{2\times6}=\dfrac{1}{12}=0.083$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$y'(36)=\dfrac{1}{2\sqrt{36}}=\dfrac{1}{2\times6}$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$y'(36)=\dfrac{1}{12}=0.083$</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">4</span><div class="step-body">
           <p class="calc-note">نجد $\Delta y$ (الخطأ التقريبي) ثم القيمة التقريبية لطول نصف القطر</p>
           <div class="calc-flow">
             <div class="calc-line">$\Delta y=0.083\times(-1)=-0.083$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$f(x+\Delta x)=y+\Delta y=6+(-0.083)=5.917\,m$</div>
+            <div class="calc-line calc-box">$y+\Delta y=6+(-0.083)=5.917\,m$</div>
           </div>
         </div></li>
       </ol>
@@ -201,6 +218,7 @@
         <span>ملاحظة: $\Delta y$ تمثّل مقدار التغيّر أو الخطأ التقريبي.</span>
       </div>
       <div class="exercise-final">✓ طول نصف قطر الحديقة تقريباً $\approx5.917\,m$. ∎</div>
+      </div>
     </div>
 
     <div class="example fade-up">
@@ -209,7 +227,8 @@
         <button class="neu-btn" data-reveal-steps="steps-ex4">إظهار الحل</button>
       </div>
       <div class="example-problem">غُطّيت كرة مصنوعة من الحديد الصلب قطرها $6\,cm$ بطبقة من السيراميك سمكها $0.2\,cm$. ما حجم السيراميك اللازم بصورة تقريبية؟</div>
-      <ol class="steps hidden-steps" id="steps-ex4">
+      <div class="hidden-steps" id="steps-ex4">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نفرض حجم الكرة $y$، ونصف قطرها $x$؛ حجم الكرة = $\frac43\times$ النسبة الثابتة $\times$ مكعب نصف القطر</p>
           <div class="calc-flow"><div class="calc-line calc-box">$y=\dfrac{4\pi}{3}x^3$</div></div>
@@ -232,6 +251,7 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ حجم السيراميك اللازم بصورة تقريبية $=7.2\pi\,cm^3$. ∎</div>
+      </div>
     </div>
 
     <div class="example fade-up">
@@ -240,13 +260,16 @@
         <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار الحل</button>
       </div>
       <div class="example-problem">إذا كانت $f(x)=x^3+x^2-3x+4$، جد باستخدام التفاضلات قيمة تقريبية للمقدار $f(2.003)$.</div>
-      <ol class="steps hidden-steps" id="steps-ex5">
+      <div class="hidden-steps" id="steps-ex5">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نختار $x=2$ (قريب من 2.003 وصحيح)</p>
           <div class="calc-flow">
             <div class="calc-line">$\Delta x = 2.003-2=0.003$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$y=f(2)=(2)^3+(2)^2-3(2)+4=8+4-6+4=10$</div>
+            <div class="calc-line">$y=f(2)=(2)^3+(2)^2-3(2)+4$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$y=8+4-6+4=10$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
@@ -254,7 +277,9 @@
           <div class="calc-flow">
             <div class="calc-line">$y'=3x^2+2x-3$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$y'(2)=3(2)^2+2(2)-3=12+4-3=13$</div>
+            <div class="calc-line">$y'(2)=3(2)^2+2(2)-3$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$y'(2)=12+4-3=13$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
@@ -262,11 +287,12 @@
           <div class="calc-flow">
             <div class="calc-line">$\Delta y=y'\cdot\Delta x=13\times0.003=0.039$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$f(x+\Delta x)=y+\Delta y=10+0.039=10.039$</div>
+            <div class="calc-line calc-box">$f(2.003)=10+0.039=10.039$</div>
           </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $f(2.003)\approx10.039$. ∎</div>
+      </div>
     </div>
   </section>
 
@@ -294,7 +320,8 @@
         <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
       </div>
       <div class="example-problem">إذا كان $f(x)=x^5+3x^{\frac13}+2$ فجد $f(1.01)$ بصورة تقريبية باستخدام التفاضلات.</div>
-      <ol class="steps hidden-steps" id="steps-pq1">
+      <div class="hidden-steps" id="steps-pq1">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نختار $x=1$، فتكون $\Delta x=1.01-1=0.01$</p>
           <div class="calc-flow"><div class="calc-line calc-box">$f(1)=(1)^5+3(1)^{\frac13}+2=1+3+2=6$</div></div>
@@ -309,10 +336,15 @@
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">$\Delta y=f'(x)\Delta x$ ثم القيمة التقريبية</p>
-          <div class="calc-flow"><div class="calc-line calc-box">$\Delta y=6\times0.01=0.06 \Rightarrow f(1.01)\approx6+0.06=6.06$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$\Delta y=6\times0.01=0.06$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$f(1.01)\approx6+0.06=6.06$</div>
+          </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $f(1.01)\approx6.06$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -321,10 +353,15 @@
         <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
       </div>
       <div class="example-problem">إذا كان $f(x)=3x^2+5x+3$ فجد $f(3.02)$ بصورة تقريبية باستخدام التفاضلات.</div>
-      <ol class="steps hidden-steps" id="steps-pq2">
+      <div class="hidden-steps" id="steps-pq2">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نختار $x=3$، فتكون $\Delta x=3.02-3=0.02$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">$f(3)=3(9)+5(3)+3=27+15+3=45$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$f(3)=3(9)+5(3)+3$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$f(3)=27+15+3=45$</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
           <p class="calc-note">نشتق الدالة ونعوّض $x=3$</p>
@@ -336,10 +373,15 @@
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">$\Delta y=f'(x)\Delta x$ ثم القيمة التقريبية</p>
-          <div class="calc-flow"><div class="calc-line calc-box">$\Delta y=23\times0.02=0.46 \Rightarrow f(3.02)\approx45+0.46=45.46$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$\Delta y=23\times0.02=0.46$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$f(3.02)\approx45+0.46=45.46$</div>
+          </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $f(3.02)\approx45.46$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -348,15 +390,20 @@
         <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
       </div>
       <div class="example-problem">جد باستخدام التفاضلات وبصورة تقريبية قيمة كل من: &nbsp; (a) $\sqrt[3]{26}+\sqrt{26}$ &nbsp; (b) $\sqrt[4]{\dfrac{17}{81}}$ &nbsp; (c) $(25)^{\frac13}$ &nbsp; (d) $\sqrt{36.6}$ &nbsp; (e) $(33)^{-\frac15}$</div>
-      <ol class="steps hidden-steps" id="steps-pq3">
+      <div class="hidden-steps" id="steps-pq3">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">(a) $\sqrt[3]{26}$: نختار $x=27$، $\Delta x=-1$؛ &nbsp; $\sqrt{26}$: نختار $x=25$، $\Delta x=1$</p>
           <div class="calc-flow">
-            <div class="calc-line">$y=x^{\frac13}\Rightarrow y'=\dfrac{1}{3x^{\frac23}}\Rightarrow y'(27)=\dfrac{1}{3(9)}=0.037$</div>
+            <div class="calc-line">$y=x^{\frac13}\Rightarrow y'=\dfrac{1}{3x^{\frac23}}$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$y'(27)=\dfrac{1}{3(9)}=0.037$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line">$\sqrt[3]{26}\approx3+0.037\times(-1)=2.963$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line">$y=\sqrt{x}\Rightarrow y'(25)=\dfrac{1}{2\sqrt{25}}=0.1 \Rightarrow \sqrt{26}\approx5+0.1(1)=5.1$</div>
+            <div class="calc-line">$y=\sqrt{x}\Rightarrow y'(25)=\dfrac{1}{2\sqrt{25}}=0.1$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$\sqrt{26}\approx5+0.1(1)=5.1$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">$\sqrt[3]{26}+\sqrt{26}\approx2.963+5.1=8.063$</div>
           </div>
@@ -364,7 +411,9 @@
         <li class="step"><span class="step-dot">2</span><div class="step-body">
           <p class="calc-note">(b) بما أن $81=3^4$ فإن $\sqrt[4]{\frac{17}{81}}=\dfrac{\sqrt[4]{17}}{3}$؛ نقرّب $\sqrt[4]{17}$ باختيار $x=16$، $\Delta x=1$</p>
           <div class="calc-flow">
-            <div class="calc-line">$y=x^{\frac14}\Rightarrow y'=\dfrac{1}{4x^{\frac34}}\Rightarrow y'(16)=\dfrac{1}{4(8)}=0.03125$</div>
+            <div class="calc-line">$y=x^{\frac14}\Rightarrow y'=\dfrac{1}{4x^{\frac34}}$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$y'(16)=\dfrac{1}{4(8)}=0.03125$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line">$\sqrt[4]{17}\approx2+0.03125=2.031$</div>
             <div class="calc-arrow">↓</div>
@@ -374,7 +423,9 @@
         <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">(c) $(25)^{\frac13}$: نختار $x=27$، $\Delta x=25-27=-2$</p>
           <div class="calc-flow">
-            <div class="calc-line">$y'(27)=\dfrac{1}{3(9)}=0.037 \Rightarrow \Delta y=0.037\times(-2)=-0.074$</div>
+            <div class="calc-line">$y'(27)=\dfrac{1}{3(9)}=0.037$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$\Delta y=0.037\times(-2)=-0.074$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">$(25)^{\frac13}\approx3-0.074=2.926$</div>
           </div>
@@ -382,7 +433,9 @@
         <li class="step"><span class="step-dot">4</span><div class="step-body">
           <p class="calc-note">(d) $\sqrt{36.6}$: نختار $x=36$، $\Delta x=0.6$</p>
           <div class="calc-flow">
-            <div class="calc-line">$y'(36)=\dfrac{1}{2\sqrt{36}}=0.083 \Rightarrow \Delta y=0.083\times0.6=0.05$</div>
+            <div class="calc-line">$y'(36)=\dfrac{1}{2\sqrt{36}}=0.083$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$\Delta y=0.083\times0.6=0.05$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">$\sqrt{36.6}\approx6+0.05=6.05$</div>
           </div>
@@ -392,13 +445,16 @@
           <div class="calc-flow">
             <div class="calc-line">$y=x^{-\frac15}\Rightarrow y(32)=\dfrac12=0.5$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line">$y'=-\dfrac15x^{-\frac65}\Rightarrow y'(32)=-\dfrac15\times\dfrac{1}{64}=-0.003125$</div>
+            <div class="calc-line">$y'=-\dfrac15x^{-\frac65}\Rightarrow y'(32)=-\dfrac15\times\dfrac{1}{64}$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$y'(32)=-0.003125$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">$(33)^{-\frac15}\approx0.5-0.003125=0.497$</div>
           </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ (a) $\approx8.063$ &nbsp; (b) $\approx0.677$ &nbsp; (c) $\approx2.926$ &nbsp; (d) $\approx6.05$ &nbsp; (e) $\approx0.497$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -407,7 +463,8 @@
         <button class="neu-btn" data-reveal-steps="steps-pq4">إظهار الحل</button>
       </div>
       <div class="example-problem">في إحدى الورش صُنعت كرة مجوفة من الحديد بقطر $18\,cm$، فإذا كان سمك الحديد المستخدم $0.1\,cm$، فجد بصورة تقريبية وباستخدام التفاضلات حجم الحديد وحجم الكرة؟</div>
-      <ol class="steps hidden-steps" id="steps-pq4">
+      <div class="hidden-steps" id="steps-pq4">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نصف القطر الخارجي $x=\dfrac{18}{2}=9\,cm$، وسمك الحديد $\Delta x=0.1\,cm$، وحجم الكرة $y=\dfrac{4\pi}{3}x^3$</p>
           <div class="calc-flow"><div class="calc-line calc-box">$y'(x)=4\pi x^2 \Rightarrow y'(9)=4\pi(81)=324\pi$</div></div>
@@ -422,6 +479,7 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ حجم الحديد تقريباً $=32.4\pi\,cm^3$، وحجم الكرة $=972\pi\,cm^3$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -430,14 +488,19 @@
         <button class="neu-btn" data-reveal-steps="steps-pq5">إظهار الحل</button>
       </div>
       <div class="example-problem">مكعب حجمه $26\,cm^3$، جد بصورة تقريبية وباستخدام التفاضلات طول ضلع المكعب؟</div>
-      <ol class="steps hidden-steps" id="steps-pq5">
+      <div class="hidden-steps" id="steps-pq5">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نفرض طول الضلع $y=x^{\frac13}$ حيث $x$ يمثّل الحجم؛ نختار $x=27$ (لأن $3^3=27$)</p>
           <div class="calc-flow"><div class="calc-line calc-box">$\Delta x=26-27=-1 \quad,\quad y=\sqrt[3]{27}=3$</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
           <p class="calc-note">نجد المشتقة ونعوّض $x=27$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">$y'(27)=\dfrac{1}{3(27)^{\frac23}}=\dfrac{1}{3(9)}=0.037$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$y'(27)=\dfrac{1}{3(27)^{\frac23}}=\dfrac{1}{3(9)}$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$y'(27)=0.037$</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">$\Delta y=y'\cdot\Delta x$ ثم طول الضلع التقريبي</p>
@@ -445,6 +508,7 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ طول ضلع المكعب تقريباً $\approx2.963\,cm$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -453,7 +517,8 @@
         <button class="neu-btn" data-reveal-steps="steps-pq6">إظهار الحل</button>
       </div>
       <div class="example-problem">صنعت حلقة دائرية مجوفة من الصفيح، وقيس نصف قطرها فوُجد من الخارج أنه $10.05\,cm$ ونصف قطرها من الداخل $10\,cm$؛ جد بصورة تقريبية وباستخدام التفاضلات مساحة الحلقة الدائرية.</div>
-      <ol class="steps hidden-steps" id="steps-pq6">
+      <div class="hidden-steps" id="steps-pq6">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نفرض مساحة الدائرة $y=\pi x^2$، ونختار $x=10$ (نصف القطر الداخلي)</p>
           <div class="calc-flow"><div class="calc-line calc-box">$\Delta x=10.05-10=0.05$</div></div>
@@ -468,6 +533,7 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ مساحة الحلقة الدائرية تقريباً $\approx\pi\,cm^2\approx3.14\,cm^2$. ∎</div>
+      </div>
     </div>
   </section>
 

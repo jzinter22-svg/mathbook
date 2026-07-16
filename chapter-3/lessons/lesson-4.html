@@ -70,13 +70,16 @@
         <button class="neu-btn" data-reveal-steps="steps-ex9">إظهار الحل</button>
       </div>
       <div class="example-problem">جد النهايات العظمى والصغرى المحلية ومناطق التزايد والتناقص للدالة: &nbsp; (a) $f(x)=16-6x-3x^2$ &nbsp;&nbsp; (b) $f(x)=2x^3-9x^2-24x-12$</div>
-      <ol class="steps hidden-steps" id="steps-ex9">
+      <div class="hidden-steps" id="steps-ex9">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">(a) نجد المشتقة الأولى ونجعلها تساوي صفر</p>
           <div class="calc-flow">
             <div class="calc-line">$f'(x)=-6-6x$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line">$-6-6x=0 \;(\div(-6))\; \Rightarrow 1+x=0 \Rightarrow x=-1$</div>
+            <div class="calc-line">$-6-6x=0 \;(\div(-6))\; \Rightarrow 1+x=0$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$x=-1$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
@@ -86,9 +89,9 @@
         <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">نستخرج قيمة $y$ عندما $x=-1$ بتعويض قيمة $x$ في الدالة</p>
           <div class="calc-flow">
-            <div class="calc-line">$y=f(-1)=16-6(-1)-3(-1)^2=16+6-3$</div>
+            <div class="calc-line">$y=f(-1)=16-6(-1)-3(-1)^2$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$y=19$</div>
+            <div class="calc-line calc-box">$y=16+6-3=19$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">4</span><div class="step-body">
@@ -100,9 +103,11 @@
           <div class="calc-flow">
             <div class="calc-line">$f'(x)=6x^2-18x-24$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line">$6x^2-18x-24=0 \;(\div6)\; \Rightarrow x^2-3x-4=0$</div>
+            <div class="calc-line">$6x^2-18x-24=0 \;(\div6)$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$(x-4)(x+1)=0 \Rightarrow x=4 \;\text{أو}\; x=-1$</div>
+            <div class="calc-line">$x^2-3x-4=0 \Rightarrow (x-4)(x+1)=0$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$x=4 \;\text{أو}\; x=-1$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">6</span><div class="step-body">
@@ -118,12 +123,18 @@
         <li class="step"><span class="step-dot">7</span><div class="step-body">
           <p class="calc-note">عند $x=-1$ الإشارة تتغيّر من $+$ إلى $-$ (نهاية عظمى)؛ عند $x=4$ الإشارة تتغيّر من $-$ إلى $+$ (نهاية صغرى). نعوّض في الدالة الأصلية</p>
           <div class="calc-flow">
-            <div class="calc-line">$y=f(-1)=2(-1)^3-9(-1)^2-24(-1)-12=-2-9+24-12=1$</div>
-            <div class="calc-line">$y=f(4)=2(4)^3-9(4)^2-24(4)-12=128-144-96-12=-124$</div>
+            <div class="calc-line">$y=f(-1)$</div>
+            <div class="calc-line">$y=2(-1)^3-9(-1)^2-24(-1)-12$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$y=-2-9+24-12=1$</div>
+            <div class="calc-line">$y=f(4)=2(4)^3-9(4)^2-24(4)-12$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$y=128-144-96-12=-124$</div>
           </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ (a) نهاية عظمى محلية عند $(-1,19)$. &nbsp; (b) نهاية عظمى محلية عند $(-1,1)$، ونهاية صغرى محلية عند $(4,-124)$؛ مناطق التزايد $\{x<-1\}\cup\{x>4\}$، ومناطق التناقص $(-1,4)$. ∎</div>
+      </div>
     </div>
 
     <div class="example fade-up">
@@ -132,7 +143,8 @@
         <button class="neu-btn" data-reveal-steps="steps-ex10">إظهار الحل</button>
       </div>
       <div class="example-problem">جد النقاط على المنحني $f(x)=2x^3-3x^2-12x+2$ والتي يكون فيها المماس موازياً لمحور السينات.</div>
-      <ol class="steps hidden-steps" id="steps-ex10">
+      <div class="hidden-steps" id="steps-ex10">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">يكون المماس موازياً لمحور السينات عندما يكون ميل المماس صفراً، أي أن مشتقة الدالة تساوي صفراً لأن ميل المماس هو مشتقة الدالة عند تلك النقطة</p>
           <div class="calc-flow">
@@ -147,7 +159,9 @@
           <p class="calc-note">إما &nbsp; $x-2=0 \Rightarrow x=2$ &nbsp; أو &nbsp; $x+1=0 \Rightarrow x=-1$</p>
           <div class="calc-flow">
             <div class="calc-line">نعوّض قيمة $x=2$ في الدالة الأصلية</div>
-            <div class="calc-line">$y=f(2)=2(2)^3-3(2)^2-12(2)+2=16-12-24+2=-18$</div>
+            <div class="calc-line">$y=f(2)=2(2)^3-3(2)^2-12(2)+2$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$y=16-12-24+2=-18$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">النقطة الأولى $P_1(2,-18)$</div>
           </div>
@@ -155,13 +169,17 @@
         <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">الآن نعوّض قيمة $x=-1$ في الدالة الأصلية</p>
           <div class="calc-flow">
-            <div class="calc-line">$y=f(-1)=2(-1)^3-3(-1)^2-12(-1)+2=-2-3+12+2=9$</div>
+            <div class="calc-line">$y=f(-1)$</div>
+            <div class="calc-line">$y=2(-1)^3-3(-1)^2-12(-1)+2$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$y=-2-3+12+2=9$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">النقطة الثانية $P_2(-1,9)$</div>
           </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ النقاط التي يكون فيها المماس موازياً لمحور السينات هما النقطتان $P_1(2,-18)$، $P_2(-1,9)$. ∎</div>
+      </div>
     </div>
   </section>
 
@@ -190,7 +208,8 @@
         <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
       </div>
       <div class="example-problem">جد النهايات العظمى والصغرى المحلية للدالة $f(x)=x^3-3x^2$.</div>
-      <ol class="steps hidden-steps" id="steps-pq1">
+      <div class="hidden-steps" id="steps-pq1">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نجد المشتقة الأولى، ونجعلها تساوي صفر</p>
           <div class="calc-flow">
@@ -214,6 +233,7 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ نهاية عظمى محلية عند $(0,0)$، ونهاية صغرى محلية عند $(2,-4)$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -222,7 +242,8 @@
         <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
       </div>
       <div class="example-problem">جد النقاط على المنحني $f(x)=x^3-3x+1$ التي يكون فيها المماس موازياً لمحور السينات.</div>
-      <ol class="steps hidden-steps" id="steps-pq2">
+      <div class="hidden-steps" id="steps-pq2">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">المماس موازٍ لمحور السينات عندما $f'(x)=0$</p>
           <div class="calc-flow">
@@ -238,6 +259,7 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ النقطتان $(1,-1)$ و $(-1,3)$. ∎</div>
+      </div>
     </div>
   </section>
 
