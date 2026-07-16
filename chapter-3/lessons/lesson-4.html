@@ -66,14 +66,14 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">9</span> مثال 9</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex9">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">9a</span> مثال 9 (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex9a">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد النهايات العظمى والصغرى المحلية ومناطق التزايد والتناقص للدالة: &nbsp; (a) $f(x)=16-6x-3x^2$ &nbsp;&nbsp; (b) $f(x)=2x^3-9x^2-24x-12$</div>
-      <div class="hidden-steps" id="steps-ex9">
+      <div class="example-problem">جد النهايات العظمى والصغرى المحلية ومناطق التزايد والتناقص للدالة $f(x)=16-6x-3x^2$</div>
+      <div class="hidden-steps" id="steps-ex9a">
       <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">(a) نجد المشتقة الأولى ونجعلها تساوي صفر</p>
+          <p class="calc-note">نجد المشتقة الأولى ونجعلها تساوي صفر</p>
           <div class="calc-flow">
             <div class="calc-line">$f'(x)=-6-6x$</div>
             <div class="calc-arrow">↓</div>
@@ -98,8 +98,21 @@
           <p class="calc-note">النقطة $(-1,19)$ تمثّل نهاية عظمى محلية؛ ومناطق التزايد والتناقص</p>
           <div class="calc-flow"><div class="calc-line calc-box">مناطق التزايد: $\{x:x<-1,x\in\mathbb{R}\}$ &nbsp;،&nbsp; مناطق التناقص: $\{x:x>-1,x\in\mathbb{R}\}$</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">
-          <p class="calc-note">(b) نستخرج المشتقة الأولى للدالة ونجعلها صفر</p>
+      </ol>
+      <div class="exercise-final">✓ نهاية عظمى محلية عند $(-1,19)$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9b</span> مثال 9 (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex9b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد النهايات العظمى والصغرى المحلية ومناطق التزايد والتناقص للدالة $f(x)=2x^3-9x^2-24x-12$</div>
+      <div class="hidden-steps" id="steps-ex9b">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نستخرج المشتقة الأولى للدالة ونجعلها صفر</p>
           <div class="calc-flow">
             <div class="calc-line">$f'(x)=6x^2-18x-24$</div>
             <div class="calc-arrow">↓</div>
@@ -107,10 +120,10 @@
             <div class="calc-arrow">↓</div>
             <div class="calc-line">$x^2-3x-4=0 \Rightarrow (x-4)(x+1)=0$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$x=4 \;\text{أو}\; x=-1$</div>
+            <div class="calc-line calc-box">$x=4$ <span class="ar-safe">أو</span> $x=-1$</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">6</span><div class="step-body">
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
           <p class="calc-note">نمثّل القيمتين المستخرجتين على خط الأعداد ونأخذ قيمة من كل فترة (نختار $x=-2,0,5$) ونعوّضها في المشتقة لمعرفة إشارتها فقط</p>
           <div class="calc-flow">
             <div class="calc-line">$f'(-2)=6(-2)^2-18(-2)-24=+36$</div>
@@ -120,7 +133,7 @@
             <div class="calc-line calc-box">إشارة $f'(x)$: &nbsp; $+\;+\;+\;(-1)\;-\;-\;-\;(4)\;+\;+\;+$</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">7</span><div class="step-body">
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">عند $x=-1$ الإشارة تتغيّر من $+$ إلى $-$ (نهاية عظمى)؛ عند $x=4$ الإشارة تتغيّر من $-$ إلى $+$ (نهاية صغرى). نعوّض في الدالة الأصلية</p>
           <div class="calc-flow">
             <div class="calc-line">$y=f(-1)$</div>
@@ -133,7 +146,7 @@
           </div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ (a) نهاية عظمى محلية عند $(-1,19)$. &nbsp; (b) نهاية عظمى محلية عند $(-1,1)$، ونهاية صغرى محلية عند $(4,-124)$؛ مناطق التزايد $\{x<-1\}\cup\{x>4\}$، ومناطق التناقص $(-1,4)$. ∎</div>
+      <div class="exercise-final">✓ نهاية عظمى محلية عند $(-1,1)$، ونهاية صغرى محلية عند $(4,-124)$؛ مناطق التزايد $\{x<-1\}\cup\{x>4\}$، ومناطق التناقص $(-1,4)$. ∎</div>
       </div>
     </div>
 
@@ -217,7 +230,7 @@
             <div class="calc-arrow">↓</div>
             <div class="calc-line">$3x^2-6x=0 \Rightarrow 3x(x-2)=0$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$x=0 \;\text{أو}\; x=2$</div>
+            <div class="calc-line calc-box">$x=0$ <span class="ar-safe">أو</span> $x=2$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
@@ -251,14 +264,14 @@
           </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نعوّض $x=1$ و $x=-1$ في الدالة الأصلية</p>
+          <p class="calc-note">نعوّض $x=1$ <span class="ar-safe">و</span> $x=-1$ في الدالة الأصلية</p>
           <div class="calc-flow">
             <div class="calc-line">$f(1)=1-3+1=-1$</div>
             <div class="calc-line">$f(-1)=-1+3+1=3$</div>
           </div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ النقطتان $(1,-1)$ و $(-1,3)$. ∎</div>
+      <div class="exercise-final">✓ النقطتان $(1,-1)$ <span class="ar-safe">و</span> $(-1,3)$. ∎</div>
       </div>
     </div>
   </section>

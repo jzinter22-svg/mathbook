@@ -66,14 +66,14 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">1a</span> مثال 1 (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex1a">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد باستخدام التفاضلات وبصورة تقريبية ما يلي: &nbsp; (a) $\sqrt{51}$ &nbsp;&nbsp; (b) $(8.35)^{\frac23}$</div>
-      <div class="hidden-steps" id="steps-ex1">
+      <div class="example-problem">جد باستخدام التفاضلات وبصورة تقريبية: $\sqrt{51}$</div>
+      <div class="hidden-steps" id="steps-ex1a">
       <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">(a) نفرض $y=\sqrt{x}$ ونختار قيمة قريبة من 51 يسهل استخراج جذرها: $x=49$</p>
+          <p class="calc-note">نفرض $y=\sqrt{x}$ ونختار قيمة قريبة من 51 يسهل استخراج جذرها: $x=49$</p>
           <div class="calc-flow">
             <div class="calc-line">$\Delta x = $ القيمة الأصلية $-$ القيمة المفروضة $= 51-49=2$</div>
             <div class="calc-arrow">↓</div>
@@ -98,15 +98,28 @@
             <div class="calc-line calc-box">$\sqrt{51}=7+0.142=7.142$</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">
-          <p class="calc-note">(b) نفرض $y=f(x)=x^{\frac23}$ ونختار $x=8$ (لأن $8=2^3$)، مع $a=8,\,b=8.35$</p>
+      </ol>
+      <div class="exercise-final">✓ $\sqrt{51}\approx7.142$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1b</span> مثال 1 (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex1b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد باستخدام التفاضلات وبصورة تقريبية: $(8.35)^{\frac23}$</div>
+      <div class="hidden-steps" id="steps-ex1b">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نفرض $y=f(x)=x^{\frac23}$ ونختار $x=8$ (لأن $8=2^3$)، مع $a=8,\,b=8.35$</p>
           <div class="calc-flow">
             <div class="calc-line">$\Delta x = b-a = 8.35-8=0.35$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">$f(x)=8^{\frac23}=(2^3)^{\frac23}=2^2=4$</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
           <p class="calc-note">نجد المشتقة ونعوّض $x=8$</p>
           <div class="calc-flow">
             <div class="calc-line">$f'(x)=\dfrac23x^{\frac23-1}=\dfrac23x^{-\frac13}$</div>
@@ -116,7 +129,7 @@
             <div class="calc-line calc-box">$f'(8)=\dfrac{2}{3\times2}=\dfrac13=0.333$</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">6</span><div class="step-body">
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">نجد $\Delta y$ ثم القيمة التقريبية</p>
           <div class="calc-flow">
             <div class="calc-line">$\Delta y = 0.333\times0.35$</div>
@@ -129,7 +142,7 @@
           </div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ $\sqrt{51}\approx7.142$ &nbsp;،&nbsp; $(8.35)^{\frac23}\approx4.116$. ∎</div>
+      <div class="exercise-final">✓ $(8.35)^{\frac23}\approx4.116$. ∎</div>
       </div>
     </div>
 
@@ -234,7 +247,7 @@
           <div class="calc-flow"><div class="calc-line calc-box">$y=\dfrac{4\pi}{3}x^3$</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نصف القطر الأصلي $x=\dfrac{\text{القطر}}{2}=\dfrac{6}{2}=3\,cm$، وسمك السيراميك معطى مباشرة في السؤال</p>
+          <p class="calc-note">نصف القطر الأصلي = القطر ÷ 2، أي $x=\dfrac{6}{2}=3\,cm$، وسمك السيراميك معطى مباشرة في السؤال</p>
           <div class="calc-flow"><div class="calc-line calc-box">$x=3\,cm \quad,\quad \Delta x=0.2$</div></div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
@@ -386,21 +399,24 @@
 
     <div class="example exercise-card fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
-        <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">3a</span> السؤال 3 (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3a">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد باستخدام التفاضلات وبصورة تقريبية قيمة كل من: &nbsp; (a) $\sqrt[3]{26}+\sqrt{26}$ &nbsp; (b) $\sqrt[4]{\dfrac{17}{81}}$ &nbsp; (c) $(25)^{\frac13}$ &nbsp; (d) $\sqrt{36.6}$ &nbsp; (e) $(33)^{-\frac15}$</div>
-      <div class="hidden-steps" id="steps-pq3">
+      <div class="example-problem">جد باستخدام التفاضلات وبصورة تقريبية قيمة: $\sqrt[3]{26}+\sqrt{26}$</div>
+      <div class="hidden-steps" id="steps-pq3a">
       <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">(a) $\sqrt[3]{26}$: نختار $x=27$، $\Delta x=-1$؛ &nbsp; $\sqrt{26}$: نختار $x=25$، $\Delta x=1$</p>
+          <p class="calc-note">$\sqrt[3]{26}$: نختار $x=27$، $\Delta x=-1$؛ &nbsp; $\sqrt{26}$: نختار $x=25$، $\Delta x=1$</p>
           <div class="calc-flow">
             <div class="calc-line">$y=x^{\frac13}\Rightarrow y'=\dfrac{1}{3x^{\frac23}}$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line">$y'(27)=\dfrac{1}{3(9)}=0.037$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line">$\sqrt[3]{26}\approx3+0.037\times(-1)=2.963$</div>
-            <div class="calc-arrow">↓</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow">
             <div class="calc-line">$y=\sqrt{x}\Rightarrow y'(25)=\dfrac{1}{2\sqrt{25}}=0.1$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line">$\sqrt{26}\approx5+0.1(1)=5.1$</div>
@@ -408,8 +424,21 @@
             <div class="calc-line calc-box">$\sqrt[3]{26}+\sqrt{26}\approx2.963+5.1=8.063$</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">(b) بما أن $81=3^4$ فإن $\sqrt[4]{\frac{17}{81}}=\dfrac{\sqrt[4]{17}}{3}$؛ نقرّب $\sqrt[4]{17}$ باختيار $x=16$، $\Delta x=1$</p>
+      </ol>
+      <div class="exercise-final">✓ $\sqrt[3]{26}+\sqrt{26}\approx8.063$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3b</span> السؤال 3 (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد باستخدام التفاضلات وبصورة تقريبية قيمة: $\sqrt[4]{\dfrac{17}{81}}$</div>
+      <div class="hidden-steps" id="steps-pq3b">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن $81=3^4$ فإن $\sqrt[4]{\frac{17}{81}}=\dfrac{\sqrt[4]{17}}{3}$؛ نقرّب $\sqrt[4]{17}$ باختيار $x=16$، $\Delta x=1$</p>
           <div class="calc-flow">
             <div class="calc-line">$y=x^{\frac14}\Rightarrow y'=\dfrac{1}{4x^{\frac34}}$</div>
             <div class="calc-arrow">↓</div>
@@ -420,8 +449,21 @@
             <div class="calc-line calc-box">$\sqrt[4]{\dfrac{17}{81}}\approx\dfrac{2.031}{3}=0.677$</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">(c) $(25)^{\frac13}$: نختار $x=27$، $\Delta x=25-27=-2$</p>
+      </ol>
+      <div class="exercise-final">✓ $\sqrt[4]{\dfrac{17}{81}}\approx0.677$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3c</span> السؤال 3 (c)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد باستخدام التفاضلات وبصورة تقريبية قيمة: $(25)^{\frac13}$</div>
+      <div class="hidden-steps" id="steps-pq3c">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$(25)^{\frac13}$: نختار $x=27$، $\Delta x=25-27=-2$</p>
           <div class="calc-flow">
             <div class="calc-line">$y'(27)=\dfrac{1}{3(9)}=0.037$</div>
             <div class="calc-arrow">↓</div>
@@ -430,8 +472,21 @@
             <div class="calc-line calc-box">$(25)^{\frac13}\approx3-0.074=2.926$</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">
-          <p class="calc-note">(d) $\sqrt{36.6}$: نختار $x=36$، $\Delta x=0.6$</p>
+      </ol>
+      <div class="exercise-final">✓ $(25)^{\frac13}\approx2.926$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3d</span> السؤال 3 (d)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد باستخدام التفاضلات وبصورة تقريبية قيمة: $\sqrt{36.6}$</div>
+      <div class="hidden-steps" id="steps-pq3d">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$\sqrt{36.6}$: نختار $x=36$، $\Delta x=0.6$</p>
           <div class="calc-flow">
             <div class="calc-line">$y'(36)=\dfrac{1}{2\sqrt{36}}=0.083$</div>
             <div class="calc-arrow">↓</div>
@@ -440,8 +495,21 @@
             <div class="calc-line calc-box">$\sqrt{36.6}\approx6+0.05=6.05$</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">5</span><div class="step-body">
-          <p class="calc-note">(e) $(33)^{-\frac15}$: نختار $x=32=2^5$، $\Delta x=1$</p>
+      </ol>
+      <div class="exercise-final">✓ $\sqrt{36.6}\approx6.05$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3e</span> السؤال 3 (e)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3e">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد باستخدام التفاضلات وبصورة تقريبية قيمة: $(33)^{-\frac15}$</div>
+      <div class="hidden-steps" id="steps-pq3e">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$(33)^{-\frac15}$: نختار $x=32=2^5$، $\Delta x=1$</p>
           <div class="calc-flow">
             <div class="calc-line">$y=x^{-\frac15}\Rightarrow y(32)=\dfrac12=0.5$</div>
             <div class="calc-arrow">↓</div>
@@ -453,7 +521,7 @@
           </div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ (a) $\approx8.063$ &nbsp; (b) $\approx0.677$ &nbsp; (c) $\approx2.926$ &nbsp; (d) $\approx6.05$ &nbsp; (e) $\approx0.497$. ∎</div>
+      <div class="exercise-final">✓ $(33)^{-\frac15}\approx0.497$. ∎</div>
       </div>
     </div>
 

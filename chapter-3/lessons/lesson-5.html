@@ -49,14 +49,14 @@
 
     <div class="example fade-up">
       <div class="example-head">
-        <div class="example-title"><span class="example-badge">11</span> مثال 11</div>
-        <button class="neu-btn" data-reveal-steps="steps-ex11">إظهار الحل</button>
+        <div class="example-title"><span class="example-badge">11a</span> مثال 11 (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex11a">إظهار الحل</button>
       </div>
-      <div class="example-problem">حدد شكل منحني الدالة (محدب، مقعر) لكل مما يأتي: &nbsp; (a) $f(x)=x^2$ &nbsp;&nbsp; (b) $f(x)=2x-3x^2$</div>
-      <div class="hidden-steps" id="steps-ex11">
+      <div class="example-problem">حدد شكل منحني الدالة (محدب، مقعر) للدالة $f(x)=x^2$</div>
+      <div class="hidden-steps" id="steps-ex11a">
       <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">(a) نجد المشتقة الأولى ثم الثانية</p>
+          <p class="calc-note">نجد المشتقة الأولى ثم الثانية</p>
           <div class="calc-flow">
             <div class="calc-line">$f'(x)=2x$</div>
             <div class="calc-arrow">↓</div>
@@ -67,26 +67,39 @@
           <p class="calc-note">بما أن $f''(x)=2>0,\;x\in\mathbb{R}$</p>
           <div class="calc-flow"><div class="calc-line calc-box">أي أن الدالة مقعرة عند جميع القيم الحقيقية</div></div>
         </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">(b) نجد المشتقة الأولى ثم الثانية</p>
+      </ol>
+      <div class="exercise-final">✓ مقعرة في كامل $\mathbb{R}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">11b</span> مثال 11 (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex11b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">حدد شكل منحني الدالة (محدب، مقعر) للدالة $f(x)=2x-3x^2$</div>
+      <div class="hidden-steps" id="steps-ex11b">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجد المشتقة الأولى ثم الثانية</p>
           <div class="calc-flow">
             <div class="calc-line">$f'(x)=2-6x$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">$f''(x)=-6$</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">4</span><div class="step-body">
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
           <p class="calc-note">بما أن $f''(x)=-6<0,\;\forall x\in\mathbb{R}$</p>
           <div class="calc-flow"><div class="calc-line calc-box">أي أن الدالة محدبة عند جميع القيم الحقيقية</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ (a) مقعرة في كامل $\mathbb{R}$. &nbsp; (b) محدبة في كامل $\mathbb{R}$. ∎</div>
+      <div class="exercise-final">✓ محدبة في كامل $\mathbb{R}$. ∎</div>
       </div>
     </div>
 
     <div class="card neu">
       <h3 style="margin-top:0">نقاط الانقلاب <span style="font-weight:400;color:var(--text-secondary)">Points of inflection</span></h3>
-      <p>يقال أن النقطة $(c,f(c))$ نقطة انقلاب على منحني الدالة $f$ إذا كان له مماس في هذه النقطة، ووُجدت فترة مفتوحة $I$ تحوي القيمة $c\in I$ والتي يكون عندها $f''(c)=0$، والتي بحيث تتغيّر إشارة $f''(x)$ من موجب إلى سالب حول $c$ أو بالعكس.</p>
+      <p>يقال أن النقطة $(c,f(c))$ نقطة انقلاب على منحني الدالة $f$ إذا كان له مماس في هذه النقطة، ووُجدت فترة مفتوحة $I$ تحوي القيمة $c\in I$ والتي يكون عندها $f''(c)=0$، والتي بحيث تتغيّر إشارة $f''(x)$ من موجب إلى سالب حول $c$ <span class="ar-safe">أو</span> بالعكس.</p>
     </div>
 
     <div class="card neu" style="margin-top:1rem">
