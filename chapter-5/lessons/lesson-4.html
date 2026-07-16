@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 4: الإسقاط العمودي على المستوي — الفصل الخامس</title>
+<meta name="description" content="مسقط النقطة ومجموعة النقاط وقطعة المستقيم على مستوٍ، المستقيم المائل وزاوية الميل، ومسقط المستوي المائل على مستوٍ معلوم، مع رسم توضيحي مستقل لكل تعريف.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-4.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 4 من 5 · 6-5</span>
+    <h1>الإسقاط العمودي على المستوي</h1>
+    <p class="lead">نتعرف الآن على «ظل» الأشكال الهندسية عندما تُسقط عمودياً على مستوٍ: مسقط النقطة، ومسقط قطعة المستقيم، والمستقيم المائل وزاوية ميله، وأخيراً مسقط مستوٍ مائل بأكمله.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يتعرف على مفهوم مسقط نقطة ومسقط مجموعة نقاط على مستوٍ.</span></li>
+        <li><span class="obj-num">2</span><span>يتعرف على مسقط قطعة مستقيم غير عمودية على مستوٍ معلوم.</span></li>
+        <li><span class="obj-num">3</span><span>يتعرف على مفهوم المستقيم المائل على مستوٍ وزاوية ميله.</span></li>
+        <li><span class="obj-num">4</span><span>يستنتج علاقة طول المسقط بطول المائل وجيب تمام زاوية الميل: $BC=AB\cos\theta$.</span></li>
+        <li><span class="obj-num">5</span><span>يتعرف على مسقط مستوٍ مائل على مستوٍ معلوم، وعلاقة مساحة المسقط بالمساحة الأصلية: $A'=A\cos\theta$.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="point-proj" data-navlabel="📍 مسقط النقطة">
+    <div class="card neu">
+      <h2>📍 مسقط نقطة ومجموعة نقاط على مستوٍ</h2>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نقطة A فوق مستوٍ X ومسقطها C هو أثر العمود من A على المستوي">
+            <polygon points="60,190 300,190 335,225 95,225" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="305" y="212" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <circle cx="185" cy="70" r="5" fill="#e6394a"/>
+            <text x="193" y="65" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <line x1="185" y1="70" x2="185" y2="203" stroke="#7c6fee" stroke-width="2.4" stroke-dasharray="5 4"/>
+            <circle cx="185" cy="205" r="4.5" fill="#17324a"/>
+            <text x="193" y="222" class="geo-label" font-size="15" fill="#17324a">C</text>
+            <rect x="175" y="192" width="12" height="12" fill="none" stroke="#e6394a" stroke-width="1.8"/>
+          </svg>
+          <span class="diagram-caption">مسقط النقطة $A$ على $(X)$ هو النقطة $C$ — أثر العمود $\overrightarrow{AC}$ على المستوي</span>
+        </div>
+      </div>
+
+      <div class="def-box">
+        <span class="def-label">📌 تعريف 5-3 — مسقط نقطة على مستوٍ</span>
+        <p style="margin:.3rem 0">مسقط نقطة على مستوٍ: هو أثر العمود المرسوم من تلك النقطة على المستوي.</p>
+      </div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مجموعة نقاط منحنية L فوق مستوٍ X ومسقطها L أسفلها">
+            <polygon points="50,195 310,195 340,228 80,228" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="315" y="215" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <path d="M 90 90 Q 175 40 260 95" fill="none" stroke="#ff6b9d" stroke-width="2.6"/>
+            <text x="170" y="55" class="geo-label" font-size="15" fill="#ff6b9d">L</text>
+            <path d="M 120 205 Q 190 185 240 210" fill="none" stroke="#7c6fee" stroke-width="2.4"/>
+            <text x="175" y="230" class="geo-label" font-size="14" fill="#7c6fee">L′</text>
+            <line x1="90" y1="90" x2="118" y2="205" stroke="#7c6fee" stroke-width="1.6" stroke-dasharray="4 3"/>
+            <line x1="175" y1="55" x2="182" y2="192" stroke="#7c6fee" stroke-width="1.6" stroke-dasharray="4 3"/>
+            <line x1="260" y1="95" x2="240" y2="210" stroke="#7c6fee" stroke-width="1.6" stroke-dasharray="4 3"/>
+          </svg>
+          <span class="diagram-caption">مسقط المجموعة $L$ على $(X)$ هو المجموعة $L'$ — أثر كل الأعمدة المرسومة من نقاط $L$</span>
+        </div>
+      </div>
+
+      <div class="def-box">
+        <span class="def-label">📌 تعريف 5-4 — مسقط مجموعة من النقاط على مستوٍ</span>
+        <p style="margin:.3rem 0">لتكن $L$ مجموعة من النقاط في الفراغ، فإن مسقطها هو مجموعة كل آثار الأعمدة المرسومة من نقاطها على المستوي.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="segment-proj" data-navlabel="📏 مسقط قطعة المستقيم">
+    <div class="card neu">
+      <h2>📏 مسقط قطعة مستقيم غير عمودية على مستوٍ</h2>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مستقيم AB غير عمودي على مستوٍ X ومسقطه CD">
+            <polygon points="50,215 320,200 360,240 90,255" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="330" y="222" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <line x1="140" y1="60" x2="290" y2="150" stroke="#ff6b9d" stroke-width="2.8" marker-start="url(#l4a)" marker-end="url(#l4b)"/>
+            <circle cx="140" cy="60" r="5" fill="#e6394a"/>
+            <text x="115" y="52" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="290" cy="150" r="5" fill="#e6394a"/>
+            <text x="298" y="145" class="geo-label" font-size="16" fill="#e6394a">B</text>
+            <line x1="140" y1="60" x2="150" y2="228" stroke="#7c6fee" stroke-width="2.2" stroke-dasharray="5 4"/>
+            <circle cx="150" cy="230" r="4.5" fill="#17324a"/>
+            <text x="128" y="248" class="geo-label" font-size="15" fill="#17324a">C</text>
+            <line x1="290" y1="150" x2="270" y2="220" stroke="#7c6fee" stroke-width="2.2" stroke-dasharray="5 4"/>
+            <circle cx="270" cy="222" r="4.5" fill="#17324a"/>
+            <text x="278" y="240" class="geo-label" font-size="15" fill="#17324a">D</text>
+            <line x1="150" y1="230" x2="270" y2="222" stroke="#3fa9f5" stroke-width="3"/>
+            <defs>
+              <marker id="l4a" markerWidth="9" markerHeight="9" refX="1" refY="3" orient="auto"><path d="M7,0 L0,3 L7,6 Z" fill="#ff6b9d"/></marker>
+              <marker id="l4b" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff6b9d"/></marker>
+            </defs>
+          </svg>
+          <span class="diagram-caption">الشكل 14-5 — $\overrightarrow{AC}\perp(X)$ عند $C$ (مسقط $A$)، $\overrightarrow{BD}\perp(X)$ عند $D$ (مسقط $B$)؛ فمسقط $\overleftrightarrow{AB}$ هو $\overleftrightarrow{CD}$</span>
+        </div>
+      </div>
+
+      <p>في الشكل المجاور (14-5) ليكن $\overleftrightarrow{AB}$ غير عمودي على $(X)$، وليكن:</p>
+      <div class="mj-scroll">$$\overrightarrow{AC}\perp(X) \Leftarrow \text{مسقط النقطة } A \text{ على } (X) \text{ هو } C \qquad,\qquad \overrightarrow{BD}\perp(X) \Leftarrow \text{مسقط النقطة } B \text{ على } (X) \text{ هو } D$$</div>
+      <p style="text-align:center;font-weight:800">إذن مسقط $\overleftrightarrow{AB}$ على $(X)$ هو $\overleftrightarrow{CD}$</p>
+
+      <div class="def-box">
+        <span class="def-label">📌 تعريف 5-5 — مسقط قطعة مستقيم غير عمودية على مستوٍ معلوم</span>
+        <p style="margin:.3rem 0">هو قطعة المستقيم المحددة بأثري العمودين المرسومين من نهايتَي القطعة المستقيمة على المستوي المعلوم.</p>
+      </div>
+
+      <div class="callout tip fade-up">
+        <span class="icon">💬</span>
+        <span>ملاحظة: إذا كان $\overleftrightarrow{AB}\parallel(X)$ فإن $\overleftrightarrow{AB}\parallel\overleftrightarrow{CD}$.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="incline" data-navlabel="📐 المائل وزاوية الميل">
+    <div class="card neu">
+      <h2>📐 المستقيم المائل وزاوية الميل</h2>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مستقيم مائل AB على المستوي X عند النقطة B، مع العمود AC وزاوية الميل θ">
+            <polygon points="50,215 320,205 355,240 90,255" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="325" y="225" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <circle cx="230" cy="70" r="5" fill="#e6394a"/>
+            <text x="240" y="65" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <line x1="230" y1="70" x2="185" y2="228" stroke="#ff6b9d" stroke-width="2.6" marker-end="url(#l4c)"/>
+            <circle cx="185" cy="230" r="5" fill="#17324a"/>
+            <text x="160" y="250" class="geo-label" font-size="16" fill="#17324a">B</text>
+            <line x1="230" y1="70" x2="240" y2="222" stroke="#7c6fee" stroke-width="2.2" stroke-dasharray="5 4"/>
+            <circle cx="240" cy="224" r="4.5" fill="#17324a"/>
+            <text x="248" y="242" class="geo-label" font-size="15" fill="#17324a">C</text>
+            <line x1="185" y1="230" x2="240" y2="224" stroke="#3fa9f5" stroke-width="2.6"/>
+            <path d="M 205 224 A 34 34 0 0 1 220 195" fill="none" stroke="#ff9f5e" stroke-width="2.2"/>
+            <text x="222" y="212" font-size="14" fill="#8a5a00" font-family="Cairo,sans-serif">θ</text>
+            <defs><marker id="l4c" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff6b9d"/></marker></defs>
+          </svg>
+          <span class="diagram-caption">الشكل 15-5 — $\overrightarrow{AB}$ مائل على $(X)$ عند $B$؛ $\overrightarrow{AC}\perp(X)$؛ $\overrightarrow{BC}$ مسقط $\overrightarrow{AB}$؛ $\theta$ زاوية الميل</span>
+        </div>
+      </div>
+
+      <div class="def-box">
+        <span class="def-label">📌 تعريف 5-6 — المستقيم المائل على مستوي</span>
+        <p style="margin:.3rem 0">هو المستقيم غير العمودي على المستوي وقاطع له.</p>
+      </div>
+      <div class="def-box" style="margin-top:1rem">
+        <span class="def-label">📌 تعريف 5-7 — زاوية الميل</span>
+        <p style="margin:.3rem 0">هي الزاوية المحددة بالمائل ومسقطه على المستوي.</p>
+      </div>
+
+      <p style="margin-top:1rem">في الشكل 15-5 المجاور: ليكن $\overleftrightarrow{AB}$ مستقيماً مائلاً على $(X)$ عند النقطة $B$، وليكن $\overrightarrow{AC}\perp(X)$ عند النقطة $C$. إذن $C$ مسقط $A$ على $(X)$ (حيث $A\notin(X)$)، وكذلك $B$ هي مسقط نفسها على $(X)$ (حيث $B\in(X)$)، أي أن $\overrightarrow{BC}$ مسقط $\overleftrightarrow{AB}$ على $(X)$، وتتحقق العلاقة:</p>
+      <div class="rule-box">$$0° < \theta < 90°\,,\qquad \theta\in(0°,90°)$$</div>
+
+      <div class="def-box" style="border-inline-start-color:var(--accent-green)">
+        <span class="def-label" style="color:var(--accent-green)">✅ استنتاج</span>
+        <p style="margin:.3rem 0">طول مسقط قطعة مستقيم على مستوٍ = طول المائل × جيب تمام زاوية الميل.</p>
+      </div>
+      <p>فعندما تكون $\overleftrightarrow{AB}$ مائلة على $(X)$ بحيث تكون زاوية الميل $\theta$ ومسقطها $\overrightarrow{BC}$ فإن:</p>
+      <div class="rule-box">$$BC = AB\cdot\cos\theta$$</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="plane-proj" data-navlabel="🔷 مسقط المستوي المائل">
+    <div class="card neu">
+      <h2>🔷 مسقط مستوٍ مائل على مستوٍ معلوم</h2>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مستوٍ مائل فوق مستوٍ أفقي X مع مسقطه المظلل على X وزاوية الميل بينهما">
+            <polygon points="40,235 300,222 340,262 80,275" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="308" y="245" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <polygon points="90,232 260,224 300,262 130,270" fill="#7c6fee" opacity=".28" stroke="#3fa9f5" stroke-width="2" stroke-dasharray="4 3"/>
+            <text x="180" y="256" class="geo-label" font-size="13" fill="#3a4a99">A′ (المسقط)</text>
+            <polygon points="70,150 260,95 320,155 150,205" fill="#ff8fc7" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="270" y="115" class="geo-label" font-size="15" fill="#8a1450">المستوي المائل</text>
+            <line x1="150" y1="205" x2="130" y2="270" stroke="#17324a" stroke-width="2.4"/>
+            <path d="M 148 220 A 40 40 0 0 1 168 250" fill="none" stroke="#ff9f5e" stroke-width="2.2"/>
+            <text x="172" y="240" font-size="13" fill="#8a5a00" font-family="Cairo,sans-serif">θ</text>
+          </svg>
+          <span class="diagram-caption">مسقط المنطقة المائلة (الوردية) على $(X)$ هو المنطقة المظلّلة $A'$؛ $\theta$ زاوية ميل المستويين</span>
+        </div>
+      </div>
+
+      <div class="def-box">
+        <span class="def-label">📌 تعريف 5-8 — مسقط مستوي مائل على مستوي معلوم</span>
+        <p style="margin:.3rem 0">زاوية ميل مستوٍ على مستوٍ معلوم هي قياس الزاوية المستوية العائدة للزاوية الزوجية بينهما. ومساحة مسقط منطقة مائلة على مستوٍ معلوم = مساحة المنطقة المائلة × جيب تمام زاوية الميل.</p>
+      </div>
+      <p>لتكن $A$ مساحة المنطقة المائلة، $A'$ مساحة المسقط، $\theta$ قياس زاوية الميل، فإن:</p>
+      <div class="rule-box">$$A' = A\cdot\cos\theta$$</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>مسقط نقطة على مستوٍ هو:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>أقرب نقطة في المستوي إلى النقطة الأصلية بخط مائل</span></label>
+          <label class="quiz-opt"><input type="radio"><span>منتصف المسافة بين النقطة والمستوي</span></label>
+          <label class="quiz-opt"><input type="radio"><span>أثر العمود المرسوم من تلك النقطة على المستوي</span></label>
+          <label class="quiz-opt"><input type="radio"><span>أي نقطة عشوائية في المستوي</span></label>
+        </div>
+        <div class="quiz-explain">حسب تعريف 5-3، مسقط النقطة هو أثر العمود المرسوم منها على المستوي، وهو وحيد لأن العمود من نقطة خارج مستوٍ إلى ذلك المستوي وحيد.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>المستقيم المائل على مستوٍ هو مستقيم:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>يوازي المستوي تماماً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>غير عمودي على المستوي وقاطع له</span></label>
+          <label class="quiz-opt"><input type="radio"><span>عمودي على المستوي</span></label>
+          <label class="quiz-opt"><input type="radio"><span>محتوى بالكامل داخل المستوي</span></label>
+        </div>
+        <div class="quiz-explain">حسب تعريف 5-6، المائل هو المستقيم غير العمودي على المستوي، وفي نفس الوقت يقطعه (فليس موازياً له).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>زاوية الميل بين مستقيم مائل ومستوٍ محصورة دائماً بين:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>0° و90°</span></label>
+          <label class="quiz-opt"><input type="radio"><span>90° و180°</span></label>
+          <label class="quiz-opt"><input type="radio"><span>0° و360°</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا حدود لها</span></label>
+        </div>
+        <div class="quiz-explain">بما أن المائل غير عمودي (فتكون الزاوية أقل من 90°) وغير محتوى في المستوي (فتكون الزاوية أكبر من 0°)، فإن $\theta\in(0°,90°)$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>إذا كان طول مستقيم مائل $10\,cm$ وزاوية ميله على مستوٍ $60°$، فإن طول مسقطه على المستوي يساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$10\,cm$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$10\sin60°\,cm$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$20\,cm$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$10\cos60°=5\,cm$</span></label>
+        </div>
+        <div class="quiz-explain">طول المسقط = طول المائل × جيب تمام زاوية الميل = $10\times\cos60°=10\times\tfrac12=5\,cm$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>مساحة مسقط منطقة مائلة مساحتها $40\,cm^2$ على مستوٍ، إذا كانت زاوية الميل $0°$ (أي المنطقة موازية للمستوي)، تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$0\,cm^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$40\,cm^2$ (نفس المساحة تماماً)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$20\,cm^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>غير معرّفة</span></label>
+        </div>
+        <div class="quiz-explain">$A'=A\cos\theta=40\times\cos0°=40\times1=40\,cm^2$ — منطقية تماماً لأن المستوي الموازي «يسقط» على نفسه دون تغيير في المساحة.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>مسقط نقطة على مستوٍ: أثر العمود المرسوم منها على المستوي.</span></li>
+        <li><span>مسقط مجموعة نقاط: مجموعة آثار كل الأعمدة المرسومة من نقاطها.</span></li>
+        <li><span>مسقط قطعة مستقيم غير عمودية: القطعة المحددة بأثري عمودَي طرفيها.</span></li>
+        <li><span>المائل: مستقيم غير عمودي على المستوي وقاطع له؛ وزاوية الميل: الزاوية بينه وبين مسقطه.</span></li>
+        <li><span>طول المسقط = طول المائل × $\cos\theta$؛ ومساحة مسقط منطقة مائلة = مساحتها × $\cos\theta$.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l4" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع لمفاهيم الإسقاط العمودي.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l4">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الرابع">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#7c6fee"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">الإسقاط</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">العمودي</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">مسقط نقطة</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">ومجموعة نقاط</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#2fd18f"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">مسقط</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">قطعة مستقيم</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#ffab5e"/>
+            <text x="150" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">زاوية الميل</text>
+            <text x="150" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">BC=AB·cosθ</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ff6b9d"/>
+            <text x="670" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">مسقط مستوٍ</text>
+            <text x="670" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">A′=A·cosθ</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الخامس · الهندسة الفراغية — الدرس 4: الإسقاط العمودي على المستوي</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch5.js"></script>
+</body>
+</html>

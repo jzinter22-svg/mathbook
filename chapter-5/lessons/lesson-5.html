@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 5: تطبيقات على الإسقاط العمودي — الفصل الخامس</title>
+<meta name="description" content="أمثلة محلولة وتمارين مستقلة على الإسقاط العمودي، المائل، وزاوية الميل، كل سؤال ببطاقته الخاصة ورسمه التوضيحي وحله الكامل خطوة بخطوة.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-5.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 5 من 5 · أمثلة 4-5 وتمرين (2-5)</span>
+    <h1>تطبيقات على الإسقاط العمودي</h1>
+    <p class="lead">آخر محطة في الفصل: نوظّف مفاهيم المسقط والمائل وزاوية الميل في مسائل حسابية وبرهانية. كل سؤال مستقل ببطاقته ورسمه الخاصين — ادرس الرسم أولاً ثم حاول الحل بنفسك.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يبرهن أن مسقطي ضلعي زاوية قائمة (أحدهما موازٍ لمستوٍ) متعامدان.</span></li>
+        <li><span class="obj-num">2</span><span>يحسب مساحة مسقط مثلث مائل باستخدام علاقة $A'=A\cos\theta$ وحساب المثلثات.</span></li>
+        <li><span class="obj-num">3</span><span>يبرهن خواص أطوال المسقطات والمائلات وزوايا الميل في ستة تمارين مستقلة.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">ادرس الرسم أولاً، ثم اضغط «إظهار الحل» لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> مثال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">إذا وازى أحد ضلعَي زاوية قائمة مستوياً معلوماً، فإن مسقطَي ضلعيها على المستوي متعامدان. برهن ذلك.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="زاوية قائمة ABC رأسها B، ضلعها AB يوازي المستوي X، مسقطات A'B'C' على X">
+            <polygon points="60,235 340,220 400,265 120,282" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="345" y="240" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <circle cx="230" cy="80" r="5" fill="#17324a"/>
+            <text x="238" y="72" class="geo-label" font-size="16" fill="#17324a">B</text>
+            <rect x="215" y="88" width="14" height="12" fill="none" stroke="#e6394a" stroke-width="1.8" transform="rotate(6 222 94)"/>
+            <line x1="230" y1="80" x2="100" y2="150" stroke="#ff6b9d" stroke-width="2.6"/>
+            <circle cx="100" cy="150" r="5" fill="#e6394a"/>
+            <text x="70" y="146" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <line x1="230" y1="80" x2="360" y2="150" stroke="#7c6fee" stroke-width="2.6"/>
+            <circle cx="360" cy="150" r="5" fill="#e6394a"/>
+            <text x="368" y="146" class="geo-label" font-size="16" fill="#e6394a">C</text>
+            <line x1="230" y1="80" x2="230" y2="253" stroke="#7c6fee" stroke-width="1.8" stroke-dasharray="4 3"/>
+            <circle cx="230" cy="255" r="4.5" fill="#17324a"/>
+            <text x="238" y="273" class="geo-label" font-size="14" fill="#17324a">B′</text>
+            <line x1="100" y1="150" x2="150" y2="262" stroke="#7c6fee" stroke-width="1.8" stroke-dasharray="4 3"/>
+            <circle cx="150" cy="264" r="4.5" fill="#17324a"/>
+            <text x="128" y="282" class="geo-label" font-size="14" fill="#17324a">A′</text>
+            <line x1="360" y1="150" x2="320" y2="258" stroke="#7c6fee" stroke-width="1.8" stroke-dasharray="4 3"/>
+            <circle cx="320" cy="260" r="4.5" fill="#17324a"/>
+            <text x="328" y="278" class="geo-label" font-size="14" fill="#17324a">C′</text>
+            <line x1="150" y1="264" x2="230" y2="255" stroke="#3fa9f5" stroke-width="2.6"/>
+            <line x1="230" y1="255" x2="320" y2="260" stroke="#3fa9f5" stroke-width="2.6"/>
+          </svg>
+          <span class="diagram-caption">الشكل 16-5 — $m\angle ABC=90°$، $\overleftrightarrow{AB}\parallel(X)$؛ $A',B',C'$ مساقط $A,B,C$ على $(X)$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $\angle ABC$ قائمة في $B$، $\overleftrightarrow{AB}\parallel(X)$، $\overrightarrow{A'B'}$ مسقط $\overleftrightarrow{AB}$ على $(X)$، $\overrightarrow{B'C'}$ مسقط $\overleftrightarrow{BC}$ على $(X)$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> $\overleftrightarrow{A'B'}\perp\overleftrightarrow{B'C'}$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">من تعريف المسقط: $\overrightarrow{AA'},\overrightarrow{BB'},\overrightarrow{CC'}$ كلها أعمدة على $(X)$ (مسقط قطعة مستقيم هو المحدد بأثري عمودي طرفيها)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{AA'}\perp(X)\,,\ \overrightarrow{BB'}\perp(X)\,,\ \overrightarrow{CC'}\perp(X) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن الأعمدة الثلاثة على المستوي نفسه، فهي متوازية فيما بينها (المستقيمان العموديان على مستوٍ واحد متوازيان)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{AA'}\parallel\overrightarrow{BB'}\parallel\overrightarrow{CC'} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">المتوازيان $\overrightarrow{AA'},\overrightarrow{BB'}$ يعيّنان مستوياً وحيداً $(Y)$، والمتوازيان $\overrightarrow{BB'},\overrightarrow{CC'}$ يعيّنان مستوياً وحيداً $(Z)$ (لكل مستقيمين متوازيين مستوٍ وحيد يحتويهما)، وبما أن $\overleftrightarrow{AB}\parallel(X)$ (معطى) <span class="ar-safe">و</span> $\overrightarrow{A'B'}=(X)\cap(Y)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overleftrightarrow{AB}\parallel\overleftrightarrow{A'B'} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">(إذا وازى مستقيم مستوياً معلوماً فإنه يوازي جميع المستقيمات الناتجة من تقاطع هذا المستوي مع أي مستوٍ آخر يحوي ذلك المستقيم)، وكذلك $\overrightarrow{A'B'}\perp\overrightarrow{BB'}$ (المستقيم العمودي على مستوٍ يكون عمودياً على كل مستقيم فيه)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{AB}\perp\overrightarrow{BB'} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">لكن $\overrightarrow{AB}\perp\overrightarrow{BC}$ (لأن $m\angle ABC=90°$ معطى)؛ فـ $\overrightarrow{BB'}$ عمودي على مستقيمين متقاطعين ($AB,BC$) عند $B$، إذن $(Z)\perp\overrightarrow{AB}$ (المستقيم العمودي على مستقيمين متقاطعين من نقطة تقاطعهما يكون عمودياً على مستويهما، وهنا نطبّق العلاقة على المستوي $(Z)$ الحاوي لـ $BB',CC'$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (Z)\perp\overrightarrow{A'B'} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">بما أن $\overrightarrow{B'C'}\subseteq(Z)$، فإن المستقيم العمودي على مستوٍ يكون عمودياً على كل مستقيم فيه</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{A'B'}\perp\overrightarrow{B'C'} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات $\overleftrightarrow{A'B'}\perp\overleftrightarrow{B'C'}$. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> مثال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$ABC$ مثلث، $\overleftrightarrow{BC}\subseteq(X)$، والزاوية الزوجية بين مستوي المثلث $ABC$ والمستوي $(X)$ قياسها $60°$، وكان $AB=AC=13\,cm$، $BC=10\,cm$: جد مسقط مستوي المثلث $(ABC)$ على المستوي $(X)$، ثم جد مساحة هذا المسقط.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مثلث ABC متساوي الساقين قائم على المستوي X بزاوية 60 درجة، ومسقطه BCD">
+            <polygon points="40,240 420,225 420,260 40,275" fill="#d9dde6" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="392" y="245" class="geo-label" font-size="15" fill="#556">X</text>
+            <polygon points="230,65 100,250 360,238" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <circle cx="230" cy="65" r="5" fill="#e6394a"/>
+            <text x="238" y="58" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="100" cy="250" r="5" fill="#e6394a"/>
+            <text x="72" y="266" class="geo-label" font-size="16" fill="#e6394a">B</text>
+            <circle cx="360" cy="238" r="5" fill="#e6394a"/>
+            <text x="368" y="255" class="geo-label" font-size="16" fill="#e6394a">C</text>
+            <text x="150" y="150" font-size="13" fill="var(--text-secondary)" font-family="Cairo,sans-serif">13</text>
+            <text x="305" y="145" font-size="13" fill="var(--text-secondary)" font-family="Cairo,sans-serif">13</text>
+            <text x="225" y="262" font-size="13" fill="var(--text-secondary)" font-family="Cairo,sans-serif">10</text>
+            <circle cx="230" cy="244" r="4" fill="#17324a"/>
+            <text x="188" y="248" class="geo-label" font-size="13" fill="#17324a">E</text>
+            <line x1="230" y1="65" x2="230" y2="244" stroke="#7c6fee" stroke-width="1.6" stroke-dasharray="4 3"/>
+            <circle cx="248" cy="260" r="4.5" fill="#3fa9f5"/>
+            <text x="262" y="292" class="geo-label" font-size="14" fill="#3fa9f5">D</text>
+            <line x1="230" y1="65" x2="248" y2="260" stroke="#7c6fee" stroke-width="1.6" stroke-dasharray="4 3"/>
+            <polygon points="100,250 360,238 248,260" fill="#ff8fc7" opacity=".55" stroke="#3fa9f5" stroke-width="1.6"/>
+            <path d="M 218 244 A 20 20 0 0 1 234 256" fill="none" stroke="#ff9f5e" stroke-width="2"/>
+            <text x="196" y="222" font-size="12" fill="#8a5a00" font-family="Cairo,sans-serif">60°</text>
+          </svg>
+          <span class="diagram-caption">الشكل 17-5 — $\Delta ABC$ متساوي الساقين قائم على $(X)$ بزاوية 60°؛ $D$ مسقط $A$؛ $\Delta BCD$ (الوردي) هو مسقط $\Delta ABC$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $\overleftrightarrow{BC}\subseteq(X)$، قياس الزاوية الزوجية بين $(ABC)$ <span class="ar-safe">و</span> $(X)$ = $60°$، $AB=AC=13\,cm$، $BC=10\,cm$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> مسقط $\Delta ABC$ على $(X)$ ومساحته</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نرسم $\overrightarrow{AD}\perp(X)$ من $A$ (يمكن رسم عمود وحيد من نقطة معلومة على مستوٍ معلوم)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{AD}\perp(X) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">إذن $\overleftrightarrow{CD}$ مسقط $\overleftrightarrow{AC}$، <span class="ar-safe">و</span> $\overleftrightarrow{BD}$ مسقط $\overleftrightarrow{AB}$، <span class="ar-safe">و</span> $\overleftrightarrow{BC}$ مسقط نفسها (لأنها محتواة في $(X)$)؛ إذن $\Delta BCD$ هو مسقط $\Delta ABC$ على $(X)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \Delta BCD = \text{مسقط } \Delta ABC \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">في $(ABC)$ نرسم $\overrightarrow{AE}\perp\overleftrightarrow{BC}$ عند $E$؛ وبما أن $AB=AC$ (معطى)، فإن $E$ منتصف $BC$ (العمود النازل من رأس مثلث متساوي الساقين على القاعدة ينصفها)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( BE=EC=5\,cm \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">بمبرهنة الأعمدة الثلاثة (بما أن مسقط $\overrightarrow{AE}$ هو $\overrightarrow{DE}$ <span class="ar-safe">و</span> $\overrightarrow{AE}\perp\overleftrightarrow{BC}$): $\overrightarrow{ED}\perp\overleftrightarrow{BC}$، إذن الزاوية $DEA$ هي الزاوية المستوية العائدة للزاوية الزوجية على الحرف $\overleftrightarrow{BC}$، وقياسها $60°$ (معطى)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( m\angle DEA = 60° \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">في $\Delta AEB$ القائم في $E$: نجد $AE$ بفيثاغورس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( AE=\sqrt{AB^2-BE^2}=\sqrt{169-25}=\sqrt{144} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( AE=12\,cm \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">في $\Delta AED$ القائم في $D$ (لأن $AD\perp(X)$): نجد $ED$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \cos60°=\dfrac{ED}{AE} \Rightarrow \dfrac12=\dfrac{ED}{12} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( ED=6\,cm \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">مساحة $\Delta BCD$: قاعدتها $BC=10\,cm$ وارتفاعها $ED=6\,cm$ (لأن $ED\perp BC$)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \text{المساحة}=\dfrac12\times BC\times ED=\dfrac12\times10\times6 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \text{المساحة}=30\,cm^2 \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="callout tip fade-up">
+        <span class="icon">💡</span>
+        <span>طريقة أقصر: مساحة المسقط = مساحة $\Delta ABC$ × $\cos60°$ = $\left(\tfrac12\times12\times10\right)\times\tfrac12=60\times\tfrac12=30\,cm^2$ — نفس الناتج تماماً باستخدام تعريف 5-8 مباشرة.</span>
+      </div>
+      <div class="exercise-final">✓ مسقط $\Delta ABC$ على $(X)$ هو $\Delta BCD$، ومساحته $30\,cm^2$. و. هـ. م ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (2-5)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (2-5)</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً بالاستعانة برسمه، ثم اضغط «إظهار الحل» للتحقق من إجابتك.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pr1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">برهن أن طول قطعة المستقيم التي توازي مستوياً معلوماً يساوي طول مسقطها على المستوي المعلوم، وتوازيه.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="قطعة AB توازي المستوي X ومسقطها A'B' يشكلان متوازي أضلاع">
+            <polygon points="50,225 320,210 360,250 90,265" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="330" y="230" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <line x1="110" y1="90" x2="270" y2="105" stroke="#ff6b9d" stroke-width="2.6"/>
+            <circle cx="110" cy="90" r="5" fill="#e6394a"/>
+            <text x="86" y="82" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="270" cy="105" r="5" fill="#e6394a"/>
+            <text x="278" y="98" class="geo-label" font-size="16" fill="#e6394a">B</text>
+            <line x1="110" y1="90" x2="130" y2="240" stroke="#7c6fee" stroke-width="1.8" stroke-dasharray="4 3"/>
+            <circle cx="130" cy="242" r="4.5" fill="#17324a"/>
+            <text x="108" y="260" class="geo-label" font-size="14" fill="#17324a">A′</text>
+            <line x1="270" y1="105" x2="290" y2="248" stroke="#7c6fee" stroke-width="1.8" stroke-dasharray="4 3"/>
+            <circle cx="290" cy="250" r="4.5" fill="#17324a"/>
+            <text x="298" y="268" class="geo-label" font-size="14" fill="#17324a">B′</text>
+            <line x1="130" y1="242" x2="290" y2="250" stroke="#3fa9f5" stroke-width="2.6"/>
+          </svg>
+          <span class="diagram-caption">$\overleftrightarrow{AB}\parallel(X)$؛ $A',B'$ مساقط $A,B$؛ المطلوب إثبات $AB=A'B'$ <span class="ar-safe">و</span> $AB\parallel A'B'$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $\overleftrightarrow{AB}\parallel(X)$، $\overrightarrow{AA'}\perp(X)$، $\overrightarrow{BB'}\perp(X)$ ($A',B'\in(X)$)</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> $AB=A'B'$ (<span class="ar-safe">و</span> $AB\parallel A'B'$)</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pr1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن $\overrightarrow{AA'}\perp(X)$ <span class="ar-safe">و</span> $\overrightarrow{BB'}\perp(X)$، فهما متوازيان (المستقيمان العموديان على مستوٍ واحد متوازيان)؛ إذن $A,A',B',B$ نقاط مستوية (تقع في مستوي المتوازيين $AA',BB'$)، ليكن هذا المستوي $(Z)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{AA'}\parallel\overrightarrow{BB'} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $\overleftrightarrow{AB}\parallel(X)$ (معطى) <span class="ar-safe">و</span> $\overrightarrow{A'B'}=(X)\cap(Z)$، فإن $\overleftrightarrow{AB}\parallel\overleftrightarrow{A'B'}$ (المستقيم الموازي لمستوٍ يوازي تقاطع ذلك المستوي مع أي مستوٍ آخر يحويه)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overleftrightarrow{AB}\parallel\overleftrightarrow{A'B'} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">في المستوي $(Z)$: الشكل الرباعي $ABB'A'$ له ضلعان متقابلان متوازيان ($AA'\parallel BB'$ من الخطوة 1) وضلعان آخران متوازيان ($AB\parallel A'B'$ من الخطوة 2)؛ إذن هو متوازي أضلاع</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( ABB'A' \text{ متوازي أضلاع} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">وفي متوازي الأضلاع، الضلعان المتقابلان متساويان في الطول</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( AB=A'B' \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات $AB=A'B'$ <span class="ar-safe">و</span> $\overleftrightarrow{AB}\parallel\overleftrightarrow{A'B'}$. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pr2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">برهن أنه إذا قطع مستويان متوازيان بمستقيم فإن ميله على أحدهما يساوي ميله على الآخر.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مستقيم مائل يقطع مستويين متوازيين X و Y بنفس زاوية الميل">
+            <polygon points="40,90 300,78 335,112 75,124" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="305" y="98" class="geo-label" font-size="14" fill="#8a5a00">X</text>
+            <polygon points="40,210 300,198 335,232 75,244" fill="#ff8fc7" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="305" y="218" class="geo-label" font-size="14" fill="#8a1450">Y</text>
+            <line x1="230" y1="40" x2="150" y2="270" stroke="#7c6fee" stroke-width="2.6"/>
+            <circle cx="196" cy="103" r="4.5" fill="#e6394a"/>
+            <text x="203" y="98" class="geo-label" font-size="14" fill="#e6394a">P</text>
+            <circle cx="164" cy="223" r="4.5" fill="#e6394a"/>
+            <text x="171" y="240" class="geo-label" font-size="14" fill="#e6394a">Q</text>
+            <path d="M 196 103 A 22 22 0 0 1 210 88" fill="none" stroke="#3fa9f5" stroke-width="2"/>
+            <text x="205" y="80" font-size="12" fill="#3fa9f5" font-family="Cairo,sans-serif">θ</text>
+            <path d="M 164 223 A 22 22 0 0 1 178 208" fill="none" stroke="#3fa9f5" stroke-width="2"/>
+            <text x="173" y="200" font-size="12" fill="#3fa9f5" font-family="Cairo,sans-serif">θ</text>
+          </svg>
+          <span class="diagram-caption">$(X)\parallel(Y)$ يقطعهما مستقيم واحد عند $P,Q$؛ المطلوب إثبات تساوي زاويتي الميل عند $P$ وعند $Q$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $(X)\parallel(Y)$، مستقيم $l$ يقطع $(X)$ في $P$ <span class="ar-safe">و</span> $(Y)$ في $Q$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> زاوية ميل $l$ على $(X)$ = زاوية ميل $l$ على $(Y)$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pr2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">لتكن $A$ نقطة على $l$؛ نرسم $\overrightarrow{AC}\perp(X)$ ($C\in(X)$). بما أن $(X)\parallel(Y)$، فإن $\overrightarrow{AC}\perp(Y)$ أيضاً (المستقيم العمودي على أحد مستويين متوازيين عمودي على الآخر)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{AC}\perp(X)\,,\quad \overrightarrow{AC}\perp(Y) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">من نقطة $A$ لا يوجد إلا عمود وحيد على $(Y)$؛ وبما أن امتداد $\overrightarrow{AC}$ يقطع $(Y)$ في نقطة نسمّيها $D$، فإن $D$ هي أيضاً مسقط $A$ على $(Y)$ — أي أن $C,A,D$ تقع على استقامة واحدة (العمود نفسه)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C, A, D \text{ على استقامة واحدة} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">المستقيمان $l$ <span class="ar-safe">و</span> $\overleftrightarrow{CAD}$ يتقاطعان عند $A$، فيحدّدان مستوياً وحيداً $(Z)$؛ وبما أن $(Z)\cap(X)$ يمر بـ $P,C$ وهو مسقط $l$ على $(X)$، <span class="ar-safe">و</span> $(Z)\cap(Y)$ يمر بـ $Q,D$ وهو مسقط $l$ على $(Y)$، فكل الأشكال (المستقيم، مسقطاه، والعمود) تقع في المستوي المستوي $(Z)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( l,\ \overleftrightarrow{PC},\ \overleftrightarrow{QD} \subseteq (Z) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">بما أن $(X)\parallel(Y)$ ويقطعهما المستوي الثالث $(Z)$، فإن تقاطعيهما معه متوازيان: $\overleftrightarrow{PC}\parallel\overleftrightarrow{QD}$ (خاصية: مستويان متوازيان يقطعهما مستوٍ ثالث في مستقيمين متوازيين)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overleftrightarrow{PC}\parallel\overleftrightarrow{QD} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">الآن نعمل بالكامل داخل المستوي المسطّح $(Z)$: $l$ مستقيم واحد يقطع مستقيمين متوازيين ($PC,QD$)؛ فالزاوية بين $l$ <span class="ar-safe">و</span> $PC$ عند $P$ (وهي زاوية ميل $l$ على $X$) تساوي الزاوية بين $l$ <span class="ar-safe">و</span> $QD$ عند $Q$ (وهي زاوية ميل $l$ على $Y$) بخاصية الزوايا المتناظرة لمستقيمين متوازيين يقطعهما قاطع</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \theta_X = \theta_Y \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات أن زاوية ميل $l$ على $(X)$ تساوي زاوية ميله على $(Y)$. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-pr3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">برهن أن للمستقيمات المتوازية المائلة على مستوٍ معلوم زاوية الميل نفسها على ذلك المستوي.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مستقيمان متوازيان مائلان على مستوٍ X بنفس زاوية الميل">
+            <polygon points="40,215 320,200 360,240 90,258" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="330" y="222" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <line x1="110" y1="70" x2="160" y2="235" stroke="#ff6b9d" stroke-width="2.4"/>
+            <circle cx="110" cy="70" r="4.5" fill="#e6394a"/>
+            <text x="88" y="62" class="geo-label" font-size="14" fill="#e6394a">A₁</text>
+            <circle cx="160" cy="237" r="4.5" fill="#17324a"/>
+            <text x="140" y="255" class="geo-label" font-size="13" fill="#17324a">P₁</text>
+            <line x1="250" y1="70" x2="300" y2="228" stroke="#ff6b9d" stroke-width="2.4"/>
+            <circle cx="250" cy="70" r="4.5" fill="#e6394a"/>
+            <text x="256" y="62" class="geo-label" font-size="14" fill="#e6394a">A₂</text>
+            <circle cx="300" cy="230" r="4.5" fill="#17324a"/>
+            <text x="306" y="248" class="geo-label" font-size="13" fill="#17324a">P₂</text>
+            <path d="M 160 218 A 22 22 0 0 1 172 202" fill="none" stroke="#3fa9f5" stroke-width="2"/>
+            <text x="165" y="196" font-size="12" fill="#3fa9f5" font-family="Cairo,sans-serif">θ</text>
+            <path d="M 300 212 A 22 22 0 0 1 312 196" fill="none" stroke="#3fa9f5" stroke-width="2"/>
+            <text x="305" y="190" font-size="12" fill="#3fa9f5" font-family="Cairo,sans-serif">θ</text>
+          </svg>
+          <span class="diagram-caption">$l_1\parallel l_2$، كلاهما مائل على $(X)$؛ المطلوب إثبات تساوي زاويتَي الميل</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $l_1\parallel l_2$، كلاهما مائل على $(X)$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> زاوية ميل $l_1$ على $(X)$ = زاوية ميل $l_2$ على $(X)$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pr3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">لتكن $A_1\in l_1$، $A_2\in l_2$؛ نرسم $\overrightarrow{A_1H_1}\perp(X)$، $\overrightarrow{A_2H_2}\perp(X)$ (أعمدة على المستوي من كل نقطة)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{A_1H_1}\perp(X)\,,\quad \overrightarrow{A_2H_2}\perp(X) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن كلا العمودين عمودي على المستوي نفسه $(X)$، فهما متوازيان (المستقيمان العموديان على مستوٍ واحد متوازيان)، وبما أن $l_1\parallel l_2$ (معطى)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{A_1H_1}\parallel\overrightarrow{A_2H_2}\,,\quad l_1\parallel l_2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">إذن زاوية الميل عند $A_1$ (بين $l_1$ والعمود $A_1H_1$) وزاوية الميل عند $A_2$ (بين $l_2$ والعمود $A_2H_2$) محصورتان بين ضلعين متوازيين على التوالي في كل زاوية؛ والزاويتان اللتان أضلاعهما على التوازي (كل ضلع مع نظيره) متساويتان</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \angle(l_1,A_1H_1) = \angle(l_2,A_2H_2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">ومتمم كل من هاتين الزاويتين إلى 90° هو بالضبط زاوية الميل المطلوبة على $(X)$ (لأن العمود على $(X)$ يتمم زاوية الميل إلى الزاوية القائمة في المثلث القائم)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \theta_1 = 90° - \angle(l_1,A_1H_1) = 90° - \angle(l_2,A_2H_2) = \theta_2 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات أن $l_1$ <span class="ar-safe">و</span> $l_2$ لهما زاوية الميل نفسها على $(X)$. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> السؤال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-pr4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">برهن أنه إذا رُسم مائلان مختلفان في الطول من نقطة لا تنتمي إلى مستوٍ معلوم، فإن أطولهما تكون زاوية ميله على المستوي أصغر من زاوية ميل الآخر عليه.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مائلان AB وAC من نقطة A بعمود مشترك AH، AB أطول من AC">
+            <polygon points="50,225 320,212 360,250 90,265" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="330" y="235" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <circle cx="205" cy="60" r="5" fill="#e6394a"/>
+            <text x="213" y="55" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <line x1="205" y1="60" x2="205" y2="235" stroke="#17324a" stroke-width="2.2" stroke-dasharray="4 3"/>
+            <circle cx="205" cy="237" r="4.5" fill="#17324a"/>
+            <text x="212" y="255" class="geo-label" font-size="14" fill="#17324a">H</text>
+            <line x1="205" y1="60" x2="330" y2="238" stroke="#ff6b9d" stroke-width="2.6"/>
+            <circle cx="330" cy="238" r="5" fill="#e6394a"/>
+            <text x="338" y="255" class="geo-label" font-size="15" fill="#e6394a">B</text>
+            <line x1="205" y1="60" x2="140" y2="222" stroke="#7c6fee" stroke-width="2.6"/>
+            <circle cx="140" cy="224" r="5" fill="#e6394a"/>
+            <text x="108" y="240" class="geo-label" font-size="15" fill="#e6394a">C</text>
+            <path d="M 205 200 A 30 30 0 0 1 226 213" fill="none" stroke="#3fa9f5" stroke-width="2"/>
+            <text x="222" y="196" font-size="12" fill="#3fa9f5" font-family="Cairo,sans-serif">θB</text>
+            <path d="M 205 195 A 40 40 0 0 0 172 210" fill="none" stroke="#ff9f5e" stroke-width="2"/>
+            <text x="168" y="196" font-size="12" fill="#ff9f5e" font-family="Cairo,sans-serif">θC</text>
+          </svg>
+          <span class="diagram-caption">$\overrightarrow{AH}\perp(X)$ مشترك؛ $AB>AC$؛ المطلوب إثبات $\theta_B<\theta_C$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $A\notin(X)$، مائلان $\overrightarrow{AB},\overrightarrow{AC}$ ($B,C\in(X)$)، $AB>AC$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> زاوية ميل $AB$ (وهي $\theta_B=\angle ABH$) أصغر من زاوية ميل $AC$ (وهي $\theta_C=\angle ACH$)</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pr4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نرسم $\overrightarrow{AH}\perp(X)$ ($H$ مسقط $A$، وهو نفسه لكلا المائلين لأن العمود من $A$ على $(X)$ وحيد)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{AH}\perp(X) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">في $\Delta AHB$ القائم في $H$: $\sin\theta_B=\dfrac{AH}{AB}$؛ وفي $\Delta AHC$ القائم في $H$: $\sin\theta_C=\dfrac{AH}{AC}$ (الضلع $AH$ مقابل الزاوية، والمائل هو الوتر في كل مثلث)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sin\theta_B=\dfrac{AH}{AB}\,,\qquad \sin\theta_C=\dfrac{AH}{AC} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">بما أن $AB>AC$ (معطى) <span class="ar-safe">و</span> $AH$ ثابت مشترك، فإن القسمة على العدد الأكبر ($AB$) تعطي ناتجاً أصغر</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{AH}{AB} < \dfrac{AH}{AC} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">أي أن $\sin\theta_B<\sin\theta_C$، وبما أن دالة الجيب متزايدة على $(0°,90°)$، فإن هذا يعني مباشرة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \theta_B < \theta_C \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات أن المائل الأطول ($AB$) له زاوية ميل أصغر ($\theta_B<\theta_C$). و. هـ. م ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> السؤال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-pr5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">برهن أنه إذا رُسم مائلان من نقطة ما لا تنتمي إلى مستوٍ، فإن أصغرهما ميلاً هو الأطول.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مائلان من نقطة A، الأصغر ميلا هو الأطول">
+            <polygon points="50,225 320,212 360,250 90,265" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="330" y="235" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <circle cx="205" cy="60" r="5" fill="#e6394a"/>
+            <text x="213" y="55" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <line x1="205" y1="60" x2="205" y2="235" stroke="#17324a" stroke-width="2.2" stroke-dasharray="4 3"/>
+            <circle cx="205" cy="237" r="4.5" fill="#17324a"/>
+            <text x="212" y="255" class="geo-label" font-size="14" fill="#17324a">H</text>
+            <line x1="205" y1="60" x2="330" y2="238" stroke="#ff6b9d" stroke-width="2.6"/>
+            <circle cx="330" cy="238" r="5" fill="#e6394a"/>
+            <text x="338" y="255" class="geo-label" font-size="15" fill="#e6394a">B</text>
+            <line x1="205" y1="60" x2="140" y2="222" stroke="#7c6fee" stroke-width="2.6"/>
+            <circle cx="140" cy="224" r="5" fill="#e6394a"/>
+            <text x="108" y="240" class="geo-label" font-size="15" fill="#e6394a">C</text>
+            <path d="M 205 200 A 30 30 0 0 1 226 213" fill="none" stroke="#3fa9f5" stroke-width="2"/>
+            <text x="222" y="196" font-size="12" fill="#3fa9f5" font-family="Cairo,sans-serif">θB</text>
+            <path d="M 205 195 A 40 40 0 0 0 172 210" fill="none" stroke="#ff9f5e" stroke-width="2"/>
+            <text x="168" y="196" font-size="12" fill="#ff9f5e" font-family="Cairo,sans-serif">θC</text>
+          </svg>
+          <span class="diagram-caption">معطى $\theta_B<\theta_C$؛ المطلوب إثبات $AB>AC$ (عكس السؤال السابق)</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $A\notin(X)$، مائلان $\overrightarrow{AB},\overrightarrow{AC}$، زاوية ميل $AB$ (وهي $\theta_B$) أصغر من زاوية ميل $AC$ (وهي $\theta_C$)</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> $AB>AC$ (أي: صاحب الزاوية الأصغر هو المائل الأطول)</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pr5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">كما في السؤال السابق: $\overrightarrow{AH}\perp(X)$ العمود المشترك، وفي المثلثين القائمين $AHB,AHC$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sin\theta_B=\dfrac{AH}{AB}\,,\qquad \sin\theta_C=\dfrac{AH}{AC} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $\theta_B<\theta_C$ (معطى) ودالة الجيب متزايدة على $(0°,90°)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sin\theta_B < \sin\theta_C \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">بالتعويض: $\dfrac{AH}{AB}<\dfrac{AH}{AC}$؛ وبما أن $AH$ ثابت موجب مشترك، فضرب طرفي المتباينة بـ $\dfrac{AB\cdot AC}{AH}$ (وهو موجب) يعطي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( AC < AB \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات $AB>AC$: صاحب زاوية الميل الأصغر ($AB$) هو المائل الأطول. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> السؤال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-pr6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">برهن أن زاوية الميل بين المستقيم ومسقطه على مستوٍ أصغر من الزاوية المحصورة بين المستقيم نفسه وأي مستقيم آخر مرسوم من موقعه ضمن ذلك المستوي.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مستقيم مائل AP مع مسقطه PH وأي مستقيم آخر PM في المستوي X، زاوية الميل أصغر">
+            <polygon points="50,215 340,200 375,238 85,253" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="345" y="222" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <circle cx="240" cy="60" r="5" fill="#e6394a"/>
+            <text x="248" y="55" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="185" cy="230" r="5" fill="#17324a"/>
+            <text x="160" y="248" class="geo-label" font-size="15" fill="#17324a">P</text>
+            <line x1="240" y1="60" x2="185" y2="230" stroke="#ff6b9d" stroke-width="2.6"/>
+            <line x1="240" y1="60" x2="240" y2="222" stroke="#7c6fee" stroke-width="1.8" stroke-dasharray="4 3"/>
+            <circle cx="240" cy="224" r="4.5" fill="#17324a"/>
+            <text x="248" y="242" class="geo-label" font-size="14" fill="#17324a">H</text>
+            <line x1="185" y1="230" x2="240" y2="224" stroke="#3fa9f5" stroke-width="2.4"/>
+            <line x1="185" y1="230" x2="320" y2="212" stroke="#ff9f5e" stroke-width="2.2" stroke-dasharray="3 3"/>
+            <text x="322" y="208" class="geo-label" font-size="14" fill="#ff9f5e">M</text>
+            <path d="M 205 224 A 24 24 0 0 1 220 208" fill="none" stroke="#3fa9f5" stroke-width="2"/>
+            <text x="200" y="200" font-size="11" fill="#3fa9f5" font-family="Cairo,sans-serif">θ</text>
+            <path d="M 220 225 A 42 42 0 0 1 253 199" fill="none" stroke="#ff9f5e" stroke-width="2"/>
+            <text x="248" y="192" font-size="11" fill="#ff9f5e" font-family="Cairo,sans-serif">φ</text>
+          </svg>
+          <span class="diagram-caption">$\overrightarrow{PH}$ مسقط $\overrightarrow{PA}$ (زاوية الميل $\theta$)؛ $\overrightarrow{PM}$ أي مستقيم آخر في $(X)$ من $P$ (زاوية $\varphi$)؛ المطلوب إثبات $\theta<\varphi$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $\overrightarrow{AP}$ مائل على $(X)$ عند $P$، $\overrightarrow{AH}\perp(X)$، $\overrightarrow{PH}$ مسقط $\overrightarrow{AP}$ (زاوية الميل $\theta=\angle APH$)، $\overrightarrow{PM}$ أي مستقيم آخر في $(X)$ من $P$ (يصنع زاوية $\varphi=\angle APM$)</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> $\theta<\varphi$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pr6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">في المستوي $(X)$ نرسم $\overrightarrow{HK}\perp\overrightarrow{PM}$ عند $K$ (عمود من $H$ على $PM$ داخل المستوي)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{HK}\perp\overrightarrow{PM} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $\overrightarrow{AH}\perp(X)$ فهو عمودي على $\overrightarrow{PM}$ أيضاً (المستقيم العمودي على مستوٍ عمودي على كل مستقيم فيه)؛ إذن $\overrightarrow{PM}$ عمودي على مستقيمين متقاطعين ($AH,HK$) عند $H$، فهو عمودي على مستويهما $(AHK)$، وبالتالي عمودي على $\overrightarrow{AK}$ (مبرهنة الأعمدة الثلاثة: مسقط $AK$ هو $HK\perp PM$ ⟹ المائل $AK\perp PM$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{PM}\perp\overrightarrow{AK} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">في المثلث المسطّح $APM$ (تقع $A,P,M$ في مستوٍ واحد لأن $A,H,K$ محددة <span class="ar-safe">و</span> $M$ على $PM$): $AK$ ارتفاع من $A$ على $PM$؛ في المثلث القائم $APK$ (قائم في $K$): $PK=AP\cos\varphi$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( PK = AP\cos\varphi \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">وبالمثل في المثلث القائم $APH$ (قائم في $H$): $PH=AP\cos\theta$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( PH = AP\cos\theta \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">في المثلث $HKP$ (داخل المستوي $X$)، الزاوية في $K$ قائمة ($HK\perp PM$)؛ إذن $PH$ هو وتر هذا المثلث القائم <span class="ar-safe">و</span> $PK$ أحد ضلعيه؛ والوتر أطول من أي ضلع قائم آخر</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( PH > PK \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">بالتعويض: $AP\cos\theta > AP\cos\varphi$، وبما أن $AP>0$، فإن $\cos\theta>\cos\varphi$؛ وبما أن دالة جيب التمام متناقصة على $(0°,90°)$، فإن هذا يعني</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \theta < \varphi \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات أن زاوية الميل $\theta$ (مع المسقط) أصغر من الزاوية $\varphi$ مع أي مستقيم آخر في المستوي من نفس النقطة. و. هـ. م ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>1.</span><span>في المثال 4، الخطوة الأساسية لإثبات تعامد المسقطين كانت:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>حساب أطوال الأضلاع</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إثبات أن مستوي $BB',CC'$ عمودي على $AB$ ثم على $A'B'$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>افتراض أن $A,B,C$ في مستوٍ واحد مع $X$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>حساب زاوية الميل مباشرة</span></label>
+        </div>
+        <div class="quiz-explain">استخدمنا توازي الأعمدة الثلاثة لتكوين مستويين مساعدين، ثم أثبتنا أن أحدهما عمودي على $AB$ وبالتالي على $A'B'$ (الموازي له)، فينتج تعامده مع $B'C'$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>في المثال 5، مساحة مسقط المثلث حُسبت بطريقتين مختلفتين وأعطتا:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نتيجتين مختلفتين (15 و30)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>25 دائماً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نفس النتيجة 30 سم²</span></label>
+          <label class="quiz-opt"><input type="radio"><span>60 سم² في الطريقتين</span></label>
+        </div>
+        <div class="quiz-explain">سواء حسبنا مساحة $\Delta BCD$ مباشرة ($\tfrac12\times10\times6$) أو باستخدام $A'=A\cos\theta$ ($60\times\cos60°$)، فالناتج $30\,cm^2$ في الحالتين.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>3.</span><span>حسب السؤال 4، المائل الأطول من نقطة معينة إلى مستوٍ له زاوية ميل:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>لا علاقة لها بطول المائل</span></label>
+          <label class="quiz-opt"><input type="radio"><span>تساوي 90° دائماً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>أكبر من زاوية ميل المائل الأقصر</span></label>
+          <label class="quiz-opt"><input type="radio"><span>أصغر من زاوية ميل المائل الأقصر</span></label>
+        </div>
+        <div class="quiz-explain">المائل الأطول له $\sin\theta=\frac{AH}{\text{الطول}}$ أصغر (لأن المقام أكبر)، وبما أن الجيب متزايد على الفترة $(0°,90°)$، فزاويته أصغر.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>4.</span><span>في السؤال 6، الاستنتاج $PH>PK$ جاء من:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>كون $PH$ وتراً في مثلث قائم الزاوية <span class="ar-safe">و</span> $PK$ أحد ضلعيه</span></label>
+          <label class="quiz-opt"><input type="radio"><span>افتراض عشوائي بدون برهان</span></label>
+          <label class="quiz-opt"><input type="radio"><span>تساوي المثلثين $PHK$ <span class="ar-safe">و</span> $PAK$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>حساب مباشر للأطوال بالأرقام</span></label>
+        </div>
+        <div class="quiz-explain">في المثلث القائم الزاوية عند $K$، الوتر $PH$ أطول من أي ضلع قائم آخر فيه مثل $PK$ — خاصية أساسية في المثلث القائم.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>الفكرة المشتركة بين الأسئلة 4 و5 و6 في هذا الدرس هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>حساب مساحات فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>ربط طول المائل بزاوية ميله عبر جيب الزاوية في مثلث قائم مشترك الوتر أو الضلع</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إثبات توازي مستويات فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا علاقة بينها إطلاقاً</span></label>
+        </div>
+        <div class="quiz-explain">في الأسئلة الثلاثة استخدمنا العمود المشترك $AH$ ومثلثات قائمة الزاوية لربط طول المائل بجيب أو جيب تمام زاوية الميل.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>مسقط ضلع موازٍ لمستوٍ يوازي الضلع الأصلي، ما يفيد في نقل خاصية التعامد من الفراغ إلى المستوي.</span></li>
+        <li><span>مساحة مسقط منطقة مائلة تُحسب مباشرة إما هندسياً أو عبر $A'=A\cos\theta$.</span></li>
+        <li><span>العمود المشترك من نقطة خارجية إلى مستوٍ هو مفتاح كل مسائل مقارنة المائلات وزوايا ميلها.</span></li>
+        <li><span>دالة الجيب تربط زاوية الميل بالطول، ودالة جيب التمام تربط زاوية الميل بطول المسقط — كلتاهما رتيبتان على $(0°,90°)$ وهذا أساس كل مقارنات الأطوال والزوايا.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الفصل الذهنية الشاملة</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l5" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">مراجعة شاملة لكل مفاهيم الفصل الخامس قبل الاختبار النهائي.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l5">
+        <svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية شاملة للفصل الخامس">
+          <defs>
+            <linearGradient id="gC5b" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7c6fee"/><stop offset="1" stop-color="#3fa9f5"/>
+            </linearGradient>
+          </defs>
+          <line x1="450" y1="230" x2="180" y2="90" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="720" y2="90" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="150" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="750" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="230" y2="400" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="670" y2="400" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g class="mm-node"><circle cx="450" cy="230" r="62" fill="url(#gC5b)"/>
+            <text x="450" y="223" text-anchor="middle" fill="#fff" font-weight="800" font-size="16" font-family="Cairo,sans-serif">الهندسة</text>
+            <text x="450" y="243" text-anchor="middle" fill="#fff" font-size="14" font-family="Cairo,sans-serif">الفراغية</text></g>
+
+          <g class="mm-node"><circle cx="180" cy="90" r="52" fill="#ffab5e"/>
+            <text x="180" y="86" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Cairo,sans-serif">الزاوية</text>
+            <text x="180" y="103" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Cairo,sans-serif">الزوجية</text></g>
+
+          <g class="mm-node"><circle cx="720" cy="90" r="52" fill="#ff6b9d"/>
+            <text x="720" y="86" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Cairo,sans-serif">مبرهنات</text>
+            <text x="720" y="103" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Cairo,sans-serif">7 و8 و9</text></g>
+
+          <g class="mm-node"><circle cx="150" cy="250" r="52" fill="#2fd18f"/>
+            <text x="150" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">تطبيقات</text>
+            <text x="150" y="263" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">التعامد</text></g>
+
+          <g class="mm-node"><circle cx="750" cy="250" r="52" fill="#3fa9f5"/>
+            <text x="750" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">الإسقاط</text>
+            <text x="750" y="263" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">العمودي</text></g>
+
+          <g class="mm-node"><circle cx="230" cy="400" r="52" fill="#7c6fee"/>
+            <text x="230" y="393" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">المائل</text>
+            <text x="230" y="410" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">وزاوية الميل</text></g>
+
+          <g class="mm-node"><circle cx="670" cy="400" r="52" fill="#ff9f5e"/>
+            <text x="670" y="393" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">تطبيقات</text>
+            <text x="670" y="410" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الإسقاط</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الخامس · الهندسة الفراغية — الدرس 5: تطبيقات على الإسقاط العمودي</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch5.js"></script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 1: الزاوية الزوجية وتعامد المستويات — الفصل الخامس</title>
+<meta name="description" content="مفهوم الزاوية الزوجية بين مستويين، ترميزها، الزاوية المستوية العائدة لها، والعلاقة بين قياس الزاوية الزوجية وتعامد المستويين، مع رسم توضيحي لكل تعريف.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-1.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 1 من 5 · 5-1 و 5-2</span>
+    <h1>الزاوية الزوجية وتعامد المستويات</h1>
+    <p class="lead">نبدأ رحلتنا في الهندسة الفراغية بالتعرف على «الزاوية الزوجية» — الزاوية المحصورة بين مستويين — ونتعلم كيف نقيسها عبر «الزاوية المستوية العائدة» لها، وصولاً إلى النتيجة الأهم: متى يكون مستويان متعامدين.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يتعرف على مفهوم الهندسة الفراغية ومسلّماتها الأساسية عن المستقيم والمستوي والفضاء.</span></li>
+        <li><span class="obj-num">2</span><span>يتعرف على مفهوم الزاوية الزوجية، وحرفها، ووجهيها، ويكتب ترميزها الرياضي الصحيح.</span></li>
+        <li><span class="obj-num">3</span><span>يتعرف على مفهوم الزاوية المستوية العائدة لزاوية زوجية، وكيفية إنشائها بعمودين من نقطة على الحرف.</span></li>
+        <li><span class="obj-num">4</span><span>يستنتج العلاقة: قياس الزاوية الزوجية = قياس زاويتها المستوية العائدة، والعكس صحيح.</span></li>
+        <li><span class="obj-num">5</span><span>يستنتج أن الزاوية الزوجية القائمة تكافئ تعامد المستويين، والعكس صحيح.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 تمهيد">
+    <div class="card neu">
+      <h2>💡 5-1 تمهيد</h2>
+      <p>تلعب الهندسة في حياتنا اليومية دوراً فعّالاً؛ فقد استُخدمت قديماً في معرفة مواقيت الصلاة والأهلّة، وفي تصميم القصور والبنايات، وشقّ الأنهار والقنوات، وتسيير أمور الحياة اليومية، ولا زالت حتى يومنا هذا تلعب دوراً بارزاً في كثير من مواقف الحياة المعاصرة.</p>
+      <p>الهندسة الفراغية (أو الهندسة المجسّمة) هي الهندسة الإقليدية مطبّقة في فضاء إقليدي ثلاثي الأبعاد، مشابه للفضاء الذي نعيش فيه. تهتم بدراسة الأشكال الهندسية ثلاثية الأبعاد كالمكعب والموشور والمخروط والهرم والأسطوانة والكرة، وتقاطع المستقيمات والمستويات، وأحجام ومساحات أسطح هذه الأجسام.</p>
+      <div class="callout tip fade-up">
+        <span class="icon">💬</span>
+        <span>راجع من الصف الثاني: كل نقطتين تعيّنان مستقيماً واحداً وحيداً؛ كل ثلاث نقاط غير واقعة على استقامة واحدة تعيّن مستوياً واحداً وحيداً؛ وكل أربع نقاط ليست في مستوٍ واحد تعيّن فضاءً. إذن المستقيم يحتوي نقطتين على الأقل، والمستوي ثلاث نقاط على الأقل، والفضاء أربع نقاط على الأقل ليست جميعها في مستوٍ واحد.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="dihedral" data-navlabel="📐 الزاوية الزوجية">
+    <div class="card neu">
+      <h2>📐 5-2 الزاوية الزوجية</h2>
+      <p>لنتخيّل كتاباً نصف مفتوح: كل صفحة من صفحتيه تمثّل نصف مستوٍ، وحافة التجليد المشتركة بينهما تمثّل حرفاً مشتركاً. هذا بالضبط شكل الزاوية الزوجية.</p>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="زاوية زوجية بوجهين X و Y وحافة مشتركة AB">
+            <polygon points="230,60 75,40 75,210 230,230" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <polygon points="230,60 385,40 385,210 230,230" fill="#ff8fc7" stroke="#2ec4e6" stroke-width="2.5"/>
+            <line x1="230" y1="60" x2="230" y2="230" stroke="#17324a" stroke-width="3.5"/>
+            <circle cx="230" cy="60" r="5" fill="#e6394a"/>
+            <text x="238" y="50" class="geo-label" font-size="17" fill="#e6394a">A</text>
+            <circle cx="230" cy="230" r="5" fill="#e6394a"/>
+            <text x="238" y="252" class="geo-label" font-size="17" fill="#e6394a">B</text>
+            <text x="82" y="34" class="geo-label" font-size="17" fill="#8a5a00">X</text>
+            <text x="368" y="34" class="geo-label" font-size="17" fill="#8a1450">Y</text>
+            <text x="130" y="135" class="geo-label" font-size="16" fill="#8a5a00" opacity=".75">(X)</text>
+            <text x="320" y="135" class="geo-label" font-size="16" fill="#8a1450" opacity=".75">(Y)</text>
+          </svg>
+          <span class="diagram-caption">الشكل 1-5 — زاوية زوجية حرفها ⃖AB⃗ ووجهاها (X) و(Y)</span>
+        </div>
+      </div>
+
+      <div class="def-box">
+        <span class="def-label">📌 تعريف 5-1 — الزاوية الزوجية</span>
+        <p style="margin:.3rem 0">الزاوية الزوجية: هي اتحاد نصفَي مستويين لهما حافة مشتركة.</p>
+      </div>
+      <p style="margin-top:1rem">تُسمّى الحافة المشتركة <b>حرف الزاوية الزوجية</b>، ويُسمّى كل من نصفَي المستويين <b>وجه الزاوية الزوجية</b>.</p>
+
+      <h3 style="margin:1.4rem 0 .4rem">✏️ الترميز</h3>
+      <p>حيث $\overleftrightarrow{AB}$ هو حرف الزاوية الزوجية، <span class="ar-safe">و</span> $(X),(Y)$ هما وجهاها، نعبّر عن الزاوية الزوجية بالصيغة:</p>
+      <div class="rule-box">$$(Y) - \overleftrightarrow{AB} - (X)$$</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ثلاثة أوجه تتفرع من حافة مشتركة AB لتوضيح تعدد الزوايا الزوجية">
+            <polygon points="230,240 70,190 70,60 230,110" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <polygon points="230,240 230,50 285,45 285,225" fill="#ff8fc7" stroke="#2ec4e6" stroke-width="2.5"/>
+            <polygon points="230,240 400,220 400,175 230,190" fill="#c9b6ff" stroke="#2ec4e6" stroke-width="2.5"/>
+            <line x1="230" y1="50" x2="230" y2="240" stroke="#17324a" stroke-width="3.5"/>
+            <circle cx="230" cy="50" r="5" fill="#e6394a"/>
+            <text x="240" y="42" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="230" cy="240" r="5" fill="#e6394a"/>
+            <text x="240" y="262" class="geo-label" font-size="16" fill="#e6394a">B</text>
+            <text x="78" y="52" class="geo-label" font-size="16" fill="#8a5a00">X</text>
+            <text x="292" y="40" class="geo-label" font-size="16" fill="#8a1450">Y</text>
+            <text x="405" y="172" class="geo-label" font-size="16" fill="#5a3a99">Z</text>
+          </svg>
+          <span class="diagram-caption">الشكل 2-5 — ثلاثة أوجه X، Y، Z تتفرّع من الحافة المشتركة نفسها ⃖AB⃗</span>
+        </div>
+      </div>
+
+      <p>وقد يُعبَّر عنها بحرف الزاوية الزوجية فقط إن لم يكن مشتركاً مع زاوية زوجية أخرى. ففي الشكل 2-5 المجاور توجد الزوايا الزوجية الآتية جميعها على الحرف نفسه:</p>
+      <div class="mj-scroll">$$(X) - \overleftrightarrow{AB} - (Z)\;,\qquad (X) - \overleftrightarrow{AB} - (Y)\;,\qquad (Y) - \overleftrightarrow{AB} - (Z)$$</div>
+      <div class="callout warn fade-up">
+        <span class="icon">⚠️</span>
+        <span>لا يجوز أن نكتب الزاوية الزوجية بالصيغة $\overleftrightarrow{AB}$ فقط، لأن الحرف $\overleftrightarrow{AB}$ هنا مشترك في أكثر من زاوية زوجية واحدة — فلا بد من تسمية الوجهين لرفع الالتباس.</span>
+      </div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 340 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مثلثان يشتركان بالضلع BC يمثلان الزاوية الزوجية A-BC-D">
+            <polygon points="170,55 60,235 170,205" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <polygon points="170,55 280,235 170,205" fill="#ff8fc7" stroke="#2ec4e6" stroke-width="2.5"/>
+            <line x1="170" y1="55" x2="170" y2="205" stroke="#17324a" stroke-width="3"/>
+            <circle cx="170" cy="55" r="5" fill="#e6394a"/>
+            <text x="178" y="46" class="geo-label" font-size="16" fill="#e6394a">B</text>
+            <circle cx="170" cy="205" r="5" fill="#e6394a"/>
+            <text x="178" y="226" class="geo-label" font-size="16" fill="#e6394a">C</text>
+            <circle cx="60" cy="235" r="4.5" fill="#8a5a00"/>
+            <text x="38" y="252" class="geo-label" font-size="16" fill="#8a5a00">A</text>
+            <circle cx="280" cy="235" r="4.5" fill="#8a1450"/>
+            <text x="286" y="252" class="geo-label" font-size="16" fill="#8a1450">D</text>
+          </svg>
+          <span class="diagram-caption">الشكل 3-5 — عند وجود 4 نقاط غير مستوية نكتب الزاوية الزوجية $D-\overleftrightarrow{BC}-A$</span>
+        </div>
+      </div>
+      <p>ملاحظة: عندما يكون لدينا أربع نقاط ليست في مستوٍ واحد، نكتب الزاوية الزوجية بالصيغة $D-\overleftrightarrow{BC}-A$، أو نقول: الزاوية الزوجية بين المستويين $(ABC),(DBC)$.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="plane-angle" data-navlabel="📏 الزاوية المستوية العائدة">
+    <div class="card neu">
+      <h2>📏 قياس الزاوية الزوجية والزاوية المستوية العائدة لها</h2>
+      <p>وتُقاس الزاوية الزوجية كالآتي: نأخذ نقطة $D$ على الحافة المشتركة $\overleftrightarrow{AB}$، ومنها نرسم العمود $\overrightarrow{DC}$ في $(X)$، والعمود $\overrightarrow{DE}$ في $(Y)$ على الحرف $\overleftrightarrow{AB}$، فيكون قياس الزاوية الزوجية بين المستويين $(Y)-\overleftrightarrow{AB}-(X)$ هو قياس الزاوية $CDE$، وتُسمّى الزاوية $CDE$ <b>الزاوية المستوية العائدة</b> للزاوية الزوجية.</p>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="بناء الزاوية المستوية العائدة CDE عند نقطة D على حرف الزاوية الزوجية">
+            <polygon points="230,60 75,40 75,210 230,230" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <polygon points="230,60 385,40 385,210 230,230" fill="#d7e86b" stroke="#2ec4e6" stroke-width="2.5"/>
+            <line x1="230" y1="60" x2="230" y2="230" stroke="#17324a" stroke-width="3.5"/>
+            <circle cx="230" cy="60" r="5" fill="#e6394a"/>
+            <text x="238" y="50" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="230" cy="230" r="5" fill="#e6394a"/>
+            <text x="238" y="252" class="geo-label" font-size="16" fill="#e6394a">B</text>
+            <circle cx="230" cy="145" r="4.5" fill="#17324a"/>
+            <text x="205" y="140" class="geo-label" font-size="15" fill="#17324a">D</text>
+            <line x1="230" y1="145" x2="140" y2="118" stroke="#7c6fee" stroke-width="2.6" marker-end="url(#ar1)"/>
+            <text x="118" y="110" class="geo-label" font-size="15" fill="#7c6fee">C</text>
+            <line x1="230" y1="145" x2="320" y2="118" stroke="#7c6fee" stroke-width="2.6" marker-end="url(#ar1)"/>
+            <text x="326" y="110" class="geo-label" font-size="15" fill="#7c6fee">E</text>
+            <path d="M 200 135 A 34 34 0 0 1 260 135" fill="none" stroke="#ff6b9d" stroke-width="2.4"/>
+            <text x="82" y="34" class="geo-label" font-size="16" fill="#8a5a00">X</text>
+            <text x="368" y="34" class="geo-label" font-size="16" fill="#5a6a10">Y</text>
+            <defs><marker id="ar1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7c6fee"/></marker></defs>
+          </svg>
+          <span class="diagram-caption">الشكل 4-5 — $\overrightarrow{DC}\perp\overleftrightarrow{AB}$ في $(X)$، $\overrightarrow{DE}\perp\overleftrightarrow{AB}$ في $(Y)$، فالزاوية $CDE$ هي الزاوية المستوية العائدة</span>
+        </div>
+      </div>
+
+      <p>بعبارة أخرى، لدينا الزاوية الزوجية $(Y)-\overleftrightarrow{AB}-(X)$، ولدينا:</p>
+      <div class="mj-scroll">$$\overrightarrow{DC}\subseteq(X)\,,\ \overrightarrow{DE}\subseteq(Y)\,,\qquad \overrightarrow{DC}\perp\overleftrightarrow{AB}\,,\ \overrightarrow{DE}\perp\overleftrightarrow{AB}$$</div>
+      <p style="text-align:center;font-weight:800">$\angle CDE$ هي الزاوية العائدة للزاوية الزوجية $(Y)-\overleftrightarrow{AB}-(X)$</p>
+
+      <div class="def-box" style="margin-top:1.2rem">
+        <span class="def-label">📌 تعريف 5-2 — الزاوية المستوية العائدة لزاوية زوجية</span>
+        <p style="margin:.3rem 0">هي الزاوية التي ضلعاها عموديان على حرف الزاوية الزوجية من نقطة تنتمي إليه، وكل منهما في أحد وجهَي الزاوية الزوجية.</p>
+      </div>
+
+      <p style="margin-top:1rem">ومن تعريفَي الزاويتين (المستوية العائدة) و(الزوجية) نستنتج الآتي:</p>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>قياس أي زاوية عائدة لزاوية زوجية معيّنة ثابت (لا يتغيّر مهما اخترنا موضع $D$ على الحرف).</span></li>
+        <li><span class="obj-num">2</span><span>قياس الزاوية الزوجية يساوي قياس الزاوية المستوية العائدة لها، والعكس صحيح.</span></li>
+      </ol>
+
+      <div class="def-box" style="border-inline-start-color:var(--accent-green)">
+        <span class="def-label" style="color:var(--accent-green)">✅ استنتاج</span>
+        <p style="margin:.3rem 0">إذا كانت الزاوية الزوجية قائمة فإن المستويين متعامدان، والعكس صحيح.</p>
+      </div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مستوٍ رأسي X قائم فوق مستوٍ أفقي Y بحافة مشتركة AB وزاوية زوجية قائمة">
+            <polygon points="60,230 300,230 340,270 100,270" fill="#ff8fc7" stroke="#2ec4e6" stroke-width="2.5"/>
+            <polygon points="170,230 170,45 230,45 230,230" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <line x1="170" y1="230" x2="170" y2="45" stroke="#17324a" stroke-width="3.5"/>
+            <circle cx="170" cy="45" r="5" fill="#e6394a"/>
+            <text x="178" y="38" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="170" cy="230" r="5" fill="#e6394a"/>
+            <text x="150" y="250" class="geo-label" font-size="16" fill="#e6394a">B</text>
+            <rect x="170" y="212" width="16" height="16" fill="none" stroke="#e6394a" stroke-width="2.4"/>
+            <text x="182" y="70" class="geo-label" font-size="16" fill="#8a5a00">X</text>
+            <text x="315" y="252" class="geo-label" font-size="16" fill="#8a1450">Y</text>
+            <text x="240" y="120" font-size="14" fill="var(--text-secondary)" font-family="Cairo,sans-serif">90°</text>
+          </svg>
+          <span class="diagram-caption">الشكل 5-5 — قياس الزاوية الزوجية $(Y)-\overleftrightarrow{AB}-(X)$ يساوي 90° لذلك $(X)\perp(Y)$</span>
+        </div>
+      </div>
+      <p>لاحظ الشكل 5-5: قياس الزاوية الزوجية $(Y)-\overleftrightarrow{AB}-(X)$ يساوي 90°، لذلك يكون: $(X)\perp(Y)$.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: افتح الزاوية الزوجية</h2>
+      <p>حرّك المزلاج لتغيير فتحة الزاوية الزوجية بين الوجهين $(X)$ <span class="ar-safe">و</span> $(Y)$، ولاحظ كيف تتغيّر الزاوية المستوية العائدة $\angle CDE$ بنفس القيمة تماماً — فهي المقياس الحقيقي لفتحة الزاوية الزوجية.</p>
+      <div class="io-panel">
+        <div class="diagram-wrap"><svg id="dihedralFig" width="460" height="320" viewBox="0 0 460 320" role="img" aria-label="زاوية زوجية تفاعلية قابلة للتغيير"></svg></div>
+        <div class="io-row">
+          <label for="angSlider" style="min-width:10rem">فتحة الزاوية الزوجية = <span id="angVal">90</span>°</label>
+          <input type="range" id="angSlider" class="neu-range" min="30" max="170" step="1" value="90">
+        </div>
+        <div class="rule-box" id="angFormula">$$m\angle CDE = 90°$$</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>الزاوية الزوجية هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>اتحاد نصفَي مستقيمين لهما نقطة مشتركة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>تقاطع مستويين في نقطة واحدة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>اتحاد نصفَي مستويين لهما حافة مشتركة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>زاوية محصورة بين ثلاثة مستقيمات</span></label>
+        </div>
+        <div class="quiz-explain">حسب تعريف 5-1، الزاوية الزوجية هي اتحاد نصفَي مستويين لهما حافة مشتركة.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>لماذا لا يجوز كتابة الزاوية الزوجية بالصيغة $\overleftrightarrow{AB}$ فقط عند وجود أكثر من وجهين على الحرف نفسه؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>لأن $\overleftrightarrow{AB}$ رمز خاطئ للحرف</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن الحرف $\overleftrightarrow{AB}$ مشترك بين أكثر من زاوية زوجية فيلزم تسمية الوجهين لرفع الالتباس</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن الحرف يجب أن يكون قطعة مستقيمة لا مستقيماً كاملاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن الزاوية الزوجية لا تحتاج إلى حرف أصلاً</span></label>
+        </div>
+        <div class="quiz-explain">إن وُجدت عدة أوجه على الحرف نفسه (كما في الشكل 2-5)، فكتابة الحرف وحده لا تحدد أي زاوية زوجية بعينها.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>3.</span><span>الزاوية المستوية العائدة لزاوية زوجية تُنشأ برسم:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>مستقيمين متوازيين مع الحرف</span></label>
+          <label class="quiz-opt"><input type="radio"><span>عمود واحد فقط من طرف الحرف</span></label>
+          <label class="quiz-opt"><input type="radio"><span>منصّف كل وجه من الوجهين</span></label>
+          <label class="quiz-opt"><input type="radio"><span>عمودين على الحرف من نقطة عليه، كل منهما في أحد الوجهين</span></label>
+        </div>
+        <div class="quiz-explain">حسب تعريف 5-2، ضلعا الزاوية المستوية العائدة عموديان على حرف الزاوية الزوجية من نقطة تنتمي إليه، وكل منهما في أحد وجهي الزاوية الزوجية.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>4.</span><span>إذا كانت الزاوية الزوجية بين مستويين قائمة، فإن المستويين:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>متعامدان</span></label>
+          <label class="quiz-opt"><input type="radio"><span>متوازيان</span></label>
+          <label class="quiz-opt"><input type="radio"><span>متطابقان</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا يمكن تحديد العلاقة بينهما</span></label>
+        </div>
+        <div class="quiz-explain">بالاستنتاج: إذا كانت الزاوية الزوجية قائمة فإن المستويين متعامدان، والعكس صحيح.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>5.</span><span>قياس الزاوية الزوجية يساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نصف قياس الزاوية المستوية العائدة لها</span></label>
+          <label class="quiz-opt"><input type="radio"><span>ضعف قياس الزاوية المستوية العائدة لها</span></label>
+          <label class="quiz-opt"><input type="radio"><span>قياس الزاوية المستوية العائدة لها تماماً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>مكمّل قياس الزاوية المستوية العائدة لها</span></label>
+        </div>
+        <div class="quiz-explain">قياس الزاوية الزوجية يساوي قياس الزاوية المستوية العائدة لها تماماً، والعكس صحيح.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>الزاوية الزوجية: اتحاد نصفَي مستويين لهما حافة مشتركة (الحرف)، وكل نصف مستوٍ يسمى وجهاً.</span></li>
+        <li><span>تُكتب الزاوية الزوجية بذكر الوجهين معاً $(Y)-\overleftrightarrow{AB}-(X)$ إذا شارك الحرف أكثر من زاوية زوجية.</span></li>
+        <li><span>الزاوية المستوية العائدة: زاوية $CDE$ ضلعاها عموديان على الحرف من نقطة $D$ عليه، كل ضلع في أحد الوجهين.</span></li>
+        <li><span>قياس الزاوية الزوجية = قياس زاويتها المستوية العائدة (والعكس صحيح).</span></li>
+        <li><span>الزاوية الزوجية القائمة ⟺ المستويان متعامدان.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l1" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l1">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الأول">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#7c6fee"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">الزاوية</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">الزوجية</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">حرف</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">ووجهان</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#2fd18f"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">الزاوية</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">المستوية العائدة</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#ffab5e"/>
+            <text x="150" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">قياسها =</text>
+            <text x="150" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">قياس العائدة</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ff6b9d"/>
+            <text x="670" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">قائمة ⟺</text>
+            <text x="670" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">مستويان متعامدان</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الخامس · الهندسة الفراغية — الدرس 1: الزاوية الزوجية وتعامد المستويات</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch5.js"></script>
+<script>
+(function(){
+  var ns = "http://www.w3.org/2000/svg";
+  function el(svg, tag, attrs){
+    var e = document.createElementNS(ns, tag);
+    for(var k in attrs) e.setAttribute(k, attrs[k]);
+    svg.appendChild(e);
+    return e;
+  }
+  function text(svg, x, y, s, attrs){
+    var t = el(svg, "text", Object.assign({x:x, y:y, "font-family":"Cairo,sans-serif"}, attrs||{}));
+    t.textContent = s;
+    return t;
+  }
+
+  var svg = document.getElementById("dihedralFig");
+  var slider = document.getElementById("angSlider");
+  var angVal = document.getElementById("angVal");
+  var formula = document.getElementById("angFormula");
+  var W = 460, H = 320;
+  var Ax = 230, Ay = 40, Bx = 230, By = 280, Dx = 230, Dy = 160;
+  var armLen = 95;
+
+  function render(){
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    var deg = parseInt(slider.value, 10);
+    angVal.textContent = deg;
+    var half = (deg/2) * Math.PI/180;
+
+    /* two rays from D, symmetric about the vertical edge, opening angle = deg */
+    var Cx = Dx - armLen*Math.sin(half), Cy = Dy - armLen*Math.cos(half);
+    var Ex = Dx + armLen*Math.sin(half), Ey = Dy - armLen*Math.cos(half);
+
+    /* faces: quads from A to a far corner (beyond C / E) down to B */
+    var farC = [Dx - 1.7*armLen*Math.sin(half), Ay + 10];
+    var farC2 = [Dx - 1.7*armLen*Math.sin(half), By - 10];
+    var farE = [Dx + 1.7*armLen*Math.sin(half), Ay + 10];
+    var farE2 = [Dx + 1.7*armLen*Math.sin(half), By - 10];
+
+    el(svg,"polygon",{points: Ax+","+Ay+" "+farC[0]+","+farC[1]+" "+farC2[0]+","+farC2[1]+" "+Bx+","+By, fill:"#ffe066", stroke:"#2ec4e6", "stroke-width":2.5});
+    el(svg,"polygon",{points: Ax+","+Ay+" "+farE[0]+","+farE[1]+" "+farE2[0]+","+farE2[1]+" "+Bx+","+By, fill:"#ff8fc7", stroke:"#2ec4e6", "stroke-width":2.5});
+
+    el(svg,"line",{x1:Ax,y1:Ay,x2:Bx,y2:By,stroke:"#17324a","stroke-width":3.5});
+    el(svg,"circle",{cx:Ax,cy:Ay,r:5,fill:"#e6394a"});
+    text(svg, Ax+12, Ay-8, "A", {"font-size":15,"font-weight":800,fill:"#e6394a"});
+    el(svg,"circle",{cx:Bx,cy:By,r:5,fill:"#e6394a"});
+    text(svg, Bx+12, By+20, "B", {"font-size":15,"font-weight":800,fill:"#e6394a"});
+
+    el(svg,"circle",{cx:Dx,cy:Dy,r:4.5,fill:"#17324a"});
+    text(svg, Dx-24, Dy+5, "D", {"font-size":14,"font-weight":800,fill:"#17324a"});
+
+    el(svg,"line",{x1:Dx,y1:Dy,x2:Cx,y2:Cy,stroke:"#7c6fee","stroke-width":2.6,"marker-end":"url(#arD)"});
+    text(svg, Cx-16, Cy-8, "C", {"font-size":14,"font-weight":800,fill:"#7c6fee"});
+    el(svg,"line",{x1:Dx,y1:Dy,x2:Ex,y2:Ey,stroke:"#7c6fee","stroke-width":2.6,"marker-end":"url(#arD)"});
+    text(svg, Ex+8, Ey-8, "E", {"font-size":14,"font-weight":800,fill:"#7c6fee"});
+
+    /* arc for angle CDE */
+    var r = 34;
+    var a1 = Math.atan2(Cy-Dy, Cx-Dx), a2 = Math.atan2(Ey-Dy, Ex-Dx);
+    var sx = Dx + r*Math.cos(a1), sy = Dy + r*Math.sin(a1);
+    var ex = Dx + r*Math.cos(a2), ey = Dy + r*Math.sin(a2);
+    var largeArc = (a2-a1) > Math.PI ? 1 : 0;
+    el(svg,"path",{d:"M "+sx+" "+sy+" A "+r+" "+r+" 0 "+largeArc+" 1 "+ex+" "+ey, fill:"none", stroke:"#ff6b9d","stroke-width":2.4});
+
+    var defs = el(svg,"defs",{});
+    var marker = document.createElementNS(ns,"marker");
+    marker.setAttribute("id","arD"); marker.setAttribute("markerWidth","9"); marker.setAttribute("markerHeight","9");
+    marker.setAttribute("refX","6"); marker.setAttribute("refY","3"); marker.setAttribute("orient","auto");
+    var mpath = document.createElementNS(ns,"path"); mpath.setAttribute("d","M0,0 L7,3 L0,6 Z"); mpath.setAttribute("fill","#7c6fee");
+    marker.appendChild(mpath); defs.appendChild(marker);
+
+    formula.innerHTML = "$$m\\angle CDE = "+deg+"°$$";
+    window.Ch4.typeset([formula]);
+  }
+  slider.addEventListener("input", render);
+  render();
+})();
+</script>
+</body>
+</html>
