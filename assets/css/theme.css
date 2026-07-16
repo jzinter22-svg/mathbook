@@ -343,10 +343,10 @@ input[type=text].neu-input,input[type=number].neu-input{
    before every definition/theorem/example/exercise, per project requirement
    that every geometry item ships its own diagram. Mirrors .mindmap-wrap's
    responsive rules so figures never cause horizontal page scroll. ===== */
-.diagram-wrap{overflow-x:auto;padding:.4rem 0 .2rem;text-align:center}
-.diagram-wrap svg{display:block;margin:0 auto;max-width:100%;height:auto}
-.diagram-caption{display:block;margin-top:.5rem;font-size:.85rem;font-weight:700;color:var(--text-secondary)}
-.diagram-card{padding:1.1rem 1rem .6rem;margin-bottom:1.1rem;border-radius:var(--radius-md);
+.diagram-wrap{overflow-x:auto;padding:.6rem 0 .4rem;text-align:center}
+.diagram-wrap svg{display:block;margin:0 auto;max-width:85%;height:auto}
+.diagram-caption{display:block;margin-top:.65rem;font-size:.85rem;font-weight:700;color:var(--text-secondary)}
+.diagram-card{padding:1.1rem 1rem .8rem;margin-bottom:1.4rem;border-radius:var(--radius-md);
   background:var(--surface);box-shadow:6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light)}
 .geo-right-angle{fill:none;stroke-width:2}
 .geo-arc{fill:none;stroke-width:2}
