@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 3: تطبيقات على تعامد المستويات — الفصل الخامس</title>
+<meta name="description" content="أمثلة محلولة وتمارين مستقلة على المبرهنات 7 و8 و9 في تعامد المستويات، كل سؤال ببطاقته الخاصة ورسمه التوضيحي وحله الكامل خطوة بخطوة.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-3.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 3 من 5 · أمثلة 1-3 وتمرين (1-5)</span>
+    <h1>تطبيقات على تعامد المستويات</h1>
+    <p class="lead">حان وقت توظيف المبرهنات 7 و8 و9 في مسائل حقيقية. كل سؤال هنا مستقل ببطاقته الخاصة، وله رسمه التوضيحي الذي يجب أن تدرسه أولاً قبل الضغط على «إظهار الحل».</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يوظّف مبرهنة الأعمدة الثلاثة مع تعريف الزاوية المستوية العائدة لإيجاد قياس زاوية زوجية عددياً.</span></li>
+        <li><span class="obj-num">2</span><span>يبرهن تعامد مستقيم مع مستوٍ باستخدام سلسلة من المبرهنات 7 و8 معاً في برهان واحد مركّب.</span></li>
+        <li><span class="obj-num">3</span><span>يوظّف فكرة «مستوي مستقيمين متقاطعين» لبناء مستوٍ مساعد يخدم البرهان.</span></li>
+        <li><span class="obj-num">4</span><span>يحل ستة تمارين برهانية مستقلة على تعامد المستويات، كل تمرين ببطاقته ورسمه الخاصين.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">ادرس الرسم أولاً، ثم اضغط «إظهار الحل» لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">في الشكل المجاور $\Delta ABC$ فيه: $\overrightarrow{BD}\perp(ABC)$، $m\angle CAB=30°$، $BD=5\,cm$، $AB=10\,cm$. جد قياس الزاوية الزوجية $D-\overleftrightarrow{AC}-B$.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="رباعي وجوه D فوق B، قاعدته المثلث ABC، مع العمود BD والزاوية 30 درجة عند A">
+            <polygon points="90,190 340,205 210,300" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <circle cx="90" cy="190" r="5" fill="#e6394a"/>
+            <text x="64" y="185" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="340" cy="205" r="5" fill="#e6394a"/>
+            <text x="350" y="205" class="geo-label" font-size="16" fill="#e6394a">B</text>
+            <circle cx="210" cy="300" r="5" fill="#e6394a"/>
+            <text x="200" y="322" class="geo-label" font-size="16" fill="#e6394a">C</text>
+            <circle cx="340" cy="70" r="5" fill="#7c6fee"/>
+            <text x="350" y="65" class="geo-label" font-size="16" fill="#7c6fee">D</text>
+            <line x1="340" y1="205" x2="340" y2="70" stroke="#17324a" stroke-width="2.8"/>
+            <rect x="326" y="188" width="14" height="14" fill="none" stroke="#e6394a" stroke-width="2"/>
+            <text x="356" y="145" font-size="13" fill="var(--text-secondary)" font-family="Cairo,sans-serif">5 cm</text>
+            <text x="205" y="188" font-size="13" fill="var(--text-secondary)" font-family="Cairo,sans-serif">10 cm</text>
+            <path d="M 118 190 A 30 30 0 0 1 128 208" fill="none" stroke="#ff6b9d" stroke-width="2"/>
+            <text x="122" y="220" font-size="12" fill="#ff6b9d" font-family="Cairo,sans-serif">30°</text>
+            <circle cx="140" cy="222" r="4" fill="#17324a"/>
+            <text x="120" y="238" class="geo-label" font-size="14" fill="#17324a">E</text>
+            <line x1="140" y1="222" x2="340" y2="205" stroke="#7c6fee" stroke-width="1.8" stroke-dasharray="4 3"/>
+            <line x1="140" y1="222" x2="340" y2="70" stroke="#7c6fee" stroke-width="1.8" stroke-dasharray="4 3"/>
+          </svg>
+          <span class="diagram-caption">الشكل 11-5 — $\overrightarrow{BD}\perp(ABC)$؛ نرسم $\overrightarrow{BE}\perp\overleftrightarrow{AC}$ في $E$ فتكون $\overrightarrow{DE}\perp\overleftrightarrow{AC}$ (مبرهنة الأعمدة الثلاثة)</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $\overrightarrow{BD}\perp(ABC)$، $m\angle CAB=30°$، $BD=5\,cm$، $AB=10\,cm$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> قياس الزاوية الزوجية $D-\overleftrightarrow{AC}-B$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">في المستوي $(ABC)$ نرسم $\overrightarrow{BE}\perp\overleftrightarrow{AC}$ عند $E$ (في المستوي الواحد يوجد عمود وحيد على مستقيم من نقطة معلومة)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{BE}\perp\overleftrightarrow{AC} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $\overrightarrow{BD}\perp(ABC)$ (معطى)، فبمبرهنة الأعمدة الثلاثة: مسقط $\overrightarrow{DE}$ (وهو $\overrightarrow{BE}$) عمودي على $\overleftrightarrow{AC}$ ⟹ $\overrightarrow{DE}$ نفسه عمودي على $\overleftrightarrow{AC}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{DE}\perp\overleftrightarrow{AC} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">إذن الزاوية $DEB$ هي الزاوية المستوية العائدة للزاوية الزوجية $D-\overleftrightarrow{AC}-B$ (تعريف 5-2)، وبما أن $\overrightarrow{BD}\perp(ABC)$ فإن $\overrightarrow{BD}\perp\overrightarrow{BE}$ أيضاً، أي أن $\Delta DBE$ قائم الزاوية في $B$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \Delta DBE \text{ قائم في } B \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">في $\Delta BEA$ القائم الزاوية في $E$: نستخدم الزاوية 30° عند $A$ لإيجاد $BE$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \sin30°=\dfrac{BE}{BA} \Rightarrow \dfrac12=\dfrac{BE}{10} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( BE=5\,cm \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">في $\Delta DBE$ القائم الزاوية في $B$: $BD=5\,cm$ (معطى) و$BE=5\,cm$ (من الخطوة السابقة)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \tan(\angle BED)=\dfrac{BD}{BE}=\dfrac55=1 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( m\angle BED=45° \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ قياس الزاوية الزوجية $B-\overleftrightarrow{AC}-D$ يساوي $45°$. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ليكن $ABC$ مثلثاً، وليكن: $\overrightarrow{AF}\perp(ABC)$، $\overrightarrow{BD}\perp\overleftrightarrow{CF}$، $\overrightarrow{BE}\perp\overleftrightarrow{CA}$. أثبت أن: (1) $\overrightarrow{BE}\perp(CAF)$، (2) $\overrightarrow{ED}\perp\overleftrightarrow{CF}$.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="رباعي وجوه F فوق A، قاعدته المثلث ABC، مع نقطتي D على CF و E على CA">
+            <polygon points="150,270 320,290 100,180" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <circle cx="150" cy="270" r="5" fill="#e6394a"/>
+            <text x="130" y="292" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="320" cy="290" r="5" fill="#e6394a"/>
+            <text x="330" y="292" class="geo-label" font-size="16" fill="#e6394a">B</text>
+            <circle cx="100" cy="180" r="5" fill="#e6394a"/>
+            <text x="72" y="178" class="geo-label" font-size="16" fill="#e6394a">C</text>
+            <circle cx="150" cy="90" r="5" fill="#7c6fee"/>
+            <text x="158" y="85" class="geo-label" font-size="16" fill="#7c6fee">F</text>
+            <line x1="150" y1="270" x2="150" y2="90" stroke="#17324a" stroke-width="2.8"/>
+            <rect x="136" y="256" width="14" height="14" fill="none" stroke="#e6394a" stroke-width="2"/>
+            <line x1="100" y1="180" x2="150" y2="90" stroke="#2ec4e6" stroke-width="2"/>
+            <circle cx="122" cy="139" r="4.5" fill="#17324a"/>
+            <text x="98" y="130" class="geo-label" font-size="14" fill="#17324a">D</text>
+            <line x1="100" y1="180" x2="150" y2="270" stroke="#2ec4e6" stroke-width="2"/>
+            <circle cx="127" cy="222" r="4.5" fill="#17324a"/>
+            <text x="98" y="228" class="geo-label" font-size="14" fill="#17324a">E</text>
+            <line x1="320" y1="290" x2="122" y2="139" stroke="#ff6b9d" stroke-width="2" stroke-dasharray="4 3"/>
+            <line x1="320" y1="290" x2="127" y2="222" stroke="#ff6b9d" stroke-width="2" stroke-dasharray="4 3"/>
+          </svg>
+          <span class="diagram-caption">الشكل 12-5 — $\overrightarrow{AF}\perp(ABC)$، $D\in\overleftrightarrow{CF}$، $E\in\overleftrightarrow{CA}$، مع القطعتين $\overrightarrow{BD}$ و$\overrightarrow{BE}$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $\overrightarrow{AF}\perp(ABC)$، $\overrightarrow{BD}\perp\overleftrightarrow{CF}$، $\overrightarrow{BE}\perp\overleftrightarrow{CA}$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> (1) $\overrightarrow{BE}\perp(CAF)$    (2) $\overrightarrow{ED}\perp\overleftrightarrow{CF}$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن $\overrightarrow{AF}\perp(ABC)$ (معطى) وهو محتوى في المستوي $(CAF)$، فبمبرهنة 8: كل مستوٍ يحوي مستقيماً عمودياً على مستوٍ آخر يكون عمودياً عليه</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (CAF)\perp(ABC) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $\overrightarrow{BE}\perp\overleftrightarrow{CA}$ (معطى)، و$\overleftrightarrow{CA}$ هو خط تقاطع $(CAF),(ABC)$، فبمبرهنة 7: المستقيم في أحد مستويين متعامدين عمودياً على حرف التقاطع يكون عمودياً على المستوي الآخر</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{BE}\perp(CAF) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">✓ تم إثبات الجزء الأول: و. هـ. م (1)</p>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">من الخطوة 2: $\overrightarrow{BE}\perp(CAF)$، والمستقيم $\overleftrightarrow{CF}\subseteq(CAF)$؛ إذن $\overrightarrow{BE}\perp\overleftrightarrow{CF}$ (المستقيم العمودي على مستوٍ يكون عمودياً على جميع المستقيمات المحتواة فيه)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{BE}\perp\overleftrightarrow{CF} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">لدينا الآن $\overrightarrow{BD}\perp\overleftrightarrow{CF}$ (معطى) و$\overrightarrow{BE}\perp\overleftrightarrow{CF}$ (من الخطوة 4)، وكلاهما يمر بالنقطة $B$؛ إذن $\overleftrightarrow{CF}$ عمودي على مستوي $(BDE)$ نفسه (المستقيم العمودي على مستقيمين متقاطعين من نقطة تقاطعهما يكون عمودياً على مستويهما)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overleftrightarrow{CF}\perp(BDE) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">بما أن $\overrightarrow{ED}\subseteq(BDE)$، فإن $\overleftrightarrow{CF}\perp\overrightarrow{ED}$ (المستقيم العمودي على مستوٍ يكون عمودياً على جميع المستقيمات المحتواة فيه)، أي $\overrightarrow{ED}\perp\overleftrightarrow{CF}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{ED}\perp\overleftrightarrow{CF} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات (1) $\overrightarrow{BE}\perp(CAF)$ و(2) $\overrightarrow{ED}\perp\overleftrightarrow{CF}$. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$(X),(Y)$ مستويان متعامدان، $\overleftrightarrow{AB}\subseteq(X)$، $\overrightarrow{BC},\overrightarrow{BD}$ عموديان على $\overleftrightarrow{AB}$ ويقطعان $(Y)$ في $C,D$ على الترتيب. برهن أن $\overleftrightarrow{CD}\perp(X)$.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مستوٍ رأسي X يحوي AB، ومستوٍ أفقي Y يقطعه شعاعا BC و BD عند C و D">
+            <polygon points="130,50 300,60 300,220 130,210" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="270" y="80" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <circle cx="215" cy="65" r="5" fill="#e6394a"/>
+            <text x="223" y="58" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="215" cy="200" r="5" fill="#17324a"/>
+            <text x="223" y="220" class="geo-label" font-size="16" fill="#17324a">B</text>
+            <line x1="215" y1="65" x2="215" y2="200" stroke="#17324a" stroke-width="2.6"/>
+            <polygon points="60,235 400,250 440,290 100,275" fill="#ff8fc7" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="65" y="260" class="geo-label" font-size="15" fill="#8a1450">Y</text>
+            <line x1="215" y1="200" x2="140" y2="252" stroke="#7c6fee" stroke-width="2.4"/>
+            <circle cx="140" cy="252" r="5" fill="#e6394a"/>
+            <text x="112" y="270" class="geo-label" font-size="16" fill="#e6394a">C</text>
+            <line x1="215" y1="200" x2="330" y2="262" stroke="#7c6fee" stroke-width="2.4"/>
+            <circle cx="330" cy="262" r="5" fill="#e6394a"/>
+            <text x="338" y="280" class="geo-label" font-size="16" fill="#e6394a">D</text>
+            <rect x="196" y="188" width="14" height="12" fill="none" stroke="#e6394a" stroke-width="2" transform="rotate(-10 203 194)"/>
+          </svg>
+          <span class="diagram-caption">الشكل 13-5 — $\overleftrightarrow{AB}\subseteq(X)$، $\overrightarrow{BC}\perp\overleftrightarrow{AB}$ و$\overrightarrow{BD}\perp\overleftrightarrow{AB}$ يقطعان $(Y)$ في $C,D$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $(X)\perp(Y)$، $\overleftrightarrow{AB}\subseteq(X)$، $\overrightarrow{BC}\perp\overleftrightarrow{AB}$، $\overrightarrow{BD}\perp\overleftrightarrow{AB}$، يقطعان $(Y)$ في $C,D$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> $\overleftrightarrow{CD}\perp(X)$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$\overrightarrow{BC}$ و$\overrightarrow{BD}$ مستقيمان متقاطعان عند $B$؛ ليكن $(Z)$ مستويهما الوحيد (لكل مستقيمين متقاطعين مستوٍ وحيد يحتويهما)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (Z)\supseteq\overrightarrow{BC},\overrightarrow{BD} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $\overleftrightarrow{AB}\perp\overrightarrow{BC}$ و$\overleftrightarrow{AB}\perp\overrightarrow{BD}$ (معطى)، وهما متقاطعان عند $B$ في $(Z)$: المستقيم العمودي على مستقيمين متقاطعين من نقطة تقاطعهما يكون عمودياً على مستويهما</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overleftrightarrow{AB}\perp(Z) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">بما أن $\overleftrightarrow{AB}\subseteq(X)$ (معطى)، فبمبرهنة 8: يتعامد المستويان إذا احتوى أحدهما على مستقيم عمودي على الآخر</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (X)\perp(Z) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">لدينا الآن مستويان متقاطعان $(Z),(Y)$ كلاهما عمودي على $(X)$: $(X)\perp(Z)$ (من الخطوة 3) و$(X)\perp(Y)$ (معطى)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (X)\perp(Z)\,,\quad (X)\perp(Y) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">بما أن $C,D$ نقطتان تنتميان لكل من $(Y)$ و$(Z)$ معاً (فـ $C,D\in(Y)$ لأنهما نقطتا تقاطع $BC,BD$ مع $Y$، و$C,D\in(Z)$ لأنهما على $BC,BD$ المحتويين في $Z$)، فإن $\overleftrightarrow{CD}=(Y)\cap(Z)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overleftrightarrow{CD}=(Y)\cap(Z) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">بنتيجة مبرهنة 9: إذا كان كل من مستويين متقاطعين $(Y),(Z)$ عمودياً على مستوٍ ثالث $(X)$ فإن مستقيم تقاطعهما يكون عمودياً على $(X)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overleftrightarrow{CD}\perp(X) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات $\overleftrightarrow{CD}\perp(X)$. و. هـ. م ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (1-5)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (1-5)</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً بالاستعانة برسمه، ثم اضغط «إظهار الحل» للتحقق من إجابتك.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">برهن أن مستوي الزاوية العائدة المستوية لزاوية زوجية يكون عمودياً على حرفها.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="زاوية زوجية بحافة AB ونقطة D عليها وشعاعا DC وDE مع مستوي الزاوية العائدة CDE">
+            <polygon points="210,55 65,38 65,195 210,215" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <polygon points="210,55 355,38 355,195 210,215" fill="#ff8fc7" stroke="#2ec4e6" stroke-width="2.5"/>
+            <line x1="210" y1="55" x2="210" y2="215" stroke="#17324a" stroke-width="3.2"/>
+            <circle cx="210" cy="55" r="5" fill="#e6394a"/>
+            <text x="218" y="46" class="geo-label" font-size="15" fill="#e6394a">A</text>
+            <circle cx="210" cy="215" r="5" fill="#e6394a"/>
+            <text x="218" y="236" class="geo-label" font-size="15" fill="#e6394a">B</text>
+            <circle cx="210" cy="135" r="4.5" fill="#17324a"/>
+            <text x="186" y="130" class="geo-label" font-size="14" fill="#17324a">D</text>
+            <polygon points="210,135 130,110 148,168" fill="#ff6b9d" opacity=".35"/>
+            <line x1="210" y1="135" x2="130" y2="110" stroke="#7c6fee" stroke-width="2.4" marker-end="url(#e1a)"/>
+            <text x="108" y="104" class="geo-label" font-size="14" fill="#7c6fee">C</text>
+            <line x1="210" y1="135" x2="290" y2="108" stroke="#7c6fee" stroke-width="2.4" marker-end="url(#e1a)"/>
+            <text x="296" y="102" class="geo-label" font-size="14" fill="#7c6fee">E</text>
+            <rect x="196" y="121" width="12" height="12" fill="none" stroke="#e6394a" stroke-width="1.8"/>
+            <defs><marker id="e1a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7c6fee"/></marker></defs>
+          </svg>
+          <span class="diagram-caption">مستوي الزاوية العائدة هو مستوي $(CDE)$ (المظلل)؛ المطلوب إثبات $\overleftrightarrow{AB}\perp(CDE)$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> الزاوية الزوجية $(Y)-\overleftrightarrow{AB}-(X)$، $D\in\overleftrightarrow{AB}$، $\overrightarrow{DC}\perp\overleftrightarrow{AB}$ في $(X)$، $\overrightarrow{DE}\perp\overleftrightarrow{AB}$ في $(Y)$ (أي $\angle CDE$ هي الزاوية المستوية العائدة)</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> $\overleftrightarrow{AB}\perp(CDE)$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pq1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">من تعريف الزاوية المستوية العائدة (تعريف 5-2): $\overrightarrow{DC}\perp\overleftrightarrow{AB}$ و$\overrightarrow{DE}\perp\overleftrightarrow{AB}$ (كلاهما معطى)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overleftrightarrow{AB}\perp\overrightarrow{DC}\,,\quad \overleftrightarrow{AB}\perp\overrightarrow{DE} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$\overrightarrow{DC}$ و$\overrightarrow{DE}$ مستقيمان متقاطعان عند النقطة $D$ نفسها (فهما ضلعا الزاوية $CDE$)، وهما يحدّدان مستوياً وحيداً هو $(CDE)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (CDE) \text{ هو مستوي } \overrightarrow{DC},\overrightarrow{DE} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">بما أن $\overleftrightarrow{AB}$ عمودي على المستقيمين المتقاطعين $\overrightarrow{DC},\overrightarrow{DE}$ من نقطة تقاطعهما $D$، فهو عمودي على مستويهما (المستقيم العمودي على مستقيمين متقاطعين من نقطة تقاطعهما يكون عمودياً على مستويهما)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overleftrightarrow{AB}\perp(CDE) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات أن مستوي الزاوية العائدة $(CDE)$ عمودي على حرف الزاوية الزوجية $\overleftrightarrow{AB}$. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">برهن أنه إذا وازى مستقيم مستوياً وكان عمودياً على مستوٍ آخر فإن المستويين متعامدان.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مستقيم l موازٍ للمستوي X وعمودي على المستوي Y">
+            <polygon points="40,235 260,220 300,258 80,272" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="270" y="240" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <polygon points="330,240 410,232 410,90 330,98" fill="#ff8fc7" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="345" y="115" class="geo-label" font-size="15" fill="#8a1450">Y</text>
+            <line x1="90" y1="150" x2="365" y2="165" stroke="#7c6fee" stroke-width="2.6" marker-end="url(#e2a)"/>
+            <text x="72" y="146" class="geo-label" font-size="15" fill="#7c6fee">l</text>
+            <line x1="130" y1="176" x2="150" y2="172" stroke="#7c6fee" stroke-width="1.6"/>
+            <line x1="130" y1="186" x2="150" y2="182" stroke="#7c6fee" stroke-width="1.6"/>
+            <rect x="352" y="148" width="13" height="13" fill="none" stroke="#e6394a" stroke-width="2" transform="rotate(4 358 155)"/>
+            <defs><marker id="e2a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7c6fee"/></marker></defs>
+          </svg>
+          <span class="diagram-caption">$l\parallel(X)$، $l\perp(Y)$؛ المطلوب إثبات $(X)\perp(Y)$ (علامتا التوازي القصيرتان على $l$ تقابلان مستقيماً في $(X)$)</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> مستقيم $l$، $l\parallel(X)$، $l\perp(Y)$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> $(X)\perp(Y)$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pq2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن $l\parallel(X)$، يوجد في $(X)$ مستقيم $l'$ يوازي $l$ (خاصية: المستقيم الموازي لمستوٍ يوازي مستقيماً محتوىً في ذلك المستوي، وهو تقاطع أي مستوٍ يحوي $l$ مع $(X)$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( l' \subseteq (X)\,,\quad l'\parallel l \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $l\perp(Y)$ (معطى) و$l'\parallel l$، فإن $l'\perp(Y)$ أيضاً (المستقيم الموازي لمستقيم عمودي على مستوٍ يكون هو الآخر عمودياً على ذلك المستوي)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( l'\perp(Y) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">بما أن $l'\subseteq(X)$ و$l'\perp(Y)$، فبمبرهنة 8: كل مستوٍ يحوي مستقيماً عمودياً على مستوٍ آخر يكون عمودياً عليه</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (X)\perp(Y) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات $(X)\perp(Y)$. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">برهن أن المستوي العمودي على أحد مستويين متوازيين يكون عموداً على الآخر أيضاً.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مستويان متوازيان X و Y ومستوٍ ثالث Z عمودي على X">
+            <polygon points="40,110 300,95 340,130 80,145" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="310" y="120" class="geo-label" font-size="15" fill="#8a5a00">X</text>
+            <polygon points="40,220 300,205 340,240 80,255" fill="#ff8fc7" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="310" y="230" class="geo-label" font-size="15" fill="#8a1450">Y</text>
+            <polygon points="150,60 220,68 200,270 130,262" fill="#c9b6ff" opacity=".9" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="205" y="55" class="geo-label" font-size="15" fill="#5a3a99">Z</text>
+            <rect x="163" y="112" width="13" height="13" fill="none" stroke="#e6394a" stroke-width="2" transform="rotate(4 170 118)"/>
+            <rect x="153" y="222" width="13" height="13" fill="none" stroke="#e6394a" stroke-width="2" transform="rotate(4 160 228)"/>
+          </svg>
+          <span class="diagram-caption">$(X)\parallel(Y)$، $(Z)\perp(X)$؛ المطلوب إثبات $(Z)\perp(Y)$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $(X)\parallel(Y)$، $(Z)\perp(X)$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> $(Z)\perp(Y)$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pq3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن $(Z)\perp(X)$، يوجد في $(Z)$ مستقيم $m$ عمودي على $(X)$ (مستقيم الزاوية المستوية العائدة للزاوية الزوجية القائمة بين $Z,X$، المرسوم من نقطة على حرف تقاطعهما)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( m\subseteq(Z)\,,\quad m\perp(X) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $(X)\parallel(Y)$ (معطى) و$m\perp(X)$، فإن $m\perp(Y)$ أيضاً (المستقيم العمودي على أحد مستويين متوازيين يكون عمودياً على الآخر — خاصية سابقة من الصف الثاني)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( m\perp(Y) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">بما أن $m\subseteq(Z)$ و$m\perp(Y)$، فبمبرهنة 8: كل مستوٍ يحوي مستقيماً عمودياً على مستوٍ آخر يكون عمودياً عليه</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (Z)\perp(Y) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات $(Z)\perp(Y)$. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> السؤال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$A,B,C,D$ أربع نقاط ليست في مستوٍ واحد بحيث $AB=AC$، $E\in\overleftrightarrow{BC}$، فإذا كانت $\angle AED$ عائدة إلى الزاوية الزوجية $D-\overleftrightarrow{BC}-A$، برهن أن $BD=CD$.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="رباعي وجوه A,B,C,D حيث AB=AC وE منتصف BC والزاوية AED عائدة للزاوية الزوجية">
+            <polygon points="210,60 90,235 330,235" fill="#ffe066" stroke="#2ec4e6" stroke-width="2.5"/>
+            <circle cx="210" cy="60" r="5" fill="#e6394a"/>
+            <text x="218" y="52" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="90" cy="235" r="5" fill="#e6394a"/>
+            <text x="62" y="252" class="geo-label" font-size="16" fill="#e6394a">B</text>
+            <circle cx="330" cy="235" r="5" fill="#e6394a"/>
+            <text x="338" y="252" class="geo-label" font-size="16" fill="#e6394a">C</text>
+            <circle cx="210" cy="235" r="4.5" fill="#17324a"/>
+            <text x="216" y="256" class="geo-label" font-size="14" fill="#17324a">E</text>
+            <circle cx="240" cy="120" r="5" fill="#7c6fee"/>
+            <text x="250" y="115" class="geo-label" font-size="16" fill="#7c6fee">D</text>
+            <line x1="210" y1="235" x2="240" y2="120" stroke="#17324a" stroke-width="2.4"/>
+            <line x1="90" y1="235" x2="240" y2="120" stroke="#2ec4e6" stroke-width="2" stroke-dasharray="4 3"/>
+            <line x1="330" y1="235" x2="240" y2="120" stroke="#2ec4e6" stroke-width="2" stroke-dasharray="4 3"/>
+            <rect x="196" y="221" width="14" height="12" fill="none" stroke="#e6394a" stroke-width="1.8"/>
+          </svg>
+          <span class="diagram-caption">$AB=AC$، $E$ على $\overleftrightarrow{BC}$، $\angle AED$ هي الزاوية المستوية العائدة للزاوية الزوجية $D-\overleftrightarrow{BC}-A$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $A,B,C,D$ غير مستوية، $AB=AC$، $E\in\overleftrightarrow{BC}$، $\angle AED$ عائدة للزاوية الزوجية $D-\overleftrightarrow{BC}-A$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> $BD=CD$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pq4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن $\angle AED$ هي الزاوية المستوية العائدة للزاوية الزوجية $D-\overleftrightarrow{BC}-A$، فمن تعريف 5-2: ضلعاها عموديان على الحرف $\overleftrightarrow{BC}$ عند $E$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{EA}\perp\overleftrightarrow{BC}\,,\quad \overrightarrow{ED}\perp\overleftrightarrow{BC} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">في $\Delta ABC$: بما أن $AB=AC$ (معطى) فالمثلث متساوي الساقين، وبما أن $\overrightarrow{EA}\perp\overleftrightarrow{BC}$ (من الخطوة 1)، فإن $E$ هي منتصف $\overleftrightarrow{BC}$ (العمود النازل من رأس مثلث متساوي الساقين على القاعدة ينصفها)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( BE=CE \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">قارن الآن مثلثي $DEB$ و$DEC$: $DE$ ضلع مشترك، $BE=CE$ (من الخطوة 2)، $m\angle DEB=m\angle DEC=90°$ (من الخطوة 1، $\overrightarrow{ED}\perp\overleftrightarrow{BC}$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( DE=DE\,,\ BE=CE\,,\ \angle DEB=\angle DEC=90° \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">إذن $\Delta DEB \cong \Delta DEC$ (ضلع، زاوية، ضلع: ساق، زاوية قائمة محصورة، ساق)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \Delta DEB \cong \Delta DEC \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">ومن تطابق المثلثين، الضلعان المتناظران متساويان</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( BD=CD \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات $BD=CD$. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> السؤال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">برهن أنه إذا وازى كل من مستقيمين متقاطعين مستوياً معلوماً، وكانا عموديين على مستويين متقاطعين، فإن مستقيم تقاطع المستويين المتقاطعين يكون عمودياً على المستوي المعلوم.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مستقيمان متقاطعان يوازيان مستوياً W وعموديان على مستويين متقاطعين X وY">
+            <polygon points="30,255 210,245 240,275 60,285" fill="#d7e8ff" stroke="#2ec4e6" stroke-width="2"/>
+            <text x="45" y="272" class="geo-label" font-size="14" fill="#3a6a99">W</text>
+            <polygon points="150,220 150,60 90,72 90,232" fill="#c9b6ff" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="98" y="80" class="geo-label" font-size="15" fill="#5a3a99">X</text>
+            <polygon points="150,220 150,60 260,75 260,240" fill="#ff8fc7" stroke="#2ec4e6" stroke-width="2.5"/>
+            <text x="235" y="80" class="geo-label" font-size="15" fill="#8a1450">Y</text>
+            <line x1="150" y1="60" x2="150" y2="220" stroke="#17324a" stroke-width="3.2"/>
+            <line x1="120" y1="150" x2="70" y2="230" stroke="#7c6fee" stroke-width="2.2" stroke-dasharray="5 3" marker-end="url(#e5a)"/>
+            <text x="55" y="248" class="geo-label" font-size="14" fill="#7c6fee">l₁</text>
+            <line x1="180" y1="150" x2="235" y2="230" stroke="#7c6fee" stroke-width="2.2" stroke-dasharray="5 3" marker-end="url(#e5a)"/>
+            <text x="240" y="248" class="geo-label" font-size="14" fill="#7c6fee">l₂</text>
+            <defs><marker id="e5a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#7c6fee"/></marker></defs>
+          </svg>
+          <span class="diagram-caption">$l_1\parallel(W)$، $l_2\parallel(W)$، $l_1\perp(X)$، $l_2\perp(Y)$؛ المطلوب إثبات $(X)\cap(Y)\perp(W)$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> $l_1,l_2$ متقاطعان، $l_1\parallel(W)$، $l_2\parallel(W)$، $l_1\perp(X)$، $l_2\perp(Y)$، $(X)\cap(Y)$ موجود</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> $(X)\cap(Y)\perp(W)$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pq5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن $l_1\parallel(W)$ و$l_1\perp(X)$، فبنتيجة السؤال 2 أعلاه (مستقيم يوازي مستوياً وعمودي على آخر ⟹ المستويان متعامدان)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (X)\perp(W) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">وبنفس المنطق: بما أن $l_2\parallel(W)$ و$l_2\perp(Y)$، فإن</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (Y)\perp(W) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">لدينا الآن مستويان متقاطعان $(X),(Y)$ (معطى) وكلاهما عمودي على $(W)$؛ بنتيجة مبرهنة 9: مستقيم تقاطع مستويين متقاطعين عموديين على مستوٍ ثالث يكون عمودياً على ذلك المستوي الثالث</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (X)\cap(Y)\perp(W) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات $(X)\cap(Y)\perp(W)$. و. هـ. م ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> السؤال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">دائرة قطرها $AB$، $AC$ عمود على مستويها، $D$ نقطة تنتمي للدائرة. برهن أن: $(CDA)\perp(CDB)$.</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="دائرة قطرها AB في مستو أفقي، AC عمودي عليها، D على الدائرة، مثلثا CDA وCDB">
+            <ellipse cx="210" cy="235" rx="140" ry="42" fill="#ffe066" opacity=".9" stroke="#2ec4e6" stroke-width="2.5"/>
+            <circle cx="70" cy="235" r="5" fill="#e6394a"/>
+            <text x="42" y="255" class="geo-label" font-size="16" fill="#e6394a">A</text>
+            <circle cx="350" cy="235" r="5" fill="#e6394a"/>
+            <text x="358" y="255" class="geo-label" font-size="16" fill="#e6394a">B</text>
+            <line x1="70" y1="235" x2="350" y2="235" stroke="#17324a" stroke-width="2"/>
+            <circle cx="245" cy="195" r="5" fill="#17324a"/>
+            <text x="253" y="188" class="geo-label" font-size="15" fill="#17324a">D</text>
+            <line x1="70" y1="235" x2="245" y2="195" stroke="#2ec4e6" stroke-width="2"/>
+            <line x1="350" y1="235" x2="245" y2="195" stroke="#2ec4e6" stroke-width="2"/>
+            <circle cx="70" cy="90" r="5" fill="#7c6fee"/>
+            <text x="46" y="82" class="geo-label" font-size="16" fill="#7c6fee">C</text>
+            <line x1="70" y1="235" x2="70" y2="90" stroke="#17324a" stroke-width="2.6"/>
+            <rect x="70" y="221" width="14" height="14" fill="none" stroke="#e6394a" stroke-width="2"/>
+            <line x1="70" y1="90" x2="245" y2="195" stroke="#ff6b9d" stroke-width="2" stroke-dasharray="4 3"/>
+            <line x1="70" y1="90" x2="350" y2="235" stroke="#ff6b9d" stroke-width="2" stroke-dasharray="4 3"/>
+            <rect x="230" y="188" width="13" height="12" fill="none" stroke="#17324a" stroke-width="1.6" transform="rotate(30 236 194)"/>
+          </svg>
+          <span class="diagram-caption">$AB$ قطر الدائرة، $\overrightarrow{AC}$ عمودي على مستوي الدائرة، $D$ نقطة على الدائرة ⟹ $m\angle ADB=90°$</span>
+        </div>
+      </div>
+
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطيات:</b> دائرة قطرها $AB$، $\overrightarrow{AC}\perp$ مستوي الدائرة، $D$ نقطة تنتمي للدائرة</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب إثباته:</b> $(CDA)\perp(CDB)$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-pq6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن $AB$ قطر الدائرة و$D$ نقطة عليها، فإن الزاوية المحيطية المرسومة على القطر قائمة: $m\angle ADB=90°$، أي $\overrightarrow{AD}\perp\overrightarrow{DB}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{AD}\perp\overrightarrow{DB} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $\overrightarrow{AC}\perp$ مستوي الدائرة (معطى)، وهذا المستوي يحوي $\overrightarrow{DB}$، فإن المستقيم العمودي على مستوٍ يكون عمودياً على جميع المستقيمات المحتواة فيه</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{AC}\perp\overrightarrow{DB} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">من الخطوتين 1 و2: $\overrightarrow{DB}$ عمودي على مستقيمين هما $\overrightarrow{AD}$ و$\overrightarrow{AC}$، وهذان المستقيمان متقاطعان عند $A$ ويحدّدان المستوي $(ACD)$ (لكل مستقيمين متقاطعين مستوٍ وحيد يحتويهما)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{DB}\perp\overrightarrow{AD}\,,\quad \overrightarrow{DB}\perp\overrightarrow{AC} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">إذن $\overrightarrow{DB}$ عمودي على مستوي $(ACD)$ بالكامل (المستقيم العمودي على مستقيمين متقاطعين يكون عمودياً على مستويهما)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{DB}\perp(ACD) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">بما أن $\overrightarrow{DB}\subseteq(CDB)$ (المثلث $CDB$ يحوي الضلع $DB$)، فبمبرهنة 8: كل مستوٍ يحوي مستقيماً عمودياً على مستوٍ آخر يكون عمودياً عليه</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (CDB)\perp(ACD) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تم إثبات $(CDA)\perp(CDB)$. و. هـ. م ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>في المثال 1، لماذا نرسم $\overrightarrow{BE}\perp\overleftrightarrow{AC}$ أولاً قبل استخدام مبرهنة الأعمدة الثلاثة؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>لأن $B$ نقطة عشوائية لا علاقة لها بالحل</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لتحديد طول $AB$ فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن $BE$ مسقط $DE$ على المستوي، ومبرهنة الأعمدة الثلاثة تربط عمودية المسقط بعمودية المائل</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأنها خطوة اختيارية يمكن حذفها</span></label>
+        </div>
+        <div class="quiz-explain">مبرهنة الأعمدة الثلاثة تحتاج أولاً مسقطاً عمودياً على المستقيم (هنا $BE$) لنستنتج أن المائل $DE$ عمودي عليه أيضاً.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>في المثال 2، الاستنتاج $\overrightarrow{ED}\perp\overleftrightarrow{CF}$ اعتمد بشكل أساسي على:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>حساب طول $ED$ مباشرة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إثبات أن $\overleftrightarrow{CF}$ عمودي على مستوي $(BDE)$ بأكمله</span></label>
+          <label class="quiz-opt"><input type="radio"><span>حساب زاوية $CAB$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>استخدام تطابق مثلثات</span></label>
+        </div>
+        <div class="quiz-explain">بما أن $\overleftrightarrow{CF}$ عمودي على مستقيمين متقاطعين ($BD,BE$) فهو عمودي على مستويهما $(BDE)$، وبالتالي عمودي على كل مستقيم فيه ومنها $ED$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>في المثال 3، المستوي المساعد $(Z)$ عُرِّف كـ:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>مستوي المستقيمين المتقاطعين $\overrightarrow{BC},\overrightarrow{BD}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>مستوي النقطة $A$ فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نفس المستوي $(Y)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>مستوي عمودي على $\overleftrightarrow{CD}$ فقط</span></label>
+        </div>
+        <div class="quiz-explain">$(Z)$ هو المستوي الوحيد الذي يحتوي المستقيمين المتقاطعين $BC,BD$، وقد استُخدم لإثبات $(X)\perp(Z)$ أولاً.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>في تمرين السؤال 4، لإثبات $BD=CD$ استخدمنا في النهاية:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نظرية فيثاغورس فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>حساب المثلثات (الجيب وجيب التمام)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>تعريف الزاوية الزوجية فقط دون تطابق مثلثات</span></label>
+          <label class="quiz-opt"><input type="radio"><span>تطابق المثلثين $DEB$ و$DEC$ (ض.ز.ض)</span></label>
+        </div>
+        <div class="quiz-explain">بعد إثبات $BE=CE$ وأن الزاويتين عند $E$ قائمتان و$DE$ ضلع مشترك، تطابق المثلثين بحالة (ض.ز.ض) يعطي $BD=CD$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>في السؤال 6، الخطوة الحاسمة التي مكّنتنا من إثبات $(CDA)\perp(CDB)$ هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>حساب طول القطر $AB$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إثبات أن $\overrightarrow{DB}$ عمودي على مستوي $(ACD)$ بأكمله</span></label>
+          <label class="quiz-opt"><input type="radio"><span>افتراض أن $D$ منتصف القطر</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إثبات توازي $AC$ مع $DB$</span></label>
+        </div>
+        <div class="quiz-explain">بمجرد إثبات $\overrightarrow{DB}\perp(ACD)$، ينطبق مباشرة نص مبرهنة 8 لإثبات تعامد المستويين لأن $(CDB)$ يحوي $DB$.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>لإيجاد قياس زاوية زوجية عددياً: أنشئ الزاوية المستوية العائدة أولاً (غالباً بمساعدة مبرهنة الأعمدة الثلاثة)، ثم استخدم حساب المثلثات.</span></li>
+        <li><span>لإثبات تعامد مستقيم مع مستوٍ: ابحث عن مستقيمين متقاطعين في ذلك المستوي كلاهما عمودي على المستقيم المطلوب.</span></li>
+        <li><span>لإثبات تعامد مستويين: ابحث عن مستقيم في أحدهما عمودي على الآخر (مبرهنة 8)، أو استخدم الزاوية الزوجية القائمة مباشرة.</span></li>
+        <li><span>المستوي المساعد (مستوي مستقيمين متقاطعين) أداة أساسية في براهين تعامد المستويات المركّبة.</span></li>
+        <li><span>الزاوية المحيطية على القطر قائمة دائماً — أداة مفيدة عند ظهور دائرة في مسألة فراغية.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l3" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع لاستراتيجيات حل مسائل تعامد المستويات.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l3">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الثالث">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#7c6fee"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">استراتيجيات</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">الحل</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">قياس عددي</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">⟵ عائدة</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#2fd18f"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">مستوٍ ⊥</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">مستقيمين متقاطعين</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#ffab5e"/>
+            <text x="150" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">مستوٍ مساعد</text>
+            <text x="150" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">Z</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ff6b9d"/>
+            <text x="670" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">زاوية محيطية</text>
+            <text x="670" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">على القطر = 90°</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الخامس · الهندسة الفراغية — الدرس 3: تطبيقات على تعامد المستويات</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch5.js"></script>
+</body>
+</html>
