@@ -64,7 +64,8 @@
         <button class="neu-btn" data-reveal-steps="steps-ex15">إظهار الحل</button>
       </div>
       <div class="example-problem">قطعة أرض مستطيلة الشكل محيطها $600\,m$، جد كل من بعديها بحيث تكون مساحتها أكبر ما يمكن؟</div>
-      <ol class="steps hidden-steps" id="steps-ex15">
+      <div class="hidden-steps" id="steps-ex15">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نفرض أن أبعاد المستطيل هي $x$، $y$، وأن المساحة $A$ فتكون</p>
           <div class="calc-flow"><div class="calc-line calc-box">$A=x\cdot y \;\;\dots(1)$</div></div>
@@ -107,6 +108,7 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ بعدا الأرض $150\,m\times150\,m$ (مربّع)، وأكبر مساحة ممكنة $=22500\,m^2$. ∎</div>
+      </div>
     </div>
 
     <div class="example fade-up">
@@ -115,36 +117,39 @@
         <button class="neu-btn" data-reveal-steps="steps-ex16">إظهار الحل</button>
       </div>
       <div class="example-problem">ما العددان اللذان مجموعهما 20 ومجموع مربعيهما أقل ما يمكن؟</div>
-      <ol class="steps hidden-steps" id="steps-ex16">
+      <div class="hidden-steps" id="steps-ex16">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">نفرض العدد الأول $x$، والعدد الثاني $y$، ونفرض مجموع مربعيهما $z$</p>
+          <p class="calc-note">نفرض العدد الأول $x$، والعدد الثاني $y$، ونفرض دالة مجموع مربعيهما $z(x)$</p>
           <div class="calc-flow">
             <div class="calc-line">$x+y=20 \Rightarrow y=20-x \;\;\dots(1)$</div>
-            <div class="calc-line calc-box">$z=x^2+y^2 \;\;\dots(2)$</div>
+            <div class="calc-line calc-box">$z(x)=x^2+y^2 \;\;\dots(2)$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
           <p class="calc-note">نعوّض معادلة (1) في (2)</p>
           <div class="calc-flow">
-            <div class="calc-line">$z=x^2+(20-x)^2=x^2+400-40x+x^2$</div>
+            <div class="calc-line">$z(x)=x^2+(20-x)^2$</div>
+            <div class="calc-line">$z(x)=x^2+400-40x+x^2$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line calc-box">$z=2x^2-40x+400$</div>
+            <div class="calc-line calc-box">$z(x)=2x^2-40x+400$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">نشتق ونجعل المشتقة تساوي صفر</p>
           <div class="calc-flow">
-            <div class="calc-line">$\dfrac{dz}{dx}=4x-40=0 \Rightarrow 4x=40$</div>
+            <div class="calc-line">$z'(x)=4x-40=0 \Rightarrow 4x=40$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">$x=10$ &nbsp; (العدد الأول)</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">4</span><div class="step-body">
           <p class="calc-note">$y=20-x=20-10=10$ &nbsp; (العدد الثاني)</p>
-          <div class="calc-flow"><div class="calc-line calc-box">وللتأكد أن قيمة $x$ هي قيمة صغرى نستخرج المشتقة الثانية: $\dfrac{d^2z}{dx^2}=4>0$ ⇐ نهاية صغرى</div></div>
+          <div class="calc-flow"><div class="calc-line calc-box">وللتأكد أن قيمة $x$ هي قيمة صغرى نستخرج المشتقة الثانية: $z''(x)=4>0$ ⇐ نهاية صغرى</div></div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ العددان هما $10,10$، وأصغر مجموع لمربعيهما $=200$. ∎</div>
+      </div>
     </div>
 
     <div class="example fade-up">
@@ -153,24 +158,25 @@
         <button class="neu-btn" data-reveal-steps="steps-ex17">إظهار الحل</button>
       </div>
       <div class="example-problem">جد حجم أكبر أسطوانة دائرية قائمة يمكن رسمها داخل كرة نصف قطرها $6\,cm$؟</div>
-      <ol class="steps hidden-steps" id="steps-ex17">
+      <div class="hidden-steps" id="steps-ex17">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">نفرض نصف قطر الأسطوانة $r$، ونفرض ارتفاع الأسطوانة $2h$ (بحيث يمر مركز الكرة من منتصف الارتفاع، فيكون كل نصف $=h$)</p>
           <div class="calc-flow"><div class="calc-line calc-box">الآن وحسب مبرهنة فيثاغورس: $h^2+r^2=36$</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نعبّر عن $r^2$ بدلالة $h$، ونكتب علاقة الحجم</p>
+          <p class="calc-note">نعبّر عن $r^2$ بدلالة $h$، ونكتب دالة الحجم $V(h)$</p>
           <div class="calc-flow">
             <div class="calc-line">$r^2=36-h^2 \;\;\dots(1)$</div>
-            <div class="calc-line calc-box">$V=\pi r^2\cdot2h \;\;\dots(2)$</div>
+            <div class="calc-line calc-box">$V(h)=\pi r^2\cdot2h \;\;\dots(2)$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">بتعويض المعادلة (1) في معادلة (2) ينتج</p>
           <div class="calc-flow">
-            <div class="calc-line">$V=2\pi h(36-h^2)=72\pi h-2\pi h^3$</div>
+            <div class="calc-line">$V(h)=2\pi h(36-h^2)=72\pi h-2\pi h^3$</div>
             <div class="calc-arrow">↓</div>
-            <div class="calc-line">$\dfrac{dV}{dh}=72\pi-6\pi h^2$</div>
+            <div class="calc-line">$V'(h)=72\pi-6\pi h^2$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">4</span><div class="step-body">
@@ -198,6 +204,7 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ أكبر حجم للأسطوانة $=96\sqrt3\,\pi\,cm^3$ عندما يكون ارتفاعها $4\sqrt3\,cm$ ونصف قطرها $2\sqrt6\,cm$. ∎</div>
+      </div>
     </div>
   </section>
 
@@ -226,7 +233,8 @@
         <button class="neu-btn" data-reveal-steps="steps-q1">إظهار الحل</button>
       </div>
       <div class="example-problem">عددان مجموعهما 24، برهن أن حاصل ضربهما أكبر ما يمكن عندما يكونان متساويان.</div>
-      <ol class="steps hidden-steps" id="steps-q1">
+      <div class="hidden-steps" id="steps-q1">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line">نفرض العددين $x,\,24-x$؛ حاصل الضرب $P=x(24-x)=24x-x^2$</div>
           <div class="calc-line calc-box">$P'=24-2x=0\Rightarrow x=12 \Rightarrow$ العدد الآخر $=24-12=12$</div></div>
@@ -236,6 +244,7 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ يكون حاصل الضرب أكبر ما يمكن عندما $x=12$، أي عندما يتساوى العددان. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -244,16 +253,25 @@
         <button class="neu-btn" data-reveal-steps="steps-q2">إظهار الحل</button>
       </div>
       <div class="example-problem">قسم العدد 60 إلى جزأين بحيث يكون حاصل ضرب أحد هذين الجزئين في مكعب الجزء الآخر أكبر ما يمكن.</div>
-      <ol class="steps hidden-steps" id="steps-q2">
+      <div class="hidden-steps" id="steps-q2">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">نفرض الجزء الأول $x$، والثاني $60-x$؛ $P(x)=x(60-x)^3$</div>
-          <div class="calc-line">$P'(x)=(60-x)^3-3x(60-x)^2=(60-x)^2[(60-x)-3x]=(60-x)^2(60-4x)$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">نفرض الجزء الأول $x$، والثاني $60-x$؛ $P(x)=x(60-x)^3$</div>
+            <div class="calc-line">$P'(x)=(60-x)^3-3x(60-x)^2$</div>
+            <div class="calc-line">$P'(x)=(60-x)^2[(60-x)-3x]$</div>
+            <div class="calc-line">$P'(x)=(60-x)^2(60-4x)$</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line calc-box">$P'=0\Rightarrow x=60$ (مرفوضة) أو $x=15$ ⇐ الجزآن هما $15$ و $45$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$P'=0\Rightarrow x=60$ (مرفوضة) أو $x=15$</div>
+            <div class="calc-line calc-box">الجزآن هما $15$ و $45$</div>
+          </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ الجزآن هما $15$ و $45$ (والجزء المرفوع للمكعب هو $45$)، وأكبر ناتج $=15\times45^3$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -262,17 +280,24 @@
         <button class="neu-btn" data-reveal-steps="steps-q3">إظهار الحل</button>
       </div>
       <div class="example-problem">جد أكبر مساحة لمثلث متساوي الساقين يمكن رسمه داخل كرة (دائرة) نصف قطرها $6\,cm$.</div>
-      <ol class="steps hidden-steps" id="steps-q3">
+      <div class="hidden-steps" id="steps-q3">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">نفرض ارتفاع المثلث $H$ من القاعدة إلى الرأس المقابل على الدائرة؛ نصف القاعدة $b=\sqrt{r^2-(r-H)^2}$، ومساحة $A=bH$</div>
-          <div class="calc-line">$A^2=H^2(2rH-H^2)=12H^3-H^4$ &nbsp; (بتعويض $r=6$)</div></div>
+          <div class="calc-flow"><div class="calc-line">نفرض ارتفاع المثلث $H$ من القاعدة إلى الرأس المقابل على الدائرة؛ نصف القاعدة $b=\sqrt{r^2-(r-H)^2}$، ومساحة $A=bH$؛ نفرض $P(H)=A^2$ لتسهيل الاشتقاق</div>
+          <div class="calc-line">$P(H)=H^2(2rH-H^2)=12H^3-H^4$ &nbsp; (بتعويض $r=6$)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">$\dfrac{d(A^2)}{dH}=36H^2-4H^3=4H^2(9-H)=0\Rightarrow H=9$</div>
-          <div class="calc-line calc-box">$A^2=12(9)^3-9^4=8748-6561=2187 \Rightarrow A=\sqrt{2187}=27\sqrt3$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$P'(H)=36H^2-4H^3=4H^2(9-H)$</div>
+            <div class="calc-line">$P'(H)=0\Rightarrow H=9$</div>
+            <div class="calc-line">$P(9)=A^2=12(9)^3-9^4$</div>
+            <div class="calc-line">$A^2=8748-6561=2187$</div>
+            <div class="calc-line calc-box">$A=\sqrt{2187}=27\sqrt3$</div>
+          </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ أكبر مساحة تتحقق عندما يكون المثلث متساوي الأضلاع، وتساوي $27\sqrt3\,cm^2$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -281,17 +306,25 @@
         <button class="neu-btn" data-reveal-steps="steps-q4">إظهار الحل</button>
       </div>
       <div class="example-problem">لوح مستطيل محيطه $40\,cm$، أدير حول أحد أضلاعه فكوّن أسطوانة دائرية قائمة. جد بعدي المستطيل بحيث يكون حجم الأسطوانة المتكونة أكبر ما يمكن.</div>
-      <ol class="steps hidden-steps" id="steps-q4">
+      <div class="hidden-steps" id="steps-q4">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">نفرض بعدي المستطيل $x,y$ مع $x+y=20$ (نصف المحيط)؛ الضلع $x$ يصبح محيط القاعدة $2\pi r=x$، والضلع $y$ يصبح الارتفاع</div>
-          <div class="calc-line">$V=\pi r^2y=\pi\left(\dfrac{x}{2\pi}\right)^2(20-x)=\dfrac{x^2(20-x)}{4\pi}$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">نفرض بعدي المستطيل $x,y$ مع $x+y=20$ (نصف المحيط)؛ الضلع $x$ يصبح محيط القاعدة $2\pi r=x$، والضلع $y$ يصبح الارتفاع</div>
+            <div class="calc-line">$V=\pi r^2y=\pi\left(\dfrac{x}{2\pi}\right)^2(20-x)$</div>
+            <div class="calc-line">$V=\dfrac{x^2(20-x)}{4\pi}$</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">نعظّم $f(x)=20x^2-x^3 \Rightarrow f'(x)=40x-3x^2=x(40-3x)=0\Rightarrow x=\dfrac{40}{3}$</div>
-          <div class="calc-line calc-box">$y=20-\dfrac{40}{3}=\dfrac{20}{3}$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">نعظّم $f(x)=20x^2-x^3 \Rightarrow f'(x)=40x-3x^2$</div>
+            <div class="calc-line">$f'(x)=x(40-3x)=0\Rightarrow x=\dfrac{40}{3}$</div>
+            <div class="calc-line calc-box">$y=20-\dfrac{40}{3}=\dfrac{20}{3}$</div>
+          </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ بعدا اللوح: $\dfrac{40}{3}\,cm$ و $\dfrac{20}{3}\,cm$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -300,17 +333,20 @@
         <button class="neu-btn" data-reveal-steps="steps-q5">إظهار الحل</button>
       </div>
       <div class="example-problem">حديقة منزلية مستطيلة الشكل يحدها من أحدى جهاتها المنزل، جد أكبر مساحة من الأرض يمكن تسييجها بسياج طوله $20\,m$.</div>
-      <ol class="steps hidden-steps" id="steps-q5">
+      <div class="hidden-steps" id="steps-q5">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line">نفرض الضلع العمودي على الجدار $x$ (يتكرر مرتين)، والضلع الموازي له $y$؛ لا حاجة لسياج جهة الجدار</div>
           <div class="calc-line">$2x+y=20 \Rightarrow y=20-2x$؛ &nbsp; $A=xy=x(20-2x)=20x-2x^2$</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">$A'=20-4x=0\Rightarrow x=5 \Rightarrow y=20-10=10$</div>
+          <div class="calc-flow"><div class="calc-line">$A'=20-4x=0\Rightarrow x=5$</div>
+          <div class="calc-line">$y=20-2(5)=10$</div>
           <div class="calc-line calc-box">$A''=-4<0$ ⇐ نهاية عظمى؛ أكبر مساحة $=5\times10=50\,m^2$</div></div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ الأبعاد $5\,m\times10\,m$، وأكبر مساحة $=50\,m^2$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -319,10 +355,14 @@
         <button class="neu-btn" data-reveal-steps="steps-q6">إظهار الحل</button>
       </div>
       <div class="example-problem">جد النقاط التي تقع على المنحني $y^2=x^2-3$ وتكون أقرب ما يمكن من النقطة $(4,0)$.</div>
-      <ol class="steps hidden-steps" id="steps-q6">
+      <div class="hidden-steps" id="steps-q6">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">مربع المسافة $D=(x-4)^2+y^2$؛ نعوّض $y^2=x^2-3$</div>
-          <div class="calc-line calc-box">$D(x)=(x-4)^2+x^2-3=2x^2-8x+13$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">مربع المسافة $D=(x-4)^2+y^2$؛ نعوّض $y^2=x^2-3$</div>
+            <div class="calc-line">$D(x)=(x-4)^2+x^2-3$</div>
+            <div class="calc-line calc-box">$D(x)=2x^2-8x+13$</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line">$D'(x)=4x-8=0\Rightarrow x=2$؛ $D''=4>0$ ⇐ نهاية صغرى</div>
@@ -330,6 +370,7 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ أقرب نقطتين هما $(2,1)$ و $(2,-1)$، وأقل مسافة $=\sqrt5$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -338,7 +379,8 @@
         <button class="neu-btn" data-reveal-steps="steps-q7">إظهار الحل</button>
       </div>
       <div class="example-problem">جد عدداً حقيقياً موجباً بحيث يكون حاصل جمعه مع مقلوبه أصغر ما يمكن.</div>
-      <ol class="steps hidden-steps" id="steps-q7">
+      <div class="hidden-steps" id="steps-q7">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line">نفرض العدد $x>0$؛ $f(x)=x+\dfrac1x$</div>
           <div class="calc-line calc-box">$f'(x)=1-\dfrac{1}{x^2}=0\Rightarrow x^2=1\Rightarrow x=1$ &nbsp;(نهمل $x=-1$ لأن العدد موجب)</div></div>
@@ -348,6 +390,7 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ العدد المطلوب $=1$، وأصغر ناتج للجمع $=2$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -356,17 +399,23 @@
         <button class="neu-btn" data-reveal-steps="steps-q8">إظهار الحل</button>
       </div>
       <div class="example-problem">أسطوانة دائرية حجمها $8\pi\,cm^3$، جد أبعادها بحيث تكون كمية المعدن المستخدم لعملها (أي مساحتها السطحية) أقل ما يمكن إذا كانت الأسطوانة مفتوحة من الأعلى.</div>
-      <ol class="steps hidden-steps" id="steps-q8">
+      <div class="hidden-steps" id="steps-q8">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line">$V=\pi r^2h=8\pi\Rightarrow h=\dfrac{8}{r^2}$؛ المساحة (بلا غطاء علوي): $S=\pi r^2+2\pi rh$</div>
           <div class="calc-line calc-box">$S(r)=\pi r^2+2\pi r\cdot\dfrac{8}{r^2}=\pi r^2+\dfrac{16\pi}{r}$</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">$S'(r)=2\pi r-\dfrac{16\pi}{r^2}=0\Rightarrow 2r^3=16\Rightarrow r^3=8\Rightarrow r=2$</div>
-          <div class="calc-line calc-box">$h=\dfrac{8}{4}=2$؛ &nbsp; $S''(r)=2\pi+\dfrac{32\pi}{r^3}>0$ ⇐ نهاية صغرى (أقل معدن)</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$S'(r)=2\pi r-\dfrac{16\pi}{r^2}=0\Rightarrow 2r^3=16$</div>
+            <div class="calc-line">$r^3=8\Rightarrow r=2$</div>
+            <div class="calc-line">$h=\dfrac{8}{4}=2$</div>
+            <div class="calc-line calc-box">$S''(r)=2\pi+\dfrac{32\pi}{r^3}>0$ ⇐ نهاية صغرى (أقل معدن)</div>
+          </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ نصف القطر $r=2\,cm$، والارتفاع $h=2\,cm$ يعطيان أقل كمية من المعدن. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -375,17 +424,23 @@
         <button class="neu-btn" data-reveal-steps="steps-q9">إظهار الحل</button>
       </div>
       <div class="example-problem">جد حجم أكبر مخروط دائري قائم يمكن وضعه داخل كرة نصف قطرها $3\,cm$.</div>
-      <ol class="steps hidden-steps" id="steps-q9">
+      <div class="hidden-steps" id="steps-q9">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line">نفرض ارتفاع المخروط $h$، ونصف قطر قاعدته $r$، ونصف قطر الكرة $R=3$؛ بالعلاقة الهندسية: $r^2=h(2R-h)=6h-h^2$</div>
-          <div class="calc-line">$V=\dfrac13\pi r^2h=\dfrac{\pi}{3}(6h^2-h^3)$</div></div>
+          <div class="calc-line">$V(h)=\dfrac13\pi r^2h=\dfrac{\pi}{3}(6h^2-h^3)$</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">$\dfrac{dV}{dh}=\dfrac{\pi}{3}(12h-3h^2)=\pi h(4-h)=0\Rightarrow h=4$</div>
-          <div class="calc-line calc-box">$r^2=6(4)-16=8 \Rightarrow V=\dfrac13\pi(8)(4)=\dfrac{32\pi}{3}\,cm^3$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$V'(h)=\dfrac{\pi}{3}(12h-3h^2)=\pi h(4-h)$</div>
+            <div class="calc-line">$V'(h)=0\Rightarrow h=4$</div>
+            <div class="calc-line">$r^2=6(4)-16=8$</div>
+            <div class="calc-line calc-box">$V(4)=\dfrac13\pi(8)(4)=\dfrac{32\pi}{3}\,cm^3$</div>
+          </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ أكبر حجم للمخروط $=\dfrac{32\pi}{3}\,cm^3$ عندما $h=4\,cm$، $r=2\sqrt2\,cm$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -394,17 +449,26 @@
         <button class="neu-btn" data-reveal-steps="steps-q10">إظهار الحل</button>
       </div>
       <div class="example-problem">جد أكبر حجم أسطوانة دائرية قائمة يمكن وضعها داخل مخروط دائري قائم طول قطر قاعدته $12\,cm$ وارتفاعه $20\,cm$.</div>
-      <ol class="steps hidden-steps" id="steps-q10">
+      <div class="hidden-steps" id="steps-q10">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">نصف قطر قاعدة المخروط $R=6$، ارتفاعه $H=20$؛ بتشابه المثلثات: نصف قطر الأسطوانة $r=R\left(1-\dfrac{h}{H}\right)=6-\dfrac{3h}{10}$</div>
-          <div class="calc-line">$\Rightarrow h=20-\dfrac{10}{3}r$؛ &nbsp; $V=\pi r^2h=\pi\left(20r^2-\dfrac{10}{3}r^3\right)$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">نصف قطر قاعدة المخروط $R=6$، ارتفاعه $H=20$؛ بتشابه المثلثات: نصف قطر الأسطوانة $r=R\left(1-\dfrac{h}{H}\right)=6-\dfrac{3h}{10}$</div>
+            <div class="calc-line">$\Rightarrow h=20-\dfrac{10}{3}r$</div>
+            <div class="calc-line">$V(r)=\pi r^2h=\pi\left(20r^2-\dfrac{10}{3}r^3\right)$</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">$\dfrac{dV}{dr}=\pi(40r-10r^2)=10\pi r(4-r)=0\Rightarrow r=4$</div>
-          <div class="calc-line calc-box">$h=20-\dfrac{10}{3}(4)=\dfrac{20}{3} \Rightarrow V=\pi(16)\left(\dfrac{20}{3}\right)=\dfrac{320\pi}{3}\,cm^3$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$V'(r)=\pi(40r-10r^2)=10\pi r(4-r)$</div>
+            <div class="calc-line">$V'(r)=0\Rightarrow r=4$</div>
+            <div class="calc-line">$h=20-\dfrac{10}{3}(4)=\dfrac{20}{3}$</div>
+            <div class="calc-line calc-box">$V(4)=\pi(16)\left(\dfrac{20}{3}\right)=\dfrac{320\pi}{3}\,cm^3$</div>
+          </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ أكبر حجم للأسطوانة $=\dfrac{320\pi}{3}\,cm^3$ عندما $r=4\,cm$، $h=\dfrac{20}{3}\,cm$. ∎</div>
+      </div>
     </div>
   </section>
 

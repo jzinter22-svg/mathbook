@@ -78,7 +78,8 @@
         <div class="example-title"><span class="example-badge">14a</span> $y=x^2-4$</div>
         <button class="neu-btn" data-reveal-steps="steps-ex14a">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-ex14a">
+      <div class="hidden-steps" id="steps-ex14a">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">1) أوسع مجال للدالة: $\mathbb{R}$ لأنها دالة متعددة الحدود</p>
         </div></li>
@@ -94,7 +95,9 @@
           <p class="calc-note">3) نقاط التقاطع مع المحورين</p>
           <div class="calc-flow">
             <div class="calc-line">$let\;x=0 \Rightarrow y=-4 \Rightarrow (0,-4)$ نقطة التقاطع مع $Y$</div>
-            <div class="calc-line">$let\;y=0 \Rightarrow x^2-4=0 \Rightarrow (x-2)(x+2)=0 \Rightarrow x=\pm2$</div>
+            <div class="calc-line">$let\;y=0 \Rightarrow x^2-4=0$</div>
+            <div class="calc-line">$(x-2)(x+2)=0$</div>
+            <div class="calc-line">$x=\pm2$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">$(2,0),(-2,0)$ نقطتا التقاطع مع $X$</div>
           </div>
@@ -126,6 +129,7 @@
       </ol>
       <div class="mindmap-wrap" style="margin-top:.8rem"><svg id="graphEx14a" width="480" height="320"></svg></div>
       <div class="exercise-final">✓ قطع مكافئ متناظر مع المحور $Y$، رأسه (نهايته الصغرى) عند $(0,-4)$، يقطع محور $X$ عند $(\pm2,0)$. ∎</div>
+      </div>
     </div>
 
     <div class="example fade-up">
@@ -133,7 +137,8 @@
         <div class="example-title"><span class="example-badge">14b</span> $f(x)=x^3-6x^2+9x$</div>
         <button class="neu-btn" data-reveal-steps="steps-ex14b">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-ex14b">
+      <div class="hidden-steps" id="steps-ex14b">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <p class="calc-note">1) أوسع مجال للدالة: $\mathbb{R}$ لأنها دالة متعددة الحدود</p>
         </div></li>
@@ -148,7 +153,9 @@
           <p class="calc-note">3) نقاط التقاطع مع المحورين</p>
           <div class="calc-flow">
             <div class="calc-line">$let\;x=0 \Rightarrow y=0 \Rightarrow (0,0)$ نقطة التقاطع مع $Y$ (ومع $X$ أيضاً)</div>
-            <div class="calc-line">$let\;y=0 \Rightarrow x^3-6x^2+9x=0 \Rightarrow x(x^2-6x+9)=0 \Rightarrow x(x-3)^2=0$</div>
+            <div class="calc-line">$let\;y=0 \Rightarrow x^3-6x^2+9x=0$</div>
+            <div class="calc-line">$x(x^2-6x+9)=0$</div>
+            <div class="calc-line">$x(x-3)^2=0$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">$x=0$ أو $x=3$ (جذر مضاعف) ⇐ $(0,0),(3,0)$</div>
           </div>
@@ -156,7 +163,9 @@
         <li class="step"><span class="step-dot">4</span><div class="step-body">
           <p class="calc-note">4) النهايات المحلية ومناطق التزايد والتناقص</p>
           <div class="calc-flow">
-            <div class="calc-line">$f'(x)=3x^2-12x+9=0 \;(\div3)\; \Rightarrow x^2-4x+3=0 \Rightarrow (x-3)(x-1)=0 \Rightarrow x=1,3$</div>
+            <div class="calc-line">$f'(x)=3x^2-12x+9=0 \;(\div3)$</div>
+            <div class="calc-line">$x^2-4x+3=0$</div>
+            <div class="calc-line">$(x-3)(x-1)=0 \Rightarrow x=1,3$</div>
             <div class="calc-line">إشارة $f'$: $+\,(1)\,-\,(3)\,+$</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">$(1,4)$ نهاية عظمى محلية؛ $(3,0)$ نهاية صغرى محلية؛ متزايدة $\{x<1\}\cup\{x>3\}$، متناقصة $(1,3)$</div>
@@ -172,7 +181,10 @@
         </div></li>
         <li class="step"><span class="step-dot">6</span><div class="step-body">
           <p class="calc-note">6) نقطة إضافية للدقة: نعوّض $x=-1$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">$f(-1)=-1-6-9=-16 \Rightarrow (-1,-16)$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$f(-1)=-1-6-9=-16$</div>
+            <div class="calc-line calc-box">$(-1,-16)$</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">7</span><div class="step-body">
           <p class="calc-note">7) جدول القيم ثم الرسم</p>
@@ -187,6 +199,7 @@
       </ol>
       <div class="mindmap-wrap" style="margin-top:.8rem"><svg id="graphEx14b" width="480" height="320"></svg></div>
       <div class="exercise-final">✓ منحني يبدأ من $-\infty$، يمر بـ $(-1,-16)$، يصعد إلى نهاية عظمى $(1,4)$، ينقلب عند $(2,2)$، ينزل إلى نهاية صغرى تلامس المحور عند $(3,0)$، ثم يصعد إلى $+\infty$. ∎</div>
+      </div>
     </div>
   </section>
 
@@ -218,7 +231,8 @@
         <div class="example-title"><span class="example-badge">1</span> $f(x)=x^2-6x-7$</div>
         <button class="neu-btn" data-reveal-steps="steps-g1">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-g1">
+      <div class="hidden-steps" id="steps-g1">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر خاص؛ تقاطع $Y$: $(0,-7)$؛ تقاطع $X$: $(x-7)(x+1)=0\Rightarrow(7,0),(-1,0)$</div></div>
         </div></li>
@@ -228,6 +242,7 @@
       </ol>
       <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG1" width="440" height="260"></svg></div>
       <div class="exercise-final">✓ قطع مكافئ فتحته للأعلى، رأسه (نهاية صغرى) عند $(3,-16)$، يقطع $X$ عند $-1,7$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -235,7 +250,8 @@
         <div class="example-title"><span class="example-badge">2</span> $f(x)=x^4-1$</div>
         <button class="neu-btn" data-reveal-steps="steps-g2">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-g2">
+      <div class="hidden-steps" id="steps-g2">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ $f(-x)=f(x)$ ⇐ متناظرة مع $Y$ (زوجية)؛ تقاطع $Y$: $(0,-1)$؛ تقاطع $X$: $x^4=1\Rightarrow(\pm1,0)$</div></div>
         </div></li>
@@ -245,6 +261,7 @@
       </ol>
       <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG2" width="440" height="260"></svg></div>
       <div class="exercise-final">✓ منحني متناظر حول المحور $Y$ على شكل حرف U عريض، رأسه عند $(0,-1)$، يقطع $X$ عند $\pm1$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -252,7 +269,8 @@
         <div class="example-title"><span class="example-badge">3</span> $f(x)=(x+1)^2$</div>
         <button class="neu-btn" data-reveal-steps="steps-g3">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-g3">
+      <div class="hidden-steps" id="steps-g3">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر خاص؛ تقاطع $Y$: $(0,1)$؛ تقاطع $X$: $(x+1)^2=0\Rightarrow(-1,0)$ (جذر مضاعف، مماس)</div></div>
         </div></li>
@@ -262,6 +280,7 @@
       </ol>
       <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG3" width="440" height="260"></svg></div>
       <div class="exercise-final">✓ قطع مكافئ يلامس المحور $X$ عند $(-1,0)$ فقط (رأسه)، ويمر بـ $(0,1)$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -269,7 +288,8 @@
         <div class="example-title"><span class="example-badge">4</span> $f(x)=x^3-3x+3$</div>
         <button class="neu-btn" data-reveal-steps="steps-g4">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-g4">
+      <div class="hidden-steps" id="steps-g4">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر؛ تقاطع $Y$: $(0,3)$؛ لا جذور نسبية بسيطة لمعادلة $X$، نعتمد على النهايات والنقاط الإضافية</div></div>
         </div></li>
@@ -279,6 +299,7 @@
       </ol>
       <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG4" width="440" height="260"></svg></div>
       <div class="exercise-final">✓ منحني يقطع $X$ مرة واحدة فقط قرب $x\approx-2.1$، يصعد لنهاية عظمى $(-1,5)$، ينقلب عند $(0,3)$، ينزل لنهاية صغرى $(1,1)$ ثم يصعد. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -286,7 +307,8 @@
         <div class="example-title"><span class="example-badge">5</span> $f(x)=x(x^2-12)$</div>
         <button class="neu-btn" data-reveal-steps="steps-g5">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-g5">
+      <div class="hidden-steps" id="steps-g5">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line calc-box">$f(x)=x^3-12x$؛ المجال $\mathbb{R}$؛ $f(-x)=-f(x)$ ⇐ فردية (متناظرة مع الأصل)؛ تقاطع $X$: $x(x^2-12)=0\Rightarrow x=0,\pm2\sqrt3$</div></div>
         </div></li>
@@ -296,6 +318,7 @@
       </ol>
       <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG5" width="440" height="260"></svg></div>
       <div class="exercise-final">✓ منحني فردي متناظر حول الأصل، يمر بـ $(0,0),(\pm2\sqrt3,0)$، بنهاية عظمى $(-2,16)$ وصغرى $(2,-16)$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -303,7 +326,8 @@
         <div class="example-title"><span class="example-badge">6</span> $f(x)=x^3-8$</div>
         <button class="neu-btn" data-reveal-steps="steps-g6">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-g6">
+      <div class="hidden-steps" id="steps-g6">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر خاص؛ تقاطع $Y$: $(0,-8)$؛ تقاطع $X$: $x^3=8\Rightarrow(2,0)$</div></div>
         </div></li>
@@ -313,6 +337,7 @@
       </ol>
       <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG6" width="440" height="260"></svg></div>
       <div class="exercise-final">✓ منحني متزايد دائماً بلا نهايات محلية، له نقطة انقلاب (وحرجة) عند $(0,-8)$، يقطع $X$ عند $(2,0)$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -320,7 +345,8 @@
         <div class="example-title"><span class="example-badge">7</span> $f(x)=(x+1)^2(x-2)$</div>
         <button class="neu-btn" data-reveal-steps="steps-g7">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-g7">
+      <div class="hidden-steps" id="steps-g7">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line calc-box">بالتبسيط: $f(x)=x^3-3x-2$؛ المجال $\mathbb{R}$؛ بلا تناظر؛ تقاطع $X$ (من الصورة الأصلية): $(-1,0)$ (مضاعف)، $(2,0)$؛ تقاطع $Y$: $(0,-2)$</div></div>
         </div></li>
@@ -330,6 +356,7 @@
       </ol>
       <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG7" width="440" height="260"></svg></div>
       <div class="exercise-final">✓ منحني يلامس $X$ عند $(-1,0)$ (نهاية عظمى)، ينقلب عند $(0,-2)$، ينزل لنهاية صغرى $(1,-4)$، ثم يقطع $X$ عند $(2,0)$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -337,7 +364,8 @@
         <div class="example-title"><span class="example-badge">8</span> $f(x)=x^5+2x$</div>
         <button class="neu-btn" data-reveal-steps="steps-g8">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-g8">
+      <div class="hidden-steps" id="steps-g8">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ $f(-x)=-f(x)$ ⇐ فردية؛ تقاطع $X,Y$: $x(x^4+2)=0\Rightarrow x=0$ فقط (لأن $x^4+2>0$ دائماً)</div></div>
         </div></li>
@@ -347,6 +375,7 @@
       </ol>
       <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG8" width="440" height="260"></svg></div>
       <div class="exercise-final">✓ منحني فردي متزايد دائماً، يمر بنقطة الأصل التي هي أيضاً نقطة انقلابه الوحيدة. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -354,16 +383,25 @@
         <div class="example-title"><span class="example-badge">9</span> $f(x)=6-x-x^2$</div>
         <button class="neu-btn" data-reveal-steps="steps-g9">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-g9">
+      <div class="hidden-steps" id="steps-g9">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر خاص؛ تقاطع $Y$: $(0,6)$؛ تقاطع $X$: $x^2+x-6=0\Rightarrow(x+3)(x-2)=0\Rightarrow(-3,0),(2,0)$</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">المجال $\mathbb{R}$؛ بلا تناظر خاص؛ تقاطع $Y$: $(0,6)$</div>
+            <div class="calc-line">تقاطع $X$: $x^2+x-6=0\Rightarrow(x+3)(x-2)=0$</div>
+            <div class="calc-line calc-box">$(-3,0),(2,0)$</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=-2x-1=0\Rightarrow x=-\frac12$: نهاية عظمى $(-\frac12,\frac{25}{4})$؛ $f''(x)=-2<0$: محدبة دائماً، بلا انقلاب</div></div>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=-2x-1=0\Rightarrow x=-\frac12$: نهاية عظمى $(-\frac12,\frac{25}{4})$</div>
+            <div class="calc-line calc-box">$f''(x)=-2<0$: محدبة دائماً، بلا انقلاب</div>
+          </div>
         </div></li>
       </ol>
       <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG9" width="440" height="260"></svg></div>
       <div class="exercise-final">✓ قطع مكافئ فتحته للأسفل، رأسه (نهاية عظمى) عند $(-\frac12,\frac{25}{4})$، يقطع $X$ عند $-3,2$. ∎</div>
+      </div>
     </div>
 
     <div class="example exercise-card fade-up">
@@ -371,7 +409,8 @@
         <div class="example-title"><span class="example-badge">10</span> $f(x)=(2-x)^3+1$</div>
         <button class="neu-btn" data-reveal-steps="steps-g10">إظهار الحل</button>
       </div>
-      <ol class="steps hidden-steps" id="steps-g10">
+      <div class="hidden-steps" id="steps-g10">
+      <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
           <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر خاص؛ تقاطع $Y$: $(0,9)$؛ تقاطع $X$: $(2-x)^3=-1\Rightarrow2-x=-1\Rightarrow(3,0)$</div></div>
         </div></li>
@@ -381,6 +420,7 @@
       </ol>
       <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG10" width="440" height="260"></svg></div>
       <div class="exercise-final">✓ منحني متناقص دائماً، له نقطة انقلاب (وحرجة) عند $(2,1)$، يقطع $X$ عند $(3,0)$. ∎</div>
+      </div>
     </div>
   </section>
 

@@ -267,9 +267,28 @@ body{
   background:var(--surface);box-shadow:4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
   max-width:100%;overflow-x:auto}
 
+/* Long chained equalities (multiple fractions/roots in one formula) can
+   exceed the available width on narrow phones before they exceed it on
+   desktop. Shrinking the math a bit on very narrow viewports lets most
+   chains fit without relying on horizontal scrolling. */
+@media (max-width:480px){
+  .calc-line{font-size:.84rem}
+  .calc-box{padding:.4rem .6rem}
+  .example{padding:1.1rem .8rem}
+  .step{grid-template-columns:26px 1fr;gap:.5rem}
+}
+
 .reveal-btn{margin-top:.5rem}
 .hidden-steps .step{display:none}
 .hidden-steps.shown .step{display:grid}
+
+/* Whole-block reveal wrapper (question + full solution together in one
+   card): used where the entire step list, final answer, and any inline
+   supporting figure must stay hidden as a unit until "show solution" is
+   pressed. Scoped to div so it never touches the older <ol class="steps
+   hidden-steps"> reveal pattern, which only hides its .step children. */
+div.hidden-steps{display:none}
+div.hidden-steps.shown{display:block}
 
 /* interactive example controls */
 .io-panel{display:grid;gap:.9rem;margin-top:1rem}
