@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 6: رسم الدوال الحقيقية — الفصل الثالث</title>
+<meta name="description" content="خطوات رسم بيان الدوال كثيرات الحدود: المجال، التناظر، نقاط التقاطع، النهايات المحلية، نقاط الانقلاب، ونقاط إضافية، مع مثال 14 كاملاً ومختبر تفاعلي وتمرين (3-3).">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-6.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 6 من 7 · 6-3</span>
+    <h1>رسم الدوال الحقيقية</h1>
+    <p class="lead">نجمع كل ما تعلمناه في دروس هذا الفصل — المجال، التناظر، نقاط التقاطع، النهايات المحلية، نقاط الانقلاب — في طريقة واحدة منظّمة من سبع خطوات لرسم بيان أي دالة كثيرة حدود بدقة.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يعيّن أوسع مجال للدالة، ويختبر تناظرها مع محور $Y$ أو نقطة الأصل.</span></li>
+        <li><span class="obj-num">2</span><span>يعيّن نقاط تقاطع المنحني مع المحورين الإحداثيين إن أمكن.</span></li>
+        <li><span class="obj-num">3</span><span>يوظّف نتائج الدروس السابقة (النهايات المحلية، مناطق التزايد والتناقص، نقاط الانقلاب) ضمن جدول قيم منظّم.</span></li>
+        <li><span class="obj-num">4</span><span>يرسم بيان الدالة كثيرة الحدود بالاعتماد على جدول القيم المستخرج.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 خطوات الرسم">
+    <div class="card neu">
+      <h2>💡 6-3 رسم الدوال الحقيقية <span style="font-weight:400;color:var(--text-secondary)">Graphing real valued Functions</span></h2>
+      <p>سبق أن درسنا بعض خواص رسم الدوال مثل التناظر والاستمرارية والمشتقتين الأولى والثانية التي تزودنا بخواص أخرى أكثر فائدة في رسم الدوال، فمنها نجد فترات التزايد والتناقص للدالة، وفترات التقعر والتحدب ونقاط النهايات العظمى والصغرى ونقاط الانقلاب وكذلك المحاذيات — تفيدنا كثيراً في رسم الدوال النسبية.</p>
+      <p>فإذا تمكنّا من إيجاد هذه المعلومات نستطيع بسهولة رسم الدالة وبشكل دقيق. ولأجل تسهيل عمل الطالب نلخص الخطوات الأساسية اللازمة للحصول على المعلومات المطلوبة، وكما يلي:</p>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>تعيين أوسع مجال للدالة.</span></li>
+        <li><span class="obj-num">2</span><span>تعيين تناظر الدالة بالنسبة للمحور $Y$ ونقطة الأصل.</span></li>
+        <li><span class="obj-num">3</span><span>تعيين نقاط التقاطع مع محور $Y$ والمحور $X$ (إن أمكن).</span></li>
+        <li><span class="obj-num">4</span><span>تعيين نقاط النهايات العظمى والصغرى المحلية ومناطق التزايد والتناقص.</span></li>
+        <li><span class="obj-num">5</span><span>تعيين نقاط الانقلاب ومناطق التقعر والتحدب (إن أمكن).</span></li>
+        <li><span class="obj-num">6</span><span>في حالة كون عدد النقاط المستخرجة قليلة ولأجل الدقة يمكن إيجاد نقاط إضافية أخرى.</span></li>
+        <li><span class="obj-num">7</span><span>نعيّن النقاط المستخرجة في الجدول على ورق بياني ثم نصل بين النقاط لاستخراج شكل الدالة.</span></li>
+      </ol>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:1rem">
+      <div class="def-box">
+        <span class="def-label" style="color:#7c6fee">التناظر مع محور $Y$</span>
+        <p style="margin:.3rem 0">تكون الدالة متناظرة مع المحور $Y$ إذا تحقق: &nbsp; $f(-x)=f(x)$ &nbsp; (دالة زوجية)</p>
+      </div>
+      <div class="def-box">
+        <span class="def-label" style="color:#3fa9f5">التناظر مع نقطة الأصل</span>
+        <p style="margin:.3rem 0">تكون الدالة متناظرة مع نقطة الأصل إذا تحقق: &nbsp; $f(-x)=-f(x)$ &nbsp; (دالة فردية)</p>
+      </div>
+    </div>
+    <div class="callout tip fade-up" style="margin-top:1rem">
+      <span class="icon">💬</span>
+      <span>بشكل عام: إذا كانت جميع أسس المتغيّر $x$ فردية فالدالة فردية (متناظرة مع نقطة الأصل)، وإذا كانت جميعها زوجية فالدالة متناظرة مع المحور $Y$، وإذا كانت الدالة تحوي أسساً فردية وزوجية للمتغيّر $x$ فليس هناك أي تناظر لا مع الأصل ولا مع المحور $Y$.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ مثال محلول">
+    <h2 style="margin-bottom:.25rem">✍️ مثال 14: أرسم منحنيات الدوال التالية</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» لمشاهدة الحل يتكشف تدريجياً وفق الخطوات السبع.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">14a</span> $y=x^2-4$</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex14a">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex14a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">1) أوسع مجال للدالة: $\mathbb{R}$ لأنها دالة متعددة الحدود</p>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">2) التناظر مع المحور $Y$</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f(-x)=(-x)^2-4=x^2-4=f(x)$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">إذاً الدالة متناظرة مع المحور $Y$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">3) نقاط التقاطع مع المحورين</p>
+          <div class="calc-flow">
+            <div class="calc-line">$let\;x=0 \Rightarrow y=-4 \Rightarrow (0,-4)$ نقطة التقاطع مع $Y$</div>
+            <div class="calc-line">$let\;y=0 \Rightarrow x^2-4=0 \Rightarrow (x-2)(x+2)=0 \Rightarrow x=\pm2$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$(2,0),(-2,0)$ نقطتا التقاطع مع $X$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">4) النهايات المحلية ومناطق التزايد والتناقص</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=2x=0 \Rightarrow x=0$؛ إشارة $f'$: $-\,(0)\,+$</div>
+            <div class="calc-line calc-box">$(0,-4)$ نهاية صغرى محلية؛ متناقصة $\{x<0\}$، متزايدة $\{x>0\}$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">5) نقاط الانقلاب ومناطق التقعر والتحدب</p>
+          <div class="calc-flow"><div class="calc-line calc-box">$f''(x)=2>0\;\forall x$ — لا توجد نقطة انقلاب؛ الدالة مقعرة في كامل مجالها</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">6) نقاط إضافية للدقة (اختيارية)</p>
+          <div class="calc-flow"><div class="calc-line">$f(1)=-3,\;f(-1)=-3$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">7) جدول القيم ثم الرسم</p>
+          <div class="neu-inset" style="padding:0;overflow-x:auto;margin-top:.4rem">
+            <table style="width:100%;border-collapse:collapse;text-align:center;min-width:380px">
+              <thead><tr style="color:var(--accent-purple)"><th style="padding:.5rem">$x$</th><th>$-2$</th><th>$-1$</th><th>$0$</th><th>$1$</th><th>$2$</th></tr></thead>
+              <tbody><tr><td style="padding:.5rem">$y$</td><td>$0$</td><td>$-3$</td><td>$-4$</td><td>$-3$</td><td>$0$</td></tr></tbody>
+            </table>
+          </div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.8rem"><svg id="graphEx14a" width="480" height="320"></svg></div>
+      <div class="exercise-final">✓ قطع مكافئ متناظر مع المحور $Y$، رأسه (نهايته الصغرى) عند $(0,-4)$، يقطع محور $X$ عند $(\pm2,0)$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">14b</span> $f(x)=x^3-6x^2+9x$</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex14b">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex14b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">1) أوسع مجال للدالة: $\mathbb{R}$ لأنها دالة متعددة الحدود</p>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">2) التناظر</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f(-x)=-x^3-6x^2-9x \neq f(x)$ &nbsp; (غير متناظرة مع $Y$)</div>
+            <div class="calc-line">$-f(x)=-x^3+6x^2-9x \neq f(-x)$ &nbsp; (غير متناظرة مع نقطة الأصل)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">3) نقاط التقاطع مع المحورين</p>
+          <div class="calc-flow">
+            <div class="calc-line">$let\;x=0 \Rightarrow y=0 \Rightarrow (0,0)$ نقطة التقاطع مع $Y$ (ومع $X$ أيضاً)</div>
+            <div class="calc-line">$let\;y=0 \Rightarrow x^3-6x^2+9x=0 \Rightarrow x(x^2-6x+9)=0 \Rightarrow x(x-3)^2=0$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$x=0$ أو $x=3$ (جذر مضاعف) ⇐ $(0,0),(3,0)$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">4) النهايات المحلية ومناطق التزايد والتناقص</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=3x^2-12x+9=0 \;(\div3)\; \Rightarrow x^2-4x+3=0 \Rightarrow (x-3)(x-1)=0 \Rightarrow x=1,3$</div>
+            <div class="calc-line">إشارة $f'$: $+\,(1)\,-\,(3)\,+$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$(1,4)$ نهاية عظمى محلية؛ $(3,0)$ نهاية صغرى محلية؛ متزايدة $\{x<1\}\cup\{x>3\}$، متناقصة $(1,3)$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">5) نقاط الانقلاب ومناطق التقعر والتحدب</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f''(x)=6x-12=0 \Rightarrow x=2$؛ إشارة $f''$: $-\,(2)\,+$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$f(2)=8-24+18=2$ ⇐ نقطة انقلاب $(2,2)$؛ محدبة $\{x<2\}$، مقعرة $\{x>2\}$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">6) نقطة إضافية للدقة: نعوّض $x=-1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">$f(-1)=-1-6-9=-16 \Rightarrow (-1,-16)$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">7) جدول القيم ثم الرسم</p>
+          <div class="neu-inset" style="padding:0;overflow-x:auto;margin-top:.4rem">
+            <table style="width:100%;border-collapse:collapse;text-align:center;min-width:460px">
+              <thead><tr style="color:var(--accent-purple)"><th style="padding:.5rem">$x$</th><th>$0$</th><th>$3$</th><th>$1$</th><th>$2$</th><th>$-1$</th></tr></thead>
+              <tbody><tr><td style="padding:.5rem">$y$</td><td>$0$</td><td>$0$</td><td>$4$</td><td>$2$</td><td>$-16$</td></tr>
+              <tr><td style="padding:.5rem">ملاحظات</td><td>تقاطع</td><td>تقاطع+صغرى</td><td>عظمى</td><td>انقلاب</td><td>إضافية</td></tr></tbody>
+            </table>
+          </div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.8rem"><svg id="graphEx14b" width="480" height="320"></svg></div>
+      <div class="exercise-final">✓ منحني يبدأ من $-\infty$، يمر بـ $(-1,-16)$، يصعد إلى نهاية عظمى $(1,4)$، ينقلب عند $(2,2)$، ينزل إلى نهاية صغرى تلامس المحور عند $(3,0)$، ثم يصعد إلى $+\infty$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مختبر الرسم">
+    <div class="card neu">
+      <h2>🕹️ مختبر تفاعلي: بناء الرسم خطوة بخطوة</h2>
+      <p>اختر أي دالة من دوال هذا الدرس، ثم حرّك المزلاج لإظهار النقاط المميزة تباعاً (تقاطعات ← نهايات محلية ← نقطة انقلاب) وشاهد كيف يتكوّن المنحني الكامل تدريجياً.</p>
+      <div class="io-panel">
+        <div class="io-row" style="flex-wrap:wrap;gap:.5rem">
+          <button class="neu-btn primary" data-fn-choice="0">$y=x^2-4$</button>
+          <button class="neu-btn" data-fn-choice="1">$f(x)=x^3-6x^2+9x$</button>
+        </div>
+        <div class="mindmap-wrap"><svg id="labGraph" width="520" height="340"></svg></div>
+        <div class="io-row">
+          <label for="labSlider" style="min-width:10rem">مرحلة الرسم</label>
+          <input type="range" id="labSlider" class="neu-range" min="0" max="3" step="1" value="0">
+        </div>
+        <div class="rule-box" id="labOut" style="font-size:1rem"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (3-3)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (3-3)</h2>
+    <p class="lead" style="margin-top:0">باستخدام معلوماتك في التفاضل ارسم منحنيات كل من الدوال التالية. حاول تحليل كل دالة بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> $f(x)=x^2-6x-7$</div>
+        <button class="neu-btn" data-reveal-steps="steps-g1">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-g1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر خاص؛ تقاطع $Y$: $(0,-7)$؛ تقاطع $X$: $(x-7)(x+1)=0\Rightarrow(7,0),(-1,0)$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=2x-6=0\Rightarrow x=3$: نهاية صغرى $(3,-16)$؛ $f''(x)=2>0$: مقعرة دائماً، بلا انقلاب</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG1" width="440" height="260"></svg></div>
+      <div class="exercise-final">✓ قطع مكافئ فتحته للأعلى، رأسه (نهاية صغرى) عند $(3,-16)$، يقطع $X$ عند $-1,7$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> $f(x)=x^4-1$</div>
+        <button class="neu-btn" data-reveal-steps="steps-g2">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-g2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ $f(-x)=f(x)$ ⇐ متناظرة مع $Y$ (زوجية)؛ تقاطع $Y$: $(0,-1)$؛ تقاطع $X$: $x^4=1\Rightarrow(\pm1,0)$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=4x^3=0\Rightarrow x=0$: نهاية صغرى $(0,-1)$؛ $f''(x)=12x^2\ge0$: لا تتغيّر الإشارة، فلا توجد نقطة انقلاب</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG2" width="440" height="260"></svg></div>
+      <div class="exercise-final">✓ منحني متناظر حول المحور $Y$ على شكل حرف U عريض، رأسه عند $(0,-1)$، يقطع $X$ عند $\pm1$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> $f(x)=(x+1)^2$</div>
+        <button class="neu-btn" data-reveal-steps="steps-g3">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-g3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر خاص؛ تقاطع $Y$: $(0,1)$؛ تقاطع $X$: $(x+1)^2=0\Rightarrow(-1,0)$ (جذر مضاعف، مماس)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=2(x+1)=0\Rightarrow x=-1$: نهاية صغرى $(-1,0)$؛ $f''(x)=2>0$: مقعرة دائماً، بلا انقلاب</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG3" width="440" height="260"></svg></div>
+      <div class="exercise-final">✓ قطع مكافئ يلامس المحور $X$ عند $(-1,0)$ فقط (رأسه)، ويمر بـ $(0,1)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> $f(x)=x^3-3x+3$</div>
+        <button class="neu-btn" data-reveal-steps="steps-g4">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-g4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر؛ تقاطع $Y$: $(0,3)$؛ لا جذور نسبية بسيطة لمعادلة $X$، نعتمد على النهايات والنقاط الإضافية</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=3x^2-3=0\Rightarrow x=\pm1$: نهاية عظمى $(-1,5)$، نهاية صغرى $(1,1)$؛ $f''(x)=6x=0\Rightarrow x=0$: نقطة انقلاب $(0,3)$</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG4" width="440" height="260"></svg></div>
+      <div class="exercise-final">✓ منحني يقطع $X$ مرة واحدة فقط قرب $x\approx-2.1$، يصعد لنهاية عظمى $(-1,5)$، ينقلب عند $(0,3)$، ينزل لنهاية صغرى $(1,1)$ ثم يصعد. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> $f(x)=x(x^2-12)$</div>
+        <button class="neu-btn" data-reveal-steps="steps-g5">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-g5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f(x)=x^3-12x$؛ المجال $\mathbb{R}$؛ $f(-x)=-f(x)$ ⇐ فردية (متناظرة مع الأصل)؛ تقاطع $X$: $x(x^2-12)=0\Rightarrow x=0,\pm2\sqrt3$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=3x^2-12=0\Rightarrow x=\pm2$: نهاية عظمى $(-2,16)$، نهاية صغرى $(2,-16)$؛ $f''(x)=6x=0\Rightarrow x=0$: نقطة انقلاب $(0,0)$</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG5" width="440" height="260"></svg></div>
+      <div class="exercise-final">✓ منحني فردي متناظر حول الأصل، يمر بـ $(0,0),(\pm2\sqrt3,0)$، بنهاية عظمى $(-2,16)$ وصغرى $(2,-16)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> $f(x)=x^3-8$</div>
+        <button class="neu-btn" data-reveal-steps="steps-g6">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-g6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر خاص؛ تقاطع $Y$: $(0,-8)$؛ تقاطع $X$: $x^3=8\Rightarrow(2,0)$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=3x^2\ge0$: لا تتغيّر الإشارة عند $x=0$ (متزايدة دائماً، $x=0$ حرجة فقط)؛ $f''(x)=6x=0\Rightarrow x=0$: نقطة انقلاب $(0,-8)$</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG6" width="440" height="260"></svg></div>
+      <div class="exercise-final">✓ منحني متزايد دائماً بلا نهايات محلية، له نقطة انقلاب (وحرجة) عند $(0,-8)$، يقطع $X$ عند $(2,0)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7</span> $f(x)=(x+1)^2(x-2)$</div>
+        <button class="neu-btn" data-reveal-steps="steps-g7">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-g7">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">بالتبسيط: $f(x)=x^3-3x-2$؛ المجال $\mathbb{R}$؛ بلا تناظر؛ تقاطع $X$ (من الصورة الأصلية): $(-1,0)$ (مضاعف)، $(2,0)$؛ تقاطع $Y$: $(0,-2)$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=3x^2-3=0\Rightarrow x=\pm1$: نهاية عظمى $(-1,0)$، نهاية صغرى $(1,-4)$؛ $f''(x)=6x=0\Rightarrow x=0$: نقطة انقلاب $(0,-2)$</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG7" width="440" height="260"></svg></div>
+      <div class="exercise-final">✓ منحني يلامس $X$ عند $(-1,0)$ (نهاية عظمى)، ينقلب عند $(0,-2)$، ينزل لنهاية صغرى $(1,-4)$، ثم يقطع $X$ عند $(2,0)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8</span> $f(x)=x^5+2x$</div>
+        <button class="neu-btn" data-reveal-steps="steps-g8">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-g8">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ $f(-x)=-f(x)$ ⇐ فردية؛ تقاطع $X,Y$: $x(x^4+2)=0\Rightarrow x=0$ فقط (لأن $x^4+2>0$ دائماً)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=5x^4+2>0\;\forall x$: متزايدة دائماً، بلا نهايات محلية؛ $f''(x)=20x^3=0\Rightarrow x=0$: نقطة انقلاب $(0,0)$</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG8" width="440" height="260"></svg></div>
+      <div class="exercise-final">✓ منحني فردي متزايد دائماً، يمر بنقطة الأصل التي هي أيضاً نقطة انقلابه الوحيدة. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9</span> $f(x)=6-x-x^2$</div>
+        <button class="neu-btn" data-reveal-steps="steps-g9">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-g9">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر خاص؛ تقاطع $Y$: $(0,6)$؛ تقاطع $X$: $x^2+x-6=0\Rightarrow(x+3)(x-2)=0\Rightarrow(-3,0),(2,0)$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=-2x-1=0\Rightarrow x=-\frac12$: نهاية عظمى $(-\frac12,\frac{25}{4})$؛ $f''(x)=-2<0$: محدبة دائماً، بلا انقلاب</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG9" width="440" height="260"></svg></div>
+      <div class="exercise-final">✓ قطع مكافئ فتحته للأسفل، رأسه (نهاية عظمى) عند $(-\frac12,\frac{25}{4})$، يقطع $X$ عند $-3,2$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">10</span> $f(x)=(2-x)^3+1$</div>
+        <button class="neu-btn" data-reveal-steps="steps-g10">إظهار الحل</button>
+      </div>
+      <ol class="steps hidden-steps" id="steps-g10">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">المجال $\mathbb{R}$؛ بلا تناظر خاص؛ تقاطع $Y$: $(0,9)$؛ تقاطع $X$: $(2-x)^3=-1\Rightarrow2-x=-1\Rightarrow(3,0)$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=-3(2-x)^2\le0$: لا تتغيّر الإشارة عند $x=2$ (متناقصة دائماً، $x=2$ حرجة فقط)؛ $f''(x)=12-6x=0\Rightarrow x=2$: نقطة انقلاب $(2,1)$</div></div>
+        </div></li>
+      </ol>
+      <div class="mindmap-wrap" style="margin-top:.6rem"><svg id="graphG10" width="440" height="260"></svg></div>
+      <div class="exercise-final">✓ منحني متناقص دائماً، له نقطة انقلاب (وحرجة) عند $(2,1)$، يقطع $X$ عند $(3,0)$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>1.</span><span>إذا تحقق $f(-x)=f(x)$ فإن منحني الدالة:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>متناظر مع نقطة الأصل</span></label>
+          <label class="quiz-opt"><input type="radio"><span>متناظر مع المحور $Y$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا يقطع محور $X$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>يمر بنقطة الأصل حتماً</span></label>
+        </div>
+        <div class="quiz-explain">$f(-x)=f(x)$ هو تعريف التناظر مع المحور $Y$ (الدالة الزوجية).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>لإيجاد نقاط تقاطع المنحني مع محور $X$ نضع:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$x=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f'(x)=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$y=0$ ونحل المعادلة في $x$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f''(x)=0$</span></label>
+        </div>
+        <div class="quiz-explain">جميع نقاط محور $X$ يكون فيها $y=0$، فنحل $f(x)=0$ لإيجاد قيم $x$ المقابلة.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>في مثال 14(b)، $f(x)=x^3-6x^2+9x$، القيمة $x=3$ تمثّل:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>تقاطع مع $X$ ونهاية صغرى معاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نقطة انقلاب فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نهاية عظمى فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا تنتمي للمنحني</span></label>
+        </div>
+        <div class="quiz-explain">الجذر $x=3$ (المضاعف) يجعل $f(3)=0$ (تقاطع) وهو أيضاً نهاية صغرى محلية حسب اختبار المشتقة الأولى.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>عندما تكون جميع أسس $x$ في الدالة فردية، تكون الدالة:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>متناظرة مع المحور $Y$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>غير معرّفة عند $x=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>محدبة دائماً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>متناظرة مع نقطة الأصل (فردية)</span></label>
+        </div>
+        <div class="quiz-explain">الأسس الفردية فقط تعني $f(-x)=-f(x)$، وهذا تعريف الدالة الفردية المتناظرة حول الأصل.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>الخطوة الأخيرة في منهجية رسم الدالة هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>إيجاد المشتقة الثانية</span></label>
+          <label class="quiz-opt"><input type="radio"><span>تعيين النقاط على ورق بياني والوصل بينها</span></label>
+          <label class="quiz-opt"><input type="radio"><span>اختبار التناظر</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إيجاد المجال</span></label>
+        </div>
+        <div class="quiz-explain">بعد جمع كل المعلومات (تقاطعات، نهايات، انقلاب، نقاط إضافية) نضعها في جدول ثم نرسم المنحني بالوصل بينها.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>منهجية الرسم: المجال ← التناظر ← نقاط التقاطع ← النهايات المحلية ← نقاط الانقلاب ← نقاط إضافية ← جدول ورسم.</span></li>
+        <li><span>$f(-x)=f(x)$ ⇐ تناظر مع $Y$ (زوجية)؛ $f(-x)=-f(x)$ ⇐ تناظر مع الأصل (فردية).</span></li>
+        <li><span>الجذر المضاعف في معادلة $f(x)=0$ يعني أن المنحني يلامس محور $X$ عند تلك النقطة دون قطعه.</span></li>
+        <li><span>عندما لا تتغيّر إشارة $f'(x)$ عند جذرها، تكون النقطة حرجة فقط لكنها غالباً تتطابق مع نقطة انقلاب.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l6" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع لخطوات رسم الدالة.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l6">
+        <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس السادس">
+          <line x1="450" y1="150" x2="150" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="150" x2="330" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="150" x2="570" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="150" x2="750" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="450" cy="150" r="52" fill="#ff6b9d"/>
+            <text x="450" y="145" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">رسم</text>
+            <text x="450" y="162" text-anchor="middle" fill="#fff" font-weight="800" font-size="11" font-family="Cairo,sans-serif">الدالة</text></g>
+
+          <g><circle cx="150" cy="70" r="44" fill="#7c6fee"/>
+            <text x="150" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">مجال</text>
+            <text x="150" y="81" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">وتناظر</text></g>
+
+          <g><circle cx="330" cy="250" r="44" fill="#3fa9f5"/>
+            <text x="330" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">تقاطعات</text></g>
+
+          <g><circle cx="570" cy="250" r="44" fill="#2fd18f"/>
+            <text x="570" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">نهايات</text>
+            <text x="570" y="261" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">محلية</text></g>
+
+          <g><circle cx="750" cy="70" r="44" fill="#ffab5e"/>
+            <text x="750" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">انقلاب</text>
+            <text x="750" y="81" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">وتقعر</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الثالث · تطبيقات على المشتقة — الدرس 6: رسم الدوال الحقيقية</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch3.js"></script>
+<script>
+(function(){
+  var ns = "http://www.w3.org/2000/svg";
+  function addPath(svg, d, stroke, width){
+    var p = document.createElementNS(ns,"path");
+    p.setAttribute("d",d); p.setAttribute("fill","none");
+    p.setAttribute("stroke",stroke); p.setAttribute("stroke-width",width||3); p.setAttribute("stroke-linecap","round");
+    svg.appendChild(p);
+  }
+  function addDot(svg, mapper,x,y,color,label){
+    var pt = mapper.toPx(x,y);
+    var c = document.createElementNS(ns,"circle");
+    c.setAttribute("cx",pt[0]); c.setAttribute("cy",pt[1]); c.setAttribute("r","5"); c.setAttribute("fill",color);
+    svg.appendChild(c);
+    if(label){
+      var t = document.createElementNS(ns,"text");
+      t.setAttribute("x",pt[0]+7); t.setAttribute("y",pt[1]-7);
+      t.setAttribute("font-size","10.5"); t.setAttribute("font-weight","700"); t.setAttribute("fill",color);
+      t.setAttribute("font-family","Cairo,sans-serif");
+      t.textContent = label;
+      svg.appendChild(t);
+    }
+  }
+  window.renderMiniGraph = function(svgId, fn, opts, points){
+    var svg = document.getElementById(svgId);
+    if(!svg) return;
+    var m = Ch4Plot.drawAxes(svg, opts);
+    addPath(svg, Ch4Plot.pathD(fn, opts.xmin+0.05, opts.xmax-0.05, m), opts.color||"#3fa9f5", 3);
+    (points||[]).forEach(function(pt){ addDot(svg, m, pt[0], pt[1], pt[2]||"#7c6fee", pt[3]); });
+  };
+
+  var fEx14a = function(x){ return x*x-4; };
+  var fEx14b = function(x){ return x*x*x-6*x*x+9*x; };
+
+  renderMiniGraph("graphEx14a", fEx14a, {xmin:-4,xmax:4,ymin:-5,ymax:6,step:2,w:480,h:320}, [[0,-4,"#ff6b9d","(0,-4)"],[2,0,"#2fd18f","(2,0)"],[-2,0,"#2fd18f","(-2,0)"]]);
+  renderMiniGraph("graphEx14b", fEx14b, {xmin:-1.5,xmax:4.5,ymin:-18,ymax:8,step:4,w:480,h:320}, [[0,0,"#2fd18f","(0,0)"],[3,0,"#2fd18f","(3,0)"],[1,4,"#ff6b9d","(1,4) عظمى"],[2,2,"#3fa9f5","(2,2) انقلاب"]]);
+
+  renderMiniGraph("graphG1", function(x){return x*x-6*x-7;}, {xmin:-3,xmax:10,ymin:-18,ymax:20,step:6,w:440,h:260}, [[-1,0,"#2fd18f","-1"],[7,0,"#2fd18f","7"],[3,-16,"#ff6b9d","min"]]);
+  renderMiniGraph("graphG2", function(x){return x*x*x*x-1;}, {xmin:-1.8,xmax:1.8,ymin:-2,ymax:6,step:2,w:440,h:260}, [[1,0,"#2fd18f",""],[-1,0,"#2fd18f",""],[0,-1,"#ff6b9d","min"]]);
+  renderMiniGraph("graphG3", function(x){return (x+1)*(x+1);}, {xmin:-4,xmax:2,ymin:-1,ymax:9,step:2,w:440,h:260}, [[-1,0,"#ff6b9d","min"]]);
+  renderMiniGraph("graphG4", function(x){return x*x*x-3*x+3;}, {xmin:-3,xmax:3,ymin:-6,ymax:10,step:4,w:440,h:260}, [[-1,5,"#ff6b9d","عظمى"],[1,1,"#2fd18f","صغرى"],[0,3,"#3fa9f5","انقلاب"]]);
+  renderMiniGraph("graphG5", function(x){return x*x*x-12*x;}, {xmin:-4.2,xmax:4.2,ymin:-18,ymax:18,step:6,w:440,h:260}, [[0,0,"#3fa9f5","انقلاب"],[-2,16,"#ff6b9d","عظمى"],[2,-16,"#2fd18f","صغرى"]]);
+  renderMiniGraph("graphG6", function(x){return x*x*x-8;}, {xmin:-2.5,xmax:3.5,ymin:-12,ymax:22,step:6,w:440,h:260}, [[2,0,"#2fd18f","2"],[0,-8,"#3fa9f5","انقلاب"]]);
+  renderMiniGraph("graphG7", function(x){return x*x*x-3*x-2;}, {xmin:-3,xmax:3,ymin:-6,ymax:4,step:2,w:440,h:260}, [[-1,0,"#ff6b9d","عظمى"],[2,0,"#2fd18f","2"],[1,-4,"#2fd18f","صغرى"],[0,-2,"#3fa9f5","انقلاب"]]);
+  renderMiniGraph("graphG8", function(x){return Math.pow(x,5)+2*x;}, {xmin:-1.4,xmax:1.4,ymin:-4,ymax:4,step:2,w:440,h:260}, [[0,0,"#3fa9f5","انقلاب"]]);
+  renderMiniGraph("graphG9", function(x){return 6-x-x*x;}, {xmin:-5,xmax:4,ymin:-6,ymax:8,step:2,w:440,h:260}, [[-3,0,"#2fd18f","-3"],[2,0,"#2fd18f","2"],[-0.5,6.25,"#ff6b9d","عظمى"]]);
+  renderMiniGraph("graphG10", function(x){return Math.pow(2-x,3)+1;}, {xmin:-1,xmax:5,ymin:-14,ymax:10,step:4,w:440,h:260}, [[3,0,"#2fd18f","3"],[2,1,"#3fa9f5","انقلاب"]]);
+})();
+</script>
+<script>
+(function(){
+  var svg = document.getElementById("labGraph");
+  var slider = document.getElementById("labSlider");
+  var out = document.getElementById("labOut");
+  var buttons = document.querySelectorAll("[data-fn-choice]");
+  var current = 0;
+
+  var configs = [
+    {
+      fn: function(x){ return x*x-4; },
+      opts: {xmin:-4,xmax:4,ymin:-5,ymax:6,step:2,w:520,h:340},
+      stages: [
+        {label:"مجال ℝ، متناظرة مع المحور Y", points:[]},
+        {label:"نقاط التقاطع مع المحورين", points:[[0,-4,"#ff6b9d","(0,-4)"],[2,0,"#2fd18f","(2,0)"],[-2,0,"#2fd18f","(-2,0)"]]},
+        {label:"النهاية الصغرى المحلية", points:[[0,-4,"#ff6b9d","(0,-4)"],[2,0,"#2fd18f","(2,0)"],[-2,0,"#2fd18f","(-2,0)"]]},
+        {label:"الرسم الكامل — مقعرة في كل مجالها", points:[[0,-4,"#ff6b9d","(0,-4)"],[2,0,"#2fd18f","(2,0)"],[-2,0,"#2fd18f","(-2,0)"]]}
+      ]
+    },
+    {
+      fn: function(x){ return x*x*x-6*x*x+9*x; },
+      opts: {xmin:-1.5,xmax:4.5,ymin:-18,ymax:8,step:4,w:520,h:340},
+      stages: [
+        {label:"مجال ℝ، بلا تناظر خاص", points:[]},
+        {label:"نقاط التقاطع مع المحورين", points:[[0,0,"#2fd18f","(0,0)"],[3,0,"#2fd18f","(3,0)"]]},
+        {label:"النهاية العظمى والصغرى المحلية", points:[[0,0,"#2fd18f","(0,0)"],[3,0,"#2fd18f","(3,0)"],[1,4,"#ff6b9d","(1,4) عظمى"]]},
+        {label:"نقطة الانقلاب — الرسم الكامل", points:[[0,0,"#2fd18f","(0,0)"],[3,0,"#2fd18f","(3,0)"],[1,4,"#ff6b9d","(1,4) عظمى"],[2,2,"#3fa9f5","(2,2) انقلاب"]]}
+      ]
+    }
+  ];
+
+  function render(){
+    var cfg = configs[current];
+    var stageIdx = parseInt(slider.value, 10);
+    var stage = cfg.stages[Math.min(stageIdx, cfg.stages.length-1)];
+    window.renderMiniGraph("labGraph", cfg.fn, cfg.opts, stage.points);
+    out.textContent = "المرحلة " + (stageIdx+1) + ": " + stage.label;
+  }
+
+  buttons.forEach(function(btn, i){
+    btn.addEventListener("click", function(){
+      current = i;
+      buttons.forEach(function(b){ b.classList.remove("primary"); });
+      btn.classList.add("primary");
+      slider.value = 0;
+      render();
+    });
+  });
+  slider.addEventListener("input", render);
+  render();
+})();
+</script>
+</body>
+</html>
