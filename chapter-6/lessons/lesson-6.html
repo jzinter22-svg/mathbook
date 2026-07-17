@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 6: تمارين شاملة على الفصل — الفصل السادس</title>
+<meta name="description" content="تمرين (3-6) الشامل بجميع فقراته كبطاقات مستقلة (نرد، مصابيح، أزواج، طلاب، كرات)، مع اختبار ختامي شامل وخريطة ذهنية كاملة للفصل السادس.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/theme-ch6.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-6.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 6 من 6 · تمرين (3-6) الشامل</span>
+    <h1>تمارين شاملة على الفصل</h1>
+    <p class="lead">وصلنا للمحطة الأخيرة! هنا نجمع كل ما تعلمناه — فضاء العيّنة، الحدث، التباديل والتوافيق، طرق السحب، ونسبة الاحتمال وقوانينها — في 17 مسألة مستقلة متنوعة، ثم نختم بخريطة ذهنية شاملة للفصل كله.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يوظّف كل أدوات الفصل معاً (فضاء العيّنة، الحدث، التوافيق، طرق السحب، نسبة الاحتمال وقوانينها) في مسائل متنوعة.</span></li>
+        <li><span class="obj-num">2</span><span>يحل جميع فقرات تمرين (3-6) — 17 فقرة مستقلة — كل فقرة ببطاقتها وحلها الكامل.</span></li>
+        <li><span class="obj-num">3</span><span>يراجع الفصل كاملاً عبر خريطة ذهنية شاملة واختبار ختامي.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (3-6)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (3-6) — الشامل</h2>
+    <p class="lead" style="margin-top:0">17 فقرة مستقلة تغطي الفصل كاملاً. حاول أولاً بنفسك ثم اضغط «إظهار الحل».</p>
+
+    <h3 style="margin:1rem 0 .3rem">السؤال 1 — حجر نرد: احتمال أي عدد زوجي ضعف احتمال أي عدد فردي</h3>
+    <div class="diagram-card"><div class="container-scene">
+      <div class="pw-row" id="q1Dice"></div>
+      <span class="diagram-caption"><span class="ar-safe">P(فردي واحد) = y، P(زوجي واحد) = 2y</span> لكل عدد على حدة</span>
+    </div></div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1a</span> ظهور عدد زوجي</div>
+        <button class="neu-btn" data-reveal-steps="steps-c1a">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c1a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نفرض <span class="ar-safe">P(فردي) = y</span> فيكون <span class="ar-safe">P(زوجي) = 2y</span> لكل عدد؛ 3 أعداد فردية و3 زوجية</p>
+          <div class="calc-flow"><div class="calc-line">\( 3y+3(2y)=1 \Rightarrow 9y=1 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( y=\dfrac19 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note"><span class="ar-safe">P(عدد زوجي)</span> \(=P(2)+P(4)+P(6)=3\times2y=6y\)</p>
+          <div class="calc-flow"><div class="calc-line">\( 6\times\dfrac19 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac23 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ <span class="ar-safe">P(زوجي)</span> \(=\dfrac23\). ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1b</span> ظهور عدد فردي</div>
+        <button class="neu-btn" data-reveal-steps="steps-c1b">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c1b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note"><span class="ar-safe">P(عدد فردي)</span> \(=P(1)+P(3)+P(5)=3y\)</p>
+          <div class="calc-flow"><div class="calc-line">\( 3\times\dfrac19 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac13 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ <span class="ar-safe">P(فردي)</span> \(=\dfrac13\). ∎ (تحقّق: $\frac23+\frac13=1$ ✓)</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1c</span> ظهور عدد أوّلي</div>
+        <button class="neu-btn" data-reveal-steps="steps-c1c">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c1c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الأعداد الأوّلية: $\{2,3,5\}$؛ منها 2 زوجي ($P=2y$) و3،5 فرديان ($P=y$ لكل)</p>
+          <div class="calc-flow"><div class="calc-line">\( P(2)+P(3)+P(5)=2y+y+y=4y \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac49 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ <span class="ar-safe">P(أوّلي)</span> \(=\dfrac49\). ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1d</span> ظهور عدد فردي أوّلي</div>
+        <button class="neu-btn" data-reveal-steps="steps-c1d">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c1d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الأعداد الفردية والأوّلية معاً: $\{3,5\}$</p>
+          <div class="calc-flow"><div class="calc-line">\( P(3)+P(5)=y+y=2y \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac29 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ <span class="ar-safe">P(فردي وأوّلي)</span> \(=\dfrac29\). ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 2 — صندوق فيه 12 مصباحاً كهربائياً، 4 منها عاطلة، سحبنا مصباحين</h3>
+    <div class="diagram-card"><div class="container-scene">
+      <div class="pw-row"><span style="font-size:1.8rem">💡×8 <span class="ar-safe">(صالحة)</span></span><span style="font-size:1.8rem">🔴×4 <span class="ar-safe">(عاطلة)</span></span></div>
+    </div></div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">2a</span> كلا المصباحين عاطل</div>
+        <button class="neu-btn" data-reveal-steps="steps-c2a">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c2a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نختار 2 من الأربعة العاطلة، من أصل $C^{12}_2$ طريقة كلية</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{C^4_2}{C^{12}_2}=\dfrac{6}{66} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{1}{11} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P=\dfrac{1}{11}$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">2b</span> كلا المصباحين صالح</div>
+        <button class="neu-btn" data-reveal-steps="steps-c2b">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c2b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نختار 2 من الثمانية الصالحة</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{C^8_2}{C^{12}_2}=\dfrac{28}{66} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{14}{33} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P=\dfrac{14}{33}$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">2c</span> أحدهما عاطل والآخر صالح</div>
+        <button class="neu-btn" data-reveal-steps="steps-c2c">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c2c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نختار 1 من الأربعة العاطلة و1 من الثمانية الصالحة</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{C^4_1\times C^8_1}{C^{12}_2}=\dfrac{32}{66} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{16}{33} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="callout tip" style="margin-top:.8rem"><span class="icon">💬</span><span>تحقّق: $\frac{1}{11}+\frac{14}{33}+\frac{16}{33}=\frac{3}{33}+\frac{14}{33}+\frac{16}{33}=\frac{33}{33}=1$ ✓ — الأحداث الثلاثة تغطي فضاء العيّنة كاملاً.</span></div>
+      <div class="exercise-final">✓ $P=\dfrac{16}{33}$. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 3 — 12 شخصاً (6 رجال وزوجاتهم) يقفون في قاعة</h3>
+    <div class="diagram-card"><div class="container-scene"><div class="pw-row"><span style="font-size:2rem">💑×6</span></div></div></div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">3a</span> اختيار 2 عشوائياً: نسبة كونهما (رجل وزوجته)</div>
+        <button class="neu-btn" data-reveal-steps="steps-c3a">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c3a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">يوجد 6 أزواج متطابقين ممكنين (كل رجل مع زوجته)، من أصل $C^{12}_2$ طريقة لاختيار أي شخصين</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{C^6_1}{C^{12}_2}=\dfrac{6}{66} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{1}{11} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P=\dfrac{1}{11}$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">3b</span> اختيار 4 عشوائياً: نسبة كونهم (رجلين وزوجتيهما)</div>
+        <button class="neu-btn" data-reveal-steps="steps-c3b">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c3b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نختار زوجين متطابقين (كوبلين) من أصل 6 أزواج ممكنة، ثم نأخذ كل أفرادهما الأربعة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^6_2=15 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">مقابل عدد الطرق الكلية لاختيار أي 4 أشخاص من أصل 12</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{C^6_2}{C^{12}_4}=\dfrac{15}{495} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{1}{33} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P=\dfrac{1}{33}$. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 4 — صف دراسي: 4 أردنيون، 8 عراقيون، 5 ليبيون، 3 خليجيون. اخترنا طالبين</h3>
+    <div class="diagram-card"><div class="container-scene">
+      <div class="pw-row"><span class="outcome-chip pill-purple">🧑 أردني ×4</span><span class="outcome-chip pill-blue">🧑 عراقي ×8</span><span class="outcome-chip pill-green">🧑 ليبي ×5</span><span class="outcome-chip pill-pink">🧑 خليجي ×3</span></div>
+    </div></div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">4a</span> الطالبان من بلد واحد</div>
+        <button class="neu-btn" data-reveal-steps="steps-c4a">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c4a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجمع طرق اختيار طالبين من نفس كل جنسية على حدة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^4_2+C^8_2+C^5_2+C^3_2=6+28+10+3=47 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">المجموع الكلي 20 طالباً</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{47}{C^{20}_2}=\dfrac{47}{190} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P=\dfrac{47}{190}$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">4b</span> (عراقي وأردني) أو (ليبي وأردني)</div>
+        <button class="neu-btn" data-reveal-steps="steps-c4b">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c4b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">حدثان متنافيان (الثنائي إما عراقي+أردني أو ليبي+أردني، لا يمكن الاثنان معاً)، فنجمع عدد طرق كل منهما</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^8_1C^4_1+C^5_1C^4_1=32+20=52 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نقسّم على العدد الكلي</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{52}{190} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{26}{95} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P=\dfrac{26}{95}$. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 5 — حدثان منفصلان</h3>
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">5</span> $A,B$ منفصلان، $P(A)=0.3$، $P(A\cup B)=0.7$، جد $P(B)$</div>
+        <button class="neu-btn" data-reveal-steps="steps-c5">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">لأن $A,B$ منفصلان (متنافيان)، نطبّق القانون 4: $P(A\cup B)=P(A)+P(B)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 0.7=0.3+P(B) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">ننقل 0.3 (تتغيّر الإشارة)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P(B)=0.7-0.3=0.4 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P(B)=0.4$. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 6 — اختير رقمان من 1 إلى 9، وكان مجموعهما زوجياً</h3>
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">6</span> إذا كان المجموع زوجياً، ما نسبة احتمال كون كلا الرقمين فردياً؟</div>
+        <button class="neu-btn" data-reveal-steps="steps-c6">إظهار الحل</button></div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row"><span class="outcome-chip pill-blue">فردي: 1,3,5,7,9 (×5)</span><span class="outcome-chip pill-green">زوجي: 2,4,6,8 (×4)</span></div>
+        <span class="diagram-caption">المجموع يكون زوجياً فقط عندما يكون الرقمان من نفس النوع (فرديان معاً أو زوجيان معاً)</span>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-c6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">المجموع يكون زوجياً فقط إذا كان الرقمان من نفس النوع (فردي+فردي أو زوجي+زوجي)؛ هذا هو فضاء العيّنة الجديد (المُقيَّد بالشرط المعطى)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n=C^5_2+C^4_2=10+6=16 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">من بين هذه الحالات الـ16، عدد الحالات التي يكون فيها الرقمان فرديين معاً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=C^5_2=10 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض في $P(E)=r/n$</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{10}{16} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{5}{8} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P=\dfrac{5}{8}$. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 7 — وعاء فيه 7 كرات حمراء و3 بيضاء، اختيرت 3 كرات الواحدة بعد الأخرى دون إرجاع</h3>
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">7</span> نسبة كون الأولى والثانية حمراوين والثالثة بيضاء</div>
+        <button class="neu-btn" data-reveal-steps="steps-c7">إظهار الحل</button></div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row" id="q7Balls"></div>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-c7">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">احتمال الكرة الأولى حمراء من أصل 10</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P_1=\dfrac{7}{10} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">دون إرجاع، تبقى 6 حمراء من أصل 9 كرات</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P_2=\dfrac{6}{9} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">بعد سحب كرتين حمراوين، تبقى 8 كرات (منها 3 بيضاء كما هي)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P_3=\dfrac{3}{8} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نضرب احتمالات المراحل الثلاث المتتابعة</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{7}{10}\times\dfrac{6}{9}\times\dfrac{3}{8} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{7}{40} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P=\dfrac{7}{40}$. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 8 — ألقينا حجري نرد، وكان العددان الظاهران مختلفين</h3>
+    <div class="diagram-card">
+      <div id="q8Table"></div>
+      <span class="diagram-caption">فضاء العيّنة المُقيَّد بالشرط: 30 زوجاً (بعد استبعاد الأزواج المتساوية الستة المظلّلة بالرمادي)</span>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">8a</span> المجموع 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-c8a">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c8a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن العددين مختلفان، فضاء العيّنة المُقيَّد يحوي $36-6=30$ زوجاً (نستبعد الأزواج المتساوية الستة)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n=30 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">الأزواج المختلفة التي مجموعها 6: $(1,5),(5,1),(2,4),(4,2)$ — نستبعد $(3,3)$ لأنه متساوٍ</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=4 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{4}{30} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{2}{15} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P=\dfrac{2}{15}$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">8b</span> أحد الوجهين يحمل العدد 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-c8b">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c8b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الأزواج المختلفة التي تحوي 1: $(1,2),(2,1),(1,3),(3,1),(1,4),(4,1),(1,5),(5,1),(1,6),(6,1)$ — نستبعد $(1,1)$ لأنه متساوٍ</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=10 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض من أصل 30</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{10}{30} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{1}{3} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P=\dfrac{1}{3}$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">8c</span> المجموع 4 أو أقل</div>
+        <button class="neu-btn" data-reveal-steps="steps-c8c">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-c8c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الأزواج المختلفة التي مجموعها 4 أو أقل: $(1,2)=3,(2,1)=3,(1,3)=4,(3,1)=4$ — نستبعد $(1,1)=2$ و$(2,2)=4$ لتساوي عدديهما</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=4 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض</p>
+          <div class="calc-flow"><div class="calc-line">\( P=\dfrac{4}{30} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{2}{15} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P=\dfrac{2}{15}$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبار ختامي شامل">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبار ختامي شامل على الفصل السادس</h2>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>1.</span><span>فضاء العيّنة لتجربة إلقاء حجرَي نرد معاً يحتوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>6 عناصر</span></label>
+          <label class="quiz-opt"><input type="radio"><span>36 عنصراً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>12 عنصراً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>216 عنصراً</span></label>
+        </div>
+        <div class="quiz-explain">$n(S)=6\times6=36$ (الدرس 2).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>عندما لا يهمّنا ترتيب العناصر المختارة، نستخدم:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>المضروب $n!$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>التباديل $P(n,r)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>التوافيق $C(n,r)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا شيء مما سبق</span></label>
+        </div>
+        <div class="quiz-explain">التوافيق لا تهتم بالترتيب (الدرس 3).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>السحب دون إرجاع ودون ترتيب يُحسب بالصيغة:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$C^n_r$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$n^r$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$C^{n+r-1}_r$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$r!$</span></label>
+        </div>
+        <div class="quiz-explain">دون إرجاع ودون ترتيب = $C^n_r$ (الدرس 4)، وهي الصيغة الافتراضية عند عدم ذكر طريقة السحب.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>إذا كان $P(A)=0.6$، فإن احتمال الحدث المتمم $P(A^c)$ يساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>0.6</span></label>
+          <label class="quiz-opt"><input type="radio"><span>0</span></label>
+          <label class="quiz-opt"><input type="radio"><span>1.6</span></label>
+          <label class="quiz-opt"><input type="radio"><span>0.4</span></label>
+        </div>
+        <div class="quiz-explain">$P(A)+P(A^c)=1 \Rightarrow P(A^c)=1-0.6=0.4$ (الدرس 5).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>في السؤال 6 من هذا الدرس، لماذا كان فضاء العيّنة الجديد يحتوي 16 عنصراً فقط بدلاً من $C^9_2=36$؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>خطأ حسابي</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن السؤال قيّد فضاء العيّنة بشرط «المجموع زوجي»، فبقيت فقط الأزواج التي تحققه</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن الأرقام من 1 إلى 9 فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا علاقة للشرط بحجم فضاء العيّنة</span></label>
+        </div>
+        <div class="quiz-explain">عندما يُعطى شرط في السؤال («إذا علمت أن...»)، يصبح فضاء العيّنة الفعلي هو فقط الحالات المحقِّقة لذلك الشرط.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>6.</span><span>حدثان $A,B$ منفصلان (متنافيان) يعني:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$P(A)=P(B)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$A\cup B=S$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$A\cap B=\varnothing$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$A=B$</span></label>
+        </div>
+        <div class="quiz-explain">تعريف 6-7: الحوادث المتنافية تقاطعها خالٍ (الدرس 2).</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 ملخص الفصل">
+    <div class="card neu">
+      <h2>📋 ملخص الفصل السادس كاملاً</h2>
+      <ul class="summary-list">
+        <li><span><b>فضاء العيّنة $S$:</b> كل النتائج الممكنة لتجربة عشوائية؛ $n(S)$ عدد عناصره.</span></li>
+        <li><span><b>الحدث $E$:</b> مجموعة جزئية من $S$؛ حوادث متنافية إذا $E_1\cap E_2=\varnothing$.</span></li>
+        <li><span><b>التباديل والتوافيق:</b> $P(n,r)=\dfrac{n!}{(n-r)!}$ (بالترتيب) و$C(n,r)=\dfrac{n!}{(n-r)!\,r!}$ (بدون ترتيب).</span></li>
+        <li><span><b>طرق سحب العيّنة:</b> أربع صيغ حسب الإرجاع والترتيب: $C^n_r,\,P^n_r,\,C^{n+r-1}_r,\,n^r$.</span></li>
+        <li><span><b>نسبة الاحتمال:</b> $P(E)=\dfrac{r}{n}$، مع خمسة قوانين أساسية تحكم عمليتي الاتحاد والتقاطع.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية الشاملة">
+    <div class="card neu">
+      <h2>🗺 الخريطة الذهنية الشاملة للفصل السادس</h2>
+      <div class="mindmap-wrap diagram-wrap">
+        <svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية شاملة للفصل السادس">
+          <defs>
+            <linearGradient id="gC6f" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7c6fee"/><stop offset="1" stop-color="#3fa9f5"/>
+            </linearGradient>
+          </defs>
+          <line x1="450" y1="230" x2="180" y2="90" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="720" y2="90" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="150" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="750" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="230" y2="400" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="670" y2="400" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g class="mm-node"><circle cx="450" cy="230" r="62" fill="url(#gC6f)"/>
+            <text x="450" y="223" text-anchor="middle" fill="#fff" font-weight="800" font-size="16" font-family="Cairo,sans-serif">نظرية</text>
+            <text x="450" y="243" text-anchor="middle" fill="#fff" font-size="14" font-family="Cairo,sans-serif">الاحتمال</text></g>
+
+          <g class="mm-node"><circle cx="180" cy="90" r="55" fill="#ffab5e"/>
+            <text x="180" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">S = فضاء العيّنة</text>
+            <text x="180" y="98" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">n(S)، تجربة عشوائية</text>
+            <text x="180" y="114" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">الدرس 1</text></g>
+
+          <g class="mm-node"><circle cx="720" cy="90" r="55" fill="#ff6b9d"/>
+            <text x="720" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">E ⊆ S الحدث</text>
+            <text x="720" y="98" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">متنافية، متساوية الفرص</text>
+            <text x="720" y="114" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">الدرس 2</text></g>
+
+          <g class="mm-node"><circle cx="150" cy="250" r="55" fill="#2fd18f"/>
+            <text x="150" y="242" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">Pⁿᵣ, Cⁿᵣ</text>
+            <text x="150" y="258" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">تباديل وتوافيق</text>
+            <text x="150" y="274" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">الدرس 3</text></g>
+
+          <g class="mm-node"><circle cx="750" cy="250" r="55" fill="#3fa9f5"/>
+            <text x="750" y="238" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">مع/دون إرجاع</text>
+            <text x="750" y="254" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">و/دون ترتيب</text>
+            <text x="750" y="270" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">الدرس 4</text></g>
+
+          <g class="mm-node"><circle cx="230" cy="400" r="55" fill="#7c6fee"/>
+            <text x="230" y="392" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">P(E)=r/n</text>
+            <text x="230" y="408" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">وقوانينها الخمسة</text>
+            <text x="230" y="424" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">الدرس 5</text></g>
+
+          <g class="mm-node"><circle cx="670" cy="400" r="55" fill="#ff9f5e"/>
+            <text x="670" y="392" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">17 مسألة</text>
+            <text x="670" y="408" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">تطبيقية شاملة</text>
+            <text x="670" y="424" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">الدرس 6</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="callout tip fade-up">
+      <span class="icon">🎉</span>
+      <span><b>أحسنت!</b> أنهيت الفصل السادس: نظرية الاحتمال، بجميع تعريفاته وقوانينه وأمثلته الـ26 وتمارينه الـ51 فقرة. راجع الخريطة الذهنية أعلاه دورياً قبل أي اختبار.</span>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل السادس · نظرية الاحتمال — الدرس 6: تمارين شاملة على الفصل</footer>
+
+<script src="../../assets/js/probability-widgets.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch6.js"></script>
+<script>
+(function(){
+  function ready(fn){ if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", fn); else fn(); }
+  ready(function(){
+    if(!window.PW) return;
+
+    var diceEl = document.getElementById("q1Dice");
+    if(diceEl){
+      for(var v=1; v<=6; v++){
+        var s = document.createElement("span");
+        s.className = "pw-die";
+        s.setAttribute("data-die", v);
+        diceEl.appendChild(s);
+      }
+    }
+
+    var ballsEl = document.getElementById("q7Balls");
+    if(ballsEl){
+      for(var i=0;i<7;i++){
+        var rb = document.createElement("span");
+        rb.className = "pw-ball";
+        rb.setAttribute("data-ball", "red");
+        ballsEl.appendChild(rb);
+      }
+      for(var j=0;j<3;j++){
+        var wb = document.createElement("span");
+        wb.className = "pw-ball";
+        wb.setAttribute("data-ball", "white");
+        ballsEl.appendChild(wb);
+      }
+    }
+
+    var q8 = document.getElementById("q8Table");
+    if(q8){
+      PW.buildTable(q8, [1,2,3,4,5,6], [1,2,3,4,5,6],
+        function(r,c){ return "("+r+","+c+")"; },
+        { corner:"🎲\\🎲",
+          rowHeaderHTML: function(r){ return '<span class="pw-die sm" data-die="'+r+'"></span>'; },
+          colHeaderHTML: function(c){ return '<span class="pw-die sm" data-die="'+c+'"></span>'; },
+          cellClass: function(r,c){ return (r===c) ? "hl" : ""; } });
+      q8.querySelectorAll("td.hl").forEach(function(td){
+        td.style.opacity = ".35";
+        td.style.textDecoration = "line-through";
+      });
+    }
+
+    PW.init();
+  });
+})();
+</script>
+</body>
+</html>
