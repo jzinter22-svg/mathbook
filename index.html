@@ -1,87 +1,206 @@
-<!doctype html>
-<html lang="ar" dir="rtl" data-base="">
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>كتاب الرياضيات التفاعلي — الصفحة الرئيسية</title>
-<meta name="description" content="كتاب الرياضيات التفاعلي: الأعداد المركبة، القطوع المخروطية، تطبيقات على المشتقة، التكامل، الهندسة الفراغية، ونظرية الاحتمال — ستة فصول تفاعلية كاملة بأسلوب نيومورفيزم عصري مع أمثلة تفاعلية واختبارات وخرائط ذهنية.">
-<link rel="stylesheet" href="assets/css/theme.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>رياضيات الثالث المهني التفاعلية — كتاب الرياضيات التفاعلي</title>
+<script src="./support.js"></script>
 </head>
-<body data-page="index.html">
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="index.html"><span class="brand-badge">📘</span><span>كتاب الرياضيات التفاعلي</span></a>
-    <div class="header-actions">
-      <button class="neu-icon-btn" id="themeToggle" title="تبديل المظهر" aria-label="تبديل المظهر">🌓</button>
-    </div>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;900&family=Noto+Kufi+Arabic:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;padding:0;-webkit-font-smoothing:antialiased;}
+    * { box-sizing: border-box; }
+    @keyframes titleIn { 0%{opacity:0; transform: translateY(28px) scale(.96);} 100%{opacity:1; transform: translateY(0) scale(1);} }
+    @keyframes fadeUp { 0%{opacity:0; transform: translateY(18px);} 100%{opacity:1; transform: translateY(0);} }
+    @keyframes floatSlow { 0%,100%{transform: translateY(0px);} 50%{transform: translateY(-10px);} }
+    @keyframes drawLine { from { stroke-dashoffset: 700; } to { stroke-dashoffset: 0; } }
+  </style>
+</helmet>
+
+<div dir="rtl" lang="ar" style="min-height:100vh; width:100%; font-family:'Cairo','Tajawal','Noto Kufi Arabic',sans-serif; background:{{ theme.bgGradient }}; transition: background .5s ease; overflow-x:hidden; position:relative;">
+
+  <div style="position:fixed; top:22px; left:22px; z-index:20; padding:10px 18px; border-radius:14px; background:{{ theme.surface }}; box-shadow:{{ theme.shadowOuterSm }}; font-size:13px; font-weight:600; color:{{ theme.textMuted }}; letter-spacing:.2px;">
+    مديرية التعليم المهني
   </div>
-</header>
 
-<main class="container">
-  <section class="hero fade-up">
-    <span class="eyebrow">📘 كتاب الرياضيات التفاعلي · الصف الثالث الصناعي</span>
-    <h1>مرحباً بك في كتابك التفاعلي</h1>
-    <p class="lead">اختر فصلاً لتبدأ رحلتك: شرح مفصّل بأسلوب مبسّط، أمثلة محلولة خطوة بخطوة، تمارين تفاعلية، اختبارات ذاتية، وخرائط ذهنية لكل درس.</p>
-    <div class="io-row" style="margin-top:1.25rem">
-      <span class="tag">📚 6 فصول</span>
-      <span class="tag">⏱ 37 درساً</span>
-      <span class="tag">🧠 اختبارات ذاتية</span>
-      <span class="tag">🗺 خرائط ذهنية</span>
-    </div>
-  </section>
+  <button onClick="{{ toggleTheme }}" aria-label="تبديل الوضع الليلي" style="position:fixed; top:18px; right:18px; z-index:20; width:52px; height:52px; border-radius:16px; border:none; cursor:pointer; background:{{ theme.surface }}; box-shadow:{{ theme.shadowOuterSm }}; display:flex; align-items:center; justify-content:center;" style-active="box-shadow: inset 4px 4px 8px rgba(0,0,0,.18), inset -4px -4px 8px rgba(255,255,255,.06);">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
+        <path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z" fill="{{ theme.accent }}"/>
+      </sc-if>
+      <sc-if value="{{ notDark }}" hint-placeholder-val="{{ true }}">
+        <circle cx="12" cy="12" r="5" fill="{{ theme.accent }}"/>
+        <g stroke="{{ theme.accent }}" stroke-width="2" stroke-linecap="round">
+          <line x1="12" y1="1" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="23"/>
+          <line x1="1" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="23" y2="12"/>
+          <line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/>
+          <line x1="4.2" y1="19.8" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"/>
+        </g>
+      </sc-if>
+    </svg>
+  </button>
 
-  <section class="section fade-up">
-    <h2 style="margin-bottom:1rem">📚 فصول الكتاب</h2>
-    <div class="grid grid-2">
+  <main style="max-width:1180px; margin:0 auto; padding:110px 24px 60px; display:flex; flex-direction:column; align-items:center; text-align:center;">
 
-      <a class="neu lesson-card" href="chapter-1/index.html">
-        <span class="lesson-idx" style="background:linear-gradient(135deg,#7c6fee,#3fa9f5)">1</span>
-        <h3 style="margin:.2rem 0">الفصل الأول: الأعداد المركبة <span style="color:var(--accent-blue);font-weight:400">Complex Numbers</span></h3>
-        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">قوى العدد التخيلي، الجمع والطرح والضرب والقسمة، المرافق، حل المعادلات في ℂ، التمثيل الهندسي، والصيغة القطبية.</p>
-        <span class="lesson-go">ادخل الفصل ←</span>
-      </a>
+    <h1 style="font-size:clamp(34px,6vw,74px); font-weight:900; color:{{ theme.textPrimary }}; margin:0 0 18px; line-height:1.25; animation: titleIn 1s cubic-bezier(.2,.8,.2,1) both; text-wrap:pretty;">
+      رياضيات الثالث المهني التفاعلية
+    </h1>
 
-      <a class="neu lesson-card" href="chapter-2/index.html">
-        <span class="lesson-idx" style="background:linear-gradient(135deg,#3fa9f5,#ff6b9d)">2</span>
-        <h3 style="margin:.2rem 0">الفصل الثاني: القطوع المخروطية <span style="color:var(--accent-blue);font-weight:400">Conic Sections</span></h3>
-        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">المفهوم العام للقطوع المخروطية، والقطع المكافئ، والقطع الناقص، والقطع الزائد: تعريفها ومعادلاتها القياسية ورسمها.</p>
-        <span class="lesson-go">ادخل الفصل ←</span>
-      </a>
+    <svg viewBox="0 0 900 520" style="width:min(880px,92vw); height:auto; margin:18px 0 8px; animation: fadeUp 1.1s ease .15s both;">
+      <line x1="130" y1="330" x2="430" y2="330" stroke="{{ theme.textMuted }}" stroke-width="2" opacity=".5"/>
+      <line x1="150" y1="130" x2="150" y2="430" stroke="{{ theme.textMuted }}" stroke-width="2" opacity=".5"/>
+      <path d="M130 330 L436 330 M424 324 L436 330 L424 336" stroke="{{ theme.textMuted }}" stroke-width="2" fill="none" opacity=".5"/>
+      <path d="M150 430 L150 124 M144 136 L150 124 L156 136" stroke="{{ theme.textMuted }}" stroke-width="2" fill="none" opacity=".5"/>
+      <path d="M150 380 C 210 250, 260 400, 320 260 S 420 210, 430 300" fill="none" stroke="{{ theme.accent }}" stroke-width="4" stroke-linecap="round" stroke-dasharray="700" style="animation: drawLine 2.2s ease .3s both;"/>
+      <g opacity=".9">
+        <polygon points="620,150 690,150 655,90" fill="none" stroke="{{ theme.textPrimary }}" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <g opacity=".9">
+        <circle cx="740" cy="260" r="46" fill="none" stroke="{{ theme.accentAmber }}" stroke-width="4"/>
+        <line x1="740" y1="222" x2="740" y2="298" stroke="{{ theme.accentAmber }}" stroke-width="2"/>
+        <line x1="702" y1="260" x2="778" y2="260" stroke="{{ theme.accentAmber }}" stroke-width="2"/>
+      </g>
+      <g transform="translate(60,60) rotate(-18)" opacity=".95">
+        <polygon points="0,60 12,0 24,60" fill="none" stroke="{{ theme.textPrimary }}" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="12" cy="12" r="4" fill="{{ theme.textPrimary }}"/>
+      </g>
+      <g transform="translate(40,340) rotate(-8)">
+        <rect x="0" y="0" width="220" height="26" rx="5" fill="{{ theme.surface }}" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+        <line x1="20" y1="0" x2="20" y2="10" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+        <line x1="45" y1="0" x2="45" y2="16" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+        <line x1="70" y1="0" x2="70" y2="10" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+        <line x1="95" y1="0" x2="95" y2="16" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+        <line x1="120" y1="0" x2="120" y2="10" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+        <line x1="145" y1="0" x2="145" y2="16" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+        <line x1="170" y1="0" x2="170" y2="10" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+        <line x1="195" y1="0" x2="195" y2="16" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(30,140)">
+        <g style="animation: floatSlow 5s ease-in-out infinite;">
+          <rect x="0" y="0" width="120" height="150" rx="14" fill="{{ theme.surface }}" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+          <rect x="14" y="14" width="92" height="34" rx="6" fill="{{ theme.bgGradientFlat }}"/>
+          <g fill="{{ theme.textMuted }}">
+            <rect x="14" y="62" width="20" height="18" rx="4"/><rect x="42" y="62" width="20" height="18" rx="4"/><rect x="70" y="62" width="20" height="18" rx="4"/>
+            <rect x="14" y="88" width="20" height="18" rx="4"/><rect x="42" y="88" width="20" height="18" rx="4"/><rect x="70" y="88" width="20" height="18" rx="4"/>
+            <rect x="14" y="114" width="20" height="18" rx="4"/><rect x="42" y="114" width="20" height="18" rx="4"/><rect x="70" y="114" width="20" height="18" rx="4"/>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(660,60)">
+        <g style="animation: floatSlow 6s ease-in-out infinite .5s;">
+          <rect x="0" y="0" width="150" height="110" rx="10" fill="{{ theme.surface }}" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+          <circle cx="12" cy="15" r="4" fill="{{ theme.accent }}"/><circle cx="12" cy="35" r="4" fill="{{ theme.accent }}"/><circle cx="12" cy="55" r="4" fill="{{ theme.accent }}"/><circle cx="12" cy="75" r="4" fill="{{ theme.accent }}"/><circle cx="12" cy="95" r="4" fill="{{ theme.accent }}"/>
+          <line x1="30" y1="15" x2="135" y2="15" stroke="{{ theme.textMuted }}" stroke-width="2"/>
+          <line x1="30" y1="35" x2="120" y2="35" stroke="{{ theme.textMuted }}" stroke-width="2"/>
+          <line x1="30" y1="55" x2="130" y2="55" stroke="{{ theme.textMuted }}" stroke-width="2"/>
+          <line x1="30" y1="75" x2="110" y2="75" stroke="{{ theme.textMuted }}" stroke-width="2"/>
+          <line x1="30" y1="95" x2="125" y2="95" stroke="{{ theme.textMuted }}" stroke-width="2"/>
+        </g>
+      </g>
+      <text x="470" y="120" font-size="34" fill="{{ theme.accent }}" font-family="Cairo,sans-serif" font-weight="700" style="animation: floatSlow 6s ease-in-out infinite;">π</text>
+      <text x="520" y="200" font-size="30" fill="{{ theme.accentAmber }}" font-family="Cairo,sans-serif" font-weight="700" style="animation: floatSlow 7s ease-in-out infinite .3s;">Σ</text>
+      <text x="480" y="410" font-size="30" fill="{{ theme.accentTeal }}" font-family="Cairo,sans-serif" font-weight="700" style="animation: floatSlow 8s ease-in-out infinite .5s;">√</text>
+      <text x="330" y="130" font-size="26" fill="{{ theme.textMuted }}" font-family="Cairo,sans-serif" font-weight="700" style="animation: floatSlow 6.5s ease-in-out infinite .2s;">÷</text>
+      <text x="230" y="120" font-size="26" fill="{{ theme.textMuted }}" font-family="Cairo,sans-serif" font-weight="700" style="animation: floatSlow 7.5s ease-in-out infinite .1s;">+</text>
+      <g transform="translate(560,340) rotate(12)">
+        <rect x="0" y="0" width="46" height="46" rx="10" fill="{{ theme.accentTeal }}" opacity=".85"/>
+        <circle cx="12" cy="12" r="3.5" fill="#fff"/><circle cx="34" cy="12" r="3.5" fill="#fff"/>
+        <circle cx="23" cy="23" r="3.5" fill="#fff"/>
+        <circle cx="12" cy="34" r="3.5" fill="#fff"/><circle cx="34" cy="34" r="3.5" fill="#fff"/>
+      </g>
+      <g transform="translate(500,395)">
+        <g style="animation: floatSlow 7s ease-in-out infinite;">
+          <path d="M0 0 Q 20 20 0 40" fill="none" stroke="{{ theme.accent }}" stroke-width="2.5"/>
+          <path d="M60 0 Q 40 20 60 40" fill="none" stroke="{{ theme.accent }}" stroke-width="2.5"/>
+          <circle cx="-8" cy="20" r="2.5" fill="{{ theme.accent }}"/><circle cx="68" cy="20" r="2.5" fill="{{ theme.accent }}"/>
+        </g>
+      </g>
+      <text x="560" y="405" font-size="22" fill="{{ theme.accentAmber }}" font-family="Cairo,sans-serif" font-weight="700" style="animation: floatSlow 6s ease-in-out infinite .4s;">3+2i</text>
+      <text x="430" y="455" font-size="22" fill="{{ theme.accentTeal }}" font-family="Cairo,sans-serif" font-weight="700" style="animation: floatSlow 8s ease-in-out infinite .2s;">f′(x)</text>
+      <text x="600" y="455" font-size="22" fill="{{ theme.accent }}" font-family="Cairo,sans-serif" font-weight="700" style="animation: floatSlow 7s ease-in-out infinite .6s;">∫f(x)dx</text>
+      <g transform="translate(680,420) rotate(20)">
+        <rect x="0" y="0" width="34" height="34" rx="8" fill="{{ theme.accentAmber }}" opacity=".85"/>
+        <circle cx="9" cy="9" r="3" fill="#fff"/><circle cx="25" cy="25" r="3" fill="#fff"/>
+        <circle cx="17" cy="17" r="3" fill="#fff"/>
+      </g>
+      <g transform="translate(360,150)">
+        <path d="M0 30 A30 30 0 0 1 22 4" fill="none" stroke="{{ theme.textMuted }}" stroke-width="2"/>
+        <text x="4" y="34" font-size="14" fill="{{ theme.textMuted }}" font-family="Cairo,sans-serif">°</text>
+      </g>
+      <g transform="translate(720,340) rotate(-10)">
+        <rect x="0" y="0" width="52" height="72" rx="8" fill="{{ theme.surface }}" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+        <circle cx="26" cy="36" r="9" fill="none" stroke="{{ theme.accent }}" stroke-width="2.5"/>
+      </g>
+      <g transform="translate(700,300) rotate(6)">
+        <rect x="0" y="0" width="52" height="72" rx="8" fill="{{ theme.surface }}" stroke="{{ theme.textMuted }}" stroke-width="1.5"/>
+        <polygon points="26,20 34,44 18,44" fill="none" stroke="{{ theme.accentAmber }}" stroke-width="2.5" stroke-linejoin="round"/>
+      </g>
+    </svg>
 
-      <a class="neu lesson-card" href="chapter-3/index.html">
-        <span class="lesson-idx" style="background:linear-gradient(135deg,#ffab5e,#ff6b9d)">3</span>
-        <h3 style="margin:.2rem 0">الفصل الثالث: تطبيقات على المشتقة <span style="color:var(--accent-blue);font-weight:400">Applications on the Derivative</span></h3>
-        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">التقريب بالتفاضلات، النقاط الحرجة، النهايات العظمى والصغرى، نقاط الانقلاب، رسم الدوال، وتطبيقات عملية.</p>
-        <span class="lesson-go">ادخل الفصل ←</span>
-      </a>
+    <p style="max-width:640px; font-size:clamp(15px,2vw,19px); line-height:1.9; color:{{ theme.textMuted }}; margin:10px 0 40px; animation: fadeUp 1.1s ease .25s both;">
+      كتاب إلكتروني تفاعلي لتعليم الرياضيات بأسلوب حديث يعتمد على الرسومات التفاعلية والمحاكاة التعليمية والشرح التفصيلي خطوة بخطوة.
+    </p>
 
-      <a class="neu lesson-card" href="chapter-4/index.html">
-        <span class="lesson-idx" style="background:linear-gradient(135deg,#7c6fee,#3fa9f5)">4</span>
-        <h3 style="margin:.2rem 0">الفصل الرابع: التكامل <span style="color:var(--accent-blue);font-weight:400">Integration</span></h3>
-        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">التكامل غير المحدد وخواصه، مهارات استخراج قيمة التكامل، تطبيقاته الهندسية والفيزيائية، والتكامل المحدد ومساحة المنطقة المستوية.</p>
-        <span class="lesson-go">ادخل الفصل ←</span>
-      </a>
+    <button onClick="{{ goToBook }}" style="font-family:inherit; font-size:20px; font-weight:800; color:{{ theme.accent }}; background:{{ theme.surface }}; border:none; padding:20px 68px; border-radius:22px; cursor:pointer; box-shadow:{{ theme.shadowOuter }}; animation: fadeUp 1.1s ease .35s both; transition: transform .2s ease;"
+      style-hover="transform: translateY(-3px);"
+      style-active="box-shadow: inset 6px 6px 12px rgba(0,0,0,.18), inset -6px -6px 12px rgba(255,255,255,.06); transform: translateY(0);">
+      ابدأ الدراسة
+    </button>
 
-      <a class="neu lesson-card" href="chapter-5/index.html">
-        <span class="lesson-idx" style="background:linear-gradient(135deg,#3fa9f5,#2fd18f)">5</span>
-        <h3 style="margin:.2rem 0">الفصل الخامس: الهندسة الفراغية <span style="color:var(--accent-blue);font-weight:400">Solid Geometry</span></h3>
-        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">الزاوية الزوجية وتعامد المستويات (المبرهنات 7 و8 و9)، والإسقاط العمودي على المستوي، المائل، وزاوية الميل — مع رسم توضيحي لكل سؤال.</p>
-        <span class="lesson-go">ادخل الفصل ←</span>
-      </a>
+    <footer style="margin-top:90px; display:flex; flex-direction:column; align-items:center; gap:6px; color:{{ theme.textMuted }};">
+      <div style="font-size:14px; font-weight:700; color:{{ theme.textPrimary }};">إعداد وتنقيح</div>
+      <div style="font-size:15px; font-weight:800; color:{{ theme.accent }};">علي حسين</div>
+      <div style="font-size:12px; margin-top:10px;">السنة</div>
+      <div style="font-size:13px; font-weight:700;">2026</div>
+    </footer>
 
-      <a class="neu lesson-card" href="chapter-6/index.html">
-        <span class="lesson-idx" style="background:linear-gradient(135deg,#7c6fee,#ff6b9d)">6</span>
-        <h3 style="margin:.2rem 0">الفصل السادس: نظرية الاحتمال <span style="color:var(--accent-blue);font-weight:400">Probability Theory</span></h3>
-        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">فضاء العيّنة والحدث، التباديل والتوافيق، طرق سحب العيّنة، ونسبة الاحتمال وقوانينها — بالنرد والعملات والكرات الملونة والبطاقات.</p>
-        <span class="lesson-go">ادخل الفصل ←</span>
-      </a>
+  </main>
+</div>
 
-    </div>
-  </section>
-</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { isDark: false };
 
-<footer class="site-footer">كتاب الرياضيات التفاعلي — الصفحة الرئيسية</footer>
+  toggleTheme = () => this.setState(s => ({ isDark: !s.isDark }));
 
-<script src="assets/js/site-home.js"></script>
+  goToBook = () => { window.location.href = "home.html"; };
+
+  renderVals() {
+    const isDark = this.state.isDark;
+    const theme = isDark ? {
+      bgGradient: 'linear-gradient(160deg,#1b2230,#202a3c)',
+      bgGradientFlat: '#232c3d',
+      surface: '#232c3d',
+      shadowOuter: '10px 10px 20px rgba(8,11,16,.6), -10px -10px 20px rgba(255,255,255,.035)',
+      shadowOuterSm: '6px 6px 12px rgba(8,11,16,.6), -6px -6px 12px rgba(255,255,255,.035)',
+      textPrimary: '#eef2f8',
+      textMuted: '#93a0b5',
+      accent: 'oklch(72% 0.15 250)',
+      accentAmber: 'oklch(72% 0.15 70)',
+      accentTeal: 'oklch(72% 0.15 180)',
+    } : {
+      bgGradient: 'linear-gradient(160deg,#e6ecf5,#eef2f8)',
+      bgGradientFlat: '#e9eef6',
+      surface: '#eef2f8',
+      shadowOuter: '10px 10px 20px rgba(163,177,198,.55), -10px -10px 20px rgba(255,255,255,.9)',
+      shadowOuterSm: '6px 6px 12px rgba(163,177,198,.5), -6px -6px 12px rgba(255,255,255,.9)',
+      textPrimary: '#26324a',
+      textMuted: '#66738a',
+      accent: 'oklch(55% 0.15 250)',
+      accentAmber: 'oklch(65% 0.14 70)',
+      accentTeal: 'oklch(60% 0.13 180)',
+    };
+    const labels = ['مناسب لجميع الأجهزة'];
+    const features = labels.map((label, i) => ({ label, delay: (i * 0.06) + 's' }));
+    return { theme, isDark, notDark: !isDark, toggleTheme: this.toggleTheme, goToBook: this.goToBook, features };
+  }
+}
+
+</script>
 </body>
 </html>
