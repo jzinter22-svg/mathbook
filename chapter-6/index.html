@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الفصل السادس · نظرية الاحتمال — كتاب تفاعلي</title>
+<meta name="description" content="كتاب إلكتروني تفاعلي لشرح الفصل السادس: نظرية الاحتمال (فضاء العينة، الحوادث، التباديل والتوافيق، طرق سحب العينة، نسبة الاحتمال وقوانينها)، مع رسوم توضيحية تفاعلية للنرد والعملات والكرات الملونة والبطاقات لكل تعريف ومثال وتمرين.">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/theme-ch6.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="index.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">📘 كتاب الرياضيات التفاعلي · الصف الثالث الصناعي</span>
+        <h1>الفصل السادس: نظرية الاحتمال <span style="color:var(--accent-blue)">Probability Theory</span></h1>
+        <p class="lead">رحلة تفاعلية كاملة في عالم الاحتمالات: من فضاء العينة والحدث، إلى التباديل والتوافيق، وطرق سحب العيّنة، وصولاً إلى نسبة الاحتمال وقوانينها — بالنرد والعملات والكرات الملونة والبطاقات، مع رسم تفاعلي وفضاء عينة كامل لكل مثال وتمرين.</p>
+        <div class="io-row" style="margin-top:1.25rem">
+          <a href="lessons/lesson-1.html" class="neu-btn primary">ابدأ الدرس الأول ←</a>
+          <span class="tag">⏱ 6 دروس</span>
+          <span class="tag">🎲 نرد وعملات وكرات تفاعلية</span>
+          <span class="tag">🧠 اختبارات ذاتية</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="heroDieGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a78bfa"/>
+              <stop offset="1" stop-color="#7c6fee"/>
+            </linearGradient>
+            <linearGradient id="heroCoinGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffab5e"/>
+              <stop offset="1" stop-color="#ff6b9d"/>
+            </linearGradient>
+          </defs>
+
+          <!-- soft ground ellipse -->
+          <ellipse cx="230" cy="330" rx="190" ry="26" fill="var(--text-faint)" opacity=".12"/>
+
+          <!-- big die, slightly rotated -->
+          <g transform="rotate(-9 190 190)">
+            <rect x="90" y="90" width="200" height="200" rx="38" fill="url(#heroDieGrad)"/>
+            <circle cx="140" cy="140" r="15" fill="#fff"/>
+            <circle cx="240" cy="140" r="15" fill="#fff"/>
+            <circle cx="140" cy="240" r="15" fill="#fff"/>
+            <circle cx="240" cy="240" r="15" fill="#fff"/>
+            <circle cx="190" cy="190" r="15" fill="#fff"/>
+          </g>
+
+          <!-- coin overlapping bottom-right of the die -->
+          <g transform="rotate(8 350 260)">
+            <circle cx="350" cy="260" r="66" fill="url(#heroCoinGrad)" stroke="var(--surface)" stroke-width="6"/>
+            <circle cx="350" cy="260" r="52" fill="none" stroke="#fff" stroke-width="2" opacity=".55"/>
+            <text x="350" y="274" text-anchor="middle" font-size="44" font-weight="900" fill="#fff" font-family="Cairo,sans-serif">H</text>
+          </g>
+
+          <!-- small second die top-left -->
+          <g transform="rotate(14 82 92)">
+            <rect x="42" y="52" width="80" height="80" rx="18" fill="#63c7ff"/>
+            <circle cx="62" cy="72" r="7" fill="#fff"/>
+            <circle cx="102" cy="72" r="7" fill="#fff"/>
+            <circle cx="62" cy="112" r="7" fill="#fff"/>
+            <circle cx="102" cy="112" r="7" fill="#fff"/>
+          </g>
+
+          <!-- floating formula chips -->
+          <g class="hero-float f1">
+            <rect x="300" y="24" width="150" height="40" rx="13" fill="var(--surface)" opacity=".94"/>
+            <text x="375" y="49" text-anchor="middle" font-size="16" fill="var(--accent-purple)" font-weight="700" font-family="Cairo,sans-serif">P(E) = r∕n</text>
+          </g>
+          <g class="hero-float f2">
+            <rect x="8" y="220" width="130" height="36" rx="12" fill="var(--surface)" opacity=".94"/>
+            <text x="73" y="243" text-anchor="middle" font-size="14" fill="var(--accent-blue)" font-weight="700" font-family="Cairo,sans-serif">S={1,2,3,4,5,6}</text>
+          </g>
+          <g class="hero-float f3">
+            <rect x="150" y="330" width="106" height="34" rx="11" fill="var(--surface)" opacity=".94"/>
+            <text x="203" y="352" text-anchor="middle" font-size="14" fill="var(--accent-pink)" font-weight="700" font-family="Cairo,sans-serif">C(n,r)</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade-up">
+    <div class="neu" style="padding:1.5rem 1.75rem">
+      <div class="io-row" style="justify-content:space-between;margin-bottom:.6rem">
+        <strong>تقدمك في الفصل</strong>
+        <span class="progress-label">0٪ مكتمل</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>🎯 الأهداف السلوكية للفصل</h2>
+      <p class="lead">ينبغي للطالب في نهاية هذا الفصل ان يكون قادراً على ان:</p>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يميّز بين التجربة العشوائية والحادثة البسيطة، ويكتب فضاء العيّنة $S$ كاملاً لأي تجربة (نرد، عملات، تجربة مركّبة).</span></li>
+        <li><span class="obj-num">2</span><span>يعرّف الحدث $E$ كمجموعة جزئية من فضاء العيّنة، ويميّز بين الحوادث المتساوية الفرص والحوادث المتنافية.</span></li>
+        <li><span class="obj-num">3</span><span>يوظّف مضروب العدد، والتباديل $P^n_r$، والتوافيق $C^n_r$ لإيجاد عدد طرق وقوع الأحداث.</span></li>
+        <li><span class="obj-num">4</span><span>يميّز بين طرق سحب العيّنة الأربع: مع الإرجاع أو بدونه، وبالترتيب أو بدونه، ويختار الصيغة المناسبة لكل مسألة.</span></li>
+        <li><span class="obj-num">5</span><span>يحسب نسبة احتمال وقوع حدث $P(E)=\dfrac{r}{n}$، ويطبّق قوانين الاحتمال الخمسة على حوادث متنافية ومستقلة وعادية.</span></li>
+        <li><span class="obj-num">6</span><span>يحل مسائل احتمال حقيقية متعددة الأجزاء (كرات، بطاقات، طلاب، فواكه) خطوة بخطوة مع تبرير كل خطوة.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <h2 style="margin-bottom:1rem">📚 محتوى الفصل</h2>
+    <div class="grid grid-3">
+
+      <a class="neu lesson-card" href="lessons/lesson-1.html">
+        <span class="lesson-idx" style="background:linear-gradient(135deg,#7c6fee,#3fa9f5)">1</span>
+        <h3 style="margin:.2rem 0">التجربة العشوائية وفضاء العيّنة</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">6-1 مفهوم الاحتمال · 6-2 التجربة العشوائية · 6-3 فضاء العيّنة</p>
+        <span class="lesson-go">ابدأ الدرس ←</span>
+      </a>
+
+      <a class="neu lesson-card" href="lessons/lesson-2.html">
+        <span class="lesson-idx" style="background:linear-gradient(135deg,#3fa9f5,#63c7ff)">2</span>
+        <h3 style="margin:.2rem 0">الحدث والحوادث المتنافية</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">الحدث · المحاولات والحوادث البسيطة · الحوادث المتساوية الفرص والمتنافية</p>
+        <span class="lesson-go">ابدأ الدرس ←</span>
+      </a>
+
+      <a class="neu lesson-card" href="lessons/lesson-3.html">
+        <span class="lesson-idx" style="background:linear-gradient(135deg,#ffab5e,#ff6b9d)">3</span>
+        <h3 style="margin:.2rem 0">التباديل والتوافيق</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">6-2 مضروب العدد · التباديل $P^n_r$ · التوافيق $C^n_r$</p>
+        <span class="lesson-go">ابدأ الدرس ←</span>
+      </a>
+
+      <a class="neu lesson-card" href="lessons/lesson-4.html">
+        <span class="lesson-idx" style="background:linear-gradient(135deg,#2fd18f,#3fa9f5)">4</span>
+        <h3 style="margin:.2rem 0">طرق سحب العيّنة</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">6-3 مع الإرجاع وبدونه، وبالترتيب وبدونه — أربع صيغ للعدّ</p>
+        <span class="lesson-go">ابدأ الدرس ←</span>
+      </a>
+
+      <a class="neu lesson-card" href="lessons/lesson-5.html">
+        <span class="lesson-idx" style="background:linear-gradient(135deg,#7c6fee,#ff6b9d)">5</span>
+        <h3 style="margin:.2rem 0">نسبة الاحتمال وقوانينها</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">6-4 $P(E)=r/n$ · الحوادث المستقلة · قوانين الاحتمال الخمسة</p>
+        <span class="lesson-go">ابدأ الدرس ←</span>
+      </a>
+
+      <a class="neu lesson-card" href="lessons/lesson-6.html" style="grid-column:span 1">
+        <span class="lesson-idx" style="background:linear-gradient(135deg,#ff6b9d,#ffab5e)">6</span>
+        <h3 style="margin:.2rem 0">تمارين شاملة على الفصل</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">8 مسائل شاملة، كل سؤال ببطاقته الخاصة · خريطة ذهنية للفصل</p>
+        <span class="lesson-go">ابدأ الدرس ←</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <h2>🗺 الخريطة الذهنية العامة للفصل</h2>
+      <div class="mindmap-wrap diagram-wrap">
+        <svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للفصل السادس">
+          <defs>
+            <linearGradient id="gC6" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7c6fee"/><stop offset="1" stop-color="#3fa9f5"/>
+            </linearGradient>
+          </defs>
+          <line x1="450" y1="230" x2="180" y2="90" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="720" y2="90" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="150" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="750" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="230" y2="400" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="670" y2="400" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g class="mm-node"><circle cx="450" cy="230" r="62" fill="url(#gC6)"/>
+            <text x="450" y="223" text-anchor="middle" fill="#fff" font-weight="800" font-size="16" font-family="Cairo,sans-serif">نظرية</text>
+            <text x="450" y="243" text-anchor="middle" fill="#fff" font-size="14" font-family="Cairo,sans-serif">الاحتمال</text></g>
+
+          <g class="mm-node"><circle cx="180" cy="90" r="52" fill="#ffab5e"/>
+            <text x="180" y="86" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Cairo,sans-serif">فضاء</text>
+            <text x="180" y="103" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Cairo,sans-serif">العيّنة</text></g>
+
+          <g class="mm-node"><circle cx="720" cy="90" r="52" fill="#ff6b9d"/>
+            <text x="720" y="86" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Cairo,sans-serif">الحدث</text>
+            <text x="720" y="103" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">والحوادث المتنافية</text></g>
+
+          <g class="mm-node"><circle cx="150" cy="250" r="52" fill="#2fd18f"/>
+            <text x="150" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">التباديل</text>
+            <text x="150" y="263" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">والتوافيق</text></g>
+
+          <g class="mm-node"><circle cx="750" cy="250" r="52" fill="#3fa9f5"/>
+            <text x="750" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">طرق سحب</text>
+            <text x="750" y="263" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">العيّنة</text></g>
+
+          <g class="mm-node"><circle cx="230" cy="400" r="52" fill="#7c6fee"/>
+            <text x="230" y="393" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">نسبة</text>
+            <text x="230" y="410" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">الاحتمال</text></g>
+
+          <g class="mm-node"><circle cx="670" cy="400" r="52" fill="#ff9f5e"/>
+            <text x="670" y="393" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">قوانين</text>
+            <text x="670" y="410" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">الاحتمال</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">الفصل السادس · نظرية الاحتمال — كتاب تفاعلي مبني وفق قواعد المشروع</footer>
+
+<script src="../assets/js/probability-widgets.js"></script>
+<script src="../assets/js/site-ch6.js"></script>
+</body>
+</html>
