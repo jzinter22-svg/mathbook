@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 3: التباديل والتوافيق — الفصل السادس</title>
+<meta name="description" content="مبدأ العد الأساسي، مضروب العدد الصحيح، التباديل P(n,r)، والتوافيق C(n,r)، مع أمثلة محلولة (الجلوس حول مائدة مستديرة، واختيار أسئلة الامتحان) وحاسبة تفاعلية.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/theme-ch6.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-3.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 3 من 6 · 6-2</span>
+    <h1>التباديل والتوافيق</h1>
+    <p class="lead">قبل أن نحسب أي احتمال لتجربة معقّدة (مثل سحب عدة كرات أو ترتيب أشخاص)، نحتاج أداة لعدّ عدد الطرق الممكنة <b>دون تعداد كل حالة يدوياً</b>. هذه الأداة هي التباديل والتوافيق.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يطبّق مبدأ العدّ الأساسي (العبارة الأولية) لإيجاد عدد طرق وقوع عدة عمليات متتالية.</span></li>
+        <li><span class="obj-num">2</span><span>يحسب مضروب عدد صحيح $n!$، ويعرف لماذا $0!=1$.</span></li>
+        <li><span class="obj-num">3</span><span>يميّز التباديل $P^n_r$ (يهمّنا الترتيب) عن التوافيق $C^n_r$ (لا يهمّنا الترتيب) ويحسب كلاً منهما.</span></li>
+        <li><span class="obj-num">4</span><span>يوظّف $P^n_r$ و$C^n_r$ لحل مسائل حقيقية (ترتيب جلوس، اختيار أسئلة امتحان).</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 مبدأ العدّ الأساسي">
+    <div class="card neu">
+      <h2>💡 6-2 إيجاد عدد طرق وقوع الأحداث باستخدام التباديل والتوافيق</h2>
+      <p>تعلّمنا سابقاً طرائق العدّ ومبدأ العدّ الأساسي (Fundamental Counting Principle). نتذكّره في الصندوق التالي لأننا سنبني عليه التباديل والتوافيق:</p>
+    </div>
+    <div class="def-box">
+      <span class="def-label">📌 عبارة أوّلية — مبدأ العدّ الأساسي</span>
+      <p style="margin:.3rem 0">إذا كان لدينا عدد $K$ من العمليات (أو الاختيارات)، وكان بالإمكان إجراء العملية الأولى بعدد من الطرق مقداره $m$، وبالإمكان إجراء العملية الثانية بعدد من الطرق مقداره $n$، ... وكان بالإمكان إجراء العملية من الرتبة $K$ بعدد من الطرق مقداره $z$، بحيث أن إجراء أي عملية لا يؤثر على عدد الطرق التي يمكن إجراء كل تلك العمليات مجتمعة، فإن:</p>
+      <div class="rule-box"><span class="ar-safe">عدد الطرق الكلي</span> \( {}=m\times n\times\cdots\times z \)</div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف — مضروب العدد الصحيح <span style="font-weight:600;font-size:.8rem;color:var(--text-faint)">Factorial</span></span>
+      <div class="rule-box">
+        1) $\;n!=n\cdot(n-1)\cdot(n-2)\cdots1 \quad, n\in\mathbb{Z}^+ : n\ge2$<br>
+        2) $\;1!=1$<br>
+        3) $\;0!=1$
+      </div>
+    </div>
+    <div class="callout tip fade-up">
+      <span class="icon">💬</span>
+      <span>لماذا $0!=1$؟ لأن $n!$ يَعُدّ عدد طرق ترتيب $n$ أشياء؛ وترتيب <b>لا شيء</b> له طريقة واحدة فقط (لا تفعل شيئاً) — تماماً كما سنرى أن $P(n,0)=1$ و$C(n,0)=1$ لاحقاً.</span>
+    </div>
+    <div class="diagram-card">
+      <div class="container-scene">
+        <p style="font-weight:800;margin-bottom:.5rem">مثال بصري: $5! = 5\times4\times3\times2\times1 = 120$</p>
+        <div class="pw-row"><span class="outcome-chip pill-purple">5</span><span>×</span><span class="outcome-chip pill-purple">4</span><span>×</span><span class="outcome-chip pill-purple">3</span><span>×</span><span class="outcome-chip pill-purple">2</span><span>×</span><span class="outcome-chip pill-purple">1</span><span>=</span><span class="outcome-chip pill-green">120</span></div>
+        <span class="diagram-caption">ملاحظة: $n!=n\cdot(n-1)!$ — يمكن دائماً «فكّ» المضروب حداً واحداً في كل مرة</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف — التباديل <span style="font-weight:600;font-size:.8rem;color:var(--text-faint)">Permutation</span></span>
+      <p style="margin:.3rem 0">ليكن $n,r\in\mathbb{Z}^+$ بحيث $n\ge r$:</p>
+      <div class="rule-box">
+        $$P^n_r = P(n,r) = \begin{cases} n! & ;\ r=n \\ n\cdot(n-1)\cdot(n-2)\cdots(n-r+1) & ;\ r\lt n \\ 1 & ;\ r=0 \end{cases}$$
+      </div>
+    </div>
+    <div class="rule-box" style="text-align:center">$$P^n_r = P(n,r) = \dfrac{n!}{(n-r)!}$$</div>
+    <div class="callout tip fade-up">
+      <span class="icon">💬</span>
+      <span><b>التباديل تهتم بالترتيب.</b> اختيار 3 طلاب من 5 لجلوسهم في مقاعد رئيس ونائب وسكرتير مختلفة هو تباديل — لأن تبديل من يجلس أين يُنتج ترتيباً مختلفاً.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف — التوافيق <span style="font-weight:600;font-size:.8rem;color:var(--text-faint)">Combination</span></span>
+      <p style="margin:.3rem 0">ليكن $n,r\in\mathbb{Z}^+$ بحيث $n\ge r$:</p>
+      <div class="rule-box">
+        $$C^n_r = C(n,r) = \binom{n}{r} = \begin{cases} \dfrac{P(n,r)}{r!} & ;\ r\lt n \\[.4em] 1 & ;\ r=0 \\ 1 & ;\ r=n \end{cases}$$
+      </div>
+    </div>
+    <div class="grid grid-2" style="margin-top:.8rem">
+      <div class="rule-box" style="text-align:center;margin:0">$$C(n,r) = \dfrac{n!}{(n-r)!\,r!}$$</div>
+      <div class="rule-box" style="text-align:center;margin:0">$$C(n,r) = C(n,n-r)$$</div>
+    </div>
+    <div class="callout tip fade-up">
+      <span class="icon">💬</span>
+      <span><b>التوافيق لا تهتم بالترتيب.</b> اختيار 3 طلاب من 5 لتشكيل لجنة (بدون مناصب مختلفة) هو توافيق — لأن اللجنة <span class="ar-safe">{ أحمد، سارة، علي }</span> هي نفسها بغضّ النظر عن ترتيب اختيارهم.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار خطوات الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">10</span> مثال 10</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex10">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">بكم طريقة يمكن ترتيب جلوس 6 أشخاص حول مائدة مستديرة بحيث يجلس شخصان محدّدان الواحد بجوار الآخر دوماً؟</div>
+
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مائدة مستديرة وحولها 6 مقاعد، اثنان منها متجاوران ومظللان">
+            <circle cx="160" cy="160" r="95" fill="#63c7ff" opacity=".28" stroke="#3fa9f5" stroke-width="2.5"/>
+            <circle cx="160" cy="55"  r="24" fill="var(--surface)" stroke="#b3bdcc" stroke-width="2"/>
+            <circle cx="255" cy="105" r="24" fill="#ff6b9d" stroke="#e6394a" stroke-width="3"/>
+            <circle cx="255" cy="215" r="24" fill="#ff6b9d" stroke="#e6394a" stroke-width="3"/>
+            <circle cx="160" cy="265" r="24" fill="var(--surface)" stroke="#b3bdcc" stroke-width="2"/>
+            <circle cx="65"  cy="215" r="24" fill="var(--surface)" stroke="#b3bdcc" stroke-width="2"/>
+            <circle cx="65"  cy="105" r="24" fill="var(--surface)" stroke="#b3bdcc" stroke-width="2"/>
+            <text x="160" y="61" text-anchor="middle" font-size="20" font-family="Cairo,sans-serif">🧑</text>
+            <text x="255" y="111" text-anchor="middle" font-size="20" font-family="Cairo,sans-serif">🧑</text>
+            <text x="255" y="221" text-anchor="middle" font-size="20" font-family="Cairo,sans-serif">🧑</text>
+            <text x="160" y="271" text-anchor="middle" font-size="20" font-family="Cairo,sans-serif">🧑</text>
+            <text x="65"  y="221" text-anchor="middle" font-size="20" font-family="Cairo,sans-serif">🧑</text>
+            <text x="65"  y="111" text-anchor="middle" font-size="20" font-family="Cairo,sans-serif">🧑</text>
+          </svg>
+          <span class="diagram-caption">الشخصان المظلَّلان (بالإطار الأحمر) يجب أن يبقيا متجاورين دوماً، مهما دارت المائدة</span>
+        </div>
+      </div>
+
+      <ol class="steps hidden-steps" id="steps-ex10">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نُعامل الشخصين المتجاورين كوحدة واحدة «ملتصقة»؛ ولهما طريقتان لترتيب أنفسهما داخل هذه الوحدة (من يجلس يمين الآخر)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2!=2\times1=2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">الآن لدينا 5 «وحدات» حول المائدة (الوحدة الملتصقة + 4 أشخاص آخرين)؛ عدد ترتيباتهم حول مائدة مستديرة هو $4!$ (تثبيت وحدة واحدة كمرجع للدوران)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4!=4\times3\times2\times1=24 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">بمبدأ العدّ الأساسي نضرب عدد طرق ترتيب الوحدات في عدد طرق ترتيب الشخصين داخل وحدتهما</p>
+          <div class="calc-flow"><div class="calc-line">\( 24\times2 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =48 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ عدد طرق الجلوس الكلية = 48 طريقة. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">11</span> مثال 11</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex11">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">في أحد الامتحانات توجب على الطالب أن يجيب على ثمانية أسئلة من أصل عشرة أسئلة: (1) بكم طريقة يمكن للطالب اختيار الأسئلة التي سيجيب عنها؟ (2) بكم طريقة إذا كانت الأسئلة الثلاثة الأولى إجبارية؟ (3) بكم طريقة إذا اشترط الإجابة عن أربعة أسئلة من الأسئلة الخمسة الأولى؟</div>
+
+      <div class="diagram-card">
+        <div class="container-scene">
+          <div class="pw-row tight">
+            <span class="outcome-chip pill-blue">1</span><span class="outcome-chip pill-blue">2</span><span class="outcome-chip pill-blue">3</span><span class="outcome-chip pill-blue">4</span><span class="outcome-chip pill-blue">5</span><span class="outcome-chip pill-blue">6</span><span class="outcome-chip pill-blue">7</span><span class="outcome-chip pill-blue">8</span><span class="outcome-chip pill-blue">9</span><span class="outcome-chip pill-blue">10</span>
+          </div>
+          <span class="diagram-caption">ورقة الامتحان: 10 أسئلة، والمطلوب اختيار 8 منها للإجابة (الترتيب غير مهم — توافيق)</span>
+        </div>
+      </div>
+
+      <ol class="steps hidden-steps" id="steps-ex11">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">لا يهم ترتيب حل الأسئلة (لم يُشترط ذلك)؛ فاختيار 8 من 10 هو توافيق $C^{10}_8$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( C^{10}_8=\dfrac{P(10,8)}{8!}=\dfrac{10\times9\times8\times7\times6\times5\times4\times3}{8\times7\times6\times5\times4\times3\times2\times1} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">\( =\dfrac{10\times9}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =45 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">إذا كانت الأسئلة الثلاثة الأولى إجبارية، يبقى للطالب اختيار 5 أسئلة فقط من السبعة المتبقية</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( C^{7}_5=\dfrac{P(7,5)}{5!}=\dfrac{7\times6\times5\times4\times3}{5\times4\times3\times2\times1} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">\( =\dfrac{7\times6}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =21 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">الشرط الآن يقسّم الورقة لمجموعتين: 4 من الأسئلة الخمسة الأولى تُختار بـ$C^5_4$، والأربعة الباقية من الإجابة (8-4=4) تُختار من الأسئلة الخمسة الأخيرة بـ$C^5_4$ أيضاً</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( C^5_4\times C^5_4 = 5\times5 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =25 \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ (1) 45 طريقة  (2) 21 طريقة  (3) 25 طريقة. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ حاسبة تفاعلية">
+    <div class="card neu">
+      <h2>🕹️ حاسبة تفاعلية: $P(n,r)$ و$C(n,r)$</h2>
+      <p>حرّك المزلاجين لاختيار $n$ و$r$، وشاهد كيف تتغيّر قيمتا التباديل والتوافيق فوراً. لاحظ أن $P(n,r)$ أكبر دائماً من $C(n,r)$ (أو تساويها) لأن التباديل تُميّز بين الترتيبات المختلفة لنفس المجموعة.</p>
+      <div class="io-panel">
+        <div class="io-row">
+          <label for="nSlider" style="min-width:7rem">العدد الكلي <b>n</b> = <span id="nVal">6</span></label>
+          <input type="range" id="nSlider" class="neu-range" min="1" max="10" step="1" value="6">
+        </div>
+        <div class="io-row">
+          <label for="rSlider" style="min-width:7rem">عدد المختار <b>r</b> = <span id="rVal">3</span></label>
+          <input type="range" id="rSlider" class="neu-range" min="0" max="10" step="1" value="3">
+        </div>
+        <div class="grid grid-2">
+          <div class="rule-box" id="pResult" style="text-align:center;margin:0">$$P(6,3)=120$$</div>
+          <div class="rule-box" id="cResult" style="text-align:center;margin:0">$$C(6,3)=20$$</div>
+        </div>
+        <p id="calcMsg" style="color:var(--text-secondary);text-align:center;margin:.2rem 0 0"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>قيمة $0!$ تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>0</span></label>
+          <label class="quiz-opt"><input type="radio"><span>غير معرّفة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>1</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا نهاية</span></label>
+        </div>
+        <div class="quiz-explain">حسب تعريف المضروب، $0!=1$ اصطلاحاً — لأن ترتيب «لا شيء» له طريقة واحدة.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>متى نستخدم التباديل $P(n,r)$ بدلاً من التوافيق $C(n,r)$؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>عندما لا يهمّنا الترتيب إطلاقاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>عندما يهمّنا ترتيب العناصر المختارة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>عندما يكون $n=r$ فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا فرق بينهما إطلاقاً</span></label>
+        </div>
+        <div class="quiz-explain">التباديل تميّز بين الترتيبات المختلفة لنفس العناصر؛ التوافيق لا تفعل ذلك.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>العلاقة الصحيحة بين $P(n,r)$ و$C(n,r)$ هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$C(n,r)=\dfrac{P(n,r)}{r!}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$P(n,r)=\dfrac{C(n,r)}{r!}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$C(n,r)=P(n,r)\times r!$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا توجد علاقة بينهما</span></label>
+        </div>
+        <div class="quiz-explain">$C(n,r)=\dfrac{P(n,r)}{r!}$ لأننا نقسم على عدد طرق ترتيب العناصر الـ$r$ المختارة (التي لا تهمّنا في التوافيق).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>$C(10,8)$ في المثال 11 حُسبت مباشرة بقسمة $P(10,8)$ على:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$10!$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$2!$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$10$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$8!$</span></label>
+        </div>
+        <div class="quiz-explain">$C(n,r)=\dfrac{P(n,r)}{r!}$، وهنا $r=8$، فالقسمة كانت على $8!$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>في مثال 10 (المائدة المستديرة)، لماذا اعتبرنا الشخصين المتجاورين «وحدة واحدة»؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>لتقليل عدد الحسابات فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن الشرط يفرض بقاءهما متجاورين دوماً، فيصبحان كعنصر واحد يُرتَّب مع البقية</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن المائدة صغيرة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>هذا خطأ، لا يجوز فعل ذلك</span></label>
+        </div>
+        <div class="quiz-explain">دمج العنصرين في وحدة واحدة هو أسلوب قياسي عند وجود شرط «تجاور دائم»، ثم نضرب لاحقاً بعدد ترتيباتهما الداخلية ($2!$).</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>مبدأ العدّ الأساسي: عدة عمليات متتالية بطرق $m,n,\dots,z$ يكون عددها الكلي $m\times n\times\cdots\times z$.</span></li>
+        <li><span>المضروب: $n!=n(n-1)(n-2)\cdots1$، مع $0!=1!=1$.</span></li>
+        <li><span>التباديل $P(n,r)=\dfrac{n!}{(n-r)!}$: تهتم بالترتيب.</span></li>
+        <li><span>التوافيق $C(n,r)=\dfrac{n!}{(n-r)!\,r!}$: لا تهتم بالترتيب، و$C(n,r)=C(n,n-r)$.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l3">إظهار الخريطة</button>
+      </div>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l3">
+        <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الثالث">
+          <line x1="410" y1="150" x2="170" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="170" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <g><circle cx="410" cy="150" r="56" fill="#7c6fee"/>
+            <text x="410" y="146" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">التباديل</text>
+            <text x="410" y="163" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">والتوافيق</text></g>
+          <g><circle cx="170" cy="70" r="46" fill="#3fa9f5"/>
+            <text x="170" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">مبدأ العدّ</text>
+            <text x="170" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الأساسي</text></g>
+          <g><circle cx="650" cy="70" r="46" fill="#2fd18f"/>
+            <text x="650" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">n! = n(n-1)!</text>
+            <text x="650" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">المضروب</text></g>
+          <g><circle cx="170" cy="230" r="46" fill="#ffab5e"/>
+            <text x="170" y="223" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">P(n,r)=n!/(n-r)!</text>
+            <text x="170" y="240" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">تباديل (ترتيب)</text></g>
+          <g><circle cx="650" cy="230" r="46" fill="#ff6b9d"/>
+            <text x="650" y="223" text-anchor="middle" fill="#fff" font-weight="700" font-size="9.5" font-family="Cairo,sans-serif">C(n,r)=P(n,r)/r!</text>
+            <text x="650" y="240" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">توافيق (بدون ترتيب)</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل السادس · نظرية الاحتمال — الدرس 3: التباديل والتوافيق</footer>
+
+<script src="../../assets/js/probability-widgets.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch6.js"></script>
+<script>
+(function(){
+  function fact(k){ var r=1; for(var i=2;i<=k;i++) r*=i; return r; }
+  function P(n,r){ if(r>n) return 0; return fact(n)/fact(n-r); }
+  function C(n,r){ if(r>n) return 0; return fact(n)/(fact(n-r)*fact(r)); }
+
+  var nSlider = document.getElementById("nSlider");
+  var rSlider = document.getElementById("rSlider");
+  var nVal = document.getElementById("nVal");
+  var rVal = document.getElementById("rVal");
+  var pResult = document.getElementById("pResult");
+  var cResult = document.getElementById("cResult");
+  var calcMsg = document.getElementById("calcMsg");
+
+  function render(){
+    var n = parseInt(nSlider.value, 10);
+    var r = parseInt(rSlider.value, 10);
+    if(r > n){ r = n; rSlider.value = n; }
+    rSlider.max = n;
+    nVal.textContent = n;
+    rVal.textContent = r;
+    pResult.innerHTML = "$$P("+n+","+r+")="+P(n,r)+"$$";
+    cResult.innerHTML = "$$C("+n+","+r+")="+C(n,r)+"$$";
+    calcMsg.textContent = "لاحظ: P("+n+","+r+") = C("+n+","+r+") × "+r+"! = "+C(n,r)+" × "+fact(r);
+    if(window.Ch4 && window.Ch4.typeset) window.Ch4.typeset([pResult, cResult]);
+  }
+  nSlider.addEventListener("input", render);
+  rSlider.addEventListener("input", render);
+  render();
+})();
+</script>
+</body>
+</html>

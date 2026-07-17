@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 2: الحدث والحوادث المتنافية — الفصل السادس</title>
+<meta name="description" content="الحدث، المحاولات والحوادث البسيطة، الحوادث المتساوية الفرص والمتنافية، التجربة المركبة، مع أمثلة كاملة وتمرين (1-6) بجميع فقراته كبطاقات مستقلة.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/theme-ch6.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-2.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 2 من 6 · 6-4 حتى 6-7 وتمرين (1-6)</span>
+    <h1>الحدث والحوادث المتنافية</h1>
+    <p class="lead">بعد أن تعلّمنا كتابة فضاء العيّنة كاملاً، ننتقل الآن لجزء أصغر منه: <b>الحدث</b>. سنتعلّم كيف نصف حدثاً كمجموعة جزئية من $S$، ومتى يكون حدثان لا يقعان معاً أبداً (متنافيان).</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يعرّف الحدث $E$ كمجموعة جزئية من فضاء العيّنة $S$، ويكتبه بصيغة المجموعات.</span></li>
+        <li><span class="obj-num">2</span><span>يميّز المحاولة (Trial) عن الحادثة البسيطة (Simple Event)، والحوادث المتساوية الفرص عن غيرها.</span></li>
+        <li><span class="obj-num">3</span><span>يتحقق هل حدثان متنافيان (منفصلان) بحساب تقاطعهما $E_1\cap E_2$.</span></li>
+        <li><span class="obj-num">4</span><span>يبني فضاء العيّنة لتجربة مركّبة من تجربتين أو أكثر باستخدام الضرب الديكارتي $n(S)=n(S_1)\times n(S_2)$.</span></li>
+        <li><span class="obj-num">5</span><span>يحل جميع فقرات تمرين (1-6) — 18 فقرة مستقلة — كل فقرة ببطاقتها وحلها الكامل.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 الحدث">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف 6-4 — الحدث <span style="font-weight:600;font-size:.8rem;color:var(--text-faint)">Event</span></span>
+      <p style="margin:.3rem 0">هي مجموعة عناصرها بعض النواتج الممكنة الحدوث في التجربة العشوائية، أي أنها مجموعة جزئية من فضاء العيّنة، ويرمز له بالرمز $E$.</p>
+      <div class="rule-box">$$E \subseteq S$$</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار خطوات الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">في تجربة إلقاء حجر النرد مرة واحدة، $S=\{1,2,3,4,5,6\}$. صف الأحداث الآتية: (1) ظهور عدد فردي (2) ظهور عدد أولي (3) ظهور عدد يقبل القسمة على 3 (4) ظهور عدد يقبل القسمة على 5.</div>
+
+      <div class="diagram-card">
+        <div class="container-scene">
+          <div class="pw-row"><span class="pw-die" data-die="1"></span><span class="pw-die" data-die="2"></span><span class="pw-die" data-die="3"></span><span class="pw-die" data-die="4"></span><span class="pw-die" data-die="5"></span><span class="pw-die" data-die="6"></span></div>
+          <span class="diagram-caption">يمكن وصف أكثر من حدث واحد لنفس التجربة العشوائية — كل حدث هو مجموعة جزئية مختلفة من $S$</span>
+        </div>
+      </div>
+
+      <ol class="steps hidden-steps" id="steps-ex3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الأعداد الفردية بين 1 و6</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E_1=\{1,3,5\}\subset S \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">الأعداد الأوّلية بين 1 و6 (تقبل القسمة على نفسها والواحد فقط)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E_2=\{2,3,5\}\subset S \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">الأعداد التي تقبل القسمة على 3</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E_3=\{3,6\}\subset S \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">العدد الوحيد الذي يقبل القسمة على 5 بين 1 و6</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E_4=\{5\}\subset S \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $E_1=\{1,3,5\}$, $E_2=\{2,3,5\}$, $E_3=\{3,6\}$, $E_4=\{5\}$. ∎</div>
+    </div>
+
+    <div class="section fade-up" style="padding:1.2rem 0 0">
+      <div class="def-box">
+        <span class="def-label">📌 تعريف 6-5 — المحاولات والحوادث البسيطة <span style="font-weight:600;font-size:.8rem;color:var(--text-faint)">Trials &amp; Simple Events</span></span>
+        <p style="margin:.3rem 0">إذا كانت هناك تجربة يمكن تكرارها تحت نفس الظروف المحددة لها، وكان هناك عدد ممكن لهذه التجربة، فإن كل مرة تُجرى فيها هذه التجربة وتنتهي بإحدى النتائج تُسمى <b>محاولة (Trial)</b>، والنتائج الممكنة لهذه التجربة تُسمى <b>حوادث (events)</b>.</p>
+      </div>
+      <div class="callout tip fade-up">
+        <span class="icon">💬</span>
+        <span>مثال: عند رمي قطعة نقود وملاحظة الوجه الذي سيظهر نحو الأعلى بعد استقرار القطعة، فإن رمي القطعة مرة واحدة يُسمى <b>محاولة</b>، والنتيجة التي تظهر (صورة أو كتابة) تُسمى <b>حادثة بسيطة</b> لأنها تحتوي عنصراً واحداً فقط من $S$.</span>
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> مثال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">عند فحص قطرة دم لشخص لأول مرة لغرض تحديد صنف الدم، وضّح أن النتائج الممكنة لعملية الفحص هي الأصناف $A,B,AB,O$، وعليه فإن عملية الفحص لدم هذا الشخص تُسمى (محاولة)، وأيّ نتيجة للاختبار تُسمى (حادثة بسيطة).</div>
+      <ol class="steps hidden-steps" id="steps-ex5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">فضاء العيّنة لهذه التجربة هو أصناف الدم الأربعة الممكنة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( S=\{A,B,AB,O\}\,,\quad n(S)=4 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">فحص عيّنة الدم مرة واحدة هو تكرار واحد للتجربة تحت شروط ثابتة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">فحص الدم مرة واحدة = <span class="ar-safe">محاولة</span></div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">أي نتيجة وحيدة تظهر من الفحص (مثلاً $\{A\}$) هي مجموعة جزئية من $S$ عنصرها واحد</p>
+          <div class="calc-flow"><div class="calc-line calc-box">أي نتيجة اختبار = <span class="ar-safe">حادثة بسيطة</span></div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ الفحص = محاولة، وأي نتيجة له (مثل $\{A\}$) = حادثة بسيطة. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف 6-6 — الحوادث ذات الفرص المتساوية <span style="font-weight:600;font-size:.8rem;color:var(--text-faint)">Equally Likely Events</span></span>
+      <p style="margin:.3rem 0">يقال إن النتائج الممكنة لمحاولة تمتلك فرصاً متساوية إذا لم يكن هناك تفضيل نتيجة على أخرى.</p>
+    </div>
+    <div class="grid grid-2" style="margin-top:.8rem">
+      <div class="neu-inset" style="padding:1rem 1.2rem;text-align:center">
+        <div class="pw-row tight"><span class="pw-coin" data-coin="H" style="width:50px;height:50px"></span><span class="pw-coin" data-coin="T" style="width:50px;height:50px"></span></div>
+        <p style="margin:.5rem 0 0;color:var(--text-secondary)">في رمي عملة عشوائياً، ظهور الصورة أو الكتابة لهما نفس فرصة الظهور.</p>
+      </div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;text-align:center">
+        <div class="pw-row tight"><span class="pw-die" data-die="1" style="width:38px;height:38px"></span><span class="pw-die" data-die="2" style="width:38px;height:38px"></span><span class="pw-die" data-die="3" style="width:38px;height:38px"></span><span class="pw-die" data-die="4" style="width:38px;height:38px"></span><span class="pw-die" data-die="5" style="width:38px;height:38px"></span><span class="pw-die" data-die="6" style="width:38px;height:38px"></span></div>
+        <p style="margin:.5rem 0 0;color:var(--text-secondary)">كذلك عند فحص قطرة دم شخص لأول مرة، فإن كل صنف دم له نفس فرصة الظهور.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف 6-7 — الحوادث المتنافية (المتقاطعة) <span style="font-weight:600;font-size:.8rem;color:var(--text-faint)">Mutually Exclusive Events</span></span>
+      <p style="margin:.3rem 0">هي الحوادث التي تمتاز بأن وقوع أحدهما يمنع وقوع أي من الحوادث الأخرى لنفس المحاولة، أي الذي نعنيه لا يمكن وقوع حادثتين أو أكثر لنفس المحاولة على آن واحد.</p>
+      <div class="rule-box">$$E_1 \cap E_2 = \varnothing$$</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> مثال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">في تجربة إلقاء حجر النرد مرة واحدة: أولاً صف الأحداث الآتية: (1) ظهور عدد أوّلي (2) ظهور عدد فردي (3) ظهور عدد زوجي. ثانياً: حدد الأحداث المتنافية الواردة ذكرها في أولاً.</div>
+      <div class="diagram-card">
+        <div class="container-scene">
+          <p style="font-weight:800;margin:.2rem 0">$E_1=\{2,3,5\}$ (عدد أولي)</p>
+          <div class="pw-row tight" id="ex6E1"></div>
+          <p style="font-weight:800;margin:.7rem 0 .2rem">$E_2=\{1,3,5\}$ (عدد فردي)</p>
+          <div class="pw-row tight" id="ex6E2"></div>
+          <p style="font-weight:800;margin:.7rem 0 .2rem">$E_3=\{2,4,6\}$ (عدد زوجي)</p>
+          <div class="pw-row tight" id="ex6E3"></div>
+        </div>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكتب الأحداث الثلاثة أولاً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E_1=\{2,3,5\}\,,\ E_2=\{1,3,5\}\,,\ E_3=\{2,4,6\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نفحص تقاطع كل زوج: $E_2 \cap E_3$ (فردي وزوجي لا يشتركان أبداً)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E_2\cap E_3=\varnothing \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">بينما $E_1\cap E_2$ و$E_1\cap E_3$ ليسا خاليين</p>
+          <div class="calc-flow"><div class="calc-line">\( E_1\cap E_2=\{3,5\}\neq\varnothing \)</div><div class="calc-line">\( E_1\cap E_3=\{2\}\neq\varnothing \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ الحدثان $E_2,E_3$ فقط متنافيان لأن $E_2\cap E_3=\varnothing$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7</span> مثال 7</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">في تجربة اختيار وردتين عشوائياً من مزهرية فيها ورود حمراء وصفراء وبيضاء اللون: (1) صف فضاء العيّنة (2) صف حدث كون الوردتين المسحوبتين من لون واحد (3) صف حدث كون الوردتين مختلفتين باللون.</div>
+      <div class="diagram-card">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مزهرية فيها ورود حمراء وصفراء وبيضاء">
+            <path d="M150,190 Q150,240 190,240 Q230,240 230,190 L222,150 L158,150 Z" fill="#63c7ff" opacity=".85" stroke="#3fa9f5" stroke-width="2.5"/>
+            <ellipse cx="190" cy="150" rx="32" ry="8" fill="#3fa9f5" opacity=".5"/>
+            <line x1="175" y1="150" x2="140" y2="70" stroke="#2fd18f" stroke-width="3.5"/>
+            <line x1="190" y1="150" x2="190" y2="55" stroke="#2fd18f" stroke-width="3.5"/>
+            <line x1="205" y1="150" x2="240" y2="75" stroke="#2fd18f" stroke-width="3.5"/>
+            <g transform="translate(140,62)"><circle r="8" fill="#ffd166"/><circle cx="-13" cy="-4" r="9" fill="#ff6b6b"/><circle cx="13" cy="-4" r="9" fill="#ff6b6b"/><circle cx="-9" cy="12" r="9" fill="#ff6b6b"/><circle cx="9" cy="12" r="9" fill="#ff6b6b"/><circle cx="0" cy="-14" r="9" fill="#ff6b6b"/></g>
+            <g transform="translate(190,48)"><circle r="8" fill="#e6ab00"/><circle cx="-13" cy="-4" r="9" fill="#ffe066"/><circle cx="13" cy="-4" r="9" fill="#ffe066"/><circle cx="-9" cy="12" r="9" fill="#ffe066"/><circle cx="9" cy="12" r="9" fill="#ffe066"/><circle cx="0" cy="-14" r="9" fill="#ffe066"/></g>
+            <g transform="translate(240,67)"><circle r="8" fill="#e6ab00"/><circle cx="-13" cy="-4" r="9" fill="#ffffff" stroke="#c3cbd8" stroke-width="1.5"/><circle cx="13" cy="-4" r="9" fill="#ffffff" stroke="#c3cbd8" stroke-width="1.5"/><circle cx="-9" cy="12" r="9" fill="#ffffff" stroke="#c3cbd8" stroke-width="1.5"/><circle cx="9" cy="12" r="9" fill="#ffffff" stroke="#c3cbd8" stroke-width="1.5"/><circle cx="0" cy="-14" r="9" fill="#ffffff" stroke="#c3cbd8" stroke-width="1.5"/></g>
+          </svg>
+          <span class="diagram-caption">مزهرية فيها ورود حمراء وصفراء وبيضاء — نسحب وردتين عشوائياً بدون إرجاع</span>
+        </div>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex7">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نسرد كل الاحتمالات الممكنة للونَي الوردتين المسحوبتين (بغض النظر عن ترتيب السحب)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\(S=\)&nbsp;<span class="ar-safe">{ حمراء-حمراء، صفراء-صفراء، بيضاء-بيضاء، حمراء-صفراء، حمراء-بيضاء، صفراء-بيضاء }</span></div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">حدث كون الوردتين بنفس اللون هو المجموعة الجزئية التي يتكرر فيها اللون</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\(E_1=\)&nbsp;<span class="ar-safe">{ حمراء-حمراء، صفراء-صفراء، بيضاء-بيضاء }</span></div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">حدث كون الوردتين مختلفتين اللون هو باقي عناصر $S$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\(E_2=\)&nbsp;<span class="ar-safe">{ حمراء-صفراء، حمراء-بيضاء، صفراء-بيضاء }</span></div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">لاحظ أن $E_1\cap E_2=\varnothing$ لأن تقاطعهما مجموعة خالية — فهما حدثان منفصلان (متنافيان)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E_1,E_2 \) <span class="ar-safe">متنافيان</span></div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(S)=6$، $E_1$ (نفس اللون) و$E_2$ (لونان مختلفان) حدثان متنافيان لأن $E_1\cap E_2=\varnothing$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8</span> مثال 8</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex8">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">صف فيه طلاب من سوريا ومصر والجزائر. يراد اختيار ثلاثة منهم للمشاركة في مهرجان رياضي، صف ما يأتي: (1) الحدث (الطلاب المختارون من نفس البلد) (2) الحدث (اختيار طالب مصري واحد على الأقل) (3) الحدث (اختيار طالب سوري واحد على الأكثر) (4) الحدث (اختيار أربعة طلاب من نفس البلد).</div>
+      <div class="diagram-card">
+        <div class="container-scene">
+          <div class="pw-row">
+            <span class="outcome-chip pill-purple">🧑 سوري ×3</span>
+            <span class="outcome-chip pill-blue">🧑 مصري ×3</span>
+            <span class="outcome-chip pill-green">🧑 جزائري ×3</span>
+          </div>
+          <span class="diagram-caption">نختار 3 طلاب من بين هذه المجموعات الثلاث للمشاركة في المهرجان</span>
+        </div>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex8">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الطلاب الثلاثة المختارون كلهم من بلد واحد فقط — ثلاث حالات ممكنة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\(E_1=\)&nbsp;<span class="ar-safe">{ ثلاثة جزائريون، ثلاثة مصريون، ثلاثة سوريون }</span></div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">«مصري واحد على الأقل» يشمل كل تركيبة فيها مصري واحد أو أكثر ضمن الثلاثة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\(E_2=\)&nbsp;<span class="ar-safe">{ جزائري وسوري ومصري، سوريان ومصري، جزائريان ومصري، ثلاثة مصريين }</span></div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">«سوري واحد على الأكثر» يشمل صفر سوريين أو سوري واحد فقط ضمن الثلاثة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\(E_3=\)&nbsp;<span class="ar-safe">{ جزائري وسوري ومصري، مصريان وسوري، جزائريان وسوري، ثلاثة مصريين، ثلاثة جزائريين }</span></div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">اختيار أربعة طلاب مستحيل أصلاً لأن المطلوب اختيار ثلاثة فقط — لا توجد أي مجموعة تمثّله</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E_4=\varnothing \)</div></div>
+        </div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>$E_4=\varnothing$ هو مثال على <b>حدث مستحيل</b>: لا تمثّله أي مجموعة جزئية من $S$ لأنه يتعارض مع شروط التجربة نفسها (اختيار 3 فقط).</span>
+      </div>
+      <div class="exercise-final">✓ $E_1,E_2,E_3$ كما بيّنّا أعلاه، و$E_4=\varnothing$ (حدث مستحيل). ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="composite" data-navlabel="🔗 التجربة المركّبة">
+    <div class="card neu">
+      <h2>🔗 ملاحظة — التجربة المركّبة (الضرب الديكارتي)</h2>
+      <p>إذا كانت التجربة العشوائية مكوّنة من تجربتين فرعيتين متتاليتين، وكان فضاء العيّنة للتجربة الفرعية الأولى $S_1$ وللثانية $S_2$، فإنّ:</p>
+      <div class="rule-box">
+        1) فضاء العيّنة $S$ للتجربة المركّبة يساوي حاصل الضرب الديكارتي لـ $S_1$ و$S_2$.<br>
+        $$n(S) = n(S_1)\times n(S_2)$$
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9</span> مثال 9</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex9">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">في تجربة إلقاء حجر نرد ثم قطعة نقود معدنية، تذكّر أن فضاء العيّنة لتجربة إلقاء حجر النرد هو $S_1=\{1,2,3,4,5,6\}$، أي أنّ $n(S_1)=6$، كما أن فضاء العيّنة لتجربة إلقاء العملة النقدية هو $S_2=\{H,T\}$، وأنّ $n(S_2)=2$. اكتب فضاء العيّنة المركّبة وعدد عناصره.</div>
+      <div id="ex9Table"></div>
+      <ol class="steps hidden-steps" id="steps-ex9">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نطبّق قاعدة الضرب الديكارتي: كل نتيجة من $S_1$ تقترن بكل نتيجة من $S_2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( S=\{(1,H),(2,H),(3,H),(4,H),(5,H),(6,H),(1,T),(2,T),(3,T),(4,T),(5,T),(6,T)\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحسب عدد عناصره من الضرب مباشرة</p>
+          <div class="calc-flow"><div class="calc-line">\( n(S)=n(S_1)\times n(S_2)=6\times2 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( n(S)=12 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(S)=12$، وهو فعلاً حاصل الضرب الديكارتي لفضائي العيّنة. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (1-6)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (1-6)</h2>
+    <p class="lead" style="margin-top:0">18 فقرة مستقلة، كل فقرة ببطاقتها الخاصة وحلها الكامل. حاول أولاً بنفسك ثم اضغط «إظهار الحل».</p>
+
+    <h3 style="margin:1.4rem 0 .3rem">السؤال 1 — صف فضاء العيّنة وحدد عدد عناصره لكل من التجارب الآتية</h3>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1a</span> إلقاء عملتين نقديتين معاً</div>
+        <button class="neu-btn" data-reveal-steps="steps-q1a">إظهار الحل</button></div>
+      <div class="mindmap-wrap" style="padding-top:.2rem"><svg id="tcTree"></svg></div>
+      <div class="pw-row" id="tcChips"></div>
+      <ol class="steps hidden-steps" id="steps-q1a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">كل عملة لها نتيجتان $H,T$؛ نبني شجرة القرار للعملتين معاً (انظر أعلاه) فنحصل على 4 مسارات</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( S=\{HH,HT,TH,TT\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">أو بقاعدة الضرب الديكارتي مباشرة</p>
+          <div class="calc-flow"><div class="calc-line">\( n(S)=n(S_1)\times n(S_2)=2\times2 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( n(S)=4 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $S=\{HH,HT,TH,TT\}$, $n(S)=4$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1b</span> إلقاء حجري نرد معاً</div>
+        <button class="neu-btn" data-reveal-steps="steps-q1b">إظهار الحل</button></div>
+      <p style="color:var(--text-secondary);margin:.3rem 0 .6rem">فضاء العيّنة الكامل: 36 زوجاً مرتباً $(a,b)$ حيث $a$ نتيجة الحجر الأول و$b$ نتيجة الحجر الثاني.</p>
+      <div id="tdTable1"></div>
+      <ol class="steps hidden-steps" id="steps-q1b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">كل حجر نرد له 6 نتائج ممكنة؛ نقرن كل نتيجة من الحجر الأول بكل نتيجة من الحجر الثاني (الجدول أعلاه)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( S=\{(1,1),(1,2),\dots,(6,5),(6,6)\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بقاعدة الضرب الديكارتي</p>
+          <div class="calc-flow"><div class="calc-line">\( n(S)=n(S_1)\times n(S_2)=6\times6 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( n(S)=36 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ الجدول أعلاه يمثّل $S$ كاملاً (36 زوجاً)، $n(S)=36$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1c</span> عملة ثم حجر نرد ثم عملة ثانية</div>
+        <button class="neu-btn" data-reveal-steps="steps-q1c">إظهار الحل</button></div>
+      <p style="color:var(--text-secondary);margin:.3rem 0 .6rem">نقسّم النتائج حسب العملة الثالثة — 12 ثلاثية تنتهي بـ $H$، و12 ثلاثية تنتهي بـ $T$:</p>
+      <div style="font-weight:800;margin:.4rem 0 .2rem">الثلاثيات المنتهية بـ H:</div>
+      <div id="cdcH"></div>
+      <div style="font-weight:800;margin:.7rem 0 .2rem">الثلاثيات المنتهية بـ T:</div>
+      <div id="cdcT"></div>
+      <ol class="steps hidden-steps" id="steps-q1c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">هذه تجربة مركّبة من 3 مراحل: $S_1=\{H,T\}$ (عملة أولى)، $S_2=\{1,\dots,6\}$ (نرد)، $S_3=\{H,T\}$ (عملة ثانية)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(S_1)=2\,,\ n(S_2)=6\,,\ n(S_3)=2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعمم قاعدة الضرب الديكارتي لثلاث تجارب متتالية</p>
+          <div class="calc-flow"><div class="calc-line">\( n(S)=n(S_1)\times n(S_2)\times n(S_3)=2\times6\times2 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( n(S)=24 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(S)=24$ (الجدولان أعلاه معاً يمثلان $S$ كاملاً). ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1d</span> اختيار قطعتين من مكتبة تحتوي صحفاً وكتباً ومجلات</div>
+        <button class="neu-btn" data-reveal-steps="steps-q1d">إظهار الحل</button></div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row"><span class="outcome-chip pill-blue">📰 صحيفة (ص)</span><span class="outcome-chip pill-green">📕 كتاب (ك)</span><span class="outcome-chip pill-pink">📖 مجلة (م)</span></div>
+        <span class="diagram-caption">نختار قطعتين (بغض النظر عن ترتيب الاختيار)؛ يمكن أن تكونا من نفس النوع أو نوعين مختلفين</span>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-q1d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نصف فضاء العيّنة حسب نوعَي القطعتين المختارتين (دون تكرار الترتيب)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\(S=\)&nbsp;<span class="ar-safe">{ صص، كك، مم، صك، صم، كم }</span></div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعدّ عناصر $S$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(S)=6 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ \(S=\)&nbsp;<span class="ar-safe">{ صص، كك، مم، صك، صم، كم }</span>, $n(S)=6$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1e</span> اختيار ثلاثة أشخاص من غرفة يقطنها رجال ونساء</div>
+        <button class="neu-btn" data-reveal-steps="steps-q1e">إظهار الحل</button></div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row"><span class="outcome-chip pill-blue">👨 رجل</span><span class="outcome-chip pill-pink">👩 امرأة</span></div>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-q1e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">كل شخص مختار إما رجل (ر) أو امرأة (ن)؛ نصف تركيبة الثلاثة حسب عدد كل جنس فيها</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\(S=\)&nbsp;<span class="ar-safe">{ ررر، ررن، رنن، ننن }</span></div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعدّ عناصر $S$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(S)=4 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ \(S=\)&nbsp;<span class="ar-safe">{ ررر، ررن، رنن، ننن }</span>, $n(S)=4$. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 2 — ألقينا ثلاث قطع نقدية معدنية مرة واحدة</h3>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">2a</span> فضاء العيّنة وعدد عناصره</div>
+        <button class="neu-btn" data-reveal-steps="steps-q2a">إظهار الحل</button></div>
+      <div class="mindmap-wrap" style="padding-top:.2rem"><svg id="tcoinsTree"></svg></div>
+      <div class="pw-row" id="tcoinsChips"></div>
+      <ol class="steps hidden-steps" id="steps-q2a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">كل عملة من الثلاث لها نتيجتان؛ الشجرة أعلاه تعطي 8 مسارات كاملة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( S=\{HHH,HHT,HTH,THH,HTT,THT,TTH,TTT\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بقاعدة الضرب الديكارتي لثلاث عملات</p>
+          <div class="calc-flow"><div class="calc-line">\( n(S)=2\times2\times2 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( n(S)=8 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(S)=8$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">2b</span> الحدث (وجهان كتابة ووجه واحد صورة)</div>
+        <button class="neu-btn" data-reveal-steps="steps-q2b">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-q2b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبحث في $S$ (الفقرة 2a) عن كل ثلاثية فيها حرفا $T$ وحرف $H$ واحد بالضبط</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E=\{HTT,THT,TTH\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعدّ عناصر $E$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(E)=3 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $E=\{HTT,THT,TTH\}$, $n(E)=3$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">2c</span> الحدث (وجه واحد على الأقل كتابة)</div>
+        <button class="neu-btn" data-reveal-steps="steps-q2c">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-q2c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">«على الأقل واحد $T$» يعني كل النتائج ما عدا التي لا تحتوي $T$ إطلاقاً (أي $HHH$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E=S-\{HHH\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نسرد عناصر $E$ من $S$ (الفقرة 2a) بإزالة $HHH$ فقط</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E=\{HHT,HTH,THH,HTT,THT,TTH,TTT\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعدّ عناصر $E$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(E)=7 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(E)=7$ (كل عناصر $S$ ما عدا $HHH$). ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">2d</span> الحدث (وجه واحد على الأكثر كتابة)</div>
+        <button class="neu-btn" data-reveal-steps="steps-q2d">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-q2d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">«على الأكثر واحد $T$» يعني صفر أو حرف $T$ واحد بالضبط في الثلاثية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E=\{HHH,HHT,HTH,THH\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعدّ عناصر $E$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(E)=4 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $E=\{HHH,HHT,HTH,THH\}$, $n(E)=4$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">2e</span> الحدث (أربعة أوجه كتابة)</div>
+        <button class="neu-btn" data-reveal-steps="steps-q2e">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-q2e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">لدينا 3 قطع نقود فقط في هذه التجربة، فلا يمكن أبداً ظهور 4 أوجه كتابة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E=\varnothing \)</div></div>
+        </div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem"><span class="icon">⚠️</span><span>حدث مستحيل: لا توجد أي محاولة من هذه التجربة (3 قطع فقط) تحقق «4 أوجه كتابة».</span></div>
+      <div class="exercise-final">✓ $E=\varnothing$, $n(E)=0$. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 3 — في تجربة إلقاء حجري نرد معاً</h3>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">3a</span> فضاء العيّنة وعدد عناصره</div>
+        <button class="neu-btn" data-reveal-steps="steps-q3a">إظهار الحل</button></div>
+      <div id="tdTable3a"></div>
+      <ol class="steps hidden-steps" id="steps-q3a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">هذه نفس تجربة الفقرة 1b أعلاه: كل حجر له 6 نتائج، فنحصل على 36 زوجاً مرتباً (الجدول أعلاه)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(S)=6\times6=36 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(S)=36$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">3b</span> حدث مجموع العددين = 8</div>
+        <button class="neu-btn" data-reveal-steps="steps-q3b">إظهار الحل</button></div>
+      <div id="sum8Table"></div>
+      <div class="pw-row" id="sum8Chips"></div>
+      <ol class="steps hidden-steps" id="steps-q3b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبحث في الجدول عن كل زوج $(a,b)$ يحقق $a+b=8$ (الخلايا المظلّلة أعلاه)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E=\{(2,6),(3,5),(4,4),(5,3),(6,2)\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعدّ عناصر $E$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(E)=5 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $E=\{(2,6),(3,5),(4,4),(5,3),(6,2)\}$, $n(E)=5$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">3c</span> حدث كون أحد العددين ضعف الآخر</div>
+        <button class="neu-btn" data-reveal-steps="steps-q3c">إظهار الحل</button></div>
+      <div id="doubleTable"></div>
+      <div class="pw-row" id="doubleChips"></div>
+      <ol class="steps hidden-steps" id="steps-q3c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبحث عن كل زوج $(a,b)$ يحقق $a=2b$ أو $b=2a$ (الخلايا المظلّلة أعلاه)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E=\{(1,2),(2,1),(2,4),(4,2),(3,6),(6,3)\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعدّ عناصر $E$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(E)=6 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(E)=6$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">3d</span> حدث كون العددين متساويين</div>
+        <button class="neu-btn" data-reveal-steps="steps-q3d">إظهار الحل</button></div>
+      <div id="equalTable"></div>
+      <div class="pw-row" id="equalChips"></div>
+      <ol class="steps hidden-steps" id="steps-q3d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبحث عن كل زوج $(a,b)$ يحقق $a=b$ — هذا هو قطر الجدول أعلاه بالضبط</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E=\{(1,1),(2,2),(3,3),(4,4),(5,5),(6,6)\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعدّ عناصر $E$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(E)=6 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(E)=6$. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 4 — في تجربة إلقاء قطعة نقود وحجر نرد معاً</h3>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">4a</span> فضاء العيّنة وعدد عناصره</div>
+        <button class="neu-btn" data-reveal-steps="steps-q4a">إظهار الحل</button></div>
+      <p style="color:var(--text-secondary);margin:.3rem 0 .6rem">هذه نفس تجربة المثال 9، لكن سنكتب الزوج بالصيغة (نتيجة العملة، نتيجة النرد):</p>
+      <div id="cdTable"></div>
+      <ol class="steps hidden-steps" id="steps-q4a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$n(S_1)=2$ (عملة)، $n(S_2)=6$ (نرد)</p>
+          <div class="calc-flow"><div class="calc-line">\( n(S)=n(S_1)\times n(S_2)=2\times6 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( n(S)=12 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(S)=12$ (الجدول أعلاه). ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">4b</span> الحدث (ظهور صورة وعدد أوّلي)</div>
+        <button class="neu-btn" data-reveal-steps="steps-q4b">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-q4b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الأعداد الأوّلية بين 1 و6 هي $\{2,3,5\}$؛ نقرنها بـ $H$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E=\{(H,2),(H,3),(H,5)\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><p class="calc-note">نعدّ عناصر $E$</p><div class="calc-flow"><div class="calc-line calc-box">\( n(E)=3 \)</div></div></div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(E)=3$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">4c</span> الحدث (ظهور كتابة وعدد زوجي)</div>
+        <button class="neu-btn" data-reveal-steps="steps-q4c">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-q4c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الأعداد الزوجية بين 1 و6 هي $\{2,4,6\}$؛ نقرنها بـ $T$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E=\{(T,2),(T,4),(T,6)\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><p class="calc-note">نعدّ عناصر $E$</p><div class="calc-flow"><div class="calc-line calc-box">\( n(E)=3 \)</div></div></div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(E)=3$. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">4d</span> الحدث (ظهور صورة وعدد فردي)</div>
+        <button class="neu-btn" data-reveal-steps="steps-q4d">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-q4d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الأعداد الفردية بين 1 و6 هي $\{1,3,5\}$؛ نقرنها بـ $H$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( E=\{(H,1),(H,3),(H,5)\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body"><p class="calc-note">نعدّ عناصر $E$</p><div class="calc-flow"><div class="calc-line calc-box">\( n(E)=3 \)</div></div></div></li>
+      </ol>
+      <div class="exercise-final">✓ $n(E)=3$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>1.</span><span>الحدث $E$ يُعرَّف دائماً بأنه:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>عدد محاولات التجربة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>مجموعة جزئية من فضاء العيّنة $S$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نفس فضاء العيّنة دائماً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>عدد أكبر من $n(S)$</span></label>
+        </div>
+        <div class="quiz-explain">تعريف 6-4: الحدث مجموعة جزئية من $S$، أي $E\subseteq S$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>حدثان $E_1,E_2$ متنافيان إذا كان:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$E_1\cup E_2=S$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$E_1=E_2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$E_1\cap E_2=\varnothing$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$n(E_1)=n(E_2)$</span></label>
+        </div>
+        <div class="quiz-explain">تعريف 6-7: الحوادث المتنافية تقاطعها مجموعة خالية — لا يمكن أن تقع معاً.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>في تجربة إلقاء عملتين معاً، $n(S)$ يساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>4</span></label>
+          <label class="quiz-opt"><input type="radio"><span>2</span></label>
+          <label class="quiz-opt"><input type="radio"><span>8</span></label>
+          <label class="quiz-opt"><input type="radio"><span>6</span></label>
+        </div>
+        <div class="quiz-explain">$n(S)=n(S_1)\times n(S_2)=2\times2=4$؛ والعناصر هي $HH,HT,TH,TT$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>في تجربة إلقاء حجرَي نرد معاً، عدد عناصر فضاء العيّنة هو:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>6</span></label>
+          <label class="quiz-opt"><input type="radio"><span>12</span></label>
+          <label class="quiz-opt"><input type="radio"><span>18</span></label>
+          <label class="quiz-opt"><input type="radio"><span>36</span></label>
+        </div>
+        <div class="quiz-explain">$n(S)=6\times6=36$ زوجاً مرتباً.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>لماذا يُعتبر الحدث «ظهور 4 أوجه كتابة عند رمي 3 قطع نقود» حدثاً مستحيلاً؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>لأن احتماله صفر بالحساب فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأنه لا توجد أي مجموعة جزئية من $S$ تمثّله (3 قطع فقط، لا 4)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن الكتابة لا تظهر أبداً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأنه يحتاج حجر نرد لا قطع نقود</span></label>
+        </div>
+        <div class="quiz-explain">التجربة فيها 3 قطع فقط، فأقصى عدد أوجه كتابة ممكن هو 3 — أي أن $E=\varnothing$ منطقياً (مثال 8، الفقرة 4).</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>الحدث $E$ مجموعة جزئية من فضاء العيّنة: $E\subseteq S$.</span></li>
+        <li><span>المحاولة: تكرار واحد للتجربة تحت نفس الشروط؛ الحادثة البسيطة: نتيجة واحدة (عنصر واحد من $S$).</span></li>
+        <li><span>الحوادث متساوية الفرص: لا تفضيل لنتيجة على أخرى. الحوادث المتنافية: $E_1\cap E_2=\varnothing$.</span></li>
+        <li><span>التجربة المركّبة: $n(S)=n(S_1)\times n(S_2)\times\cdots$ (الضرب الديكارتي).</span></li>
+        <li><span>الحدث المستحيل $E=\varnothing$ يقع عندما لا تحقق أي محاولة شروط الحدث المطلوب.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l2">إظهار الخريطة</button>
+      </div>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l2">
+        <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الثاني">
+          <line x1="410" y1="150" x2="170" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="170" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <g><circle cx="410" cy="150" r="56" fill="#7c6fee"/>
+            <text x="410" y="146" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">الحدث</text>
+            <text x="410" y="163" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">E ⊆ S</text></g>
+          <g><circle cx="170" cy="70" r="46" fill="#3fa9f5"/>
+            <text x="170" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">محاولة</text>
+            <text x="170" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">حادثة بسيطة</text></g>
+          <g><circle cx="650" cy="70" r="46" fill="#2fd18f"/>
+            <text x="650" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">فرص</text>
+            <text x="650" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">متساوية</text></g>
+          <g><circle cx="170" cy="230" r="46" fill="#ffab5e"/>
+            <text x="170" y="223" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">E₁∩E₂=∅</text>
+            <text x="170" y="240" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">متنافيان</text></g>
+          <g><circle cx="650" cy="230" r="46" fill="#ff6b9d"/>
+            <text x="650" y="223" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">n(S)=n(S₁)×n(S₂)</text>
+            <text x="650" y="240" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">تجربة مركّبة</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل السادس · نظرية الاحتمال — الدرس 2: الحدث والحوادث المتنافية</footer>
+
+<script src="../../assets/js/probability-widgets.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch6.js"></script>
+<script>
+(function(){
+  function ready(fn){ if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", fn); else fn(); }
+  ready(function(){
+    if(!window.PW) return;
+
+    /* Example 3 event highlighting on dice rows */
+    function diceRow(containerId, included){
+      var el = document.getElementById(containerId);
+      if(!el) return;
+      for(var v=1; v<=6; v++){
+        var span = document.createElement("span");
+        span.className = "pw-die";
+        span.setAttribute("data-die", v);
+        span.style.width = "42px"; span.style.height = "42px";
+        if(included.indexOf(v) === -1) span.style.opacity = ".28";
+        else span.style.outline = "3px solid var(--accent-green)";
+        span.style.borderRadius = "14px";
+        el.appendChild(span);
+      }
+    }
+    diceRow("ex6E1", [2,3,5]);
+    diceRow("ex6E2", [1,3,5]);
+    diceRow("ex6E3", [2,4,6]);
+
+    /* Example 9: die x coin table */
+    PW.buildTable(document.getElementById("ex9Table"),
+      [1,2,3,4,5,6], ["H","T"],
+      function(r,c){ return "("+r+","+c+")"; },
+      { corner:"نرد \\ عملة",
+        rowHeaderHTML: function(r){ return '<span class="pw-die sm" data-die="'+r+'"></span>'; },
+        colHeaderHTML: function(c){ return '<span class="pw-coin sm" data-coin="'+c+'"></span>'; } });
+
+    /* Two-coin tree (used by index landing intro and Q1a) */
+    function coinTree(n){
+      function rec(depth, prefix){
+        var node = {};
+        if(depth === 0){ node.label = "S"; }
+        else { node.label = prefix.charAt(prefix.length-1); node.prob = node.label; }
+        if(depth < n){ node.children = ["H","T"].map(function(f){ return rec(depth+1, prefix+f); }); }
+        else { node.sub = prefix; node.fill = "#2fd18f"; }
+        return node;
+      }
+      return rec(0, "");
+    }
+    var tcSvg = document.getElementById("tcTree");
+    if(tcSvg) PW.renderTree(tcSvg, coinTree(2), {levelGap:95});
+    PW.buildChips(document.getElementById("tcChips"), ["HH","HT","TH","TT"], "pill-green");
+
+    var tcoinsSvg = document.getElementById("tcoinsTree");
+    if(tcoinsSvg) PW.renderTree(tcoinsSvg, coinTree(3), {levelGap:88, width:760});
+    PW.buildChips(document.getElementById("tcoinsChips"), ["HHH","HHT","HTH","THH","HTT","THT","TTH","TTT"], "pill-green");
+
+    /* Two-dice 36-outcome tables (Q1b and Q3a — independent, both fully rendered) */
+    [ "tdTable1", "tdTable3a" ].forEach(function(id){
+      var el = document.getElementById(id);
+      if(!el) return;
+      PW.buildTable(el, [1,2,3,4,5,6], [1,2,3,4,5,6],
+        function(r,c){ return "("+r+","+c+")"; },
+        { corner:"🎲\\🎲",
+          rowHeaderHTML: function(r){ return '<span class="pw-die sm" data-die="'+r+'"></span>'; },
+          colHeaderHTML: function(c){ return '<span class="pw-die sm" data-die="'+c+'"></span>'; } });
+    });
+
+    /* Sum = 8 highlighted table */
+    PW.buildTable(document.getElementById("sum8Table"), [1,2,3,4,5,6], [1,2,3,4,5,6],
+      function(r,c){ return "("+r+","+c+")"; },
+      { corner:"🎲\\🎲",
+        rowHeaderHTML: function(r){ return '<span class="pw-die sm" data-die="'+r+'"></span>'; },
+        colHeaderHTML: function(c){ return '<span class="pw-die sm" data-die="'+c+'"></span>'; },
+        cellClass: function(r,c){ return (r+c===8) ? "hl" : ""; } });
+    PW.buildChips(document.getElementById("sum8Chips"), ["(2,6)","(3,5)","(4,4)","(5,3)","(6,2)"], "pill-green");
+
+    /* "double" highlighted table */
+    PW.buildTable(document.getElementById("doubleTable"), [1,2,3,4,5,6], [1,2,3,4,5,6],
+      function(r,c){ return "("+r+","+c+")"; },
+      { corner:"🎲\\🎲",
+        rowHeaderHTML: function(r){ return '<span class="pw-die sm" data-die="'+r+'"></span>'; },
+        colHeaderHTML: function(c){ return '<span class="pw-die sm" data-die="'+c+'"></span>'; },
+        cellClass: function(r,c){ return (r===2*c || c===2*r) ? "hl" : ""; } });
+    PW.buildChips(document.getElementById("doubleChips"), ["(1,2)","(2,1)","(2,4)","(4,2)","(3,6)","(6,3)"], "pill-green");
+
+    /* equal-numbers (diagonal) highlighted table */
+    PW.buildTable(document.getElementById("equalTable"), [1,2,3,4,5,6], [1,2,3,4,5,6],
+      function(r,c){ return "("+r+","+c+")"; },
+      { corner:"🎲\\🎲",
+        rowHeaderHTML: function(r){ return '<span class="pw-die sm" data-die="'+r+'"></span>'; },
+        colHeaderHTML: function(c){ return '<span class="pw-die sm" data-die="'+c+'"></span>'; },
+        cellClass: function(r,c){ return (r===c) ? "hl" : ""; } });
+    PW.buildChips(document.getElementById("equalChips"), ["(1,1)","(2,2)","(3,3)","(4,4)","(5,5)","(6,6)"], "pill-green");
+
+    /* Q1c: coin-die-coin, split into two 2x6 tables */
+    PW.buildTable(document.getElementById("cdcH"), ["H","T"], [1,2,3,4,5,6],
+      function(r,c){ return "("+r+","+c+",H)"; },
+      { corner:"", rowHeaderHTML:function(r){ return '<span class="pw-coin sm" data-coin="'+r+'"></span>'; },
+        colHeaderHTML:function(c){ return '<span class="pw-die sm" data-die="'+c+'"></span>'; } });
+    PW.buildTable(document.getElementById("cdcT"), ["H","T"], [1,2,3,4,5,6],
+      function(r,c){ return "("+r+","+c+",T)"; },
+      { corner:"", rowHeaderHTML:function(r){ return '<span class="pw-coin sm" data-coin="'+r+'"></span>'; },
+        colHeaderHTML:function(c){ return '<span class="pw-die sm" data-die="'+c+'"></span>'; } });
+
+    /* Q4a: coin x die table (coin first) */
+    PW.buildTable(document.getElementById("cdTable"), ["H","T"], [1,2,3,4,5,6],
+      function(r,c){ return "("+r+","+c+")"; },
+      { corner:"عملة \\ نرد",
+        rowHeaderHTML:function(r){ return '<span class="pw-coin sm" data-coin="'+r+'"></span>'; },
+        colHeaderHTML:function(c){ return '<span class="pw-die sm" data-die="'+c+'"></span>'; } });
+  });
+})();
+</script>
+</body>
+</html>

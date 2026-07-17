@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 3: النقاط الحرجة ومناطق التزايد والتناقص — الفصل الثالث</title>
+<meta name="description" content="العلاقة بين ميل المماس وإشارة المشتقة الأولى، اختبار التزايد والتناقص للدالة، والنقاط الحرجة، مع أمثلة محلولة ومختبر تفاعلي للمماس المتحرك.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-3.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 3 من 7 · 3-3</span>
+    <h1>النقاط الحرجة ومناطق التزايد والتناقص للدالة</h1>
+    <p class="lead">نربط بين <b>ميل المماس</b> للمنحني عند نقطة و<b>إشارة المشتقة الأولى</b> هناك، لنستنتج اختباراً بسيطاً لتحديد مناطق تزايد الدالة وتناقصها باستخدام فحص إشارة $f'(x)$ على خط الأعداد.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يدرك أن مشتقة الدالة عند أي نقطة $x$ تمثّل ميل المماس للمنحني هناك، أي $m=\tan\theta$.</span></li>
+        <li><span class="obj-num">2</span><span>يستنتج أن الدالة متزايدة على فترة إذا كانت $f'(x)>0$ لكل $x$ فيها، ومتناقصة إذا كانت $f'(x)<0$.</span></li>
+        <li><span class="obj-num">3</span><span>يوظّف أسلوب فحص إشارة المشتقة الأولى على خط الأعداد لإيجاد مناطق التزايد والتناقص لدالة معطاة.</span></li>
+        <li><span class="obj-num">4</span><span>يثبت أن دالة معيّنة متزايدة (أو متناقصة) في كامل مجالها $\mathbb{R}$.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 الشرح والتعريفات">
+    <div class="card neu">
+      <h2>💡 3-3 النقاط الحرجة ومناطق التزايد والتناقص</h2>
+      <p>لمعرفة معنى التزايد والتناقص للدالة في مجالها أو في مجموعة جزئية منه لنتأمل المثال التالي:</p>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> مثال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد مناطق التزايد والتناقص للدالة $f(x)=x^2-4x+3$.</div>
+      <div class="hidden-steps" id="steps-ex6">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">أولاً: نجد مشتقة الدالة، ومن المعلوم أن هذه المشتقة تمثّل ميل المماس للمنحني في أي نقطة $x$، وأن ميل المماس يمثّل ظل الزاوية أي $m=\tan\theta$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=2x-4$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">ثانياً: نجعل مشتقة الدالة مساوية إلى الصفر أي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=0 \Rightarrow 2x-4=0 \Rightarrow x=2$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">هذا يعني أن مماس المنحني عندما $x=2$ يكون موازياً لمحور السينات. أما جميع المماسات التي تُرسم للمنحني عندما $x>2$ (التي تصنعها مع الجزء الموجب من المحور السيني) تكون زواياها حادة، وبذلك يكون ميلها موجباً، فقيمة الدالة تكبر أو تزداد تبعاً لازدياد قيمة $x$ في هذا الجزء من مجالها — أي الدالة متزايدة</p>
+          <div class="calc-flow"><div class="calc-line">$x>2 \Rightarrow f'(x)>0 \Rightarrow$ الدالة متزايدة</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">أما المماسات التي تُرسم للمنحني عندما $x<2$ فتكون زوايا ميلها جميعاً منفرجة، وبذلك يكون ميلها سالباً، فقيمة الدالة تصغر أو تتناقص لازدياد قيمة $x$ — أي الدالة متناقصة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">$x<2 \Rightarrow f'(x)<0 \Rightarrow$ الدالة متناقصة</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ الدالة متناقصة على $\{x:x<2\}$ ومتزايدة على $\{x:x>2\}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:1rem">
+      <div class="neu" style="padding:1.1rem 1.3rem">
+        <div class="mindmap-wrap"><svg id="figIncreasing" width="360" height="230" viewBox="0 0 360 230" role="img" aria-label="الشكل 3-1: دالة متزايدة، كلما زاد x زادت قيمة الدالة"></svg></div>
+        <p style="text-align:center;font-weight:700;margin:.4rem 0 0">الشكل 3-1: دالة متزايدة</p>
+      </div>
+      <div class="neu" style="padding:1.1rem 1.3rem">
+        <div class="mindmap-wrap"><svg id="figDecreasing" width="360" height="230" viewBox="0 0 360 230" role="img" aria-label="الشكل 3-2: دالة متناقصة، كلما زاد x نقصت قيمة الدالة"></svg></div>
+        <p style="text-align:center;font-weight:700;margin:.4rem 0 0">الشكل 3-2: دالة متناقصة</p>
+      </div>
+    </div>
+
+    <div class="card neu" style="margin-top:1rem">
+      <p>ويمكن رسم خط الأعداد وتعيين عليه إشارة مشتقة الدالة $f'(x)$ حيث نعيّن قيمة $x$ المستخرجة من المشتقة، ثم نأخذ قيمة $x>2$ فيكون $f'(x)>0$ وعندها تكون الدالة متزايدة. وعندما نأخذ قيمة $x<2$ تكون $f'(x)<0$ وعندها تكون الدالة متناقصة، أما النقطة التي فيها $f'(x)=0$ (وهنا $x=2$) فتمثّل — في هذه الحالة — <b>نهاية صغرى محلية</b> والتي سيأتي ذكرها بالتفصيل لاحقاً.</p>
+    </div>
+
+    <div class="card neu" style="margin-top:1rem;border-inline-start:5px solid var(--accent-purple)">
+      <p><b>تعريف:</b> لتكن $f(x)$ دالة مستمرة في الفترة المغلقة $[a,b]$ وقابلة للاشتقاق في الفترة المفتوحة $(a,b)$؛ فإنّ:</p>
+      <div class="rule-box">$f'(x)>0 \Rightarrow f(x)$ متزايدة &nbsp;&nbsp; $\forall x\in(a,b)$</div>
+      <div class="rule-box">$f'(x)<0 \Rightarrow f(x)$ متناقصة &nbsp;&nbsp; $\forall x\in(a,b)$</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="more-examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة إضافية</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7a</span> مثال 7 (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد مناطق التزايد والتناقص للدالة $f(x)=x^2-4x+6$</div>
+      <div class="hidden-steps" id="steps-ex7a">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بإيجاد مشتقة الدالة، ثم نجعل المشتقة تساوي صفر</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=2x-4$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$2x-4=0 \;(\div2)\; \Rightarrow x-2=0 \Rightarrow x=2$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$f'(x)>0 \;\forall x>2 \Rightarrow \{x:x>2,x\in\mathbb{R}\}$ مناطق التزايد؛ &nbsp; $f'(x)<0 \;\forall x<2 \Rightarrow \{x:x<2,x\in\mathbb{R}\}$ مناطق التناقص</p>
+          <div class="calc-flow"><div class="calc-line calc-box">مناطق التزايد: $\{x:x>2\}$ &nbsp;،&nbsp; مناطق التناقص: $\{x:x<2\}$</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ مناطق التزايد $\{x:x>2\}$، ومناطق التناقص $\{x:x<2\}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7b</span> مثال 7 (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد مناطق التزايد والتناقص للدالة $f(x)=2x^3-3x^2-12x+2$</div>
+      <div class="hidden-steps" id="steps-ex7b">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بإيجاد مشتقة الدالة، ثم نجعل المشتقة تساوي صفر</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=6x^2-6x-12$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$[6x^2-6x-12=0]\div6 \Rightarrow x^2-x-2=0$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$(x-2)(x+1)=0 \Rightarrow x=2$ <span class="ar-safe">أو</span> $x=-1$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نختبر على خط الأعداد إشارة المشتقة الأولى بالتعويض بقيم مجاورة للعددين $x=-1$ <span class="ar-safe">و</span> $x=2$</p>
+          <div class="calc-flow"><div class="calc-line">إشارة $f'(x)$: &nbsp; $+\;+\;+\;(-1)\;-\;-\;-\;(2)\;+\;+\;+$</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ مناطق التزايد $\{x:x<-1\}\cup\{x:x>2\}$، ومناطق التناقص الفترة المفتوحة $(-1,2)$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8</span> مثال 8</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex8">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن الدالة $f(x)=7x-3$ متزايدة في $\mathbb{R}$.</div>
+      <div class="hidden-steps" id="steps-ex8">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجد المشتقة الأولى للدالة، فنلاحظ أن</p>
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=7$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن المشتقة عدد ثابت موجب لكل قيم $x$ (لا تعتمد على $x$ إطلاقاً)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=7>0 \quad \forall x\in\mathbb{R}$</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ أي أن الدالة متزايدة في $\mathbb{R}$ بأكمله. ∎</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: المماس المتحرك وإشارة المشتقة</h2>
+      <p>حرّك المزلاج لتحريك نقطة المماس على منحني الدالة $f(x)=2x^3-3x^2-12x+2$ (مثال 7b)، وشاهد كيف يتغيّر ميل المماس، وكيف يرتبط بمنطقة التزايد أو التناقص.</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="tangentPlot" width="520" height="340"></svg></div>
+        <div class="io-row">
+          <label for="xSlider" style="min-width:8rem">النقطة <b>x</b> = <span id="xVal">0</span></label>
+          <input type="range" id="xSlider" class="neu-range" min="-2.5" max="4" step="0.1" value="0">
+        </div>
+        <div class="rule-box" id="tangentOut" style="font-size:1.05rem"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين تطبيقي">
+    <h2 style="margin-bottom:.25rem">📝 تمرين تطبيقي</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد مناطق التزايد والتناقص للدالة $f(x)=x^3-3x$.</div>
+      <div class="hidden-steps" id="steps-pq1">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجد المشتقة، ونجعلها تساوي صفر</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=3x^2-3$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$3x^2-3=0 \;(\div3)\; \Rightarrow x^2-1=0$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$(x-1)(x+1)=0$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$x=1$ <span class="ar-safe">أو</span> $x=-1$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نختبر إشارة $f'(x)$ على خط الأعداد حول $-1,1$: &nbsp; $+\;+\;(-1)\;-\;-\;(1)\;+\;+$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">مناطق التزايد: $\{x:x<-1\}\cup\{x:x>1\}$ &nbsp;،&nbsp; مناطق التناقص: $(-1,1)$</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ متزايدة على $\{x<-1\}\cup\{x>1\}$، ومتناقصة على $(-1,1)$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن الدالة $f(x)=x^3+3x+1$ متزايدة في $\mathbb{R}$.</div>
+      <div class="hidden-steps" id="steps-pq2">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجد المشتقة الأولى</p>
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=3x^2+3$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $x^2\ge0$ لكل $x\in\mathbb{R}$، فإن $3x^2\ge0$ وبالتالي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=3x^2+3\ge3>0 \quad \forall x\in\mathbb{R}$</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ أي أن الدالة متزايدة في $\mathbb{R}$ بأكمله لأن مشتقتها موجبة دائماً. ∎</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>1.</span><span>إذا كانت $f'(x)>0$ على فترة ما فإن الدالة على هذه الفترة تكون:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>متزايدة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>متناقصة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>ثابتة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>غير معرّفة</span></label>
+        </div>
+        <div class="quiz-explain">إشارة المشتقة الموجبة تعني أن ميل المماس موجب (زاوية حادة)، فالدالة متزايدة.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>الخطوة الأولى لإيجاد مناطق التزايد والتناقص هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>رسم المنحني مباشرة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إيجاد المشتقة الثانية</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إيجاد المشتقة الأولى وجعلها تساوي صفراً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>تعويض $x=0$ في الدالة</span></label>
+        </div>
+        <div class="quiz-explain">نوجد $f'(x)$ ثم نحل $f'(x)=0$ لإيجاد النقاط الحرجة التي تُقسّم المجال إلى فترات.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>3.</span><span>للدالة $f(x)=x^2-4x+6$ (مثال 7a)، مناطق التزايد هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$\{x:x<2\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\{x:x>2\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\{x:x<-2\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>جميع قيم $x$</span></label>
+        </div>
+        <div class="quiz-explain">$f'(x)=2x-4>0$ عندما $x>2$، فتكون الدالة متزايدة هناك.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>لإثبات أن دالة متزايدة في $\mathbb{R}$ بأكمله يكفي أن نُثبت أن:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$f(x)>0$ لكل $x$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f'(x)=0$ لكل $x$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f''(x)>0$ لكل $x$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f'(x)>0$ لكل $x$</span></label>
+        </div>
+        <div class="quiz-explain">التزايد على كامل المجال يتطلب أن تكون المشتقة الأولى موجبة لكل قيمة من قيم $x$ في هذا المجال، كما في مثال 8.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>5.</span><span>في مثال 7(b)، $f(x)=2x^3-3x^2-12x+2$ متناقصة على الفترة:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$\{x<-1\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\{x>2\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$(-1,2)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>كل $\mathbb{R}$</span></label>
+        </div>
+        <div class="quiz-explain">إشارة $f'(x)$ سالبة بين الجذرين $x=-1$ <span class="ar-safe">و</span> $x=2$، فالدالة متناقصة على الفترة المفتوحة $(-1,2)$.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>مشتقة الدالة عند نقطة $x$ تمثّل ميل المماس هناك: $m=\tan\theta$.</span></li>
+        <li><span>إذا كانت $f'(x)>0\;\forall x\in(a,b)$ فالدالة متزايدة على هذه الفترة.</span></li>
+        <li><span>إذا كانت $f'(x)<0\;\forall x\in(a,b)$ فالدالة متناقصة على هذه الفترة.</span></li>
+        <li><span>نحل $f'(x)=0$ لإيجاد النقاط الحرجة، ثم نفحص إشارة المشتقة على خط الأعداد حول هذه النقاط.</span></li>
+        <li><span>لإثبات التزايد (أو التناقص) على كامل $\mathbb{R}$، يكفي إثبات أن $f'(x)$ موجبة (أو سالبة) لكل $x$.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l3" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين إشارة المشتقة الأولى وسلوك الدالة.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l3">
+        <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الثالث">
+          <line x1="410" y1="150" x2="170" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="170" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="150" r="54" fill="#ffab5e"/>
+            <text x="410" y="145" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">إشارة</text>
+            <text x="410" y="162" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">f′(x)</text></g>
+
+          <g><circle cx="170" cy="70" r="46" fill="#2fd18f"/>
+            <text x="170" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">f′(x)&gt;0</text>
+            <text x="170" y="83" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">متزايدة</text></g>
+
+          <g><circle cx="170" cy="230" r="46" fill="#ff6b9d"/>
+            <text x="170" y="226" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">f′(x)&lt;0</text>
+            <text x="170" y="243" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">متناقصة</text></g>
+
+          <g><circle cx="650" cy="70" r="46" fill="#3fa9f5"/>
+            <text x="650" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">f′(x)=0</text>
+            <text x="650" y="83" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">نقطة حرجة</text></g>
+
+          <g><circle cx="650" cy="230" r="46" fill="#7c6fee"/>
+            <text x="650" y="226" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">m=tanθ</text>
+            <text x="650" y="243" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">ميل المماس</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الثالث · تطبيقات على المشتقة — الدرس 3: النقاط الحرجة ومناطق التزايد والتناقص</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch3.js"></script>
+<script>
+(function(){
+  /* Figure 3-1: generic increasing function */
+  var fig1 = document.getElementById("figIncreasing");
+  var ns = "http://www.w3.org/2000/svg";
+  function line(svg,x1,y1,x2,y2,stroke,width,dash){
+    var l = document.createElementNS(ns,"line");
+    l.setAttribute("x1",x1); l.setAttribute("y1",y1); l.setAttribute("x2",x2); l.setAttribute("y2",y2);
+    l.setAttribute("stroke",stroke); l.setAttribute("stroke-width",width||2);
+    if(dash) l.setAttribute("stroke-dasharray",dash);
+    svg.appendChild(l);
+  }
+  function label(svg,x,y,text,color,size,weight){
+    var t = document.createElementNS(ns,"text");
+    t.setAttribute("x",x); t.setAttribute("y",y);
+    t.setAttribute("font-size",size||13); t.setAttribute("font-weight",weight||700);
+    t.setAttribute("fill",color||"var(--text-primary)"); t.setAttribute("font-family","Cairo,sans-serif");
+    t.textContent = text;
+    svg.appendChild(t);
+  }
+  function dot(svg,x,y,r,color){
+    var c = document.createElementNS(ns,"circle");
+    c.setAttribute("cx",x); c.setAttribute("cy",y); c.setAttribute("r",r||4); c.setAttribute("fill",color);
+    svg.appendChild(c);
+  }
+  function curve(svg,d,color){
+    var p = document.createElementNS(ns,"path");
+    p.setAttribute("d",d); p.setAttribute("fill","none"); p.setAttribute("stroke",color); p.setAttribute("stroke-width","3.5"); p.setAttribute("stroke-linecap","round");
+    svg.appendChild(p);
+  }
+
+  /* axes for fig1 */
+  line(fig1, 40,190, 330,190, "var(--text-faint)", 2);
+  line(fig1, 40,190, 40,20, "var(--text-faint)", 2);
+  label(fig1, 335,195, "x", "var(--text-faint)", 13, 700);
+  label(fig1, 30,15, "y", "var(--text-faint)", 13, 700);
+  curve(fig1, "M60,175 C100,150 140,60 300,45", "#2fd18f");
+  dot(fig1,110,120,4.5,"#7c6fee"); label(fig1,95,138,"f(x₁)","#7c6fee",11,700);
+  dot(fig1,230,55,4.5,"#7c6fee"); label(fig1,235,50,"f(x₂)","#7c6fee",11,700);
+  line(fig1,110,190,110,120,"#b3bdcc",1.4,"3 3"); line(fig1,230,190,230,55,"#b3bdcc",1.4,"3 3");
+  label(fig1,105,205,"x₁","var(--text-primary)",12,700); label(fig1,225,205,"x₂","var(--text-primary)",12,700);
+  label(fig1,90,225,"x₁<x₂ ⇒ f(x₁)<f(x₂)","var(--text-secondary)",11,700);
+
+  /* fig2: decreasing */
+  var fig2 = document.getElementById("figDecreasing");
+  line(fig2, 40,190, 330,190, "var(--text-faint)", 2);
+  line(fig2, 40,190, 40,20, "var(--text-faint)", 2);
+  label(fig2, 335,195, "x", "var(--text-faint)", 13, 700);
+  label(fig2, 30,15, "y", "var(--text-faint)", 13, 700);
+  curve(fig2, "M60,45 C150,55 220,90 300,175", "#ff6b9d");
+  dot(fig2,110,58,4.5,"#7c6fee"); label(fig2,95,45,"f(x₁)","#7c6fee",11,700);
+  dot(fig2,230,140,4.5,"#7c6fee"); label(fig2,235,160,"f(x₂)","#7c6fee",11,700);
+  line(fig2,110,190,110,58,"#b3bdcc",1.4,"3 3"); line(fig2,230,190,230,140,"#b3bdcc",1.4,"3 3");
+  label(fig2,105,205,"x₁","var(--text-primary)",12,700); label(fig2,225,205,"x₂","var(--text-primary)",12,700);
+  label(fig2,90,225,"x₁<x₂ ⇒ f(x₁)>f(x₂)","var(--text-secondary)",11,700);
+})();
+</script>
+<script>
+(function(){
+  var svg = document.getElementById("tangentPlot");
+  var slider = document.getElementById("xSlider");
+  var xVal = document.getElementById("xVal");
+  var out = document.getElementById("tangentOut");
+  var f = function(x){ return 2*x*x*x-3*x*x-12*x+2; };
+  var fp = function(x){ return 6*x*x-6*x-12; };
+
+  var ns = "http://www.w3.org/2000/svg";
+  function addPath(d, stroke, width){
+    var p = document.createElementNS(ns,"path");
+    p.setAttribute("d",d); p.setAttribute("fill","none");
+    p.setAttribute("stroke",stroke); p.setAttribute("stroke-width",width||3); p.setAttribute("stroke-linecap","round");
+    svg.appendChild(p);
+    return p;
+  }
+  function addDot(mapper,x,y,color){
+    var pt = mapper.toPx(x,y);
+    var c = document.createElementNS(ns,"circle");
+    c.setAttribute("cx",pt[0]); c.setAttribute("cy",pt[1]); c.setAttribute("r","6"); c.setAttribute("fill",color);
+    svg.appendChild(c);
+  }
+
+  function render(){
+    var x = parseFloat(slider.value);
+    xVal.textContent = x.toFixed(1);
+    var m = Ch4Plot.drawAxes(svg,{xmin:-3,xmax:4.5,ymin:-25,ymax:25,step:5,w:520,h:340});
+    addPath(Ch4Plot.pathD(f,-2.6,4.2,m), "#3fa9f5", 3);
+
+    var y0 = f(x), slope = fp(x);
+    var x1 = x-1.3, x2 = x+1.3;
+    var tanD = "M "+m.toPx(x1,y0+slope*(x1-x))[0].toFixed(2)+" "+m.toPx(x1,y0+slope*(x1-x))[1].toFixed(2)+" L "+
+               m.toPx(x2,y0+slope*(x2-x))[0].toFixed(2)+" "+m.toPx(x2,y0+slope*(x2-x))[1].toFixed(2);
+    addPath(tanD, "#ff6b9d", 2.5);
+    addDot(m, x, y0, "#7c6fee");
+
+    var state, color;
+    if(Math.abs(slope) < 0.05){ state = "نقطة حرجة (مماس أفقي)"; color = "#ffab5e"; }
+    else if(slope > 0){ state = "الدالة متزايدة هنا"; color = "#2fd18f"; }
+    else { state = "الدالة متناقصة هنا"; color = "#ff6b9d"; }
+
+    out.innerHTML = "$$f'("+x.toFixed(1)+")="+slope.toFixed(2)+"$$" +
+      "<div style='color:"+color+";font-weight:800;margin-top:.3rem'>"+state+"</div>";
+    if(window.Ch4 && window.Ch4.typeset) window.Ch4.typeset([out]);
+  }
+  slider.addEventListener("input", render);
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 5: نقاط الانقلاب وتحدب وتقعر الدالة — الفصل الثالث</title>
+<meta name="description" content="تعريف تقعر وتحدب المنحنيات باستخدام المشتقة الثانية، نقاط الانقلاب وخطواتها، مع أمثلة محلولة ومختبر تفاعلي وتمرين (2-3) الشامل.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-5.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 5 من 7 · 5-3</span>
+    <h1>نقاط الانقلاب ومناطق تحدب وتقعر الدالة</h1>
+    <p class="lead">نستخدم <b>المشتقة الثانية</b> $f''(x)$ لتحديد شكل انحناء منحني الدالة: هل هو <b>مقعر</b> (فتحته للأعلى) أم <b>محدب</b> (فتحته للأسفل)، وأين تتغيّر إشارة $f''(x)$ عند <b>نقاط الانقلاب</b>.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يعرّف تقعر وتحدب منحني الدالة بدلالة إشارة المشتقة الثانية $f''(x)$.</span></li>
+        <li><span class="obj-num">2</span><span>يعرّف نقطة الانقلاب على أنها النقطة التي يتغيّر عندها إشارة $f''(x)$ من موجب إلى سالب أو العكس.</span></li>
+        <li><span class="obj-num">3</span><span>يتبع خطوات إيجاد نقاط الانقلاب ومناطق التقعر والتحدب لدالة معطاة.</span></li>
+        <li><span class="obj-num">4</span><span>يجمع بين اختباري المشتقة الأولى والثانية لتحليل دالة تحليلاً كاملاً (نهايات، تزايد وتناقص، انقلاب، تقعر وتحدب).</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 التقعر والتحدب">
+    <div class="card neu">
+      <h2>💡 5-3 تقعر وتحدب المنحنيات</h2>
+      <p><b>تعريف:</b> لتكن $f$ دالة معرّفة في الفترة المغلقة $[a,b]:a,b\in\mathbb{R}$ وقابلة للاشتقاق مشتقته أولى وثانية على الفترة المفتوحة $(a,b):a,b\in\mathbb{R}$:</p>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>تكون الدالة <b>مقعرة</b> على الفترة المفتوحة $I$ إذا كانت $f''(x)>0,\;\forall x\in(a,b)$.</span></li>
+        <li><span class="obj-num">2</span><span>تكون الدالة <b>محدبة</b> على الفترة المفتوحة $I$ إذا كانت $f''(x)<0,\;\forall x\in(a,b)$.</span></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">11a</span> مثال 11 (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex11a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">حدد شكل منحني الدالة (محدب، مقعر) للدالة $f(x)=x^2$</div>
+      <div class="hidden-steps" id="steps-ex11a">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجد المشتقة الأولى ثم الثانية</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=2x$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$f''(x)=2$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $f''(x)=2>0,\;x\in\mathbb{R}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">أي أن الدالة مقعرة عند جميع القيم الحقيقية</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ مقعرة في كامل $\mathbb{R}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">11b</span> مثال 11 (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex11b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">حدد شكل منحني الدالة (محدب، مقعر) للدالة $f(x)=2x-3x^2$</div>
+      <div class="hidden-steps" id="steps-ex11b">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجد المشتقة الأولى ثم الثانية</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=2-6x$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$f''(x)=-6$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $f''(x)=-6<0,\;\forall x\in\mathbb{R}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">أي أن الدالة محدبة عند جميع القيم الحقيقية</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ محدبة في كامل $\mathbb{R}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="card neu">
+      <h3 style="margin-top:0">نقاط الانقلاب <span style="font-weight:400;color:var(--text-secondary)">Points of inflection</span></h3>
+      <p>يقال أن النقطة $(c,f(c))$ نقطة انقلاب على منحني الدالة $f$ إذا كان له مماس في هذه النقطة، ووُجدت فترة مفتوحة $I$ تحوي القيمة $c\in I$ والتي يكون عندها $f''(c)=0$، والتي بحيث تتغيّر إشارة $f''(x)$ من موجب إلى سالب حول $c$ <span class="ar-safe">أو</span> بالعكس.</p>
+    </div>
+
+    <div class="card neu" style="margin-top:1rem">
+      <h3 style="margin-top:0">🔢 خطوات إيجاد نقاط الانقلاب ومناطق التقعر والتحدب</h3>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>نجد المشتقة الثانية للدالة.</span></li>
+        <li><span class="obj-num">2</span><span>نجعل المشتقة الثانية مساوية إلى الصفر ثم نجد الجذور الحقيقية للمعادلة الناتجة، ولنفرض أن أحد الجذور $x=c$.</span></li>
+        <li><span class="obj-num">3</span><span>نأخذ قيمة قريبة من $c$ (أي أصغر منها قليلاً ثم أكبر منها قليلاً) ونعوّضها في المشتقة الثانية؛ فإذا تغيّرت إشارة المشتقة الثانية من سالبة إلى موجبة أو بالعكس فالنقطة تمثّل نقطة انقلاب كما في الأمثلة الآتية.</span></li>
+      </ol>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">12</span> مثال 12</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex12">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد نقاط الانقلاب ومناطق التقعر والتحدب للدالة $f(x)=4x^3-3x+4$.</div>
+      <div class="hidden-steps" id="steps-ex12">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجد المشتقة الأولى ثم الثانية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">$f'(x)=12x^2-3 \Rightarrow f''(x)=24x$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نجعل المشتقة الثانية تساوي صفر</p>
+          <div class="calc-flow"><div class="calc-line calc-box">$24x=0 \Rightarrow x=0$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">إشارة $f''(x)$: &nbsp; $-\;-\;-\;(0)\;+\;+\;+$ &nbsp; (محدب ⇐ مقعر): تتغيّر الإشارة، إذاً $x=0$ نقطة انقلاب</p>
+          <div class="calc-flow">
+            <div class="calc-line">نعوّض $x=0$ في الدالة الأصلية لاستخراج قيمة $y$</div>
+            <div class="calc-line calc-box">$y=f(0)=4(0)^3-3(0)+4=4$</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ النقطة $(0,4)$ تمثّل نقطة انقلاب للدالة؛ مناطق التحدب $\{x:x<0\}$، ومناطق التقعر $\{x:x>0\}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">13</span> مثال 13</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex13">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد النهايات العظمى والصغرى المحلية ومناطق التزايد والتناقص ونقاط الانقلاب ومناطق التحدب والتقعر للدالة $f(x)=2x^3-6x^2+6x+5$.</div>
+      <div class="hidden-steps" id="steps-ex13">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجد المشتقة الأولى ونجعلها تساوي صفر</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=6x^2-12x+6$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$[6x^2-12x+6=0]\div6 \Rightarrow x^2-2x+1=0$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$(x-1)^2=0 \Rightarrow x=1$ (جذر مضاعف)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">إشارة $f'(x)$: &nbsp; $+\;+\;+\;+\;(1)\;+\;+\;+\;+$ — لا تتغيّر الإشارة حول $x=1$ (موجبة من الجهتين)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">∴ لا توجد للدالة نهاية عظمى أو صغرى محلية، والنقطة $(1,7)$ حرجة فقط، والدالة متزايدة في مجالها بأكمله</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=1$ فينتج قيمة $y$</p>
+          <div class="calc-flow">
+            <div class="calc-line">$y=f(1)=2(1)^3-6(1)^2+6(1)+5$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$y=2-6+6+5=7$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نجد المشتقة الثانية ونجعلها تساوي صفر</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f''(x)=12x-12$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$12x-12=0 \Rightarrow x=1$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نفحص إشارة المشتقة الثانية على خط الأعداد: &nbsp; $-\;-\;-\;(1)\;+\;+\;+$ — تتغيّر الإشارة، إذاً $x=1$ نقطة انقلاب</p>
+          <div class="calc-flow"><div class="calc-line calc-box">النقطة $(1,7)$ تمثّل نقطة انقلاب أيضاً (نفس النقطة الحرجة السابقة)</div></div>
+        </div></li>
+      </ol>
+      <div class="callout tip" style="margin-top:.6rem">
+        <span class="icon">💬</span>
+        <span>ملاحظة: هنا تطابقت النقطة الحرجة مع نقطة الانقلاب عند $x=1$ — هذا ممكن الحدوث عندما يكون الجذر مضاعفاً في المشتقة الأولى.</span>
+      </div>
+      <div class="exercise-final">✓ لا توجد نهايات محلية؛ الدالة متزايدة في مجالها بأكمله؛ نقطة انقلاب واحدة عند $(1,7)$؛ مناطق التحدب $\{x<1\}$، ومناطق التقعر $\{x>1\}$. ∎</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: التقعر والتحدب ونقطة الانقلاب</h2>
+      <p>حرّك المزلاج على منحني $f(x)=4x^3-3x+4$ (مثال 12) وشاهد كيف يتغيّر شكل الانحناء من محدب (∩) إلى مقعر (∪) عند نقطة الانقلاب $(0,4)$.</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="inflectionPlot" width="520" height="340"></svg></div>
+        <div class="io-row">
+          <label for="infSlider" style="min-width:8rem">النقطة <b>x</b> = <span id="infVal">0</span></label>
+          <input type="range" id="infSlider" class="neu-range" min="-1.3" max="1.3" step="0.05" value="0">
+        </div>
+        <div class="rule-box" id="infOut" style="font-size:1.05rem"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (2-3)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (2-3)</h2>
+    <p class="lead" style="margin-top:0">جد النهايات العظمى والصغرى المحلية ومناطق التزايد والتناقص للدوال التالية ونقاط الانقلاب ومناطق التقعر والتحدب أن وجدت. حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> $f(x)=5-2x+x^2$</div>
+        <button class="neu-btn" data-reveal-steps="steps-t1">إظهار الحل</button>
+      </div>
+      <div class="hidden-steps" id="steps-t1">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line">$f'(x)=2x-2=0\Rightarrow x=1$ &nbsp;؛&nbsp; إشارة $f'$: $-\,-\,(1)\,+\,+$ ⇐ نهاية صغرى محلية عند $f(1)=4$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f''(x)=2>0\;\forall x$ — مقعرة في كامل $\mathbb{R}$، لا توجد نقطة انقلاب</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية صغرى محلية $(1,4)$؛ متناقصة $\{x<1\}$، متزايدة $\{x>1\}$؛ مقعرة في كامل $\mathbb{R}$، بلا نقطة انقلاب. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> $f(x)=\dfrac{x^2}{x-1}$</div>
+        <button class="neu-btn" data-reveal-steps="steps-t2">إظهار الحل</button>
+      </div>
+      <div class="hidden-steps" id="steps-t2">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow">
+            <div class="calc-line">بقاعدة القسمة: $f'(x)=\dfrac{2x(x-1)-x^2}{(x-1)^2}$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$f'(x)=\dfrac{x^2-2x}{(x-1)^2}=\dfrac{x(x-2)}{(x-1)^2}$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$f'(x)=0\Rightarrow x=0,2$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line">إشارة $f'$ (المقام دائماً موجب): $+\,(0)\,-\,-\,(1$ غير معرّفة$)\,-\,-\,(2)\,+$</div>
+          <div class="calc-line calc-box">نهاية عظمى عند $f(0)=0$؛ نهاية صغرى عند $f(2)=4$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f''(x)=\dfrac{2}{(x-1)^3}$ — لا تساوي صفراً أبداً، فلا توجد نقطة انقلاب (عدم الاستمرارية عند $x=1$ فقط)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية عظمى $(0,0)$، نهاية صغرى $(2,4)$؛ متزايدة $\{x<0\}\cup\{x>2\}$، متناقصة $(0,1)\cup(1,2)$؛ محدبة $\{x<1\}$، مقعرة $\{x>1\}$؛ بلا نقطة انقلاب. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> $f(x)=x(x-2)$</div>
+        <button class="neu-btn" data-reveal-steps="steps-t3">إظهار الحل</button>
+      </div>
+      <div class="hidden-steps" id="steps-t3">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow">
+            <div class="calc-line">$f(x)=x^2-2x \Rightarrow f'(x)=2x-2$</div>
+            <div class="calc-line">$f'(x)=0\Rightarrow x=1$؛ إشارة $f'$: $-\,(1)\,+$ ⇐ نهاية صغرى $f(1)=-1$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f''(x)=2>0\;\forall x$ — مقعرة في كامل $\mathbb{R}$، بلا نقطة انقلاب</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية صغرى محلية $(1,-1)$؛ متناقصة $\{x<1\}$، متزايدة $\{x>1\}$؛ مقعرة في كامل $\mathbb{R}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> $f(x)=\dfrac13x^3-\dfrac12x^2-6x$</div>
+        <button class="neu-btn" data-reveal-steps="steps-t4">إظهار الحل</button>
+      </div>
+      <div class="hidden-steps" id="steps-t4">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=x^2-x-6=(x-3)(x+2)$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$f'(x)=0\Rightarrow x=3,-2$</div>
+          <div class="calc-line">إشارة $f'$: $+\,(-2)\,-\,(3)\,+$ ⇐ نهاية عظمى $f(-2)=\dfrac{22}{3}$، نهاية صغرى $f(3)=-\dfrac{27}{2}$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line">$f''(x)=2x-1=0\Rightarrow x=\dfrac12$؛ إشارة $f''$: $-\,(\frac12)\,+$ ⇐ نقطة انقلاب</div>
+          <div class="calc-line calc-box">$f(\tfrac12)=-\dfrac{37}{12}$ &nbsp;⇒&nbsp; نقطة الانقلاب $\left(\dfrac12,-\dfrac{37}{12}\right)$</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية عظمى $(-2,\frac{22}{3})$، نهاية صغرى $(3,-\frac{27}{2})$؛ متزايدة $\{x<-2\}\cup\{x>3\}$، متناقصة $(-2,3)$؛ نقطة انقلاب $(\frac12,-\frac{37}{12})$؛ محدبة $\{x<\frac12\}$، مقعرة $\{x>\frac12\}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> $f(x)=x+\dfrac4x$</div>
+        <button class="neu-btn" data-reveal-steps="steps-t5">إظهار الحل</button>
+      </div>
+      <div class="hidden-steps" id="steps-t5">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line">$f'(x)=1-\dfrac{4}{x^2}=\dfrac{x^2-4}{x^2}$</div>
+          <div class="calc-line">$f'(x)=0\Rightarrow x=\pm2$</div>
+          <div class="calc-line">إشارة $f'$: $+\,(-2)\,-\,(0$ غير معرّفة$)\,-\,(2)\,+$ ⇐ نهاية عظمى $f(-2)=-4$، نهاية صغرى $f(2)=4$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f''(x)=\dfrac{8}{x^3}$ — لا تساوي صفراً أبداً، فلا توجد نقطة انقلاب (عدم استمرارية عند $x=0$)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية عظمى $(-2,-4)$، نهاية صغرى $(2,4)$؛ متزايدة $\{x<-2\}\cup\{x>2\}$، متناقصة $(-2,0)\cup(0,2)$؛ محدبة $\{x<0\}$، مقعرة $\{x>0\}$؛ بلا نقطة انقلاب. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> $f(x)=1-(3-x)^2$</div>
+        <button class="neu-btn" data-reveal-steps="steps-t6">إظهار الحل</button>
+      </div>
+      <div class="hidden-steps" id="steps-t6">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line">بالتبسيط: $f(x)=-x^2+6x-8$؛ &nbsp; $f'(x)=-2x+6=0\Rightarrow x=3$</div>
+          <div class="calc-line">إشارة $f'$: $+\,(3)\,-$ ⇐ نهاية عظمى $f(3)=1$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f''(x)=-2<0\;\forall x$ — محدبة في كامل $\mathbb{R}$، بلا نقطة انقلاب</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية عظمى محلية $(3,1)$؛ متزايدة $\{x<3\}$، متناقصة $\{x>3\}$؛ محدبة في كامل $\mathbb{R}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7</span> $f(x)=x^3-x^2+1$</div>
+        <button class="neu-btn" data-reveal-steps="steps-t7">إظهار الحل</button>
+      </div>
+      <div class="hidden-steps" id="steps-t7">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line">$f'(x)=3x^2-2x=x(3x-2)$</div>
+          <div class="calc-line">$f'(x)=0\Rightarrow x=0,\dfrac23$</div>
+          <div class="calc-line">إشارة $f'$: $+\,(0)\,-\,(\frac23)\,+$ ⇐ نهاية عظمى $f(0)=1$، نهاية صغرى $f(\frac23)=\frac{23}{27}$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line">$f''(x)=6x-2=0\Rightarrow x=\dfrac13$؛ إشارة $f''$: $-\,(\frac13)\,+$ ⇐ نقطة انقلاب</div>
+          <div class="calc-line calc-box">$f(\tfrac13)=\dfrac{25}{27}$ &nbsp;⇒&nbsp; نقطة الانقلاب $\left(\dfrac13,\dfrac{25}{27}\right)$</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية عظمى $(0,1)$، نهاية صغرى $(\frac23,\frac{23}{27})$؛ متزايدة $\{x<0\}\cup\{x>\frac23\}$، متناقصة $(0,\frac23)$؛ نقطة انقلاب $(\frac13,\frac{25}{27})$؛ محدبة $\{x<\frac13\}$، مقعرة $\{x>\frac13\}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8</span> $f(x)=\dfrac{x}{x+1}$</div>
+        <button class="neu-btn" data-reveal-steps="steps-t8">إظهار الحل</button>
+      </div>
+      <div class="hidden-steps" id="steps-t8">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line">بقاعدة القسمة: $f'(x)=\dfrac{(x+1)-x}{(x+1)^2}$</div>
+          <div class="calc-line">$f'(x)=\dfrac{1}{(x+1)^2}>0\;\forall x\neq-1$</div>
+          <div class="calc-line calc-box">لا توجد نهايات محلية؛ الدالة متزايدة على كامل مجالها</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f''(x)=-\dfrac{2}{(x+1)^3}$ — لا تساوي صفراً أبداً، فلا توجد نقطة انقلاب (عدم استمرارية عند $x=-1$)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ لا نهايات محلية؛ متزايدة على $\{x\neq-1\}$؛ محدبة $\{x>-1\}$، مقعرة $\{x<-1\}$؛ بلا نقطة انقلاب. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9</span> $f(x)=x^3-9x^2+24x$</div>
+        <button class="neu-btn" data-reveal-steps="steps-t9">إظهار الحل</button>
+      </div>
+      <div class="hidden-steps" id="steps-t9">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line">$f'(x)=3x^2-18x+24=3(x-2)(x-4)$</div>
+          <div class="calc-line">$f'(x)=0\Rightarrow x=2,4$</div>
+          <div class="calc-line">إشارة $f'$: $+\,(2)\,-\,(4)\,+$ ⇐ نهاية عظمى $f(2)=20$، نهاية صغرى $f(4)=16$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line">$f''(x)=6x-18=0\Rightarrow x=3$؛ إشارة $f''$: $-\,(3)\,+$ ⇐ نقطة انقلاب</div>
+          <div class="calc-line calc-box">$f(3)=18$ &nbsp;⇒&nbsp; نقطة الانقلاب $(3,18)$</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية عظمى $(2,20)$، نهاية صغرى $(4,16)$؛ متزايدة $\{x<2\}\cup\{x>4\}$، متناقصة $(2,4)$؛ نقطة انقلاب $(3,18)$؛ محدبة $\{x<3\}$، مقعرة $\{x>3\}$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">10</span> $f(x)=4+3x-x^2$</div>
+        <button class="neu-btn" data-reveal-steps="steps-t10">إظهار الحل</button>
+      </div>
+      <div class="hidden-steps" id="steps-t10">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line">$f'(x)=3-2x=0\Rightarrow x=\dfrac32$</div>
+          <div class="calc-line">إشارة $f'$: $+\,(\frac32)\,-$ ⇐ نهاية عظمى $f(\frac32)=\frac{25}{4}$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <div class="calc-flow"><div class="calc-line calc-box">$f''(x)=-2<0\;\forall x$ — محدبة في كامل $\mathbb{R}$، بلا نقطة انقلاب</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية عظمى محلية $(\frac32,\frac{25}{4})$؛ متزايدة $\{x<\frac32\}$، متناقصة $\{x>\frac32\}$؛ محدبة في كامل $\mathbb{R}$. ∎</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>1.</span><span>الدالة تكون مقعرة على فترة مفتوحة إذا كانت:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$f'(x)>0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f''(x)>0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f''(x)<0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f(x)>0$</span></label>
+        </div>
+        <div class="quiz-explain">الدالة مقعرة عندما تكون مشتقتها الثانية موجبة على كامل الفترة.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>نقطة الانقلاب هي النقطة التي عندها:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$f'(x)=0$ فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f(x)=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$f''(x)=0$ مع تغيّر إشارتها</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الدالة غير معرّفة</span></label>
+        </div>
+        <div class="quiz-explain">نقطة الانقلاب تتطلب $f''(c)=0$ مع تغيّر فعلي في إشارة $f''(x)$ حول $c$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>في مثال 12، $f(x)=4x^3-3x+4$، نقطة الانقلاب هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$(0,4)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$(4,0)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$(1,5)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا توجد</span></label>
+        </div>
+        <div class="quiz-explain">$f''(x)=24x=0\Rightarrow x=0$، وتتغيّر الإشارة من سالب إلى موجب، و$f(0)=4$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>في مثال 13، الدالة $f(x)=2x^3-6x^2+6x+5$ عند $x=1$:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>لها نهاية عظمى فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لها نهاية صغرى فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>ليست حرجة إطلاقاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نقطة حرجة ونقطة انقلاب معاً، بلا نهاية محلية</span></label>
+        </div>
+        <div class="quiz-explain">الجذر $x=1$ مضاعف في المشتقة الأولى فلا تتغيّر إشارتها، لكنه أيضاً جذر للمشتقة الثانية وتتغيّر إشارتها هناك.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>الدالة المحدبة على فترة مفتوحة يكون شكل منحنيها يشبه:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>∪ (فتحته للأعلى)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>∩ (فتحته للأسفل)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>خطاً مستقيماً دائماً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا يمكن تحديده</span></label>
+        </div>
+        <div class="quiz-explain">التحدب ($f''<0$) يعطي منحنى يشبه ∩ (كما في القطع المكافئ $y=-x^2$ مثلاً).</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>$f''(x)>0$ على فترة ⇐ الدالة مقعرة (∪) عليها؛ $f''(x)<0$ ⇐ محدبة (∩) عليها.</span></li>
+        <li><span>نقطة الانقلاب: $f''(c)=0$ مع تغيّر فعلي في إشارة $f''(x)$ حول $c$.</span></li>
+        <li><span>الخطوات: مشتقة ثانية ⇐ نجعلها صفراً ⇐ نفحص تغيّر الإشارة حول كل جذر.</span></li>
+        <li><span>قد تتطابق نقطة حرجة (من المشتقة الأولى) مع نقطة انقلاب (من المشتقة الثانية) عند نفس القيمة، كما في مثال 13.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l5" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع للتقعر والتحدب ونقاط الانقلاب.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l5">
+        <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الخامس">
+          <line x1="410" y1="150" x2="170" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="170" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="150" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="150" r="54" fill="#7c6fee"/>
+            <text x="410" y="145" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">f″(x)</text>
+            <text x="410" y="162" text-anchor="middle" fill="#fff" font-weight="800" font-size="11" font-family="Cairo,sans-serif">تقعر/تحدب</text></g>
+
+          <g><circle cx="170" cy="70" r="48" fill="#3fa9f5"/>
+            <text x="170" y="65" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">f″&gt;0</text>
+            <text x="170" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">مقعرة ∪</text></g>
+
+          <g><circle cx="170" cy="230" r="48" fill="#ff6b9d"/>
+            <text x="170" y="225" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">f″&lt;0</text>
+            <text x="170" y="242" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">محدبة ∩</text></g>
+
+          <g><circle cx="650" cy="150" r="48" fill="#2fd18f"/>
+            <text x="650" y="145" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">f″=0</text>
+            <text x="650" y="162" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">+ تغيّر إشارة</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الثالث · تطبيقات على المشتقة — الدرس 5: نقاط الانقلاب وتحدب وتقعر الدالة</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch3.js"></script>
+<script>
+(function(){
+  var svg = document.getElementById("inflectionPlot");
+  var slider = document.getElementById("infSlider");
+  var xVal = document.getElementById("infVal");
+  var out = document.getElementById("infOut");
+  var f = function(x){ return 4*x*x*x-3*x+4; };
+  var fpp = function(x){ return 24*x; };
+
+  var ns = "http://www.w3.org/2000/svg";
+  function addPath(d, stroke, width){
+    var p = document.createElementNS(ns,"path");
+    p.setAttribute("d",d); p.setAttribute("fill","none");
+    p.setAttribute("stroke",stroke); p.setAttribute("stroke-width",width||3); p.setAttribute("stroke-linecap","round");
+    svg.appendChild(p);
+  }
+  function addDot(mapper,x,y,color,label){
+    var pt = mapper.toPx(x,y);
+    var c = document.createElementNS(ns,"circle");
+    c.setAttribute("cx",pt[0]); c.setAttribute("cy",pt[1]); c.setAttribute("r","5.5"); c.setAttribute("fill",color);
+    svg.appendChild(c);
+    if(label){
+      var t = document.createElementNS(ns,"text");
+      t.setAttribute("x",pt[0]+8); t.setAttribute("y",pt[1]-8);
+      t.setAttribute("font-size","12"); t.setAttribute("font-weight","800"); t.setAttribute("fill",color);
+      t.setAttribute("font-family","Cairo,sans-serif");
+      t.textContent = label;
+      svg.appendChild(t);
+    }
+  }
+
+  function render(){
+    var x = parseFloat(slider.value);
+    xVal.textContent = x.toFixed(2);
+    var m = Ch4Plot.drawAxes(svg,{xmin:-1.5,xmax:1.5,ymin:-2,ymax:10,step:2,w:520,h:340});
+    addPath(Ch4Plot.pathD(f,-1.35,1.35,m), "#3fa9f5", 3);
+    addDot(m,0,4,"#2fd18f","(0,4) انقلاب");
+    addDot(m, x, f(x), "#7c6fee");
+
+    var curv = fpp(x);
+    var state, color, icon;
+    if(Math.abs(curv) < 1.5){ state = "قريب من نقطة الانقلاب"; color = "#ffab5e"; icon="⦿"; }
+    else if(curv > 0){ state = "الدالة مقعرة هنا (∪)"; color = "#3fa9f5"; icon="∪"; }
+    else { state = "الدالة محدبة هنا (∩)"; color = "#ff6b9d"; icon="∩"; }
+
+    out.innerHTML = "$$f''("+x.toFixed(2)+")="+curv.toFixed(1)+"$$" +
+      "<div style='color:"+color+";font-weight:800;margin-top:.3rem'>"+icon+" &nbsp;"+state+"</div>";
+    if(window.Ch4 && window.Ch4.typeset) window.Ch4.typeset([out]);
+  }
+  slider.addEventListener("input", render);
+  render();
+})();
+</script>
+</body>
+</html>

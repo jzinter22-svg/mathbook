@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 5: الجذور التربيعية وحل المعادلات في ℂ — الفصل الأول</title>
+<meta name="description" content="إيجاد الجذرين التربيعيين لعدد مركب، وحل المعادلات التربيعية والتكعيبية في حقل الأعداد المركبة، وتكوين معادلة من جذريها، مع أمثلة محلولة وتمرين شامل واختبار ذاتي.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-5.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 5 من 7 · 1-4-8 و 1-5</span>
+    <h1>الجذور التربيعية وحل المعادلات في ℂ</h1>
+    <p class="lead">الآن وقد أتقنّا جبر الأعداد المركبة، حان وقت الحصاد: نتعلم استخراج <b>الجذرين التربيعيين</b> لأي عدد مركب، ثم نستخدم الأعداد المركبة لحل <b>كل</b> معادلة من الدرجة الثانية — حتى تلك التي كانت "مستحيلة الحل" سابقاً في $\mathbb{R}$.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يستخرج الجذرين التربيعيين لعدد مركب معطى.</span></li>
+        <li><span class="obj-num">2</span><span>يحل معادلات الدرجة الثانية ذات المميز السالب ضمن حقل الأعداد المركبة.</span></li>
+        <li><span class="obj-num">3</span><span>يكوّن المعادلة التربيعية إذا علم مجموع وحاصل ضرب جذريها، أو أحد جذريها المركبين.</span></li>
+        <li><span class="obj-num">4</span><span>يستخرج الجذور التكعيبية لعدد حقيقي أو مركب باستخدام تحليل الفرق أو المجموع بين مكعبين.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 الشرح والتعريفات">
+    <div class="card neu">
+      <h2>💡 1-4-8 إيجاد الجذرين التربيعيين للعدد المركب</h2>
+      <p>نعلم أن للمعادلة $x^2=a$ (حيث $a$ عدد حقيقي موجب) جذرين حقيقيين $\pm\sqrt a$. وبالمثل، للمعادلة $x^2=a$ حيث $a$ عدد حقيقي <b>سالب</b>، يوجد جذران مركبان $0\pm\sqrt{a}\,i$. والآن سنتعلم كيفية إيجاد الجذرين التربيعيين لأي <b>عدد مركب</b> عام $p+qi$.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الجذرين التربيعيين للعدد المركب $5+12i$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🔧 الاستراتيجية:</b> نفرض $x+yi=\sqrt{5+12i}$، نربّع الطرفين، ثم نستخدم تساوي عددين مركبين.</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نربّع الطرفين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (x+yi)^2=5+12i \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( (x^2-y^2)+2xyi=5+12i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بتساوي عددين مركبين نحصل على معادلتين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2-y^2=5 \quad(1)\,,\qquad 2xy=12 \quad(2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">من (2): نعزل $y$ بدلالة $x$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\dfrac{6}{x} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نعوّض في (1) ونضرب بـ $x^2$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^2-\dfrac{36}{x^2}=5 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x^4-5x^2-36=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نحلل (معادلة تربيعية بدلالة $x^2$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (x^2-9)(x^2+4)=0 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">$x^2-9=0 \Rightarrow x=\pm3$ (نقبل، لأن $x$ حقيقي)؛ عندما $x=3,\,y=6/3=2$؛ وعندما $x=-3,\,y=-2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2+4=0 \Rightarrow x=\pm2i \) (يُهمل: \(x\) يجب أن يكون حقيقياً)</div></div>
+        </div></li>
+      </ol>
+      <div class="callout warn" style="margin-top:.8rem">
+        <span class="icon">⚠️</span>
+        <span>خطأ شائع: قبول كل حلول $x^4-5x^2-36=0$ دون تمحيص. تذكّر أننا افترضنا $x,y\in\mathbb{R}$ منذ البداية، فأي قيمة تخيلية لـ $x$ تُرفض.</span>
+      </div>
+      <div class="exercise-final">✓ الجذران التربيعيان هما $3+2i$ و $-3-2i$ (أحدهما نظير جمعي للآخر). ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>💡 1-5 حل المعادلات في حقل الأعداد المركبة</h2>
+      <p>نتذكر أن المعادلة $ax^2+bx+c=0$ ($a,b,c\in\mathbb{R},\,a\neq0$) لها جذران بالقانون:</p>
+      <div class="rule-box">$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$</div>
+      <p>عندما يكون المميز $b^2-4ac$ <b>سالباً</b>، لم يكن للمعادلة حلول في $\mathbb{R}$ — أما الآن وقد تعرّفنا على $\mathbb{C}$، فأصبح بالإمكان إيجاد الجذرين كعددين مركبين مترافقين.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد مجموعة حل المعادلة $x^2-6x=-13$ في $\mathbb{C}$.</div>
+      <ol class="steps hidden-steps" id="steps-ex2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نصيغ المعادلة بالصورة القياسية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2-6x+13=0 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض في القانون: $a=1,\,b=-6,\,c=13$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x=\dfrac{-(-6)\pm\sqrt{(-6)^2-4(1)(13)}}{2(1)} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x=\dfrac{6\pm\sqrt{36-52}}{2}=\dfrac{6\pm\sqrt{-16}}{2} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">$\sqrt{-16}=4i$، ونبسّط الكسر</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x=\dfrac{6\pm4i}{2}=\dfrac{2(3\pm2i)}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x=3\pm2i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $S.s=\{3+2i,\;3-2i\}$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ حلّال المعادلة التربيعية">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: حلّال المعادلة التربيعية في ℂ</h2>
+      <p>أدخل معاملات $a,b,c$ للمعادلة $ax^2+bx+c=0$، وشاهد قيمة المميّز وجذري المعادلة — حقيقيين كانا أم مركبين مترافقين.</p>
+      <div class="io-panel">
+        <div class="io-row">
+          <label>$a\,x^2+$</label>
+          <input type="number" id="qA" class="neu-input" value="1" style="max-width:5.5rem">
+          <label>$b\,x+$</label>
+          <input type="number" id="qB" class="neu-input" value="-6" style="max-width:5.5rem">
+          <label>$c=0$، &nbsp;$c=$</label>
+          <input type="number" id="qC" class="neu-input" value="13" style="max-width:5.5rem">
+        </div>
+        <div class="neu-inset" id="qDisc" style="padding:1rem 1.2rem"></div>
+        <div class="rule-box" id="qRoots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h3 style="margin-top:0">📌 ملاحظة — تكوين معادلة من مجموع وحاصل ضرب جذريها</h3>
+      <p>يمكن الاستنتاج أن مجموع جذري المعادلة $ax^2+bx+c=0$ هو $\dfrac{-b}{a}$، وحاصل ضرب الجذرين هو $\dfrac{c}{a}$. وعليه يمكن كتابة أي معادلة تربيعية بالصيغة:</p>
+      <div class="rule-box">$x^2-($ مجموع الجذرين $)\,x+($ حاصل ضرب الجذرين $)=0$</div>
+      <div class="callout tip">
+        <span class="icon">💡</span>
+        <span>إذا كان جذرا معادلة تربيعية عددين مركبين <b>مترافقين</b>، فمعاملاتها حقيقية والعكس صحيح. أما إذا كانا غير مترافقين فمعاملاتها ليست حقيقية بالضرورة.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المعادلة التربيعية التي جذراها $2\pm3i$.</div>
+      <ol class="steps hidden-steps" id="steps-ex3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مجموع الجذرين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (2+3i)+(2-3i)=4+0i=4 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">حاصل ضرب الجذرين (مترافقان: $z\bar z=a^2+b^2$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (2+3i)(2-3i)=4+9=13 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض في الصيغة $x^2-($ مج $)x+($ ضرب $)=0$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2-4x+13=0 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة هي $x^2-4x+13=0$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> مثال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد المعادلة التربيعية ذات المعاملات الحقيقية التي أحد جذريها $4-3i$.</div>
+      <ol class="steps hidden-steps" id="steps-ex4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن المعاملات حقيقية، فالجذر الآخر هو المرافق</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4+3i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">مجموع الجذرين وحاصل ضربهما</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (4+3i)+(4-3i)=8\,,\qquad (4+3i)(4-3i)=16+9=25 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نبني المعادلة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2-8x+25=0 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة هي $x^2-8x+25=0$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> مثال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">إذا كان $(1+2i)$ أحد جذري المعادلة $x^2-(3-i)x+a=0$، فما الجذر الآخر وما قيمة $a$؟</div>
+      <ol class="steps hidden-steps" id="steps-ex5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مجموع الجذرين هنا (المعامل $-(3-i)$) هو $3-i$، نفرض الجذر الآخر $z$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z+(1+2i)=3-i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعزل $z$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( z=(3-i)-(1+2i)=(3-i)+(-1-2i) \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( z=2-3i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">$a=$ حاصل ضرب الجذرين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( a=(1+2i)(2-3i)=(2+6)+(4-3)i \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( a=8+i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="callout tip" style="margin-top:.8rem">
+        <span class="icon">💡</span>
+        <span>لاحظ أن الجذرين هنا <b>غير مترافقين</b> ($2-3i \neq \overline{1+2i}=1-2i$)، ولهذا فإن معاملات المعادلة ليست جميعها حقيقية ($3-i$ و $8+i$).</span>
+      </div>
+      <div class="exercise-final">✓ الجذر الآخر $2-3i$، و $a=8+i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> مثال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الجذور التكعيبية للعدد $8$ في $\mathbb{C}$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> فرق مكعبين $a^3-b^3=(a-b)(a^2+ab+b^2)$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نصيغ المعادلة ونحلل بفرق مكعبين ($8=2^3$)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^3=8 \;\Rightarrow\; x^3-8=0 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( (x-2)(x^2+2x+4)=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">العامل الأول: $x-2=0$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x=2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">العامل الثاني بالقانون: $a=1,b=2,c=4$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x=\dfrac{-2\pm\sqrt{4-16}}{2}=\dfrac{-2\pm\sqrt{-12}}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x=\dfrac{-2\pm2\sqrt3\,i}{2}=-1\pm\sqrt3\,i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $S.s=\{2,\; -1+\sqrt3\,i,\; -1-\sqrt3\,i\}$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7</span> مثال 7</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الجذور التكعيبية للعدد $-8i$ في $\mathbb{C}$.</div>
+      <ol class="steps hidden-steps" id="steps-ex7">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحوّل $8i$ إلى $-8i^3$ (لأن $i^3=-i$) لنكوّن فرق مكعبين</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x^3=-8i \;\Rightarrow\; x^3+8i=0 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x^3-8i^3=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحلل بفرق مكعبين مع $a=x,\, b=2i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (x-2i)(x^2+2xi+4i^2)=0 \Rightarrow (x-2i)(x^2+2xi-4)=0 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">العامل الأول: $x-2i=0$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x=2i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">العامل الثاني بالقانون: $a=1,\,b=2i,\,c=-4$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x=\dfrac{-2i\pm\sqrt{(2i)^2-4(1)(-4)}}{2}=\dfrac{-2i\pm\sqrt{-4+16}}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x=\dfrac{-2i\pm\sqrt{12}}{2}=\dfrac{-2i\pm2\sqrt3}{2}=\pm\sqrt3-i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $S.s=\{2i,\;\sqrt3-i,\;-\sqrt3-i\}$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (2-1)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (2-1)</h2>
+    <p class="lead" style="margin-top:0">تمرين الكتاب المدرسي كاملاً بحلوله — حاول أولاً بنفسك ثم اضغط «إظهار الحل».</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">كوّن المعادلة التربيعية ذات المعاملات الحقيقية إذا كان أحد جذريها $(\sqrt3-i)^2$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبسّط الجذر المعطى أولاً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (\sqrt3-i)^2=3-2\sqrt3\,i+i^2=2-2\sqrt3\,i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن المعاملات حقيقية، الجذر الآخر هو المرافق $2+2\sqrt3\,i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">مج \(=4\)، ضرب \(=2^2+(2\sqrt3)^2=4+12=16\)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة: $x^2-4x+16=0$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">إذا كان $(3i)$ أحد جذري المعادلة $z^2-hz+(3+6i)=0$، فما الجذر الآخر وما قيمة $h$؟</div>
+      <ol class="steps hidden-steps" id="steps-pq2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">حاصل ضرب الجذرين $=3+6i$، نعوّض $3i\cdot z=3+6i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=\dfrac{3+6i}{3i}=\dfrac{(3+6i)(-3i)}{(3i)(-3i)}=\dfrac{18-9i}{9}=2-i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$h=$ مجموع الجذرين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( h=3i+(2-i)=2+2i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ الجذر الآخر $2-i$، و $h=2+2i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">إذا كان جذر المعادلة $x^2-(2-i)x+\left(k-\dfrac89 i\right)=0$ الأول يساوي ضعف جذرها الثاني، فما جذراها وما قيمة $k$؟</div>
+      <ol class="steps hidden-steps" id="steps-pq3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نفرض الجذر الثاني $r$، فالأول $2r$؛ مجموعهما $3r=2-i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=\dfrac{2-i}{3} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">حاصل الضرب $2r^2=k-\tfrac89i$؛ نحسب $r^2=\dfrac{(2-i)^2}{9}=\dfrac{3-4i}{9}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2r^2=\dfrac{6-8i}{9}=\dfrac23-\dfrac89 i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نقارن الجزء الحقيقي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( k=\dfrac23 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ الجذران $r=\frac23-\frac13i$ و $2r=\frac43-\frac23i$، و $k=\frac23$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> السؤال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">إذا كان $(A+Bi)^2$ أحد جذري المعادلة $x^2+10x+169=0$، فما قيمة $A,B$؟</div>
+      <ol class="steps hidden-steps" id="steps-pq4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحل المعادلة أولاً بالقانون</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x=\dfrac{-10\pm\sqrt{100-676}}{2}=\dfrac{-10\pm24i}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x=-5\pm12i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نساوي $(A+Bi)^2=-5+12i$، فنحصل على $A^2-B^2=-5,\; 2AB=12$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( B=\dfrac6A \;\Rightarrow\; A^4+5A^2-36=0 \;\Rightarrow\; (A^2-4)(A^2+9)=0 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">$A^2=4$ (نرفض $A^2=-9$ لأن $A$ حقيقية) $\Rightarrow A=\pm2$، ومنها $B=\pm3$ بنفس الإشارة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (A,B)=(2,3) \) أو \( (-2,-3) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $(A,B)=(2,3)$ أو $(-2,-3)$ — تحقّق: $(2+3i)^2=-5+12i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> السؤال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد مجموعة حل المعادلة: $2z+i=3-zi$.</div>
+      <ol class="steps hidden-steps" id="steps-pq5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجمع حدود $z$ في طرف واحد</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2z+zi=3-i \;\Rightarrow\; z(2+i)=3-i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعزل $z$ بالقسمة على $(2+i)$ (نضرب بمرافقه)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( z=\dfrac{3-i}{2+i}\times\dfrac{2-i}{2-i}=\dfrac{6-3i-2i+i^2}{5} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( z=\dfrac{5-5i}{5}=1-i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $S.s=\{1-i\}$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> السؤال 6 — أ</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq6a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الجذرين التربيعيين للعدد المركب $1+\sqrt3\,i$.</div>
+      <ol class="steps hidden-steps" id="steps-pq6a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نفرض $x+yi=\sqrt{1+\sqrt3i}$، فنحصل على $x^2-y^2=1,\; 2xy=\sqrt3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">الحل يعطي \( x^2=\tfrac32,\,y^2=\tfrac12 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\sqrt{1+\sqrt3i}=\pm\left(\dfrac{\sqrt6}{2}+\dfrac{\sqrt2}{2}i\right)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7</span> السؤال 6 — ب</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq6b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الجذرين التربيعيين للعدد المركب $\dfrac{14+2i}{1+i}$.</div>
+      <ol class="steps hidden-steps" id="steps-pq6b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبسّط الكسر أولاً بضرب مرافق المقام</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{14+2i}{1+i}\times\dfrac{1-i}{1-i}=8-6i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نجد جذري $8-6i$ (بنفس أسلوب المثال 1)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{8-6i}=\pm(3-i) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\sqrt{\dfrac{14+2i}{1+i}}=\pm(3-i)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8</span> السؤال 6 — ج</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq6c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الجذرين التربيعيين للعدد المركب $\dfrac{82+11i}{2+i}$.</div>
+      <ol class="steps hidden-steps" id="steps-pq6c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبسّط الكسر أولاً بضرب مرافق المقام</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{82+11i}{2+i}\times\dfrac{2-i}{2-i}=35-12i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نجد جذري $35-12i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{35-12i}=\pm(6-i) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\sqrt{\dfrac{82+11i}{2+i}}=\pm(6-i)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9</span> السؤال 7</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq7">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ما قيمة المقدار $\sqrt{2x-yi}$ إذا علمت أن: $x+yi=\dfrac{7-4i}{2+i}$؟</div>
+      <ol class="steps hidden-steps" id="steps-pq7">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نبسّط $x+yi$ بضرب مرافق المقام</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{(7-4i)(2-i)}{5}=\dfrac{10-15i}{5}=2-3i \;\Rightarrow\; x=2,\,y=-3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحسب $2x-yi=2(2)-(-3)i=4+3i$، ثم نجد جذره التربيعي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{4+3i}=\pm\left(\dfrac{3\sqrt2}{2}+\dfrac{\sqrt2}{2}i\right) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\sqrt{2x-yi}=\pm\left(\dfrac{3\sqrt2}{2}+\dfrac{\sqrt2}{2}i\right)$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">10</span> السؤال 8</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq8">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الجذور التكعيبية للعدد $-64i$ في $\mathbb{C}$.</div>
+      <ol class="steps hidden-steps" id="steps-pq8">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكتب $-64i=64i^3$ (لأن $i^3=-i$)، فيصبح فرق مكعبين $x^3-64i^3=0$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (x-4i)(x^2+4xi+16i^2)=0 \Rightarrow (x-4i)(x^2+4xi-16)=0 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">العامل الأول: $x=4i$. العامل الثاني بالقانون: $a=1,b=4i,c=-16$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( x=\dfrac{-4i\pm\sqrt{-16+64}}{2}=\dfrac{-4i\pm4\sqrt3}{2} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( x=\pm2\sqrt3-2i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $S.s=\{4i,\; 2\sqrt3-2i,\; -2\sqrt3-2i\}$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>مجموعة حل $x^2+4=0$ في $\mathbb{C}$ هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$\varnothing$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\{4,-4\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\{2i,-2i\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\{2,-2\}$</span></label>
+        </div>
+        <div class="quiz-explain">$x^2=-4 \Rightarrow x=\pm\sqrt{-4}=\pm2i$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>إذا كان مجموع جذري معادلة تربيعية $4$ وحاصل ضربهما $13$، فالمعادلة هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$x^2+4x+13=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$x^2-4x+13=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$x^2-13x+4=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$x^2-4x-13=0$</span></label>
+        </div>
+        <div class="quiz-explain">الصيغة: $x^2-($ مج $)x+($ ضرب $)=0$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>إذا كانت معاملات معادلة تربيعية حقيقية، وأحد جذريها $3-2i$، فالجذر الآخر:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$3+2i$ (المرافق)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$-3+2i$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$2-3i$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا يمكن تحديده</span></label>
+        </div>
+        <div class="quiz-explain">إذا كانت المعاملات حقيقية، فالجذران عددان مركبان مترافقان.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>لحل $x^3=8$ في $\mathbb{C}$، أول خطوة صحيحة هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>أخذ الجذر التكعيبي مباشرة $x=2$ فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>حل $x=8/3$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>استخدام مربع الحدين</span></label>
+          <label class="quiz-opt"><input type="radio"><span>تحليل $x^3-8=0$ بفرق مكعبين إلى $(x-2)(x^2+2x+4)=0$</span></label>
+        </div>
+        <div class="quiz-explain">التحليل بفرق مكعبين يكشف عاملاً خطياً وعاملاً تربيعياً، والأخير يعطي جذرين مركبين إضافيين.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>لأي معادلة تربيعية $ax^2+bx+c=0$، حاصل ضرب جذريها يساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac{-b}{a}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac{c}{a}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac{b}{a}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$\dfrac{-c}{a}$</span></label>
+        </div>
+        <div class="quiz-explain">مجموع الجذرين $=\frac{-b}{a}$، وحاصل ضربهما $=\frac{c}{a}$.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>لإيجاد $\sqrt{p+qi}$: نفرض $x+yi$، نربّع، ونساوي الأجزاء الحقيقية والتخيلية لنحصل على نظام معادلتين.</span></li>
+        <li><span>قانون الجذور التربيعية $x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$ يعمل الآن لكل مميز، حتى السالب.</span></li>
+        <li><span>$x^2-($ مجموع الجذرين $)x+($ حاصل ضربهما $)=0$ تبني المعادلة من جذريها مباشرة.</span></li>
+        <li><span>الجذور التكعيبية تُستخرج بتحليل فرق أو مجموع مكعبين، ثم حل العامل التربيعي الناتج بالقانون.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l5" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l5">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الخامس">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#7c6fee"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">الجذور وحل</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">المعادلات في ℂ</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">x+yi=√(p+qi)</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الجذر التربيعي</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#2fd18f"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">-b±√(b²-4ac)</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">القانون العام</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#ffab5e"/>
+            <text x="150" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">مج، ضرب الجذرين</text>
+            <text x="150" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">تكوين المعادلة</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ff6b9d"/>
+            <text x="670" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">a³∓b³</text>
+            <text x="670" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الجذور التكعيبية</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الأول · الأعداد المركبة — الدرس 5: الجذور التربيعية وحل المعادلات في ℂ</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch1.js"></script>
+<script>
+(function(){
+  var a = document.getElementById("qA"), b = document.getElementById("qB"), c = document.getElementById("qC");
+  var discEl = document.getElementById("qDisc");
+  var rootsEl = document.getElementById("qRoots");
+  function fmt(v){ return (Math.round(v*1000)/1000).toString(); }
+  function render(){
+    var A = parseFloat(a.value), B = parseFloat(b.value), C = parseFloat(c.value);
+    if(!A){ discEl.innerHTML = "<b>a</b> يجب ألا تساوي صفراً."; rootsEl.innerHTML=""; return; }
+    var D = B*B - 4*A*C;
+    discEl.innerHTML = "<b>🔎 المميّز:</b> $$\\Delta = b^2-4ac = ("+B+")^2-4("+A+")("+C+") = "+fmt(D)+"$$";
+    if(D >= 0){
+      var r1 = (-B+Math.sqrt(D))/(2*A), r2 = (-B-Math.sqrt(D))/(2*A);
+      rootsEl.innerHTML = "$$\\Delta\\ge0 \\Rightarrow x_1="+fmt(r1)+",\\;\\; x_2="+fmt(r2)+"$$ (جذران حقيقيان)";
+    } else {
+      var re = -B/(2*A), im = Math.sqrt(-D)/(2*A);
+      var sign = im>=0 ? "+" : "-";
+      rootsEl.innerHTML = "$$\\Delta<0 \\Rightarrow x = "+fmt(re)+" "+sign+" "+fmt(Math.abs(im))+"i$$ (جذران مركبان مترافقان)";
+    }
+    Ch4.typeset([discEl, rootsEl]);
+  }
+  [a,b,c].forEach(function(inp){ inp.addEventListener("input", render); });
+  render();
+})();
+</script>
+</body>
+</html>

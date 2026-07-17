@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الفصل الخامس · الهندسة الفراغية — كتاب تفاعلي</title>
+<meta name="description" content="كتاب إلكتروني تفاعلي لشرح الفصل الخامس: الهندسة الفراغية (الزاوية الزوجية، تعامد المستويات، الإسقاط العمودي على المستوي)، مع رسوم توضيحية لكل تعريف ومبرهنة ومثال وتمرين.">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="index.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">📘 كتاب الرياضيات التفاعلي · الصف الثالث الصناعي</span>
+        <h1>الفصل الخامس: الهندسة الفراغية <span style="color:var(--accent-blue)">Solid Geometry</span></h1>
+        <p class="lead">رحلة تفاعلية كاملة في هندسة الفراغ: الزاوية الزوجية بين مستويين، تعامد المستويات ومبرهناتها الثلاث، والإسقاط العمودي على المستوي — مع رسم توضيحي مستقل لكل تعريف ومبرهنة ومثال وتمرين، خطوة بخطوة.</p>
+        <div class="io-row" style="margin-top:1.25rem">
+          <a href="lessons/lesson-1.html" class="neu-btn primary">ابدأ الدرس الأول ←</a>
+          <span class="tag">⏱ 5 دروس</span>
+          <span class="tag">📐 رسوم لكل سؤال</span>
+          <span class="tag">🧠 اختبارات ذاتية</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="heroFloorGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff8fc7"/>
+              <stop offset="1" stop-color="#ff6b9d"/>
+            </linearGradient>
+            <linearGradient id="heroWallGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffe066"/>
+              <stop offset="1" stop-color="#ffab5e"/>
+            </linearGradient>
+          </defs>
+
+          <!-- floor plane (Y) -->
+          <polygon class="hero-area" points="40,300 260,300 380,352 160,352" fill="url(#heroFloorGrad)" opacity=".85" stroke="#2ec4e6" stroke-width="2"/>
+          <text x="330" y="336" font-size="15" font-weight="800" fill="#fff" font-family="Cairo,sans-serif">(Y)</text>
+
+          <!-- wall plane (X), sharing edge AB with the floor -->
+          <polygon class="hero-curve-fill" points="190,326 300,300 300,60 190,86" fill="url(#heroWallGrad)" opacity=".92" stroke="#2ec4e6" stroke-width="2"/>
+          <text x="215" y="78" font-size="15" font-weight="800" fill="#8a5a00" font-family="Cairo,sans-serif">(X)</text>
+
+          <!-- common edge AB -->
+          <line x1="190" y1="86" x2="190" y2="326" stroke="#1a3a4a" stroke-width="3"/>
+          <circle cx="190" cy="86" r="4.5" fill="#e6394a"/>
+          <text x="172" y="80" font-size="15" font-weight="800" fill="#e6394a" font-family="Cairo,sans-serif">A</text>
+          <circle cx="190" cy="326" r="4.5" fill="#e6394a"/>
+          <text x="172" y="345" font-size="15" font-weight="800" fill="#e6394a" font-family="Cairo,sans-serif">B</text>
+
+          <!-- plane-angle rays at a point D on AB -->
+          <circle cx="190" cy="210" r="3.5" fill="#1a3a4a"/>
+          <text x="176" y="203" font-size="12" font-weight="800" fill="#1a3a4a" font-family="Cairo,sans-serif">D</text>
+          <line x1="190" y1="210" x2="255" y2="185" stroke="#7c6fee" stroke-width="2.4" marker-end="url(#arrowRayHero)"/>
+          <line x1="190" y1="210" x2="245" y2="240" stroke="#7c6fee" stroke-width="2.4" marker-end="url(#arrowRayHero)"/>
+          <path d="M 218 205 A 30 30 0 0 1 222 226" fill="none" stroke="#3fa9f5" stroke-width="2.2"/>
+          <defs>
+            <marker id="arrowRayHero" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L7,3 L0,6 Z" fill="#7c6fee"/>
+            </marker>
+          </defs>
+
+          <!-- floating formula chips -->
+          <g class="hero-float f1">
+            <rect x="300" y="150" width="130" height="38" rx="12" fill="var(--surface)" opacity=".92"/>
+            <text x="365" y="175" text-anchor="middle" font-size="15" fill="var(--accent-purple)" font-weight="700" font-family="Cairo,sans-serif">(X) ⊥ (Y)</text>
+          </g>
+          <g class="hero-float f2">
+            <rect x="18" y="120" width="112" height="36" rx="12" fill="var(--surface)" opacity=".92"/>
+            <text x="74" y="143" text-anchor="middle" font-size="14" fill="var(--accent-blue)" font-weight="700" font-family="Cairo,sans-serif">m∠CDE=90°</text>
+          </g>
+          <g class="hero-float f3">
+            <rect x="330" y="230" width="82" height="34" rx="11" fill="var(--surface)" opacity=".92"/>
+            <text x="371" y="252" text-anchor="middle" font-size="14" fill="var(--accent-pink)" font-weight="700" font-family="Cairo,sans-serif">θ</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade-up">
+    <div class="neu" style="padding:1.5rem 1.75rem">
+      <div class="io-row" style="justify-content:space-between;margin-bottom:.6rem">
+        <strong>تقدمك في الفصل</strong>
+        <span class="progress-label">0٪ مكتمل</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>🎯 الأهداف السلوكية للفصل</h2>
+      <p class="lead">ينبغي للطالب في نهاية هذا الفصل ان يكون قادراً على ان:</p>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يتعرف على مفهوم الهندسة الفراغية واستعمالاتها اليومية.</span></li>
+        <li><span class="obj-num">2</span><span>يستوعب التعاريف والمصطلحات المستخدمة في علم الهندسة الفراغية ويستطيع التمييز بينها.</span></li>
+        <li><span class="obj-num">3</span><span>يتعرف على مفهوم الزاوية الزوجية واسلوب التعبير عنها هندسياً.</span></li>
+        <li><span class="obj-num">4</span><span>يتعرف على مفهوم تعامد المستويات والمبرهنات الخاصة به.</span></li>
+        <li><span class="obj-num">5</span><span>يتعرف على مفهوم الاسقاط العمودي على المستوي والمبرهنات الخاصة به.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <h2 style="margin-bottom:1rem">📚 محتوى الفصل</h2>
+    <div class="grid grid-3">
+
+      <a class="neu lesson-card" href="lessons/lesson-1.html">
+        <span class="lesson-idx" style="background:linear-gradient(135deg,#7c6fee,#3fa9f5)">1</span>
+        <h3 style="margin:.2rem 0">الزاوية الزوجية وتعامد المستويات</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">5-1 تمهيد · 5-2 الزاوية الزوجية والزاوية المستوية العائدة لها</p>
+        <span class="lesson-go">ابدأ الدرس ←</span>
+      </a>
+
+      <a class="neu lesson-card" href="lessons/lesson-2.html">
+        <span class="lesson-idx" style="background:linear-gradient(135deg,#3fa9f5,#63c7ff)">2</span>
+        <h3 style="margin:.2rem 0">المبرهنات 7 و8 و9 ونتائجها</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">5-3 · 5-4 · 5-5 تعامد المستويات وبراهينها الكاملة</p>
+        <span class="lesson-go">ابدأ الدرس ←</span>
+      </a>
+
+      <a class="neu lesson-card" href="lessons/lesson-3.html">
+        <span class="lesson-idx" style="background:linear-gradient(135deg,#ffab5e,#ff6b9d)">3</span>
+        <h3 style="margin:.2rem 0">تطبيقات على تعامد المستويات</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">أمثلة 3-1 · تمرين (1-5) — 6 أسئلة، كل سؤال ببطاقته الخاصة</p>
+        <span class="lesson-go">ابدأ الدرس ←</span>
+      </a>
+
+      <a class="neu lesson-card" href="lessons/lesson-4.html">
+        <span class="lesson-idx" style="background:linear-gradient(135deg,#2fd18f,#3fa9f5)">4</span>
+        <h3 style="margin:.2rem 0">الإسقاط العمودي على المستوي</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">6-5 المسقط، المائل، زاوية الميل، ومسقط المستوي المائل</p>
+        <span class="lesson-go">ابدأ الدرس ←</span>
+      </a>
+
+      <a class="neu lesson-card" href="lessons/lesson-5.html" style="grid-column:span 1">
+        <span class="lesson-idx" style="background:linear-gradient(135deg,#7c6fee,#ff6b9d)">5</span>
+        <h3 style="margin:.2rem 0">تطبيقات على الإسقاط العمودي</h3>
+        <p style="color:var(--text-secondary);font-size:.92rem;margin:0">مثال 4-5 · تمرين (2-5) — 6 أسئلة، كل سؤال ببطاقته الخاصة</p>
+        <span class="lesson-go">ابدأ الدرس ←</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <h2>🗺 الخريطة الذهنية العامة للفصل</h2>
+      <div class="mindmap-wrap diagram-wrap">
+        <svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للفصل الخامس">
+          <defs>
+            <linearGradient id="gC5" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7c6fee"/><stop offset="1" stop-color="#3fa9f5"/>
+            </linearGradient>
+          </defs>
+          <line x1="450" y1="230" x2="180" y2="90" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="720" y2="90" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="150" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="750" y2="250" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="230" y2="400" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="450" y1="230" x2="670" y2="400" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g class="mm-node"><circle cx="450" cy="230" r="62" fill="url(#gC5)"/>
+            <text x="450" y="223" text-anchor="middle" fill="#fff" font-weight="800" font-size="16" font-family="Cairo,sans-serif">الهندسة</text>
+            <text x="450" y="243" text-anchor="middle" fill="#fff" font-size="14" font-family="Cairo,sans-serif">الفراغية</text></g>
+
+          <g class="mm-node"><circle cx="180" cy="90" r="52" fill="#ffab5e"/>
+            <text x="180" y="86" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Cairo,sans-serif">الزاوية</text>
+            <text x="180" y="103" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Cairo,sans-serif">الزوجية</text></g>
+
+          <g class="mm-node"><circle cx="720" cy="90" r="52" fill="#ff6b9d"/>
+            <text x="720" y="86" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Cairo,sans-serif">تعامد</text>
+            <text x="720" y="103" text-anchor="middle" fill="#fff" font-weight="700" font-size="13" font-family="Cairo,sans-serif">المستويات</text></g>
+
+          <g class="mm-node"><circle cx="150" cy="250" r="52" fill="#2fd18f"/>
+            <text x="150" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">مبرهنة 7</text>
+            <text x="150" y="263" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">ونتيجتها</text></g>
+
+          <g class="mm-node"><circle cx="750" cy="250" r="52" fill="#3fa9f5"/>
+            <text x="750" y="246" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">مبرهنة 8</text>
+            <text x="750" y="263" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">و مبرهنة 9</text></g>
+
+          <g class="mm-node"><circle cx="230" cy="400" r="52" fill="#7c6fee"/>
+            <text x="230" y="393" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">الإسقاط</text>
+            <text x="230" y="410" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">العمودي</text></g>
+
+          <g class="mm-node"><circle cx="670" cy="400" r="52" fill="#ff9f5e"/>
+            <text x="670" y="393" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">المائل</text>
+            <text x="670" y="410" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">وزاوية الميل</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">الفصل الخامس · الهندسة الفراغية — كتاب تفاعلي مبني وفق قواعد المشروع</footer>
+
+<script src="../assets/js/site-ch5.js"></script>
+</body>
+</html>

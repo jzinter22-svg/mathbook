@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 2: تعريف القطع المكافئ ومعادلته — الفصل الثاني</title>
+<meta name="description" content="تعريف القطع المكافئ بوصفه بؤرة ودليلاً، واشتقاق المعادلتين القياسيتين y²=4ax و x²=4ay ورأسهما نقطة الأصل، مع أشكال توضيحية وجدول ملخص.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-2.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 2 من 5 · 2-2-1 و 2-2-2</span>
+    <h1>تعريف القطع المكافئ ومعادلته</h1>
+    <p class="lead">نتعرف على <b>القطع المكافئ</b> بوصفه مجموعة النقاط المتساوية البعد عن نقطة ثابتة تسمى <b>البؤرة</b> $F$ ومستقيم ثابت يسمى <b>الدليل</b> $\overleftrightarrow{L}$، ثم نشتق معادلتيه القياسيتين حين يكون رأسه نقطة الأصل ودليله موازياً لأحد المحورين الإحداثيين.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يتعرف على تعريف القطع المكافئ بوصفه مجموعة نقاط تتساوى أبعادها عن نقطة ثابتة (البؤرة) ومستقيم ثابت (الدليل).</span></li>
+        <li><span class="obj-num">2</span><span>يتعرف على عناصر القطع المكافئ: البؤرة $F$، الدليل $\overleftrightarrow{L}$، الرأس $V$، ومحور القطع.</span></li>
+        <li><span class="obj-num">3</span><span>يشتق باستخدام التعريف المعادلتين القياسيتين للقطع المكافئ الذي رأسه نقطة الأصل ودليله يوازي المحور $Y$: $y^2=4ax$ و $y^2=-4ax$.</span></li>
+        <li><span class="obj-num">4</span><span>يشتق باستخدام التعريف المعادلتين القياسيتين للقطع المكافئ الذي رأسه نقطة الأصل ودليله يوازي المحور $X$: $x^2=4ay$ و $x^2=-4ay$.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 التعريف">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف — القطع المكافئ (Parabola)</span>
+      <p style="margin:.3rem 0">هو مجموعة كل النقاط في المستوي التي يكون بعدها عن نقطة معلومة ثابتة تساوي بعدها عن مستقيم معلوم. النقطة المعلومة تسمى <b>البؤرة</b> (Focus)، والمستقيم المعلوم يسمى <b>الدليل</b> (Directrix).</p>
+      <p style="margin:.3rem 0">ليكن $\overleftrightarrow{L}$ دليلاً، ولتكن $F(a,0)$ بؤرة لقطع مكافئ. المستقيم $\overline{AF}$ المرسوم عمودياً من $F$ على $\overleftrightarrow{L}$ يسمى <b>محور القطع المكافئ</b>. ولتكن $V$ النقطة المنصّفة لـ $\overline{AF}$؛ بما أن بعد $V$ عن $\overleftrightarrow{L}$ يساوي بعدها عن $F$، فإن $V$ تقع على القطع المكافئ وتسمى <b>رأس القطع المكافئ</b> (Vertex). البؤرة تقع دوماً داخل القطع المكافئ، وأي قطع مكافئ يقع بأكمله على الجهة التي تقع البؤرة فيها من دليله.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: $\overline{PM}=\overline{PF}$ عند كل نقطة</h2>
+      <p>حرّك المزلاج لتحريك النقطة $P$ على القطع المكافئ $y^2=8x$ (حيث $a=2$)، وشاهد كيف تبقى المسافة $d_1$ من $P$ إلى الدليل مساوية دوماً للمسافة $d_2$ من $P$ إلى البؤرة $F(2,0)$ — وهذا هو جوهر التعريف.</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="defFig" width="460" height="360" viewBox="0 0 460 360" role="img" aria-label="رسم يوضح تساوي بعد نقطة على القطع المكافئ عن البؤرة وعن الدليل"></svg></div>
+        <div class="io-row">
+          <label for="ySlider" style="min-width:9rem">إحداثي <b>y</b> للنقطة $P$ = <span id="yVal">4</span></label>
+          <input type="range" id="ySlider" class="neu-range" min="-6" max="6" step="0.5" value="4">
+        </div>
+        <div class="rule-box" id="distFormula" style="font-size:1.05rem">$$d_1 = d_2 = 4.00$$</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>💡 أولاً: معادلة القطع المكافئ الذي رأسه نقطة الأصل ودليله يوازي المحور $Y$</h2>
+      <p>لنفرض أن $F(a,0)$ هي بؤرة القطع المكافئ وأن رأسه نقطة الأصل $V(0,0)$، ودليله يوازي المحور $Y$ ومعادلته $x=-a$؛ ويكون محور تماثل القطع المكافئ هذا هو المحور $X$. نأخذ أية نقطة $P(x,y)$ على القطع المكافئ وننزل $\overline{MP}$ عموداً على الدليل $\overleftrightarrow{L}$، وحسب تعريف القطع المكافئ يكون $d_1=d_2 \Rightarrow \overline{PM}=\overline{PF}$.</p>
+      <button class="neu-btn" data-reveal-steps="deriv-y">إظهار الاشتقاق خطوة بخطوة</button>
+    </div>
+
+    <ol class="steps hidden-steps" id="deriv-y" style="margin-top:1rem">
+      <li class="step"><span class="step-dot">1</span><div class="step-body">
+        <p class="calc-note">نطبّق قانون المسافة بين نقطتين على $\overline{PM}=\overline{PF}$</p>
+        <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{(x+a)^2+(y-y)^2} = \sqrt{(x-a)^2+(y-0)^2} \)</div></div>
+      </div></li>
+      <li class="step"><span class="step-dot">2</span><div class="step-body">
+        <p class="calc-note">نربّع الطرفين لنتخلص من الجذر</p>
+        <div class="calc-flow"><div class="calc-line calc-box">\( (x+a)^2 = (x-a)^2+y^2 \)</div></div>
+      </div></li>
+      <li class="step"><span class="step-dot">3</span><div class="step-body">
+        <p class="calc-note">نفكّ الأقواس في الطرفين</p>
+        <div class="calc-flow">
+          <div class="calc-line">\( x^2+2ax+a^2 = x^2-2ax+a^2+y^2 \)</div>
+          <div class="calc-arrow">↓ نحذف $x^2$ و $a^2$ المشتركتين ونجمع حدود $x$</div>
+          <div class="calc-line calc-box">\( y^2 = 4ax \quad \cdots (1\text{-}2) \)</div>
+        </div>
+      </div></li>
+    </ol>
+
+    <div class="callout tip fade-up" style="margin-top:1rem">
+      <span class="icon">💬</span>
+      <span>وهي معادلة القطع المكافئ الذي بؤرته $F(a,0)$ حيث $a>0$ ودليله $x=-a$، ورأسه نقطة الأصل وتقع بؤرته على الجزء الموجب من المحور $X$.</span>
+    </div>
+    <div class="callout warn fade-up" style="margin-top:.8rem">
+      <span class="icon">⚠️</span>
+      <span>أما إذا أخذنا العدد الحقيقي $a$ سالباً، فإن كل خطوات اشتقاق المعادلة (1-2) تبقى ذاتها، ونحصل على المعادلة: <b>$y^2=-4ax$ … (2-2)</b>، وهي معادلة القطع المكافئ الذي بؤرته $F(-a,0)$ ودليله $x=a$ حيث $a<0$، ورأسه نقطة الأصل وتقع بؤرته على الجزء السالب من المحور $X$.</span>
+    </div>
+
+    <div class="neu" style="padding:1.25rem 1.5rem;margin-top:1.2rem">
+      <div class="mindmap-wrap"><svg id="yDirectrixFig" width="460" height="300" viewBox="0 0 460 300" role="img" aria-label="القطع المكافئ الذي دليله يوازي المحور Y، فرعان يفتحان يميناً ويساراً"></svg></div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>💡 ثانياً: معادلة القطع المكافئ الذي رأسه نقطة الأصل ودليله يوازي المحور $X$</h2>
+      <p>لنفرض أن $F(0,a)$ هي بؤرة القطع المكافئ وأن رأسه نقطة الأصل $V(0,0)$، ودليله يوازي المحور $X$ ومعادلته $y=-a$؛ ويكون محور تماثل القطع المكافئ هذا هو المحور $Y$. نأخذ أية نقطة $P(x,y)$ على القطع المكافئ وننزل $\overline{MP}$ عموداً على الدليل $\overleftrightarrow{L}$، وحسب تعريف القطع المكافئ يكون $d_1=d_2 \Rightarrow \overline{PM}=\overline{PF}$.</p>
+      <button class="neu-btn" data-reveal-steps="deriv-x">إظهار الاشتقاق خطوة بخطوة</button>
+    </div>
+
+    <ol class="steps hidden-steps" id="deriv-x" style="margin-top:1rem">
+      <li class="step"><span class="step-dot">1</span><div class="step-body">
+        <p class="calc-note">نطبّق قانون المسافة بين نقطتين على $\overline{PM}=\overline{PF}$</p>
+        <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{(x-x)^2+(y+a)^2} = \sqrt{(x-0)^2+(y-a)^2} \)</div></div>
+      </div></li>
+      <li class="step"><span class="step-dot">2</span><div class="step-body">
+        <p class="calc-note">نربّع الطرفين لنتخلص من الجذر</p>
+        <div class="calc-flow"><div class="calc-line calc-box">\( (y+a)^2 = x^2+(y-a)^2 \)</div></div>
+      </div></li>
+      <li class="step"><span class="step-dot">3</span><div class="step-body">
+        <p class="calc-note">نفكّ الأقواس في الطرفين</p>
+        <div class="calc-flow">
+          <div class="calc-line">\( y^2+2ay+a^2 = x^2+y^2-2ay+a^2 \)</div>
+          <div class="calc-arrow">↓ نحذف $y^2$ و $a^2$ المشتركتين ونجمع حدود $y$</div>
+          <div class="calc-line calc-box">\( x^2 = 4ay \quad \cdots (3\text{-}2) \)</div>
+        </div>
+      </div></li>
+    </ol>
+
+    <div class="callout tip fade-up" style="margin-top:1rem">
+      <span class="icon">💬</span>
+      <span>وهي معادلة القطع المكافئ الذي بؤرته $F(0,a)$ حيث $a>0$ ودليله $y=-a$، ورأسه نقطة الأصل وتقع بؤرته على الجزء الموجب من المحور $Y$.</span>
+    </div>
+    <div class="callout warn fade-up" style="margin-top:.8rem">
+      <span class="icon">⚠️</span>
+      <span>وإذا أخذنا $a$ سالباً فإن خطوات الاشتقاق تبقى ذاتها، ونحصل على: <b>$x^2=-4ay$ … (4-2)</b>، وهي معادلة القطع المكافئ الذي بؤرته $F(0,-a)$ ودليله $y=a$ حيث $a<0$، ورأسه نقطة الأصل ومحوره منطبق على المحور $Y$ وتكون فتحته نحو الأسفل.</span>
+    </div>
+
+    <div class="neu" style="padding:1.25rem 1.5rem;margin-top:1.2rem">
+      <div class="mindmap-wrap"><svg id="xDirectrixFig" width="460" height="300" viewBox="0 0 460 300" role="img" aria-label="القطع المكافئ الذي دليله يوازي المحور X، فرعان يفتحان أعلى وأسفل"></svg></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary-table" data-navlabel="📊 جدول ملخص">
+    <div class="card neu">
+      <h2>📊 جدول ملخص: المعادلات القياسية الأربع للقطع المكافئ (رأسه نقطة الأصل)</h2>
+      <div class="neu-inset" style="padding:0;overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;text-align:center;min-width:560px">
+          <thead>
+            <tr style="color:var(--accent-purple)">
+              <th style="padding:.7rem">المعادلة</th><th style="padding:.7rem">البؤرة</th><th style="padding:.7rem">الدليل</th><th style="padding:.7rem">فتحة القطع</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:.6rem">$y^2=4ax,\;a>0$</td><td>$F(a,0)$</td><td>$x=-a$</td><td>نحو اليمين (+X)</td></tr>
+            <tr><td style="padding:.6rem">$y^2=-4ax,\;a<0$</td><td>$F(-a,0)$</td><td>$x=a$</td><td>نحو اليسار (−X)</td></tr>
+            <tr><td style="padding:.6rem">$x^2=4ay,\;a>0$</td><td>$F(0,a)$</td><td>$y=-a$</td><td>نحو الأعلى (+Y)</td></tr>
+            <tr><td style="padding:.6rem">$x^2=-4ay,\;a<0$</td><td>$F(0,-a)$</td><td>$y=a$</td><td>نحو الأسفل (−Y)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين تطبيقي">
+    <h2 style="margin-bottom:.25rem">📝 تمرين تطبيقي</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">قطع مكافئ رأسه نقطة الأصل ومعادلته $y^2=12x$. جد إحداثيي بؤرته ومعادلة دليله، وحدد اتجاه فتحته.</div>
+      <ol class="steps hidden-steps" id="steps-pq1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقارن مع الصورة القياسية $y^2=4ax$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4a=12 \Rightarrow a=3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $a=3>0$، فالبؤرة $F(a,0)$ والدليل $x=-a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( F(3,0),\quad x=-3 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ البؤرة $F(3,0)$، الدليل $x=-3$، والقطع يفتح نحو اليمين. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">قطع مكافئ رأسه نقطة الأصل ودليله $y=5$. اكتب معادلته القياسية، وحدد إحداثيي بؤرته.</div>
+      <ol class="steps hidden-steps" id="steps-pq2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الدليل $y=5=a$ موجب، وهو من الصورة $y=a$ المرافقة للمعادلة $x^2=-4ay$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=5 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض في $x^2=-4ay$ وفي البؤرة $F(0,-a)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2=-20y,\quad F(0,-5) \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $x^2=-20y$، والبؤرة $F(0,-5)$، والقطع يفتح نحو الأسفل. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>القطع المكافئ هو مجموعة النقاط المتساوية البعد عن:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نقطتين ثابتتين</span></label>
+          <label class="quiz-opt"><input type="radio"><span>مستقيمين ثابتين</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نقطة ثابتة (البؤرة) ومستقيم ثابت (الدليل)</span></label>
+          <label class="quiz-opt"><input type="radio"><span>ثلاث نقاط ثابتة</span></label>
+        </div>
+        <div class="quiz-explain">تعريف القطع المكافئ: تساوي البعد عن نقطة ثابتة (البؤرة) ومستقيم ثابت (الدليل).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>2.</span><span>القطع المكافئ الذي معادلته $y^2=4ax,\,a>0$ بؤرته:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$F(a,0)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$F(0,a)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$F(-a,0)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$F(0,0)$</span></label>
+        </div>
+        <div class="quiz-explain">في المعادلة $y^2=4ax$، البؤرة تقع على المحور $X$ عند $(a,0)$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>3.</span><span>القطع المكافئ الذي معادلته $x^2=-4ay,\,a>0$ تكون فتحته نحو:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>اليمين</span></label>
+          <label class="quiz-opt"><input type="radio"><span>اليسار</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الأعلى</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الأسفل</span></label>
+        </div>
+        <div class="quiz-explain">المعادلة $x^2=-4ay$ (مع $a>0$) بؤرتها $F(0,-a)$ وفتحتها نحو الأسفل.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>4.</span><span>رأس القطع المكافئ $V$ هو:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نقطة تقاطع الدليل مع محور القطع</span></label>
+          <label class="quiz-opt"><input type="radio"><span>منتصف القطعة الواصلة بين البؤرة ونقطة تقاطع محور القطع مع الدليل</span></label>
+          <label class="quiz-opt"><input type="radio"><span>أبعد نقطة على القطع عن البؤرة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نقطة عشوائية على القطع</span></label>
+        </div>
+        <div class="quiz-explain">$V$ هي منتصف $\overline{AF}$ حيث $A$ نقطة تقاطع محور القطع مع الدليل و$F$ البؤرة، وبعدها عن الدليل يساوي بعدها عن البؤرة فتقع على القطع.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>5.</span><span>معادلة الدليل للقطع المكافئ $x^2=4ay$ حيث $a>0$ هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$x=-a$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$x=a$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$y=-a$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$y=a$</span></label>
+        </div>
+        <div class="quiz-explain">في $x^2=4ay$ الدليل يوازي المحور $X$ ومعادلته $y=-a$، مقابل البؤرة $F(0,a)$.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>القطع المكافئ: مجموعة نقاط متساوية البعد عن بؤرة ثابتة $F$ ودليل ثابت $\overleftrightarrow{L}$؛ رأسه $V$ منتصف المسافة بينهما على محور القطع.</span></li>
+        <li><span>دليل يوازي $Y$: $y^2=4ax$ (بؤرة $F(a,0)$، دليل $x=-a$، فتحة يمين) أو $y^2=-4ax$ (بؤرة $F(-a,0)$، دليل $x=a$، فتحة يسار).</span></li>
+        <li><span>دليل يوازي $X$: $x^2=4ay$ (بؤرة $F(0,a)$، دليل $y=-a$، فتحة أعلى) أو $x^2=-4ay$ (بؤرة $F(0,-a)$، دليل $y=a$، فتحة أسفل).</span></li>
+        <li><span>جميع هذه الصور تُشتق بنفس الأسلوب: تعويض تعريف $\overline{PM}=\overline{PF}$ في قانون المسافة، ثم التربيع والتبسيط.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l2" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l2">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الثاني">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#7c6fee"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="15" font-family="Cairo,sans-serif">القطع</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="15" font-family="Cairo,sans-serif">المكافئ</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">بؤرة ودليل</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">ورأس V</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#2fd18f"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">y²=4ax</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">دليل ∥ Y</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#ffab5e"/>
+            <text x="150" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">x²=4ay</text>
+            <text x="150" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">دليل ∥ X</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ff6b9d"/>
+            <text x="670" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">PM=PF</text>
+            <text x="670" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">التعريف</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الثاني · القطوع المخروطية — الدرس 2: تعريف القطع المكافئ ومعادلته</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch2.js"></script>
+<script>
+(function(){
+  var ns = "http://www.w3.org/2000/svg";
+  function el(svg, tag, attrs){
+    var e = document.createElementNS(ns, tag);
+    for(var k in attrs) e.setAttribute(k, attrs[k]);
+    svg.appendChild(e);
+    return e;
+  }
+
+  /* ---- interactive definition figure: y^2 = 4ax, a=2, P moves along curve ---- */
+  (function(){
+    var svg = document.getElementById("defFig");
+    var slider = document.getElementById("ySlider");
+    var yVal = document.getElementById("yVal");
+    var formula = document.getElementById("distFormula");
+    var a = 2;
+    var W = 460, H = 360, ox = 130, oy = 180, scale = 24; /* px per unit */
+
+    function toPx(x,y){ return [ox + x*scale, oy - y*scale]; }
+
+    function render(){
+      while(svg.firstChild) svg.removeChild(svg.firstChild);
+      var y = parseFloat(slider.value);
+      yVal.textContent = y;
+      var x = (y*y)/(4*a);
+
+      /* axes */
+      el(svg,"line",{x1:10,y1:oy,x2:W-10,y2:oy,stroke:"var(--text-faint)","stroke-width":1.2});
+      el(svg,"line",{x1:ox,y1:10,x2:ox,y2:H-10,stroke:"var(--text-faint)","stroke-width":1.2});
+
+      /* directrix x = -a */
+      var dxPx = toPx(-a,0)[0];
+      el(svg,"line",{x1:dxPx,y1:12,x2:dxPx,y2:H-12,stroke:"#ff6b9d","stroke-width":2,"stroke-dasharray":"6 4"});
+      el(svg,"text",{x:dxPx-34,y:24,"font-size":13,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "الدليل x=-2";
+
+      /* parabola curve y^2=4ax, both branches */
+      var d = "";
+      for(var yy=-8; yy<=8; yy+=0.25){
+        var xx = (yy*yy)/(4*a);
+        var p = toPx(xx,yy);
+        d += (yy===-8 ? "M " : "L ") + p[0].toFixed(1) + " " + p[1].toFixed(1) + " ";
+      }
+      var path = document.createElementNS(ns,"path");
+      path.setAttribute("d", d.trim());
+      path.setAttribute("fill","none");
+      path.setAttribute("stroke","#7c6fee");
+      path.setAttribute("stroke-width","3");
+      svg.appendChild(path);
+
+      /* vertex */
+      var vP = toPx(0,0);
+      el(svg,"circle",{cx:vP[0],cy:vP[1],r:4,fill:"#2fd18f"});
+      el(svg,"text",{x:vP[0]-16,y:vP[1]+20,"font-size":12,"font-weight":700,fill:"#2fd18f","font-family":"Cairo,sans-serif"}).textContent = "V";
+
+      /* focus */
+      var fP = toPx(a,0);
+      el(svg,"circle",{cx:fP[0],cy:fP[1],r:5,fill:"#ff6b9d"});
+      el(svg,"text",{x:fP[0]-6,y:fP[1]+20,"font-size":13,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "F(2,0)";
+
+      /* point P and foot M on directrix */
+      var pP = toPx(x,y);
+      var mP = [dxPx, pP[1]];
+      el(svg,"circle",{cx:pP[0],cy:pP[1],r:5,fill:"#3fa9f5"});
+      el(svg,"text",{x:pP[0]+8,y:pP[1]-8,"font-size":13,"font-weight":700,fill:"var(--text-primary)","font-family":"Cairo,sans-serif"}).textContent = "P(x,y)";
+      el(svg,"circle",{cx:mP[0],cy:mP[1],r:4,fill:"#ffab5e"});
+
+      /* d1: P to M (dashed orange), d2: P to F (dashed pink) */
+      el(svg,"line",{x1:pP[0],y1:pP[1],x2:mP[0],y2:mP[1],stroke:"#ffab5e","stroke-width":2,"stroke-dasharray":"4 3"});
+      el(svg,"line",{x1:pP[0],y1:pP[1],x2:fP[0],y2:fP[1],stroke:"#ff6b9d","stroke-width":2,"stroke-dasharray":"4 3"});
+      el(svg,"text",{x:(pP[0]+mP[0])/2-24,y:pP[1]-6,"font-size":12,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "d1";
+      el(svg,"text",{x:(pP[0]+fP[0])/2+4,y:(pP[1]+fP[1])/2-6,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "d2";
+
+      var d1 = x + a;
+      formula.innerHTML = "$$d_1 = d_2 = " + d1.toFixed(2) + "$$";
+      window.Ch4.typeset([formula]);
+    }
+    slider.addEventListener("input", render);
+    render();
+  })();
+
+  /* ---- static figure: directrix parallel to Y axis, both orientations ---- */
+  (function(){
+    var svg = document.getElementById("yDirectrixFig");
+    var W = 460, H = 300, ox = W/2, oy = H/2, scale = 26, a = 2;
+    function toPx(x,y){ return [ox + x*scale, oy - y*scale]; }
+
+    el(svg,"line",{x1:10,y1:oy,x2:W-10,y2:oy,stroke:"var(--text-faint)","stroke-width":1.2});
+    el(svg,"line",{x1:ox,y1:10,x2:ox,y2:H-10,stroke:"var(--text-faint)","stroke-width":1.2});
+
+    function curve(aVal, color, dash){
+      var d = "";
+      for(var yy=-6; yy<=6; yy+=0.25){
+        var xx = (yy*yy)/(4*aVal);
+        var p = toPx(xx,yy);
+        d += (yy===-6 ? "M " : "L ") + p[0].toFixed(1) + " " + p[1].toFixed(1) + " ";
+      }
+      var path = document.createElementNS(ns,"path");
+      path.setAttribute("d", d.trim()); path.setAttribute("fill","none");
+      path.setAttribute("stroke",color); path.setAttribute("stroke-width","3");
+      if(dash) path.setAttribute("stroke-dasharray", dash);
+      svg.appendChild(path);
+    }
+    curve(a, "#7c6fee", null);   /* opens right: y^2=4ax */
+    curve(-a, "#ff6b9d", "7 4"); /* opens left: y^2=-4ax */
+
+    var fR = toPx(a,0), fL = toPx(-a,0);
+    el(svg,"circle",{cx:fR[0],cy:fR[1],r:4.5,fill:"#7c6fee"});
+    el(svg,"circle",{cx:fL[0],cy:fL[1],r:4.5,fill:"#ff6b9d"});
+    el(svg,"text",{x:fR[0]+6,y:fR[1]-10,"font-size":12,"font-weight":700,fill:"#7c6fee","font-family":"Cairo,sans-serif"}).textContent = "F(a,0)";
+    el(svg,"text",{x:fL[0]-46,y:fL[1]-10,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "F(-a,0)";
+    el(svg,"text",{x:fR[0]+30,y:30,"font-size":13,"font-weight":800,fill:"#7c6fee","font-family":"Cairo,sans-serif"}).textContent = "y²=4ax (a>0)";
+    el(svg,"text",{x:fL[0]-100,y:30,"font-size":13,"font-weight":800,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "y²=-4ax (a<0)";
+  })();
+
+  /* ---- static figure: directrix parallel to X axis, both orientations ---- */
+  (function(){
+    var svg = document.getElementById("xDirectrixFig");
+    var W = 460, H = 300, ox = W/2, oy = H/2, scale = 26, a = 2;
+    function toPx(x,y){ return [ox + x*scale, oy - y*scale]; }
+
+    el(svg,"line",{x1:10,y1:oy,x2:W-10,y2:oy,stroke:"var(--text-faint)","stroke-width":1.2});
+    el(svg,"line",{x1:ox,y1:10,x2:ox,y2:H-10,stroke:"var(--text-faint)","stroke-width":1.2});
+
+    function curve(aVal, color, dash){
+      var d = "";
+      for(var xx=-6; xx<=6; xx+=0.25){
+        var yy = (xx*xx)/(4*aVal);
+        var p = toPx(xx,yy);
+        d += (xx===-6 ? "M " : "L ") + p[0].toFixed(1) + " " + p[1].toFixed(1) + " ";
+      }
+      var path = document.createElementNS(ns,"path");
+      path.setAttribute("d", d.trim()); path.setAttribute("fill","none");
+      path.setAttribute("stroke",color); path.setAttribute("stroke-width","3");
+      if(dash) path.setAttribute("stroke-dasharray", dash);
+      svg.appendChild(path);
+    }
+    curve(a, "#2fd18f", null);   /* opens up: x^2=4ay */
+    curve(-a, "#ffab5e", "7 4"); /* opens down: x^2=-4ay */
+
+    var fU = toPx(0,a), fD = toPx(0,-a);
+    el(svg,"circle",{cx:fU[0],cy:fU[1],r:4.5,fill:"#2fd18f"});
+    el(svg,"circle",{cx:fD[0],cy:fD[1],r:4.5,fill:"#ffab5e"});
+    el(svg,"text",{x:fU[0]+8,y:fU[1]-4,"font-size":12,"font-weight":700,fill:"#2fd18f","font-family":"Cairo,sans-serif"}).textContent = "F(0,a)";
+    el(svg,"text",{x:fD[0]+8,y:fD[1]+16,"font-size":12,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "F(0,-a)";
+    el(svg,"text",{x:fU[0]+30,y:fU[1]-30,"font-size":13,"font-weight":800,fill:"#2fd18f","font-family":"Cairo,sans-serif"}).textContent = "x²=4ay (a>0)";
+    el(svg,"text",{x:fD[0]+30,y:fD[1]+40,"font-size":13,"font-weight":800,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "x²=-4ay (a<0)";
+  })();
+})();
+</script>
+</body>
+</html>

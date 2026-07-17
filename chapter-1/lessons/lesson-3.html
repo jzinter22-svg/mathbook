@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 3: ضرب الأعداد المركبة ومهاراته الجبرية — الفصل الأول</title>
+<meta name="description" content="ضرب الأعداد المركبة وخواصه، وتوسيع قوى الأعداد المركبة باستخدام المتطابقات الجبرية، مع أمثلة محلولة وتمرين تفاعلي واختبار ذاتي.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-3.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 3 من 7 · 1-4-3</span>
+    <h1>ضرب الأعداد المركبة ومهاراته الجبرية</h1>
+    <p class="lead">نتعلم في هذا الدرس كيفية ضرب عددين مركبين، وخواص هذه العملية، ثم نُتقن توسيع قوى الأعداد المركبة $(a+bi)^n$ باستخدام المتطابقات الجبرية المألوفة مع الاستعانة الدائمة بالقاعدة $i^2=-1$.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يتعرف على كيفية ضرب عددين مركبين وخواص عملية الضرب.</span></li>
+        <li><span class="obj-num">2</span><span>يوظّف المتطابقات الجبرية (مربع الحدين، مكعب الحدين، مجموع/فرق المكعبين) لتوسيع قوى الأعداد المركبة.</span></li>
+        <li><span class="obj-num">3</span><span>يستخدم $i^2=-1$ بصورة متكررة لتبسيط النواتج إلى الصيغة الاعتيادية $a+bi$.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 الشرح والتعريفات">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف 1-4 — ضرب عددين مركبين</span>
+      <p style="margin:.3rem 0">ليكن $z_1=a+bi,\; z_2=c+di\in\mathbb{C}$، فإن:</p>
+      <div class="mj-scroll">$$z_1\cdot z_2 = (a+bi)(c+di) = (ac-bd)+(bc+ad)i$$</div>
+      <p style="margin:.3rem 0">وحيث أن $(ac-bd),(bc+ad)\in\mathbb{R}$، فإن $\mathbb{C}$ مغلقة تحت الضرب أيضاً — حاصل ضرب عددين مركبين هو عدد مركب.</p>
+    </div>
+    <div class="callout tip fade-up">
+      <span class="icon">💡</span>
+      <span>لا حاجة لحفظ هذه الصيغة عن ظهر قلب: يكفي أن تضرب $(a+bi)(c+di)$ كما تضرب حدّي كل قوس (FOIL) ثم تستبدل $i^2$ بـ $-1$ في النهاية.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد حاصل الضرب: $(1-2i)(3-5i)$.</div>
+      <ol class="steps hidden-steps" id="steps-ex1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نوزّع كل حد من القوس الأول على القوس الثاني (FOIL)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (1)(3)+(1)(-5i)+(-2i)(3)+(-2i)(-5i) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نبسّط كل حد على حدة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( = 3-5i-6i+10i^2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نستبدل $i^2=-1$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( = 3-5i-6i+10(-1) \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( = (3-10)+(-5-6)i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">النتيجة النهائية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( =-7-11i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $(1-2i)(3-5i)=-7-11i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد حاصل الضرب: $(2+3i)(4-5i)$.</div>
+      <ol class="steps hidden-steps" id="steps-ex2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نوزّع (FOIL)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (2)(4)+(2)(-5i)+(3i)(4)+(3i)(-5i) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نبسّط ونستبدل $i^2=-1$: $-15i^2=+15$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( = 8-10i+12i+15 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نجمع الحقيقي مع الحقيقي والتخيلي مع التخيلي</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( = (8+15)+(-10+12)i \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =23+2i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $(2+3i)(4-5i)=23+2i$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ صندوق الضرب">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: صندوق ضرب الأعداد المركبة</h2>
+      <p>أدخل قيم $a,b,c,d$ في العددين المركبين $z_1=a+bi$ و $z_2=c+di$، وشاهد النواتج الجزئية الأربعة (طريقة الصندوق) قبل تجميعها في الناتج النهائي.</p>
+      <div class="io-panel">
+        <div class="io-row">
+          <label>$z_1=$</label>
+          <input type="number" id="mA" class="neu-input" value="2" style="max-width:5.5rem">
+          <span>+</span>
+          <input type="number" id="mB" class="neu-input" value="3" style="max-width:5.5rem">
+          <span>i</span>
+        </div>
+        <div class="io-row">
+          <label>$z_2=$</label>
+          <input type="number" id="mC" class="neu-input" value="4" style="max-width:5.5rem">
+          <span>+</span>
+          <input type="number" id="mD" class="neu-input" value="-5" style="max-width:5.5rem">
+          <span>i</span>
+        </div>
+        <div class="neu-inset" style="padding:1rem;overflow-x:auto">
+          <table id="mulBox" style="width:100%;border-collapse:collapse;text-align:center;min-width:420px">
+            <thead><tr style="color:var(--accent-purple)"><th style="padding:.6rem">×</th><th id="mulColHead1" style="padding:.6rem"></th><th id="mulColHead2" style="padding:.6rem"></th></tr></thead>
+            <tbody>
+              <tr><td id="mulRowHead1" style="padding:.6rem;color:var(--accent-purple)"></td><td id="mulCell11" style="padding:.6rem"></td><td id="mulCell12" style="padding:.6rem"></td></tr>
+              <tr><td id="mulRowHead2" style="padding:.6rem;color:var(--accent-purple)"></td><td id="mulCell21" style="padding:.6rem"></td><td id="mulCell22" style="padding:.6rem"></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule-box" id="mulFormula">$$z_1 \cdot z_2 = \dots$$</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h3 style="margin-top:0">🧩 خواص عملية الضرب في $\mathbb{C}$</h3>
+      <p>ليكن $z_1,z_2,z_3\in\mathbb{C}$، تتمتع عملية الضرب بالخواص الآتية (نقبلها دون برهان):</p>
+      <div class="grid grid-2">
+        <div class="neu-inset" style="padding:1rem 1.2rem">
+          <strong>الإبدالية</strong>
+          <div class="mj-scroll">$$z_1\cdot z_2=z_2\cdot z_1$$</div>
+        </div>
+        <div class="neu-inset" style="padding:1rem 1.2rem">
+          <strong>التجميعية</strong>
+          <div class="mj-scroll">$$z_1\cdot(z_2\cdot z_3)=(z_1\cdot z_2)\cdot z_3$$</div>
+        </div>
+        <div class="neu-inset" style="padding:1rem 1.2rem">
+          <strong>العنصر المحايد الضربي</strong>
+          <div class="mj-scroll">$$\exists\, I=1+0i : z\cdot I = z$$</div>
+        </div>
+        <div class="neu-inset" style="padding:1rem 1.2rem">
+          <strong>النظير الضربي</strong>
+          <div class="mj-scroll">$$\forall z\neq0+0i,\; \exists\left(\dfrac1z\right): z\cdot\dfrac1z = 1+0i$$</div>
+        </div>
+      </div>
+      <div class="callout tip" style="margin-top:1rem">
+        <span class="icon">💡</span>
+        <span>سنتعلم في الدرس القادم كيفية إيجاد $\dfrac1z$ بصيغته الاعتيادية باستخدام <b>مرافق العدد المركب</b>.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2 style="margin-bottom:.5rem">🧠 مهارات جبرية: توسيع قوى الأعداد المركبة</h2>
+      <p>يمكن الاستعانة بالمتطابقات الجبرية المألوفة لتسريع حساب القوى الأعلى للأعداد المركبة، مع تذكّر استبدال $i^2=-1$ في كل خطوة.</p>
+      <div class="grid grid-2">
+        <div class="neu-inset" style="padding:.9rem 1.1rem"><div class="mj-scroll">$$(a+b)^2=a^2+2ab+b^2$$</div></div>
+        <div class="neu-inset" style="padding:.9rem 1.1rem"><div class="mj-scroll">$$a^3+b^3=(a+b)(a^2-ab+b^2)$$</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> مثال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">بسّط المقدار $(1+2i)^2$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $(a+b)^2=a^2+2ab+b^2$ مع $a=1,\,b=2i$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نطبّق مربع الحدين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (1+2i)^2 = 1^2+2(1)(2i)+(2i)^2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نبسّط: $(2i)^2=4i^2=4(-1)=-4$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( = 1+4i+4i^2 = 1+4i-4 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-3+4i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $(1+2i)^2=-3+4i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> مثال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">بسّط المقدار $(1-i)^3$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $(1-i)^3=(1-i)^2(1-i)$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحسب $(1-i)^2$ أولاً</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (1-i)^2 = 1-2i+i^2 = 1-2i-1 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-2i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نضرب الناتج في $(1-i)$ المتبقية</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (-2i)(1-i) = -2i+2i^2 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-2i-2=-2-2i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $(1-i)^3=-2-2i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> مثال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">بسّط المقدار $(2+i)^4$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $(2+i)^4=\big[(2+i)^2\big]^2$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحسب $(2+i)^2$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (2+i)^2=4+4i+i^2=4+4i-1 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =3+4i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نربّع الناتج: $(3+4i)^2$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (3+4i)^2=9+24i+16i^2=9+24i-16 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-7+24i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="callout tip" style="margin-top:.8rem">
+        <span class="icon">💡</span>
+        <span>هذه طريقة «التربيع المتكرر»: بدلاً من ضرب $(2+i)$ في نفسها 4 مرات، نربّعها مرتين فقط.</span>
+      </div>
+      <div class="exercise-final">✓ $(2+i)^4=-7+24i$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> مثال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">بسّط المقدار $(1+i)^3+(1-i)^3$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> مجموع مكعبين $a^3+b^3=(a+b)(a^2-ab+b^2)$ مع $a=1+i,\,b=1-i$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحسب $a+b=(1+i)+(1-i)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a+b=2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحسب $a^2=(1+i)^2=1+2i+i^2=2i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a^2=2i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نحسب $b^2=(1-i)^2=1-2i+i^2=-2i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( b^2=-2i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نحسب $ab=(1+i)(1-i)=1-i^2=1-(-1)=2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( ab=2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نجمع $a^2-ab+b^2 = 2i-2+(-2i)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a^2-ab+b^2=-2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نضرب النتيجتين معاً</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (a+b)(a^2-ab+b^2)=(2)(-2) \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-4=-4+0i \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $(1+i)^3+(1-i)^3=-4$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7</span> مثال 7</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex7">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن $(1-i)^6=8i$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> إثبات $\text{L.H.S}=\text{R.H.S}$</p>
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $(1-i)^6=\big[(1-i)^2\big]^3$</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex7">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحسب $(1-i)^2$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (1-i)^2=1-2i+i^2 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =-2i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نرفع الناتج للأس 3: $(-2i)^3=-8i^3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (-2i)^3=-8i^3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نستخدم $i^3=-i$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( -8i^3=-8\times(-i) \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =8i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">مقارنة الطرفين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \text{L.H.S}=8i=\text{R.H.S} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $(1-i)^6=[(1-i)^2]^3=(-2i)^3=8i$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين تطبيقي">
+    <h2 style="margin-bottom:.25rem">📝 تمرين تطبيقي</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد حاصل الضرب $(3-i)(2+4i)$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$(a,b)=(3,-1),\,(c,d)=(2,4)$: نستخدم $z_1z_2=(ac-bd)+(bc+ad)i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( ac-bd = (3)(2)-(-1)(4)=6+4=10 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$bc+ad=(-1)(2)+(3)(4)=-2+12=10$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (3-i)(2+4i)=10+10i \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $(3-i)(2+4i)=10+10i$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">بسّط $(1+i)^4$ مستخدماً التربيع المتكرر.</div>
+      <ol class="steps hidden-steps" id="steps-pq2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$(1+i)^2=1+2i+i^2=2i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (1+i)^2=2i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$(1+i)^4=[(1+i)^2]^2=(2i)^2=4i^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (1+i)^4=-4 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $(1+i)^4=-4=-4+0i$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>حاصل ضرب $(2+i)(2-i)$ يساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$3$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$4-i^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$5$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$4+i^2$</span></label>
+        </div>
+        <div class="quiz-explain">$(2+i)(2-i)=4-i^2=4-(-1)=5$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>العنصر المحايد لعملية الضرب في $\mathbb{C}$ هو:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$0+0i$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$1+0i$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$0+1i$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$1+1i$</span></label>
+        </div>
+        <div class="quiz-explain">$z\cdot(1+0i)=z$ لأي عدد مركب $z$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>$(1+i)^2$ تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$2i$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$1+2i$</span></label>
+        </div>
+        <div class="quiz-explain">$(1+i)^2=1+2i+i^2=1+2i-1=2i$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>أفضل استراتيجية لحساب $(a+bi)^4$ هي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>ضرب $(a+bi)$ في نفسها 4 مرات متتالية فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>رفع $a$ للأس 4 ثم $b$ للأس 4 منفصلين</span></label>
+          <label class="quiz-opt"><input type="radio"><span>تجاهل $i^2=-1$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>حساب المربع أولاً، ثم تربيع الناتج (تربيع متكرر)</span></label>
+        </div>
+        <div class="quiz-explain">التربيع المتكرر $\big[(a+bi)^2\big]^2$ أسرع وأقل عرضة للخطأ من الضرب المباشر المتكرر.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>5.</span><span>في تبسيط $(1-i)^3$، ما ناتج $(1-i)^2$ الذي نبدأ به؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$2i$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$-2i$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$0$</span></label>
+        </div>
+        <div class="quiz-explain">$(1-i)^2=1-2i+i^2=1-2i-1=-2i$.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>الضرب: $(a+bi)(c+di)=(ac-bd)+(bc+ad)i$ — يُحسب بطريقة FOIL مع استبدال $i^2=-1$.</span></li>
+        <li><span>الضرب إبدالي وتجميعي، وله محايد $1+0i$، ونظير ضربي $\dfrac1z$ لكل $z\neq0$.</span></li>
+        <li><span>المتطابقات الجبرية (مربع الحدين، مكعب الحدين، مجموع/فرق المكعبين) تسرّع حساب القوى العليا للأعداد المركبة.</span></li>
+        <li><span>التربيع المتكرر (حساب المربع ثم تربيعه) أكفأ من الضرب المباشر المتكرر لحساب القوى الزوجية.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l3" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l3">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الثالث">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#7c6fee"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="15" font-family="Cairo,sans-serif">ضرب</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="15" font-family="Cairo,sans-serif">الأعداد المركبة</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">(ac-bd)+</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">(bc+ad)i</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#2fd18f"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">إبدالية،تجميعية</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">محايد 1، نظير 1/z</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#ffab5e"/>
+            <text x="150" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">(a+b)²,(a+b)³</text>
+            <text x="150" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">متطابقات جبرية</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ff6b9d"/>
+            <text x="670" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">i²=-1</text>
+            <text x="670" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الاستبدال الدائم</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الأول · الأعداد المركبة — الدرس 3: ضرب الأعداد المركبة ومهاراته الجبرية</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch1.js"></script>
+<script>
+(function(){
+  var a = document.getElementById("mA"), b = document.getElementById("mB");
+  var c = document.getElementById("mC"), d = document.getElementById("mD");
+  function fmtTerm(coef, sym){
+    var n = parseFloat(coef);
+    if(isNaN(n)) n = 0;
+    return n + (sym||"");
+  }
+  function signed(n){
+    return (n>=0? "+ " : "- ") + Math.abs(n);
+  }
+  function render(){
+    var A = parseFloat(a.value)||0, B = parseFloat(b.value)||0;
+    var C = parseFloat(c.value)||0, D = parseFloat(d.value)||0;
+    document.getElementById("mulColHead1").innerHTML = "\\("+C+"\\)";
+    document.getElementById("mulColHead2").innerHTML = "\\("+D+"i\\)";
+    document.getElementById("mulRowHead1").innerHTML = "\\("+A+"\\)";
+    document.getElementById("mulRowHead2").innerHTML = "\\("+B+"i\\)";
+    document.getElementById("mulCell11").innerHTML = "\\("+(A*C)+"\\)";
+    document.getElementById("mulCell12").innerHTML = "\\("+(A*D)+"i\\)";
+    document.getElementById("mulCell21").innerHTML = "\\("+(B*C)+"i\\)";
+    document.getElementById("mulCell22").innerHTML = "\\("+(B*D)+"i^2 = "+(-B*D)+"\\)";
+    var re = A*C - B*D;
+    var im = B*C + A*D;
+    var sign = im>=0 ? "+ "+im : "- "+Math.abs(im);
+    document.getElementById("mulFormula").innerHTML =
+      "$$("+A+(B>=0?"+":"")+B+"i)("+C+(D>=0?"+":"")+D+"i) = "+re+" "+sign+"i$$";
+    Ch4.typeset([document.getElementById("mulBox"), document.getElementById("mulFormula")]);
+  }
+  [a,b,c,d].forEach(function(inp){ inp.addEventListener("input", render); });
+  render();
+})();
+</script>
+</body>
+</html>

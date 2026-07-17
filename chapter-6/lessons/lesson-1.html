@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 1: التجربة العشوائية وفضاء العيّنة — الفصل السادس</title>
+<meta name="description" content="مفهوم الاحتمال، التجربة العشوائية، وفضاء العيّنة S، مع أمثلة تفاعلية بالنرد والعملات ومحاكاة رمي حقيقية.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/theme-ch6.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-1.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 1 من 6 · 6-1 و 6-2 و 6-3</span>
+    <h1>التجربة العشوائية وفضاء العيّنة</h1>
+    <p class="lead">قبل أن نحسب أي احتمال، لا بدّ أن نعرف أولاً: ما هي كل النتائج الممكنة؟ في هذا الدرس نتعلّم كيف نكتب <b>كل</b> نتيجة ممكنة لتجربة عشوائية — بالنرد والعملات — قبل أن نتحدث عن أي رقم أو نسبة.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يفهم المقصود بكلمة «احتمال» في الحياة اليومية قبل أي تعريف رياضي.</span></li>
+        <li><span class="obj-num">2</span><span>يميّز التجربة العشوائية عن غيرها من العمليات (لا نعرف نتيجتها مسبقاً رغم معرفة شروطها).</span></li>
+        <li><span class="obj-num">3</span><span>يكتب فضاء العيّنة $S$ كاملاً — دون اختصار — لتجربة رمي عملة واحدة، ولتجربة رمي حجر نرد واحد.</span></li>
+        <li><span class="obj-num">4</span><span>يحسب عدد عناصر فضاء العيّنة $n(S)$ ويربطه بعدد النتائج الممكنة فعلياً.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 مفهوم الاحتمال">
+    <div class="card neu">
+      <h2>💡 6-1 مفهوم الاحتمال <span style="color:var(--text-faint);font-weight:600;font-size:.85rem">The concept of probability</span></h2>
+      <p>نستخدم كلمة «احتمال» كثيراً في حياتنا اليومية دون أن نضع لها رقماً دقيقاً:</p>
+      <div class="grid grid-2" style="margin:1rem 0">
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong>🌧️ توقعات الطقس</strong>
+          <p style="margin:.5rem 0 0;color:var(--text-secondary)">«من المحتمل أن يهطل المطر بعد قليل» — يعني أن هناك احتمالاً لهطول المطر بعد فترة وجيزة، بناءً على تقلبات الطقس المرصودة.</p>
+        </div>
+        <div class="neu-inset" style="padding:1.1rem 1.2rem">
+          <strong>🏥 نجاح عملية جراحية</strong>
+          <p style="margin:.5rem 0 0;color:var(--text-secondary)">قول الطبيب: «احتمال نجاح العملية 70٪» يستند إلى خبرته وظروف المريض — رقم يقيس مدى الثقة بوقوع الحدث.</p>
+        </div>
+      </div>
+      <p>مهمتنا في هذا الفصل أن نحوّل هذا الإحساس العام إلى <b>رقم دقيق</b> بين 0 و1، نحسبه بخطوات منطقية واضحة. وأول خطوة في أي مسألة احتمال هي معرفة <b>كل</b> النتائج الممكنة.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف 6-2 — التجربة العشوائية <span style="font-weight:600;font-size:.8rem;color:var(--text-faint)">Random Experiment</span></span>
+      <p style="margin:.3rem 0">هي عملية معيّنة نستطيع التنبؤ بنتائجها الممكنة، ولكن لا نستطيع تحديد أيّ نتيجة ستقع فعلاً <b>مسبقاً</b>، رغم معرفتنا أنها معرَّفة بشروط معينة معلومة.</p>
+    </div>
+    <p style="margin-top:1rem">ومن أمثلة التجربة العشوائية:</p>
+    <div class="grid grid-3" style="margin-top:.8rem">
+      <div class="neu-inset" style="padding:1rem;text-align:center">
+        <div style="font-size:2rem">⚽</div>
+        <p style="margin:.4rem 0 0;font-weight:700">1. مباراة كرة قدم بين فريقين مختلفين</p>
+      </div>
+      <div class="neu-inset" style="padding:1rem;text-align:center">
+        <span class="pw-coin" data-coin="H" style="width:44px;height:44px"></span>
+        <p style="margin:.4rem 0 0;font-weight:700">2. إلقاء قطعة نقود مرة واحدة</p>
+      </div>
+      <div class="neu-inset" style="padding:1rem;text-align:center">
+        <span class="pw-die" data-die="4" style="width:44px;height:44px"></span>
+        <p style="margin:.4rem 0 0;font-weight:700">3. إلقاء حجر النرد (الزار) مرة واحدة</p>
+      </div>
+      <div class="neu-inset" style="padding:1rem;text-align:center">
+        <div class="pw-row tight" style="margin:0">
+          <span class="pw-coin" data-coin="H" style="width:36px;height:36px"></span><span class="pw-coin" data-coin="T" style="width:36px;height:36px"></span>
+        </div>
+        <p style="margin:.4rem 0 0;font-weight:700">4. إلقاء قطعتَي نقود معاً</p>
+      </div>
+      <div class="neu-inset" style="padding:1rem;text-align:center">
+        <div class="pw-row tight" style="margin:0">
+          <span class="pw-die" data-die="2" style="width:36px;height:36px"></span><span class="pw-die" data-die="5" style="width:36px;height:36px"></span>
+        </div>
+        <p style="margin:.4rem 0 0;font-weight:700">5. إلقاء حجرَي نرد معاً</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف 6-3 — فضاء العيّنة <span style="font-weight:600;font-size:.8rem;color:var(--text-faint)">Sample Space</span></span>
+      <p style="margin:.3rem 0">هي مجموعة عناصرها جميع النواتج الممكنة الحدوث في التجربة العشوائية، ويرمز له بالرمز $S$، كما يرمز لعدد عناصره بالرمز $n(S)$.</p>
+    </div>
+    <div class="callout tip fade-up">
+      <span class="icon">💬</span>
+      <span>فضاء العيّنة هو ببساطة «قائمة كل ما يمكن أن يحدث» — لا أكثر ولا أقل. لا نكتفي بقول «6 نتائج» بل نكتب النتائج الستّ نفسها.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار خطوات الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">في تجربة إلقاء قطعة النقود المعدنية مرة واحدة، اكتب فضاء العيّنة $S$ وعدد عناصره.</div>
+
+      <div class="diagram-card">
+        <div class="container-scene">
+          <div class="pw-row">
+            <span class="pw-coin" data-coin="H" style="width:84px;height:84px"></span>
+            <span class="pw-coin" data-coin="T" style="width:84px;height:84px"></span>
+          </div>
+          <span class="diagram-caption">وجها العملة المعدنية: $H$ يرمز لوجه الصورة، $T$ يرمز لوجه الكتابة</span>
+        </div>
+      </div>
+
+      <ol class="steps hidden-steps" id="steps-ex1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">لقطعة النقود وجهان فقط ممكن ظهورهما عند الإلقاء: وجه الصورة ووجه الكتابة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\(H\): head <span class="ar-safe">(صورة)</span> &nbsp;,&nbsp; \(T\): tell <span class="ar-safe">(كتابة)</span></div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نجمع كل النتائج الممكنة في مجموعة واحدة هي فضاء العيّنة (تعريف 6-3)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( S=\{H,T\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعدّ عناصر المجموعة $S$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(S)=2 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $S=\{H,T\}\,,\quad n(S)=2$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">في تجربة إلقاء حجر النرد مرة واحدة، اكتب فضاء العيّنة $S$ وعدد عناصره.</div>
+
+      <div class="diagram-card">
+        <div class="container-scene">
+          <div class="pw-row">
+            <span class="pw-die" data-die="1" style="width:56px;height:56px"></span>
+            <span class="pw-die" data-die="2" style="width:56px;height:56px"></span>
+            <span class="pw-die" data-die="3" style="width:56px;height:56px"></span>
+            <span class="pw-die" data-die="4" style="width:56px;height:56px"></span>
+            <span class="pw-die" data-die="5" style="width:56px;height:56px"></span>
+            <span class="pw-die" data-die="6" style="width:56px;height:56px"></span>
+          </div>
+          <span class="diagram-caption">الأوجه الستة الممكنة لحجر النرد عند استقراره على السطح</span>
+        </div>
+      </div>
+
+      <ol class="steps hidden-steps" id="steps-ex2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">حجر النرد مكعّب له 6 أوجه، عليها الأعداد من 1 إلى 6، وأي منها قد يظهر على الوجه الأعلى</p>
+          <div class="calc-flow"><div class="calc-line">النواتج الممكنة: $1,2,3,4,5,6$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نجمعها في فضاء العيّنة (تعريف 6-3)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( S=\{1,2,3,4,5,6\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعدّ عناصر المجموعة $S$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(S)=6 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $S=\{1,2,3,4,5,6\}\,,\quad n(S)=6$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ محاكاة تفاعلية">
+    <div class="card neu">
+      <h2>🕹️ جرّب بنفسك: ارمِ النرد واقلب العملة</h2>
+      <p>اضغط الأزرار عدة مرات ولاحظ: كل نتيجة تظهر هي دائماً عنصر من فضاء العيّنة $S$ — لا يمكن أبداً أن يظهر ناتج خارج $S$. هذا هو جوهر فكرة فضاء العيّنة.</p>
+      <div class="io-panel">
+        <div class="pw-row" style="gap:2.2rem">
+          <div style="text-align:center">
+            <div id="dieShow" class="pw-die lg" data-die="1" style="width:90px;height:90px;margin:0 auto"></div>
+            <button class="neu-btn primary" id="rollDie" style="margin-top:.7rem">ارمِ النرد 🎲</button>
+            <p id="dieMsg" style="margin:.5rem 0 0;color:var(--text-secondary);font-weight:700"></p>
+          </div>
+          <div style="text-align:center">
+            <div id="coinShow" class="pw-coin" data-coin="H" style="width:90px;height:90px;margin:0 auto"></div>
+            <button class="neu-btn primary" id="flipCoin" style="margin-top:.7rem">اقلب العملة 🪙</button>
+            <p id="coinMsg" style="margin:.5rem 0 0;color:var(--text-secondary);font-weight:700"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>ما الذي يميّز التجربة العشوائية؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نتيجتها معروفة مسبقاً دائماً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا يمكن تكرارها أبداً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نعرف نتائجها الممكنة لكن لا نستطيع تحديد أيّها سيقع مسبقاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>تحدث مرة واحدة فقط في العمر</span></label>
+        </div>
+        <div class="quiz-explain">حسب تعريف 6-2، التجربة العشوائية تُنبئ بنتائجها الممكنة لكن دون تحديد النتيجة الفعلية قبل وقوعها.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>فضاء العيّنة $S$ لتجربة إلقاء حجر نرد مرة واحدة هو:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$S=\{H,T\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$S=\{1,2,3,4,5,6\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$S=\{6\}$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$S=\{1,2,3\}$</span></label>
+        </div>
+        <div class="quiz-explain">حجر النرد له 6 أوجه مرقّمة من 1 إلى 6، وكلها نتائج ممكنة (راجع مثال 2).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>إذا كان $S=\{H,T\}$، فإن $n(S)$ يساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>2</span></label>
+          <label class="quiz-opt"><input type="radio"><span>1</span></label>
+          <label class="quiz-opt"><input type="radio"><span>0</span></label>
+          <label class="quiz-opt"><input type="radio"><span>غير معرّف</span></label>
+        </div>
+        <div class="quiz-explain">$n(S)$ يرمز لعدد عناصر فضاء العيّنة، وهنا عنصران: $H,T$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>أيّ التالي ليس تجربة عشوائية؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>إلقاء قطعة نقود</span></label>
+          <label class="quiz-opt"><input type="radio"><span>إلقاء حجر نرد</span></label>
+          <label class="quiz-opt"><input type="radio"><span>مباراة كرة قدم بين فريقين</span></label>
+          <label class="quiz-opt"><input type="radio"><span>جمع $2+2$ بالحاسبة</span></label>
+        </div>
+        <div class="quiz-explain">نتيجة $2+2$ معروفة ومحددة مسبقاً دائماً ($=4$)، فهي ليست تجربة عشوائية؛ أما البقية فنتائجها غير معروفة قبل وقوعها.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>لماذا لا يكفي أن نقول «فضاء العيّنة له 6 عناصر» عند حل مسألة احتمال؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>لأن الرقم 6 غير صحيح رياضياً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأننا نحتاج معرفة النتائج نفسها، لا عددها فقط، لتحديد أي حدث لاحقاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن $n(S)$ لا يُستخدم إطلاقاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن كل تجربة لها فضاء عيّنة مختلف الحجم دائماً</span></label>
+        </div>
+        <div class="quiz-explain">معرفة العدد فقط لا تكفي؛ فتحديد الحوادث لاحقاً (مثل «ظهور عدد زوجي») يتطلب معرفة عناصر $S$ نفسها.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>الاحتمال رقم بين 0 و1 يقيس مدى التوقّع بوقوع حدث ما.</span></li>
+        <li><span>التجربة العشوائية: نعرف نتائجها الممكنة، لكن لا نستطيع تحديد النتيجة الفعلية مسبقاً.</span></li>
+        <li><span>فضاء العيّنة $S$: مجموعة <b>كل</b> النتائج الممكنة للتجربة العشوائية، ويُرمز لعدد عناصره بـ $n(S)$.</span></li>
+        <li><span>لعملة واحدة: $S=\{H,T\}$، $n(S)=2$. لحجر نرد واحد: $S=\{1,2,3,4,5,6\}$، $n(S)=6$.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l1">إظهار الخريطة</button>
+      </div>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l1">
+        <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الأول">
+          <line x1="410" y1="150" x2="170" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="170" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="150" r="56" fill="#7c6fee"/>
+            <text x="410" y="146" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">التجربة العشوائية</text>
+            <text x="410" y="163" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">وفضاء العيّنة</text></g>
+
+          <g><circle cx="170" cy="70" r="46" fill="#3fa9f5"/>
+            <text x="170" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">لا نعرف</text>
+            <text x="170" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">النتيجة مسبقاً</text></g>
+
+          <g><circle cx="650" cy="70" r="46" fill="#2fd18f"/>
+            <text x="650" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">S = كل</text>
+            <text x="650" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">النواتج</text></g>
+
+          <g><circle cx="170" cy="230" r="46" fill="#ffab5e"/>
+            <text x="170" y="226" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">عملة</text>
+            <text x="170" y="242" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">S={H,T}</text></g>
+
+          <g><circle cx="650" cy="230" r="46" fill="#ff6b9d"/>
+            <text x="650" y="226" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">نرد</text>
+            <text x="650" y="242" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">S={1..6}</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل السادس · نظرية الاحتمال — الدرس 1: التجربة العشوائية وفضاء العيّنة</footer>
+
+<script src="../../assets/js/probability-widgets.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch6.js"></script>
+<script>
+(function(){
+  var dieShow = document.getElementById("dieShow");
+  var dieMsg = document.getElementById("dieMsg");
+  document.getElementById("rollDie").addEventListener("click", function(){
+    var v = 1 + Math.floor(Math.random()*6);
+    dieShow.setAttribute("data-die", v);
+    dieShow.removeAttribute("data-pw-done");
+    if(window.PW) window.PW.init();
+    dieMsg.textContent = "الناتج: " + v + "  ∈  S = {1,2,3,4,5,6}";
+  });
+  var coinShow = document.getElementById("coinShow");
+  var coinMsg = document.getElementById("coinMsg");
+  document.getElementById("flipCoin").addEventListener("click", function(){
+    var f = Math.random() < 0.5 ? "H" : "T";
+    coinShow.setAttribute("data-coin", f);
+    coinShow.removeAttribute("data-pw-done");
+    if(window.PW) window.PW.init();
+    coinMsg.textContent = "الناتج: " + f + "  ∈  S = {H,T}";
+  });
+})();
+</script>
+</body>
+</html>

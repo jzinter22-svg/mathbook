@@ -1,0 +1,53 @@
+/* Chapter 6 — additive, chapter-scoped styles layered on top of assets/css/theme.css.
+   New file only; no rules in theme.css are touched, so chapters 1-5 are unaffected. */
+
+.pw-die, .pw-coin, .pw-ball, .pw-card{ display:inline-block; vertical-align:middle; line-height:0 }
+.pw-die svg, .pw-coin svg, .pw-ball svg{ width:100%; height:100%; display:block }
+.pw-card svg{ width:100%; height:100%; display:block }
+
+.pw-die{ width:52px; height:52px }
+.pw-die.lg{ width:76px; height:76px }
+.pw-die.sm{ width:34px; height:34px }
+.pw-coin{ width:56px; height:56px }
+.pw-coin.sm{ width:32px; height:32px }
+.pw-ball{ width:44px; height:44px }
+.pw-ball.sm{ width:30px; height:30px }
+.pw-card{ width:46px; height:66px }
+
+.pw-row{ display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; justify-content:center; margin:.8rem 0 }
+.pw-row.tight{ gap:.35rem }
+
+.ss-table-wrap{ overflow-x:auto; margin:1rem 0; border-radius:var(--radius-md) }
+table.ss-table{ border-collapse:separate; border-spacing:4px; margin:0 auto; min-width:100% }
+table.ss-table th, table.ss-table td{ text-align:center; padding:.25rem; font-size:.85rem }
+table.ss-table th{ color:var(--accent-purple); font-weight:800; background:transparent }
+table.ss-table td{
+  background:var(--surface); border-radius:10px;
+  box-shadow:3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+  white-space:nowrap; font-weight:700; color:var(--text-primary);
+}
+table.ss-table td.hl{ box-shadow:0 0 0 2px var(--accent-green) inset }
+
+.container-scene{ text-align:center; padding:.4rem 0 }
+.container-scene svg{ max-width:100%; height:auto; display:block; margin:0 auto }
+
+.outcome-chip{
+  display:inline-flex; align-items:center; gap:.3rem; padding:.35rem .7rem; margin:.2rem;
+  border-radius:12px; background:var(--surface); font-weight:800; font-size:.9rem;
+  box-shadow:3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light); color:var(--text-primary);
+}
+.outcome-chip.pill-purple{ color:var(--accent-purple) }
+.outcome-chip.pill-blue{ color:var(--accent-blue) }
+.outcome-chip.pill-green{ color:var(--accent-green) }
+.outcome-chip.pill-pink{ color:var(--accent-pink) }
+
+.qpart-card{
+  border-radius:var(--radius-md); background:var(--surface); padding:1.1rem 1.3rem; margin-bottom:1rem;
+  box-shadow:6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+  border-inline-start:4px solid var(--accent-blue-2);
+}
+.qpart-card .qpart-badge{
+  display:inline-flex; align-items:center; justify-content:center; min-width:1.9rem; height:1.9rem; padding:0 .3rem;
+  border-radius:50%; background:linear-gradient(135deg,var(--accent-blue-2),var(--accent-purple)); color:#fff;
+  font-weight:800; font-size:.85rem; margin-inline-end:.5rem;
+}

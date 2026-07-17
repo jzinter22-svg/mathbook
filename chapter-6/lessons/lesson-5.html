@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 5: نسبة الاحتمال وقوانينها — الفصل السادس</title>
+<meta name="description" content="نسبة الاحتمال P(E)=r/n، الحوادث المستقلة، وقوانين الاحتمال الخمسة، مع ثماني أمثلة محلولة (سيارات سباق، طلاب، بالونات، فواكه) وأشجار احتمال تفاعلية.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/theme-ch6.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-5.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 5 من 6 · 6-4</span>
+    <h1>نسبة الاحتمال وقوانينها</h1>
+    <p class="lead">وصلنا أخيراً إلى صلب الفصل: كيف نحوّل فضاء العيّنة والحدث إلى <b>رقم واحد بين 0 و1</b> يقيس فرصة وقوع الحدث، وكيف نجمع ونطرح هذه الأرقام باستخدام خمسة قوانين بسيطة.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يحسب نسبة احتمال وقوع حدث $E$ بالقانون $P(E)=\dfrac{r}{n}$.</span></li>
+        <li><span class="obj-num">2</span><span>يميّز الحوادث المستقلة ويحسب $P(E_1\cap E_2)=P(E_1)\cdot P(E_2)$.</span></li>
+        <li><span class="obj-num">3</span><span>يطبّق قوانين الاحتمال الخمسة: المدى $[0,1]$، الاستقلال، الاتحاد العام، التنافي، والمتمم.</span></li>
+        <li><span class="obj-num">4</span><span>يحل مسائل احتمال مركّبة (سباق سيارات، طلاب، بالونات، فواكه) باستخدام أشجار الاحتمال والجداول.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 نسبة الاحتمال">
+    <div class="card neu">
+      <h2>💡 6-4 نسبة الاحتمال <span style="font-weight:600;font-size:.85rem;color:var(--text-faint)">Probability ratio</span></h2>
+      <p>في تجربة معيّنة، أذا كان عدد طرق وقوع حدث ما $E$ هو $r$ وليكن $n$ هو مجموع عدد الطرق الكلية للتجربة والتي عددها $n$، فأن احتمال وقوع الحدث $E$ ويرمز له بالرمز $P(E)$ يعبَّر عنه كالآتي:</p>
+      <div class="rule-box" style="text-align:center">$$P(E) = \dfrac{r}{n}$$</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">19</span> مثال 19</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex19">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">جد نسبة احتمال ظهور عدد زوجي أوّلي في تجربة رمي حجر النرد.</div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row" id="ex19Dice"></div>
+        <span class="diagram-caption">من بين الأعداد 1 إلى 6، العدد الوحيد الزوجي والأوّلي معاً هو 2</span>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-ex19">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">عدد عناصر فضاء العيّنة لهذه التجربة هو 6</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n=6 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">العدد 2 هو العدد الوحيد الذي له صفتا (زوجي وأوّلي) معاً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( r=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض في القانون</p>
+          <div class="calc-flow"><div class="calc-line">\( P(E)=\dfrac{r}{n}=\dfrac{1}{6} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P(E)=\dfrac{1}{6}$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف 6-5 — الحدثان المستقلان <span style="font-weight:600;font-size:.8rem;color:var(--text-faint)">Independent Events</span></span>
+      <p style="margin:.3rem 0">هما الحدثان $E_1,E_2$ اللذان يقعان معاً أو بالتتابع في تجربة عشوائية دون أن يؤثر وقوع أحدهما على وقوع الآخر، ويحقّقان العلاقة الآتية:</p>
+      <div class="rule-box" style="text-align:center">$$P(E_1\cap E_2)=P(E_1)\cdot P(E_2)$$</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="laws" data-navlabel="📐 قوانين الاحتمال">
+    <div class="card neu">
+      <h2>📐 6-4-1 قوانين نسبة الاحتمال</h2>
+      <p>ليكن كل من $A,B$ حدثين مختلفين في تجربة عشوائية فضاء العيّنة لها هو $S$، فإن:</p>
+    </div>
+
+    <div class="rule-box">1) $0\le P(A)\le1$ حيث:<br>
+      &nbsp;&nbsp;a) عندما يكون $A$ حدثاً مستحيلاً أي $A=\varnothing$ فان $P(A)=0$<br>
+      &nbsp;&nbsp;b) عندما يكون $A$ حدثاً مؤكداً أي $A=S$ فان $P(A)=1$
+    </div>
+    <p style="color:var(--text-secondary);margin:.3rem 0 1rem">أي أن نسبة الاحتمال لأي حدث تنتمي للفترة المغلقة $[0,1]$ ضمن مجموعة الأعداد الحقيقية.</p>
+
+    <div class="rule-box" style="text-align:center">2) إذا كان كل من $A,B$ حدثين مستقلين فأن: $$P(A\cap B)=P(A)\cdot P(B)$$</div>
+    <div class="rule-box" style="text-align:center">3) لكل حدثين $A,B$ يكون: $$P(A\cup B)=P(A)+P(B)-P(A\cap B)$$</div>
+
+    <div class="diagram-card"><div class="diagram-wrap">
+      <svg viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="دائرتان متقاطعتان تمثلان الحدثين A وB">
+        <circle cx="150" cy="95" r="70" fill="#7c6fee" opacity=".55"/>
+        <circle cx="230" cy="95" r="70" fill="#3fa9f5" opacity=".55"/>
+        <text x="105" y="60" font-size="18" font-weight="800" fill="#5a3a99" font-family="Cairo,sans-serif">A</text>
+        <text x="275" y="60" font-size="18" font-weight="800" fill="#1c5f8a" font-family="Cairo,sans-serif">B</text>
+        <text x="190" y="99" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Cairo,sans-serif">A∩B</text>
+      </svg>
+      <span class="diagram-caption">$A\cup B$ يشمل كل المنطقتين، لكن منطقة التقاطع $A\cap B$ تُحسب مرتين إن لم نطرحها مرة واحدة</span>
+    </div></div>
+
+    <div class="rule-box" style="text-align:center">4) أذا كان كل من $A,B$ حدثين منفصلين (متنافيين) فأن: $$P(A\cup B)=P(A)+P(B)$$</div>
+    <p style="color:var(--text-secondary);margin:.3rem 0 1rem">وذلك لأن: $(A\cap B)=\varphi \;\Rightarrow\; P(A\cap B)=0$</p>
+
+    <div class="diagram-card"><div class="diagram-wrap">
+      <svg viewBox="0 0 380 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="دائرتان منفصلتان تمثلان حدثين متنافيين A وB">
+        <circle cx="130" cy="95" r="60" fill="#2fd18f" opacity=".6"/>
+        <circle cx="270" cy="95" r="60" fill="#ff6b9d" opacity=".6"/>
+        <text x="130" y="100" text-anchor="middle" font-size="18" font-weight="800" fill="#fff" font-family="Cairo,sans-serif">A</text>
+        <text x="270" y="100" text-anchor="middle" font-size="18" font-weight="800" fill="#fff" font-family="Cairo,sans-serif">B</text>
+      </svg>
+      <span class="diagram-caption">حدثان متنافيان: لا تقاطع بينهما إطلاقاً — $A\cap B=\varnothing$</span>
+    </div></div>
+
+    <div class="rule-box" style="text-align:center">5) إذا كان $A^c$ هو الحدث المتمم للحدث $A$ فان: $$P(A)+P(A^c)=1$$</div>
+
+    <div class="callout tip fade-up">
+      <span class="icon">💬</span>
+      <span>في موضوع نسبة الاحتمال: أداة العطف <b>«أو»</b> تعني عملية الاتحاد $\cup$، بينما أداة العطف <b>«و»</b> تعني عملية التقاطع $\cap$.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار خطوات الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">20</span> مثال 20</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex20">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">إذا كانت نسبة احتمال نجاح تجربة اطلاق قمر صناعي إلى الفضاء هي 90%، فما نسبة احتمال فشل التجربة؟</div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row"><span style="font-size:2.4rem">🛰️</span></div>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-ex20">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">فضاء العيّنة لهذه التجربة هو {الفشل، النجاح}، وحيث أن الحدثين {الفشل} و{النجاح} متتامان</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P(A)+P(A^c)=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض $P(A)=0.90$ (النجاح)</p>
+          <div class="calc-flow"><div class="calc-line">\( 0.90+P(A^c)=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">ننقل 0.90 (تتغيّر الإشارة)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P(A^c)=1-0.90=0.10 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نسبة احتمال فشل التجربة = 10%. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">21</span> مثال 21</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex21">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">ثلاث سيارات $A,B,C$ مشتركة في سباق سيارات قاذا كان احتمال فوز السيارة $A$ هو ضعف احتمال فوز السيارة $B$، وكان احتمال فوز السيارة $B$ هو ضعف احتمال فوز السيارة $C$، فما احتمال فوز كل من السيارات الثلاث؟</div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row"><span style="font-size:2rem">🏎️A</span><span style="font-size:2rem">🚗B</span><span style="font-size:2rem">🚙C</span></div>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-ex21">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نفرض نسبة احتمال فوز $C$ هي $x$، فتكون نسبة $B$ هي $2x$ (ضعف $C$)، ونسبة $A$ هي $4x$ (ضعف $B$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P(C)=x\,,\ P(B)=2x\,,\ P(A)=4x \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بما أن $P(S)=1$ ومجموع احتمالات كل السيارات يساوي 1</p>
+          <div class="calc-flow"><div class="calc-line">\( x+2x+4x=1 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( 7x=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نحل لإيجاد $x$ ثم نعوّض</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x=\dfrac17\,,\ 2x=\dfrac27\,,\ 4x=\dfrac47 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P(C)=\dfrac17,\; P(B)=\dfrac27,\; P(A)=\dfrac47$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">22</span> مثال 22</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex22">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">صُنع حجر نرد ليكون احتمال ظهور عدد على الرمية الواحدة متناسباً مع العدد نفسه (أي أن احتمال ظهور العدد 6 مثلاً ضعف احتمال ظهور العدد 3). (a) صف فضاء العيّنة وجد احتمال حدوث كل عنصر فيه. (b) إذا كان $A$ حدث ظهور عدد زوجي، و$B$ حدث ظهور عدد فردي، و$C$ حدث ظهور عدد أوّلي، جد $P(A),P(B),P(C)$. (c) جد $P(C\cup A)$ و$P(C\cap B)$.</div>
+      <div class="diagram-card"><div class="diagram-wrap">
+        <svg viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مخطط أعمدة يوضح احتمال كل رقم من 1 إلى 6 متناسباً مع قيمته">
+          <line x1="40" y1="170" x2="360" y2="170" stroke="var(--text-faint)" stroke-width="1.5"/>
+          <g id="ex22Bars"></g>
+        </svg>
+        <span class="diagram-caption">احتمال كل عدد يتناسب طردياً مع قيمته: $P(k)=\dfrac{k}{21}$</span>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-ex22">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$S=\{1,2,3,4,5,6\}$؛ نفرض $P(1)=x$ فتكون $P(2)=2x,\dots,P(6)=6x$</p>
+          <div class="calc-flow"><div class="calc-line">\( x+2x+3x+4x+5x+6x=1 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( 21x=1 \;\Rightarrow\; x=\dfrac{1}{21} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">إذن: $P(1)=\frac1{21},P(2)=\frac2{21},P(3)=\frac3{21}=\frac17,P(4)=\frac4{21},P(5)=\frac5{21},P(6)=\frac6{21}=\frac27$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( A=\{2,4,6\}\,,\ B=\{1,3,5\}\,,\ C=\{2,3,5\} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نجمع احتمالات عناصر كل حدث</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( P(A)=\tfrac2{21}+\tfrac4{21}+\tfrac6{21}=\tfrac{12}{21}=\tfrac47 \)</div>
+            <div class="calc-line">\( P(B)=\tfrac1{21}+\tfrac3{21}+\tfrac5{21}=\tfrac9{21}=\tfrac37 \)</div>
+            <div class="calc-line">\( P(C)=\tfrac2{21}+\tfrac3{21}+\tfrac5{21}=\tfrac{10}{21} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">$C\cap A=\{2,3,5\}\cap\{2,4,6\}=\{2\}$ (ليست متنافية)، فنستخدم القانون 3</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( P(C\cap A)=P(\{2\})=\tfrac2{21} \)</div>
+            <div class="calc-line">\( P(C\cup A)=P(C)+P(A)-P(C\cap A)=\tfrac{10}{21}+\tfrac{12}{21}-\tfrac2{21} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( =\tfrac{20}{21} \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">$C\cap B=\{2,3,5\}\cap\{1,3,5\}=\{3,5\}$</p>
+          <div class="calc-flow"><div class="calc-line">\( P(C\cap B)=P(3)+P(5)=\tfrac3{21}+\tfrac5{21} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\tfrac8{21} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P(A)=\frac47,P(B)=\frac37,P(C)=\frac{10}{21}$؛ $P(C\cup A)=\frac{20}{21}$، $P(C\cap B)=\frac8{21}$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">23</span> مثال 23</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex23">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">صف دراسي فيه 10 طلاب و20 طالبة. كان نصف الطلاب ونصف الطالبات يستخدمون اليد اليسرى للكتابة. اختير شخص واحد عشوائياً، جد نسبة احتمال ان يكون هذا الشخص (طالباً ذكراً) أو (شخصاً يستخدم اليد اليسرى للكتابة بغض النظر عن الجنس).</div>
+      <div class="diagram-card"><div id="ex23Table"></div></div>
+      <ol class="steps hidden-steps" id="steps-ex23">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">ليكن $A$ حدث كون الطالب المختار طالباً ذكراً؛ عدد الطلاب الذكور 10 من أصل 30</p>
+          <div class="calc-flow"><div class="calc-line">\( P(A)=\dfrac{r}{n}=\dfrac{C^{10}_1}{C^{30}_1}=\dfrac{10}{30} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac13 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">ليكن $B$ حدث كون الشخص يستخدم اليسرى بغض النظر عن الجنس؛ يوجد 5 طلاب+10 طالبات = 15 شخصاً</p>
+          <div class="calc-flow"><div class="calc-line">\( P(B)=\dfrac{C^{15}_1}{C^{30}_1}=\dfrac{15}{30} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac12 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">حيث أن $A,B$ أحداث ليست متنافية، لا بد من إيجاد $P(A\cap B)$ وهي احتمالية كون المختار ذكراً يستخدم اليسرى</p>
+          <div class="calc-flow"><div class="calc-line">\( P(A\cap B)=\dfrac{C^5_1}{C^{30}_1}=\dfrac{5}{30} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac16 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">المطلوب «أو» يعني الاتحاد؛ نطبّق القانون 3</p>
+          <div class="calc-flow"><div class="calc-line">\( P(A\cup B)=P(A)+P(B)-P(A\cap B)=\dfrac13+\dfrac12-\dfrac16 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac46=\dfrac23 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P(A\cup B)=\dfrac23$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">24</span> مثال 24</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex24">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">أجريت إحصائية في أحد المطارات على 50 شخصاً تم اختيارهم عشوائياً فظهر أن 20 منهم ذكور و30 إناث، وكان 5 من الذكور و12 من الإناث لهم عيون زرقاء اللون. تم اختيار شخصين عشوائياً، جد نسبة احتمال أن يكون الشخصان المختاران من ذوي العيون الزرقاء اللون (بغض النظر عن الجنس) أو (ذكر بعيون زرقاء وأنثى بعيون ليست زرقاء اللون).</div>
+      <div class="diagram-card"><div id="ex24Table"></div></div>
+      <ol class="steps hidden-steps" id="steps-ex24">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">ليكن $A$ حدث كون الشخصين المختارين من ذوي العيون الزرقاء (بغض النظر عن الجنس)؛ عدد ذوي العيون الزرقاء = $5+12=17$ شخصاً</p>
+          <div class="calc-flow"><div class="calc-line">\( P(A)=\dfrac{r}{n}=\dfrac{C^{17}_2}{C^{50}_2}=\dfrac{272}{2450} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{136}{1225} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">ليكن $B$ حدث كون أحدهما ذكراً بعيون زرقاء (1 من 5) والآخر أنثى بعيون ليست زرقاء (1 من 18)</p>
+          <div class="calc-flow"><div class="calc-line">\( P(B)=\dfrac{C^5_1\times C^{18}_1}{C^{50}_2}=\dfrac{5\times18}{2450} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{18}{245} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">حيث أن $A,B$ أحداث متنافية (لا يمكن تحقّق الحالتين معاً)، نستخدم القانون 4</p>
+          <div class="calc-flow"><div class="calc-line">\( P(A\cup B)=P(A)+P(B)=\dfrac{136}{1225}+\dfrac{18}{245} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{226}{1225} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P(A\cup B)=\dfrac{226}{1225}$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">25</span> مثال 25</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex25">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">صندوق يحتوي 17 بالوناً مرقّمة من 1 إلى 17. سحبنا أول بالون ثم سحبنا بالوناً ثانياً دون إعادة البالون الأول. جد نسبة احتمال أن يكون البالونين المسحوبين يحملان أرقاماً فردية إذا علمت أن الحدثين مستقلان.</div>
+      <div class="mindmap-wrap"><svg id="ex25Tree"></svg></div>
+      <ol class="steps hidden-steps" id="steps-ex25">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">يوجد في الصندوق 9 بالونات فردية و8 زوجية. ليكن $A$ حدث كون أول بالون فردياً</p>
+          <div class="calc-flow"><div class="calc-line">\( P(A)=\dfrac{C^9_1}{C^{17}_1}=\dfrac{9}{17} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">ليكن $B$ حدث كون البالون الثاني فردياً أيضاً؛ ونظراً لكون السحب دون إرجاع، تناقص عدد البالونات الفردية والعدد الكلي كلٌّ بمقدار واحد</p>
+          <div class="calc-flow"><div class="calc-line">\( P(B)=\dfrac{C^8_1}{C^{16}_1}=\dfrac{8}{16} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac12 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">وحيث أن الحدثين مستقلان (معطى)</p>
+          <div class="calc-flow"><div class="calc-line">\( P(A\cap B)=P(A)\cdot P(B)=\left(\dfrac9{17}\right)\left(\dfrac12\right) \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{9}{34} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P(A\cap B)=\dfrac{9}{34}$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">26</span> مثال 26</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex26">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">صحن فاكهة فيه 7 تفاحات و3 رمانات و5 برتقالات. أكلت 3 قطع منها عشوائياً الواحدة تلو الأخرى. جد نسبة احتمال كونك تناولت فاكهة من كل نوع، إذا علمت أن هذه الأحداث مستقلة.</div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row"><span style="font-size:1.8rem">🍎×7</span><span style="font-size:1.8rem">🔴×3</span><span style="font-size:1.8rem">🍊×5</span></div>
+      </div></div>
+      <div class="mindmap-wrap"><svg id="ex26Tree"></svg></div>
+      <ol class="steps hidden-steps" id="steps-ex26">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">ليكن $A$ حدث كون أول فاكهة تناولتها تفاحة؛ المجموع 15 قطعة</p>
+          <div class="calc-flow"><div class="calc-line">\( P(A)=\dfrac{C^7_1}{C^{15}_1}=\dfrac{7}{15} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">ليكن $B$ حدث كون ثاني فاكهة رمانة (لاحظ أن السحب دون إرجاع، فتبقى 14 قطعة)</p>
+          <div class="calc-flow"><div class="calc-line">\( P(B)=\dfrac{C^3_1}{C^{14}_1}=\dfrac{3}{14} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">ليكن $C$ حدث كون ثالث فاكهة برتقالة (تبقى 13 قطعة)</p>
+          <div class="calc-flow"><div class="calc-line">\( P(C)=\dfrac{C^5_1}{C^{13}_1}=\dfrac{5}{13} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">وحيث أن الأحداث الثلاثة مستقلة (معطى)</p>
+          <div class="calc-flow"><div class="calc-line">\( P(A\cap B\cap C)=P(A)\cdot P(B)\cdot P(C)=\left(\dfrac7{15}\right)\left(\dfrac3{14}\right)\left(\dfrac5{13}\right) \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =\dfrac{1}{26} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $P(A\cap B\cap C)=\dfrac{1}{26}$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>1.</span><span>نسبة احتمال أي حدث $P(E)$ تنتمي دائماً للفترة:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$(-1,1)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$(0,\infty)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$[0,1]$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$[1,100]$</span></label>
+        </div>
+        <div class="quiz-explain">القانون 1: $0\le P(A)\le1$ لأي حدث $A$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>إذا كان $A,B$ حدثين متنافيين، فإن $P(A\cup B)$ تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$P(A)\cdot P(B)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$P(A)+P(B)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$P(A)-P(B)$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$P(A)+P(B)-P(A\cap B)$ حيث $P(A\cap B)\ne0$</span></label>
+        </div>
+        <div class="quiz-explain">القانون 4: للحدثين المتنافيين $P(A\cap B)=0$، فيبسّط القانون العام إلى $P(A)+P(B)$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>3.</span><span>إذا كان $P(A)=0.3$، فإن $P(A^c)$ تساوي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>0.7</span></label>
+          <label class="quiz-opt"><input type="radio"><span>0.3</span></label>
+          <label class="quiz-opt"><input type="radio"><span>1.3</span></label>
+          <label class="quiz-opt"><input type="radio"><span>0</span></label>
+        </div>
+        <div class="quiz-explain">القانون 5: $P(A)+P(A^c)=1 \Rightarrow P(A^c)=1-0.3=0.7$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>كلمة «أو» في نسبة الاحتمال تعني عملية:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>الضرب</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الطرح</span></label>
+          <label class="quiz-opt"><input type="radio"><span>التقاطع ∩</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الاتحاد ∪</span></label>
+        </div>
+        <div class="quiz-explain">«أو» = اتحاد $\cup$، بينما «و» = تقاطع $\cap$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>في مثال 25، لماذا أصبح احتمال البالون الثاني الفردي $\dfrac{8}{16}$ لا $\dfrac{9}{17}$؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>خطأ مطبعي في الكتاب</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن السحب دون إرجاع، فتناقص عدد البالونات الفردية والعدد الكلي معاً بمقدار واحد بعد السحبة الأولى</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن البالونات تغيّرت ألوانها</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن الحدثين غير مستقلين إطلاقاً</span></label>
+        </div>
+        <div class="quiz-explain">بعد سحب بالون فردي واحد دون إرجاعه، يتبقى 8 بالونات فردية من أصل 16 بالوناً فقط.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>نسبة الاحتمال: $P(E)=\dfrac{r}{n}$، حيث $r$ عدد طرق وقوع $E$ و$n$ عدد الطرق الكلية.</span></li>
+        <li><span>الحدثان المستقلان: $P(E_1\cap E_2)=P(E_1)\cdot P(E_2)$.</span></li>
+        <li><span>القوانين الخمسة: المدى $[0,1]$ · الاستقلال · $P(A\cup B)=P(A)+P(B)-P(A\cap B)$ · التنافي $P(A\cup B)=P(A)+P(B)$ · المتمم $P(A)+P(A^c)=1$.</span></li>
+        <li><span>«أو» = اتحاد $\cup$، «و» = تقاطع $\cap$.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l5">إظهار الخريطة</button>
+      </div>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l5">
+        <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الخامس">
+          <line x1="410" y1="150" x2="170" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="170" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <g><circle cx="410" cy="150" r="56" fill="#7c6fee"/>
+            <text x="410" y="146" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">P(E)=r/n</text>
+            <text x="410" y="163" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">نسبة الاحتمال</text></g>
+          <g><circle cx="170" cy="70" r="46" fill="#3fa9f5"/>
+            <text x="170" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">[0,1]</text>
+            <text x="170" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">مدى الاحتمال</text></g>
+          <g><circle cx="650" cy="70" r="46" fill="#2fd18f"/>
+            <text x="650" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">P(A∩B)=P(A)P(B)</text>
+            <text x="650" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">حوادث مستقلة</text></g>
+          <g><circle cx="170" cy="230" r="46" fill="#ffab5e"/>
+            <text x="170" y="223" text-anchor="middle" fill="#fff" font-weight="700" font-size="9.5" font-family="Cairo,sans-serif">P(A∪B)=P(A)+P(B)-P(A∩B)</text>
+            <text x="170" y="240" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">اتحاد عام</text></g>
+          <g><circle cx="650" cy="230" r="46" fill="#ff6b9d"/>
+            <text x="650" y="223" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">P(A)+P(Aᶜ)=1</text>
+            <text x="650" y="240" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">المتمم</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل السادس · نظرية الاحتمال — الدرس 5: نسبة الاحتمال وقوانينها</footer>
+
+<script src="../../assets/js/probability-widgets.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch6.js"></script>
+<script>
+(function(){
+  function ready(fn){ if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", fn); else fn(); }
+  ready(function(){
+    if(!window.PW) return;
+
+    var diceEl = document.getElementById("ex19Dice");
+    if(diceEl){
+      for(var v=1; v<=6; v++){
+        var s = document.createElement("span");
+        s.className = "pw-die";
+        s.setAttribute("data-die", v);
+        if(v !== 2) s.style.opacity = ".28";
+        else { s.style.outline = "3px solid var(--accent-green)"; s.style.borderRadius = "14px"; }
+        diceEl.appendChild(s);
+      }
+    }
+
+    var barsG = document.getElementById("ex22Bars");
+    if(barsG){
+      var ns = "http://www.w3.org/2000/svg";
+      var colors = ["#7c6fee","#3fa9f5","#2fd18f","#ffab5e","#ff6b9d","#ff9f5e"];
+      for(var k=1;k<=6;k++){
+        var bh = k * 20;
+        var bx = 40 + (k-1)*54;
+        var by = 170 - bh;
+        var rect = document.createElementNS(ns,"rect");
+        rect.setAttribute("x", bx); rect.setAttribute("y", by);
+        rect.setAttribute("width", 34); rect.setAttribute("height", bh);
+        rect.setAttribute("rx", 6); rect.setAttribute("fill", colors[k-1]);
+        barsG.appendChild(rect);
+        var lbl = document.createElementNS(ns,"text");
+        lbl.setAttribute("x", bx+17); lbl.setAttribute("y", 185);
+        lbl.setAttribute("text-anchor","middle"); lbl.setAttribute("font-family","Cairo,sans-serif");
+        lbl.setAttribute("font-size","12"); lbl.setAttribute("font-weight","800"); lbl.setAttribute("fill","var(--text-primary)");
+        lbl.textContent = k;
+        barsG.appendChild(lbl);
+        var val = document.createElementNS(ns,"text");
+        val.setAttribute("x", bx+17); val.setAttribute("y", by-6);
+        val.setAttribute("text-anchor","middle"); val.setAttribute("font-family","Cairo,sans-serif");
+        val.setAttribute("font-size","10.5"); val.setAttribute("font-weight","700"); val.setAttribute("fill","var(--text-secondary)");
+        val.textContent = k+"/21";
+        barsG.appendChild(val);
+      }
+    }
+
+    function contingencyTable(container, rowLabels, colLabels, data, cornerLabel){
+      PW.buildTable(container, rowLabels, colLabels,
+        function(r,c){ return String(data[r][c]); },
+        { corner: cornerLabel,
+          rowHeaderHTML: function(r){ return '<span class="ar-safe">'+r+'</span>'; },
+          colHeaderHTML: function(c){ return '<span class="ar-safe">'+c+'</span>'; } });
+    }
+    contingencyTable(document.getElementById("ex23Table"),
+      ["ذكور","إناث"], ["يسرى","يمنى"],
+      {"ذكور":{"يسرى":5,"يمنى":5}, "إناث":{"يسرى":10,"يمنى":10}}, "الصف");
+    contingencyTable(document.getElementById("ex24Table"),
+      ["ذكور","إناث"], ["عيون زرقاء","عيون أخرى"],
+      {"ذكور":{"عيون زرقاء":5,"عيون أخرى":15}, "إناث":{"عيون زرقاء":12,"عيون أخرى":18}}, "المطار");
+
+    var t25 = document.getElementById("ex25Tree");
+    if(t25) PW.renderTree(t25, {
+      label:"S", children:[
+        {label:"فردي", prob:"9/17", fill:"#3fa9f5", children:[
+          {label:"", sub:"فردي ثانياً: 8/16", fill:"#2fd18f"}
+        ]}
+      ]
+    }, {levelGap:100, width:420, height:220});
+
+    var t26 = document.getElementById("ex26Tree");
+    if(t26) PW.renderTree(t26, {
+      label:"S", children:[
+        {label:"🍎", prob:"7/15", fill:"#ff6b6b", children:[
+          {label:"🔴", prob:"3/14", fill:"#c9b6ff", children:[
+            {label:"🍊", prob:"5/13", sub:"1/26", fill:"#ffab5e"}
+          ]}
+        ]}
+      ]
+    }, {levelGap:105, width:420, height:320});
+
+    PW.init();
+  });
+})();
+</script>
+</body>
+</html>

@@ -60,6 +60,11 @@
   }
 }
 
+/* Cairo's Arabic glyphs for a lone "و"/"أو" break (render as stray Latin-looking
+   marks) when that word sits directly between two MathJax spans with nothing
+   else beside it. Fall back to the system Arabic sans for just that word. */
+.ar-safe{font-family:sans-serif}
+
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -267,9 +272,28 @@ body{
   background:var(--surface);box-shadow:4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
   max-width:100%;overflow-x:auto}
 
+/* Long chained equalities (multiple fractions/roots in one formula) can
+   exceed the available width on narrow phones before they exceed it on
+   desktop. Shrinking the math a bit on very narrow viewports lets most
+   chains fit without relying on horizontal scrolling. */
+@media (max-width:480px){
+  .calc-line{font-size:.84rem}
+  .calc-box{padding:.4rem .6rem}
+  .example{padding:1.1rem .8rem}
+  .step{grid-template-columns:26px 1fr;gap:.5rem}
+}
+
 .reveal-btn{margin-top:.5rem}
 .hidden-steps .step{display:none}
 .hidden-steps.shown .step{display:grid}
+
+/* Whole-block reveal wrapper (question + full solution together in one
+   card): used where the entire step list, final answer, and any inline
+   supporting figure must stay hidden as a unit until "show solution" is
+   pressed. Scoped to div so it never touches the older <ol class="steps
+   hidden-steps"> reveal pattern, which only hides its .step children. */
+div.hidden-steps{display:none}
+div.hidden-steps.shown{display:block}
 
 /* interactive example controls */
 .io-panel{display:grid;gap:.9rem;margin-top:1rem}
@@ -315,9 +339,23 @@ input[type=text].neu-input,input[type=number].neu-input{
 .mm-node{transition:transform .2s ease}
 .mm-node:hover{transform:scale(1.04)}
 
+/* ===== Geometry figure (Chapter 5) — responsive SVG diagram container used
+   before every definition/theorem/example/exercise, per project requirement
+   that every geometry item ships its own diagram. Mirrors .mindmap-wrap's
+   responsive rules so figures never cause horizontal page scroll. ===== */
+.diagram-wrap{overflow-x:auto;padding:.6rem 0 .4rem;text-align:center}
+.diagram-wrap svg{display:block;margin:0 auto;max-width:59.5%;height:auto}
+.diagram-caption{display:block;margin-top:.65rem;font-size:.85rem;font-weight:700;color:var(--text-secondary)}
+.diagram-card{padding:1.1rem 1rem .8rem;margin-bottom:1.4rem;border-radius:var(--radius-md);
+  background:var(--surface);box-shadow:6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light)}
+.geo-right-angle{fill:none;stroke-width:2}
+.geo-arc{fill:none;stroke-width:2}
+.geo-dash{stroke-dasharray:5 4}
+.geo-label{font-family:'Cairo',sans-serif;font-weight:800}
+
 /* Summary */
 .summary-list{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
-.summary-list li{display:flex;gap:.6rem;align-items:flex-start;padding:.5rem 0}
+.summary-list li{display:flex;gap:.6rem;align-items:flex-start;padding:.5rem 0;min-width:0}
 .summary-list li>span{min-width:0;overflow-x:auto}
 .summary-list li::before{content:"✓";flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent-green);
   color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900}

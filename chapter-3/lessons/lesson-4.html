@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 4: النهايات العظمى والصغرى المحلية — الفصل الثالث</title>
+<meta name="description" content="النقاط الحرجة وتصنيفها إلى نهايات عظمى أو صغرى محلية عبر فحص تغيّر إشارة المشتقة الأولى، مع أمثلة محلولة ومختبر تفاعلي.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-4.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 4 من 7 · 4-3</span>
+    <h1>النهايات العظمى والصغرى المحلية (النسبية)</h1>
+    <p class="lead">عندما تتغيّر إشارة $f'(x)$ حول نقطة حرجة $x=c$ من الموجب إلى السالب أو العكس، فإن النقطة $(c,f(c))$ تمثّل <b>نهاية عظمى محلية</b> أو <b>نهاية صغرى محلية</b>. نتعلم في هذا الدرس كيفية تصنيف كل نقطة حرجة بدقة.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يميّز بين النهاية العظمى المحلية والنهاية الصغرى المحلية والنقطة الحرجة التي ليست عظمى ولا صغرى.</span></li>
+        <li><span class="obj-num">2</span><span>يتبع الخطوات الخمس لإيجاد النهايات العظمى والصغرى المحلية لدالة معطاة باستخدام المشتقة الأولى.</span></li>
+        <li><span class="obj-num">3</span><span>يوظّف اختبار المشتقة الأولى لإيجاد نقاط على منحني دالة يكون فيها المماس موازياً لمحور السينات.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 الشرح والتعريفات">
+    <div class="card neu">
+      <h2>💡 4-3 النهايات العظمى والصغرى المحلية</h2>
+      <p>لتكن $f(x)$ دالة مستمرة على الفترة المغلقة $I$ وقابلة للاشتقاق عند $x=c$ التي تنتمي إلى الفترة المفتوحة $I$؛ فإذا:</p>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>تغيّرت إشارة $f'(x)$ من الموجب إلى السالب حول $c$، فالنقطة $(c,f(c))$ تمثّل <b>نهاية عظمى محلية</b>، ويسمى العدد $f(c)$ بالقيمة العظمى للدالة $f(x)$ في الفترة $I$.</span></li>
+        <li><span class="obj-num">2</span><span>تغيّرت إشارة $f'(x)$ من السالب إلى الموجب حول $c$، فالنقطة $(c,f(c))$ تمثّل <b>نهاية صغرى محلية</b>، ويسمى العدد $f(c)$ بالقيمة الصغرى للدالة $f(x)$ في الفترة $I$.</span></li>
+        <li><span class="obj-num">3</span><span>أما إذا لم تتغيّر إشارة $f'(x)$ مهما ازدادت أو نقصت قيمة $x$ حول $c$، فالنقطة $(c,f(c))$ لا تمثّل نهاية صغرى أو عظمى، ولكنها حرجة فقط.</span></li>
+      </ol>
+    </div>
+
+    <div class="card neu" style="margin-top:1rem">
+      <h3 style="margin-top:0">🔢 خطوات إيجاد النهايات العظمى والصغرى</h3>
+      <p>ولإيجاد نقاط النهايات العظمى والصغرى للدالة واختبارها بواسطة المشتقة الأولى وإيجاد مناطق التزايد والتناقص نتبع الخطوات الآتية:</p>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>نجد المشتقة الأولى للدالة.</span></li>
+        <li><span class="obj-num">2</span><span>نجعل هذه المشتقة تساوي صفر ثم نجد الجذور الحقيقية للمعادلة الناتجة.</span></li>
+        <li><span class="obj-num">3</span><span>نمثّل قيم $x$ المستخرجة على خط الأعداد ثم نختبر إشارة الفترات، وذلك بأخذ قيمة لـ $x$ المستخرجة (مرة أكبر ومرة أصغر من قيمة $x$ المستخرجة) ونعوّضها في المشتقة الأولى؛ فإذا كانت القيمة موجبة أشرنا بسهم صاعد على خط الأعداد، وإذا كانت سالبة أشرنا بسهم نازل.</span></li>
+        <li><span class="obj-num">4</span><span>إذا كانت الإشارة قبل قيمة $x$ موجبة وبعدها سالبة فهذا يعني أن النقطة تمثّل نهاية عظمى محلية، وإذا كان العكس كانت النهاية صغرى محلية. أما إذا لم تتغيّر إشارة $f'(x)$ فالنقطة لا تمثّل صغرى أو عظمى وإنما حرجة فقط (كما ذُكر آنفاً) وهي تفيدنا في رسم الدالة.</span></li>
+        <li><span class="obj-num">5</span><span>نعوّض قيمة $x$ التي تمثّل الجذور الحقيقية في المعادلة الأصلية لاستخراج قيمة $y$ لكتابة النهايات كأزواج مرتّبة، ثم نكتب مناطق التزايد والتناقص للدالة.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9a</span> مثال 9 (a)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex9a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد النهايات العظمى والصغرى المحلية ومناطق التزايد والتناقص للدالة $f(x)=16-6x-3x^2$</div>
+      <div class="hidden-steps" id="steps-ex9a">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجد المشتقة الأولى ونجعلها تساوي صفر</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=-6-6x$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$-6-6x=0 \;(\div(-6))\; \Rightarrow 1+x=0$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$x=-1$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نختبر قيمة $x$ على خط الأعداد: إشارة $f'(x)$: &nbsp; $+\;+\;+\;(-1)\;-\;-\;-$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">الإشارة تتغيّر من $+$ إلى $-$ حول $x=-1$ ⇐ نهاية عظمى محلية</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نستخرج قيمة $y$ عندما $x=-1$ بتعويض قيمة $x$ في الدالة</p>
+          <div class="calc-flow">
+            <div class="calc-line">$y=f(-1)=16-6(-1)-3(-1)^2$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$y=16+6-3=19$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">النقطة $(-1,19)$ تمثّل نهاية عظمى محلية؛ ومناطق التزايد والتناقص</p>
+          <div class="calc-flow"><div class="calc-line calc-box">مناطق التزايد: $\{x:x<-1,x\in\mathbb{R}\}$ &nbsp;،&nbsp; مناطق التناقص: $\{x:x>-1,x\in\mathbb{R}\}$</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية عظمى محلية عند $(-1,19)$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">9b</span> مثال 9 (b)</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex9b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد النهايات العظمى والصغرى المحلية ومناطق التزايد والتناقص للدالة $f(x)=2x^3-9x^2-24x-12$</div>
+      <div class="hidden-steps" id="steps-ex9b">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نستخرج المشتقة الأولى للدالة ونجعلها صفر</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=6x^2-18x-24$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$6x^2-18x-24=0 \;(\div6)$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$x^2-3x-4=0 \Rightarrow (x-4)(x+1)=0$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$x=4$ <span class="ar-safe">أو</span> $x=-1$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نمثّل القيمتين المستخرجتين على خط الأعداد ونأخذ قيمة من كل فترة (نختار $x=-2,0,5$) ونعوّضها في المشتقة لمعرفة إشارتها فقط</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(-2)=6(-2)^2-18(-2)-24=+36$</div>
+            <div class="calc-line">$f'(0)=6(0)^2-18(0)-24=-24$</div>
+            <div class="calc-line">$f'(5)=6(5)^2-18(5)-24=+36$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">إشارة $f'(x)$: &nbsp; $+\;+\;+\;(-1)\;-\;-\;-\;(4)\;+\;+\;+$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">عند $x=-1$ الإشارة تتغيّر من $+$ إلى $-$ (نهاية عظمى)؛ عند $x=4$ الإشارة تتغيّر من $-$ إلى $+$ (نهاية صغرى). نعوّض في الدالة الأصلية</p>
+          <div class="calc-flow">
+            <div class="calc-line">$y=f(-1)$</div>
+            <div class="calc-line">$y=2(-1)^3-9(-1)^2-24(-1)-12$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$y=-2-9+24-12=1$</div>
+            <div class="calc-line">$y=f(4)=2(4)^3-9(4)^2-24(4)-12$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$y=128-144-96-12=-124$</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية عظمى محلية عند $(-1,1)$، ونهاية صغرى محلية عند $(4,-124)$؛ مناطق التزايد $\{x<-1\}\cup\{x>4\}$، ومناطق التناقص $(-1,4)$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">10</span> مثال 10</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex10">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد النقاط على المنحني $f(x)=2x^3-3x^2-12x+2$ والتي يكون فيها المماس موازياً لمحور السينات.</div>
+      <div class="hidden-steps" id="steps-ex10">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">يكون المماس موازياً لمحور السينات عندما يكون ميل المماس صفراً، أي أن مشتقة الدالة تساوي صفراً لأن ميل المماس هو مشتقة الدالة عند تلك النقطة</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=6x^2-6x-12$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$f'(x)=0 \Rightarrow [6x^2-6x-12=0]\div6$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$x^2-x-2=0 \Rightarrow (x-2)(x+1)=0$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">إما &nbsp; $x-2=0 \Rightarrow x=2$ &nbsp; أو &nbsp; $x+1=0 \Rightarrow x=-1$</p>
+          <div class="calc-flow">
+            <div class="calc-line">نعوّض قيمة $x=2$ في الدالة الأصلية</div>
+            <div class="calc-line">$y=f(2)=2(2)^3-3(2)^2-12(2)+2$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$y=16-12-24+2=-18$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">النقطة الأولى $P_1(2,-18)$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">الآن نعوّض قيمة $x=-1$ في الدالة الأصلية</p>
+          <div class="calc-flow">
+            <div class="calc-line">$y=f(-1)$</div>
+            <div class="calc-line">$y=2(-1)^3-3(-1)^2-12(-1)+2$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$y=-2-3+12+2=9$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">النقطة الثانية $P_2(-1,9)$</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ النقاط التي يكون فيها المماس موازياً لمحور السينات هما النقطتان $P_1(2,-18)$، $P_2(-1,9)$. ∎</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: تصنيف النقاط الحرجة</h2>
+      <p>حرّك المزلاج على طول منحني $f(x)=2x^3-9x^2-24x-12$ (مثال 9b) وشاهد كيف تتغيّر إشارة $f'(x)$ عند الاقتراب من كل نقطة حرجة، فتتحدد هل هي نهاية عظمى أم نهاية صغرى محلية.</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="maxminPlot" width="520" height="340"></svg></div>
+        <div class="io-row">
+          <label for="mmSlider" style="min-width:8rem">النقطة <b>x</b> = <span id="mmVal">0</span></label>
+          <input type="range" id="mmSlider" class="neu-range" min="-3" max="6.5" step="0.1" value="0">
+        </div>
+        <div class="rule-box" id="mmOut" style="font-size:1.05rem"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين تطبيقي">
+    <h2 style="margin-bottom:.25rem">📝 تمرين تطبيقي</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد النهايات العظمى والصغرى المحلية للدالة $f(x)=x^3-3x^2$.</div>
+      <div class="hidden-steps" id="steps-pq1">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجد المشتقة الأولى، ونجعلها تساوي صفر</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=3x^2-6x$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line">$3x^2-6x=0 \Rightarrow 3x(x-2)=0$</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">$x=0$ <span class="ar-safe">أو</span> $x=2$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نختبر إشارة $f'(x)$: &nbsp; $+\;+\;(0)\;-\;-\;(2)\;+\;+$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">عند $x=0$: من $+$ إلى $-$ (عظمى)؛ عند $x=2$: من $-$ إلى $+$ (صغرى)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض في الدالة الأصلية</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f(0)=0^3-3(0)^2=0$</div>
+            <div class="calc-line">$f(2)=2^3-3(2)^2=8-12=-4$</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ نهاية عظمى محلية عند $(0,0)$، ونهاية صغرى محلية عند $(2,-4)$. ∎</div>
+      </div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد النقاط على المنحني $f(x)=x^3-3x+1$ التي يكون فيها المماس موازياً لمحور السينات.</div>
+      <div class="hidden-steps" id="steps-pq2">
+      <ol class="steps">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">المماس موازٍ لمحور السينات عندما $f'(x)=0$</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f'(x)=3x^2-3=0 \Rightarrow x^2=1 \Rightarrow x=\pm1$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=1$ <span class="ar-safe">و</span> $x=-1$ في الدالة الأصلية</p>
+          <div class="calc-flow">
+            <div class="calc-line">$f(1)=1-3+1=-1$</div>
+            <div class="calc-line">$f(-1)=-1+3+1=3$</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ النقطتان $(1,-1)$ <span class="ar-safe">و</span> $(-1,3)$. ∎</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>1.</span><span>إذا تغيّرت إشارة $f'(x)$ من الموجب إلى السالب حول $x=c$ فإن $(c,f(c))$:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نهاية عظمى محلية</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نهاية صغرى محلية</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نقطة انقلاب</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا تمثّل شيئاً</span></label>
+        </div>
+        <div class="quiz-explain">تغيّر الإشارة من $+$ إلى $-$ يعني أن الدالة كانت متزايدة ثم أصبحت متناقصة، أي قمة محلية (نهاية عظمى).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>2.</span><span>في مثال 9(b)، النقطة $(4,-124)$ تمثّل:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نهاية عظمى محلية</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نهاية صغرى محلية</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نقطة حرجة فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا تنتمي لمنحني الدالة</span></label>
+        </div>
+        <div class="quiz-explain">عند $x=4$ تتغيّر إشارة $f'(x)$ من السالب إلى الموجب، فهي نهاية صغرى محلية.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>3.</span><span>إذا لم تتغيّر إشارة $f'(x)$ حول نقطة حرجة $c$ فإن هذه النقطة:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نهاية عظمى</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نهاية صغرى</span></label>
+          <label class="quiz-opt"><input type="radio"><span>حرجة فقط، ليست عظمى ولا صغرى</span></label>
+          <label class="quiz-opt"><input type="radio"><span>غير حرجة</span></label>
+        </div>
+        <div class="quiz-explain">عدم تغيّر الإشارة يعني أن الدالة استمرت بالتزايد أو التناقص عبر النقطة، فهي حرجة فقط لكنها مفيدة في رسم الدالة.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>عند نقطة النهاية العظمى أو الصغرى المحلية، يكون ميل المماس للمنحني:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>موجباً دائماً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>سالباً دائماً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>غير معرّف</span></label>
+          <label class="quiz-opt"><input type="radio"><span>صفراً (مماس موازٍ لمحور السينات)</span></label>
+        </div>
+        <div class="quiz-explain">عند النهايات المحلية تكون $f'(x)=0$، أي أن المماس أفقي (موازٍ لمحور السينات)، كما في مثال 10.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>في مثال 9(a)، $f(x)=16-6x-3x^2$ لها:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>نهايتان: عظمى وصغرى</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نهاية عظمى محلية واحدة فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>نهاية صغرى محلية واحدة فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا توجد نهايات محلية</span></label>
+        </div>
+        <div class="quiz-explain">الدالة تربيعية بمعامل $x^2$ سالب، فمشتقتها خط مستقيم له جذر واحد فقط عند $x=-1$، وتتغيّر الإشارة من $+$ إلى $-$، أي نهاية عظمى واحدة عند $(-1,19)$.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>عند $x=c$: تغيّر إشارة $f'(x)$ من $+$ إلى $-$ ⇐ نهاية عظمى محلية؛ من $-$ إلى $+$ ⇐ نهاية صغرى محلية.</span></li>
+        <li><span>إذا لم تتغيّر الإشارة، فالنقطة حرجة فقط، وتفيد في رسم الدالة لاحقاً.</span></li>
+        <li><span>عند أي نهاية محلية يكون المماس أفقياً، أي $f'(x)=0$.</span></li>
+        <li><span>الخطوات: مشتقة أولى ⇐ نجعلها صفراً ⇐ نفحص الإشارة على خط الأعداد ⇐ نصنّف النقطة ⇐ نعوّض لإيجاد $y$.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l4" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع لتصنيف النقاط الحرجة.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l4">
+        <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الرابع">
+          <line x1="410" y1="150" x2="170" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="170" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="150" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="150" r="54" fill="#2fd18f"/>
+            <text x="410" y="145" text-anchor="middle" fill="#fff" font-weight="800" font-size="12" font-family="Cairo,sans-serif">تصنيف النقطة</text>
+            <text x="410" y="162" text-anchor="middle" fill="#fff" font-weight="800" font-size="11" font-family="Cairo,sans-serif">f′(c)=0</text></g>
+
+          <g><circle cx="170" cy="70" r="48" fill="#ff6b9d"/>
+            <text x="170" y="65" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">+ إلى −</text>
+            <text x="170" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">عظمى محلية</text></g>
+
+          <g><circle cx="170" cy="230" r="48" fill="#3fa9f5"/>
+            <text x="170" y="225" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">− إلى +</text>
+            <text x="170" y="242" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">صغرى محلية</text></g>
+
+          <g><circle cx="650" cy="150" r="48" fill="#ffab5e"/>
+            <text x="650" y="145" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">بلا تغيّر</text>
+            <text x="650" y="162" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">حرجة فقط</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الثالث · تطبيقات على المشتقة — الدرس 4: النهايات العظمى والصغرى المحلية</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch3.js"></script>
+<script>
+(function(){
+  var svg = document.getElementById("maxminPlot");
+  var slider = document.getElementById("mmSlider");
+  var xVal = document.getElementById("mmVal");
+  var out = document.getElementById("mmOut");
+  var f = function(x){ return 2*x*x*x-9*x*x-24*x-12; };
+  var fp = function(x){ return 6*x*x-18*x-24; };
+
+  var ns = "http://www.w3.org/2000/svg";
+  function addPath(d, stroke, width){
+    var p = document.createElementNS(ns,"path");
+    p.setAttribute("d",d); p.setAttribute("fill","none");
+    p.setAttribute("stroke",stroke); p.setAttribute("stroke-width",width||3); p.setAttribute("stroke-linecap","round");
+    svg.appendChild(p);
+  }
+  function addDot(mapper,x,y,color,label){
+    var pt = mapper.toPx(x,y);
+    var c = document.createElementNS(ns,"circle");
+    c.setAttribute("cx",pt[0]); c.setAttribute("cy",pt[1]); c.setAttribute("r","5.5"); c.setAttribute("fill",color);
+    svg.appendChild(c);
+    if(label){
+      var t = document.createElementNS(ns,"text");
+      t.setAttribute("x",pt[0]+8); t.setAttribute("y",pt[1]-8);
+      t.setAttribute("font-size","12"); t.setAttribute("font-weight","800"); t.setAttribute("fill",color);
+      t.setAttribute("font-family","Cairo,sans-serif");
+      t.textContent = label;
+      svg.appendChild(t);
+    }
+  }
+
+  function render(){
+    var x = parseFloat(slider.value);
+    xVal.textContent = x.toFixed(1);
+    var m = Ch4Plot.drawAxes(svg,{xmin:-3.2,xmax:7,ymin:-135,ymax:60,step:20,w:520,h:340});
+    addPath(Ch4Plot.pathD(f,-2.6,6.3,m), "#3fa9f5", 3);
+    addDot(m,-1,1,"#2fd18f","(-1,1) عظمى");
+    addDot(m,4,-124,"#ff6b9d","(4,-124) صغرى");
+    addDot(m, x, f(x), "#7c6fee");
+
+    var slope = fp(x);
+    var state, color;
+    if(Math.abs(slope) < 3){ state = "قريب من نقطة حرجة — لاحظ تغيّر اتجاه الميل"; color = "#ffab5e"; }
+    else if(slope > 0){ state = "الدالة متزايدة (الميل موجب)"; color = "#2fd18f"; }
+    else { state = "الدالة متناقصة (الميل سالب)"; color = "#ff6b9d"; }
+
+    out.innerHTML = "$$f'("+x.toFixed(1)+")="+slope.toFixed(1)+"$$" +
+      "<div style='color:"+color+";font-weight:800;margin-top:.3rem'>"+state+"</div>";
+    if(window.Ch4 && window.Ch4.typeset) window.Ch4.typeset([out]);
+  }
+  slider.addEventListener("input", render);
+  render();
+})();
+</script>
+</body>
+</html>

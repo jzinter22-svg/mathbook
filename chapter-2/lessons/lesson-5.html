@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 5: القطع الزائد — تعريفه ومعادلته ورسمه — الفصل الثاني</title>
+<meta name="description" content="تعريف القطع الزائد بوصفه فرق بعدين ثابتاً، اشتقاق معادلتيه القياسيتين والمستقيمين المحاذيين (المقاربين)، أهم العلاقات، طريقة رسمه، مع أمثلة وتمرين (3-2).">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-5.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 5 من 5 · 2-4-1 إلى 2-4-3</span>
+    <h1>القطع الزائد: تعريفه ومعادلته ورسمه</h1>
+    <p class="lead">نختم الفصل بدراسة <b>القطع الزائد</b>: مجموعة النقاط التي تكون القيمة المطلقة للفرق بين بعديها عن بؤرتين ثابتتين عدداً ثابتاً $2a$. نشتق معادلتيه القياسيتين ومستقيمَيه المحاذيين (المقاربين)، وأهم علاقاته، ثم نتعلم رسمه.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يتعرف على تعريف القطع الزائد: مجموعة نقاط القيمة المطلقة لفرق بعدي كل منها عن بؤرتين ثابتتين تساوي عدداً ثابتاً $2a$.</span></li>
+        <li><span class="obj-num">2</span><span>يحدد عناصر القطع الزائد: المركز، البؤرتان، الرأسان (على المحور الحقيقي)، القطبان (على المحور التخيلي/المرافق).</span></li>
+        <li><span class="obj-num">3</span><span>يشتق المعادلتين القياسيتين للقطع الزائد الذي مركزه نقطة الأصل: $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$ (بؤرتاه على $X$) و $\dfrac{y^2}{a^2}-\dfrac{x^2}{b^2}=1$ (بؤرتاه على $Y$).</span></li>
+        <li><span class="obj-num">4</span><span>يستخدم العلاقة $c^2=a^2+b^2$ والاختلاف المركزي $e=\dfrac{c}{a}>1$ ومعادلتي المستقيمين المحاذيين لاستخراج عناصر القطع أو معادلته.</span></li>
+        <li><span class="obj-num">5</span><span>يرسم القطع الزائد على الورق البياني باستخدام المستطيل المحوري والمستقيمين المحاذيين.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 التعريف">
+    <div class="def-box">
+      <span class="def-label">📌 تعريف — القطع الزائد (Hyperbola)</span>
+      <p style="margin:.3rem 0">هو مجموعة كل النقاط في المستوي التي يكون فرق بعدي كل منها عن نقطتين معلومتين ثابتتين (بالقيمة المطلقة) عدداً ثابتاً. كل من النقطتين المعلومتين تسمى <b>بؤرة</b> (Focus)، والنقطة المنصّفة للمسافة بين البؤرتين تسمى <b>مركز القطع الزائد</b> (Center).</p>
+      <p style="margin:.3rem 0">لأي نقطة $P(x,y)$ على القطع الزائد:</p>
+      <div class="mj-scroll">$$\left|\overline{PF_1}-\overline{PF_2}\right| = 2a \qquad \text{أي} \qquad |d_1-d_2|=2a$$</div>
+      <p style="margin:.3rem 0">يسمى كل من $\overline{PF_1},\overline{PF_2}$ نصفي القطرين البؤريين للنقطة $P$. والقطعة $\overline{V_1V_2}$ (بين رأسي القطع) تمثّل <b>المحور الحقيقي</b> وطولها $2a$، أما القطعة $\overline{B_1B_2}$ (بين قطبي القطع، العمودية على المحور الحقيقي والمارة بالمركز) فتسمى <b>المحور التخيلي (المرافق)</b> وطولها $2b$.</p>
+      <div class="callout tip fade-up" style="margin-top:.8rem">
+        <span class="icon">📌</span>
+        <span>لرسم القطع الزائد يستوجب رسم مستطيل يمر بالرأسين والقطبين وأضلاعه توازي المحورين الإحداثيين؛ قطرا هذا المستطيل ممتدين خارج حدوده هما المستقيمان المحاذيان (المقاربان) اللذان يلامسهما منحني القطع الزائد.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: $|\overline{PF_1}-\overline{PF_2}|=2a$ عند كل نقطة</h2>
+      <p>حرّك المزلاج لتحريك النقطة $P$ على الفرع الأيمن من القطع الزائد $\dfrac{x^2}{16}-\dfrac{y^2}{9}=1$ (حيث $a=4,\,b=3,\,c=5$)، وشاهد كيف يبقى فرق المسافتين $d_1,d_2$ (بالقيمة المطلقة) ثابتاً ومساوياً لـ $2a=8$.</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="defFigHyperbola" width="460" height="360" viewBox="0 0 460 360" role="img" aria-label="رسم يوضح ثبات القيمة المطلقة لفرق بعدي نقطة على القطع الزائد عن البؤرتين"></svg></div>
+        <div class="io-row">
+          <label for="tParamSlider" style="min-width:6rem">المعامل $t$ = <span id="tParamVal">0</span></label>
+          <input type="range" id="tParamSlider" class="neu-range" min="-150" max="150" step="5" value="0">
+        </div>
+        <div class="rule-box" id="hypDiffFormula" style="font-size:1.05rem">$$|d_1-d_2| = 8.00 = 2a$$</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <h2>💡 أولاً: معادلة القطع الزائد الذي مركزه نقطة الأصل وبؤرتاه تنتميان إلى المحور $X$</h2>
+      <p>لنفرض أن إحداثيي البؤرتين هما $F_1(c,0),\,F_2(-c,0)$، وأن البعد الثابت $2a$. لتكن $P(x,y)$ أية نقطة على القطع الزائد، وبموجب التعريف $|\overline{PF_1}-\overline{PF_2}|=2a$.</p>
+      <button class="neu-btn" data-reveal-steps="deriv-hyp-x">إظهار الاشتقاق خطوة بخطوة</button>
+    </div>
+
+    <ol class="steps hidden-steps" id="deriv-hyp-x" style="margin-top:1rem">
+      <li class="step"><span class="step-dot">1</span><div class="step-body">
+        <p class="calc-note">نطبّق قانون المسافة، ونعزل أحد الجذرين ثم نربّع الطرفين مرتين متتاليتين (بنفس أسلوب القطع الناقص)</p>
+        <div class="calc-flow">
+          <div class="calc-line">\( d_1-d_2=\pm2a \Rightarrow \sqrt{(x-c)^2+y^2}=\pm2a+\sqrt{(x+c)^2+y^2} \)</div>
+          <div class="calc-arrow">↓ نربّع، نحذف $y^2$ المشتركة، ونفتح الأقواس</div>
+          <div class="calc-line">\( -4xc-4a^2 = \pm4a\sqrt{(x+c)^2+y^2} \)</div>
+        </div>
+      </div></li>
+      <li class="step"><span class="step-dot">2</span><div class="step-body">
+        <p class="calc-note">نقسم على $-4$ ثم نربّع الطرفين مرة ثانية ونبسّط</p>
+        <div class="calc-flow">
+          <div class="calc-line">\( xc+a^2 = \pm a\sqrt{(x+c)^2+y^2} \)</div>
+          <div class="calc-arrow">↓ نربّع، نحذف $2a^2xc$ المشتركة</div>
+          <div class="calc-line calc-box">\( x^2(a^2-c^2)+a^2y^2 = a^2(a^2-c^2) \quad \cdots(1) \)</div>
+        </div>
+      </div></li>
+      <li class="step"><span class="step-dot">3</span><div class="step-body">
+        <p class="calc-note">من الشكل الهندسي نلاحظ أن $c>a>0$ دائماً في القطع الزائد، وبالتالي $a^2-c^2<0$؛ نفرض $b^2=c^2-a^2$ أي $a^2-c^2=-b^2$</p>
+        <div class="calc-flow">
+          <div class="calc-line">\( -x^2b^2+a^2y^2 = -a^2b^2 \)</div>
+          <div class="calc-arrow">↓ نقسم الطرفين على $-a^2b^2$</div>
+          <div class="calc-line calc-box">\( \dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1 \quad \cdots (7\text{-}2) \)</div>
+        </div>
+      </div></li>
+    </ol>
+
+    <div class="callout tip fade-up" style="margin-top:1rem">
+      <span class="icon">💬</span>
+      <span>وهي المعادلة القياسية للقطع الزائد الذي بؤرتاه تنتميان إلى المحور $X$ ومركزه نقطة الأصل، حيث $c^2=a^2+b^2$. ويمكن استخراج معادلة المستقيمين المحاذيين باستبدال الطرف الأيمن (العدد $1$) بالعدد $0$: <b>$\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=0 \Rightarrow y=\pm\dfrac{b}{a}x$</b>.</span>
+    </div>
+    <div class="callout warn fade-up" style="margin-top:.8rem">
+      <span class="icon">⚠️</span>
+      <span>وبطريقة مماثلة، إذا كانت البؤرتان $F_1(0,c),\,F_2(0,-c)$ تنتميان إلى المحور $Y$ ومركزه نقطة الأصل، نحصل على المعادلة: <b>$\dfrac{y^2}{a^2}-\dfrac{x^2}{b^2}=1$ … (8-2)</b>، ومعادلة المستقيمين المحاذيين لها: <b>$y=\pm\dfrac{a}{b}x$</b>.</span>
+    </div>
+
+    <div class="neu" style="padding:1.25rem 1.5rem;margin-top:1.2rem">
+      <div class="mindmap-wrap"><svg id="hypFig" width="460" height="320" viewBox="0 0 460 320" role="img" aria-label="القطع الزائد ومستقيماه المحاذيان (المقاربان) والمستطيل المحوري"></svg></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="relations" data-navlabel="📐 علاقات مهمة">
+    <div class="card neu">
+      <h2>📐 علاقات مهمة في القطع الزائد الذي مركزه نقطة الأصل</h2>
+      <div class="grid grid-2">
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>①</b> طول المحور الحقيقي: <span class="mj-scroll">$2a$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>②</b> طول المحور التخيلي (المرافق): <span class="mj-scroll">$2b$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>③</b> المسافة بين البؤرتين: <span class="mj-scroll">$2c$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>④</b> العلاقة الأساسية: <span class="mj-scroll">$c^2=a^2+b^2$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>⑤</b> البؤرتان والرأسان دوماً على نفس المحور؛ القطبان على المحور المخالف.</div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>⑥</b> يمكن دائماً أن يكون: <span class="mj-scroll">$a\lt b,\; a\gt b,\;$ أو $a=b$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem;border-inline-start:4px solid var(--accent-purple)"><b>⑦</b> دائماً <span class="mj-scroll">$c>a$</span>، والاختلاف المركزي: <span class="mj-scroll">$e=\dfrac{c}{a}>1$</span></div>
+        <div class="neu-inset" style="padding:1rem 1.2rem"><b>⑧</b> $\overline{PF_1},\overline{PF_2}$: نصفا القطرين البؤريين لأي نقطة $P$ على القطع.</div>
+      </div>
+      <div class="callout tip fade-up" style="margin-top:1rem">
+        <span class="icon">💬</span>
+        <span>الفرق الجوهري عن القطع الناقص: هنا $c>a$ دوماً (فالاختلاف المركزي $>1$)، والعلاقة بين $a,b,c$ جمعية ($c^2=a^2+b^2$) لا طرحية، ولا قيد على أن يكون $a$ أكبر أو أصغر من $b$.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً. الأمثلة 29-25 مرتّبة كما في الكتاب المدرسي، مع مثال إضافي في النهاية.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">25</span> مثال 25</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex25">إظهار الحل</button>
+      </div>
+      <div class="example-problem">قطع زائد معادلته $\dfrac{x^2}{16}-\dfrac{y^2}{36}=1$. جد إحداثيي رأسيه وقطبيه وبؤرتيه، وطول كل من محوريه، والمسافة بين بؤرتيه، ومقدار اختلافه المركزي، ثم استخرج معادلة المستقيمين المحاذيين.</div>
+      <ol class="steps hidden-steps" id="steps-ex25">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بالمقارنة مع $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$ (بؤرتان على $X$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a^2=16\Rightarrow a=4 \)</div><div class="calc-line calc-box">\( b^2=36\Rightarrow b=6 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note"><b>المركز:</b> لا توجد حدود من الدرجة الأولى في $x,y$ في المعادلة، إذن المركز نقطة الأصل</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C(0,0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note"><b>الرأسان:</b> على المحور الحقيقي ($X$) عند $(\pm a,0)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(4,0) \)</div><div class="calc-line calc-box">\( V_2(-4,0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note"><b>القطبان:</b> على المحور المرافق ($Y$) عند $(0,\pm b)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( B_1(0,6) \)</div><div class="calc-line calc-box">\( B_2(0,-6) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note"><b>البؤرتان:</b> $c^2=a^2+b^2=16+36=52 \Rightarrow c=2\sqrt{13}$؛ البؤرتان على المحور الحقيقي عند $(\pm c,0)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( F_1(2\sqrt{13},0) \)</div><div class="calc-line calc-box">\( F_2(-2\sqrt{13},0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note"><b>أطوال المحاور:</b> المحور الحقيقي $2a$، المرافق $2b$، والمسافة بين البؤرتين $2c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=8 \)</div><div class="calc-line calc-box">\( 2b=12 \)</div><div class="calc-line calc-box">\( 2c=4\sqrt{13} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note"><b>الاختلاف المركزي:</b> $e=\dfrac{c}{a}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( e=\dfrac{2\sqrt{13}}{4}=\dfrac{\sqrt{13}}{2}\approx1.8>1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note"><b>المستقيمان المحاذيان:</b> بؤرتان على $X$: $y=\pm\dfrac{b}{a}x$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\pm\dfrac{6}{4}x \Rightarrow y=\pm\dfrac32x \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note"><b>الرسم:</b> نعيّن $C,V_1,V_2,B_1,B_2,F_1,F_2$ ونرسم المستطيل المحوري والمستقيمين المحاذيين ثم فرعي المنحني</p>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-ex25" width="460" height="320" viewBox="0 0 460 320" role="img" aria-label="الرسم البياني للقطع الزائد x^2/16-y^2/36=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $C(0,0)$، $V_1(4,0),V_2(-4,0)$، $B_1(0,6),B_2(0,-6)$، $F_1(2\sqrt{13},0),F_2(-2\sqrt{13},0)$؛ $2a=8,\,2b=12,\,2c=4\sqrt{13}$؛ $e\approx1.8$؛ المستقيمان المحاذيان $y=\pm\tfrac32x$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">26</span> مثال 26</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex26">إظهار الحل</button>
+      </div>
+      <div class="example-problem">قطع زائد معادلته $9y^2-9x^2=81$. جد إحداثيي رأسيه وقطبيه وبؤرتيه، وطول كل من محوريه، والمسافة بين بؤرتيه، ومقدار اختلافه المركزي، ثم استخرج معادلة المستقيمين المحاذيين.</div>
+      <ol class="steps hidden-steps" id="steps-ex26">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقسم الطرفين على $81$: $\dfrac{y^2}{9}-\dfrac{x^2}{9}=1$. بالمقارنة مع $\dfrac{y^2}{a^2}-\dfrac{x^2}{b^2}=1$ (بؤرتان على $Y$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a^2=9\Rightarrow a=3 \)</div><div class="calc-line calc-box">\( b^2=9\Rightarrow b=3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note"><b>المركز:</b> لا توجد حدود من الدرجة الأولى، إذن المركز نقطة الأصل</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C(0,0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note"><b>الرأسان:</b> على المحور الحقيقي ($Y$ هنا) عند $(0,\pm a)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(0,3) \)</div><div class="calc-line calc-box">\( V_2(0,-3) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note"><b>القطبان:</b> على المحور المرافق ($X$ هنا) عند $(\pm b,0)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( B_1(3,0) \)</div><div class="calc-line calc-box">\( B_2(-3,0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note"><b>البؤرتان:</b> $c^2=a^2+b^2=9+9=18 \Rightarrow c=3\sqrt2$؛ البؤرتان على المحور الحقيقي عند $(0,\pm c)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( F_1(0,3\sqrt2) \)</div><div class="calc-line calc-box">\( F_2(0,-3\sqrt2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note"><b>أطوال المحاور:</b> المحور الحقيقي $2a$، المرافق $2b$، والمسافة بين البؤرتين $2c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=6 \)</div><div class="calc-line calc-box">\( 2b=6 \)</div><div class="calc-line calc-box">\( 2c=6\sqrt2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note"><b>الاختلاف المركزي:</b> $e=\dfrac{c}{a}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( e=\dfrac{3\sqrt2}{3}=\sqrt2\approx1.4>1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note"><b>المستقيمان المحاذيان:</b> بؤرتان على $Y$: $y=\pm\dfrac{a}{b}x$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\pm\dfrac33x \Rightarrow y=\pm x \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note"><b>الرسم:</b> نعيّن $C,V_1,V_2,B_1,B_2,F_1,F_2$ ونرسم المستطيل المحوري والمستقيمين المحاذيين ثم فرعي المنحني</p>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-ex26" width="460" height="320" viewBox="0 0 460 320" role="img" aria-label="الرسم البياني للقطع الزائد y^2/9-x^2/9=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $C(0,0)$، $V_1(0,3),V_2(0,-3)$، $B_1(3,0),B_2(-3,0)$، $F_1(0,3\sqrt2),F_2(0,-3\sqrt2)$؛ $2a=6,\,2b=6,\,2c=6\sqrt2$؛ $e\approx1.4$؛ المستقيمان المحاذيان $y=\pm x$ (قطع زائد متساوي الأضلاع). ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">27</span> مثال 27</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex27">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع الزائد الذي مركزه نقطة الأصل ورأساه $V_1(\sqrt{10},0),\,V_2(-\sqrt{10},0)$ وبؤرتاه $F_1(\sqrt{18},0),\,F_2(-\sqrt{18},0)$.</div>
+      <ol class="steps hidden-steps" id="steps-ex27">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">من الرأسين والبؤرتين على المحور $X$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=\sqrt{10} \Rightarrow a^2=10 \)</div><div class="calc-line calc-box">\( c=\sqrt{18} \Rightarrow c^2=18 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نستخرج $b^2$ من $c^2=a^2+b^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 18=10+b^2 \Rightarrow b^2=8 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">البؤرتان على $X$ فنستخدم $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{10}-\dfrac{y^2}{8}=1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $\dfrac{x^2}{10}-\dfrac{y^2}{8}=1$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">28</span> مثال 28</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex28">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ارسم القطع الزائد الذي معادلته $\dfrac{x^2}{64}-\dfrac{y^2}{36}=1$.</div>
+      <ol class="steps hidden-steps" id="steps-ex28">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نستخرج $a,b,c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a^2=64\Rightarrow a=8 \)</div><div class="calc-line calc-box">\( b^2=36\Rightarrow b=6 \)</div><div class="calc-line calc-box">\( c^2=a^2+b^2=100\Rightarrow c=10 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">أي أن رأسي القطع الزائد $V_1(8,0),V_2(-8,0)$ وقطبيه $B_1(0,6),B_2(0,-6)$ وبؤرتيه $F_1(10,0),F_2(-10,0)$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(8,0) \)</div><div class="calc-line calc-box">\( V_2(-8,0) \)</div><div class="calc-line calc-box">\( B_1(0,6) \)</div><div class="calc-line calc-box">\( B_2(0,-6) \)</div><div class="calc-line calc-box">\( F_1(10,0) \)</div><div class="calc-line calc-box">\( F_2(-10,0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نرسم مستطيلاً يمر بالرأسين والقطبين أضلاعه توازي المحورين الإحداثيين، ثم نرسم قطري المستطيل ممتدين خارج حدوده فيكونان المستقيمين المحاذيين لمنحني القطع الزائد، ونرسم المنحني يميناً ويساراً بمحاذاة قطري المستطيل</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\pm\dfrac{6}{8}x=\pm\dfrac34x \)</div></div>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-ex28" width="460" height="320" viewBox="0 0 460 320" role="img" aria-label="الرسم البياني للقطع الزائد x^2/64-y^2/36=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ راجع الرسم أعلاه. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">29</span> مثال 29</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex29">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ارسم القطع الزائد الذي معادلته $9y^2-25x^2=225$.</div>
+      <ol class="steps hidden-steps" id="steps-ex29">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقسم الطرفين على $225$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{y^2}{25}-\dfrac{x^2}{9}=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نستخرج $a,b,c$ (بؤرتان على $Y$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a^2=25\Rightarrow a=5 \)</div><div class="calc-line calc-box">\( b^2=9\Rightarrow b=3 \)</div><div class="calc-line calc-box">\( c^2=a^2+b^2=34\Rightarrow c=\sqrt{34} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">أي أن رأسي القطع الزائد $V_1(0,5),V_2(0,-5)$ وقطبيه $B_1(3,0),B_2(-3,0)$ وبؤرتيه $F_1(0,\sqrt{34}),F_2(0,-\sqrt{34})$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(0,5) \)</div><div class="calc-line calc-box">\( V_2(0,-5) \)</div><div class="calc-line calc-box">\( B_1(3,0) \)</div><div class="calc-line calc-box">\( B_2(-3,0) \)</div><div class="calc-line calc-box">\( F_1(0,\sqrt{34}) \)</div><div class="calc-line calc-box">\( F_2(0,-\sqrt{34}) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نرسم مستطيلاً يمر بالرأسين والقطبين، ثم قطريه الممتدين هما المستقيمان المحاذيان، ونرسم المنحني نحو الأعلى والأسفل بمحاذاتهما</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\pm\dfrac{a}{b}x=\pm\dfrac53x \)</div></div>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-ex29" width="460" height="320" viewBox="0 0 460 320" role="img" aria-label="الرسم البياني للقطع الزائد y^2/25-x^2/9=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ رأسا القطع $(0,\pm5)$، قطباه $(\pm3,0)$، بؤرتاه $(0,\pm\sqrt{34})$، ومستقيماه المحاذيان $y=\pm\tfrac53x$. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">＋</span> مثال إضافي</div>
+        <button class="neu-btn" data-reveal-steps="steps-exbonus">إظهار الحل</button>
+      </div>
+      <div class="example-problem">النقطة $P(6,K)$ تنتمي إلى القطع الزائد الذي مركزه نقطة الأصل ومعادلته $x^2-3y^2=12$. جد قيمة $K$، ثم استخرج طول نصف القطر البؤري للنقطة $P$ من البؤرة اليمنى.</div>
+      <ol class="steps hidden-steps" id="steps-exbonus">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نرتّب المعادلة على الصورة القياسية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2-3y^2=12 \Rightarrow \dfrac{x^2}{12}-\dfrac{y^2}{4}=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=6$ لإيجاد $K$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{36}{12}-\dfrac{K^2}{4}=1 \Rightarrow 3-\dfrac{K^2}{4}=1 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( K^2=8 \Rightarrow K=\pm2\sqrt2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نجد البؤرة اليمنى: $a^2=12,\,b^2=4 \Rightarrow c^2=16 \Rightarrow c=4$، فالبؤرة اليمنى $F_1(4,0)$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \overline{PF_1}=\sqrt{(6-4)^2+(2\sqrt2)^2}=\sqrt{4+8}=\sqrt{12} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \overline{PF_1}=2\sqrt3 \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $K=\pm2\sqrt2$، ونصف القطر البؤري من البؤرة اليمنى $=2\sqrt3$ (هذا المثال هو نفسه السؤال 6 في تمرين (3-2) أدناه، محلولاً هنا بالتفصيل). ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="drawing" data-navlabel="🖊️ رسم القطع الزائد">
+    <div class="card neu">
+      <h2>🖊️ 2-4-3 رسم القطع الزائد</h2>
+      <p>لرسم القطع الزائد لا بد من اتباع الخطوات الآتية:</p>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>نعيّن على المستوي الإحداثي موقع الرأسين $V_1(a,0),V_2(-a,0)$ أو $V_1(0,a),V_2(0,-a)$ حسب الحالة.</span></li>
+        <li><span class="obj-num">2</span><span>نعيّن على المستوي الإحداثي موقع القطبين $B_1(0,b),B_2(0,-b)$ أو $B_1(b,0),B_2(-b,0)$ حسب الحالة.</span></li>
+        <li><span class="obj-num">3</span><span>نرسم مستطيلاً يمر بالرأسين والقطبين، أضلاعه توازي المحورين الإحداثيين.</span></li>
+        <li><span class="obj-num">4</span><span>نرسم قطري المستطيل ممتدين خارج حدوده، فيكونان المستقيمين المحاذيين اللذين لمنحني القطع الزائد.</span></li>
+        <li><span class="obj-num">5</span><span>عندما تكون البؤرتان والرأسان على المحور $X$ يُرسم المنحني يميناً ويساراً بمحاذاة قطري المستطيل؛ وعندما تكون على المحور $Y$ يُرسم المنحني نحو الأعلى والأسفل بمحاذاة قطري المستطيل.</span></li>
+        <li><span class="obj-num">6</span><span>نعيّن على المستوي الإحداثي موقع البؤرتين $F_1(c,0),F_2(-c,0)$ أو $F_1(0,c),F_2(0,-c)$ حسب الحالة.</span></li>
+      </ol>
+      <div class="neu" style="padding:1.25rem 1.5rem;margin-top:1rem">
+        <div class="mindmap-wrap"><svg id="drawHypFig" width="460" height="320" viewBox="0 0 460 320" role="img" aria-label="خطوات رسم القطع الزائد باستخدام المستطيل المحوري والمستقيمين المحاذيين"></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (3-2)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (3-2)</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1أ</span> السؤال 1 (أ)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الرأسين والقطبين والبؤرتين وطول كل من المحورين والمسافة بينهما ومقدار الاختلاف المركزي ثم استخرج معادلة المستقيمين المحاذيين للقطع الزائد: $2x^2-y^2=10$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقسم الطرفين على $10$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{5}-\dfrac{y^2}{10}=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بؤرتان على $X$: $a^2=5\Rightarrow a=\sqrt5$، $b^2=10\Rightarrow b=\sqrt{10}$، $c^2=5+10=15\Rightarrow c=\sqrt{15}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(\sqrt5,0) \)</div><div class="calc-line calc-box">\( V_2(-\sqrt5,0) \)</div><div class="calc-line calc-box">\( B_1(0,\sqrt{10}) \)</div><div class="calc-line calc-box">\( B_2(0,-\sqrt{10}) \)</div><div class="calc-line calc-box">\( F_1(\sqrt{15},0) \)</div><div class="calc-line calc-box">\( F_2(-\sqrt{15},0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">الأطوال والاختلاف المركزي والمستقيمان المحاذيان</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=2\sqrt5 \)</div><div class="calc-line calc-box">\( 2b=2\sqrt{10} \)</div><div class="calc-line calc-box">\( 2c=2\sqrt{15} \)</div><div class="calc-line calc-box">\( e=\dfrac{\sqrt{15}}{\sqrt5}=\sqrt3\approx1.73 \)</div><div class="calc-line calc-box">\( y=\pm\sqrt2\,x \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ راجع القيم أعلاه. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1ب</span> السؤال 1 (ب)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الرأسين والقطبين والبؤرتين وطول كل من المحورين والمسافة بينهما ومقدار الاختلاف المركزي ثم استخرج معادلة المستقيمين المحاذيين للقطع الزائد: $y^2-3x^2=12$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقسم الطرفين على $12$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{y^2}{12}-\dfrac{x^2}{4}=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بؤرتان على $Y$: $a^2=12\Rightarrow a=2\sqrt3$، $b^2=4\Rightarrow b=2$، $c^2=12+4=16\Rightarrow c=4$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(0,2\sqrt3) \)</div><div class="calc-line calc-box">\( V_2(0,-2\sqrt3) \)</div><div class="calc-line calc-box">\( B_1(2,0) \)</div><div class="calc-line calc-box">\( B_2(-2,0) \)</div><div class="calc-line calc-box">\( F_1(0,4) \)</div><div class="calc-line calc-box">\( F_2(0,-4) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">الأطوال والاختلاف المركزي والمستقيمان المحاذيان</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=4\sqrt3 \)</div><div class="calc-line calc-box">\( 2b=4 \)</div><div class="calc-line calc-box">\( 2c=8 \)</div><div class="calc-line calc-box">\( e=\dfrac{4}{2\sqrt3}=\dfrac{2\sqrt3}{3}\approx1.15 \)</div><div class="calc-line calc-box">\( y=\pm\sqrt3\,x \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ راجع القيم أعلاه. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1ج</span> السؤال 1 (ج)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الرأسين والقطبين والبؤرتين وطول كل من المحورين والمسافة بينهما ومقدار الاختلاف المركزي ثم استخرج معادلة المستقيمين المحاذيين للقطع الزائد: $16x^2-25y^2=400$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقسم الطرفين على $400$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{25}-\dfrac{y^2}{16}=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بؤرتان على $X$: $a^2=25\Rightarrow a=5$، $b^2=16\Rightarrow b=4$، $c^2=25+16=41\Rightarrow c=\sqrt{41}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(5,0) \)</div><div class="calc-line calc-box">\( V_2(-5,0) \)</div><div class="calc-line calc-box">\( B_1(0,4) \)</div><div class="calc-line calc-box">\( B_2(0,-4) \)</div><div class="calc-line calc-box">\( F_1(\sqrt{41},0) \)</div><div class="calc-line calc-box">\( F_2(-\sqrt{41},0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">الأطوال والاختلاف المركزي والمستقيمان المحاذيان</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=10 \)</div><div class="calc-line calc-box">\( 2b=8 \)</div><div class="calc-line calc-box">\( 2c=2\sqrt{41} \)</div><div class="calc-line calc-box">\( e=\dfrac{\sqrt{41}}{5}\approx1.28 \)</div><div class="calc-line calc-box">\( y=\pm\dfrac45x \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ راجع القيم أعلاه. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1د</span> السؤال 1 (د)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الرأسين والقطبين والبؤرتين وطول كل من المحورين والمسافة بينهما ومقدار الاختلاف المركزي ثم استخرج معادلة المستقيمين المحاذيين للقطع الزائد: $7y^2-4x^2=28$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقسم الطرفين على $28$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{y^2}{4}-\dfrac{x^2}{7}=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">بؤرتان على $Y$: $a^2=4\Rightarrow a=2$، $b^2=7\Rightarrow b=\sqrt7$، $c^2=4+7=11\Rightarrow c=\sqrt{11}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(0,2) \)</div><div class="calc-line calc-box">\( V_2(0,-2) \)</div><div class="calc-line calc-box">\( B_1(\sqrt7,0) \)</div><div class="calc-line calc-box">\( B_2(-\sqrt7,0) \)</div><div class="calc-line calc-box">\( F_1(0,\sqrt{11}) \)</div><div class="calc-line calc-box">\( F_2(0,-\sqrt{11}) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">الأطوال والاختلاف المركزي والمستقيمان المحاذيان</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=4 \)</div><div class="calc-line calc-box">\( 2b=2\sqrt7 \)</div><div class="calc-line calc-box">\( 2c=2\sqrt{11} \)</div><div class="calc-line calc-box">\( e=\dfrac{\sqrt{11}}{2}\approx1.66 \)</div><div class="calc-line calc-box">\( y=\pm\dfrac{2\sqrt7}{7}x \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ راجع القيم أعلاه. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1هـ</span> السؤال 1 (هـ)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الرأسين والقطبين والبؤرتين وطول كل من المحورين والمسافة بين البؤرتين ومقدار الاختلاف المركزي ثم استخرج معادلة المستقيمين المحاذيين للقطع الزائد: $8x^2-8y^2=16$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقسم الطرفين على $16$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{2}-\dfrac{y^2}{2}=1 \Rightarrow a^2=b^2=2 \Rightarrow a=b=\sqrt2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$c^2=a^2+b^2=4 \Rightarrow c=2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1(\sqrt2,0) \)</div><div class="calc-line calc-box">\( V_2(-\sqrt2,0) \)</div><div class="calc-line calc-box">\( B_1(0,\sqrt2) \)</div><div class="calc-line calc-box">\( B_2(0,-\sqrt2) \)</div><div class="calc-line calc-box">\( F_1(2,0) \)</div><div class="calc-line calc-box">\( F_2(-2,0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">الأطوال والاختلاف المركزي والمستقيمان المحاذيان</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=2\sqrt2 \)</div><div class="calc-line calc-box">\( 2b=2\sqrt2 \)</div><div class="calc-line calc-box">\( 2c=4 \)</div><div class="calc-line calc-box">\( e=\dfrac{2}{\sqrt2}=\sqrt2>1 \)</div><div class="calc-line calc-box">\( y=\pm x \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ قطع زائد متساوي الأضلاع ($a=b$)؛ مستقيماه المحاذيان $y=\pm x$ متعامدان. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1و</span> السؤال 1 (و)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1f">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد الرأسين والقطبين والبؤرتين وطول كل من المحورين والمسافة بينهما ومقدار الاختلاف المركزي ثم استخرج معادلة المستقيمين المحاذيين للقطع الزائد: $4y^2-4x^2=1$.</div>
+      <ol class="steps hidden-steps" id="steps-pq1f">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقسم الطرفين على $1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{y^2}{1/4}-\dfrac{x^2}{1/4}=1 \Rightarrow a^2=b^2=\dfrac14 \Rightarrow a=b=\dfrac12 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$c^2=a^2+b^2=\dfrac12 \Rightarrow c=\dfrac{1}{\sqrt2}=\dfrac{\sqrt2}{2}$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( V_1\!\left(0,\tfrac12\right) \)</div><div class="calc-line calc-box">\( V_2\!\left(0,-\tfrac12\right) \)</div><div class="calc-line calc-box">\( B_1\!\left(\tfrac12,0\right) \)</div><div class="calc-line calc-box">\( B_2\!\left(-\tfrac12,0\right) \)</div><div class="calc-line calc-box">\( F_1\!\left(0,\tfrac{\sqrt2}{2}\right) \)</div><div class="calc-line calc-box">\( F_2\!\left(0,-\tfrac{\sqrt2}{2}\right) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">الأطوال والاختلاف المركزي والمستقيمان المحاذيان</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=1 \)</div><div class="calc-line calc-box">\( 2b=1 \)</div><div class="calc-line calc-box">\( 2c=\sqrt2 \)</div><div class="calc-line calc-box">\( e=\dfrac{\sqrt2/2}{1/2}=\sqrt2>1 \)</div><div class="calc-line calc-box">\( y=\pm x \)</div></div>
+        </div></li>
+      </ol>
+      <div class="callout tip fade-up" style="margin-top:.6rem">
+        <span class="icon">💬</span>
+        <span>ملاحظة: يرد هذا البند في الكتاب المدرسي مرقّماً بحرف «هـ» مكرراً سهواً مع البند السابق؛ هنا رقّمناه «و» تمييزاً بينهما دون أي حذف لأي محتوى.</span>
+      </div>
+      <div class="exercise-final">✓ راجع القيم أعلاه — قطع زائد متساوي الأضلاع آخر. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع الزائد الذي مركزه نقطة الأصل وبؤرتاه تنتميان إلى المحور $X$، والمسافة بين بؤرتيه تساوي $8$ وحدات، وطول محوره الحقيقي يساوي طول محوره المرافق.</div>
+      <ol class="steps hidden-steps" id="steps-pq2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">$2c=8 \Rightarrow c=4$؛ وتساوي طولي المحورين يعني $a=b$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( c=4 \)</div><div class="calc-line calc-box">\( a=b \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض في $c^2=a^2+b^2=2a^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 16=2a^2 \Rightarrow a^2=8=b^2 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $\dfrac{x^2}{8}-\dfrac{y^2}{8}=1$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع الزائد الذي مركزه نقطة الأصل وإحداثيا بؤرتيه $F_1(0,10),\,F_2(0,-10)$، وطول محوره الحقيقي يساوي $12$ وحدة.</div>
+      <ol class="steps hidden-steps" id="steps-pq3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">البؤرتان على $Y$: $c=10$؛ $2a=12 \Rightarrow a=6$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( c=10 \)</div><div class="calc-line calc-box">\( a=6 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$b^2=c^2-a^2=100-36=64$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{y^2}{36}-\dfrac{x^2}{64}=1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $\dfrac{y^2}{36}-\dfrac{x^2}{64}=1$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> السؤال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq4x">إظهار الحل</button>
+      </div>
+      <div class="example-problem">لتكن $16x^2-Ay^2=225$ معادلة قطع زائد مركزه نقطة الأصل، إحدى بؤرتيه بؤرة القطع المكافئ الذي معادلته $y^2=20x$. جد قيمة $A$.</div>
+      <ol class="steps hidden-steps" id="steps-pq4x">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بؤرة القطع المكافئ $y^2=20x$: نقارن مع $y^2=4ax$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4a=20 \Rightarrow a=5 \Rightarrow \text{بؤرة المكافئ}=(5,0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">إذن $c=5$ للقطع الزائد؛ نرتّب معادلته على الصورة القياسية بقسمة الطرفين على $225$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{225/16}-\dfrac{y^2}{225/A}=1 \Rightarrow a^2=\dfrac{225}{16} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نستخرج $b^2$ من $c^2=a^2+b^2$، ثم $A$ من $b^2=225/A$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( b^2=c^2-a^2=25-\dfrac{225}{16}=\dfrac{400-225}{16}=\dfrac{175}{16} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( A=\dfrac{225}{b^2}=\dfrac{225\times16}{175}=\dfrac{144}{7} \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="callout tip fade-up" style="margin-top:.6rem">
+        <span class="icon">💬</span>
+        <span>القيمة $A=\tfrac{144}{7}$ ليست عدداً صحيحاً، لكنها الحل الصحيح والوحيد المتوافق مع الشرطين المعطيين: البؤرة المشتركة $c=5$، ومعامل $x^2$ الثابت في المعادلة يحدد $a^2=225/16$ بصورة قاطعة.</span>
+      </div>
+      <div class="exercise-final">✓ $A=\dfrac{144}{7}$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> السؤال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة القطع الزائد الذي مركزه نقطة الأصل وأحد بؤرتيه بؤرة قطع مكافئ معادلته $y^2+16x=0$، إذا علمت أن القطع الزائد يمرّ بالنقطة $(6,2\sqrt2)$.</div>
+      <ol class="steps hidden-steps" id="steps-pq4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بؤرة القطع المكافئ $y^2=-16x$: نقارن مع $y^2=-4ax$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4a=16 \Rightarrow a=4 \Rightarrow \text{بؤرة المكافئ}=(-4,0) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">إذن $c=4$ للقطع الزائد (بؤرتاه على $X$)؛ نعوّض النقطة $(6,2\sqrt2)$ في $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$ مع $b^2=16-a^2$</p>
+          <div class="calc-flow"><div class="calc-line">\( \dfrac{36}{a^2}-\dfrac{8}{16-a^2}=1 \)</div>
+          <div class="calc-arrow">↓ نضرب طرفي المعادلة بـ $a^2(16-a^2)$ ونحل معادلة تربيعية بمتغير $a^2$</div>
+          <div class="calc-line calc-box">\( (a^2)^2-60a^2+576=0 \Rightarrow a^2=12 \;\; (\text{القيمة المقبولة لأن } a^2<c^2=16) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">$b^2=16-12=4$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{12}-\dfrac{y^2}{4}=1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $\dfrac{x^2}{12}-\dfrac{y^2}{4}=1$ (تحقق: $\tfrac{36}{12}-\tfrac{8}{4}=3-2=1$ ✓). ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> السؤال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">النقطة $P(6,K)$ تنتمي إلى القطع الزائد الذي مركزه نقطة الأصل ومعادلته $x^2-3y^2=12$. جد قيمة $K$، ثم استخرج طول نصف القطر البؤري للقطع المرسوم في الجهة اليمنى من النقطة.</div>
+      <ol class="steps hidden-steps" id="steps-pq6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نرتّب المعادلة على الصورة القياسية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2-3y^2=12 \Rightarrow \dfrac{x^2}{12}-\dfrac{y^2}{4}=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=6$ لإيجاد $K$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \dfrac{36}{12}-\dfrac{K^2}{4}=1 \Rightarrow 3-\dfrac{K^2}{4}=1 \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( K^2=8 \Rightarrow K=\pm2\sqrt2 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">البؤرة اليمنى: $a^2=12,\,b^2=4 \Rightarrow c^2=16 \Rightarrow c=4$، فالبؤرة اليمنى $F_1(4,0)$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( \overline{PF_1}=\sqrt{(6-4)^2+(2\sqrt2)^2}=\sqrt{4+8}=\sqrt{12} \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( \overline{PF_1}=2\sqrt3 \)</div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $K=\pm2\sqrt2$، ونصف القطر البؤري من الجهة اليمنى $=2\sqrt3$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7أ</span> السؤال 7 (أ)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq7a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ارسم القطع الزائد الذي معادلته: $\dfrac{x^2}{9}-\dfrac{y^2}{4}=1$.</div>
+      <ol class="steps hidden-steps" id="steps-pq7a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نستخرج $a,b,c$ والمستقيمين المحاذيين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=3 \)</div><div class="calc-line calc-box">\( b=2 \)</div><div class="calc-line calc-box">\( c=\sqrt{13} \)</div><div class="calc-line calc-box">\( y=\pm\dfrac23x \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعيّن الرأسين والقطبين والبؤرتين، ونرسم المستطيل المحوري والمستقيمين المحاذيين ثم فرعي المنحني</p>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-pq7a" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="الرسم البياني للقطع الزائد x^2/9-y^2/4=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $V(\pm3,0)$، $B(0,\pm2)$، $F(\pm\sqrt{13},0)$، والمستقيمان $y=\pm\tfrac23x$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7ب</span> السؤال 7 (ب)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq7b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ارسم القطع الزائد الذي معادلته: $\dfrac{y^2}{25}-\dfrac{x^2}{4}=1$.</div>
+      <ol class="steps hidden-steps" id="steps-pq7b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نستخرج $a,b,c$ والمستقيمين المحاذيين (بؤرتان على $Y$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=5 \)</div><div class="calc-line calc-box">\( b=2 \)</div><div class="calc-line calc-box">\( c=\sqrt{29} \)</div><div class="calc-line calc-box">\( y=\pm\dfrac52x \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعيّن الرأسين والقطبين والبؤرتين، ونرسم المستطيل المحوري والمستقيمين المحاذيين ثم فرعي المنحني</p>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-pq7b" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="الرسم البياني للقطع الزائد y^2/25-x^2/4=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $V(0,\pm5)$، $B(\pm2,0)$، $F(0,\pm\sqrt{29})$، والمستقيمان $y=\pm\tfrac52x$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7ج</span> السؤال 7 (ج)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq7c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ارسم القطع الزائد الذي معادلته: $x^2-9y^2=9$.</div>
+      <ol class="steps hidden-steps" id="steps-pq7c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقسم على $9$ ثم نستخرج $a,b,c$ والمستقيمين المحاذيين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{9}-\dfrac{y^2}{1}=1 \)</div><div class="calc-line calc-box">\( a=3 \)</div><div class="calc-line calc-box">\( b=1 \)</div><div class="calc-line calc-box">\( c=\sqrt{10} \)</div><div class="calc-line calc-box">\( y=\pm\dfrac13x \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعيّن الرأسين والقطبين والبؤرتين، ونرسم المستطيل المحوري والمستقيمين المحاذيين ثم فرعي المنحني</p>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-pq7c" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="الرسم البياني للقطع الزائد x^2/9-y^2/1=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $V(\pm3,0)$، $B(0,\pm1)$، $F(\pm\sqrt{10},0)$، والمستقيمان $y=\pm\tfrac13x$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">7د</span> السؤال 7 (د)</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq7d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ارسم القطع الزائد الذي معادلته: $y^2-5x^2=25$.</div>
+      <ol class="steps hidden-steps" id="steps-pq7d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقسم على $25$ ثم نستخرج $a,b,c$ والمستقيمين المحاذيين (بؤرتان على $Y$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{y^2}{25}-\dfrac{x^2}{5}=1 \)</div><div class="calc-line calc-box">\( a=5 \)</div><div class="calc-line calc-box">\( b=\sqrt5 \)</div><div class="calc-line calc-box">\( c=\sqrt{30} \)</div><div class="calc-line calc-box">\( y=\pm\sqrt5\,x \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعيّن الرأسين والقطبين والبؤرتين، ونرسم المستطيل المحوري والمستقيمين المحاذيين ثم فرعي المنحني</p>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-pq7d" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="الرسم البياني للقطع الزائد y^2/25-x^2/5=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $V(0,\pm5)$، $B(\pm\sqrt5,0)$، $F(0,\pm\sqrt{30})$، والمستقيمان $y=\pm\sqrt5\,x$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">8</span> السؤال 8</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq8">إظهار الحل</button>
+      </div>
+      <div class="example-problem">ارسم القطع الزائد الذي مركزه نقطة الأصل وإحداثيا قطبيه $B_1(0,3),\,B_2(0,-3)$، والبعد بين بؤرتيه يساوي $10$ وحدات، ثم استخرج معادلة كل من المستقيمين المحاذيين لمنحني القطع.</div>
+      <ol class="steps hidden-steps" id="steps-pq8">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">القطبان على $Y$ ⟵ البؤرتان والرأسان على $X$؛ $b=3$، $2c=10 \Rightarrow c=5$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( b=3 \)</div><div class="calc-line calc-box">\( c=5 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$a^2=c^2-b^2=25-9=16 \Rightarrow a=4$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{16}-\dfrac{y^2}{9}=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">المستقيمان المحاذيان $y=\pm\dfrac{b}{a}x$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\pm\dfrac34x \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نعيّن الرأسين والقطبين والبؤرتين، ونرسم المستطيل المحوري والمستقيمين المحاذيين ثم فرعي المنحني</p>
+          <div class="neu" style="padding:1rem;margin-top:.5rem">
+            <div class="mindmap-wrap"><svg id="fig-pq8" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="الرسم البياني للقطع الزائد x^2/16-y^2/9=1"></svg></div>
+          </div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ المعادلة $\dfrac{x^2}{16}-\dfrac{y^2}{9}=1$ (هو نفس قطع المثال التفاعلي أعلاه)، والمستقيمان المحاذيان $y=\pm\tfrac34x$. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>1.</span><span>القطع الزائد هو مجموعة النقاط التي:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>مجموع بعديها عن بؤرتين ثابت</span></label>
+          <label class="quiz-opt"><input type="radio"><span>القيمة المطلقة لفرق بعديها عن بؤرتين ثابتتين تساوي $2a$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>بعدها عن نقطة يساوي بعدها عن مستقيم</span></label>
+          <label class="quiz-opt"><input type="radio"><span>بعدها عن ثلاث نقاط ثابت</span></label>
+        </div>
+        <div class="quiz-explain">تعريف القطع الزائد: $|\overline{PF_1}-\overline{PF_2}|=2a$، بخلاف القطع الناقص حيث المجموع ثابت لا الفرق.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>2.</span><span>العلاقة الصحيحة بين $a,b,c$ في القطع الزائد:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$c^2=a^2+b^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$c^2=a^2-b^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$a^2=b^2+c^2$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$b^2=a^2-c^2$</span></label>
+        </div>
+        <div class="quiz-explain">في القطع الزائد $c^2=a^2+b^2$ دائماً (بعكس القطع الناقص).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>3.</span><span>الاختلاف المركزي $e=c/a$ للقطع الزائد دائماً:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$e=1$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$e=0$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$e<1$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$e>1$</span></label>
+        </div>
+        <div class="quiz-explain">بما أن $c>a$ دائماً في القطع الزائد، فإن $e=c/a>1$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>4.</span><span>معادلتا المستقيمين المحاذيين للقطع الزائد $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$ هما:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$y=\pm\dfrac{a}{b}x$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$x=\pm\dfrac{b}{a}y$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$y=\pm\dfrac{b}{a}x$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$y=\pm ab\,x$</span></label>
+        </div>
+        <div class="quiz-explain">نحصل عليهما باستبدال $1$ بـ$0$ في المعادلة القياسية: $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=0 \Rightarrow y=\pm\dfrac{b}{a}x$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>في القطع الزائد، على عكس القطع الناقص، لا يشترط أن يكون:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$c>a$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$a>b$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$e>1$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>البؤرتان والرأسان على نفس المحور</span></label>
+        </div>
+        <div class="quiz-explain">في القطع الزائد يمكن أن يكون $a\lt b$ أو $a\gt b$ أو $a=b$، بخلاف القطع الناقص الذي يشترط $a\gt b$ دائماً.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>القطع الزائد: مجموعة نقاط القيمة المطلقة لفرق بعديها عن بؤرتين ثابتتين $=2a$.</span></li>
+        <li><span>بؤرتان على $X$: $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$، مستقيماه المحاذيان $y=\pm\dfrac{b}{a}x$؛ بؤرتان على $Y$: $\dfrac{y^2}{a^2}-\dfrac{x^2}{b^2}=1$، مستقيماه $y=\pm\dfrac{a}{b}x$.</span></li>
+        <li><span>$c^2=a^2+b^2$ دائماً، $c>a$ دائماً، $e=\dfrac{c}{a}>1$ دائماً — ولا قيد على مقارنة $a$ بـ$b$.</span></li>
+        <li><span>يُرسم برسم مستطيل بالرأسين والقطبين، وامتداد قطريه ليكونا المستقيمين المحاذيين، ثم رسم فرعي المنحني بمحاذاتهما.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l5" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l5">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الخامس">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#7c6fee"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="15" font-family="Cairo,sans-serif">القطع</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="15" font-family="Cairo,sans-serif">الزائد</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">|d1-d2|=2a</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">التعريف</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#2fd18f"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">x²/a²-y²/b²=1</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">المعادلة</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#ffab5e"/>
+            <text x="150" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">c²=a²+b², e&gt;1</text>
+            <text x="150" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">علاقات</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ff6b9d"/>
+            <text x="670" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">مستطيل ومقاربان</text>
+            <text x="670" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="11" font-family="Cairo,sans-serif">الرسم</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الثاني · القطوع المخروطية — الدرس 5: القطع الزائد</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch2.js"></script>
+<script>
+(function(){
+  var ns = "http://www.w3.org/2000/svg";
+  function el(svg, tag, attrs){
+    var e = document.createElementNS(ns, tag);
+    for(var k in attrs) e.setAttribute(k, attrs[k]);
+    svg.appendChild(e);
+    return e;
+  }
+
+  /* ---- interactive: |PF1-PF2|=2a demo on x^2/16-y^2/9=1, right branch ---- */
+  (function(){
+    var svg = document.getElementById("defFigHyperbola");
+    var slider = document.getElementById("tParamSlider");
+    var tVal = document.getElementById("tParamVal");
+    var formula = document.getElementById("hypDiffFormula");
+    var a = 4, b = 3, c = 5;
+    var W = 460, H = 360, ox = W/2, oy = H/2, scale = 22;
+
+    function toPx(x,y){ return [ox + x*scale, oy - y*scale]; }
+
+    function render(){
+      while(svg.firstChild) svg.removeChild(svg.firstChild);
+      var t = parseFloat(slider.value) / 50; /* scale slider to a usable cosh/sinh range */
+      tVal.textContent = slider.value;
+      var x = a*Math.cosh(t), y = b*Math.sinh(t);
+
+      el(svg,"line",{x1:10,y1:oy,x2:W-10,y2:oy,stroke:"var(--text-faint)","stroke-width":1.2});
+      el(svg,"line",{x1:ox,y1:10,x2:ox,y2:H-10,stroke:"var(--text-faint)","stroke-width":1.2});
+
+      /* asymptotes */
+      var ay1 = toPx(-8, -8*b/a), ay2 = toPx(8, 8*b/a);
+      el(svg,"line",{x1:ay1[0],y1:ay1[1],x2:ay2[0],y2:ay2[1],stroke:"#b3bdcc","stroke-width":1.4,"stroke-dasharray":"5 4"});
+      var by1 = toPx(-8, 8*b/a), by2 = toPx(8, -8*b/a);
+      el(svg,"line",{x1:by1[0],y1:by1[1],x2:by2[0],y2:by2[1],stroke:"#b3bdcc","stroke-width":1.4,"stroke-dasharray":"5 4"});
+
+      /* both branches */
+      function branch(sign){
+        var d = "";
+        for(var tt=-2.2; tt<=2.2; tt+=0.08){
+          var xx = sign*a*Math.cosh(tt), yy = b*Math.sinh(tt);
+          var p = toPx(xx,yy);
+          d += (tt===-2.2 ? "M " : "L ") + p[0].toFixed(1) + " " + p[1].toFixed(1) + " ";
+        }
+        var path = document.createElementNS(ns,"path");
+        path.setAttribute("d", d.trim()); path.setAttribute("fill","none");
+        path.setAttribute("stroke","#7c6fee"); path.setAttribute("stroke-width","3");
+        svg.appendChild(path);
+      }
+      branch(1); branch(-1);
+
+      var f1P = toPx(c,0), f2P = toPx(-c,0), pP = toPx(x,y);
+      el(svg,"circle",{cx:f1P[0],cy:f1P[1],r:5,fill:"#ff6b9d"});
+      el(svg,"circle",{cx:f2P[0],cy:f2P[1],r:5,fill:"#ffab5e"});
+      el(svg,"text",{x:f1P[0]-6,y:f1P[1]+22,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "F1(5,0)";
+      el(svg,"text",{x:f2P[0]-30,y:f2P[1]+22,"font-size":12,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "F2(-5,0)";
+
+      el(svg,"line",{x1:pP[0],y1:pP[1],x2:f1P[0],y2:f1P[1],stroke:"#ff6b9d","stroke-width":2,"stroke-dasharray":"4 3"});
+      el(svg,"line",{x1:pP[0],y1:pP[1],x2:f2P[0],y2:f2P[1],stroke:"#ffab5e","stroke-width":2,"stroke-dasharray":"4 3"});
+      el(svg,"circle",{cx:pP[0],cy:pP[1],r:5,fill:"#3fa9f5"});
+      el(svg,"text",{x:pP[0]+8,y:pP[1]-8,"font-size":13,"font-weight":700,fill:"var(--text-primary)","font-family":"Cairo,sans-serif"}).textContent = "P";
+
+      var d1 = Math.sqrt((x-c)*(x-c)+y*y);
+      var d2 = Math.sqrt((x+c)*(x+c)+y*y);
+      formula.innerHTML = "$$|d_1-d_2| = " + Math.abs(d1-d2).toFixed(2) + " = 2a$$";
+      window.Ch4.typeset([formula]);
+    }
+    slider.addEventListener("input", render);
+    render();
+  })();
+
+  /* ---- reusable full hyperbola figure: center, axial rectangle, asymptotes, both branches,
+     vertices, co-vertices (poles), foci, axis labels, equation label ----
+     a = semi-transverse axis, b = semi-conjugate axis, fociOnY = true if foci/vertices lie on Y */
+  function drawHyperbolaFull(svgId, a, b, fociOnY, eqLabel){
+    var svg = document.getElementById(svgId);
+    if(!svg) return;
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    var vb = svg.getAttribute("viewBox").split(" ").map(Number);
+    var W = vb[2], H = vb[3], ox = W/2, oy = H/2;
+    var c = Math.sqrt(a*a+b*b);
+    var extentX = fociOnY ? b : c, extentY = fociOnY ? c : b;
+    var scale = Math.min((W/2-45)/extentX, (H/2-45)/extentY);
+    function toPx(x,y){ return [ox + x*scale, oy - y*scale]; }
+
+    el(svg,"line",{x1:8,y1:oy,x2:W-8,y2:oy,stroke:"var(--text-faint)","stroke-width":1.2});
+    el(svg,"line",{x1:ox,y1:8,x2:ox,y2:H-8,stroke:"var(--text-faint)","stroke-width":1.2});
+    el(svg,"text",{x:W-22,y:oy-8,"font-size":13,fill:"var(--text-faint)","font-family":"Cairo,sans-serif"}).textContent = "X";
+    el(svg,"text",{x:ox+8,y:20,"font-size":13,fill:"var(--text-faint)","font-family":"Cairo,sans-serif"}).textContent = "Y";
+
+    var boxX = fociOnY ? b : a, boxY = fociOnY ? a : b;
+    var r1 = toPx(-boxX,-boxY), r2 = toPx(boxX,boxY);
+    el(svg,"rect",{x:Math.min(r1[0],r2[0]),y:Math.min(r1[1],r2[1]),width:Math.abs(r2[0]-r1[0]),height:Math.abs(r2[1]-r1[1]),fill:"none",stroke:"#b3bdcc","stroke-width":1.4});
+
+    var slope = fociOnY ? (a/b) : (b/a);
+    var maxAsym = (W/2-20)/scale;
+    var ay1 = toPx(-maxAsym, -maxAsym*slope), ay2 = toPx(maxAsym, maxAsym*slope);
+    el(svg,"line",{x1:ay1[0],y1:ay1[1],x2:ay2[0],y2:ay2[1],stroke:"#ffab5e","stroke-width":1.6,"stroke-dasharray":"6 4"});
+    var by1 = toPx(-maxAsym, maxAsym*slope), by2 = toPx(maxAsym, -maxAsym*slope);
+    el(svg,"line",{x1:by1[0],y1:by1[1],x2:by2[0],y2:by2[1],stroke:"#ffab5e","stroke-width":1.6,"stroke-dasharray":"6 4"});
+
+    function branch(sign){
+      var d = "";
+      var tmax = 2.4;
+      for(var tt=-tmax; tt<=tmax; tt+=0.08){
+        var xx, yy;
+        if(fociOnY){ xx = b*Math.sinh(tt); yy = sign*a*Math.cosh(tt); }
+        else { xx = sign*a*Math.cosh(tt); yy = b*Math.sinh(tt); }
+        var p = toPx(xx,yy);
+        d += (tt===-tmax ? "M " : "L ") + p[0].toFixed(1) + " " + p[1].toFixed(1) + " ";
+      }
+      var path = document.createElementNS(ns,"path");
+      path.setAttribute("d", d.trim()); path.setAttribute("fill","none");
+      path.setAttribute("stroke","#7c6fee"); path.setAttribute("stroke-width","3");
+      svg.appendChild(path);
+    }
+    branch(1); branch(-1);
+
+    el(svg,"circle",{cx:ox,cy:oy,r:4,fill:"#2fd18f"});
+    el(svg,"text",{x:ox+8,y:oy+18,"font-size":12,"font-weight":700,fill:"#2fd18f","font-family":"Cairo,sans-serif"}).textContent = "C";
+
+    var vx = fociOnY?0:a, vy = fociOnY?a:0;
+    var v1 = toPx(vx,vy), v2 = toPx(-vx,-vy);
+    el(svg,"circle",{cx:v1[0],cy:v1[1],r:5,fill:"#ff6b9d"});
+    el(svg,"circle",{cx:v2[0],cy:v2[1],r:5,fill:"#ff6b9d"});
+    el(svg,"text",{x:v1[0]+8,y:v1[1]-8,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "V1";
+    el(svg,"text",{x:v2[0]-26,y:v2[1]-8,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "V2";
+
+    var bx = fociOnY?b:0, by = fociOnY?0:b;
+    var b1 = toPx(bx,by), b2 = toPx(-bx,-by);
+    el(svg,"circle",{cx:b1[0],cy:b1[1],r:5,fill:"#3fa9f5"});
+    el(svg,"circle",{cx:b2[0],cy:b2[1],r:5,fill:"#3fa9f5"});
+    el(svg,"text",{x:b1[0]+8,y:b1[1]+16,"font-size":12,"font-weight":700,fill:"#3fa9f5","font-family":"Cairo,sans-serif"}).textContent = "B1";
+    el(svg,"text",{x:b2[0]-26,y:b2[1]+16,"font-size":12,"font-weight":700,fill:"#3fa9f5","font-family":"Cairo,sans-serif"}).textContent = "B2";
+
+    var fx = fociOnY?0:c, fy = fociOnY?c:0;
+    var f1 = toPx(fx,fy), f2 = toPx(-fx,-fy);
+    el(svg,"circle",{cx:f1[0],cy:f1[1],r:4.5,fill:"#ffab5e"});
+    el(svg,"circle",{cx:f2[0],cy:f2[1],r:4.5,fill:"#ffab5e"});
+    el(svg,"text",{x:f1[0]+6,y:f1[1]-16,"font-size":11,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "F1";
+    el(svg,"text",{x:f2[0]-20,y:f2[1]-16,"font-size":11,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "F2";
+
+    if(eqLabel){
+      el(svg,"text",{x:14,y:H-14,"font-size":13,"font-weight":800,fill:"var(--accent-purple)","font-family":"Cairo,sans-serif"}).textContent = eqLabel;
+    }
+  }
+  drawHyperbolaFull("hypFig", 4, 3, false, "x²/16 - y²/9 = 1");
+  drawHyperbolaFull("drawHypFig", 4, 3, false, "x²/16 - y²/9 = 1");
+  drawHyperbolaFull("fig-ex25", 4, 6, false, "x²/16 - y²/36 = 1");
+  drawHyperbolaFull("fig-ex26", 3, 3, true,  "y²/9 - x²/9 = 1");
+  drawHyperbolaFull("fig-ex28", 8, 6, false, "x²/64 - y²/36 = 1");
+  drawHyperbolaFull("fig-ex29", 5, 3, true,  "y²/25 - x²/9 = 1");
+  drawHyperbolaFull("fig-pq7a", 3, 2, false, "x²/9 - y²/4 = 1");
+  drawHyperbolaFull("fig-pq7b", 5, 2, true,  "y²/25 - x²/4 = 1");
+  drawHyperbolaFull("fig-pq7c", 3, 1, false, "x²/9 - y² = 1");
+  drawHyperbolaFull("fig-pq7d", 5, Math.sqrt(5), true, "y²/25 - x²/5 = 1");
+  drawHyperbolaFull("fig-pq8",  4, 3, false, "x²/16 - y²/9 = 1");
+})();
+</script>
+</body>
+</html>

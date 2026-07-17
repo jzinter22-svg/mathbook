@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 1: المفهوم العام للقطوع المخروطية — الفصل الثاني</title>
+<meta name="description" content="كيف يتولد المخروط الدائري القائم، محوره ومولده، وكيف ينتج قطعه بمستوٍ في حالات مختلفة الدائرة والقطع المكافئ والناقص والزائد.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-1.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 1 من 5 · 2-1</span>
+    <h1>المفهوم العام للقطوع المخروطية</h1>
+    <p class="lead">في هذا الدرس نراجع كيف يتولد <b>المخروط الدائري القائم</b> بمحوره $\overleftrightarrow{L}$ ومولده $\overline{AB}$، ثم نكتشف كيف ينتج عن قطعه بمستوٍ في حالات مختلفة أربعة أشكال هندسية تسمى <b>القطوع المخروطية</b>: الدائرة، القطع المكافئ، القطع الناقص، والقطع الزائد.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يتعرف على كيفية تولد المخروط الدائري القائم من دوران مثلث قائم الزاوية حول أحد ضلعيه القائمين، ويحدد محور المخروط $\overleftrightarrow{L}$ ومولده $\overline{AB}$.</span></li>
+        <li><span class="obj-num">2</span><span>يدرك أن قطع سطح المخروط الدائري القائم بمستوٍ في حالات معيّنة ينتج أشكالاً هندسية تسمى القطوع المخروطية.</span></li>
+        <li><span class="obj-num">3</span><span>يميّز بين الحالات الأربع للقطع: الدائرة، القطع المكافئ، القطع الناقص، والقطع الزائد، حسب وضع المستوي القاطع من محور المخروط ومولداته.</span></li>
+        <li><span class="obj-num">4</span><span>يربط بين ميل المستوي القاطع ونوع القطع الناتج، تمهيداً لدراسة كل قطع بتفصيل في الدروس اللاحقة.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 الشرح والتعريفات">
+    <div class="card neu">
+      <h2>💡 2-1 القطوع المخروطية (مراجعة)</h2>
+      <p>يتولد <b>المخروط الدائري القائم</b> من دوران المثلث القائم الزاوية $ABC$ في $B$ دورة كاملة حول أحد الضلعين القائمين كمحور للدوران. وبطريقة مكافئة، ينتج المخروط أيضاً عن دوران مستقيم حول محور ثابت بزاوية ثابتة بينهما، بحيث يتقاطع مولدا المخروط عند الرأس $C$.</p>
+      <p>يسمى المستقيم $\overleftrightarrow{L}$ <b>محور المخروط</b>، ويمكن تعريفه بأنه قطعة المستقيم المحددة برأس المخروط ومركز قاعدته. ويسمى $\overline{AB}$ <b>مولد المخروط</b>، ويمكن تعريفه بأنه قطعة المستقيم المحددة برأس المخروط وإحدى نقاط قاعدته.</p>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="cone-figure">
+    <div class="neu" style="padding:1.25rem 1.5rem">
+      <div class="mindmap-wrap"><svg id="coneAxisFig" width="420" height="300" viewBox="0 0 420 300" role="img" aria-label="رسم يوضح محور المخروط الدائري القائم ⃗L ومولده AB ورأسه C"></svg></div>
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <div class="card neu">
+      <p>إن الأشكال الهندسية الناتجة من قطع المخروط الدائري القائم بمستوٍ في حالات معيّنة تسمى <b>قطوعاً مخروطية</b>، وهي كما يأتي:</p>
+    </div>
+    <div class="grid grid-2" style="margin-top:1rem">
+      <div class="def-box">
+        <span class="def-label" style="color:#2fd18f">① الدائرة (Circle)</span>
+        <p style="margin:.3rem 0">نحصل عليها من قطع سطح المخروط الدائري القائم بمستوٍ <b>عمودٍ على المحور</b> $\overleftrightarrow{L}$ <b>ويوازي القاعدة</b>. تكبر هذه الدائرة كلما ابتعدنا عن الرأس. (درسناها في منهج العام المنصرم.)</p>
+      </div>
+      <div class="def-box">
+        <span class="def-label" style="color:#3fa9f5">② القطع المكافئ (Parabola)</span>
+        <p style="margin:.3rem 0">نحصل عليه من قطع سطح المخروط الدائري القائم بمستوٍ <b>يوازي أحد مولداته</b>.</p>
+      </div>
+      <div class="def-box">
+        <span class="def-label" style="color:#7c6fee">③ القطع الناقص (Ellipse)</span>
+        <p style="margin:.3rem 0">نحصل عليه من قطع سطح المخروط الدائري القائم بمستوٍ <b>غير موازٍ لقاعدته ولا يوازي أياً من مولداته</b>.</p>
+      </div>
+      <div class="def-box">
+        <span class="def-label" style="color:#ff6b9d">④ القطع الزائد (Hyperbola)</span>
+        <p style="margin:.3rem 0">نحصل عليه من قطع سطح المخروط الدائري القائم بمستوٍ <b>يوازي محوره ويقطع مولدين</b> من مولداته.</p>
+      </div>
+    </div>
+
+    <div class="callout tip fade-up" style="margin-top:1.2rem">
+      <span class="icon">💬</span>
+      <span>الفكرة الأساسية: نوع القطع الناتج يتحدد كلياً بميل المستوي القاطع بالنسبة إلى محور المخروط ومولداته. سندرس القطع المكافئ في الدرس القادم، ثم الناقص والزائد في الدرسين اللاحقين.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+    <div class="card neu">
+      <h2>🕹️ مثال تفاعلي: ميل المستوي القاطع ونوع القطع الناتج</h2>
+      <p>حرّك المزلاج لتغيير زاوية ميل المستوي القاطع (بمنظور جانبي) عن الأفقي، وشاهد كيف يتغيّر نوع القطع المخروطي الناتج من دائرة إلى قطع ناقص فمكافئ فزائد.</p>
+      <div class="io-panel">
+        <div class="mindmap-wrap"><svg id="coneCutFig" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="رسم جانبي لمخروط ثنائي النابة مع مستوٍ قاطع متغيّر الميل"></svg></div>
+        <div class="io-row">
+          <label for="tiltSlider" style="min-width:11rem">زاوية الميل عن الأفقي <b>θ</b> = <span id="tiltVal">0°</span></label>
+          <input type="range" id="tiltSlider" class="neu-range" min="0" max="90" step="1" value="0">
+        </div>
+        <div class="rule-box" id="conicLabel" style="font-size:1.15rem">القطع الناتج: الدائرة (Circle)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">مستوٍ يقطع سطح مخروط دائري قائم بحيث يوازي المستوي أحد مولدات المخروط دون أن يوازي قاعدته أو محوره. ما نوع القطع المخروطي الناتج؟</div>
+      <ol class="steps hidden-steps" id="steps-ex1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نراجع تعريفات الحالات الأربع لموازاة المستوي القاطع</p>
+          <div class="calc-flow"><div class="calc-line">موازٍ للقاعدة وعمودي على المحور $\Rightarrow$ دائرة، غير موازٍ للقاعدة ولا لمولد $\Rightarrow$ ناقص، موازٍ لمولد واحد $\Rightarrow$ مكافئ، موازٍ للمحور $\Rightarrow$ زائد</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">المعطى: المستوي يوازي أحد المولدات فقط</p>
+          <div class="calc-flow"><div class="calc-line calc-box">هذا هو تعريف القطع المكافئ بالضبط</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ القطع الناتج هو <b>القطع المكافئ (Parabola)</b>. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">مستوٍ يوازي محور مخروط دائري قائم ويقطع مولدين اثنين من مولداته. ما نوع القطع الناتج؟ وكم فرعاً (نابة) يقطعها هذا المستوي؟</div>
+      <ol class="steps hidden-steps" id="steps-ex2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مستوٍ يوازي المحور ويقطع مولدين من مولدات المخروط</p>
+          <div class="calc-flow"><div class="calc-line calc-box">هذا هو تعريف القطع الزائد</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">المستوي الموازي للمحور يمر بنابتي المخروط كلتيهما</p>
+          <div class="calc-flow"><div class="calc-line calc-box">فينتج عنه فرعان (نابتان) منفصلان</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ القطع الناتج هو <b>القطع الزائد (Hyperbola)</b>، وله فرعان. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين تطبيقي">
+    <h2 style="margin-bottom:.25rem">📝 تمرين تطبيقي</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">مستوٍ عمودي على محور المخروط ويوازي قاعدته. ما نوع القطع الناتج، وماذا يحدث لحجم هذا القطع كلما ابتعد المستوي عن رأس المخروط؟</div>
+      <ol class="steps hidden-steps" id="steps-pq1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مستوٍ عمودي على المحور وموازٍ للقاعدة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">القطع الناتج دائرة</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">كلما ابتعد المستوي عن الرأس، تزداد المسافة القطرية من المحور إلى سطح المخروط</p>
+          <div class="calc-flow"><div class="calc-line calc-box">فتكبر الدائرة الناتجة</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ القطع دائرة، ونصف قطرها يكبر كلما ابتعدنا عن رأس المخروط. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-pq2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">مستوٍ غير موازٍ لقاعدة المخروط ولا لأي من مولداته، ولا يوازي محوره أيضاً. ما نوع القطع الناتج؟</div>
+      <ol class="steps hidden-steps" id="steps-pq2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">استبعاد الحالات الثلاث الأخرى</p>
+          <div class="calc-flow"><div class="calc-line">ليس عمودياً على المحور وموازياً للقاعدة (ليس دائرة)، وليس موازياً لمولد (ليس مكافئاً)، وليس موازياً للمحور (ليس زائداً)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">الحالة المتبقية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">القطع الناقص</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ القطع الناتج هو <b>القطع الناقص (Ellipse)</b>. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>1.</span><span>محور المخروط الدائري القائم هو:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>قطعة المستقيم المحددة برأس المخروط وإحدى نقاط قاعدته</span></label>
+          <label class="quiz-opt"><input type="radio"><span>قطعة المستقيم المحددة برأس المخروط ومركز قاعدته</span></label>
+          <label class="quiz-opt"><input type="radio"><span>محيط قاعدة المخروط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>أي مستقيم يمر برأس المخروط</span></label>
+        </div>
+        <div class="quiz-explain">محور المخروط $\overleftrightarrow{L}$ هو قطعة المستقيم من رأس المخروط إلى مركز قاعدته، أما $\overline{AB}$ (من الرأس إلى نقطة على القاعدة) فهو المولد.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>نحصل على القطع المكافئ عندما يكون المستوي القاطع:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>عمودياً على المحور وموازياً للقاعدة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>موازياً للمحور ويقطع مولدين</span></label>
+          <label class="quiz-opt"><input type="radio"><span>موازياً لأحد المولدات</span></label>
+          <label class="quiz-opt"><input type="radio"><span>غير موازٍ للقاعدة ولا لأي مولد</span></label>
+        </div>
+        <div class="quiz-explain">القطع المكافئ ينتج تحديداً عندما يوازي المستوي القاطع أحد مولدات المخروط.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>3.</span><span>أي القطوع المخروطية ينتج له فرعان (نابتان) منفصلان؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>القطع الناقص</span></label>
+          <label class="quiz-opt"><input type="radio"><span>القطع الزائد</span></label>
+          <label class="quiz-opt"><input type="radio"><span>القطع المكافئ</span></label>
+          <label class="quiz-opt"><input type="radio"><span>الدائرة</span></label>
+        </div>
+        <div class="quiz-explain">القطع الزائد ينتج من مستوٍ يوازي محور المخروط ويقطع نابتيه، فيتكوّن من فرعين منفصلين.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>4.</span><span>القطع الناقص ينتج عندما يكون المستوي القاطع:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>غير موازٍ لقاعدة المخروط ولا لأي من مولداته</span></label>
+          <label class="quiz-opt"><input type="radio"><span>موازياً لقاعدة المخروط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>موازياً لمولد واحد فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>موازياً لمحور المخروط</span></label>
+        </div>
+        <div class="quiz-explain">القطع الناقص هو الحالة المتبقية: مستوٍ لا يوازي القاعدة ولا يوازي أي مولد.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>5.</span><span>الدائرة كأحد القطوع المخروطية درسناها:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>لأول مرة في هذا الفصل</span></label>
+          <label class="quiz-opt"><input type="radio"><span>في الفصل الأول من هذا الكتاب</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لن تُدرس أصلاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>في منهج العام المنصرم</span></label>
+        </div>
+        <div class="quiz-explain">الدائرة قطع مخروطي أيضاً، لكنها دُرست في منهج العام السابق، لذا يركّز هذا الفصل على المكافئ والناقص والزائد.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>يتولد المخروط الدائري القائم بدوران مثلث قائم الزاوية حول أحد ضلعيه القائمين؛ محوره $\overleftrightarrow{L}$ من الرأس إلى مركز القاعدة، ومولده $\overline{AB}$ من الرأس إلى نقطة على القاعدة.</span></li>
+        <li><span>قطع سطح المخروط بمستوٍ عمودي على المحور وموازٍ للقاعدة $\Rightarrow$ <b>دائرة</b>.</span></li>
+        <li><span>قطعه بمستوٍ يوازي أحد مولداته $\Rightarrow$ <b>قطع مكافئ</b>.</span></li>
+        <li><span>قطعه بمستوٍ غير موازٍ للقاعدة ولا لأي مولد $\Rightarrow$ <b>قطع ناقص</b>.</span></li>
+        <li><span>قطعه بمستوٍ يوازي محوره ويقطع مولدين $\Rightarrow$ <b>قطع زائد</b>، وله فرعان.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l1" data-show-label="إظهار الخريطة" data-hide-label="إخفاء الخريطة">إظهار الخريطة</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-top:.3rem">ملخص بصري سريع يربط بين مفاهيم الدرس — مثالي للمراجعة قبل الاختبار.</p>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l1">
+        <svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الأول">
+          <line x1="410" y1="180" x2="150" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="80" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="150" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="180" x2="670" y2="280" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="180" r="58" fill="#7c6fee"/>
+            <text x="410" y="176" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">المخروط</text>
+            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">الدائري القائم</text></g>
+
+          <g><circle cx="150" cy="80" r="48" fill="#2fd18f"/>
+            <text x="150" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">⊥ المحور</text>
+            <text x="150" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">الدائرة</text></g>
+
+          <g><circle cx="670" cy="80" r="48" fill="#3fa9f5"/>
+            <text x="670" y="76" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">∥ مولد</text>
+            <text x="670" y="93" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">القطع المكافئ</text></g>
+
+          <g><circle cx="150" cy="280" r="48" fill="#ffab5e"/>
+            <text x="150" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">غير موازٍ لشيء</text>
+            <text x="150" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">القطع الناقص</text></g>
+
+          <g><circle cx="670" cy="280" r="48" fill="#ff6b9d"/>
+            <text x="670" y="276" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">∥ المحور</text>
+            <text x="670" y="293" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">القطع الزائد</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل الثاني · القطوع المخروطية — الدرس 1: المفهوم العام للقطوع المخروطية</footer>
+
+<script src="../../assets/js/plot.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch2.js"></script>
+<script>
+(function(){
+  /* static figure: cone with axis L and generator AB */
+  var fig = document.getElementById("coneAxisFig");
+  var ns = "http://www.w3.org/2000/svg";
+  var cx = 210, apexY = 240, topY = 40, halfW = 95;
+
+  function line(x1,y1,x2,y2,stroke,width,dash){
+    var l = document.createElementNS(ns,"line");
+    l.setAttribute("x1",x1); l.setAttribute("y1",y1);
+    l.setAttribute("x2",x2); l.setAttribute("y2",y2);
+    l.setAttribute("stroke",stroke); l.setAttribute("stroke-width",width||2);
+    if(dash) l.setAttribute("stroke-dasharray",dash);
+    fig.appendChild(l);
+    return l;
+  }
+  function label(x,y,text,color,size,weight){
+    var t = document.createElementNS(ns,"text");
+    t.setAttribute("x",x); t.setAttribute("y",y);
+    t.setAttribute("font-size",size||14); t.setAttribute("font-weight",weight||700);
+    t.setAttribute("fill",color||"var(--text-primary)");
+    t.setAttribute("font-family","Cairo,sans-serif");
+    t.textContent = text;
+    fig.appendChild(t);
+    return t;
+  }
+  function dot(x,y,r,color){
+    var c = document.createElementNS(ns,"circle");
+    c.setAttribute("cx",x); c.setAttribute("cy",y); c.setAttribute("r",r||4);
+    c.setAttribute("fill",color);
+    fig.appendChild(c);
+  }
+
+  /* cone outline (right generator solid = AB, left generator faint) */
+  line(cx, apexY, cx-halfW, topY, "#b3bdcc", 2);
+  line(cx, apexY, cx+halfW, topY, "#7c6fee", 3);
+  var baseEllipse = document.createElementNS(ns,"ellipse");
+  baseEllipse.setAttribute("cx",cx); baseEllipse.setAttribute("cy",topY);
+  baseEllipse.setAttribute("rx",halfW); baseEllipse.setAttribute("ry",16);
+  baseEllipse.setAttribute("fill","none"); baseEllipse.setAttribute("stroke","#b3bdcc"); baseEllipse.setAttribute("stroke-width","2");
+  fig.appendChild(baseEllipse);
+
+  /* axis L, dash-dot, extends slightly past apex and base */
+  line(cx, apexY+30, cx, topY-25, "#2fd18f", 2, "6 3");
+  label(cx+8, topY-30, "L", "#2fd18f", 16, 800);
+
+  dot(cx, apexY, 5, "#ff6b9d");
+  label(cx-22, apexY+22, "C (الرأس)", "#ff6b9d", 13, 700);
+  dot(cx+halfW, topY, 5, "#7c6fee");
+  label(cx+halfW+8, topY+4, "A", "#7c6fee", 14, 800);
+  dot(cx, topY, 4, "#3fa9f5");
+  label(cx-70, topY+40, "B (مركز القاعدة)", "#3fa9f5", 12, 700);
+
+  label(cx+halfW/2+14, (apexY+topY)/2, "مولد", "#7c6fee", 13, 700);
+})();
+</script>
+<script>
+(function(){
+  var svg = document.getElementById("coneCutFig");
+  var slider = document.getElementById("tiltSlider");
+  var tiltVal = document.getElementById("tiltVal");
+  var label = document.getElementById("conicLabel");
+  var ns = "http://www.w3.org/2000/svg";
+
+  var cx = 210, apexY = 170, halfHeight = 130, PARABOLA_DEG = 60;
+  var halfW = halfHeight * Math.tan(30*Math.PI/180); /* generator makes 60° with horizontal */
+
+  function el(tag, attrs){
+    var e = document.createElementNS(ns, tag);
+    for(var k in attrs) e.setAttribute(k, attrs[k]);
+    svg.appendChild(e);
+    return e;
+  }
+
+  function render(){
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    var theta = parseFloat(slider.value);
+    tiltVal.textContent = theta + "°";
+
+    /* double cone (bowtie) outline */
+    el("line", {x1:cx, y1:apexY, x2:cx-halfW, y2:apexY-halfHeight, stroke:"#b3bdcc", "stroke-width":2});
+    el("line", {x1:cx, y1:apexY, x2:cx+halfW, y2:apexY-halfHeight, stroke:"#b3bdcc", "stroke-width":2});
+    el("line", {x1:cx, y1:apexY, x2:cx-halfW, y2:apexY+halfHeight, stroke:"#b3bdcc", "stroke-width":2});
+    el("line", {x1:cx, y1:apexY, x2:cx+halfW, y2:apexY+halfHeight, stroke:"#b3bdcc", "stroke-width":2});
+    el("ellipse", {cx:cx, cy:apexY-halfHeight, rx:halfW, ry:14, fill:"none", stroke:"#b3bdcc", "stroke-width":2});
+    el("ellipse", {cx:cx, cy:apexY+halfHeight, rx:halfW, ry:14, fill:"none", stroke:"#b3bdcc", "stroke-width":2});
+    el("line", {x1:cx, y1:apexY-halfHeight-20, x2:cx, y2:apexY+halfHeight+20, stroke:"#2fd18f", "stroke-width":1.6, "stroke-dasharray":"6 3"});
+    el("circle", {cx:cx, cy:apexY, r:4.5, fill:"#ff6b9d"});
+
+    /* cutting line pivots about a point in the upper nappe */
+    var px = cx, py = apexY - 65;
+    var rad = theta*Math.PI/180;
+    var dx = Math.cos(rad), dy = -Math.sin(rad);
+    var L = 190;
+    var x1 = px - L*dx, y1 = py - L*dy, x2 = px + L*dx, y2 = py + L*dy;
+    el("line", {x1:x1, y1:y1, x2:x2, y2:y2, stroke:"#7c6fee", "stroke-width":3.5, "stroke-linecap":"round"});
+
+    var name, color;
+    if(theta === 0){ name = "الدائرة (Circle)"; color = "#2fd18f"; }
+    else if(theta < PARABOLA_DEG){ name = "القطع الناقص (Ellipse)"; color = "#7c6fee"; }
+    else if(theta === PARABOLA_DEG){ name = "القطع المكافئ (Parabola)"; color = "#3fa9f5"; }
+    else { name = "القطع الزائد (Hyperbola)"; color = "#ff6b9d"; }
+
+    label.innerHTML = "القطع الناتج: <b style=\"color:"+color+"\">"+name+"</b>";
+  }
+
+  slider.addEventListener("input", render);
+  render();
+})();
+</script>
+</body>
+</html>

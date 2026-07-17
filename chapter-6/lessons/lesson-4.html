@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدرس 4: طرق سحب العيّنة — الفصل السادس</title>
+<meta name="description" content="سحب عيّنة من مجتمع مع الإرجاع وبدونه، وبالترتيب وبدونه، مع أمثلة محلولة كاملة وتمرين (2-6) بجميع فقراته الـ16 كبطاقات مستقلة.">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/theme-ch6.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+    chtml: { scale: 1.02 },
+    startup: { typeset: false }
+  };
+</script>
+<script src="../../assets/mathjax/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-page="lessons/lesson-4.html">
+<header class="site-header"></header>
+
+<main class="container">
+  <section class="hero fade-up">
+    <span class="eyebrow">📖 الدرس 4 من 6 · 6-3 وتمرين (2-6)</span>
+    <h1>طرق سحب العيّنة</h1>
+    <p class="lead">عندما نسحب أكثر من عنصر من مجتمع (كرات، بذور، طلاب)، يوجد دائماً سؤالان حاسمان قبل أي حساب: هل نُعيد العنصر المسحوب؟ وهل يهمّنا ترتيب السحب؟ الإجابتان تحددان أي صيغة نستخدم.</p>
+  </section>
+
+  <section class="section fade-up" id="objectives" data-navlabel="🎯 الأهداف">
+    <div class="card neu">
+      <h2>🎯 أهداف الدرس</h2>
+      <ol class="obj-list">
+        <li><span class="obj-num">1</span><span>يميّز السحب مع الإرجاع عن السحب بدون إرجاع، وأثر كل منهما على عدد عناصر المجتمع.</span></li>
+        <li><span class="obj-num">2</span><span>يختار الصيغة الصحيحة من بين $C^n_r,\,P^n_r,\,C^{n+r-1}_r,\,n^r$ حسب طريقة السحب المذكورة في السؤال.</span></li>
+        <li><span class="obj-num">3</span><span>يطبّق القاعدة الافتراضية: إن لم تُذكر طريقة السحب، يُعتبر السحب دون إرجاع ودون ترتيب.</span></li>
+        <li><span class="obj-num">4</span><span>يحل جميع فقرات تمرين (2-6) — 16 فقرة مستقلة — كل فقرة ببطاقتها وحلها الكامل.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="content" data-navlabel="💡 طرق السحب">
+    <div class="card neu">
+      <h2>💡 6-3 عدد طرق سحب عيّنة من مجتمع مع الإرجاع وبدون الإرجاع وبالترتيب وبدونه</h2>
+      <p>لا بدّ لنا من التطرق إلى مفهومي (السحب بالإرجاع) و(السحب بدون إرجاع). المقصود بـ(السحب بالإرجاع) هو أن كل عيّنة يتم سحبها من المجتمع تُعاد إليه قبل الشروع بسحب عيّنة أخرى، وبالتالي فإن عدد عناصر المجتمع يبقى ثابتاً في جميع الأحوال. أما (السحب بدون إرجاع) فيُقصد به أن كل عيّنة يتم سحبها من المجتمع لا تُعاد مرة أخرى إلى المجموعة الأصلية قبل إجراء السحبة التالية، وبالتالي فإن عدد عناصر المجتمع يتناقص بعد إجراء كل سحبة بمقدار العدد المسحوب منه.</p>
+    </div>
+
+    <div class="diagram-card">
+      <div class="mindmap-wrap">
+        <svg viewBox="0 0 820 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مخطط عدد طرق سحب عيّنة r من مجتمع n">
+          <line x1="410" y1="55" x2="210" y2="140" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="55" x2="610" y2="140" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="210" y1="160" x2="110" y2="240" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="210" y1="160" x2="310" y2="240" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="610" y1="160" x2="510" y2="240" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="610" y1="160" x2="710" y2="240" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><circle cx="410" cy="42" r="40" fill="#7c6fee"/>
+            <text x="410" y="36" text-anchor="middle" fill="#fff" font-weight="800" font-size="11" font-family="Cairo,sans-serif">طرق سحب</text>
+            <text x="410" y="51" text-anchor="middle" fill="#fff" font-weight="800" font-size="10" font-family="Cairo,sans-serif">عيّنة (r) من (n)</text></g>
+
+          <g><rect x="150" y="128" width="120" height="36" rx="12" fill="#3fa9f5"/>
+            <text x="210" y="150" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">بدون الإرجاع</text></g>
+          <g><rect x="550" y="128" width="120" height="36" rx="12" fill="#ff6b9d"/>
+            <text x="610" y="150" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">مع الإرجاع</text></g>
+
+          <g><rect x="55" y="228" width="110" height="34" rx="11" fill="#2fd18f"/>
+            <text x="110" y="249" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">بدون ترتيب</text></g>
+          <g><rect x="255" y="228" width="110" height="34" rx="11" fill="#2fd18f"/>
+            <text x="310" y="249" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">مع الترتيب</text></g>
+          <g><rect x="455" y="228" width="110" height="34" rx="11" fill="#ffab5e"/>
+            <text x="510" y="249" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">بدون ترتيب</text></g>
+          <g><rect x="655" y="228" width="110" height="34" rx="11" fill="#ffab5e"/>
+            <text x="710" y="249" text-anchor="middle" fill="#fff" font-weight="700" font-size="12" font-family="Cairo,sans-serif">مع الترتيب</text></g>
+
+          <line x1="110" y1="262" x2="110" y2="300" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="310" y1="262" x2="310" y2="300" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="510" y1="262" x2="510" y2="300" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="710" y1="262" x2="710" y2="300" stroke="#b3bdcc" stroke-width="2"/>
+
+          <g><rect x="55" y="300" width="110" height="52" rx="14" fill="var(--surface)" stroke="#2fd18f" stroke-width="2.5"/>
+            <text x="110" y="332" text-anchor="middle" font-size="19" font-family="Cairo,sans-serif" font-weight="800" fill="var(--text-primary)">Cⁿᵣ</text></g>
+          <g><rect x="255" y="300" width="110" height="52" rx="14" fill="var(--surface)" stroke="#2fd18f" stroke-width="2.5"/>
+            <text x="310" y="332" text-anchor="middle" font-size="19" font-family="Cairo,sans-serif" font-weight="800" fill="var(--text-primary)">Pⁿᵣ</text></g>
+          <g><rect x="455" y="300" width="110" height="52" rx="14" fill="var(--surface)" stroke="#ffab5e" stroke-width="2.5"/>
+            <text x="510" y="326" text-anchor="middle" font-size="16" font-family="Cairo,sans-serif" font-weight="800" fill="var(--text-primary)">Cⁿ⁺ʳ⁻¹ᵣ</text></g>
+          <g><rect x="655" y="300" width="110" height="52" rx="14" fill="var(--surface)" stroke="#ffab5e" stroke-width="2.5"/>
+            <text x="710" y="332" text-anchor="middle" font-size="19" font-family="Cairo,sans-serif" font-weight="800" fill="var(--text-primary)">nʳ</text></g>
+        </svg>
+      </div>
+      <span class="diagram-caption">أربع طرق للسحب حسب إجابتَي السؤالين: هل نُرجع العنصر؟ وهل يهمّنا الترتيب؟</span>
+    </div>
+
+    <div class="callout warn fade-up">
+      <span class="icon">⚠️</span>
+      <span><b>ملاحظة مهمة:</b> إن لم تُذكر طريقة السحب في السؤال، فيُعتبر السحب <b>دون إرجاع ودون ترتيب</b> (أي $C^n_r$) اصطلاحاً.</span>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="examples" data-navlabel="✍️ أمثلة محلولة">
+    <h2 style="margin-bottom:.25rem">✍️ أمثلة محلولة خطوة بخطوة</h2>
+    <p class="lead" style="margin-top:0">اضغط «إظهار خطوات الحل» في كل مثال لمشاهدة الحل يتكشف تدريجياً.</p>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">12</span> مثال 12</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex12">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">وعاء يحتوي 7 كرات مرقّمة من 1 إلى 7. أحسب عدد طرق سحب كرتين ثم 3 كرات ثم كرتين (دون إرجاع ودون ترتيب).</div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row" id="ex12Balls"></div>
+        <span class="diagram-caption">وعاء فيه 7 كرات مرقّمة؛ نسحب 2 ثم 3 ثم 2 دون إرجاعها بينهما</span>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-ex12">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">السحب دون إرجاع، لذا عدد عناصر المجتمع يتناقص بعد كل سحبة؛ عند أول سحبة كان 7، وبعد سحب 2 كرة تبقى 5</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^7_2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">عند السحبة الثانية يراد سحب 3 كرات من الكرات الخمس المتبقية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^5_3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">بعد السحبتين تبقى كرتان فقط، فلا يتبقى سوى طريقة واحدة لسحبهما معاً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^2_2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">بمبدأ العدّ الأساسي نضرب عدد طرق كل سحبة</p>
+          <div class="calc-flow"><div class="calc-line">\( C^7_2\times C^5_3\times C^2_2 = 21\times10\times1 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =210 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ عدد طرق السحب = 210 طريقة. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">13</span> مثال 13</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex13">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">بكم طريقة يمكن توزيع 3 جوائز مختلفة بين 10 طلاب إذا كان بالإمكان أن يفوز بها جميعاً طالب واحد (السحب مع الترتيب والإرجاع)؟</div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row"><span style="font-size:1.8rem">🏆</span><span style="font-size:1.8rem">🥈</span><span style="font-size:1.8rem">🥉</span><span style="margin:0 .5rem">→</span><span style="font-size:1.8rem">🧑</span><span style="font-size:1.8rem">🧑</span><span style="font-size:1.8rem">🧑</span><span style="font-size:1.8rem">🧑</span><span style="font-size:1.8rem">🧑</span><span style="font-size:1.8rem">🧑</span><span style="font-size:1.8rem">🧑</span><span style="font-size:1.8rem">🧑</span><span style="font-size:1.8rem">🧑</span><span style="font-size:1.8rem">🧑</span></div>
+        <span class="diagram-caption">3 جوائز مختلفة تُوزَّع بين 10 طلاب، ويمكن لطالب واحد الفوز بأكثر من جائزة</span>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-ex13">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الجوائز مختلفة (الترتيب مهم: من يفوز بالأولى يختلف عمّن يفوز بالثانية)، ويمكن لنفس الطالب الفوز بأكثر من جائزة (إرجاع)، فهذا سحب مع الترتيب ومع الإرجاع</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n^r=10^3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحسب الناتج</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 10^3=1000 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ عدد طرق التوزيع = 1000 طريقة. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">14</span> مثال 14</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex14">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">بكم طريقة يمكن توزيع 3 جوائز مختلفة بين 10 طلاب إذا لم يكن ممكناً أن يفوز بها جميعاً طالب واحد (السحب مع الترتيب وبدون إرجاع)؟</div>
+      <ol class="steps hidden-steps" id="steps-ex14">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الآن لا يمكن لنفس الطالب الفوز بأكثر من جائزة (بدون إرجاع)، لكن الجوائز ما زالت مختلفة (مع الترتيب)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P^{n}_r=P^{10}_3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحسب $P(10,3)$</p>
+          <div class="calc-flow"><div class="calc-line">\( P^{10}_3=10\times9\times8 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =720 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ عدد طرق التوزيع = 720 طريقة. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">15</span> مثال 15</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex15">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">بكم طريقة يمكن تكوين شفرة رمزية ذات 4 حروف من حروف اللغة العربية إن كان التكرار مسموحاً به (السحب مع الترتيب ومع الإرجاع)؟</div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row"><span class="outcome-chip">؟</span><span class="outcome-chip">؟</span><span class="outcome-chip">؟</span><span class="outcome-chip">؟</span></div>
+        <span class="diagram-caption">4 خانات، وفي كل خانة يمكن اختيار أي حرف من 28 حرفاً عربياً — حتى لو تكرر</span>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-ex15">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">التكرار مسموح (إرجاع) والترتيب مهم (شفرة)، وعدد حروف اللغة العربية 28 حرفاً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n^r=28^4 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحسب الناتج</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 28^4=614656 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ عدد الشفرات الممكنة = 614656 شفرة. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">16</span> مثال 16</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex16">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">بكم طريقة يمكن اختيار رواية واحدة ومجلة واحدة وجريدة واحدة من مكتبة تحتوي 12 رواية و5 مجلات و8 جرائد؟</div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row"><span class="outcome-chip pill-purple">📕 رواية ×12</span><span class="outcome-chip pill-blue">📖 مجلة ×5</span><span class="outcome-chip pill-green">📰 جريدة ×8</span></div>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-ex16">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">لم تُذكر طريقة السحب، فيُعتبر السحب دون إرجاع ودون ترتيب؛ نختار قطعة واحدة (r=1) من كل صنف</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^{12}_1\times C^5_1\times C^8_1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">$C(n,1)=n$ دائماً (اختيار عنصر واحد من $n$ له $n$ طريقة)</p>
+          <div class="calc-flow"><div class="calc-line">\( 12\times5\times8 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =480 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ عدد الطرق = 480 طريقة. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">17</span> مثال 17</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex17">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">بكم طريقة يمكن توزيع 9 ألعاب على 4 أطفال بحيث يتلقى الطفل الأصغر 3 ألعاب ولكل طفل آخر لعبتان فقط؟</div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row"><span style="font-size:1.8rem">🧸×9</span><span style="margin:0 .6rem">→</span><span style="font-size:1.8rem">👶(3)</span><span style="font-size:1.8rem">🧒(2)</span><span style="font-size:1.8rem">🧒(2)</span><span style="font-size:1.8rem">🧒(2)</span></div>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-ex17">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">لم تُذكر طريقة السحب (دون إرجاع ودون ترتيب)؛ نوزّع الألعاب على مراحل: 3 للطفل الأصغر من أصل 9</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^9_3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">يتبقى 6 ألعاب؛ نختار 2 للطفل الثاني، ثم 2 للثالث من الأربع المتبقية، ثم 2 للرابع من الاثنتين الأخيرتين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^6_2\times C^4_2\times C^2_2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نضرب الجميع</p>
+          <div class="calc-flow"><div class="calc-line">\( C^9_3\times C^6_2\times C^4_2\times C^2_2=84\times15\times6\times1 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =7560 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ عدد طرق التوزيع = 7560 طريقة. ∎</div>
+    </div>
+
+    <div class="example fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">18</span> مثال 18</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex18">إظهار خطوات الحل</button>
+      </div>
+      <div class="example-problem">سُحبت ورقتان بصورة عشوائية من بين 10 ورقات مرقّمة من 1 إلى 10. جد عدد طرق ظهور مجموع فردي في الحالتين الآتيتين: (a) السحب مع الترتيب والإرجاع (b) السحب بدون ترتيب لكن مع الإرجاع.</div>
+      <div class="diagram-card"><div class="container-scene">
+        <div class="pw-row" id="ex18Cards"></div>
+        <span class="diagram-caption">مجموع فردي يعني رقماً فردياً + رقماً زوجياً (5 أرقام فردية و5 أرقام زوجية بين 1 و10)</span>
+      </div></div>
+      <ol class="steps hidden-steps" id="steps-ex18">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">(a) المجموع فردي فقط عندما يكون أحد الرقمين فردياً والآخر زوجياً؛ يوجد 5 أرقام فردية و5 أرقام زوجية بين 1 و10</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 5^2 = 25 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">(b) يمكن حساب عدد طرق الوقوع باستخدام القانون $C^{n+r-1}_r$ لكون السحب بدون ترتيب لكن مع الإرجاع</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^{5+1-1}_1\times C^{5+1-1}_1=C^5_1\times C^5_1=5\times5=25 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="callout tip" style="margin-top:.8rem"><span class="icon">💬</span><span>لاحظ أن النتيجة واحدة في كلتا الحالتين، بسبب كون سحب ورقة واحدة فقط من كل مجموعة (الفردية والزوجية) فلا يصبح هناك أي معنى للترتيب والإرجاع.</span></div>
+      <div class="exercise-final">✓ (a) 25 طريقة  (b) 25 طريقة. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="practice" data-navlabel="📝 تمرين (2-6)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (2-6)</h2>
+    <p class="lead" style="margin-top:0">16 فقرة مستقلة، كل فقرة ببطاقتها الخاصة وحلها الكامل.</p>
+
+    <h3 style="margin:1.4rem 0 .3rem">السؤال 1 — من مجموعة 8 رجال و6 سيدات يراد تأليف لجنة خماسية</h3>
+    <div class="diagram-card"><div class="container-scene">
+      <div class="pw-row"><span class="outcome-chip pill-blue">👨 رجال ×8</span><span class="outcome-chip pill-pink">👩 سيدات ×6</span><span>→</span><span class="outcome-chip pill-green">🧑‍🤝‍🧑 لجنة من 5</span></div>
+    </div></div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1a</span> عدد الطرق الكلية لتأليف اللجنة</div>
+        <button class="neu-btn" data-reveal-steps="steps-p1a">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p1a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مجموع الأشخاص 14، نختار 5 منهم دون ترتيب (اللجنة لا تفرّق بين المناصب)</p>
+          <div class="calc-flow"><div class="calc-line">\( C^{14}_5=\dfrac{14\times13\times12\times11\times10}{5!} \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =2002 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 2002 طريقة. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1b</span> اللجنة تحتوي 3 رجال فقط (و2 سيدات)</div>
+        <button class="neu-btn" data-reveal-steps="steps-p1b">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p1b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نختار 3 من الرجال الثمانية و2 من السيدات الست، ثم نضرب</p>
+          <div class="calc-flow"><div class="calc-line">\( C^8_3\times C^6_2=56\times15 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =840 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 840 طريقة. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1c</span> أعضاء اللجنة من جنس واحد</div>
+        <button class="neu-btn" data-reveal-steps="steps-p1c">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p1c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">إما 5 رجال فقط، أو 5 سيدات فقط — حدثان متنافيان فنجمع</p>
+          <div class="calc-flow"><div class="calc-line">\( C^8_5+C^6_5=56+6 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =62 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 62 طريقة. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1d</span> اللجنة فيها 3 رجال على الأقل</div>
+        <button class="neu-btn" data-reveal-steps="steps-p1d">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p1d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">«3 على الأقل» تشمل 3 أو 4 أو 5 رجال ضمن الخمسة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^8_3 C^6_2 + C^8_4 C^6_1 + C^8_5 C^6_0 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحسب كل حد ونجمع</p>
+          <div class="calc-flow"><div class="calc-line">\( 840+420+56 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =1316 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 1316 طريقة. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1e</span> اللجنة فيها 3 رجال على الأكثر</div>
+        <button class="neu-btn" data-reveal-steps="steps-p1e">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p1e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">«3 على الأكثر» تشمل 0 أو 1 أو 2 أو 3 رجال ضمن الخمسة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^8_0C^6_5+C^8_1C^6_4+C^8_2C^6_3+C^8_3C^6_2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحسب كل حد ونجمع</p>
+          <div class="calc-flow"><div class="calc-line">\( 6+120+560+840 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =1526 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 1526 طريقة. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">1f</span> على الأقل 2 رجال وعلى الأقل 2 نساء</div>
+        <button class="neu-btn" data-reveal-steps="steps-p1f">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p1f">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مع 5 أعضاء فقط، «2 رجال على الأقل و2 نساء على الأقل» لا يحققها إلا توزيعان: (2 رجال، 3 نساء) أو (3 رجال، 2 نساء)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^8_2C^6_3+C^8_3C^6_2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحسب ونجمع</p>
+          <div class="calc-flow"><div class="calc-line">\( 560+840 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =1400 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 1400 طريقة. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 2 — كيس فيه 10 بذور زهورها حمراء و5 بذور زهورها بيضاء، اخترنا بذرتين عشوائياً</h3>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">2a</span> البذرتان تعطيان زهوراً بيضاء</div>
+        <button class="neu-btn" data-reveal-steps="steps-p2a">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p2a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نختار بذرتين بيضاويتين من أصل 5 (دون ترتيب، دون إرجاع)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( C^5_2=10 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 10 طرق. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">2b</span> إحداهما حمراء والأخرى بيضاء</div>
+        <button class="neu-btn" data-reveal-steps="steps-p2b">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p2b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نختار واحدة من العشر الحمراء وواحدة من الخمس البيضاء</p>
+          <div class="calc-flow"><div class="calc-line">\( C^{10}_1\times C^5_1=10\times5 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =50 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 50 طريقة. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">2c</span> البذرتان من لون واحد</div>
+        <button class="neu-btn" data-reveal-steps="steps-p2c">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p2c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">إما حمراوان أو بيضاوان — حدثان متنافيان فنجمع</p>
+          <div class="calc-flow"><div class="calc-line">\( C^{10}_2+C^5_2=45+10 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =55 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 55 طريقة. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 3 — سُحبت ورقة عشوائياً من بين 50 ورقة مرقّمة من 1 إلى 50</h3>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">3a</span> ظهور عدد يقبل القسمة على 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-p3a">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p3a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مضاعفات 5 من 1 إلى 50: $5,10,15,\dots,50$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(E)=50\div5=10 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 10 طرق. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">3b</span> ظهور عدد يقبل القسمة على 7</div>
+        <button class="neu-btn" data-reveal-steps="steps-p3b">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p3b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مضاعفات 7 من 1 إلى 50: $7,14,21,28,35,42,49$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(E)=7 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 7 طرق. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">3c</span> ظهور عدد يقبل القسمة على 5 و7 معاً</div>
+        <button class="neu-btn" data-reveal-steps="steps-p3c">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p3c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">القسمة على 5 و7 معاً تعني القسمة على $5\times7=35$؛ مضاعفات 35 حتى 50: فقط $35$ (لأن $70>50$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(E)=1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ طريقة واحدة فقط (العدد 35). ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">3d</span> ظهور عدد آحاده الرقم 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-p3d">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p3d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الأعداد المنتهية بالرقم 2 من 1 إلى 50: $2,12,22,32,42$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(E)=5 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 5 طرق. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">3e</span> ظهور عدد أوّلي</div>
+        <button class="neu-btn" data-reveal-steps="steps-p3e">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p3e">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الأعداد الأوّلية من 1 إلى 50: $2,3,5,7,11,13,17,19,23,29,31,37,41,43,47$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( n(E)=15 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 15 طريقة. ∎</div>
+    </div>
+
+    <h3 style="margin:1.8rem 0 .3rem">السؤال 4 — اختيار الطلبة عشوائياً لدخول لجنة الاختبار بالتعاقب (ذكر ثم أنثى أو بالعكس)</h3>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">4a</span> الصف فيه 4 طلاب و3 طالبات</div>
+        <button class="neu-btn" data-reveal-steps="steps-p4a">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p4a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بما أن عدد الطلاب (4) أكبر من الطالبات (3)، فالنمط المتعاقب الوحيد الممكن يبدأ وينتهي بطالب: ط ط ط ط ط ط ط (ذكر، أنثى، ذكر، أنثى، ذكر، أنثى، ذكر)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">نمط واحد فقط ممكن</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نرتّب الطلاب الأربعة في مواضعهم الأربعة، والطالبات الثلاث في مواضعهن الثلاثة</p>
+          <div class="calc-flow"><div class="calc-line">\( 4!\times3!=24\times6 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =144 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 144 طريقة. ∎</div>
+    </div>
+
+    <div class="qpart-card fade-up">
+      <div class="example-head"><div class="example-title"><span class="qpart-badge">4b</span> الصف فيه 3 طلاب و3 طالبات</div>
+        <button class="neu-btn" data-reveal-steps="steps-p4b">إظهار الحل</button></div>
+      <ol class="steps hidden-steps" id="steps-p4b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الأعداد متساوية الآن، فيوجد نمطان ممكنان للتعاقب: يبدأ بطالب أو يبدأ بطالبة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">نمطان: (ذكر أولاً) أو (أنثى أولاً)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">لكل نمط: نرتّب 3 طلاب في مواضعهم و3 طالبات في مواضعهن، ثم نضرب في عدد الأنماط</p>
+          <div class="calc-flow"><div class="calc-line">\( 2\times(3!\times3!)=2\times36 \)</div><div class="calc-arrow">↓</div><div class="calc-line calc-box">\( =72 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ 72 طريقة. ∎</div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
+    <div class="neu quiz" data-quiz>
+      <h2>🧠 اختبر نفسك</h2>
+
+      <div class="quiz-q" data-correct="0">
+        <div class="quiz-q-title"><span>1.</span><span>إن لم تُذكر طريقة السحب في السؤال، فإننا نفترض:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>سحباً دون إرجاع ودون ترتيب</span></label>
+          <label class="quiz-opt"><input type="radio"><span>سحباً مع إرجاع ومع ترتيب</span></label>
+          <label class="quiz-opt"><input type="radio"><span>سحباً عشوائياً تماماً بلا قاعدة</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا يمكن حل السؤال إطلاقاً</span></label>
+        </div>
+        <div class="quiz-explain">القاعدة الافتراضية: دون إرجاع ودون ترتيب، أي $C^n_r$.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="2">
+        <div class="quiz-q-title"><span>2.</span><span>سحب مع الترتيب ومع الإرجاع يُحسب بالصيغة:</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>$C^n_r$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$P^n_r$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$n^r$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>$C^{n+r-1}_r$</span></label>
+        </div>
+        <div class="quiz-explain">مع الترتيب ومع الإرجاع = $n^r$ (كل سحبة مستقلة تماماً عن الأخرى، بنفس عدد الخيارات $n$).</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>3.</span><span>في مثال 12 (سحب كرات من وعاء دون إرجاع)، لماذا تناقص عدد الكرات من 7 إلى 5 ثم إلى 2؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>خطأ في المثال</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن السحب دون إرجاع، فكل كرة تُسحب لا تعود للوعاء</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأننا نكسر بعض الكرات</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لا علاقة له بالإرجاع</span></label>
+        </div>
+        <div class="quiz-explain">السحب دون إرجاع يعني أن عدد عناصر المجتمع يتناقص بمقدار العدد المسحوب في كل مرة.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="3">
+        <div class="quiz-q-title"><span>4.</span><span>في السؤال 1a من تمرين (2-6)، لماذا استخدمنا $C^{14}_5$ لا $P^{14}_5$؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>لأن العدد 14 زوجي</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن اللجنة فيها رجال ونساء فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>خطأ، الصحيح $P^{14}_5$</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن أعضاء اللجنة الخمسة متساوون في المكانة (لا ترتيب بينهم)</span></label>
+        </div>
+        <div class="quiz-explain">اللجنة لا تميّز بين مناصب أعضائها، فالترتيب لا يهم — وهذا هو جوهر التوافيق.</div>
+      </div>
+
+      <div class="quiz-q" data-correct="1">
+        <div class="quiz-q-title"><span>5.</span><span>في مثال 18، لماذا تساوت النتيجة في الحالتين (مع ترتيب/بدون ترتيب) رغم اختلاف القانون؟</span></div>
+        <div class="quiz-options">
+          <label class="quiz-opt"><input type="radio"><span>لأن الأرقام من 1 إلى 10 فقط</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن كل حل يسحب عنصراً واحداً فقط من كل مجموعة (فردية/زوجية)، فلا معنى للترتيب هناك أصلاً</span></label>
+          <label class="quiz-opt"><input type="radio"><span>صدفة حسابية لا تفسير لها</span></label>
+          <label class="quiz-opt"><input type="radio"><span>لأن المجموع دائماً فردي</span></label>
+        </div>
+        <div class="quiz-explain">عند اختيار عنصر واحد ($r=1$) من كل مجموعة، $C^n_1=P^n_1=n$، فلا فرق بين الطريقتين هنا تحديداً.</div>
+      </div>
+
+      <button class="neu-btn primary" data-quiz-check>تحقق من الإجابات</button>
+      <div class="quiz-score"></div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="summary" data-navlabel="📋 الملخص">
+    <div class="card neu">
+      <h2>📋 ملخص الدرس</h2>
+      <ul class="summary-list">
+        <li><span>دون إرجاع: عدد المجتمع يتناقص بعد كل سحبة. مع إرجاع: يبقى ثابتاً.</span></li>
+        <li><span>دون إرجاع ودون ترتيب → $C^n_r$. دون إرجاع ومع ترتيب → $P^n_r$.</span></li>
+        <li><span>مع إرجاع ودون ترتيب → $C^{n+r-1}_r$. مع إرجاع ومع ترتيب → $n^r$.</span></li>
+        <li><span>افتراضياً (إن لم تُذكر الطريقة): دون إرجاع ودون ترتيب.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="mindmap" data-navlabel="🗺 الخريطة الذهنية">
+    <div class="card neu">
+      <div class="example-head">
+        <h2 style="margin:0">🗺 خريطة الدرس الذهنية</h2>
+        <button class="neu-btn" data-reveal-steps="mindmap-l4">إظهار الخريطة</button>
+      </div>
+      <div class="mindmap-wrap hidden-steps" id="mindmap-l4">
+        <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خريطة ذهنية للدرس الرابع">
+          <line x1="410" y1="150" x2="170" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="70" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="170" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <line x1="410" y1="150" x2="650" y2="230" stroke="#b3bdcc" stroke-width="2"/>
+          <g><circle cx="410" cy="150" r="56" fill="#7c6fee"/>
+            <text x="410" y="146" text-anchor="middle" fill="#fff" font-weight="800" font-size="14" font-family="Cairo,sans-serif">طرق سحب</text>
+            <text x="410" y="163" text-anchor="middle" fill="#fff" font-weight="800" font-size="13" font-family="Cairo,sans-serif">العيّنة</text></g>
+          <g><circle cx="170" cy="70" r="46" fill="#2fd18f"/>
+            <text x="170" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">Cⁿᵣ</text>
+            <text x="170" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">بدون إرجاع/ترتيب</text></g>
+          <g><circle cx="650" cy="70" r="46" fill="#3fa9f5"/>
+            <text x="650" y="66" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">Pⁿᵣ</text>
+            <text x="650" y="82" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">بدون إرجاع، مع ترتيب</text></g>
+          <g><circle cx="170" cy="230" r="46" fill="#ffab5e"/>
+            <text x="170" y="226" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">Cⁿ⁺ʳ⁻¹ᵣ</text>
+            <text x="170" y="242" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">مع إرجاع، بدون ترتيب</text></g>
+          <g><circle cx="650" cy="230" r="46" fill="#ff6b9d"/>
+            <text x="650" y="226" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">nʳ</text>
+            <text x="650" y="242" text-anchor="middle" fill="#fff" font-weight="700" font-size="10" font-family="Cairo,sans-serif">مع إرجاع ومع ترتيب</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <nav class="lesson-nav" data-auto></nav>
+</main>
+
+<footer class="site-footer">الفصل السادس · نظرية الاحتمال — الدرس 4: طرق سحب العيّنة</footer>
+
+<script src="../../assets/js/probability-widgets.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/site-ch6.js"></script>
+<script>
+(function(){
+  function ready(fn){ if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", fn); else fn(); }
+  ready(function(){
+    if(!window.PW) return;
+    var ballsEl = document.getElementById("ex12Balls");
+    if(ballsEl){
+      for(var i=1;i<=7;i++){
+        var s = document.createElement("span");
+        s.className = "pw-ball";
+        s.setAttribute("data-ball", "blue");
+        s.setAttribute("data-ball-label", i);
+        ballsEl.appendChild(s);
+      }
+    }
+    var cardsEl = document.getElementById("ex18Cards");
+    if(cardsEl){
+      var colors = ["red","blue","green","purple","orange","red","blue","green","purple","orange"];
+      for(var c=1;c<=10;c++){
+        var cd = document.createElement("span");
+        cd.className = "pw-card";
+        cd.setAttribute("data-card", c);
+        cd.setAttribute("data-card-color", colors[c-1]);
+        cardsEl.appendChild(cd);
+      }
+    }
+    PW.init();
+  });
+})();
+</script>
+</body>
+</html>
