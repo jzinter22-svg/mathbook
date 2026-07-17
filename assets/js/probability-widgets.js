@@ -212,9 +212,62 @@
     });
   }
 
+  /* ---- Small DOM helpers for full sample-space listings ------------------- */
+  function buildTable(container, rowHeaders, colHeaders, cellFn, opts){
+    opts = opts || {};
+    while(container.firstChild) container.removeChild(container.firstChild);
+    var wrap = document.createElement("div");
+    wrap.className = "ss-table-wrap";
+    var table = document.createElement("table");
+    table.className = "ss-table";
+    var thead = document.createElement("thead");
+    var trh = document.createElement("tr");
+    var corner = document.createElement("th");
+    corner.innerHTML = opts.corner || "";
+    trh.appendChild(corner);
+    colHeaders.forEach(function(c){
+      var th = document.createElement("th");
+      th.innerHTML = opts.colHeaderHTML ? opts.colHeaderHTML(c) : c;
+      trh.appendChild(th);
+    });
+    thead.appendChild(trh);
+    table.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    rowHeaders.forEach(function(r){
+      var tr = document.createElement("tr");
+      var th = document.createElement("th");
+      th.innerHTML = opts.rowHeaderHTML ? opts.rowHeaderHTML(r) : r;
+      tr.appendChild(th);
+      colHeaders.forEach(function(c){
+        var td = document.createElement("td");
+        td.innerHTML = cellFn(r,c);
+        if(opts.cellClass){ var cls = opts.cellClass(r,c); if(cls) td.className = cls; }
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+    container.appendChild(wrap);
+    initSlots();
+    return table;
+  }
+
+  function buildChips(container, items, cls){
+    while(container.firstChild) container.removeChild(container.firstChild);
+    items.forEach(function(it){
+      var span = document.createElement("span");
+      span.className = "outcome-chip" + (cls ? (" "+cls) : "");
+      span.textContent = it;
+      container.appendChild(span);
+    });
+  }
+
   window.PW = {
     die: die, coin: coin, ball: ball, card: card,
     renderTree: renderTree,
+    buildTable: buildTable,
+    buildChips: buildChips,
     init: initSlots
   };
 
