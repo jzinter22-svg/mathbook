@@ -344,7 +344,7 @@ input[type=text].neu-input,input[type=number].neu-input{
    that every geometry item ships its own diagram. Mirrors .mindmap-wrap's
    responsive rules so figures never cause horizontal page scroll. ===== */
 .diagram-wrap{overflow-x:auto;padding:.6rem 0 .4rem;text-align:center}
-.diagram-wrap svg{display:block;margin:0 auto;max-width:85%;height:auto}
+.diagram-wrap svg{display:block;margin:0 auto;max-width:59.5%;height:auto}
 .diagram-caption{display:block;margin-top:.65rem;font-size:.85rem;font-weight:700;color:var(--text-secondary)}
 .diagram-card{padding:1.1rem 1rem .8rem;margin-bottom:1.4rem;border-radius:var(--radius-md);
   background:var(--surface);box-shadow:6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light)}
