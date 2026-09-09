@@ -760,6 +760,169 @@
     </div>
   </section>
 
+  <section class="section fade-up" id="exercises" data-navlabel="📝 تمرين (2-4)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (2-4)</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك خطوة بخطوة.</p>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1</span> السؤال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-t24-1">إظهار الحل</button>
+      </div>
+      <div class="example-problem">منحنٍ ميله عند أية نقطة من نقاطه يساوي $3x^2-6x-9$، وله نهاية عظمى محلية قيمتها $15$. جد معادلته.</div>
+      <ol class="steps hidden-steps" id="steps-t24-1">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نوجد النقاط الحرجة بمساواة الميل بصفر</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 3x^2-6x-9=0 \Rightarrow x^2-2x-3=0 \Rightarrow (x-3)(x+1)=0 \Rightarrow x=3,\,x=-1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحدد أي نقطة تمثل نهاية عظمى عبر إشارة المشتقة الثانية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y''=6x-6 \Rightarrow y''(-1)=-12<0\ (\text{عظمى})\,,\ y''(3)=12>0\ (\text{صغرى}) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نكامل الميل لإيجاد معادلة المنحني بدلالة $c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\int(3x^2-6x-9)\,dx=x^3-3x^2-9x+c \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=-1,\,y=15$ (النهاية العظمى) لإيجاد $c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 15=(-1)^3-3(-1)^2-9(-1)+c=-1-3+9+c=5+c \Rightarrow c=10 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ معادلة المنحني: $y=x^3-3x^2-9x+10$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2</span> السؤال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-t24-2">إظهار الحل</button>
+      </div>
+      <div class="example-problem">منحنٍ ميله عند أية نقطة من نقاطه يساوي $ax^2-6x+9$ حيث $a\in\mathbb{R}$، وله نقطة انقلاب هي $(-1,6)$. جد معادلته.</div>
+      <ol class="steps hidden-steps" id="steps-t24-2">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نقطة الانقلاب تحقق $y''=0$؛ نشتق الميل $y'=ax^2-6x+9$ مرة أخرى</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y''=2ax-6 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=-1$ (إحداثي $x$ لنقطة الانقلاب) ونساوي بصفر لإيجاد $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a(-1)-6=0 \Rightarrow -2a=6 \Rightarrow a=-3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نكامل الميل (بعد تعويض $a=-3$) لإيجاد معادلة المنحني بدلالة $c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\int(-3x^2-6x+9)\,dx=-x^3-3x^2+9x+c \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نعوّض نقطة الانقلاب $(-1,6)$ لإيجاد $c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 6=-(-1)^3-3(-1)^2+9(-1)+c=1-3-9+c=-11+c \Rightarrow c=17 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ معادلة المنحني: $y=-x^3-3x^2+9x+17$ (مع $a=-3$). ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-t24-3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة المنحني الذي المشتقة الثانية لمعادلته تساوي $12x-4$، والمستقيم $2x-y=6$ يمسه عند النقطة التي احداثيها $x$ تساوي $2$.</div>
+      <ol class="steps hidden-steps" id="steps-t24-3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكامل المشتقة الثانية لإيجاد الميل $y'$ بدلالة $c_1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y'=\int(12x-4)\,dx=6x^2-4x+c_1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">المستقيم $y=2x-6$ ميله $2$، وهو مماس عند $x=2$؛ إذن $y'(2)=2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 6(4)-4(2)+c_1=2 \Rightarrow 16+c_1=2 \Rightarrow c_1=-14 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نكامل الميل $y'=6x^2-4x-14$ لإيجاد معادلة المنحني بدلالة $c_2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\int(6x^2-4x-14)\,dx=2x^3-2x^2-14x+c_2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نقطة التماس تنتمي أيضاً للمستقيم: عند $x=2$، $y=2(2)-6=-2$؛ نعوّض لإيجاد $c_2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( -2=2(8)-2(4)-14(2)+c_2=16-8-28+c_2=-20+c_2 \Rightarrow c_2=18 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ معادلة المنحني: $y=2x^3-2x^2-14x+18$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> السؤال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-t24-4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد معادلة المنحني الذي المشتقة الأولى لمعادلته تساوي $\dfrac{-2}{x^2}$، ويمر بالنقطة $(1,3)$.</div>
+      <ol class="steps hidden-steps" id="steps-t24-4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكتب المشتقة بصيغة أس سالب ونكاملها</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\int(-2x^{-2})\,dx=-2\cdot\dfrac{x^{-1}}{-1}+c=\dfrac{2}{x}+c \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض النقطة $(1,3)$ لإيجاد $c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 3=\dfrac{2}{1}+c=2+c \Rightarrow c=1 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ معادلة المنحني: $y=\dfrac{2}{x}+1$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5</span> السؤال 5</div>
+        <button class="neu-btn" data-reveal-steps="steps-t24-5">إظهار الحل</button>
+      </div>
+      <div class="example-problem">تحرك جسم بسرعة قدرها $(12t^2+2t-1)\,m/sec$. احسب إزاحته بعد مرور $5\,sec$ من بدء الحركة.</div>
+      <ol class="steps hidden-steps" id="steps-t24-5">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">الإزاحة = تكامل السرعة؛ نفرض $s=0$ عند بدء الحركة ($t=0$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( s(t)=\int(12t^2+2t-1)\,dt=4t^3+t^2-t+c \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض $t=0,\,s=0$ فنجد $c=0$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( s(t)=4t^3+t^2-t \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض $t=5$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( s(5)=4(125)+25-5=500+25-5=520 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ الإزاحة بعد $5\,sec$: $s=520\,m$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> السؤال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-t24-6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جسم يتحرك على خط مستقيم بتعجيل ثابت قدره $16\,m/sec^2$، وكان بعده عن نقطة بدء الحركة يساوي $180\,m$ بعد مرور $6\,sec$، والسرعة عندها كانت تساوي $96\,m/sec$. أحسب: (1) السرعة عندما $t=3\,sec$. (2) الإزاحة عندما $t=10\,sec$.</div>
+      <ol class="steps hidden-steps" id="steps-t24-6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكامل التعجيل الثابت لإيجاد معادلة السرعة بدلالة $v_0$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( v(t)=\int 16\,dt=16t+v_0 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض $v(6)=96$ لإيجاد $v_0$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 16(6)+v_0=96 \Rightarrow 96+v_0=96 \Rightarrow v_0=0 \Rightarrow v(t)=16t \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">(1) نعوّض $t=3$ لإيجاد السرعة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( v(3)=16(3)=48\,m/sec \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نكامل السرعة لإيجاد معادلة الإزاحة بدلالة $s_0$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( s(t)=\int 16t\,dt=8t^2+s_0 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نعوّض $s(6)=180$ لإيجاد $s_0$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 8(36)+s_0=180 \Rightarrow 288+s_0=180 \Rightarrow s_0=-108 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">(2) نعوّض $t=10$ لإيجاد الإزاحة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( s(10)=8(100)-108=800-108=692\,m \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ (1) السرعة عند $t=3\,sec$: $v=48\,m/sec$. (2) الإزاحة عند $t=10\,sec$: $s=692\,m$. ∎</div>
+    </div>
+  </section>
+
   <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
     <div class="neu quiz" data-quiz>
       <h2>🧠 اختبر نفسك</h2>

@@ -724,6 +724,268 @@
     </div>
   </section>
 
+  <section class="section fade-up" id="exercises" data-navlabel="📝 تمرين (3-4)">
+    <h2 style="margin-bottom:.25rem">📝 تمرين (3-4)</h2>
+    <p class="lead" style="margin-top:0">حاول حل كل سؤال بنفسك أولاً، ثم اضغط «إظهار الحل» للتحقق من إجابتك خطوة بخطوة.</p>
+
+    <h3 style="margin:1.2rem 0 .4rem">1) جد قيمة التكاملات المحددة الآتية:</h3>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1أ</span> السؤال 1 (أ)</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-1a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int_0^4 x\sqrt{x^2+9}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-t34-1a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مشتقة الداخل $x^2+9$ هي $2x$؛ الموجود $x$، فنضرب داخلاً بـ$2$ ونقسم خارجاً على $2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \int x(x^2+9)^{1/2}dx=\dfrac12\int 2x(x^2+9)^{1/2}dx=\dfrac12\cdot\dfrac{(x^2+9)^{3/2}}{3/2}=\dfrac13(x^2+9)^{3/2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدين $0,4$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac13\left[(16+9)^{3/2}-9^{3/2}\right]=\dfrac13[25^{3/2}-9^{3/2}]=\dfrac13[125-27]=\dfrac{98}{3} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\displaystyle\int_0^4 x\sqrt{x^2+9}\,dx=\dfrac{98}{3}$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1ب</span> السؤال 1 (ب)</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-1b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int_0^1 \dfrac{3x^2+4}{(x^3+4x+1)^2}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-t34-1b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مشتقة $x^3+4x+1$ هي $3x^2+4$ — تطابق تام مع البسط</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \int (3x^2+4)(x^3+4x+1)^{-2}dx=\dfrac{(x^3+4x+1)^{-1}}{-1}=\dfrac{-1}{x^3+4x+1} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدين $0,1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{-1}{1+4+1}-\left(\dfrac{-1}{0+0+1}\right)=-\dfrac16+1=\dfrac56 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\displaystyle\int_0^1 \dfrac{3x^2+4}{(x^3+4x+1)^2}\,dx=\dfrac56$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1ج</span> السؤال 1 (ج)</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-1c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int_8^{125} \dfrac{\sqrt{\sqrt[3]{x}-1}}{\sqrt[3]{x^2}}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-t34-1c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكتب الجذور بصيغة أسس: $\sqrt[3]{x^2}=x^{2/3}$، ومشتقة $x^{1/3}-1$ هي $\tfrac13x^{-2/3}$؛ الموجود $x^{-2/3}$، فنضرب داخلاً بـ$3$ ونقسم خارجاً على $3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \int (x^{1/3}-1)^{1/2}x^{-2/3}dx=3\int(x^{1/3}-1)^{1/2}\left(\tfrac13x^{-2/3}\right)dx=3\cdot\dfrac{(x^{1/3}-1)^{3/2}}{3/2}=2(x^{1/3}-1)^{3/2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدين: عند $x=125$، $\sqrt[3]{125}=5$؛ وعند $x=8$، $\sqrt[3]{8}=2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2\left[(5-1)^{3/2}-(2-1)^{3/2}\right]=2[4^{3/2}-1^{3/2}]=2[8-1]=14 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\displaystyle\int_8^{125} \dfrac{\sqrt{\sqrt[3]{x}-1}}{\sqrt[3]{x^2}}\,dx=14$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">1د</span> السؤال 1 (د)</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-1d">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int_1^{\sqrt{57}} \sqrt[3]{x^5+7x^3}\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-t34-1d">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نُخرج $x^3$ عاملاً مشتركاً تحت الجذر التكعيبي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt[3]{x^5+7x^3}=\sqrt[3]{x^3(x^2+7)}=x\sqrt[3]{x^2+7}=x(x^2+7)^{1/3} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">مشتقة $x^2+7$ هي $2x$؛ الموجود $x$، فنضرب داخلاً بـ$2$ ونقسم خارجاً على $2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac12\int 2x(x^2+7)^{1/3}dx=\dfrac12\cdot\dfrac{(x^2+7)^{4/3}}{4/3}=\dfrac38(x^2+7)^{4/3} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدين: عند $x=\sqrt{57}$، $x^2+7=64$؛ وعند $x=1$، $x^2+7=8$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac38\left[64^{4/3}-8^{4/3}\right]=\dfrac38[256-16]=\dfrac38(240)=90 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\displaystyle\int_1^{\sqrt{57}} \sqrt[3]{x^5+7x^3}\,dx=90$. ∎</div>
+    </div>
+
+    <h3 style="margin:1.2rem 0 .4rem">2) أثبت صحة المتطابقات الآتية:</h3>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2أ</span> السؤال 2 (أ)</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-2a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن: $\displaystyle\int_1^4 \left(\sqrt{x}+\dfrac{1}{\sqrt{x}}\right)dx = \dfrac{20}{3}$</div>
+      <ol class="steps hidden-steps" id="steps-t34-2a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نكامل كل حد بقاعدة الأس</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \int(x^{1/2}+x^{-1/2})dx=\dfrac23x^{3/2}+2x^{1/2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدين $1,4$ ونطرح</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \left[\dfrac23(8)+2(2)\right]-\left[\dfrac23(1)+2(1)\right]=\dfrac{28}3-\dfrac83=\dfrac{20}{3}\ ✓ \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تحقّقت المتطابقة. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2ب</span> السؤال 2 (ب)</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-2b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن: $\displaystyle\int_0^3 \sqrt[3]{(3x-1)^2}\,dx = \dfrac{33}{5}$</div>
+      <ol class="steps hidden-steps" id="steps-t34-2b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مشتقة $3x-1$ هي $3$؛ نضرب داخلاً بـ$3$ ونقسم خارجاً على $3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \int(3x-1)^{2/3}dx=\dfrac13\int 3(3x-1)^{2/3}dx=\dfrac13\cdot\dfrac{(3x-1)^{5/3}}{5/3}=\dfrac15(3x-1)^{5/3} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدين $0,3$: عند $x=3$، $(8)^{5/3}=32$؛ وعند $x=0$، $(-1)^{5/3}=-1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac15[32-(-1)]=\dfrac{33}{5}\ ✓ \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تحقّقت المتطابقة. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">2ج</span> السؤال 2 (ج)</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-2c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">أثبت أن: $\displaystyle\int_0^2 \sqrt{4x+1}\,dx = \dfrac{13}{3}$</div>
+      <ol class="steps hidden-steps" id="steps-t34-2c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مشتقة $4x+1$ هي $4$؛ نضرب داخلاً بـ$4$ ونقسم خارجاً على $4$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \int(4x+1)^{1/2}dx=\dfrac14\int 4(4x+1)^{1/2}dx=\dfrac14\cdot\dfrac{(4x+1)^{3/2}}{3/2}=\dfrac16(4x+1)^{3/2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدين $0,2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac16\left[9^{3/2}-1^{3/2}\right]=\dfrac16[27-1]=\dfrac{13}{3}\ ✓ \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ تحقّقت المتطابقة. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-3">إظهار الحل</button>
+      </div>
+      <div class="example-problem">جد قيمة $a\in\mathbb{R}$ اذا علمت ان: $\displaystyle\int_0^a (2x-4)\,dx = -\int_{-1}^2 (x-1)^2\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-t34-3">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نحسب الطرف الأيمن أولاً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \int_{-1}^2(x-1)^2dx=\left[\dfrac{(x-1)^3}{3}\right]_{-1}^2=\dfrac{1}{3}-\dfrac{-8}{3}=\dfrac93=3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">إذن الطرف الأيمن يساوي $-3$؛ نحسب الطرف الأيسر بدلالة $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \int_0^a(2x-4)dx=\left[x^2-4x\right]_0^a=a^2-4a \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نساوي الطرفين ونحل معادلة الدرجة الثانية</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a^2-4a=-3 \Rightarrow a^2-4a+3=0 \Rightarrow (a-1)(a-3)=0 \Rightarrow a=1 \text{ أو } a=3 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $a=1$ أو $a=3$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">4</span> السؤال 4</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-4">إظهار الحل</button>
+      </div>
+      <div class="example-problem">اذا علمت ان للدالة $f(x)=x^2+2x+a$ حيث $a\in\mathbb{R}$ نهاية صغرى محلية قيمتها $(-5)$، جد قيمة التكامل الآتي: $\displaystyle\int_1^3 f(x)\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-t34-4">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نوجد موقع النهاية الصغرى بمساواة المشتقة بصفر (القطع المكافئ $f$ يفتح للأعلى فالنقطة الحرجة الوحيدة نهاية صغرى)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( f'(x)=2x+2=0 \Rightarrow x=-1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=-1$ ونساوي القيمة بـ$-5$ لإيجاد $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( f(-1)=1-2+a=-1+a=-5 \Rightarrow a=-4 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">إذن $f(x)=x^2+2x-4$؛ نكامل ونعوّض الحدين $1,3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \int_1^3(x^2+2x-4)dx=\left[\dfrac{x^3}3+x^2-4x\right]_1^3=\left(9+9-12\right)-\left(\dfrac13+1-4\right)=6-\left(-\dfrac83\right)=\dfrac{26}{3} \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $\displaystyle\int_1^3 f(x)\,dx=\dfrac{26}{3}$. ∎</div>
+    </div>
+
+    <h3 style="margin:1.2rem 0 .4rem">5) اذا علمت ان: $\displaystyle\int_3^6 f(x)\,dx=2\,,\ \int_3^6 g(x)\,dx=7$، جد كلاً مما يأتي:</h3>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5أ</span> السؤال 5 (أ)</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-5a">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int_3^6 [f(x)+g(x)]\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-t34-5a">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بخاصية جمع التكاملات</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \int_3^6[f(x)+g(x)]dx=\int_3^6f(x)dx+\int_3^6g(x)dx=2+7=9 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $9$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5ب</span> السؤال 5 (ب)</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-5b">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int_3^6 [2f(x)-4g(x)]\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-t34-5b">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بخاصية الضرب بثابت وجمع التكاملات</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2\int_3^6f(x)dx-4\int_3^6g(x)dx=2(2)-4(7)=4-28=-24 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $-24$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">5ج</span> السؤال 5 (ج)</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-5c">إظهار الحل</button>
+      </div>
+      <div class="example-problem">$\displaystyle\int_3^6 [3f(x)+2g(x)]\,dx$</div>
+      <ol class="steps hidden-steps" id="steps-t34-5c">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">بخاصية الضرب بثابت وجمع التكاملات</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 3\int_3^6f(x)dx+2\int_3^6g(x)dx=3(2)+2(7)=6+14=20 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $20$. ∎</div>
+    </div>
+
+    <div class="example exercise-card fade-up">
+      <div class="example-head">
+        <div class="example-title"><span class="example-badge">6</span> السؤال 6</div>
+        <button class="neu-btn" data-reveal-steps="steps-t34-6">إظهار الحل</button>
+      </div>
+      <div class="example-problem">اذا علمت ان: $\displaystyle\int_0^a 3x\sqrt{x^2+16}\,dx=61$، جد قيمة $a\in\mathbb{R}$.</div>
+      <ol class="steps hidden-steps" id="steps-t34-6">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">مشتقة $x^2+16$ هي $2x$؛ نكتب $3x=\tfrac32(2x)$ فيتطابق المعامل تماماً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \int 3x(x^2+16)^{1/2}dx=\dfrac32\int 2x(x^2+16)^{1/2}dx=\dfrac32\cdot\dfrac{(x^2+16)^{3/2}}{3/2}=(x^2+16)^{3/2} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض الحدين $0,a$ ونساوي بـ$61$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (a^2+16)^{3/2}-16^{3/2}=61 \Rightarrow (a^2+16)^{3/2}-64=61 \Rightarrow (a^2+16)^{3/2}=125 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نرفع الطرفين للأس $\tfrac23$ (بما أن $125=5^3$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a^2+16=125^{2/3}=(5^3)^{2/3}=5^2=25 \Rightarrow a^2=9 \Rightarrow a=\pm3 \)</div></div>
+        </div></li>
+      </ol>
+      <div class="exercise-final">✓ $a=3$ أو $a=-3$. ∎</div>
+    </div>
+  </section>
+
   <section class="section fade-up" id="quiz" data-navlabel="🧠 اختبر نفسك">
     <div class="neu quiz" data-quiz>
       <h2>🧠 اختبر نفسك</h2>

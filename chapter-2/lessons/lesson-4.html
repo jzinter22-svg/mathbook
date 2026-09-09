@@ -141,7 +141,7 @@
       </div>
       <div class="callout tip fade-up" style="margin-top:1rem">
         <span class="icon">💬</span>
-        <span>خاصية مفيدة إضافية: بعد أي بؤرة عن أي قطب يساوي دائماً $a$ (لأن $b^2+c^2=a^2$) — نستخدم هذه الخاصية في السؤال 7 من تمرين (2-2) أدناه.</span>
+        <span>خاصية مفيدة إضافية: بعد أي بؤرة عن أي قطب يساوي دائماً $a$ (لأن $b^2+c^2=a^2$).</span>
       </div>
     </div>
   </section>
@@ -652,26 +652,30 @@
         <div class="example-title"><span class="example-badge">7</span> السؤال 7</div>
         <button class="neu-btn" data-reveal-steps="steps-pq7">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد معادلة القطع الناقص الذي مركزه نقطة الأصل وبؤرتاه ينتميان إلى المحور $Y$ وطول محوره الكبير يساوي $6$ وحدات، والبعد بين بؤرته وقطبيه يساوي $4$ وحدات.</div>
+      <div class="example-problem">جد معادلة القطع الناقص الذي مركزه نقطة الأصل وبؤرتاه تنتميان إلى المحور $Y$ وطول محوره الكبير يساوي $6$ وحدات، والبعد بين بؤرتيه يساوي $4$ وحدات.</div>
       <ol class="steps hidden-steps" id="steps-pq7">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">$2a=6 \Rightarrow a=3$. نتحقق أولاً من خاصية عامة: المثلث المكوّن من المركز وبؤرة وقطب قائم الزاوية عند المركز، أضلاعه $b,c$ ووتره المسافة من البؤرة إلى القطب</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( \text{المسافة (بؤرة} \to \text{قطب)} = \sqrt{b^2+c^2} \)</div></div>
+          <p class="calc-note">من طول المحور الكبير نستخرج $a$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2a=6 \Rightarrow a=3 \Rightarrow a^2=9 \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">لكن $b^2+c^2=a^2$ دائماً (من العلاقة الأساسية $c^2=a^2-b^2$)، إذن هذه المسافة تساوي $a$ دائماً وبلا استثناء</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{b^2+c^2}=\sqrt{a^2}=a=3 \)</div></div>
+          <p class="calc-note">من البعد بين البؤرتين نستخرج $c$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2c=4 \Rightarrow c=2 \Rightarrow c^2=4 \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">لكن المعطى ينصّ على أن هذه المسافة تساوي $4$، بينما أثبتنا أنها يجب أن تساوي $a=3$ دائماً لأي قطع ناقص محوره الكبير $6$ وحدات</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( 4 \neq 3 \)</div></div>
+          <p class="calc-note">نستخرج $b^2$ من العلاقة الأساسية $c^2=a^2-b^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( b^2=a^2-c^2=9-4=5 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">بما أن البؤرتين تنتميان إلى المحور $Y$، يكون المحور الكبير على $Y$؛ نكتب المعادلة بالصورة $\dfrac{x^2}{b^2}+\dfrac{y^2}{a^2}=1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{x^2}{5}+\dfrac{y^2}{9}=1 \)</div></div>
         </div></li>
       </ol>
-      <div class="callout warn fade-up" style="margin-top:.8rem">
-        <span class="icon">⚠️</span>
-        <span>هذا تناقض رياضي: بُعد أي بؤرة عن أي قطب في القطع الناقص يساوي دائماً $a$ (نصف طول المحور الكبير) — وهي خاصية ثابتة لا تعتمد على شكل القطع. بما أن طول المحور الكبير محدَّد بـ $6$ وحدات (أي $a=3$)، فإن الشرط الثاني (البعد $=4$) لا يمكن أن يتحقق مع أي قطع ناقص. <b>لا يوجد قطع ناقص</b> يحقق الشرطين معاً.</span>
+      <div class="callout tip fade-up" style="margin-top:.8rem">
+        <span class="icon">💡</span>
+        <span>تحقّق: $a^2=9 &gt; b^2=5$، وهذا صحيح دائماً في القطع الناقص. كما أن $c^2=a^2-b^2=9-5=4$، فتتحقق قيمة $c$ المعطاة.</span>
       </div>
-      <div class="exercise-final">✓ لا يوجد قطع ناقص بهذه المواصفات — أثبتنا أن بُعد البؤرة عن القطب يساوي $a=3$ دائماً هنا، لا $4$ كما افترض السؤال. ∎</div>
+      <div class="exercise-final">✓ $\dfrac{x^2}{5}+\dfrac{y^2}{9}=1$. ∎</div>
     </div>
   </section>
 
