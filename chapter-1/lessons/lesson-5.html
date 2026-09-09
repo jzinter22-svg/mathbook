@@ -445,10 +445,25 @@
         <button class="neu-btn" data-reveal-steps="steps-pq6a">إظهار الحل</button>
       </div>
       <div class="example-problem">جد الجذرين التربيعيين للعدد المركب $1+\sqrt3\,i$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🔧 الاستراتيجية:</b> نفرض $x+yi=\sqrt{1+\sqrt3i}$، نربّع الطرفين (بنفس أسلوب المثال 1 أعلاه)، ثم نستخدم تساوي عددين مركبين.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-pq6a">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">نفرض $x+yi=\sqrt{1+\sqrt3i}$، فنحصل على $x^2-y^2=1,\; 2xy=\sqrt3$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">الحل يعطي \( x^2=\tfrac32,\,y^2=\tfrac12 \)</div></div>
+          <p class="calc-note">نربّع الطرفين، ثم بتساوي عددين مركبين نحصل على معادلتين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (x^2-y^2)+2xyi=1+\sqrt3i \;\Rightarrow\; x^2-y^2=1\;(1)\,,\qquad 2xy=\sqrt3\;(2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">من (2): نعزل $y$ بدلالة $x$، ونعوّض في (1) بعد الضرب في $x^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\dfrac{\sqrt3}{2x} \;\Rightarrow\; x^2-\dfrac{3}{4x^2}=1 \;\Rightarrow\; 4x^4-4x^2-3=0 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نحلل (معادلة تربيعية بدلالة $x^2$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (2x^2-3)(2x^2+1)=0 \;\Rightarrow\; x^2=\tfrac32 \) (نقبل، $x$ حقيقي) أو \( x^2=-\tfrac12 \) (نرفض)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">من $x^2=\tfrac32$ نجد $y^2=\tfrac{3}{4x^2}=\tfrac12$؛ وبما أن $2xy=\sqrt3>0$ فإن $x,y$ متماثلا الإشارة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x=\pm\dfrac{\sqrt6}{2}\,,\quad y=\pm\dfrac{\sqrt2}{2} \) (بنفس الإشارة معاً)</div></div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $\sqrt{1+\sqrt3i}=\pm\left(\dfrac{\sqrt6}{2}+\dfrac{\sqrt2}{2}i\right)$. ∎</div>
@@ -466,7 +481,15 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{14+2i}{1+i}\times\dfrac{1-i}{1-i}=8-6i \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نجد جذري $8-6i$ (بنفس أسلوب المثال 1)</p>
+          <p class="calc-note">نفرض $x+yi=\sqrt{8-6i}$، نربّع الطرفين، فبتساوي عددين مركبين نحصل على معادلتين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2-y^2=8\;(1)\,,\qquad 2xy=-6\;(2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">من (2): $y=-\dfrac{3}{x}$؛ نعوّض في (1) بعد الضرب في $x^2$ ونحلل</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^4-8x^2-9=0 \;\Rightarrow\; (x^2-9)(x^2+1)=0 \;\Rightarrow\; x^2=9 \) (نقبل) أو \( x^2=-1 \) (نرفض)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">من $x^2=9$: $x=\pm3$؛ وبما أن $xy=-3$ فإن $x,y$ متضادا الإشارة، فمن $y=-3/x$: عندما $x=3,\,y=-1$، وعندما $x=-3,\,y=1$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{8-6i}=\pm(3-i) \)</div></div>
         </div></li>
       </ol>
@@ -485,7 +508,15 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{82+11i}{2+i}\times\dfrac{2-i}{2-i}=35-12i \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نجد جذري $35-12i$</p>
+          <p class="calc-note">نفرض $x+yi=\sqrt{35-12i}$، نربّع الطرفين، فبتساوي عددين مركبين نحصل على معادلتين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2-y^2=35\;(1)\,,\qquad 2xy=-12\;(2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">من (2): $y=-\dfrac{6}{x}$؛ نعوّض في (1) بعد الضرب في $x^2$ ونحلل</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^4-35x^2-36=0 \;\Rightarrow\; (x^2-36)(x^2+1)=0 \;\Rightarrow\; x^2=36 \) (نقبل) أو \( x^2=-1 \) (نرفض)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">من $x^2=36$: $x=\pm6$؛ وبما أن $xy=-6$ فإن $x,y$ متضادا الإشارة، فمن $y=-6/x$: عندما $x=6,\,y=-1$، وعندما $x=-6,\,y=1$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{35-12i}=\pm(6-i) \)</div></div>
         </div></li>
       </ol>
@@ -504,7 +535,15 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{(7-4i)(2-i)}{5}=\dfrac{10-15i}{5}=2-3i \;\Rightarrow\; x=2,\,y=-3 \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نحسب $2x-yi=2(2)-(-3)i=4+3i$، ثم نجد جذره التربيعي</p>
+          <p class="calc-note">نحسب $2x-yi=2(2)-(-3)i=4+3i$؛ نفرض $m+ni=\sqrt{4+3i}$، نربّع الطرفين، فبتساوي عددين مركبين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( m^2-n^2=4\;(1)\,,\qquad 2mn=3\;(2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">من (2): $n=\dfrac{3}{2m}$؛ نعوّض في (1) بعد الضرب في $4m^2$ ونحلل (بدلالة $u=m^2$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4m^4-16m^2-9=0 \;\Rightarrow\; (2m^2-9)(2m^2+1)=0 \;\Rightarrow\; m^2=\tfrac92 \) (نقبل) أو \( m^2=-\tfrac12 \) (نرفض)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">من $m^2=\tfrac92$ نجد $n^2=\tfrac{9}{4m^2}=\tfrac12$؛ وبما أن $2mn=3>0$ فإن $m,n$ متماثلا الإشارة</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{4+3i}=\pm\left(\dfrac{3\sqrt2}{2}+\dfrac{\sqrt2}{2}i\right) \)</div></div>
         </div></li>
       </ol>

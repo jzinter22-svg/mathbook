@@ -715,8 +715,20 @@
       <div class="example-problem">أثبت أن: $\dfrac{1+i^2+i^4+i^5+i^7}{i+i^8-i^9}=1$.</div>
       <ol class="steps hidden-steps" id="steps-pq4a">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">البسط: $1+(-1)+1+i+(-i)=1$. المقام: $i+1-i=1$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{1}{1}=1 \quad ✓ \)</div></div>
+          <p class="calc-note">نبسّط كل قوة من قوى $i$ في البسط والمقام على حدة (باستخدام $i^2=-1,\,i^3=-i,\,i^4=1$ ثم تكرار الدورة)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( i^2=-1\,,\;\; i^4=1\,,\;\; i^5=i^4\!\cdot i=i\,,\;\; i^7=i^4\!\cdot i^3=-i\,,\;\; i^8=1\,,\;\; i^9=i^8\!\cdot i=i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعوّض في البسط ونجمع الحدود</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 1+i^2+i^4+i^5+i^7 = 1+(-1)+1+i+(-i)=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض في المقام ونجمع الحدود</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( i+i^8-i^9 = i+1-i=1 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نقسم البسط على المقام</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{1+i^2+i^4+i^5+i^7}{i+i^8-i^9}=\dfrac{1}{1}=1 \quad ✓ \)</div></div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $\dfrac{1+i^2+i^4+i^5+i^7}{i+i^8-i^9}=1$. ∎</div>
@@ -770,9 +782,16 @@
         <button class="neu-btn" data-reveal-steps="steps-pq5a">إظهار الحل</button>
       </div>
       <div class="example-problem">حلل العدد $25$ إلى حاصل ضرب عاملين مركبين بالصورة $a+bi$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> بما أن $(a+bi)(a-bi)=a^2-b^2i^2=a^2+b^2$ (خاصية المرافق $z\bar z=a^2+b^2$)، فإن أي عدد حقيقي موجب يُكتب على صورة مجموع مربعين $a^2+b^2$ يُحلَّل مباشرة إلى $(a+bi)(a-bi)$</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-pq5a">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">$25=3^2+4^2$</p>
+          <p class="calc-note">نكتب $25$ كمجموع مربعين كاملين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 25=3^2+4^2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نطبّق $a^2+b^2=(a+bi)(a-bi)$ مع $a=3,\,b=4$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( 25=(3+4i)(3-4i) \)</div></div>
         </div></li>
       </ol>
