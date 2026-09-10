@@ -427,10 +427,18 @@
       <div class="hidden-steps" id="steps-q9">
       <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <div class="calc-flow"><div class="calc-line">نفرض ارتفاع المخروط $h$، ونصف قطر قاعدته $r$، ونصف قطر الكرة $R=3$؛ بالعلاقة الهندسية: $r^2=h(2R-h)=6h-h^2$</div>
-          <div class="calc-line">$V(h)=\dfrac13\pi r^2h=\dfrac{\pi}{3}(6h^2-h^3)$</div></div>
+          <p class="calc-note">نفرض ارتفاع المخروط $h$، ونصف قطر قاعدته $r$، ونصف قطر الكرة $R=3$. لأكبر مخروط ممكن، رأس المخروط ومحيط قاعدته يجب أن يلامسا سطح الكرة معاً (وإلا لأمكن تكبيره). إذا كان مركز الكرة $O$، فإن رأس المخروط يبعد $R$ عن $O$ على المحور، وقاعدة المخروط تبعد عنه بالمقدار $(h-R)$ على نفس المحور</p>
+          <div class="calc-flow"><div class="calc-line">في المثلث القائم الزاوية الواصل بين $O$ ومركز القاعدة ونقطة على محيط القاعدة: الوتر $=R$ (لأن هذه النقطة على سطح الكرة)، والضلعان القائمان $r$ <span class="ar-safe">و</span> $(h-R)$؛ وبمبرهنة فيثاغورس</div>
+          <div class="calc-line">$r^2+(h-R)^2=R^2 \Rightarrow r^2=R^2-(h-R)^2=2hR-h^2$</div>
+          <div class="calc-arrow">↓ نعوّض $R=3$</div>
+          <div class="calc-line calc-box">$r^2=h(2R-h)=6h-h^2$</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نكتب دالة الحجم بدلالة $h$ فقط، ثم نشتق</p>
+          <div class="calc-flow"><div class="calc-line">$V(h)=\dfrac13\pi r^2h=\dfrac{\pi}{3}(6h^2-h^3)$</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نجعل المشتقة تساوي صفر</p>
           <div class="calc-flow">
             <div class="calc-line">$V'(h)=\dfrac{\pi}{3}(12h-3h^2)=\pi h(4-h)$</div>
             <div class="calc-line">$V'(h)=0\Rightarrow h=4$</div>
@@ -452,13 +460,22 @@
       <div class="hidden-steps" id="steps-q10">
       <ol class="steps">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">قطر قاعدة المخروط $12\,cm$ فنصف قطرها $R=6$، وارتفاعه $H=20$. نفرض نصف قطر الأسطوانة $r$ وارتفاعها $h$، بحيث تقوم الأسطوانة على قاعدة المخروط ومحيط سطحها العلوي يلامس السطح الجانبي للمخروط. في المقطع المحوري (مثلث)، المثلث الصغير الواقع فوق الأسطوانة (من رأس المخروط إلى محيط سطحها العلوي) يشابه مثلث المخروط الكامل، لأن كليهما قائما الزاوية ويشتركان بزاوية الرأس نفسها</p>
           <div class="calc-flow">
-            <div class="calc-line">نصف قطر قاعدة المخروط $R=6$، ارتفاعه $H=20$؛ بتشابه المثلثات: نصف قطر الأسطوانة $r=R\left(1-\dfrac{h}{H}\right)=6-\dfrac{3h}{10}$</div>
-            <div class="calc-line">$\Rightarrow h=20-\dfrac{10}{3}r$</div>
-            <div class="calc-line">$V(r)=\pi r^2h=\pi\left(20r^2-\dfrac{10}{3}r^3\right)$</div>
+            <div class="calc-line">ارتفاع المثلث الصغير $=H-h$، وقاعدته (نصف قطره) $=r$؛ وبتناسب المثلثين المتشابهين: $\dfrac{r}{H-h}=\dfrac{R}{H}$</div>
+            <div class="calc-arrow">↓ نعزل $r$</div>
+            <div class="calc-line calc-box">$r=R\left(1-\dfrac{h}{H}\right)=6-\dfrac{3h}{10}$</div>
           </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نعزل $h$ بدلالة $r$، ونكتب دالة حجم الأسطوانة $V=\pi r^2h$ بدلالة $r$ فقط</p>
+          <div class="calc-flow">
+            <div class="calc-line">$h=20-\dfrac{10}{3}r$</div>
+            <div class="calc-line">$V(r)=\pi r^2h=\pi\left(20r^2-\dfrac{10}{3}r^3\right)$</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نجعل المشتقة تساوي صفر</p>
           <div class="calc-flow">
             <div class="calc-line">$V'(r)=\pi(40r-10r^2)=10\pi r(4-r)$</div>
             <div class="calc-line">$V'(r)=0\Rightarrow r=4$</div>
