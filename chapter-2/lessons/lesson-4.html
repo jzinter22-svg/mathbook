@@ -48,17 +48,19 @@
     </div>
   </section>
 
-  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ اكتشف بنفسك">
     <div class="card neu">
-      <h2>🕹️ مثال تفاعلي: $\overline{PF_1}+\overline{PF_2}=2a$ عند كل نقطة</h2>
-      <p>حرّك المزلاج لتحريك النقطة $P$ حول القطع الناقص $\dfrac{x^2}{25}+\dfrac{y^2}{16}=1$ (حيث $a=5,\,b=4,\,c=3$)، وشاهد كيف يبقى مجموع المسافتين $d_1,d_2$ من $P$ إلى البؤرتين ثابتاً ومساوياً لـ $2a=10$.</p>
+      <h2>🕹️ اكتشف بنفسك: أين يكون $\overline{PF_1}+\overline{PF_2}=2a$؟</h2>
+      <p>حرّك النقطة $P$ بحرّية في <b>أي مكان</b> من المستوي — وليست بالضرورة على أي منحنى. راقب المسافتين $d_1=\overline{PF_1}$ و $d_2=\overline{PF_2}$ من $P$ إلى البؤرتين، ومجموعهما $d_1+d_2$، وقارنه بالقيمة الثابتة $2a$. حاول أن تكتشف بنفسك كل المواضع التي تتحقق عندها $d_1+d_2=2a$ — ستلاحظ أن هذه المواضع تتجمّع تدريجياً لترسم شكلاً مغلقاً: هذا هو القطع الناقص نفسه، ناتجاً مباشرة من التعريف (نستخدم هنا بؤرتَي القطع الناقص $\dfrac{x^2}{25}+\dfrac{y^2}{16}=1$ من المثال 18، حيث $a=5,\,b=4,\,c=3$، ومن ثمّ $2a=10$).</p>
       <div class="io-panel">
-        <div class="mindmap-wrap"><svg id="defFigEllipse" width="460" height="360" viewBox="0 0 460 360" role="img" aria-label="رسم يوضح تساوي مجموع بعدي نقطة على القطع الناقص عن البؤرتين مع 2a"></svg></div>
-        <div class="io-row">
-          <label for="thetaSlider" style="min-width:9rem">الزاوية $\theta$ = <span id="thetaVal">40</span>°</label>
-          <input type="range" id="thetaSlider" class="neu-range" min="0" max="360" step="2" value="40">
+        <div class="mindmap-wrap"><svg id="discoverFigEllipse" width="460" height="360" viewBox="0 0 460 360" role="img" aria-label="مستوٍ تفاعلي لاكتشاف تعريف القطع الناقص بتحريك نقطة P بحرية ومراقبة مجموع بعديها عن البؤرتين F1 و F2"></svg></div>
+        <div class="io-row" style="justify-content:space-between">
+          <span>$d_1=\overline{PF_1}$ = <b id="ePf1Val">—</b></span>
+          <span>$d_2=\overline{PF_2}$ = <b id="ePf2Val">—</b></span>
+          <span>$d_1+d_2$ = <b id="eSumVal">—</b></span>
+          <button class="neu-btn" id="resetEllipseDiscover" type="button">↺ إعادة ضبط</button>
         </div>
-        <div class="rule-box" id="ellipseSumFormula" style="font-size:1.05rem">$$d_1+d_2 = 10.00 = 2a$$</div>
+        <div class="rule-box" id="ellipseDiscoverBadge" style="font-size:1.05rem;text-align:center">الهدف: 2a = 10 — حرّك P لتبدأ الاكتشاف…</div>
       </div>
     </div>
   </section>
@@ -812,56 +814,141 @@
     return e;
   }
 
-  /* ---- interactive: PF1+PF2=2a demo on x^2/25+y^2/16=1 ---- */
+  /* ---- Ellipse Discovery Lab: PF1+PF2=2a, P freely draggable (not constrained to the curve) ---- */
   (function(){
-    var svg = document.getElementById("defFigEllipse");
-    var slider = document.getElementById("thetaSlider");
-    var thetaVal = document.getElementById("thetaVal");
-    var formula = document.getElementById("ellipseSumFormula");
-    var a = 5, b = 4, c = 3;
-    var W = 460, H = 360, ox = W/2, oy = H/2, scale = 34;
+    var svg = document.getElementById("discoverFigEllipse");
+    var pf1Val = document.getElementById("ePf1Val");
+    var pf2Val = document.getElementById("ePf2Val");
+    var sumVal = document.getElementById("eSumVal");
+    var badge = document.getElementById("ellipseDiscoverBadge");
+    var resetBtn = document.getElementById("resetEllipseDiscover");
+
+    /* مثال 18: x^2/25 + y^2/16 = 1  =>  a=5, b=4, c=3, foci F1(c,0)=(3,0), F2(-c,0)=(-3,0) */
+    var twoA = 10;
+    var F1 = {x:3, y:0}, F2 = {x:-3, y:0};
+    var W = 460, H = 360, ox = W/2, oy = H/2, scale = 28;
+    var tolerance = 0.25;
+    var xMin = -7.5, xMax = 7.5, yMin = -5.7, yMax = 5.7;
+    var trace = [];
+    var P = {x:2, y:1};
+    var dragging = false;
+    var pFocused = false;
 
     function toPx(x,y){ return [ox + x*scale, oy - y*scale]; }
+    function toMath(px,py){ return {x:(px-ox)/scale, y:(oy-py)/scale}; }
+    function dist(x1,y1,x2,y2){ return Math.hypot(x1-x2, y1-y2); }
+    function clamp(v,lo,hi){ return Math.max(lo, Math.min(hi, v)); }
+
+    function eventToMath(evt){
+      var rect = svg.getBoundingClientRect();
+      var sx = (evt.clientX - rect.left) * (W / rect.width);
+      var sy = (evt.clientY - rect.top) * (H / rect.height);
+      return toMath(sx, sy);
+    }
+
+    function setP(x,y){
+      P.x = clamp(x, xMin, xMax);
+      P.y = clamp(y, yMin, yMax);
+      render();
+    }
+
+    function startDrag(evt){
+      evt.preventDefault();
+      dragging = true;
+      var m = eventToMath(evt);
+      setP(m.x, m.y);
+      window.addEventListener("pointermove", onPointerMove);
+      window.addEventListener("pointerup", onPointerUp);
+      window.addEventListener("pointercancel", onPointerUp);
+    }
+    function onPointerMove(evt){
+      if(!dragging) return;
+      var m = eventToMath(evt);
+      setP(m.x, m.y);
+    }
+    function onPointerUp(){
+      dragging = false;
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerUp);
+      window.removeEventListener("pointercancel", onPointerUp);
+    }
+    function onKeyDown(evt){
+      var step = evt.shiftKey ? 1 : 0.2;
+      if(evt.key === "ArrowLeft"){ setP(P.x - step, P.y); evt.preventDefault(); }
+      else if(evt.key === "ArrowRight"){ setP(P.x + step, P.y); evt.preventDefault(); }
+      else if(evt.key === "ArrowUp"){ setP(P.x, P.y + step); evt.preventDefault(); }
+      else if(evt.key === "ArrowDown"){ setP(P.x, P.y - step); evt.preventDefault(); }
+    }
+
+    /* clicking/tapping anywhere on the plane also moves P there (registered once, not per-render) */
+    svg.addEventListener("pointerdown", startDrag);
 
     function render(){
       while(svg.firstChild) svg.removeChild(svg.firstChild);
-      var theta = parseFloat(slider.value);
-      thetaVal.textContent = theta;
-      var rad = theta*Math.PI/180;
-      var x = a*Math.cos(rad), y = b*Math.sin(rad);
 
       el(svg,"line",{x1:10,y1:oy,x2:W-10,y2:oy,stroke:"var(--text-faint)","stroke-width":1.2});
       el(svg,"line",{x1:ox,y1:10,x2:ox,y2:H-10,stroke:"var(--text-faint)","stroke-width":1.2});
 
-      var d = "";
-      for(var t=0;t<=360;t+=4){
-        var r = t*Math.PI/180;
-        var p = toPx(a*Math.cos(r), b*Math.sin(r));
-        d += (t===0 ? "M " : "L ") + p[0].toFixed(1) + " " + p[1].toFixed(1) + " ";
+      var d1 = dist(P.x,P.y,F1.x,F1.y);
+      var d2 = dist(P.x,P.y,F2.x,F2.y);
+      var sum = d1 + d2;
+      var diff = Math.abs(sum - twoA);
+      var isMatch = diff < tolerance;
+
+      /* trace of discovered matching points (avoid clutter from near-duplicates); the ellipse
+         is never precomputed or drawn directly — it only emerges from accumulated matches */
+      if(isMatch){
+        var tooClose = trace.some(function(t){ return dist(t.x,t.y,P.x,P.y) < 0.3; });
+        if(!tooClose) trace.push({x:P.x, y:P.y});
       }
-      d += "Z";
-      var path = document.createElementNS(ns,"path");
-      path.setAttribute("d", d); path.setAttribute("fill","none");
-      path.setAttribute("stroke","#7c6fee"); path.setAttribute("stroke-width","3");
-      svg.appendChild(path);
+      trace.forEach(function(t){
+        var tp = toPx(t.x,t.y);
+        el(svg,"circle",{cx:tp[0],cy:tp[1],r:3.5,fill:"#7c6fee",opacity:.55});
+      });
 
-      var f1P = toPx(c,0), f2P = toPx(-c,0), pP = toPx(x,y);
+      var f1P = toPx(F1.x,F1.y), f2P = toPx(F2.x,F2.y);
       el(svg,"circle",{cx:f1P[0],cy:f1P[1],r:5,fill:"#ff6b9d"});
-      el(svg,"circle",{cx:f2P[0],cy:f2P[1],r:5,fill:"#ffab5e"});
-      el(svg,"text",{x:f1P[0]-6,y:f1P[1]+22,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "F1(3,0)";
-      el(svg,"text",{x:f2P[0]-30,y:f2P[1]+22,"font-size":12,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "F2(-3,0)";
+      el(svg,"text",{x:f1P[0]-8,y:f1P[1]+20,"font-size":13,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "F₁(3,0)";
+      el(svg,"circle",{cx:f2P[0],cy:f2P[1],r:5,fill:"#ff6b9d"});
+      el(svg,"text",{x:f2P[0]-12,y:f2P[1]+20,"font-size":13,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "F₂(-3,0)";
 
-      el(svg,"line",{x1:pP[0],y1:pP[1],x2:f1P[0],y2:f1P[1],stroke:"#ff6b9d","stroke-width":2,"stroke-dasharray":"4 3"});
-      el(svg,"line",{x1:pP[0],y1:pP[1],x2:f2P[0],y2:f2P[1],stroke:"#ffab5e","stroke-width":2,"stroke-dasharray":"4 3"});
-      el(svg,"circle",{cx:pP[0],cy:pP[1],r:5,fill:"#3fa9f5"});
-      el(svg,"text",{x:pP[0]+8,y:pP[1]-8,"font-size":13,"font-weight":700,fill:"var(--text-primary)","font-family":"Cairo,sans-serif"}).textContent = "P";
+      var pP = toPx(P.x,P.y);
+      var pColor = isMatch ? "#2fd18f" : "#3fa9f5";
 
-      var d1 = Math.sqrt((x-c)*(x-c)+y*y);
-      var d2 = Math.sqrt((x+c)*(x+c)+y*y);
-      formula.innerHTML = "$$d_1+d_2 = " + (d1+d2).toFixed(2) + " = 2a$$";
-      window.Ch4.typeset([formula]);
+      el(svg,"line",{x1:pP[0],y1:pP[1],x2:f1P[0],y2:f1P[1],stroke:"#ffab5e","stroke-width":2,"stroke-dasharray":"4 3"});
+      el(svg,"line",{x1:pP[0],y1:pP[1],x2:f2P[0],y2:f2P[1],stroke:"#4ecbd9","stroke-width":2,"stroke-dasharray":"4 3"});
+      el(svg,"text",{x:(pP[0]+f1P[0])/2+4,y:(pP[1]+f1P[1])/2-6,"font-size":12,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "d₁";
+      el(svg,"text",{x:(pP[0]+f2P[0])/2-16,y:(pP[1]+f2P[1])/2-6,"font-size":12,"font-weight":700,fill:"#4ecbd9","font-family":"Cairo,sans-serif"}).textContent = "d₂";
+
+      var hit = el(svg,"circle",{cx:pP[0],cy:pP[1],r:16,fill:"transparent",style:"cursor:grab",tabindex:"0",role:"button","aria-label":"النقطة P، اسحبها أو استخدم مفاتيح الأسهم لتحريكها"});
+      el(svg,"circle",{cx:pP[0],cy:pP[1],r:7,fill:pColor,style:"pointer-events:none"});
+      el(svg,"text",{x:pP[0]+11,y:pP[1]-10,"font-size":13,"font-weight":700,fill:pColor,"font-family":"Cairo,sans-serif",style:"pointer-events:none"}).textContent = "P(" + P.x.toFixed(2) + "," + P.y.toFixed(2) + ")";
+
+      hit.addEventListener("pointerdown", function(evt){ evt.stopPropagation(); startDrag(evt); });
+      hit.addEventListener("keydown", onKeyDown);
+      hit.addEventListener("focus", function(){ pFocused = true; });
+      hit.addEventListener("blur", function(){ pFocused = false; });
+      if(pFocused){ hit.focus(); }
+
+      pf1Val.textContent = d1.toFixed(2);
+      pf2Val.textContent = d2.toFixed(2);
+      sumVal.textContent = sum.toFixed(2);
+
+      if(isMatch){
+        badge.textContent = "✓ أحسنت! تحقق المجموع d1 + d2 = 2a = 10 عند هذه النقطة";
+        badge.style.color = "var(--accent-green)";
+      } else {
+        badge.textContent = "الهدف: 2a = 10 — حرّك P حتى يتساوى مجموع d1 + d2 معه…";
+        badge.style.color = "";
+      }
     }
-    slider.addEventListener("input", render);
+
+    resetBtn.addEventListener("click", function(){
+      trace = [];
+      P = {x:2, y:1};
+      render();
+    });
+
     render();
   })();
 
