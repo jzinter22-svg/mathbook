@@ -499,12 +499,24 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( (1+i)^2=1+2i+i^2=2i \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">$(1+i)^3=(1+i)^2(1+i)=2i(1+i)$؛ &nbsp; $(1+i)^4=[(1+i)^2]^2=(2i)^2$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( (1+i)^3=-2+2i\,,\qquad (1+i)^4=-4 \)</div></div>
+          <p class="calc-note">$(1+i)^3=(1+i)^2(1+i)=2i(1+i)$؛ نوزّع $2i$ على القوس</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( 2i(1+i)=2i+2i^2 \)</div>
+            <div class="calc-arrow">↓ نستبدل $i^2=-1$</div>
+            <div class="calc-line calc-box">\( (1+i)^3=2i-2=-2+2i \)</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">نجمع الناتجين</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( (1+i)^3+(1+i)^4=(-2+2i)+(-4)=-6+2i \)</div></div>
+          <p class="calc-note">$(1+i)^4=[(1+i)^2]^2=(2i)^2$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (2i)^2=4i^2 \)</div>
+            <div class="calc-arrow">↓ نستبدل $i^2=-1$</div>
+            <div class="calc-line calc-box">\( (1+i)^4=4(-1)=-4 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نجمع الناتجين، كلاً من الجزء الحقيقي والتخيلي على حدة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (1+i)^3+(1+i)^4=(-2+2i)+(-4+0i)=(-2-4)+2i=-6+2i \)</div></div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $(1+i)^3+(1+i)^4=-6+2i$. ∎</div>
@@ -582,12 +594,28 @@
       <div class="example-problem">جد ناتج $\left(\dfrac{1+3i}{4-i}\right)^2$ بالصيغة الاعتيادية للعدد المركب.</div>
       <ol class="steps hidden-steps" id="steps-pq2f">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">نبسّط الكسر الداخلي أولاً بضرب مرافق المقام $\dfrac{4+i}{4+i}$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{(1+3i)(4+i)}{17}=\dfrac{1+13i}{17} \)</div></div>
+          <p class="calc-note">نبسّط الكسر الداخلي أولاً بضرب البسط والمقام في مرافق المقام $\dfrac{4+i}{4+i}$؛ المقام يصبح $(4-i)(4+i)=4^2+1^2=17$ (فرق مربعين)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{1+3i}{4-i}\times\dfrac{4+i}{4+i}=\dfrac{(1+3i)(4+i)}{17} \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نربّع الناتج</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( \left(\dfrac{1+13i}{17}\right)^2=\dfrac{1+26i-169}{289}=\dfrac{-168+26i}{289} \)</div></div>
+          <p class="calc-note">نوزّع البسط (FOIL)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (1+3i)(4+i)=1(4)+1(i)+3i(4)+3i(i)=4+i+12i+3i^2 \)</div>
+            <div class="calc-arrow">↓ نستبدل $i^2=-1$ ونجمع الأجزاء المتشابهة</div>
+            <div class="calc-line calc-box">\( =4-3+13i=1+13i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">فيصبح الكسر المبسّط $\dfrac{1+13i}{17}$؛ نربّعه بمربع الحدين $(a+b)^2=a^2+2ab+b^2$ على البسط، والمقام يُرفع للأس 2 مباشرة</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (1+13i)^2=1^2+2(1)(13i)+(13i)^2=1+26i+169i^2 \)</div>
+            <div class="calc-arrow">↓ نستبدل $i^2=-1$: $169i^2=-169$</div>
+            <div class="calc-line calc-box">\( (1+13i)^2=(1-169)+26i=-168+26i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">والمقام $17^2=289$، فالناتج النهائي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \left(\dfrac{1+13i}{17}\right)^2=\dfrac{-168+26i}{289} \)</div></div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $\left(\dfrac{1+3i}{4-i}\right)^2=\dfrac{-168+26i}{289}$. ∎</div>
@@ -696,12 +724,24 @@
       <div class="example-problem">جد قيمة كل من $x,y$ الحقيقيتين إذا علمت أن: $(2x+i)(x-i)=\dfrac{16y^2+9}{4y+3i}$.</div>
       <ol class="steps hidden-steps" id="steps-pq3d">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">لاحظ $16y^2+9=(4y+3i)(4y-3i)$، فيصبح الطرف الأيمن $=4y-3i$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( (2x+i)(x-i)=2x^2+1-xi \)</div></div>
+          <p class="calc-note">نبسّط الطرف الأيمن أولاً. نلاحظ أن $16y^2+9=(4y)^2+3^2$ هو مجموع مربعين، أي حاصل ضرب مرافقين: $16y^2+9=(4y+3i)(4y-3i)$ (تحقّق: $(4y+3i)(4y-3i)=16y^2-9i^2=16y^2+9$ ✓). بما أن المقام هو نفسه العامل الأول، يبسّط الكسر مباشرة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{16y^2+9}{4y+3i}=\dfrac{(4y+3i)(4y-3i)}{4y+3i}=4y-3i \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نساوي الطرفين ونقارن الجزءين</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( -x=-3\Rightarrow x=3,\quad 2(3)^2+1=19=4y\Rightarrow y=\tfrac{19}{4} \)</div></div>
+          <p class="calc-note">نوزّع الطرف الأيسر $(2x+i)(x-i)$ (FOIL)</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (2x+i)(x-i)=2x(x)+2x(-i)+i(x)+i(-i)=2x^2-2xi+xi-i^2 \)</div>
+            <div class="calc-arrow">↓ نستبدل $i^2=-1$، ونجمع حدّي $i$ ($-2xi+xi=-xi$)</div>
+            <div class="calc-line calc-box">\( (2x+i)(x-i)=(2x^2+1)-xi \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نساوي الطرفين $(2x^2+1)-xi=4y-3i$، ونقارن الجزء التخيلي أولاً</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( -x=-3 \Rightarrow x=3 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نعوّض $x=3$ في الجزء الحقيقي $2x^2+1=4y$ لإيجاد $y$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2(3)^2+1=4y \Rightarrow 19=4y \Rightarrow y=\tfrac{19}{4} \)</div></div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $x=3,\; y=\frac{19}{4}$. ∎</div>
