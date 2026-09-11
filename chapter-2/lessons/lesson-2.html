@@ -45,17 +45,27 @@
     </div>
   </section>
 
-  <section class="section fade-up" id="interactive" data-navlabel="🕹️ مثال تفاعلي">
+  <section class="section fade-up" id="interactive" data-navlabel="🕹️ اكتشف بنفسك">
     <div class="card neu">
-      <h2>🕹️ مثال تفاعلي: $\overline{PM}=\overline{PF}$ عند كل نقطة</h2>
-      <p>حرّك المزلاج لتحريك النقطة $P$ على القطع المكافئ $y^2=8x$ (حيث $a=2$)، وشاهد كيف تبقى المسافة $d_1$ من $P$ إلى الدليل مساوية دوماً للمسافة $d_2$ من $P$ إلى البؤرة $F(2,0)$ — وهذا هو جوهر التعريف.</p>
+      <h2>🕹️ اكتشف بنفسك: أين تتساوى $d_1$ مع $d_2$؟</h2>
+      <p>حرّك مزلاجَي $x$ و $y$ لتحريك النقطة $P$ في <b>أي مكان</b> من المستوي — وليست بالضرورة على أي منحنى. راقب المسافة $d_1$ من $P$ إلى الدليل $\overleftrightarrow{L}$ (وهو $x=-2$) والمسافة $d_2$ من $P$ إلى البؤرة $F(2,0)$. حاول أن تكتشف بنفسك كل المواضع التي تتحقق عندها $d_1=d_2$ — ستلاحظ أن هذه المواضع ترسم شكلاً معيّناً تدريجياً: هذا هو القطع المكافئ نفسه، ناتجاً مباشرة من التعريف.</p>
       <div class="io-panel">
-        <div class="mindmap-wrap"><svg id="defFig" width="460" height="360" viewBox="0 0 460 360" role="img" aria-label="رسم يوضح تساوي بعد نقطة على القطع المكافئ عن البؤرة وعن الدليل"></svg></div>
+        <div class="mindmap-wrap"><svg id="discoverFig" width="460" height="360" viewBox="0 0 460 360" role="img" aria-label="مستوٍ تفاعلي لاكتشاف تعريف القطع المكافئ بتحريك نقطة P بحرية ومراقبة تساوي بعدها عن البؤرة والدليل"></svg></div>
         <div class="io-row">
-          <label for="ySlider" style="min-width:9rem">إحداثي <b>y</b> للنقطة $P$ = <span id="yVal">4</span></label>
-          <input type="range" id="ySlider" class="neu-range" min="-6" max="6" step="0.5" value="4">
+          <label for="pxSlider" style="min-width:7rem">إحداثي <b>x</b> للنقطة $P$ = <span id="pxVal">-1</span></label>
+          <input type="range" id="pxSlider" class="neu-range" min="-4" max="9" step="0.25" value="-1">
         </div>
-        <div class="rule-box" id="distFormula" style="font-size:1.05rem">$$d_1 = d_2 = 4.00$$</div>
+        <div class="io-row">
+          <label for="pySlider" style="min-width:7rem">إحداثي <b>y</b> للنقطة $P$ = <span id="pyVal">3</span></label>
+          <input type="range" id="pySlider" class="neu-range" min="-7" max="7" step="0.25" value="3">
+        </div>
+        <div class="io-row" style="justify-content:space-between">
+          <span>$d_1$ (إلى الدليل) = <b id="d1Val">—</b></span>
+          <span>$d_2$ (إلى البؤرة) = <b id="d2Val">—</b></span>
+          <span>الفرق $|d_1-d_2|$ = <b id="diffVal">—</b></span>
+          <button class="neu-btn" id="resetDiscover" type="button">↺ إعادة ضبط</button>
+        </div>
+        <div class="rule-box" id="discoverBadge" style="font-size:1.05rem;text-align:center">حرّك $P$ لتبدأ الاكتشاف…</div>
       </div>
     </div>
   </section>
@@ -336,22 +346,33 @@
     return e;
   }
 
-  /* ---- interactive definition figure: y^2 = 4ax, a=2, P moves along curve ---- */
+  /* ---- discovery figure: y^2 = 4ax, a=2, P moves freely anywhere in the plane ---- */
   (function(){
-    var svg = document.getElementById("defFig");
-    var slider = document.getElementById("ySlider");
-    var yVal = document.getElementById("yVal");
-    var formula = document.getElementById("distFormula");
+    var svg = document.getElementById("discoverFig");
+    var xSlider = document.getElementById("pxSlider");
+    var ySlider = document.getElementById("pySlider");
+    var pxVal = document.getElementById("pxVal");
+    var pyVal = document.getElementById("pyVal");
+    var d1Val = document.getElementById("d1Val");
+    var d2Val = document.getElementById("d2Val");
+    var diffVal = document.getElementById("diffVal");
+    var badge = document.getElementById("discoverBadge");
+    var resetBtn = document.getElementById("resetDiscover");
     var a = 2;
+    var F = {x:a, y:0};
     var W = 460, H = 360, ox = 130, oy = 180, scale = 24; /* px per unit */
+    var tolerance = 0.15;
+    var trace = [];
 
     function toPx(x,y){ return [ox + x*scale, oy - y*scale]; }
+    function dist(x1,y1,x2,y2){ return Math.hypot(x1-x2, y1-y2); }
 
     function render(){
       while(svg.firstChild) svg.removeChild(svg.firstChild);
-      var y = parseFloat(slider.value);
-      yVal.textContent = y;
-      var x = (y*y)/(4*a);
+      var x = parseFloat(xSlider.value);
+      var y = parseFloat(ySlider.value);
+      pxVal.textContent = x;
+      pyVal.textContent = y;
 
       /* axes */
       el(svg,"line",{x1:10,y1:oy,x2:W-10,y2:oy,stroke:"var(--text-faint)","stroke-width":1.2});
@@ -362,48 +383,61 @@
       el(svg,"line",{x1:dxPx,y1:12,x2:dxPx,y2:H-12,stroke:"#ff6b9d","stroke-width":2,"stroke-dasharray":"6 4"});
       el(svg,"text",{x:dxPx-34,y:24,"font-size":13,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "الدليل x=-2";
 
-      /* parabola curve y^2=4ax, both branches */
-      var d = "";
-      for(var yy=-8; yy<=8; yy+=0.25){
-        var xx = (yy*yy)/(4*a);
-        var p = toPx(xx,yy);
-        d += (yy===-8 ? "M " : "L ") + p[0].toFixed(1) + " " + p[1].toFixed(1) + " ";
-      }
-      var path = document.createElementNS(ns,"path");
-      path.setAttribute("d", d.trim());
-      path.setAttribute("fill","none");
-      path.setAttribute("stroke","#7c6fee");
-      path.setAttribute("stroke-width","3");
-      svg.appendChild(path);
+      /* distances */
+      var d1 = Math.abs(x - (-a));
+      var d2 = dist(x,y,F.x,F.y);
+      var diff = Math.abs(d1 - d2);
+      var isMatch = diff < tolerance;
 
-      /* vertex */
-      var vP = toPx(0,0);
-      el(svg,"circle",{cx:vP[0],cy:vP[1],r:4,fill:"#2fd18f"});
-      el(svg,"text",{x:vP[0]-16,y:vP[1]+20,"font-size":12,"font-weight":700,fill:"#2fd18f","font-family":"Cairo,sans-serif"}).textContent = "V";
+      /* trace of discovered matching points (avoid clutter from near-duplicates) */
+      if(isMatch){
+        var tooClose = trace.some(function(t){ return dist(t.x,t.y,x,y) < 0.3; });
+        if(!tooClose) trace.push({x:x, y:y});
+      }
+      trace.forEach(function(t){
+        var tp = toPx(t.x,t.y);
+        el(svg,"circle",{cx:tp[0],cy:tp[1],r:3.5,fill:"#7c6fee",opacity:.55});
+      });
 
       /* focus */
-      var fP = toPx(a,0);
+      var fP = toPx(F.x,F.y);
       el(svg,"circle",{cx:fP[0],cy:fP[1],r:5,fill:"#ff6b9d"});
       el(svg,"text",{x:fP[0]-6,y:fP[1]+20,"font-size":13,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "F(2,0)";
 
       /* point P and foot M on directrix */
       var pP = toPx(x,y);
       var mP = [dxPx, pP[1]];
-      el(svg,"circle",{cx:pP[0],cy:pP[1],r:5,fill:"#3fa9f5"});
-      el(svg,"text",{x:pP[0]+8,y:pP[1]-8,"font-size":13,"font-weight":700,fill:"var(--text-primary)","font-family":"Cairo,sans-serif"}).textContent = "P(x,y)";
+      var pColor = isMatch ? "#2fd18f" : "#3fa9f5";
       el(svg,"circle",{cx:mP[0],cy:mP[1],r:4,fill:"#ffab5e"});
 
-      /* d1: P to M (dashed orange), d2: P to F (dashed pink) */
+      /* d1: P to M (dashed orange), d2: P to F (dashed, matches P color) */
       el(svg,"line",{x1:pP[0],y1:pP[1],x2:mP[0],y2:mP[1],stroke:"#ffab5e","stroke-width":2,"stroke-dasharray":"4 3"});
-      el(svg,"line",{x1:pP[0],y1:pP[1],x2:fP[0],y2:fP[1],stroke:"#ff6b9d","stroke-width":2,"stroke-dasharray":"4 3"});
+      el(svg,"line",{x1:pP[0],y1:pP[1],x2:fP[0],y2:fP[1],stroke:pColor,"stroke-width":2,"stroke-dasharray":"4 3"});
       el(svg,"text",{x:(pP[0]+mP[0])/2-24,y:pP[1]-6,"font-size":12,"font-weight":700,fill:"#ffab5e","font-family":"Cairo,sans-serif"}).textContent = "d1";
-      el(svg,"text",{x:(pP[0]+fP[0])/2+4,y:(pP[1]+fP[1])/2-6,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "d2";
+      el(svg,"text",{x:(pP[0]+fP[0])/2+4,y:(pP[1]+fP[1])/2-6,"font-size":12,"font-weight":700,fill:pColor,"font-family":"Cairo,sans-serif"}).textContent = "d2";
 
-      var d1 = x + a;
-      formula.innerHTML = "$$d_1 = d_2 = " + d1.toFixed(2) + "$$";
-      window.Ch4.typeset([formula]);
+      el(svg,"circle",{cx:pP[0],cy:pP[1],r:6,fill:pColor});
+      el(svg,"text",{x:pP[0]+9,y:pP[1]-8,"font-size":13,"font-weight":700,fill:pColor,"font-family":"Cairo,sans-serif"}).textContent = "P(" + x.toFixed(2) + "," + y.toFixed(2) + ")";
+
+      d1Val.textContent = d1.toFixed(2);
+      d2Val.textContent = d2.toFixed(2);
+      diffVal.textContent = diff.toFixed(2);
+      if(isMatch){
+        badge.textContent = "✓ أحسنت! تحققت المساواة d1 = d2 عند هذه النقطة";
+        badge.style.color = "var(--accent-green)";
+      } else {
+        badge.textContent = "حرّك P حتى تتساوى d1 و d2…";
+        badge.style.color = "";
+      }
     }
-    slider.addEventListener("input", render);
+    xSlider.addEventListener("input", render);
+    ySlider.addEventListener("input", render);
+    resetBtn.addEventListener("click", function(){
+      trace = [];
+      xSlider.value = -1;
+      ySlider.value = 3;
+      render();
+    });
     render();
   })();
 

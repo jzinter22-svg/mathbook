@@ -411,6 +411,9 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ البؤرة $F(2,0)$، الدليل $x=-2$، والمعادلة $y^2=8x$. ∎</div>
+      <div class="neu" style="padding:1.25rem 1.5rem;margin-top:1.2rem">
+        <div class="mindmap-wrap"><svg id="ex16Fig" width="460" height="320" viewBox="0 0 460 320" role="img" aria-label="رسم القطع المكافئ y^2=8x مع رأسه وبؤرته ودليله والمسافة البؤرية p"></svg></div>
+      </div>
     </div>
 
     <div class="example fade-up">
@@ -796,6 +799,54 @@
     svg.appendChild(e);
     return e;
   }
+
+  /* ---- static figure for مثال 16: y^2=8x, a=2, F(2,0), directrix x=-2 ---- */
+  (function(){
+    var svg16 = document.getElementById("ex16Fig");
+    if(!svg16) return;
+    var W = 460, H = 320, ox = 150, oy = 160, scale = 24, a = 2;
+    function toPx(x,y){ return [ox + x*scale, oy - y*scale]; }
+
+    el(svg16,"line",{x1:10,y1:oy,x2:W-10,y2:oy,stroke:"var(--text-faint)","stroke-width":1.2});
+    el(svg16,"line",{x1:ox,y1:10,x2:ox,y2:H-10,stroke:"var(--text-faint)","stroke-width":1.2});
+
+    /* directrix x=-2 */
+    var dxPx = toPx(-a,0)[0];
+    el(svg16,"line",{x1:dxPx,y1:12,x2:dxPx,y2:H-12,stroke:"#ff6b9d","stroke-width":2,"stroke-dasharray":"6 4"});
+    el(svg16,"text",{x:dxPx-34,y:24,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "الدليل x=-2";
+
+    /* parabola curve y^2=8x */
+    var d = "";
+    for(var yy=-6; yy<=6; yy+=0.25){
+      var xx = (yy*yy)/(4*a);
+      var p = toPx(xx,yy);
+      d += (yy===-6 ? "M " : "L ") + p[0].toFixed(1) + " " + p[1].toFixed(1) + " ";
+    }
+    var path16 = document.createElementNS(ns,"path");
+    path16.setAttribute("d", d.trim());
+    path16.setAttribute("fill","none");
+    path16.setAttribute("stroke","#7c6fee");
+    path16.setAttribute("stroke-width","3");
+    svg16.appendChild(path16);
+
+    /* vertex */
+    var vP = toPx(0,0);
+    el(svg16,"circle",{cx:vP[0],cy:vP[1],r:4,fill:"#2fd18f"});
+    el(svg16,"text",{x:vP[0]-8,y:vP[1]+20,"font-size":12,"font-weight":700,fill:"#2fd18f","font-family":"Cairo,sans-serif"}).textContent = "V(0,0)";
+
+    /* focus + focal-distance segment p=2 */
+    var fP = toPx(a,0);
+    el(svg16,"line",{x1:vP[0],y1:vP[1]+34,x2:fP[0],y2:fP[1]+34,stroke:"var(--text-secondary)","stroke-width":1.4});
+    el(svg16,"line",{x1:vP[0],y1:vP[1]+28,x2:vP[0],y2:vP[1]+40,stroke:"var(--text-secondary)","stroke-width":1.4});
+    el(svg16,"line",{x1:fP[0],y1:fP[1]+28,x2:fP[0],y2:fP[1]+40,stroke:"var(--text-secondary)","stroke-width":1.4});
+    el(svg16,"text",{x:(vP[0]+fP[0])/2,y:vP[1]+54,"font-size":13,"font-weight":700,fill:"var(--text-secondary)","font-family":"Cairo,sans-serif","text-anchor":"middle"}).textContent = "p=2";
+
+    el(svg16,"circle",{cx:fP[0],cy:fP[1],r:5,fill:"#ff6b9d"});
+    el(svg16,"text",{x:fP[0]-6,y:fP[1]-12,"font-size":13,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "F(2,0)";
+
+    /* axis of symmetry label */
+    el(svg16,"text",{x:W-108,y:oy-8,"font-size":12,"font-weight":700,fill:"var(--text-faint)","font-family":"Cairo,sans-serif"}).textContent = "محور التماثل";
+  })();
 
   var svg = document.getElementById("eqGraphFig");
   var slider = document.getElementById("aParamSlider");
