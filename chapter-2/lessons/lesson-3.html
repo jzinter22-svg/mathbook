@@ -595,18 +595,30 @@
         <div class="example-title"><span class="example-badge">3</span> السؤال 3</div>
         <button class="neu-btn" data-reveal-steps="steps-pq3">إظهار الحل</button>
       </div>
-      <div class="example-problem">جد معادلة القطع المكافئ الذي دليله يمر بالنقطة $(-3,\sqrt2)$ وبؤرته تنتمي إلى المحور $X$، ورأسه في نقطة الأصل.</div>
+      <div class="example-problem">جد معادلة القطع المكافئ الذي يمر بالنقطة $(-3,\sqrt2)$ وبؤرته تنتمي إلى المحور $X$، ورأسه في نقطة الأصل.</div>
       <ol class="steps hidden-steps" id="steps-pq3">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">البؤرة على المحور $X$ ⟵ الدليل عمودي عليه (مستقيم رأسي)؛ يمر بنقطة إحداثيها السيني $-3$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( x=-3 \)</div></div>
+          <p class="calc-note">رأس القطع نقطة الأصل وبؤرته على المحور $X$، فالصورتان الممكنتان هما $y^2=4ax$ (فتحة يمين) أو $y^2=-4ax$ (فتحة يسار)؛ بما أن النقطة التي يمر بها القطع إحداثيها السيني سالب ($x=-3$)، فلا بد أن يفتح القطع نحو اليسار</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y^2=-4ax \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نقارن مع دليل الصورة $y^2=4ax$ وهو $x=-a$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( -a=-3 \Rightarrow a=3 \)</div></div>
+          <p class="calc-note">نعوّض إحداثيي النقطة $(-3,\sqrt2)$ في هذه الصورة لإيجاد $a$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (\sqrt2)^2=-4a(-3) \)</div>
+            <div class="calc-arrow">↓</div>
+            <div class="calc-line calc-box">\( 2=12a \Rightarrow a=\dfrac16 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعوّض قيمة $a$ في $y^2=-4ax$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y^2=-4\left(\dfrac16\right)x \Rightarrow y^2=-\dfrac23x \)</div></div>
         </div></li>
       </ol>
-      <div class="exercise-final">✓ المعادلة $y^2=12x$، والبؤرة $F(3,0)$. ∎</div>
+      <div class="callout tip fade-up" style="margin-top:.6rem">
+        <span class="icon">💬</span>
+        <span>تحقّق: نعوّض $x=-3$ في المعادلة الناتجة: $y^2=-\dfrac23(-3)=2$، وهذا فعلاً يساوي $(\sqrt2)^2$ — فالنقطة المعطاة تحقق المعادلة الناتجة.</span>
+      </div>
+      <div class="exercise-final">✓ المعادلة $y^2=-\dfrac23x$، والبؤرة $F\!\left(-\dfrac16,0\right)$، والدليل $x=\dfrac16$. ∎</div>
     </div>
 
     <div class="example exercise-card fade-up">
