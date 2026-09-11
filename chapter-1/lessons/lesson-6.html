@@ -78,10 +78,31 @@
     <div class="example fade-up">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">1</span> مثال 1</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex1g">إظهار الحل</button>
       </div>
       <div class="example-problem">مثّل العملية الآتية هندسياً بشكل أرجاند: $(1+2i)+(3-4i)$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> نجمع جبرياً أولاً، ثم نمثّل الجمع هندسياً بقاعدة متوازي الأضلاع (جمع المتجهات)</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex1g">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نجمع العددين جبرياً أولاً، لنعرف مسبقاً أين يجب أن ينتهي القطر</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (1+2i)+(3-4i)=4-2i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نحدد نقطتي العددين المعطيين على المستوي المركب</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P_1(1,2)\,,\qquad P_2(3,-4) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نكمل متوازي الأضلاع الذي ضلعاه $\overrightarrow{OP_1}$ و $\overrightarrow{OP_2}$ (بخطين متقطعين موازيين لهما من $P_1$ و $P_2$)؛ قطره الخارج من $O$ يمثّل الناتج $P_3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{OP_1}+\overrightarrow{OP_2}=\overrightarrow{OP_3} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نقرأ إحداثيي $P_3$ من الرسم ونقارنهما بالناتج الجبري</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P_3(4,-2) \quad\Leftrightarrow\quad 4-2i \quad ✓ \)</div></div>
+        </div></li>
+      </ol>
       <div class="neu-inset" style="padding:1rem;margin-top:.5rem">
-        <p style="text-align:center;font-weight:800;color:var(--accent-purple)">$(1+2i)+(3-4i)=4-2i$</p>
         <div class="mindmap-wrap"><svg id="figEx1a" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="شكل أرجاند يمثل جمع العددين المركبين بقاعدة متوازي الأضلاع"></svg></div>
       </div>
       <div class="exercise-final">✓ القطر $\overrightarrow{OP_3}$ يصل إلى النقطة $(4,-2)$، أي $(1+2i)+(3-4i)=4-2i$. ∎</div>
@@ -90,10 +111,31 @@
     <div class="example fade-up">
       <div class="example-head">
         <div class="example-title"><span class="example-badge">2</span> مثال 2</div>
+        <button class="neu-btn" data-reveal-steps="steps-ex2g">إظهار الحل</button>
       </div>
       <div class="example-problem">مثّل العملية الآتية هندسياً بشكل أرجاند: $(5-2i)-(2-3i)$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🔧 القاعدة:</b> $z_1-z_2=z_1+(-z_2)$، فنمثّل الطرح كجمع مع النظير الجمعي (المتجه المدوَّر $180°$)</p>
+      </div>
+      <ol class="steps hidden-steps" id="steps-ex2g">
+        <li class="step"><span class="step-dot">1</span><div class="step-body">
+          <p class="calc-note">نطرح جبرياً أولاً، لنعرف مسبقاً أين يجب أن ينتهي القطر</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (5-2i)-(2-3i)=3+i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">نكتب الطرح كجمع مع النظير الجمعي لـ $z_2=2-3i$، ونحدد النقطتين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P_1(5,-2)\,,\qquad -P_2(-2,3) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نكمل متوازي الأضلاع الذي ضلعاه $\overrightarrow{OP_1}$ و $\overrightarrow{O(-P_2)}$؛ قطره الخارج من $O$ يمثّل ناتج الطرح $P_3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( \overrightarrow{OP_1}+\overrightarrow{O(-P_2)}=\overrightarrow{OP_3} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نقرأ إحداثيي $P_3$ من الرسم ونقارنهما بالناتج الجبري</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( P_3(3,1) \quad\Leftrightarrow\quad 3+i \quad ✓ \)</div></div>
+        </div></li>
+      </ol>
       <div class="neu-inset" style="padding:1rem;margin-top:.5rem">
-        <p style="text-align:center;font-weight:800;color:var(--accent-green)">$(5-2i)-(2-3i)=3+i$</p>
         <div class="mindmap-wrap"><svg id="figEx1b" width="420" height="340" viewBox="0 0 420 340" role="img" aria-label="شكل أرجاند يمثل طرح العددين المركبين بقاعدة متوازي الأضلاع"></svg></div>
       </div>
       <div class="exercise-final">✓ الفرق يصل إلى النقطة $(3,1)$، أي $(5-2i)-(2-3i)=3+i$. ∎</div>

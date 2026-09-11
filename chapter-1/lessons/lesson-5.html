@@ -185,8 +185,12 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( (2+3i)+(2-3i)=4+0i=4 \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">حاصل ضرب الجذرين (مترافقان: $z\bar z=a^2+b^2$)</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( (2+3i)(2-3i)=4+9=13 \)</div></div>
+          <p class="calc-note">حاصل ضرب الجذرين: الجذران مترافقان بالصورة $(a+bi)(a-bi)$، وهذا الشكل هو فرق مربعين فيعطي دائماً $a^2-(bi)^2=a^2-b^2i^2=a^2+b^2$ (لأن $i^2=-1$). هنا $a=2,\,b=3$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (2+3i)(2-3i)=2^2-(3i)^2=4-9i^2 \)</div>
+            <div class="calc-arrow">↓ نعوّض $i^2=-1$</div>
+            <div class="calc-line calc-box">\( =4-9(-1)=4+9=13 \)</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
           <p class="calc-note">نعوّض في الصيغة $x^2-($ مج $)x+($ ضرب $)=0$</p>
@@ -208,11 +212,19 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( 4+3i \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">مجموع الجذرين وحاصل ضربهما</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( (4+3i)+(4-3i)=8\,,\qquad (4+3i)(4-3i)=16+9=25 \)</div></div>
+          <p class="calc-note">مجموع الجذرين: الجزءان التخيليان متعاكسا الإشارة فيلغيان بعضهما ($-3i+3i=0$)، فيبقى ضعف الجزء الحقيقي فقط</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (4+3i)+(4-3i)=(4+4)+(3-3)i=8+0i=8 \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">نبني المعادلة</p>
+          <p class="calc-note">حاصل ضرب الجذرين: نفس صورة فرق المربعين $(a+bi)(a-bi)=a^2+b^2$ مع $a=4,\,b=3$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (4+3i)(4-3i)=4^2-(3i)^2=16-9i^2 \)</div>
+            <div class="calc-arrow">↓ نعوّض $i^2=-1$</div>
+            <div class="calc-line calc-box">\( =16-9(-1)=16+9=25 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نعوّض المجموع والحاصل في الصيغة $x^2-($ مج $)x+($ ضرب $)=0$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( x^2-8x+25=0 \)</div></div>
         </div></li>
       </ol>
@@ -225,23 +237,55 @@
         <button class="neu-btn" data-reveal-steps="steps-ex5">إظهار الحل</button>
       </div>
       <div class="example-problem">إذا كان $(1+2i)$ أحد جذري المعادلة $x^2-(3-i)x+a=0$، فما الجذر الآخر وما قيمة $a$؟</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>📋 المعطى:</b> أحد الجذرين $=1+2i$؛ معامل $x$ يساوي $-(3-i)$؛ الحد الثابت (المطلوب إيجاده) $=a$</p>
+        <p style="margin:.2rem 0"><b>🎯 المطلوب:</b> الجذر الآخر، وقيمة $a$</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-ex5">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">مجموع الجذرين هنا (المعامل $-(3-i)$) هو $3-i$، نفرض الجذر الآخر $z$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( z+(1+2i)=3-i \)</div></div>
+          <p class="calc-note">لأي معادلة تربيعية بالصورة $x^2+Bx+C=0$، مجموع جذريها يساوي $-B$ (لأن $A=1$ هنا). في معادلتنا $B=-(3-i)$، فنعوّض</p>
+          <div class="calc-flow">
+            <div class="calc-line">مجموع الجذرين \( {}=-B=-\big[-(3-i)\big] \)</div>
+            <div class="calc-arrow">↓ سالب سالب يعطي موجباً</div>
+            <div class="calc-line calc-box">مجموع الجذرين \( {}=3-i \)</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نعزل $z$</p>
+          <p class="calc-note">نفرض الجذر الآخر $z$. بما أن مجموع الجذرين $3-i$، وأحدهما $1+2i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z+(1+2i)=3-i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نعزل $z$ بطرح $(1+2i)$ من الطرفين، أي نضيف نظيره الجمعي $-(1+2i)=-1-2i$</p>
+          <div class="calc-flow"><div class="calc-line">\( z=(3-i)-(1+2i)=(3-i)+(-1-2i) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نجمع الجزء الحقيقي مع الحقيقي، والتخيلي مع التخيلي</p>
           <div class="calc-flow">
-            <div class="calc-line">\( z=(3-i)-(1+2i)=(3-i)+(-1-2i) \)</div>
+            <div class="calc-line">\( z=(3-1)+(-i-2i) \)</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">\( z=2-3i \)</div>
           </div>
         </div></li>
-        <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">$a=$ حاصل ضرب الجذرين</p>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">لنفس المعادلة $x^2+Bx+C=0$، حاصل ضرب جذريها يساوي $C$ (لأن $A=1$). هنا $C=a$، والجذران هما $1+2i$ <span class="ar-safe">و</span> $2-3i$ (من الخطوة السابقة)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=(1+2i)(2-3i) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">نوزّع كل حد من القوس الأول على القوس الثاني (FOIL)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=1(2)+1(-3i)+2i(2)+2i(-3i) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">نبسّط كل حد على حدة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=2-3i+4i-6i^2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نستبدل $i^2=-1$، فيصبح الحد الأخير $-6i^2=-6(-1)=6$ (سالب في سالب يعطي موجباً)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( a=2-3i+4i+6 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">9</span><div class="step-body">
+          <p class="calc-note">نجمع الجزء الحقيقي ($2+6$) مع الجزء التخيلي ($-3i+4i$) كلاً على حدة</p>
           <div class="calc-flow">
-            <div class="calc-line">\( a=(1+2i)(2-3i)=(2+6)+(4-3)i \)</div>
+            <div class="calc-line">\( a=(2+6)+(-3+4)i \)</div>
             <div class="calc-arrow">↓</div>
             <div class="calc-line calc-box">\( a=8+i \)</div>
           </div>
@@ -336,12 +380,20 @@
       <div class="example-problem">كوّن المعادلة التربيعية ذات المعاملات الحقيقية إذا كان أحد جذريها $(\sqrt3-i)^2$.</div>
       <ol class="steps hidden-steps" id="steps-pq1">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">نبسّط الجذر المعطى أولاً</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( (\sqrt3-i)^2=3-2\sqrt3\,i+i^2=2-2\sqrt3\,i \)</div></div>
+          <p class="calc-note">نبسّط الجذر المعطى أولاً بمربع الحدين $(a-b)^2=a^2-2ab+b^2$ مع $a=\sqrt3,\,b=i$</p>
+          <div class="calc-flow"><div class="calc-line">\( (\sqrt3-i)^2=(\sqrt3)^2-2(\sqrt3)(i)+i^2=3-2\sqrt3\,i+i^2 \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">بما أن المعاملات حقيقية، الجذر الآخر هو المرافق $2+2\sqrt3\,i$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">مج \(=4\)، ضرب \(=2^2+(2\sqrt3)^2=4+12=16\)</div></div>
+          <p class="calc-note">نستبدل $i^2=-1$ ونجمع الجزء الحقيقي ($3-1=2$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (\sqrt3-i)^2=3-2\sqrt3\,i-1=2-2\sqrt3\,i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">بما أن المعاملات حقيقية، الجذر الآخر هو مرافق هذا الجذر (نغيّر إشارة الجزء التخيلي فقط)، فالجذران هما $2-2\sqrt3i$ <span class="ar-safe">و</span> $2+2\sqrt3i$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">مجموعهما \(=(2+2)+(-2\sqrt3+2\sqrt3)i=4\)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">حاصل ضربهما: صورة فرق مربعين $(a+bi)(a-bi)=a^2+b^2$ مع $a=2,\,b=2\sqrt3$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">ضرب \(=2^2+(2\sqrt3)^2=4+4(3)=4+12=16\)</div></div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ المعادلة: $x^2-4x+16=0$. ∎</div>
@@ -355,12 +407,32 @@
       <div class="example-problem">إذا كان $(3i)$ أحد جذري المعادلة $z^2-hz+(3+6i)=0$، فما الجذر الآخر وما قيمة $h$؟</div>
       <ol class="steps hidden-steps" id="steps-pq2">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">حاصل ضرب الجذرين $=3+6i$، نعوّض $3i\cdot z=3+6i$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( z=\dfrac{3+6i}{3i}=\dfrac{(3+6i)(-3i)}{(3i)(-3i)}=\dfrac{18-9i}{9}=2-i \)</div></div>
+          <p class="calc-note">حاصل ضرب الجذرين يساوي الحد الثابت $=3+6i$، وأحد الجذرين $3i$؛ نفرض الجذر الآخر $z$، فيتحقق $3i\cdot z=3+6i$، أي</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=\dfrac{3+6i}{3i} \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">$h=$ مجموع الجذرين</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( h=3i+(2-i)=2+2i \)</div></div>
+          <p class="calc-note">المقام تخيلي بحت؛ لإزالة $i$ منه نضرب البسط والمقام في مرافقه $-3i$ (كسر يساوي 1، فلا يتغيّر العدد)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=\dfrac{3+6i}{3i}\times\dfrac{-3i}{-3i} \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نوزّع البسط: $(3+6i)(-3i)=3(-3i)+6i(-3i)$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( =-9i-18i^2 \)</div>
+            <div class="calc-arrow">↓ نستبدل $i^2=-1$: $-18i^2=-18(-1)=18$</div>
+            <div class="calc-line calc-box">\( =18-9i \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نوزّع المقام: $(3i)(-3i)=-9i^2$، ونستبدل $i^2=-1$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (3i)(-3i)=-9(-1)=9 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نقسم البسط الناتج على المقام الناتج (كل حد على حدة)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( z=\dfrac{18-9i}{9}=\dfrac{18}{9}-\dfrac{9}{9}i=2-i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">$h$ يساوي مجموع الجذرين (سالب معامل $z$ في المعادلة)؛ نجمع $3i$ مع الجذر الآخر $2-i$ الذي أوجدناه</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( h=3i+(2-i)=2+(3-1)i=2+2i \)</div></div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ الجذر الآخر $2-i$، و $h=2+2i$. ∎</div>
@@ -378,11 +450,19 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( r=\dfrac{2-i}{3} \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">حاصل الضرب $2r^2=k-\tfrac89i$؛ نحسب $r^2=\dfrac{(2-i)^2}{9}=\dfrac{3-4i}{9}$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( 2r^2=\dfrac{6-8i}{9}=\dfrac23-\dfrac89 i \)</div></div>
+          <p class="calc-note">حاصل ضرب الجذرين $(2r)(r)=2r^2$ يساوي الحد الثابت $k-\tfrac89i$؛ نحسب $r^2$ أولاً بمربع الحدين $(a-b)^2=a^2-2ab+b^2$ على $r=\dfrac{2-i}{3}$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( r^2=\dfrac{(2-i)^2}{3^2}=\dfrac{2^2-2(2)(i)+i^2}{9}=\dfrac{4-4i+i^2}{9} \)</div>
+            <div class="calc-arrow">↓ نستبدل $i^2=-1$: $4+i^2=4-1=3$</div>
+            <div class="calc-line calc-box">\( r^2=\dfrac{3-4i}{9} \)</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">نقارن الجزء الحقيقي</p>
+          <p class="calc-note">نضرب $r^2$ في $2$ للحصول على $2r^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 2r^2=2\times\dfrac{3-4i}{9}=\dfrac{6-8i}{9}=\dfrac23-\dfrac89 i \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">نساوي هذا بالحد الثابت $k-\tfrac89i$: الجزء التخيلي متطابق فعلاً ($-\tfrac89i=-\tfrac89i$ ✓ تحقّق)، ونقارن الجزء الحقيقي لإيجاد $k$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( k=\dfrac23 \)</div></div>
         </div></li>
       </ol>
@@ -405,12 +485,43 @@
           </div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نساوي $(A+Bi)^2=-5+12i$، فنحصل على $A^2-B^2=-5,\; 2AB=12$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( B=\dfrac6A \;\Rightarrow\; A^4+5A^2-36=0 \;\Rightarrow\; (A^2-4)(A^2+9)=0 \)</div></div>
+          <p class="calc-note">نفكّ $(A+Bi)^2$ بمربع الحدين $(a+b)^2=a^2+2ab+b^2$ مع $a=A,\,b=Bi$، مع العلم أن $A,B\in\mathbb{R}$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( (A+Bi)^2=A^2+2ABi+B^2i^2 \)</div>
+            <div class="calc-arrow">↓ نستبدل $i^2=-1$، ونجمع الجزء الحقيقي $A^2+B^2i^2=A^2-B^2$</div>
+            <div class="calc-line calc-box">\( (A+Bi)^2=(A^2-B^2)+2ABi \)</div>
+          </div>
         </div></li>
         <li class="step"><span class="step-dot">3</span><div class="step-body">
-          <p class="calc-note">$A^2=4$ (نرفض $A^2=-9$ لأن $A$ حقيقية) $\Rightarrow A=\pm2$، ومنها $B=\pm3$ بنفس الإشارة</p>
-          <div class="calc-flow"><div class="calc-line calc-box">\( (A,B)=(2,3) \) أو \( (-2,-3) \)</div></div>
+          <p class="calc-note">نساوي هذا بالجذر $-5+12i$ (من الخطوة 1). عدد مركب يساوي آخر فقط إذا تساوى جزآهما الحقيقي والتخيلي كلٌّ على حدة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( A^2-B^2=-5 \;\;(1)\,,\qquad 2AB=12 \;\;(2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">من (2): نعزل $B$ بدلالة $A$ (بقسمة الطرفين على $2A$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( B=\dfrac6A \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">5</span><div class="step-body">
+          <p class="calc-note">نعوّض في (1) لنحصل على معادلة بمتغيّر واحد $A$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( A^2-\left(\dfrac6A\right)^2=-5 \Rightarrow A^2-\dfrac{36}{A^2}=-5 \)</div>
+            <div class="calc-arrow">↓ نضرب الطرفين في $A^2$ لإزالة الكسر</div>
+            <div class="calc-line calc-box">\( A^4-36=-5A^2 \;\Rightarrow\; A^4+5A^2-36=0 \)</div>
+          </div>
+        </div></li>
+        <li class="step"><span class="step-dot">6</span><div class="step-body">
+          <p class="calc-note">هذه معادلة تربيعية بدلالة $A^2$؛ نحللها إلى عاملين (عددان حاصل ضربهما $-36$ ومجموعهما $5$ هما $9,-4$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (A^2+9)(A^2-4)=0 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">7</span><div class="step-body">
+          <p class="calc-note">من $A^2+9=0$: لا يوجد حل حقيقي لأن $A^2$ لا يساوي عدداً سالباً أبداً ($A\in\mathbb{R}$)، فنرفضه. من $A^2-4=0$: نقبل $A=\pm2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( A=2 \) أو \( A=-2 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">8</span><div class="step-body">
+          <p class="calc-note">نستخدم $B=\dfrac6A$ (من الخطوة 4) لإيجاد $B$ المقابلة لكل قيمة لـ $A$</p>
+          <div class="calc-flow">
+            <div class="calc-line">\( A=2 \Rightarrow B=\dfrac62=3 \)</div>
+            <div class="calc-line calc-box">\( A=-2 \Rightarrow B=\dfrac{6}{-2}=-3 \)</div>
+          </div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $(A,B)=(2,3)$ أو $(-2,-3)$ — تحقّق: $(2+3i)^2=-5+12i$. ∎</div>
@@ -445,10 +556,25 @@
         <button class="neu-btn" data-reveal-steps="steps-pq6a">إظهار الحل</button>
       </div>
       <div class="example-problem">جد الجذرين التربيعيين للعدد المركب $1+\sqrt3\,i$.</div>
+      <div class="neu-inset" style="padding:1rem 1.2rem;margin-bottom:1rem">
+        <p style="margin:.2rem 0"><b>🔧 الاستراتيجية:</b> نفرض $x+yi=\sqrt{1+\sqrt3i}$، نربّع الطرفين (بنفس أسلوب المثال 1 أعلاه)، ثم نستخدم تساوي عددين مركبين.</p>
+      </div>
       <ol class="steps hidden-steps" id="steps-pq6a">
         <li class="step"><span class="step-dot">1</span><div class="step-body">
-          <p class="calc-note">نفرض $x+yi=\sqrt{1+\sqrt3i}$، فنحصل على $x^2-y^2=1,\; 2xy=\sqrt3$</p>
-          <div class="calc-flow"><div class="calc-line calc-box">الحل يعطي \( x^2=\tfrac32,\,y^2=\tfrac12 \)</div></div>
+          <p class="calc-note">نربّع الطرفين، ثم بتساوي عددين مركبين نحصل على معادلتين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (x^2-y^2)+2xyi=1+\sqrt3i \;\Rightarrow\; x^2-y^2=1\;(1)\,,\qquad 2xy=\sqrt3\;(2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">2</span><div class="step-body">
+          <p class="calc-note">من (2): نعزل $y$ بدلالة $x$، ونعوّض في (1) بعد الضرب في $x^2$</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( y=\dfrac{\sqrt3}{2x} \;\Rightarrow\; x^2-\dfrac{3}{4x^2}=1 \;\Rightarrow\; 4x^4-4x^2-3=0 \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">نحلل (معادلة تربيعية بدلالة $x^2$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( (2x^2-3)(2x^2+1)=0 \;\Rightarrow\; x^2=\tfrac32 \) (نقبل، $x$ حقيقي) أو \( x^2=-\tfrac12 \) (نرفض)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">من $x^2=\tfrac32$ نجد $y^2=\tfrac{3}{4x^2}=\tfrac12$؛ وبما أن $2xy=\sqrt3>0$ فإن $x,y$ متماثلا الإشارة</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x=\pm\dfrac{\sqrt6}{2}\,,\quad y=\pm\dfrac{\sqrt2}{2} \) (بنفس الإشارة معاً)</div></div>
         </div></li>
       </ol>
       <div class="exercise-final">✓ $\sqrt{1+\sqrt3i}=\pm\left(\dfrac{\sqrt6}{2}+\dfrac{\sqrt2}{2}i\right)$. ∎</div>
@@ -466,7 +592,15 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{14+2i}{1+i}\times\dfrac{1-i}{1-i}=8-6i \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نجد جذري $8-6i$ (بنفس أسلوب المثال 1)</p>
+          <p class="calc-note">نفرض $x+yi=\sqrt{8-6i}$، نربّع الطرفين، فبتساوي عددين مركبين نحصل على معادلتين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2-y^2=8\;(1)\,,\qquad 2xy=-6\;(2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">من (2): $y=-\dfrac{3}{x}$؛ نعوّض في (1) بعد الضرب في $x^2$ ونحلل</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^4-8x^2-9=0 \;\Rightarrow\; (x^2-9)(x^2+1)=0 \;\Rightarrow\; x^2=9 \) (نقبل) أو \( x^2=-1 \) (نرفض)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">من $x^2=9$: $x=\pm3$؛ وبما أن $xy=-3$ فإن $x,y$ متضادا الإشارة، فمن $y=-3/x$: عندما $x=3,\,y=-1$، وعندما $x=-3,\,y=1$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{8-6i}=\pm(3-i) \)</div></div>
         </div></li>
       </ol>
@@ -485,7 +619,15 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{82+11i}{2+i}\times\dfrac{2-i}{2-i}=35-12i \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نجد جذري $35-12i$</p>
+          <p class="calc-note">نفرض $x+yi=\sqrt{35-12i}$، نربّع الطرفين، فبتساوي عددين مركبين نحصل على معادلتين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^2-y^2=35\;(1)\,,\qquad 2xy=-12\;(2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">من (2): $y=-\dfrac{6}{x}$؛ نعوّض في (1) بعد الضرب في $x^2$ ونحلل</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( x^4-35x^2-36=0 \;\Rightarrow\; (x^2-36)(x^2+1)=0 \;\Rightarrow\; x^2=36 \) (نقبل) أو \( x^2=-1 \) (نرفض)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">من $x^2=36$: $x=\pm6$؛ وبما أن $xy=-6$ فإن $x,y$ متضادا الإشارة، فمن $y=-6/x$: عندما $x=6,\,y=-1$، وعندما $x=-6,\,y=1$</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{35-12i}=\pm(6-i) \)</div></div>
         </div></li>
       </ol>
@@ -504,7 +646,15 @@
           <div class="calc-flow"><div class="calc-line calc-box">\( \dfrac{(7-4i)(2-i)}{5}=\dfrac{10-15i}{5}=2-3i \;\Rightarrow\; x=2,\,y=-3 \)</div></div>
         </div></li>
         <li class="step"><span class="step-dot">2</span><div class="step-body">
-          <p class="calc-note">نحسب $2x-yi=2(2)-(-3)i=4+3i$، ثم نجد جذره التربيعي</p>
+          <p class="calc-note">نحسب $2x-yi=2(2)-(-3)i=4+3i$؛ نفرض $m+ni=\sqrt{4+3i}$، نربّع الطرفين، فبتساوي عددين مركبين</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( m^2-n^2=4\;(1)\,,\qquad 2mn=3\;(2) \)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">3</span><div class="step-body">
+          <p class="calc-note">من (2): $n=\dfrac{3}{2m}$؛ نعوّض في (1) بعد الضرب في $4m^2$ ونحلل (بدلالة $u=m^2$)</p>
+          <div class="calc-flow"><div class="calc-line calc-box">\( 4m^4-16m^2-9=0 \;\Rightarrow\; (2m^2-9)(2m^2+1)=0 \;\Rightarrow\; m^2=\tfrac92 \) (نقبل) أو \( m^2=-\tfrac12 \) (نرفض)</div></div>
+        </div></li>
+        <li class="step"><span class="step-dot">4</span><div class="step-body">
+          <p class="calc-note">من $m^2=\tfrac92$ نجد $n^2=\tfrac{9}{4m^2}=\tfrac12$؛ وبما أن $2mn=3>0$ فإن $m,n$ متماثلا الإشارة</p>
           <div class="calc-flow"><div class="calc-line calc-box">\( \sqrt{4+3i}=\pm\left(\dfrac{3\sqrt2}{2}+\dfrac{\sqrt2}{2}i\right) \)</div></div>
         </div></li>
       </ol>

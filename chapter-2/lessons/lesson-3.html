@@ -411,6 +411,22 @@
         </div></li>
       </ol>
       <div class="exercise-final">✓ البؤرة $F(2,0)$، الدليل $x=-2$، والمعادلة $y^2=8x$. ∎</div>
+      <div class="neu" style="padding:1.25rem 1.5rem;margin-top:1.2rem">
+        <div class="example-head" style="margin-bottom:.6rem">
+          <div style="font-weight:800">🧭 البناء الهندسي التدريجي للحل</div>
+          <button class="neu-btn" id="ex16PlayBtn" type="button">▶ ابدأ الرسم التدريجي</button>
+        </div>
+        <div class="mindmap-wrap"><svg id="ex16Fig" width="460" height="320" viewBox="0 0 460 320" role="img" aria-label="بناء هندسي تدريجي لحل القطع المكافئ y^2=8x: المستوى الإحداثي، ثم الرأس، ثم البؤرة، ثم البعد البؤري p، ثم الدليل، ثم رسم المنحنى تدريجياً، وأخيراً التحقق الهندسي من تساوي PF و PM"></svg></div>
+        <div id="ex16Note1" class="callout warn" style="margin-top:1rem;opacity:0">
+          <span class="icon">⚠️</span>
+          <span><b>ملاحظة:</b> الدليل عكس إشارة البؤرة دائمًا.</span>
+        </div>
+        <div id="ex16Note2" class="callout tip" style="margin-top:.8rem;opacity:0">
+          <span class="icon">💡</span>
+          <span><b>ملاحظة:</b> $a$ دائمًا موجبة لأنها بُعد.</span>
+        </div>
+        <div id="ex16Done" class="exercise-final" style="margin-top:.8rem;opacity:0">✓ اكتمل البناء الهندسي لـ $y^2=8x$ — والتحقق الهندسي أدناه يؤكد $\overline{PF}=\overline{PM}$ عند أي نقطة على المنحنى.</div>
+      </div>
     </div>
 
     <div class="example fade-up">
@@ -796,6 +812,137 @@
     svg.appendChild(e);
     return e;
   }
+
+  /* ---- staged geometric construction for مثال 16: y^2=8x, a=2, F(2,0), directrix x=-2 -----
+     Sequence: coordinate plane -> vertex -> focus -> focal distance p -> directrix ->
+     note (directrix sign) -> progressive parabola draw (mathematically generated from
+     y^2=8x) -> note (a>0) -> final state -> geometric verification PF=PM. Replayable via
+     the "ابدأ الرسم التدريجي" button, using only inline CSS transitions (no new classes
+     or <style> block), matching this project's existing el()-helper SVG convention. ---- */
+  (function(){
+    var svg16 = document.getElementById("ex16Fig");
+    if(!svg16) return;
+    var playBtn = document.getElementById("ex16PlayBtn");
+    var note1 = document.getElementById("ex16Note1");
+    var note2 = document.getElementById("ex16Note2");
+    var doneBox = document.getElementById("ex16Done");
+    var W = 460, H = 320, ox = 150, oy = 160, scale = 24, a = 2;
+    var DASH_DUR = 2.2; /* seconds, parabola stroke draw duration */
+    function toPx(x,y){ return [ox + x*scale, oy - y*scale]; }
+
+    var staged = []; /* {node, delay, kind:'opacity'|'dash'} */
+    function addStaged(node, delay, kind){ staged.push({node:node, delay:delay, kind:kind||"opacity"}); return node; }
+    function group(delay){
+      var g = document.createElementNS(ns,"g");
+      svg16.appendChild(g);
+      return addStaged(g, delay, "opacity");
+    }
+
+    /* Stage 1 -- المستوى الإحداثي */
+    var gPlane = group(0.0);
+    el(gPlane,"line",{x1:10,y1:oy,x2:W-10,y2:oy,stroke:"var(--text-faint)","stroke-width":1.2});
+    el(gPlane,"line",{x1:ox,y1:10,x2:ox,y2:H-10,stroke:"var(--text-faint)","stroke-width":1.2});
+
+    /* Stage 2 -- الرأس */
+    var gVertex = group(0.7);
+    var vP = toPx(0,0);
+    el(gVertex,"circle",{cx:vP[0],cy:vP[1],r:5,fill:"#2fd18f"});
+    el(gVertex,"text",{x:vP[0]-32,y:vP[1]-10,"font-size":12,"font-weight":700,fill:"#2fd18f","font-family":"Cairo,sans-serif"}).textContent = "الرأس";
+    el(gVertex,"text",{x:vP[0]-16,y:vP[1]+22,"font-size":12,"font-weight":700,fill:"#2fd18f","font-family":"Cairo,sans-serif"}).textContent = "O(0,0)";
+
+    /* Stage 3 -- البؤرة F(2,0) */
+    var gFocus = group(1.4);
+    var fP = toPx(a,0);
+    el(gFocus,"circle",{cx:fP[0],cy:fP[1],r:5,fill:"#ff6b9d"});
+    el(gFocus,"text",{x:fP[0]-10,y:fP[1]-14,"font-size":13,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "البؤرة F(2,0)";
+
+    /* Stage 4 -- البعد البؤري p = 2 (المسافة من الرأس إلى البؤرة) */
+    var gPseg = group(2.1);
+    el(gPseg,"line",{x1:vP[0],y1:vP[1]+34,x2:fP[0],y2:fP[1]+34,stroke:"var(--text-secondary)","stroke-width":1.4});
+    el(gPseg,"line",{x1:vP[0],y1:vP[1]+28,x2:vP[0],y2:vP[1]+40,stroke:"var(--text-secondary)","stroke-width":1.4});
+    el(gPseg,"line",{x1:fP[0],y1:fP[1]+28,x2:fP[0],y2:fP[1]+40,stroke:"var(--text-secondary)","stroke-width":1.4});
+    el(gPseg,"text",{x:(vP[0]+fP[0])/2,y:vP[1]+54,"font-size":13,"font-weight":700,fill:"var(--text-secondary)","font-family":"Cairo,sans-serif","text-anchor":"middle"}).textContent = "p=2";
+
+    /* Stage 5 -- الدليل x = -2 (الجهة المقابلة للبؤرة عن الرأس) */
+    var gDir = group(2.8);
+    var dxPx = toPx(-a,0)[0];
+    el(gDir,"line",{x1:dxPx,y1:12,x2:dxPx,y2:H-12,stroke:"#ff6b9d","stroke-width":2,"stroke-dasharray":"6 4"});
+    el(gDir,"text",{x:dxPx-34,y:24,"font-size":12,"font-weight":700,fill:"#ff6b9d","font-family":"Cairo,sans-serif"}).textContent = "الدليل x=-2";
+
+    /* Stage 6 -- ملاحظة: الدليل عكس إشارة البؤرة دائمًا (خارج الرسم، لا تغطيه) */
+    addStaged(note1, 3.5, "opacity");
+
+    /* Stage 7 -- رسم القطع المكافئ تدريجياً، مولّد رياضياً من y^2=8x (أي x=y^2/(4a)) */
+    var pts = [];
+    for(var yy=-6; yy<=6; yy+=0.15){
+      var xx = (yy*yy)/(4*a);
+      var pxy = toPx(xx,yy);
+      pts.push(pxy[0].toFixed(1) + "," + pxy[1].toFixed(1));
+    }
+    var path16 = document.createElementNS(ns,"path");
+    path16.setAttribute("d", "M " + pts.join(" L "));
+    path16.setAttribute("fill","none");
+    path16.setAttribute("stroke","#7c6fee");
+    path16.setAttribute("stroke-width","3");
+    path16.setAttribute("pathLength","1");
+    svg16.appendChild(path16);
+    addStaged(path16, 4.2, "dash");
+
+    /* Stage 8 -- ملاحظة: a دائمًا موجبة لأنها بُعد */
+    addStaged(note2, 6.6, "opacity");
+
+    /* Stage 9 -- الحالة النهائية: محور التماثل + شارة الاكتمال */
+    var gAxisLabel = group(7.3);
+    el(gAxisLabel,"text",{x:W-108,y:oy-8,"font-size":12,"font-weight":700,fill:"var(--text-faint)","font-family":"Cairo,sans-serif"}).textContent = "محور التماثل";
+    addStaged(doneBox, 7.5, "opacity");
+
+    /* Stage 10 -- التحقق الهندسي: نقطة عيّنة على المنحنى، PF و PM محسوبتان رياضياً */
+    var gVerify = group(8.2);
+    var sampleY = 4;
+    var sampleX = (sampleY*sampleY)/(4*a); /* = 2, مشتقة من نفس معادلة القطع y^2=8x */
+    var PF = Math.hypot(sampleX-a, sampleY-0);
+    var PM = Math.abs(sampleX - (-a));
+    var pPt = toPx(sampleX, sampleY);
+    var mPt = [dxPx, pPt[1]];
+    el(gVerify,"circle",{cx:mPt[0],cy:mPt[1],r:4,fill:"#ffab5e"});
+    el(gVerify,"line",{x1:pPt[0],y1:pPt[1],x2:mPt[0],y2:mPt[1],stroke:"#ffab5e","stroke-width":2,"stroke-dasharray":"4 3"});
+    el(gVerify,"line",{x1:pPt[0],y1:pPt[1],x2:fP[0],y2:fP[1],stroke:"#3fa9f5","stroke-width":2,"stroke-dasharray":"4 3"});
+    el(gVerify,"circle",{cx:pPt[0],cy:pPt[1],r:5,fill:"#3fa9f5"});
+    el(gVerify,"text",{x:pPt[0]+9,y:pPt[1]-8,"font-size":12,"font-weight":700,fill:"#3fa9f5","font-family":"Cairo,sans-serif"}).textContent = "P(" + sampleX.toFixed(0) + "," + sampleY.toFixed(0) + ")";
+    el(gVerify,"text",{x:pPt[0]+9,y:pPt[1]+16,"font-size":12,"font-weight":700,fill:"var(--text-primary)","font-family":"Cairo,sans-serif"}).textContent = "PF=PM=" + PF.toFixed(2) + " ✓";
+
+    function setHidden(afterCommit){
+      staged.forEach(function(item){
+        item.node.style.transition = "none";
+        if(item.kind === "dash"){ item.node.style.strokeDasharray = "1"; item.node.style.strokeDashoffset = "1"; }
+        else { item.node.style.opacity = "0"; }
+      });
+      if(afterCommit){
+        /* double rAF: the first frame commits the reset above, the second is guaranteed
+           to run after the browser has painted it -- the reliable way to force a CSS
+           transition to restart, since a plain forced-reflow read is not consistently
+           honored for SVG presentation attributes across engines. */
+        requestAnimationFrame(function(){ requestAnimationFrame(afterCommit); });
+      }
+    }
+    function play(){
+      setHidden(function(){
+        staged.forEach(function(item){
+          item.node.style.transition = (item.kind === "dash")
+            ? ("stroke-dashoffset " + DASH_DUR + "s ease " + item.delay + "s")
+            : ("opacity .6s ease " + item.delay + "s");
+        });
+        staged.forEach(function(item){
+          if(item.kind === "dash"){ item.node.style.strokeDashoffset = "0"; }
+          else { item.node.style.opacity = "1"; }
+        });
+      });
+      playBtn.textContent = "🔁 إعادة الرسم";
+    }
+
+    setHidden(); /* initial state: nothing drawn until the user presses the button */
+    playBtn.addEventListener("click", play);
+  })();
 
   var svg = document.getElementById("eqGraphFig");
   var slider = document.getElementById("aParamSlider");
